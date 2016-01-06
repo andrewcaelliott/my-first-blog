@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+        {% for fact in facts %}
+            <div class="fact">
+                <!--div class="date">
+                    <p>published: {{ post.published_date }}</p>
+                </div-->
+                <h1><a href="{% url 'fact_detail' pk=fact.pk %}">{{ fact.title }}</a></h1>
+                <p>{{ fact.render|linebreaks }}</p>
+                <p>{{ fact.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
+{% endblock %}

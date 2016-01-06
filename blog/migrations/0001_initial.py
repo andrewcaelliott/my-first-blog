@@ -14,14 +14,46 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Comparison',
+            fields=[
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('text', models.TextField()),
+                ('title', models.CharField(max_length=50)),
+                ('difference', models.DecimalField(decimal_places=10, max_digits=30)),
+                ('ratio', models.DecimalField(decimal_places=20, max_digits=30)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='NumberFact',
+            fields=[
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('text', models.TextField()),
+                ('title', models.CharField(max_length=50)),
+                ('number', models.CharField(max_length=20)),
+                ('value', models.DecimalField(decimal_places=10, max_digits=30)),
+                ('unit', models.CharField(max_length=10)),
+                ('subject', models.TextField()),
+            ],
+        ),
+        migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('title', models.CharField(max_length=200)),
-                ('text', models.TextField()),
                 ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
                 ('published_date', models.DateTimeField(blank=True, null=True)),
                 ('author', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('numberFact', models.ForeignKey(to='blog.NumberFact', default=0)),
             ],
+        ),
+        migrations.AddField(
+            model_name='comparison',
+            name='numberFact1',
+            field=models.ForeignKey(to='blog.NumberFact', related_name='primary', default=0),
+        ),
+        migrations.AddField(
+            model_name='comparison',
+            name='numberFact2',
+            field=models.ForeignKey(to='blog.NumberFact', default=0),
         ),
     ]

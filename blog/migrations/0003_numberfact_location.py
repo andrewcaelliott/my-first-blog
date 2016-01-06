@@ -7,14 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_numberfact'),
+        ('blog', '0002_numberfact_scale'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='numberFact',
-            field=models.ForeignKey(default=None, to='blog.NumberFact'),
+            model_name='numberfact',
+            name='location',
+            field=models.CharField(default='/', max_length=100),
             preserve_default=False,
         ),
     ]

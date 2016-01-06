@@ -9,15 +9,27 @@
     </head>
 	<body>
 	    <div class="page-header">
+	        <a href="{% url 'post_new' %}" class="top-menu" title="new post"><span class="glyphicon glyphicon-plus"></span></a>
+	        <a href="{% url 'fact_new' %}" class="top-menu" title="new fact"><span class="glyphicon glyphicon-star"></span></a>
 	        <h1><a href="/">Is That A Big Number?</a></h1>
+	        <h3><a href ="/posts/">Number Posts</a> - <a href ="/facts/">Number Facts</a></h3>
 	    </div>
-	    <div class="content container">
-	        <div class="row">
-	            <div class="col-md-8">
-	            {% block content %}
-	            {% endblock %}
-	            </div>
-	        </div>
-	    </div>
+	    <section>
+		    <div class="content container">
+		        <div class="row">
+		            <div class="col-md-8">
+		            {% block content %}
+		            {% endblock %}
+		            </div>
+		        </div>
+		    </div>
+	    </section>    
+	    <aside>
+	    	<h2>Other Sections</h2>
+	    	<article><h3>Is that a big number?</h3></article>
+	    	<article><h3>Numbers in the News</h3></article>
+	    	<article><h3>Number-led Blog</h3></article>
+	    	<article><h3>Know your Numbers</h3></article>
+	    </aside>
 	</body>
 </html>
