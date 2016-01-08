@@ -6,6 +6,25 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 	<link href="http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	<script id="echoCentralScript" type="text/javascript" data-ec-accountid="2c864536-103f-430a-8648-4d05e39e1973">
+	  var ECHOREFLECTPRELOAD={errors:[]};
+	  (function(w,d,c,t,v){
+	    if(c&&c.error){
+	      var oce=c.error;
+	      c.error=function(){
+	        v.errors.push({u:"console",e:arguments})
+	        oce.apply(c,arguments);}}
+	    w.onerror=function(m,u,l,co,e){
+	      v.errors.push({m:m,u:u,l:l,c:co,e:e});
+	      return false;}
+	    var ec=d.createElement(t);
+	    ec.type='text/javascript';ec.async=true;ec.defer=true;ec.id='ecLWC';
+	    ec.src=('https:'==d.location.protocol?'https://':'http://')+'script.echo-central.com/echoREFLECT.js';
+	    var s=d.getElementsByTagName(t)[0];
+	    setTimeout(function(){s.parentNode.insertBefore(ec,s)},100);
+	  }(window,document,console,'script',ECHOREFLECTPRELOAD));
+	</script>
+  
     </head>
 	<body>
 	    <div class="page-header">
