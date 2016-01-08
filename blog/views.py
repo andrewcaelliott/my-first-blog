@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Post
 from .models import NumberFact
+from .models import NumberQuery
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -66,5 +67,15 @@ def fact_new(request):
 
 def query_answer(request):
     query = QueryForm(request.POST)
-    answer = {"quip":"lookie here"}
+    numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
+
+    answer = {"quip":"Isn't this jolly?"}
+    references = [
+        ('Population of World','for every person in the world'),
+        ('Population of China','for every person in China'),
+        ('Population of United States','for every person in the USA'),
+        ('Population of United Kingdom','for every person in the UK'),
+    ]
+    answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
+

@@ -2,8 +2,16 @@
 
 {% block content %}
     <div class="answer">
-        <h1>{{ answer.quip }}</h1>
-        <p>{{ query.number }}</p>
-        <p>{{ query.unit }}</p>
+        <h2>{{ answer.quip }}</h2>
+        <form method="POST" class="query-form" action="/itabn/answer">{% csrf_token %}
+            {{ query.as_p }}
+            <button type="submit" class="save btn btn-default">Ask</button>
+        </form>
+        <h2>That would be ...</h2>
+        {% for comparison in answer.comparisons %}
+            <div class="comparison">
+                <p>{{ comparison.render }}</p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

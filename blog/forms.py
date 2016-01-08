@@ -21,4 +21,4 @@ class QueryForm(forms.ModelForm):
 
     class Meta:
         model = NumberQuery
-        fields = ('number','unit',)                
+        fields = ('number','multiple','unit',)                
