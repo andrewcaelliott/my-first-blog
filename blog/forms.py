@@ -2,6 +2,7 @@ from django import forms
 
 from .models import Post
 from .models import NumberFact
+from .models import NumberQuery
 
 class PostForm(forms.ModelForm):
 
@@ -15,3 +16,9 @@ class FactForm(forms.ModelForm):
     class Meta:
         model = NumberFact
         fields = ('title', 'number', 'unit', 'subject', 'text',)        
+
+class QueryForm(forms.ModelForm):
+
+    class Meta:
+        model = NumberQuery
+        fields = ('number','unit',)                

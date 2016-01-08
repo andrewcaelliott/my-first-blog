@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-class NumberFact(models.Model):
+class NumberQuery(models.Model):
 
     text = models.TextField()
     title = models.CharField(max_length=50)
@@ -14,6 +14,25 @@ class NumberFact(models.Model):
 
     def _display(self):
     	return " ".join([self.title,":",self.number, self.unit, self.subject])
+
+    def __str__(self):
+        return self.title        
+
+    render = property(_display)
+
+class NumberFact(models.Model):
+
+    text = models.TextField()
+    title = models.CharField(max_length=50)
+    number = models.CharField(max_length=20)
+    scale = models.IntegerField()
+    location = models.CharField(max_length=100)
+    value = models.DecimalField(max_digits=30, decimal_places=10)
+    unit = models.CharField(max_length=10)
+    subject = models.TextField()
+
+    def _display(self):
+        return " ".join([self.title,":",self.number, self.unit, self.subject])
 
     def __str__(self):
         return self.title        

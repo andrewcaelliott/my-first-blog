@@ -5,6 +5,7 @@ from .models import Post
 from .models import NumberFact
 from .forms import PostForm 
 from .forms import FactForm 
+from .forms import QueryForm 
 
 def num(s):
     try:
@@ -12,6 +13,14 @@ def num(s):
     except ValueError:
         return float(s)
 
+
+def itabn(request):
+    widgets = [
+        {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":QueryForm()},
+        {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":QueryForm()},
+        {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":QueryForm()},
+        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":QueryForm()}]
+    return render(request, 'blog/itabn.html', {'widgets':widgets})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
@@ -53,4 +62,9 @@ def fact_new(request):
             return redirect('fact_detail', pk=fact.pk)
     else:   
         form = FactForm()
-    return render(request, 'blog/fact_edit.html', {'form': form})    
+    return render(request, 'blog/fact_edit.html', {'form': form})   
+
+def query_answer(request):
+    query = QueryForm(request.POST)
+    answer = {"quip":"lookie here"}
+    return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
