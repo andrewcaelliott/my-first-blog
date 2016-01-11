@@ -87,5 +87,5 @@ def run():
 		('Population of United States','for every person in the USA'),
 		('Population of United Kingdom','for every person in the UK'),
 	]
-	nq = NumberQuery(number=2000, multiple="G", unit="things")
+	nq = NumberQuery(number=2000, multiple="G", unit="things", measure="count")
 	print(nq.getComparisons(references))
