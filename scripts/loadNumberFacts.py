@@ -39,5 +39,6 @@ def loadNumberFacts(fileName, metric, unit):
 
 def run():
 #	loadNumberFacts("../blog/data/Population_of_countries.csv","Population of ","people")
-	loadNumberFacts("../blog/data/GDP_of_countries.csv","GDP of ","USD p/a")
+#	loadNumberFacts("../blog/data/GDP_of_countries.csv","GDP of ","USD p/a")
+	loadNumberFacts("../blog/data/Reference_durations.csv","","m")
 

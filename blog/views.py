@@ -77,6 +77,12 @@ def query_answer(request):
     references=[]
     if query["measure"].value()=="e":
         references = [
+            ('Length of trip from the Earth to the Sun','{times:20.2f} times the distance from the Earth to the Sun','1 / {fraction:20.0f} of the distance from the Earth to the Sun'),
+            ('Length of trip from the Earth to the Moon','{times:20.2f} times the distance from the Earth to the Moon','1 / {fraction:20.0f} of the distance from the Earth to the Moon'),
+            ('Length of trip around the equator','{times:20.2f} times the distance around the equator','1 / {fraction:20.0f} of the distance around the equator'),
+            ('Length of trip from London to New York','{times:20.2f} times the distance from London to New York','1 / {fraction:20.0f} of the distance from London to New York'),
+            ('Length of trip from London to Edinburgh','{times:20.2f} times the distance from London to Edinburgh','1 / {fraction:20.0f} of the distance from London to Edinburgh'),
+            ('Length of a football pitch','{times:20.2f} football pitches end to end','1 / {fraction:20.0f} as long as a football pitch'),
             ('Length of a London bus','{times:20.2f} London buses end to end','1 / {fraction:20.0f} as long as a London bus'),
             ('Length of an iPhone 6',"{times:20.2f} iPhone 6's end to end",'1 / {fraction:20.0f} as long as an iPhone 6'),
         ]
@@ -91,6 +97,15 @@ def query_answer(request):
         references = [
             ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','A 1 /{fraction:20.0f} fraction of the USA GDP'),
             ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','A 1 /{fraction:20.0f} fraction of the UK GDP'),
+        ] 
+    elif query["measure"].value()=="d":
+        references = [
+            ('age of the universe','{times:20.2f} times the age of the universe','{percent:20.2f} percent of the age of the universe','1 /{fraction:20.0f} of the age of the universe'),
+            ('first modern humans','{times:20.2f} times the period since the emergence of the first modern humans','{percent:20.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:20.0f} of the time since the emergence of the first modern humans'),
+            ('building of Great Wall of China','{times:20.2f} times the period since the building of the Great Wall of China','{percent:20.2f} percent of the time since the building of the Great Wall of China','1 /{fraction:20.0f} of the time since the building of the Great Wall of China'),
+            ('lifespan of Galapagos giant tortoise','{times:20.2f} times the lifespan of a Galapagos giant tortoise','{percent:20.2f} percent of the lifespan of a Galapagos giant tortoise','1 /{fraction:20.0f} of the lifespan of a Galapagos giant tortoise'),
+            ('human generation','{times:20.2f} human generations','{percent:20.2f} percent of a human generation','1 /{fraction:20.0f} of a human generation'),
+            ('lifespan of rat','{times:20.2f} times the lifespan of a rat','{percent:20.2f} percent of the lifespan of a rat','1 /{fraction:20.0f} of the lifespan of a rat'),
         ] 
     answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
