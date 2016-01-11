@@ -73,9 +73,11 @@ def query_answer(request):
     query = QueryForm(request.POST)
     numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
 
-    answer = {"quip":"Isn't this jolly?"}
+
+    answer = {"quip":"Here's your answer"}
     references=[]
     if query["measure"].value()=="e":
+        answer = {"quip":"It's a long, long way to ..."}
         references = [
             ('Length of trip from the Earth to the Sun','{times:20.2f} times the distance from the Earth to the Sun','1 / {fraction:20.0f} of the distance from the Earth to the Sun'),
             ('Length of trip from the Earth to the Moon','{times:20.2f} times the distance from the Earth to the Moon','1 / {fraction:20.0f} of the distance from the Earth to the Moon'),
@@ -87,6 +89,7 @@ def query_answer(request):
             ('Length of an iPhone 6',"{times:20.2f} iPhone 6's end to end",'1 / {fraction:20.0f} as long as an iPhone 6'),
         ]
     elif query["measure"].value()=="c":
+        answer = {"quip":"There are plenty of fish in the sea"}
         references = [
             ('Population of World','{times:20.2f} for every person in the world','One for every {fraction:20.0f} people in the world'),
             ('Population of China','{times:20.2f} for every person in China','One for every {fraction:20.0f} people in China'),
@@ -94,11 +97,13 @@ def query_answer(request):
             ('Population of United Kingdom','{times:20.2f} for every person in the UK','One for every {fraction:20.0f} people in the UK'),
         ]
     elif query["measure"].value()=="a":
+        answer = {"quip":"There's more to life than money"}
         references = [
             ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','A 1 /{fraction:20.0f} fraction of the USA GDP'),
             ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','A 1 /{fraction:20.0f} fraction of the UK GDP'),
         ] 
     elif query["measure"].value()=="d":
+        answer = {"quip":"How many years can a mountain exist"}
         references = [
             ('age of the universe','{times:20.2f} times the age of the universe','{percent:20.2f} percent of the age of the universe','1 /{fraction:20.0f} of the age of the universe'),
             ('first modern humans','{times:20.2f} times the period since the emergence of the first modern humans','{percent:20.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:20.0f} of the time since the emergence of the first modern humans'),
