@@ -78,6 +78,7 @@ def query_answer(request):
     if query["measure"].value()=="e":
         references = [
             ('Length of a London bus','{times:20.2f} London buses end to end','1 / {fraction:20.0f} as long as a London bus'),
+            ('Length of an iPhone 6',"{times:20.2f} iPhone 6's end to end",'1 / {fraction:20.0f} as long as an iPhone 6'),
         ]
     elif query["measure"].value()=="c":
         references = [
