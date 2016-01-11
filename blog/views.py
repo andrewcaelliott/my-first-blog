@@ -16,11 +16,15 @@ def num(s):
 
 
 def itabn(request):
+    extentForm = QueryForm(initial={'measure': 'e'})
+    countForm = QueryForm(initial={'measure': 'c'})
+    amountForm = QueryForm(initial={'measure': 'a'})
+    durationForm = QueryForm(initial={'measure': 'd'})
     widgets = [
-        {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":QueryForm()},
-        {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":QueryForm()},
-        {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":QueryForm()},
-        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":QueryForm()}]
+        {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
+        {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
+        {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
+        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
     return render(request, 'blog/itabn.html', {'widgets':widgets})
 
 def post_list(request):
@@ -70,12 +74,20 @@ def query_answer(request):
     numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
 
     answer = {"quip":"Isn't this jolly?"}
-    references = [
-        ('Population of World','for every person in the world'),
-        ('Population of China','for every person in China'),
-        ('Population of United States','for every person in the USA'),
-        ('Population of United Kingdom','for every person in the UK'),
-    ]
+    references=[]
+    if query["measure"].value()=="c":
+    #if 1:
+        references = [
+            ('Population of World','{times:20.2f} for every person in the world','{fraction:20.2f} people in the world for each one'),
+            ('Population of China','{times:20.2f} for every person in China','{fraction:20.2f} people in China for each one'),
+            ('Population of United States','{times:20.2f} for every person in the USA','{fraction:20.2f} people in the USA for each one'),
+            ('Population of United Kingdom','{times:20.2f} for every person in the UK','{fraction:20.2f} people in the UK for each one'),
+        ]
+    elif query["measure"].value()=="a":
+        references = [
+            ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','1 /{fraction:20.0f} fraction of the USA GDP'),
+            ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','1 /{fraction:20.0f} fraction of the UK GDP'),
+        ] 
     answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
 
