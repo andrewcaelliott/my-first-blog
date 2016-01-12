@@ -7,6 +7,7 @@ from .models import NumberQuery
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
+from .forms import ConvertForm 
 
 def num(s):
     try:
@@ -114,4 +115,51 @@ def query_answer(request):
         ] 
     answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
+
+def convert(request):
+    extentForm = ConvertForm(initial={'measure': 'e'})
+    durationForm = ConvertForm(initial={'measure': 'd'})
+    widgets = [
+        {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
+        {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
+        ]
+    return render(request, 'blog/convert.html', {'widgets':widgets})
+
+
+def conversion_answer(request):
+    conversion = ConvertForm(request.POST)
+    numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value())
+
+
+    answer = {"quip":"Here's your conversion answer"}
+    conversion_targets=[]
+    if conversion["measure"].value()=="e":
+        answer = {"quip":"The long and winding road ..."}
+        conversion_targets = [
+            (numberQuery.target_unit),
+            ('kilometer'),
+            ('metre'),
+            ('millimeter'),
+            ('mile'),
+            ('yard'),
+            ('foot'),
+            ('inch'),
+        ]
+    elif conversion["measure"].value()=="d":
+        answer = {"quip":"How long has it been ..."}
+        conversion_targets = [
+            (numberQuery.target_unit),
+            ('year'),
+            ('month'),
+            ('fortnight'),
+            ('week'),
+            ('day'),
+            ('hour'),
+            ('minute'),
+            ('second'),
+        ]
+    conversions = numberQuery.getConversions(conversion_targets)
+    answer["requestedConversion"] = conversions[0]
+    answer["otherConversions"] = conversions[1:]
+    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer})   
 

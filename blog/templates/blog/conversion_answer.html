@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="answer">
+        <h2>{{ answer.quip }}</h2>
+        <form method="POST" class="query-form" action="/convert/answer">{% csrf_token %}
+            {{ conversion.as_p }}
+            <button type="submit" class="save btn btn-default">Ask</button>
+        </form>
+        <h2>That would be ...</h2>
+            <div class="comparison">
+                <p>{{ answer.requestedConversion }}</p>
+            </div>
+        <h2>And also ...</h2>
+        {% for conversion in answer.otherConversions %}
+            <div class="comparison">
+                <p>{{ conversion }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

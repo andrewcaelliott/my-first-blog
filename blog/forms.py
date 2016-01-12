@@ -22,3 +22,9 @@ class QueryForm(forms.ModelForm):
     class Meta:
         model = NumberQuery
         fields = ('number','multiple','unit','measure',)                
+
+class ConvertForm(forms.ModelForm):
+
+    class Meta:
+        model = NumberQuery
+        fields = ('number','multiple','unit','measure','target_unit',)                        

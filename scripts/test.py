@@ -1,5 +1,8 @@
 from blog.models import NumberFact
 from blog.models import NumberQuery
+from pint import UnitRegistry
+ureg = UnitRegistry()
+Q_=ureg.Quantity
 
 def num(s):
     try:
@@ -56,31 +59,14 @@ def run1():
 		print(ordinal, country, number, multiple, scale, unit)
 		fact = addFact(title="Population of "+country.replace(";",",").replace("\"",""), text="fun fact", number=number, scale=scale, unit = " ".join([multiple, unit]))
 
-def getComparisons(nq, references):
-	if nq.multiple == "T":
-		nq.scale = 12
-	elif nq.multiple == "G":	
-		nq.scale = 9
-	elif nq.multiple == "M":	
-		nq.scale = 6
-	elif nq.multiple == "K":	
-		nq.scale = 3
-	elif nq.multiple == "U":
-		nq.scale = 0
-	else:
-		nq.scale = 0
-	n = nq.number * 10**nq.scale
-	comparisons = []
-	for reference in references:
-		fact = NumberFact.objects.get(title=reference[0])
-		comparisonNumber = n / (fact.value*10**fact.scale)
-		comparisonRender=" ".join([str(round(comparisonNumber,2)),reference[1]])
-		comparison =(comparisonNumber, comparisonRender)
-		comparisons.append(comparison)
-		#print(" ".join([refrender, reference[1]]))
-	return comparisons
+def getConversions(nq, conversions):
+	conversion_answers = []
+	quantity = Q_(" ".join([str(nq.number), nq.unit]))
+	for conversion in conversions:
+		conversion_answers.append(str(quantity.to(conversion)))
+	return conversion_answers
 
-def run():
+def run2():
 	references = [
 		('Population of World','for every person in the world'),
 		('Population of China','for every person in China'),
@@ -89,3 +75,14 @@ def run():
 	]
 	nq = NumberQuery(number=2000, multiple="G", unit="things", measure="count")
 	print(nq.getComparisons(references))
+
+def run():
+	conversions = [
+		('meter'),
+		('kilometer'),
+		('mile'),
+		('yard'),
+	]
+	nq = NumberQuery(number=2000, multiple="k", unit="m", measure="count")
+#	print(getConversions(nq, conversions))
+	print(nq.getConversions(conversions))

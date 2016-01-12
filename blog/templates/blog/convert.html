@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+        {% for widget in widgets %}
+            <div class="widget">
+		<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ widget.title }}</a></h1>
+                <form method="POST" class="query-form" action="/convert/answer">{% csrf_token %}
+                    {{ widget.form.as_p }}
+                    <button type="submit" class="save btn btn-default">Convert</button>
+                </form>
+            </div>
+        {% endfor %}
+{% endblock %}

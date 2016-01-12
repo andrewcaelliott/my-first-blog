@@ -1,5 +1,5 @@
 section {
-    width:350px;
+    width:400px;
     float:left;
     padding:10px;        
 }
@@ -27,8 +27,13 @@ aside {
     margin-left: 40px;
 }
 
+div.content.container{
+    width:800px;
+}
+
 h1, h2, h3, h4 {
     font-family: 'Ubuntu', cursive;
+    color: #7777ff;
 }
 
 .date {

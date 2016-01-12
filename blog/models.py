@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from pint import UnitRegistry
+ureg = UnitRegistry()
+Q_=ureg.Quantity
 
 def num(s):
     try:
@@ -33,7 +36,24 @@ class NumberQuery(models.Model):
     )
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES, default="U")
     unit = models.CharField(max_length=10)
+    target_unit = models.CharField(max_length=10)
     subject = models.TextField()
+
+    def getScaleFactor(self):
+        if self.multiple == "T":
+            self.scale = 12
+        elif self.multiple == "G":    
+            self.scale = 9
+        elif self.multiple == "M":    
+            self.scale = 6
+        elif self.multiple == "K":    
+            self.scale = 3
+        elif self.multiple == "U":
+            self.scale = 0
+        else:
+            self.scale = 0
+        return 10**self.scale
+
 
     def getComparisons(self, references):
         if self.multiple == "T":
@@ -70,6 +90,14 @@ class NumberQuery(models.Model):
             comparisons.append(comparison)
             #print(" ".join([refrender, reference[1]]))
         return comparisons
+
+    def getConversions(self, conversions):
+        conversion_answers = []
+        quantity = Q_(" ".join([str(num(self.number) * self.getScaleFactor()), self.unit]))
+        for conversion in conversions:
+            conversion_answers.append(str(quantity.to(conversion)))
+        return conversion_answers
+
 
     def _display(self):
     	return " ".join([self.title,":",str(self.number), self.multiple, self.unit, self.subject])

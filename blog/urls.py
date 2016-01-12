@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^fact/new/$', views.fact_new, name='fact_new'),
     url(r'^fact/(?P<pk>[0-9]+)/$', views.fact_detail, name='fact_detail'),
+    url(r'^convert/$', views.convert, name='convert'),
+    url(r'^convert/answer$', views.conversion_answer, name='conversion_answer'),
 ]
