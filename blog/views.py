@@ -169,11 +169,11 @@ def convert(request):
 def conversion_answer(request):
     conversion = ConvertForm(request.POST)
     numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value())
-
-
     answer = {"quip":"Here's your conversion answer"}
     conversion_targets=[]
     if conversion["measure"].value()=="e":
+        conversion.fields['unit'].choices=LENGTH_UNIT_CHOICES
+        conversion.fields['target_unit'].choices=LENGTH_UNIT_CHOICES
         answer = {"quip":"The long and winding road ..."}
         conversion_targets = [
             (numberQuery.target_unit),
@@ -186,6 +186,8 @@ def conversion_answer(request):
             ('inch'),
         ]
     elif conversion["measure"].value()=="d":
+        conversion.fields['unit'].choices=TIME_UNIT_CHOICES
+        conversion.fields['target_unit'].choices=TIME_UNIT_CHOICES
         answer = {"quip":"How long has it been ..."}
         conversion_targets = [
             (numberQuery.target_unit),
