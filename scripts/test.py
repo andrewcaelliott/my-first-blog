@@ -1,6 +1,8 @@
 from blog.models import NumberFact
 from blog.models import NumberQuery
+from blog.forms import QueryForm
 from pint import UnitRegistry
+from math import log10
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 
@@ -76,7 +78,7 @@ def run2():
 	nq = NumberQuery(number=2000, multiple="G", unit="things", measure="count")
 	print(nq.getComparisons(references))
 
-def run():
+def run3():
 	conversions = [
 		('meter'),
 		('kilometer'),
@@ -86,3 +88,26 @@ def run():
 	nq = NumberQuery(number=2000, multiple="k", unit="m", measure="count")
 #	print(getConversions(nq, conversions))
 	print(nq.getConversions(conversions))
+
+def sigfigs(x,n):
+	l10 = 1+round(log10(x),0)
+	return round(x, int(n-l10))
+
+
+
+def run4():
+	q = 1/7
+	print(q)
+	print(sigfigs(q, 6))	
+	print(sigfigs(10*q, 6))	
+	print(sigfigs(1000*q, 6))
+	print(sigfigs(1000000*q, 6))		
+	print(sigfigs(10000000*q, 6))		
+	print(sigfigs(10000000*q, 7))		
+	print(sigfigs(10000000*q, 4))	
+
+def run5():
+	qf = QueryForm()
+	print(qf.fields['measure'].choices)
+
+

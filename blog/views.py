@@ -15,18 +15,35 @@ def num(s):
     except ValueError:
         return float(s)
 
+LENGTH_UNIT_CHOICES= (
+        ('km', 'kilometer'),
+        ('m', 'meter'),
+        ('cm', 'centimeter'),
+        ('mm', 'millimeter'),
+        ('mi', 'mile'),
+        ('yd', 'yard'),
+        ('ft', 'foot'),
+        ('in', 'inch'),
+    )
 
-def itabn(request):
-    extentForm = QueryForm(initial={'measure': 'e'})
-    countForm = QueryForm(initial={'measure': 'c'})
-    amountForm = QueryForm(initial={'measure': 'a'})
-    durationForm = QueryForm(initial={'measure': 'd'})
-    widgets = [
-        {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
-        {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
-        {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
-        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
-    return render(request, 'blog/itabn.html', {'widgets':widgets})
+COUNT_UNIT_CHOICES= (
+        ('i', 'item'),
+    )
+
+AMOUNT_UNIT_CHOICES= (
+        ('USD', 'USD'),
+    )
+
+TIME_UNIT_CHOICES= (
+        ('year', 'year'),
+        ('month', 'month'),
+        ('week', 'week'),
+        ('day', 'day'),
+        ('hour', 'hour'),
+        ('minute', 'minute'),
+        ('second', 'second'),
+    )
+    
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
@@ -70,14 +87,30 @@ def fact_new(request):
         form = FactForm()
     return render(request, 'blog/fact_edit.html', {'form': form})   
 
+def itabn(request):
+    extentForm = QueryForm(initial={'measure': 'e'})
+    extentForm.fields['unit'].choices=LENGTH_UNIT_CHOICES
+    countForm = QueryForm(initial={'measure': 'c'})
+    countForm.fields['unit'].choices=COUNT_UNIT_CHOICES
+    amountForm = QueryForm(initial={'measure': 'a'})
+    amountForm.fields['unit'].choices=AMOUNT_UNIT_CHOICES
+    durationForm = QueryForm(initial={'measure': 'd'})
+    durationForm.fields['unit'].choices=TIME_UNIT_CHOICES
+    widgets = [
+        {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
+        {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
+        {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
+        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
+    return render(request, 'blog/itabn.html', {'widgets':widgets})
+
+
 def query_answer(request):
     query = QueryForm(request.POST)
     numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
-
-
     answer = {"quip":"Here's your query_answer"}
     references=[]
     if query["measure"].value()=="e":
+        query.fields['unit'].choices=LENGTH_UNIT_CHOICES
         answer = {"quip":"It's a long, long way to ..."}
         references = [
             ('Length of trip from the Earth to the Sun','{times:20.2f} times the distance from the Earth to the Sun','1 / {fraction:20.0f} of the distance from the Earth to the Sun'),
@@ -90,7 +123,8 @@ def query_answer(request):
             ('Length of an iPhone 6',"{times:20.2f} iPhone 6's end to end",'1 / {fraction:20.0f} as long as an iPhone 6'),
         ]
     elif query["measure"].value()=="c":
-        answer = {"quip":"How many fish in the ocean?"}
+        query.fields['unit'].choices=COUNT_UNIT_CHOICES
+        answer = {"quip":"Let me count ..."}
         references = [
             ('Population of World','{times:20.2f} for every person in the world','One for every {fraction:20.0f} people in the world'),
             ('Population of China','{times:20.2f} for every person in China','One for every {fraction:20.0f} people in China'),
@@ -99,12 +133,14 @@ def query_answer(request):
         ]
     elif query["measure"].value()=="a":
         answer = {"quip":"There's more to life than money"}
+        query.fields['unit'].choices=AMOUNT_UNIT_CHOICES
         references = [
-            ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','A 1 /{fraction:20.0f} fraction of the USA GDP'),
-            ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','A 1 /{fraction:20.0f} fraction of the UK GDP'),
+            ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','1 /{fraction:20.0f} of the USA GDP'),
+            ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','1 /{fraction:20.0f} of the UK GDP'),
         ] 
     elif query["measure"].value()=="d":
         answer = {"quip":"How many years can a mountain exist?"}
+        query.fields['unit'].choices=TIME_UNIT_CHOICES
         references = [
             ('age of the universe','{times:20.2f} times the age of the universe','{percent:20.2f} percent of the age of the universe','1 /{fraction:20.0f} of the age of the universe'),
             ('first modern humans','{times:20.2f} times the period since the emergence of the first modern humans','{percent:20.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:20.0f} of the time since the emergence of the first modern humans'),
@@ -118,7 +154,11 @@ def query_answer(request):
 
 def convert(request):
     extentForm = ConvertForm(initial={'measure': 'e'})
+    extentForm.fields['unit'].choices=LENGTH_UNIT_CHOICES
+    extentForm.fields['target_unit'].choices=LENGTH_UNIT_CHOICES
     durationForm = ConvertForm(initial={'measure': 'd'})
+    durationForm.fields['unit'].choices=TIME_UNIT_CHOICES
+    durationForm.fields['target_unit'].choices=TIME_UNIT_CHOICES
     widgets = [
         {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
         {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},

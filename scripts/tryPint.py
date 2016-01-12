@@ -9,3 +9,8 @@ def run():
 	print(q.to(ureg.meter / ureg.second).magnitude)	
 	print(q.to(ureg.meter / ureg.second).units)
 	print(q.to(ureg.meter / ureg.second).dimensionality)
+	q2 = 23 * ureg.year
+	print(q2)
+	print(q2.dimensionality)	
+	print(q2.dimensionality==ureg.s.dimensionality)
+	print(q2.to(ureg.s))
