@@ -115,20 +115,21 @@ class NumberQuery(models.Model):
             fact = NumberFact.objects.get(title=reference[0])
             factNumber = float(fact.value)*10**fact.scale
             comparisonNumber = n  / factNumber
-            times = sigfigs(comparisonNumber,6);
-            fraction = sigfigs(1/comparisonNumber,3);
-            percent = sigfigs(times,6) * 100;
-            if comparisonNumber >=0.5:
-                #comparisonRender=" ".join([str(round(comparisonNumber,2)),reference[1]])
-                #comparisonRender = reference[1] % {"times":times, "fraction":fraction, "percent":percent}
-                comparisonRender = reference[1].format(times=times, fraction=fraction, percent=percent)
-            elif comparisonNumber >=0.1 or len(reference)<4:
-#                comparisonRender=" ".join([str(round(1/comparisonNumber,2)),reference[2]])
-                comparisonRender = reference[2].format(times=times, fraction=fraction, percent = percent)
-            else:
-                comparisonRender = reference[3].format(times=times, fraction=fraction, percent = percent)
-            comparison ={"number":comparisonNumber, "render": comparisonRender}
-            comparisons.append(comparison)
+            if (comparisonNumber <= 100000) and (comparisonNumber >= 0.00001):
+                times = sigfigs(comparisonNumber,6);
+                fraction = sigfigs(1/comparisonNumber,3);
+                percent = sigfigs(times,6) * 100;
+                if comparisonNumber >=0.5:
+                    #comparisonRender=" ".join([str(round(comparisonNumber,2)),reference[1]])
+                    #comparisonRender = reference[1] % {"times":times, "fraction":fraction, "percent":percent}
+                    comparisonRender = reference[1].format(times=times, fraction=fraction, percent=percent)
+                elif comparisonNumber >=0.1 or len(reference)<4:
+    #                comparisonRender=" ".join([str(round(1/comparisonNumber,2)),reference[2]])
+                    comparisonRender = reference[2].format(times=times, fraction=fraction, percent = percent)
+                else:
+                    comparisonRender = reference[3].format(times=times, fraction=fraction, percent = percent)
+                comparison ={"number":comparisonNumber, "render": comparisonRender}
+                comparisons.append(comparison)
             #print(" ".join([refrender, reference[1]]))
         return comparisons
 
