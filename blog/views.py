@@ -1,3 +1,4 @@
+from json import loads
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -11,6 +12,9 @@ from .forms import QueryForm
 from .forms import ConvertForm 
 from .convert import convertToDefaultBase 
 from .convert import convertToUnit 
+from .config import reference_lists
+from .config import unit_choice_lists
+from .config import quip_lists
 
 def num(s):
     try:
@@ -18,42 +22,6 @@ def num(s):
     except ValueError:
         return float(s)
 
-LENGTH_UNIT_CHOICES= (
-        ('km', 'kilometer'),
-        ('m', 'meter'),
-        ('cm', 'centimeter'),
-        ('mm', 'millimeter'),
-        ('mi', 'mile'),
-        ('yd', 'yard'),
-        ('ft', 'foot'),
-        ('in', 'inch'),
-    )
-
-COUNT_UNIT_CHOICES= (
-        ('i', 'item'),
-    )
-
-AMOUNT_UNIT_CHOICES= (
-        ('USD', 'US Dollars (USD)'),
-        ('AUD', 'Australian Dollar (AUD)'),
-        ('CAD', 'Canadian Dollar (CAD)'),
-        ('CHF', 'Swiss Franc (CHF)'),
-        ('EUR', 'Euros (EUR)'),
-        ('GBP', 'UK Pounds (GBP)'),
-        ('HKD', 'Hongkong Dollar (HKD)'),
-        ('JPY', 'Japanese Yen (JPY)'),
-    )
-
-TIME_UNIT_CHOICES= (
-        ('year', 'year'),
-        ('month', 'month'),
-        ('week', 'week'),
-        ('day', 'day'),
-        ('hour', 'hour'),
-        ('minute', 'minute'),
-        ('second', 'second'),
-    )
-    
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
@@ -99,13 +67,13 @@ def fact_new(request):
 
 def itabn(request):
     extentForm = QueryForm(initial={'measure': 'e'})
-    extentForm.fields['unit'].choices=LENGTH_UNIT_CHOICES
+    extentForm.fields['unit'].choices=unit_choice_lists['e']
     countForm = QueryForm(initial={'measure': 'c'})
-    countForm.fields['unit'].choices=COUNT_UNIT_CHOICES
+    countForm.fields['unit'].choices=unit_choice_lists['c']
     amountForm = QueryForm(initial={'measure': 'a'})
-    amountForm.fields['unit'].choices=AMOUNT_UNIT_CHOICES
+    amountForm.fields['unit'].choices=unit_choice_lists['a']
     durationForm = QueryForm(initial={'measure': 'd'})
-    durationForm.fields['unit'].choices=TIME_UNIT_CHOICES
+    durationForm.fields['unit'].choices=unit_choice_lists['d']
     widgets = [
         {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
         {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
@@ -113,67 +81,51 @@ def itabn(request):
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
     return render(request, 'blog/itabn.html', {'widgets':widgets})
 
-
 def query_answer(request):
     query = QueryForm(request.POST)
     numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
-    answer = {"quip":"Here's your query_answer"}
-    references=[]
-    if query["measure"].value()=="e":
-        query.fields['unit'].choices=LENGTH_UNIT_CHOICES
-        answer = {"quip":"It's a long, long way to ..."}
-        references = [
-            ('Length of trip from the Earth to the Sun','{times:20.2f} times the distance from the Earth to the Sun','1 / {fraction:20.0f} of the distance from the Earth to the Sun'),
-            ('Length of trip from the Earth to the Moon','{times:20.2f} times the distance from the Earth to the Moon','1 / {fraction:20.0f} of the distance from the Earth to the Moon'),
-            ('Length of trip around the equator','{times:20.2f} times the distance around the equator','1 / {fraction:20.0f} of the distance around the equator'),
-            ('Length of trip from London to New York','{times:20.2f} times the distance from London to New York','1 / {fraction:20.0f} of the distance from London to New York'),
-            ('Length of trip from London to Edinburgh','{times:20.2f} times the distance from London to Edinburgh','1 / {fraction:20.0f} of the distance from London to Edinburgh'),
-            ('Length of a football pitch','{times:20.2f} football pitches end to end','1 / {fraction:20.0f} as long as a football pitch'),
-            ('Length of a London bus','{times:20.2f} London buses end to end','1 / {fraction:20.0f} as long as a London bus'),
-            ('Length of an iPhone 6',"{times:20.2f} iPhone 6's end to end",'1 / {fraction:20.0f} as long as an iPhone 6'),
-        ]
-    elif query["measure"].value()=="c":
-        query.fields['unit'].choices=COUNT_UNIT_CHOICES
-        answer = {"quip":"Let me count ..."}
-        references = [
-            ('Population of World','{times:20.2f} for every person in the world','One for every {fraction:20.0f} people in the world'),
-            ('Population of China','{times:20.2f} for every person in China','One for every {fraction:20.0f} people in China'),
-            ('Population of United States','{times:20.2f} for every person in the USA','One for every {fraction:20.0f} people in the USA'),
-            ('Population of United Kingdom','{times:20.2f} for every person in the UK','One for every {fraction:20.0f} people in the UK'),
-        ]
-    elif query["measure"].value()=="a":
-        answer = {"quip":"There's more to life than money"}
-        query.fields['unit'].choices=AMOUNT_UNIT_CHOICES
-        references = [
-            ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','1 /{fraction:20.0f} of the USA GDP'),
-            ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','1 /{fraction:20.0f} of the UK GDP'),
-            ('Wealthiest Person','{times:20.2f} times the wealth of the wealthiest person','{percent:20.2f} percent of the wealth of the wealthiest person','1 /{fraction:20.0f} of the wealth of the wealthiest person'),
-            ('Largest Win on a Lottery Ticket','{times:20.2f} times the largest-ever lottery win (per ticket)','{percent:20.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:20.0f} of the largest-ever lottery win (per ticket)'),
-        ] 
-    elif query["measure"].value()=="d":
-        answer = {"quip":"How many years can a mountain exist?"}
-        query.fields['unit'].choices=TIME_UNIT_CHOICES
-        references = [
-            ('age of the universe','{times:20.2f} times the age of the universe','{percent:20.2f} percent of the age of the universe','1 /{fraction:20.0f} of the age of the universe'),
-            ('first modern humans','{times:20.2f} times the period since the emergence of the first modern humans','{percent:20.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:20.0f} of the time since the emergence of the first modern humans'),
-            ('building of Great Wall of China','{times:20.2f} times the period since the building of the Great Wall of China','{percent:20.2f} percent of the time since the building of the Great Wall of China','1 /{fraction:20.0f} of the time since the building of the Great Wall of China'),
-            ('lifespan of Galapagos giant tortoise','{times:20.2f} times the lifespan of a Galapagos giant tortoise','{percent:20.2f} percent of the lifespan of a Galapagos giant tortoise','1 /{fraction:20.0f} of the lifespan of a Galapagos giant tortoise'),
-            ('human generation','{times:20.2f} human generations','{percent:20.2f} percent of a human generation','1 /{fraction:20.0f} of a human generation'),
-            ('lifespan of rat','{times:20.2f} times the lifespan of a rat','{percent:20.2f} percent of the lifespan of a rat','1 /{fraction:20.0f} of the lifespan of a rat'),
-        ] 
+    answer = {"quip":quip_lists[query["measure"].value()]}
+    query.fields['unit'].choices=unit_choice_lists[query["measure"].value()]
+    references = reference_lists[query["measure"].value()]
     answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
 
+def query_comparison(request):
+    params = request.GET
+    magnitude=params.get("magnitude")
+    if magnitude==None:
+        return JsonResponse({"success":"false", "message":"'magnitude' parameter missing"})
+    unit=params.get("unit")
+    if unit==None:
+        return JsonResponse({"success":"false", "message":"'unit' parameter missing"})
+    multiple=params.get("multiple")
+    if multiple==None:
+        return JsonResponse({"success":"false", "message":"'multiple' parameter missing"})
+    measure=params.get("measure")
+    if measure==None:
+        return JsonResponse({"success":"false", "message":"'measure' parameter missing"})
+    numberQuery = NumberQuery(number=magnitude, multiple=multiple, unit=unit, measure=measure)
+    references = reference_lists[measure]
+    answer = {"quip":quip_lists[measure]}
+    answer["comparisons"] = numberQuery.getComparisons(references)
+    return JsonResponse({
+        'magnitude':str(magnitude), 
+        'unit':str(unit), 
+        'measure':str(measure), 
+        'multiple':str(multiple), 
+        'answer': answer, 
+        })
+
 def convert(request):
     extentForm = ConvertForm(initial={'measure': 'e'})
-    extentForm.fields['unit'].choices=LENGTH_UNIT_CHOICES
-    extentForm.fields['target_unit'].choices=LENGTH_UNIT_CHOICES
+    extentForm.fields['unit'].choices=unit_choice_lists['e']
+    extentForm.fields['target_unit'].choices=unit_choice_lists['e']
     amountForm = ConvertForm(initial={'measure': 'a'})
-    amountForm.fields['unit'].choices=AMOUNT_UNIT_CHOICES
-    amountForm.fields['target_unit'].choices=AMOUNT_UNIT_CHOICES
+    amountForm.fields['unit'].choices=unit_choice_lists['a']
+    amountForm.fields['target_unit'].choices=unit_choice_lists['a']
     durationForm = ConvertForm(initial={'measure': 'd'})
-    durationForm.fields['unit'].choices=TIME_UNIT_CHOICES
-    durationForm.fields['target_unit'].choices=TIME_UNIT_CHOICES
+    durationForm.fields['unit'].choices=unit_choice_lists['d']
+    durationForm.fields['target_unit'].choices=unit_choice_lists['d']
     widgets = [
             {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
             {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
@@ -188,8 +140,8 @@ def conversion_answer(request):
     answer = {"quip":"Here's your conversion answer"}
     conversion_targets=[]
     if conversion["measure"].value()=="e":
-        conversion.fields['unit'].choices=LENGTH_UNIT_CHOICES
-        conversion.fields['target_unit'].choices=LENGTH_UNIT_CHOICES
+        conversion.fields['unit'].choices=unit_choice_lists['e']
+        conversion.fields['target_unit'].choices=unit_choice_lists['e']
         answer = {"quip":"The long and winding road ..."}
         conversion_targets = [
             (numberQuery.target_unit),
@@ -202,8 +154,8 @@ def conversion_answer(request):
             ('inch'),
         ]
     elif conversion["measure"].value()=="a":
-        conversion.fields['unit'].choices=AMOUNT_UNIT_CHOICES
-        conversion.fields['target_unit'].choices=AMOUNT_UNIT_CHOICES
+        conversion.fields['unit'].choices=unit_choice_lists['a']
+        conversion.fields['target_unit'].choices=unit_choice_lists['a']
         answer = {"quip":"Money makes the world go round ..."}
         conversion_targets = [
             (numberQuery.target_unit),
@@ -217,8 +169,8 @@ def conversion_answer(request):
             ('JPY'),
         ]
     elif conversion["measure"].value()=="d":
-        conversion.fields['unit'].choices=TIME_UNIT_CHOICES
-        conversion.fields['target_unit'].choices=TIME_UNIT_CHOICES
+        conversion.fields['unit'].choices=unit_choice_lists['d']
+        conversion.fields['target_unit'].choices=unit_choice_lists['d']
         answer = {"quip":"How long has it been ..."}
         conversion_targets = [
             (numberQuery.target_unit),
