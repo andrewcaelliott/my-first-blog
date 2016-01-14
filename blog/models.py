@@ -2,6 +2,9 @@ from django.db import models
 from django.utils import timezone
 from pint import UnitRegistry,UndefinedUnitError
 from math import log10
+from .fixer_io import convertToCurrency
+from .convert import convertToDefault
+from .convert import AMOUNT_UNITS
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 
@@ -15,7 +18,14 @@ UNIT_CHOICES= (
         ('yd', 'yard'),
         ('ft', 'foot'),
         ('in', 'inch'),
-        ('USD', 'USD'),
+        ('USD', 'US Dollars (USD)'),
+        ('AUD', 'Australian Dollar (AUD)'),
+        ('CAD', 'Canadian Dollar (CAD)'),
+        ('CHF', 'Swiss Franc (CHF)'),
+        ('EUR', 'Euros (EUR)'),
+        ('GBP', 'UK Pounds (GBP)'),
+        ('HKD', 'Hongkong Dollar (HKD)'),
+        ('JPY', 'Japanese Yen (JPY)'),
         ('year', 'year'),
         ('month', 'month'),
         ('week', 'week'),
@@ -24,7 +34,6 @@ UNIT_CHOICES= (
         ('minute', 'minute'),
         ('second', 'second'),
     )
-
 
 def sigfigs(x,n):
     l10 = 1+round(log10(x),0)
@@ -102,14 +111,7 @@ class NumberQuery(models.Model):
         else:
             self.scale = 0
         num_ans = num(self.number) * 10**self.scale
-        try:
-            quantity = Q_(" ".join([str(num_ans), self.unit]))
-            if quantity.dimensionality==ureg.s.dimensionality:
-                n = quantity.to(ureg.year).magnitude
-            else:
-                n = quantity.to_base_units().magnitude
-        except UndefinedUnitError as e:
-            n = num_ans
+        n = convertToDefault(num_ans, self.unit)
         comparisons = []
         for reference in references:
             fact = NumberFact.objects.get(title=reference[0])
@@ -120,27 +122,29 @@ class NumberQuery(models.Model):
                 fraction = sigfigs(1/comparisonNumber,3);
                 percent = sigfigs(times,6) * 100;
                 if comparisonNumber >=0.5:
-                    #comparisonRender=" ".join([str(round(comparisonNumber,2)),reference[1]])
-                    #comparisonRender = reference[1] % {"times":times, "fraction":fraction, "percent":percent}
                     comparisonRender = reference[1].format(times=times, fraction=fraction, percent=percent)
                 elif comparisonNumber >=0.1 or len(reference)<4:
-    #                comparisonRender=" ".join([str(round(1/comparisonNumber,2)),reference[2]])
                     comparisonRender = reference[2].format(times=times, fraction=fraction, percent = percent)
                 else:
                     comparisonRender = reference[3].format(times=times, fraction=fraction, percent = percent)
                 comparison ={"number":comparisonNumber, "render": comparisonRender}
                 comparisons.append(comparison)
-            #print(" ".join([refrender, reference[1]]))
         return comparisons
 
     def getConversions(self, conversions):
         conversion_answers = []
         num_ans = num(self.number) * self.getScaleFactor()
-        quantity = Q_(" ".join([str(num_ans), self.unit]))
-        for conversion in conversions:
-            conv_q = quantity.to(conversion)
-            mag = sigfigs(conv_q.magnitude,6)
-            conversion_answers.append(" ".join([str(mag), str(conv_q.units)]))
+        if self.unit in AMOUNT_UNITS: 
+            for conversion in conversions:
+                n = convertToCurrency(num_ans, self.unit, conversion)
+                mag = round(n,2)
+                conversion_answers.append(" ".join([str(mag), conversion]))
+        else:
+            quantity = Q_(" ".join([str(num_ans), self.unit]))
+            for conversion in conversions:
+                conv_q = quantity.to(conversion)
+                mag = sigfigs(conv_q.magnitude,6)
+                conversion_answers.append(" ".join([str(mag), conversion]))
         return conversion_answers
 
 

@@ -31,7 +31,14 @@ COUNT_UNIT_CHOICES= (
     )
 
 AMOUNT_UNIT_CHOICES= (
-        ('USD', 'USD'),
+        ('USD', 'US Dollars (USD)'),
+        ('AUD', 'Australian Dollar (AUD)'),
+        ('CAD', 'Canadian Dollar (CAD)'),
+        ('CHF', 'Swiss Franc (CHF)'),
+        ('EUR', 'Euros (EUR)'),
+        ('GBP', 'UK Pounds (GBP)'),
+        ('HKD', 'Hongkong Dollar (HKD)'),
+        ('JPY', 'Japanese Yen (JPY)'),
     )
 
 TIME_UNIT_CHOICES= (
@@ -137,6 +144,8 @@ def query_answer(request):
         references = [
             ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','1 /{fraction:20.0f} of the USA GDP'),
             ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','1 /{fraction:20.0f} of the UK GDP'),
+            ('Wealthiest Person','{times:20.2f} times the wealth of the wealthiest person','{percent:20.2f} percent of the wealth of the wealthiest person','1 /{fraction:20.0f} of the wealth of the wealthiest person'),
+            ('Largest Win on a Lottery Ticket','{times:20.2f} times the largest-ever lottery win (per ticket)','{percent:20.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:20.0f} of the largest-ever lottery win (per ticket)'),
         ] 
     elif query["measure"].value()=="d":
         answer = {"quip":"How many years can a mountain exist?"}
@@ -156,12 +165,16 @@ def convert(request):
     extentForm = ConvertForm(initial={'measure': 'e'})
     extentForm.fields['unit'].choices=LENGTH_UNIT_CHOICES
     extentForm.fields['target_unit'].choices=LENGTH_UNIT_CHOICES
+    amountForm = ConvertForm(initial={'measure': 'a'})
+    amountForm.fields['unit'].choices=AMOUNT_UNIT_CHOICES
+    amountForm.fields['target_unit'].choices=AMOUNT_UNIT_CHOICES
     durationForm = ConvertForm(initial={'measure': 'd'})
     durationForm.fields['unit'].choices=TIME_UNIT_CHOICES
     durationForm.fields['target_unit'].choices=TIME_UNIT_CHOICES
     widgets = [
-        {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
-        {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
+            {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
+            {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
+            {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
         ]
     return render(request, 'blog/convert.html', {'widgets':widgets})
 
@@ -184,6 +197,21 @@ def conversion_answer(request):
             ('yard'),
             ('foot'),
             ('inch'),
+        ]
+    elif conversion["measure"].value()=="a":
+        conversion.fields['unit'].choices=AMOUNT_UNIT_CHOICES
+        conversion.fields['target_unit'].choices=AMOUNT_UNIT_CHOICES
+        answer = {"quip":"Money makes the world go round ..."}
+        conversion_targets = [
+            (numberQuery.target_unit),
+            ('USD'),
+            ('AUD'),
+            ('CAD'),
+            ('CHF'),
+            ('EUR'),
+            ('GBP'),
+            ('HKD'),
+            ('JPY'),
         ]
     elif conversion["measure"].value()=="d":
         conversion.fields['unit'].choices=TIME_UNIT_CHOICES
