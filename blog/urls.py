@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^fact/(?P<pk>[0-9]+)/$', views.fact_detail, name='fact_detail'),
     url(r'^convert/$', views.convert, name='convert'),
     url(r'^convert/answer$', views.conversion_answer, name='conversion_answer'),
+    url(r'^convert/base$', views.conversion_base, name='conversion_base'),
+    url(r'^convert/unit$', views.conversion_unit, name='conversion_unit'),
 ]

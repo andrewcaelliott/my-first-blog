@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
+from django.http import JsonResponse
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
@@ -8,6 +9,8 @@ from .forms import PostForm
 from .forms import FactForm 
 from .forms import QueryForm 
 from .forms import ConvertForm 
+from .convert import convertToDefaultBase 
+from .convert import convertToUnit 
 
 def num(s):
     try:
@@ -233,3 +236,40 @@ def conversion_answer(request):
     answer["otherConversions"] = conversions[1:]
     return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer})   
 
+
+def conversion_base(request):
+    params = request.GET
+    magnitude=params.get("magnitude")
+    if magnitude==None:
+        return JsonResponse({"success":"false", "message":"'magnitude' parameter missing"})
+    unit=params.get("unit")
+    if unit==None:
+        return JsonResponse({"success":"false", "message":"'unit' parameter missing"})
+    base_magnitude, base_unit = convertToDefaultBase(magnitude, unit)
+    return JsonResponse({
+        'source_magnitude':str(magnitude), 
+        'source_unit':str(unit), 
+        'base_magnitude':str(base_magnitude), 
+        'base_unit':str(base_unit), 
+        'rendered': " ".join([str(base_magnitude), str(base_unit)]), 
+        })
+
+def conversion_unit(request):
+    params = request.GET
+    magnitude=params.get("magnitude")
+    if magnitude==None:
+        return JsonResponse({"success":"false", "message":"'magnitude' parameter missing"})
+    unit=params.get("unit")
+    if unit==None:
+        return JsonResponse({"success":"false", "message":"'unit' parameter missing"})
+    target_unit=params.get("target_unit")
+    if target_unit==None:
+        return JsonResponse({"success":"false", "message":"'target_unit' parameter missing"})
+    target_magnitude, target_unit = convertToUnit(num(magnitude), unit, target_unit)
+    return JsonResponse({
+        'source_magnitude':str(magnitude), 
+        'source_unit':str(unit), 
+        'target_magnitude':str(target_magnitude), 
+        'target_unit':str(target_unit), 
+        'rendered': " ".join([str(magnitude), str(unit),'=',str(target_magnitude), str(target_unit)]), 
+        })
