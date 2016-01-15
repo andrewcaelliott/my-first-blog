@@ -83,14 +83,19 @@ def itabn(request):
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
     return render(request, 'blog/itabn.html', {'widgets':widgets})
 
-def query_answer(request):
-    query = QueryForm(request.POST)
-    numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
+def query_answer(request, query):
+    numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
     answer = {"quip":quip_lists[query["measure"].value()]}
     query.fields['unit'].choices=unit_choice_lists[query["measure"].value()]
     references = reference_lists[query["measure"].value()]
     answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
+
+def query_answer_post(request):
+    return query_answer(request, QueryForm(request.POST))
+
+def query_answer_get(request):
+    return query_answer(request, QueryForm(request.GET))
 
 def query_comparison(request):
     params = request.GET
@@ -134,7 +139,6 @@ def convert(request):
             {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
         ]
     return render(request, 'blog/convert.html', {'widgets':widgets})
-
 
 def conversion_answer(request, conversion):
     numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value(), measure=conversion["measure"].value())
