@@ -15,6 +15,8 @@ from .convert import convertToUnit
 from .config import reference_lists
 from .config import unit_choice_lists
 from .config import quip_lists
+from .config import conversion_target_lists
+from .config import conversion_quip_lists
 
 def num(s):
     try:
@@ -134,60 +136,23 @@ def convert(request):
     return render(request, 'blog/convert.html', {'widgets':widgets})
 
 
-def conversion_answer(request):
-    conversion = ConvertForm(request.POST)
+def conversion_answer(request, conversion):
     numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value())
-    answer = {"quip":"Here's your conversion answer"}
-    conversion_targets=[]
-    if conversion["measure"].value()=="e":
-        conversion.fields['unit'].choices=unit_choice_lists['e']
-        conversion.fields['target_unit'].choices=unit_choice_lists['e']
-        answer = {"quip":"The long and winding road ..."}
-        conversion_targets = [
-            (numberQuery.target_unit),
-            ('kilometer'),
-            ('metre'),
-            ('millimeter'),
-            ('mile'),
-            ('yard'),
-            ('foot'),
-            ('inch'),
-        ]
-    elif conversion["measure"].value()=="a":
-        conversion.fields['unit'].choices=unit_choice_lists['a']
-        conversion.fields['target_unit'].choices=unit_choice_lists['a']
-        answer = {"quip":"Money makes the world go round ..."}
-        conversion_targets = [
-            (numberQuery.target_unit),
-            ('USD'),
-            ('AUD'),
-            ('CAD'),
-            ('CHF'),
-            ('EUR'),
-            ('GBP'),
-            ('HKD'),
-            ('JPY'),
-        ]
-    elif conversion["measure"].value()=="d":
-        conversion.fields['unit'].choices=unit_choice_lists['d']
-        conversion.fields['target_unit'].choices=unit_choice_lists['d']
-        answer = {"quip":"How long has it been ..."}
-        conversion_targets = [
-            (numberQuery.target_unit),
-            ('year'),
-            ('month'),
-            ('fortnight'),
-            ('week'),
-            ('day'),
-            ('hour'),
-            ('minute'),
-            ('second'),
-        ]
+    measure = conversion["measure"].value()
+    answer = {"quip":conversion_quip_lists[measure]}
+    conversion.fields['unit'].choices=unit_choice_lists[measure]
+    conversion.fields['target_unit'].choices=unit_choice_lists[measure]
+    conversion_targets = [(numberQuery.target_unit),] + conversion_target_lists[measure]
     conversions = numberQuery.getConversions(conversion_targets)
     answer["requestedConversion"] = conversions[0]
     answer["otherConversions"] = conversions[1:]
     return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer})   
 
+def conversion_answer_post(request):
+    return conversion_answer(request, ConvertForm(request.POST))
+
+def conversion_answer_get(request):
+    return conversion_answer(request, ConvertForm(request.GET))
 
 def conversion_base(request):
     params = request.GET

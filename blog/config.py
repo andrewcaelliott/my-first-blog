@@ -83,6 +83,7 @@ unit_choice_lists = {
     'd': DURATION_UNIT_CHOICES,
 }
 
+all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES
 
 quip_lists = {
     "e":"It's a long, long way to ...",
@@ -90,3 +91,64 @@ quip_lists = {
     "a":"There's more to life than money",
     "d":"How many years can a mountain exist?",
 }
+
+extent_conversion_targets = [
+    ('kilometer'),
+    ('metre'),
+    ('millimeter'),
+    ('mile'),
+    ('yard'),
+    ('foot'),
+    ('inch'),
+]
+
+amount_conversion_targets = [
+    ('USD'),
+    ('AUD'),
+    ('CAD'),
+    ('CHF'),
+    ('EUR'),
+    ('GBP'),
+    ('HKD'),
+    ('JPY'),
+]
+
+duration_conversion_targets = [
+    ('year'),
+    ('month'),
+    ('fortnight'),
+    ('week'),
+    ('day'),
+    ('hour'),
+    ('minute'),
+    ('second'),
+]
+
+
+conversion_target_lists = {
+    'e': extent_conversion_targets,
+    'a': amount_conversion_targets,
+    'd': duration_conversion_targets,
+}
+
+conversion_quip_lists = {
+    "e":"The long and winding road ...",
+    "a":"Money makes the world go round ...",
+    "d":"How long has it been ...",
+}
+
+MEASURE_CHOICES = (
+    ('c', 'count'),
+    ('a', 'amount'),
+    ('e', 'extent'),
+    ('d', 'duration'),
+    ('n', 'number'),
+)
+
+MULTIPLE_CHOICES = (
+    ('U', '-'),
+    ('k', 'thousand'),
+    ('M', 'million'),
+    ('G', 'billion'),
+    ('T', 'trillion'),
+)
