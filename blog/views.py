@@ -137,7 +137,7 @@ def convert(request):
 
 
 def conversion_answer(request, conversion):
-    numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value())
+    numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value(), measure=conversion["measure"].value())
     measure = conversion["measure"].value()
     answer = {"quip":conversion_quip_lists[measure]}
     conversion.fields['unit'].choices=unit_choice_lists[measure]
