@@ -13,15 +13,15 @@ UNIT_CHOICES = all_unit_choices
 
 class NumberQuery(models.Model):
 
-    text = models.TextField()
-    title = models.CharField(max_length=50)
-    number = models.CharField(max_length=20)
+    text       = models.TextField()
+    title      = models.CharField(max_length=50)
+    magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
-    measure = models.CharField(max_length=1, choices=MEASURE_CHOICES, default="c")
+    measure  = models.CharField(max_length=1, choices=MEASURE_CHOICES, default="c")
     location = models.CharField(max_length=100)
-    value = models.DecimalField(max_digits=30, decimal_places=10)
+    value    = models.DecimalField(max_digits=30, decimal_places=10)
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES, default="U")
-    unit = models.CharField(max_length=10, choices=UNIT_CHOICES)
+    unit     = models.CharField(max_length=10, choices=UNIT_CHOICES)
     target_unit = models.CharField(max_length=10, choices=UNIT_CHOICES)
     subject = models.TextField()
 
@@ -34,7 +34,7 @@ class NumberQuery(models.Model):
 
     def getComparisons(self, references):
         factor = self.setScaleFactor()
-        num_ans = num(self.number) * factor
+        num_ans = num(self.magnitude) * factor
         n = convertToDefault(num_ans, self.unit)
         comparisons = []
         for reference in references:
@@ -51,13 +51,13 @@ class NumberQuery(models.Model):
                     comparisonRender = reference[2].format(times=times, fraction=fraction, percent = percent)
                 else:
                     comparisonRender = reference[3].format(times=times, fraction=fraction, percent = percent)
-                comparison ={"number":comparisonNumber, "render": comparisonRender}
+                comparison ={"factor":comparisonNumber, "render": comparisonRender}
                 comparisons.append(comparison)
         return comparisons
 
     def getConversions(self, conversions):
         conversion_answers = []
-        num_ans = num(self.number) * self.setScaleFactor()
+        num_ans = num(self.magnitude) * self.setScaleFactor()
         if self.unit in AMOUNT_UNITS: 
             for conversion in conversions:
                 n = convertToCurrency(num_ans, self.unit, conversion)
@@ -73,7 +73,7 @@ class NumberQuery(models.Model):
 
 
     def _display(self):
-    	return " ".join([self.title,":",str(self.number), self.multiple, self.unit, self.subject])
+    	return " ".join([self.title,":",str(self.magnitude), self.multiple, self.unit, self.subject])
 
     def __str__(self):
         return self.title        
@@ -84,7 +84,7 @@ class NumberFact(models.Model):
 
     text = models.TextField()
     title = models.CharField(max_length=50)
-    number = models.CharField(max_length=20)
+    magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES)
     location = models.CharField(max_length=100)
@@ -94,13 +94,12 @@ class NumberFact(models.Model):
     subject = models.TextField()
 
     def _display(self):
-        return " ".join([self.title,":",self.number, self.multiple, self.unit, self.subject, self.measure])
+        return " ".join([self.title,":",self.magnitude, self.multiple, self.unit, self.subject, self.measure])
 
     def __str__(self):
         return self.title        
 
     render = property(_display)
-
 
 class Comparison(models.Model):
 

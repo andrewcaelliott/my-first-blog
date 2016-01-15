@@ -17,13 +17,7 @@ from .config import unit_choice_lists
 from .config import quip_lists
 from .config import conversion_target_lists
 from .config import conversion_quip_lists
-
-def num(s):
-    try:
-        return int(s)
-    except ValueError:
-        return float(s)
-
+from .utils import num
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
@@ -59,7 +53,7 @@ def fact_new(request):
         form = FactForm(request.POST)
         if form.is_valid():
             fact = form.save(commit=False)
-            fact.value=num(fact.number)
+            fact.value=num(fact.magnitude)
             fact.scale=0
             fact.save()
             return redirect('fact_detail', pk=fact.pk)
@@ -83,14 +77,19 @@ def itabn(request):
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
     return render(request, 'blog/itabn.html', {'widgets':widgets})
 
-def query_answer(request):
-    query = QueryForm(request.POST)
-    numberQuery = NumberQuery(number=query["number"].value(), multiple=query["multiple"].value(), unit=query["unit"].value())
+def query_answer(request, query):
+    numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
     answer = {"quip":quip_lists[query["measure"].value()]}
     query.fields['unit'].choices=unit_choice_lists[query["measure"].value()]
     references = reference_lists[query["measure"].value()]
     answer["comparisons"] = numberQuery.getComparisons(references)
-    return render(request, 'blog/query_answer.html', {'query': query, 'answer':answer})   
+    return render(request, 'blog/itabn_answer.html', {'query': query, 'answer':answer})   
+
+def query_answer_post(request):
+    return query_answer(request, QueryForm(request.POST))
+
+def query_answer_get(request):
+    return query_answer(request, QueryForm(request.GET))
 
 def query_comparison(request):
     params = request.GET
@@ -106,7 +105,7 @@ def query_comparison(request):
     measure=params.get("measure")
     if measure==None:
         return JsonResponse({"success":"false", "message":"'measure' parameter missing"})
-    numberQuery = NumberQuery(number=magnitude, multiple=multiple, unit=unit, measure=measure)
+    numberQuery = NumberQuery(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
     references = reference_lists[measure]
     answer = {"quip":quip_lists[measure]}
     answer["comparisons"] = numberQuery.getComparisons(references)
@@ -135,9 +134,8 @@ def convert(request):
         ]
     return render(request, 'blog/convert.html', {'widgets':widgets})
 
-
 def conversion_answer(request, conversion):
-    numberQuery = NumberQuery(number=conversion["number"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value(), measure=conversion["measure"].value())
+    numberQuery = NumberQuery(magnitude=conversion["magnitude"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value(), measure=conversion["measure"].value())
     measure = conversion["measure"].value()
     answer = {"quip":conversion_quip_lists[measure]}
     conversion.fields['unit'].choices=unit_choice_lists[measure]
