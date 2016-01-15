@@ -91,6 +91,12 @@ def query_answer_post(request):
 def query_answer_get(request):
     return query_answer(request, QueryForm(request.GET))
 
+def query_answer_post(request):
+    return query_answer(request, QueryForm(request.POST))
+
+def query_answer_get(request):
+    return query_answer(request, QueryForm(request.GET))
+
 def query_comparison(request):
     params = request.GET
     magnitude=params.get("magnitude")
