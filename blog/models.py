@@ -15,7 +15,7 @@ class NumberQuery(models.Model):
 
     text       = models.TextField()
     title      = models.CharField(max_length=50)
-    free      = models.CharField(max_length=100)
+    number      = models.CharField(max_length=100)
     magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
     measure  = models.CharField(max_length=1, choices=MEASURE_CHOICES, default="c")

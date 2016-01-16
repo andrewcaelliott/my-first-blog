@@ -20,7 +20,7 @@ class FactForm(forms.ModelForm):
 class FreeForm(forms.ModelForm):
     class Meta:
         model = NumberQuery
-        fields = ('free',)                
+        fields = ('number',)                
 
 class QueryForm(forms.ModelForm):
 

@@ -100,13 +100,13 @@ def query_answer_get(request):
     numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
     return query_answer(request, numberQuery)
 
-def query_answer_get_free(request):
+def query_compare(request):
     query =  FreeForm(request.GET)
-    magnitude, multiple, unit, measure = parseBigNumber(query["free"].value())
+    magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
     numberQuery = NumberQuery(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
     return query_answer(request, numberQuery)
 
-def query_comparison(request):
+def query_api(request):
     params = request.GET
     magnitude=params.get("magnitude")
     if magnitude==None:
