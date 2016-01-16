@@ -45,10 +45,10 @@ EXTENT_UNIT_CHOICES= (
         ('m', 'meter'),
         ('cm', 'centimeter'),
         ('mm', 'millimeter'),
-        ('mi', 'mile'),
-        ('yd', 'yard'),
-        ('ft', 'foot'),
-        ('in', 'inch'),
+        ('mile', 'mile'),
+        ('yard', 'yard'),
+        ('foot', 'foot'),
+        ('inch', 'inch'),
     )
 
 COUNT_UNIT_CHOICES= (

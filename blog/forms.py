@@ -17,6 +17,11 @@ class FactForm(forms.ModelForm):
         model = NumberFact
         fields = ('title', 'magnitude', 'unit', 'subject', 'text',)        
 
+class FreeForm(forms.ModelForm):
+    class Meta:
+        model = NumberQuery
+        fields = ('free',)                
+
 class QueryForm(forms.ModelForm):
 
     class Meta:

@@ -1,7 +1,7 @@
-from pint import UnitRegistry,UndefinedUnitError
 from math import log10
 from .fixer_io import convertToUSD
 from .fixer_io import convertToCurrency
+from pint import UnitRegistry,UndefinedUnitError
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 

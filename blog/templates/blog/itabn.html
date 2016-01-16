@@ -1,6 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+        <div class="widget">
+	<h1><a href=""><span></span> Is This A Big Number?</a></h1>
+            <form method="GET" class="query-form" action="/itabn/answer/free">
+                {{ freeForm.as_p }}
+                <button type="submit" class="save btn btn-default">Ask</button>
+            </form>
+        </div>
         {% for widget in widgets %}
             <div class="widget">
 		<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ widget.title }}</a></h1>

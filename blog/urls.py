@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^itabn/$', views.itabn, name='itabn'),
     url(r'^itabn/answer/post$', views.query_answer_post, name='query_answer_post'),
     url(r'^itabn/answer$', views.query_answer_get, name='query_answer_get'),
+    url(r'^itabn/answer/free$', views.query_answer_get_free, name='query_answer_get_free'),
     url(r'^itabn/comparison$', views.query_comparison, name='query_comparison'),
     url(r'^posts/$', views.post_list, name='post_list'),
     url(r'^facts/$', views.fact_list, name='fact_list'),

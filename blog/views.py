@@ -9,6 +9,7 @@ from .models import NumberQuery
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
+from .forms import FreeForm 
 from .forms import ConvertForm 
 from .convert import convertToDefaultBase 
 from .convert import convertToUnit 
@@ -18,6 +19,7 @@ from .config import quip_lists
 from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
+from .utils import parseBigNumber
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
@@ -62,6 +64,7 @@ def fact_new(request):
     return render(request, 'blog/fact_edit.html', {'form': form})   
 
 def itabn(request):
+    freeForm = FreeForm()
     extentForm = QueryForm(initial={'measure': 'e'})
     extentForm.fields['unit'].choices=unit_choice_lists['e']
     countForm = QueryForm(initial={'measure': 'c'})
@@ -75,27 +78,33 @@ def itabn(request):
         {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
         {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
-    return render(request, 'blog/itabn.html', {'widgets':widgets})
+    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm})
 
-def query_answer(request, query):
-    numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
-    answer = {"quip":quip_lists[query["measure"].value()]}
-    query.fields['unit'].choices=unit_choice_lists[query["measure"].value()]
-    references = reference_lists[query["measure"].value()]
+def query_answer(request, numberQuery):
+    query =  QueryForm(instance=numberQuery)
+#    query.fields['magnitude'].value=numberQuery.magnitude
+    measure = numberQuery.measure
+    answer = {"quip":quip_lists[measure]}
+    query.fields['unit'].choices=unit_choice_lists[measure]
+    references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
     return render(request, 'blog/itabn_answer.html', {'query': query, 'answer':answer})   
 
 def query_answer_post(request):
-    return query_answer(request, QueryForm(request.POST))
+    query =  QueryForm(request.POST)
+    numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
+    return query_answer(request,numberQuery)
 
 def query_answer_get(request):
-    return query_answer(request, QueryForm(request.GET))
+    query =  QueryForm(request.GET)
+    numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
+    return query_answer(request, numberQuery)
 
-def query_answer_post(request):
-    return query_answer(request, QueryForm(request.POST))
-
-def query_answer_get(request):
-    return query_answer(request, QueryForm(request.GET))
+def query_answer_get_free(request):
+    query =  FreeForm(request.GET)
+    magnitude, multiple, unit, measure = parseBigNumber(query["free"].value())
+    numberQuery = NumberQuery(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
+    return query_answer(request, numberQuery)
 
 def query_comparison(request):
     params = request.GET
