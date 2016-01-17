@@ -37,9 +37,24 @@ def getScaleFactor(multiple):
 std_units = {
     "":"i",
     "$":"USD",
+    "dollar":"USD",
+    "dollars":"USD",
+    "usd":"USD",
     "£":"GBP",
+    "pounds":"GBP",
+    "sterling":"GBP",
+    "gbp":"GBP",
     "€":"EUR",
+    "euro":"EUR",
+    "euros":"EUR",
+    "eur":"EUR",
     "¥":"JPY",
+    "yen":"JPY",
+    "jpy":"JPY",
+    "aud":"AUD",
+    "cad":"CAD",
+    "chf":"CHF",
+    "hkd":"HKD",
     "miles":"mile",
     "yards":"yard",
     "yd":"yard",
@@ -86,11 +101,11 @@ std_multiples = {
 
 def normalise(parsed):
     magnitude, multiple, unit = parsed
-    if unit in std_units.keys():
-        unit = std_units[unit]
+    if unit.lower() in std_units.keys():
+        unit = std_units[unit.lower()]
     measure = getMeasure(unit)   
-    if multiple in std_multiples.keys():
-        multiple = std_multiples[multiple]
+    if multiple.lower() in std_multiples.keys():
+        multiple = std_multiples[multiple.lower()]
     #if multiple == 'b':
         #multiple = 'G'
     #elif multiple == 'bn':
@@ -198,3 +213,4 @@ def tests():
     #print(parsed)
 
 #tests()
+
