@@ -26,20 +26,21 @@ count_references = [
 ]
 
 amount_references = [
-    ('GDP of China','{times:20.2f} times the China GDP','{percent:20.2f} percent of the China GDP','1 /{fraction:20.0f} of the China GDP'),
     ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','1 /{fraction:20.0f} of the USA GDP'),
+    ('GDP of China','{times:20.2f} times the China GDP','{percent:20.2f} percent of the China GDP','1 /{fraction:20.0f} of the China GDP'),
     ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','1 /{fraction:20.0f} of the UK GDP'),
     ('GDP of Luxembourg','{times:20.2f} times the Luxembourg GDP','{percent:20.2f} percent of the Luxembourg GDP','1 /{fraction:20.0f} of the Luxembourg GDP'),
+    ('Wealthiest Person','{times:20.2f} times the wealth of the wealthiest person','{percent:20.2f} percent of the wealth of the wealthiest person','1 /{fraction:20.0f} of the wealth of the wealthiest person'),
     ('Largest Win on a Lottery Ticket','{times:20.2f} times the largest-ever lottery win (per ticket)','{percent:20.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:20.0f} of the largest-ever lottery win (per ticket)'),
     ('Cost of Porsche 911 Carrera','{times:20.2f} times the cost of a Porsche 911 Carrera','{percent:20.2f} percent of the cost of a Porsche 911 Carrera','1 /{fraction:20.0f} of the the cost of a Porsche 911 Carrera'),
     ('Cost of Ford Focus `Style` car','{times:20.2f} times the cost of a Ford Focus `Style` car','{percent:20.2f} percent of the cost of a Ford Focus `Style` car','1 /{fraction:20.0f} of the the cost of a Ford Focus `Style` car'),
     ('Cost of iPad Air (64GB)','{times:20.2f} times the cost of a iPad Air (64GB)','{percent:20.2f} percent of the cost of a iPad Air (64GB)','1 /{fraction:20.0f} of the the cost of a iPad Air (64GB)'),
     ('Cost of Big Mac in USA','{times:20.2f} times the cost of a Big Mac in USA','{percent:20.2f} percent of the cost of a Big Mac in USA','1 /{fraction:20.0f} of the the cost of a Big Mac in USA'),
-    ('Wealthiest Person','{times:20.2f} times the wealth of the wealthiest person','{percent:20.2f} percent of the wealth of the wealthiest person','1 /{fraction:20.0f} of the wealth of the wealthiest person'),
 ] 
 
 duration_references = [
     ('age of the universe','{times:20.2f} times the age of the universe','{percent:20.2f} percent of the age of the universe','1 /{fraction:20.0f} of the age of the universe'),
+    ('age of the Earth','{times:20.2f} times the age of the Earth','{percent:20.2f} percent of the age of the Earth','1 /{fraction:20.0f} of the age of the Earth'),
     ('first modern humans','{times:20.2f} times the period since the emergence of the first modern humans','{percent:20.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:20.0f} of the time since the emergence of the first modern humans'),
     ('building of Great Wall of China','{times:20.2f} times the period since the building of the Great Wall of China','{percent:20.2f} percent of the time since the building of the Great Wall of China','1 /{fraction:20.0f} of the time since the building of the Great Wall of China'),
     ('lifespan of Galapagos giant tortoise','{times:20.2f} times the lifespan of a Galapagos giant tortoise','{percent:20.2f} percent of the lifespan of a Galapagos giant tortoise','1 /{fraction:20.0f} of the lifespan of a Galapagos giant tortoise'),

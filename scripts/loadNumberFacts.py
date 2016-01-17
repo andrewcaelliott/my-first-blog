@@ -12,8 +12,8 @@ def addFact(title="Test Fact", text="Just a trial", number="100", scale=0, multi
 	nf = NumberFact()
 	nf.title=title
 	nf.text=text
-	nf.number=number
-	nf.value=num(nf.number)
+	nf.magnitude=number
+	nf.value=num(nf.magnitude)
 	nf.scale=scale
 	nf.unit = unit
 	nf.measure = measure
@@ -26,8 +26,13 @@ def deleteFacts(title=None):
 	for fact in facts:
 		fact.delete()
 
-def loadNumberFacts(fileName, metric, unit):
-	inFile= open(fileName)
+def deleteAllFacts():
+	facts = NumberFact.objects.all()
+	for fact in facts:
+		fact.delete()
+
+def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
+	inFile= open(fileName, encoding=encoding)
 	lines = inFile.readlines()
 	for line in lines[0:]:
 		print(line)
@@ -38,8 +43,12 @@ def loadNumberFacts(fileName, metric, unit):
 		print(fact.render)
 
 def run():
-#	loadNumberFacts("../blog/data/Population_of_countries.csv","Population of ","people")
-#	loadNumberFacts("../blog/data/GDP_of_countries.csv","GDP of ","USD p/a")
-#	loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
-	loadNumberFacts("./blog/data/heights_2015.csv","Height of ","m")
+    deleteAllFacts()
+    loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
+    loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a")
+    loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
+    loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
+    loadNumberFacts("./blog/data/Reference_Lengths.csv","Length of ","USD p/a")
+    loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
+    loadNumberFacts("./blog/data/heights_2015.csv","Height of ","m")
 
