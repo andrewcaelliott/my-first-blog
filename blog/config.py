@@ -4,6 +4,15 @@ extent_references = [
     ('Length of trip around the equator','{times:20.2f} times the distance around the equator','1 / {fraction:20.0f} of the distance around the equator'),
     ('Length of trip from London to New York','{times:20.2f} times the distance from London to New York','1 / {fraction:20.0f} of the distance from London to New York'),
     ('Length of trip from London to Edinburgh','{times:20.2f} times the distance from London to Edinburgh','1 / {fraction:20.0f} of the distance from London to Edinburgh'),
+    ('Height of Orbit of International Space Station','{times:20.2f} times the height of the orbit of the International Space Station','1 / {fraction:20.0f} of the height of the orbit of the International Space Station'),
+    ('Height of Cruising Altitude of Airbus commercial jet','{times:20.2f} times the cruising altitude of a commercial jet','1 / {fraction:20.0f} of the cruising altitude of a commercial jet'),
+    ('Height of Mount Everest','{times:20.2f} times the height of Mount Everest','1 / {fraction:20.0f} of the height of Mount Everest'),
+    ('Height of Angel Falls (Venuzeula)','{times:20.2f} times the height of Angel Falls (Venuzeula)','1 / {fraction:20.0f} of the height of Angel Falls (Venuzeula)'),
+    ('Height of `Burj` Khalifa scyscraper (Dubai)','{times:20.2f} times the height of the `Burj` Khalifa scyscraper (Dubai)','1 / {fraction:20.0f} of the height of the `Burj` Khalifa scyscraper (Dubai)'),
+    ('Height of London Eye Ferris Wheel','{times:20.2f} times the height of the London Eye Ferris Wheel','1 / {fraction:20.0f} of the height of the London Eye Ferris Wheel'),
+    ('Height of giraffe','{times:20.2f} times the height of a giraffe','1 / {fraction:20.0f} of the height of a giraffe'),
+    ('Height of African elephant','{times:20.2f} times the height of an African elephant','1 / {fraction:20.0f} of the height of an African elephant'),
+    ('Height of ostrich','{times:20.2f} times the height of an ostrich','1 / {fraction:20.0f} of the height of an ostrich'),
     ('Length of a football pitch','{times:20.2f} football pitches end to end','1 / {fraction:20.0f} as long as a football pitch'),
     ('Length of a London bus','{times:20.2f} London buses end to end','1 / {fraction:20.0f} as long as a London bus'),
     ('Length of an iPhone 6',"{times:20.2f} iPhone 6's end to end",'1 / {fraction:20.0f} as long as an iPhone 6'),
@@ -17,10 +26,16 @@ count_references = [
 ]
 
 amount_references = [
+    ('GDP of China','{times:20.2f} times the China GDP','{percent:20.2f} percent of the China GDP','1 /{fraction:20.0f} of the China GDP'),
     ('GDP of United States','{times:20.2f} times the USA GDP','{percent:20.2f} percent of the USA GDP','1 /{fraction:20.0f} of the USA GDP'),
     ('GDP of United Kingdom','{times:20.2f} times the UK GDP','{percent:20.2f} percent of the UK GDP','1 /{fraction:20.0f} of the UK GDP'),
-    ('Wealthiest Person','{times:20.2f} times the wealth of the wealthiest person','{percent:20.2f} percent of the wealth of the wealthiest person','1 /{fraction:20.0f} of the wealth of the wealthiest person'),
+    ('GDP of Luxembourg','{times:20.2f} times the Luxembourg GDP','{percent:20.2f} percent of the Luxembourg GDP','1 /{fraction:20.0f} of the Luxembourg GDP'),
     ('Largest Win on a Lottery Ticket','{times:20.2f} times the largest-ever lottery win (per ticket)','{percent:20.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:20.0f} of the largest-ever lottery win (per ticket)'),
+    ('Cost of Porsche 911 Carrera','{times:20.2f} times the cost of a Porsche 911 Carrera','{percent:20.2f} percent of the cost of a Porsche 911 Carrera','1 /{fraction:20.0f} of the the cost of a Porsche 911 Carrera'),
+    ('Cost of Ford Focus `Style` car','{times:20.2f} times the cost of a Ford Focus `Style` car','{percent:20.2f} percent of the cost of a Ford Focus `Style` car','1 /{fraction:20.0f} of the the cost of a Ford Focus `Style` car'),
+    ('Cost of iPad Air (64GB)','{times:20.2f} times the cost of a iPad Air (64GB)','{percent:20.2f} percent of the cost of a iPad Air (64GB)','1 /{fraction:20.0f} of the the cost of a iPad Air (64GB)'),
+    ('Cost of Big Mac in USA','{times:20.2f} times the cost of a Big Mac in USA','{percent:20.2f} percent of the cost of a Big Mac in USA','1 /{fraction:20.0f} of the the cost of a Big Mac in USA'),
+    ('Wealthiest Person','{times:20.2f} times the wealth of the wealthiest person','{percent:20.2f} percent of the wealth of the wealthiest person','1 /{fraction:20.0f} of the wealth of the wealthiest person'),
 ] 
 
 duration_references = [
