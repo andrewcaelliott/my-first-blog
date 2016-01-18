@@ -103,23 +103,14 @@ std_multiples = {
 
 def normalise(parsed):
     magnitude, multiple, unit = parsed
+    if (multiple=="U" and unit.lower() in std_multiples):
+        multiple=unit
+        unit="i"
     if unit.lower() in std_units.keys():
         unit = std_units[unit.lower()]
     measure = getMeasure(unit)   
     if multiple.lower() in std_multiples.keys():
         multiple = std_multiples[multiple.lower()]
-    #if multiple == 'b':
-        #multiple = 'G'
-    #elif multiple == 'bn':
-        #multiple = 'G'
-    #elif multiple == 'billion':
-        #multiple = 'G'
-    #elif multiple == 't':
-        #multiple = 'T'
-    #elif multiple == 'tn':
-        #multiple = 'T'
-    #elif multiple == 'trillion':
-        #multiple = 'T'
     return magnitude, multiple, unit, measure 
 
 def getMeasure(unit):
