@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.http import JsonResponse
+from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
@@ -67,12 +68,16 @@ def itabn(request):
     freeForm = FreeForm()
     extentForm = QueryForm(initial={'measure': 'e'})
     extentForm.fields['unit'].choices=unit_choice_lists['e']
+    extentForm.fields['measure'].widget = forms.HiddenInput()
     countForm = QueryForm(initial={'measure': 'c'})
     countForm.fields['unit'].choices=unit_choice_lists['c']
+    countForm.fields['measure'].widget = forms.HiddenInput()
     amountForm = QueryForm(initial={'measure': 'a'})
     amountForm.fields['unit'].choices=unit_choice_lists['a']
+    amountForm.fields['measure'].widget = forms.HiddenInput()
     durationForm = QueryForm(initial={'measure': 'd'})
     durationForm.fields['unit'].choices=unit_choice_lists['d']
+    durationForm.fields['measure'].widget = forms.HiddenInput()
     widgets = [
         {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
         {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
@@ -83,6 +88,7 @@ def itabn(request):
 def query_answer(request, numberQuery):
     query =  QueryForm(instance=numberQuery)
 #    query.fields['magnitude'].value=numberQuery.magnitude
+    query.fields['measure'].widget = forms.HiddenInput()
     measure = numberQuery.measure
     answer = {"quip":quip_lists[measure]}
     query.fields['unit'].choices=unit_choice_lists[measure]
@@ -136,12 +142,15 @@ def convert(request):
     extentForm = ConvertForm(initial={'measure': 'e'})
     extentForm.fields['unit'].choices=unit_choice_lists['e']
     extentForm.fields['target_unit'].choices=unit_choice_lists['e']
+    extentForm.fields['measure'].widget = forms.HiddenInput()
     amountForm = ConvertForm(initial={'measure': 'a'})
     amountForm.fields['unit'].choices=unit_choice_lists['a']
     amountForm.fields['target_unit'].choices=unit_choice_lists['a']
+    amountForm.fields['measure'].widget = forms.HiddenInput()
     durationForm = ConvertForm(initial={'measure': 'd'})
     durationForm.fields['unit'].choices=unit_choice_lists['d']
     durationForm.fields['target_unit'].choices=unit_choice_lists['d']
+    durationForm.fields['measure'].widget = forms.HiddenInput()
     widgets = [
             {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
             {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
@@ -150,6 +159,7 @@ def convert(request):
     return render(request, 'blog/convert.html', {'widgets':widgets})
 
 def conversion_answer(request, conversion):
+    conversion.fields['measure'].widget = forms.HiddenInput()
     numberQuery = NumberQuery(magnitude=conversion["magnitude"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value(), measure=conversion["measure"].value())
     measure = conversion["measure"].value()
     answer = {"quip":conversion_quip_lists[measure]}
