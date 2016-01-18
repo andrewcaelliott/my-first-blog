@@ -13,7 +13,7 @@ aside {
 
 h1, h2, h3, h4 {
     font-family: 'Helvetica', 'Arial', sans-serif;
-    color: #7777ff;
+    xcolor: #7777ff;
 }
 
 .page-header {
@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
     padding: 0 5rem;
 }
 
-.content h1 a {
+.content h1 a, .content h2 {
     color: #487D18
 }
 

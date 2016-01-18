@@ -2,25 +2,33 @@
 
 {% block content %}
     <div class="answer">
-        <h2>{{ answer.quip }}</h2>
-        <!--form method="POST" class="query-form" action="/convert/answer">
-            {% csrf_token %}
-            {{ conversion.as_p }}
-            <button type="submit" class="save btn btn-default">Ask</button>
-        </form-->
-        <form method="GET" class="query-form" action="/convert/answer">
-            {{ conversion.as_p }}
-            <button type="submit" class="save btn btn-default">Ask</button>
-        </form>
-        <h2>That would be ...</h2>
-            <div class="comparison">
-                <p>{{ answer.requestedConversion }}</p>
-            </div>
-        <h2>And also ...</h2>
-        {% for conversion in answer.otherConversions %}
-            <div class="comparison">
-                <p>{{ conversion }}</p>
-            </div>
-        {% endfor %}
+        <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div>
+	        <h2>{{ answer.quip }}</h2>
+	        <!--form method="POST" class="query-form" action="/convert/answer">
+	            {% csrf_token %}
+	            {{ conversion.as_p }}
+	            <button type="submit" class="save btn btn-default">Ask</button>
+	        </form-->
+	        <form method="GET" class="query-form" action="/convert/answer">
+	            {{ conversion.as_p }}
+	            <button type="submit" class="save btn btn-default">Ask</button>
+	        </form>
+	        </div>
+        </div>
+        <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div>
+	        <h2>That would be ...</h2>
+	            <div class="comparison">
+	                <p>{{ answer.requestedConversion }}</p>
+	            </div>
+	        <h2>And also ...</h2>
+	        {% for conversion in answer.otherConversions %}
+	            <div class="comparison">
+	                <p>{{ conversion }}</p>
+	            </div>
+	        {% endfor %}
+        </div>
+        </div>
     </div>
 {% endblock %}
