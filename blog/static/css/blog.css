@@ -1,5 +1,5 @@
-section {
-    width:400px;
+xsection {
+    xwidth:400px;
     float:left;
     padding:10px;        
 }
@@ -9,6 +9,11 @@ aside {
     width:300px;
     float:right;
     padding:10px;        
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #7777ff;
 }
 
 .page-header {
@@ -23,17 +28,52 @@ aside {
     text-decoration: none;
 }
 
+.page-header a, .page-header h3 {
+    color: #10250C;
+}
+
+.page-header h3 a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .content {
     margin-left: 40px;
 }
 
-div.content.container{
-    width:800px;
+.content h1 a {
+    color: #487D18
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Ubuntu', cursive;
-    color: #7777ff;
+div.content.container{
+    xwidth:800px;
+}
+
+.content .widget {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.content .widget h1 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.content .widget > div {
+    background-color: rgba(72,125,24,0.1);
+    padding: 1rem;
+}
+
+.content .widget label {
+    width: 7em;
+}
+
+.content .widget input, .content .widget select {
+    width: 45%;
+}
+
+#ads {
+    background-color: #EEE;
 }
 
 .date {
@@ -41,7 +81,7 @@ h1, h2, h3, h4 {
     color: #6262FF;
 }
 
-.save {
+.xsave {
     float: right;
 }
 

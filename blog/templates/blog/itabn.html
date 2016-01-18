@@ -1,20 +1,26 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-        <div class="widget">
-	<h1><a href=""><span></span> Is This A Big Number?</a></h1>
-            <form method="GET" class="query-form" action="/itabn/compare">
-                {{ freeForm.as_p }}
-                <button type="submit" class="save btn btn-default">Ask</button>
-            </form>
+        <div class="row widget">
+            <div>
+		<h1><a href=""><span></span> Is This A Big Number?</a></h1>
+	        <form method="GET" class="query-form" action="/itabn/compare">
+	                {{ freeForm }}
+	                <button type="submit" class="save btn btn-warning">Ask</button>
+	        </form>
+            </div>
         </div>
+        <div class="row">
         {% for widget in widgets %}
-            <div class="widget">
-		<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ widget.title }}</a></h1>
-                <form method="GET" class="query-form" action="/itabn/answer">
-                    {{ widget.form.as_p }}
-                    <button type="submit" class="save btn btn-default">Ask</button>
-                </form>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            	<div>
+			<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ widget.title }}</a></h1>
+	                <form method="GET" class="query-form" action="/itabn/answer">
+	                    {{ widget.form.as_p }}
+	                    <button type="submit" class="save btn btn-warning">Ask</button>
+	                </form>
+                </div>
             </div>
         {% endfor %}
+        </div>
 {% endblock %}

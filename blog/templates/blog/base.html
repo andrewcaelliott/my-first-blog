@@ -30,21 +30,22 @@
 	    <div class="page-header">
 	        <a href="{% url 'post_new' %}" class="top-menu" title="new post"><span class="glyphicon glyphicon-plus"></span></a>
 	        <a href="{% url 'fact_new' %}" class="top-menu" title="new fact"><span class="glyphicon glyphicon-star"></span></a>
-	        <h1><a href="/">Is That A Big Number?</a></h1>
+	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a></h1>
 	        <p><a href="/">Nuts about numbers? Quizzical about Quantities? Mulling over Measurements?</a></p>
-	        <h3><a href ="/itabn/">How Big?</a> - <a href ="/posts/">Number Posts</a> - <a href ="/facts/">Number Facts</a> - <a href ="/convert/">Conversion Centre</a></h3>
+	        <h3><a href ="/itabn/">How Big?</a> - <a href ="/posts/">Number Posts</a> - <a href ="/facts/">Number Facts</a> - <a href ="/convert/">Conversion Centre</a> - Numbers in the News - Landmark Numbers - For the Love of Numbers - Know Your Numbers</h3>
 	    </div>
-	    <section>
-		    <div class="content container">
+	    <section class="content container_fluid">
 		        <div class="row">
-		            <div class="col-md-8">
-		            {% block content %}
-		            {% endblock %}
+		            <div class="col-md-9">
+			            {% block content %}
+			            {% endblock %}
 		            </div>
+		            <div id="ads" class="col-md-3">
+		            	&nbsp;
+			    </div>
 		        </div>
-		    </div>
 	    </section>    
-	    <aside>
+	    <!--aside>
 	    	<h2>Other Sections</h2>
 	    	<article><h3>Is that a big number?</h3><p>Compare your number to ...</p></article>
 	    	<article><h3>Numbers in the News</h3><p>Mountain or molehill?</p></article>
@@ -52,6 +53,6 @@
 	    	<article><h3>For the Love of Numbers</h3><p>Number-led Blog</p></article>
 	    	<article><h3>Know your Numbers</h3><p>Know your Tera from your Peta?</p></article>
 	    	<article><h3>Conversion Centre</h3><p>USD <> GBP, miles <> km, furlongs <> fathoms, etc</p></article>
-	    </aside>
+	    </aside-->
 	</body>
 </html>
