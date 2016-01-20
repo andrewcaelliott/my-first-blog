@@ -130,6 +130,6 @@ def run6():
 		print(fact.value, fact.render)
 
 def run():
-	nq = NumberQuery(magnitude=40000, multiple="k", unit="km", measure="extent")
+	nq = NumberQuery(magnitude=1.0001, multiple="T", unit="", measure="count")
 	print(nq.getCloseMatches())
 

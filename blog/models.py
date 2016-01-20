@@ -14,7 +14,6 @@ UNIT_CHOICES = all_unit_choices
 def closeEnoughNumberFact(magnitude, scale, tolerance, measure):
 #   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
     facts = []
-    print(magnitude,scale)
     nf = NumberFact.objects.filter(value__gte=num(magnitude)*1000/(1+tolerance), value__lt=num(magnitude)*1000*(1+tolerance), scale=scale-3, measure=measure)
     for fact in nf:
         facts.append(fact)
@@ -71,11 +70,13 @@ class NumberQuery(models.Model):
         else:
             temp_scale = 0
 
-        closeEnough = closeEnoughNumberFact(n, temp_scale, 0.25, self.get_measure_display())
+        closeEnough = closeEnoughNumberFact(n, temp_scale, 0.2, self.get_measure_display())
         closeMatches = []
         for fact in closeEnough:
             closeMatches.append(fact.render)
 #        closeMatches.append(" ".join([str(self.magnitude), str(scale), str(self.fields)]))
+        if len(closeMatches)==0:
+            closeMatches.append("No close matches found")
         return closeMatches
 
     def getComparisons(self, references):
