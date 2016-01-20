@@ -23,47 +23,10 @@ from .config import conversion_quip_lists
 from .utils import num
 from .utils import parseBigNumber
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
-    return render(request, 'blog/post_list.html', {'posts':posts})
-
-def fact_list(request):
-    facts = NumberFact.objects.filter().order_by('text')  
-    return render(request, 'blog/fact_list.html', {'facts':facts})
-
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
-
-def post_new(request):
-    if request.method == "POST":
-    	form = PostForm(request.POST)
-    	if form.is_valid():
-    	    post = form.save(commit=False)
-    	    post.author = request.user
-    	    post.published_date = timezone.now()
-    	    post.save()
-    	    return redirect('post_detail', pk=post.pk)
-    else:	
-    	form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})    
-
-def fact_detail(request, pk):
-    fact = get_object_or_404(NumberFact, pk=pk)
-    return render(request, 'blog/fact_detail.html', {'fact': fact})
-
-def fact_new(request):
-    if request.method == "POST":
-        form = FactForm(request.POST)
-        if form.is_valid():
-            fact = form.save(commit=False)
-            fact.value=num(fact.magnitude)
-            fact.scale=0
-            fact.save()
-            return redirect('fact_detail', pk=fact.pk)
-    else:   
-        form = FactForm()
-    return render(request, 'blog/fact_edit.html', {'form': form})   
+def home(request):
+    freeForm = FreeForm()
+    widgets = []
+    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
 
 def itabn(request):
     freeForm = FreeForm()
@@ -95,7 +58,7 @@ def query_answer(request, numberQuery):
     query.fields['unit'].choices=unit_choice_lists[measure]
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
-    return render(request, 'blog/itabn_answer.html', {'query': query, 'answer':answer})   
+    return render(request, 'blog/itabn_answer.html', {'query': query, 'answer':answer, 'quote': choice(quotes)})   
 
 def query_answer_post(request):
     query =  QueryForm(request.POST)
@@ -170,7 +133,7 @@ def conversion_answer(request, conversion):
     conversions = numberQuery.getConversions(conversion_targets)
     answer["requestedConversion"] = conversions[0]
     answer["otherConversions"] = conversions[1:]
-    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer})   
+    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer, 'quote': choice(quotes)})   
 
 def conversion_answer_post(request):
     return conversion_answer(request, ConvertForm(request.POST))
@@ -214,3 +177,45 @@ def conversion_unit(request):
         'target_unit':str(target_unit), 
         'rendered': " ".join([str(magnitude), str(unit),'=',str(target_magnitude), str(target_unit)]), 
         })
+
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
+    return render(request, 'blog/post_list.html', {'posts':posts})
+
+def fact_list(request):
+    facts = NumberFact.objects.filter().order_by('text')  
+    return render(request, 'blog/fact_list.html', {'facts':facts})
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:   
+        form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})    
+
+def fact_detail(request, pk):
+    fact = get_object_or_404(NumberFact, pk=pk)
+    return render(request, 'blog/fact_detail.html', {'fact': fact})
+
+def fact_new(request):
+    if request.method == "POST":
+        form = FactForm(request.POST)
+        if form.is_valid():
+            fact = form.save(commit=False)
+            fact.value=num(fact.magnitude)
+            fact.scale=0
+            fact.save()
+            return redirect('fact_detail', pk=fact.pk)
+    else:   
+        form = FactForm()
+    return render(request, 'blog/fact_edit.html', {'form': form})   

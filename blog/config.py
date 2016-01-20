@@ -106,6 +106,7 @@ quip_lists = {
         "It's a long, long way to ...",
         "Size matters ...",
         '"Shorth is better than length." Dr Seuss',
+        '"Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean, you may think it\'s a long way down the road to the drug store, but that\'s just peanuts to space." Douglas Adams',
         ),
     "c":(
         "Let me count the ways ...",
@@ -135,8 +136,9 @@ quotes = (
         'A number of things come to mind ...',
         "Let the numbers talk for themselves",
         "Hundreds and thousands",
-        "Safety in numbers",
+        "There's safety in numbers",
         "Let's run the numbers",
+        "Sharpen your number sense",
         '"Wherever there is number, there is beauty." Proclus (410-485 A.D.)',
         '"Headlines twice the size of the events." John Galsworthy',
         "An optimist will tell you the glass is half-full; the pessimist, half-empty; and the engineer will tell you the glass is twice the size it needs to be",
