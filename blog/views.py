@@ -22,10 +22,13 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import parseBigNumber
+from .dummycontent import storyInfo
 
 def home(request):
     freeForm = FreeForm()
     widgets = []
+    stories = {}
+#    newsStory = storyInfo()
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
 
 def itabn(request):
@@ -58,6 +61,7 @@ def query_answer(request, numberQuery):
     query.fields['unit'].choices=unit_choice_lists[measure]
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
+    answer["closeMatches"] = numberQuery.getCloseMatches()
     return render(request, 'blog/itabn_answer.html', {'query': query, 'answer':answer, 'quote': choice(quotes)})   
 
 def query_answer_post(request):

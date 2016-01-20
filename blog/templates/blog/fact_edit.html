@@ -1,5 +1,9 @@
 {% extends 'blog/base.html' %}
 
+{% block quote %}
+	<p>{{ quote }}</p>
+{% endblock %}
+
 {% block content %}
     <h1>New fact</h1>
     <form method="POST" class="fact-form">{% csrf_token %}
