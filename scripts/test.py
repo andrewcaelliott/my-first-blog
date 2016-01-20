@@ -110,8 +110,26 @@ def run5():
 	qf = QueryForm()
 	print(qf.fields['measure'].choices)
 
+def closeEnoughNumberFact(magnitude, scale, tolerance, measure):
+#	nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
+	facts = []
+	nf = NumberFact.objects.filter(value__gte=magnitude*1000/(1+tolerance), value__lt=magnitude*1000*(1+tolerance), scale=scale-3, measure=measure)
+	for fact in nf:
+		facts.append(fact)
+	nf = NumberFact.objects.filter(value__gte=magnitude/(1+tolerance), value__lt=magnitude*(1+tolerance), scale=scale, measure=measure)
+	for fact in nf:
+		facts.append(fact)
+	nf = NumberFact.objects.filter(value__gte=magnitude/1000/(1+tolerance), value__lt=magnitude/1000*(1+tolerance), scale=scale+3, measure=measure)
+	for fact in nf:
+		facts.append(fact)
+	return facts
+
+def run6():
+	nf = closeEnoughNumberFact(500, 6, 0.5,"extent")
+	for fact in nf:
+		print(fact.value, fact.render)
+
 def run():
-	print(1234456.23)
-	print("{:,.0f}".format(1234456.23))
-	print("123456"[-3:])
+	nq = NumberQuery(magnitude=40000, multiple="k", unit="km", measure="extent")
+	print(nq.getCloseMatches())
 

@@ -20,6 +20,12 @@
         </div>
         <div class="widget col-lg-6 col-md-6">
             <div>
+                <h2>Close match to ...</h2>
+                {% for match in answer.closeMatches %}
+                    <div class="comparison">
+                        <p>{{ match }}</p>
+                    </div>
+                {% endfor %}
                 <h2>That would be ...</h2>
                 {% for comparison in answer.comparisons %}
                     <div class="comparison">
