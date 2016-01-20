@@ -13,6 +13,36 @@ def sigfigs(x,n):
     else:
         return x
 
+def output(x):
+    if x/1000000000000 ==int(x/1000000000000):
+        return  "{:,.0f} trillion".format(x/1000000000000)    
+    if x/1000000000 ==int(x/1000000000):
+        return  "{:,.0f} billion".format(x/1000000000)    
+    elif x/1000000 ==int(x/1000000):
+        return  "{:,.0f} million".format(x/1000000)    
+    elif x/1000 ==int(x/1000):
+        return  "{:,.0f} thousand".format(x/1000)    
+    elif x==int(x):
+        return  "{:,.0f}".format(x)    
+    else:
+        return "{:,f}".format(x).rstrip('0')    
+
+def currency_output(x):
+    x = sigfigs(x,6)
+    if x/1000000000000 ==int(x/1000000000000):
+        return  "{:,.0f} trillion".format(x/1000000000000)    
+    if x/1000000000 ==int(x/1000000000):
+        return  "{:,.0f} billion".format(x/1000000000)    
+    elif x/1000000 ==int(x/1000000):
+        return  "{:,.0f} million".format(x/1000000)    
+    elif x/1000 ==int(x/1000):
+        return  "{:,.0f} thousand".format(x/1000)    
+    elif x==int(x):
+        return  "{:,.0f}".format(x)    
+    else:
+        return "{:,.2f}".format(x)
+
+
 def num(s):
     try:
         return int(s)

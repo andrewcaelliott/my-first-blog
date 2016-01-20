@@ -1,4 +1,5 @@
 from json import loads
+from random import choice
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -16,7 +17,7 @@ from .convert import convertToDefaultBase
 from .convert import convertToUnit 
 from .config import reference_lists
 from .config import unit_choice_lists
-from .config import quip_lists
+from .config import quip_lists,quotes
 from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
@@ -83,14 +84,14 @@ def itabn(request):
         {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
         {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
-    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm})
+    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
 
 def query_answer(request, numberQuery):
     query =  QueryForm(instance=numberQuery)
 #    query.fields['magnitude'].value=numberQuery.magnitude
     query.fields['measure'].widget = forms.HiddenInput()
     measure = numberQuery.measure
-    answer = {"quip":quip_lists[measure]}
+    answer = {"quip":choice(quip_lists[measure])}
     query.fields['unit'].choices=unit_choice_lists[measure]
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
@@ -128,7 +129,7 @@ def query_api(request):
         return JsonResponse({"success":"false", "message":"'measure' parameter missing"})
     numberQuery = NumberQuery(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
     references = reference_lists[measure]
-    answer = {"quip":quip_lists[measure]}
+    answer = {"quip":choice(quip_lists[measure])}
     answer["comparisons"] = numberQuery.getComparisons(references)
     return JsonResponse({
         'magnitude':str(magnitude), 
@@ -156,13 +157,13 @@ def convert(request):
             {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
             {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
         ]
-    return render(request, 'blog/convert.html', {'widgets':widgets})
+    return render(request, 'blog/convert.html', {'widgets':widgets, 'quote': choice(quotes)})
 
 def conversion_answer(request, conversion):
     conversion.fields['measure'].widget = forms.HiddenInput()
     numberQuery = NumberQuery(magnitude=conversion["magnitude"].value(), multiple=conversion["multiple"].value(), unit=conversion["unit"].value(), target_unit=conversion["target_unit"].value(), measure=conversion["measure"].value())
     measure = conversion["measure"].value()
-    answer = {"quip":conversion_quip_lists[measure]}
+    answer = {"quip":choice(conversion_quip_lists[measure])}
     conversion.fields['unit'].choices=unit_choice_lists[measure]
     conversion.fields['target_unit'].choices=unit_choice_lists[measure]
     conversion_targets = [(numberQuery.target_unit),] + conversion_target_lists[measure]

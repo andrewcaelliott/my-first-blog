@@ -1,5 +1,10 @@
 {% extends 'blog/base.html' %}
 
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+
 {% block content %}
         {% for widget in widgets %}
             <!--div class="widget">

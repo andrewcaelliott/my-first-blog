@@ -6,7 +6,7 @@ from .convert import convertToDefault
 from .convert import AMOUNT_UNITS
 from .config import all_unit_choices
 from .config import MEASURE_CHOICES,MULTIPLE_CHOICES
-from .utils import num,sigfigs,getScaleFactor
+from .utils import num,sigfigs,getScaleFactor,output,currency_output
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 UNIT_CHOICES = all_unit_choices
@@ -63,13 +63,13 @@ class NumberQuery(models.Model):
             for conversion in conversions:
                 n = convertToCurrency(num_ans, self.unit, conversion)
                 mag = round(n,2)
-                conversion_answers.append(" ".join([str(mag), conversion]))
+                conversion_answers.append(" ".join([currency_output(mag), conversion]))
         else:
             quantity = Q_(" ".join([str(num_ans), self.unit]))
             for conversion in conversions:
                 conv_q = quantity.to(conversion)
                 mag = sigfigs(conv_q.magnitude,6)
-                conversion_answers.append(" ".join([str(mag), conversion]))
+                conversion_answers.append(" ".join([output(mag), conversion]))
         return conversion_answers
 
 

@@ -110,4 +110,8 @@ def run5():
 	qf = QueryForm()
 	print(qf.fields['measure'].choices)
 
+def run():
+	print(1234456.23)
+	print("{:,.0f}".format(1234456.23))
+	print("123456"[-3:])
 
