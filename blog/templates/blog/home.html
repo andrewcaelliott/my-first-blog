@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+
+{% block quote %}
+	<p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <div class="row widget">
+            <div>
+		<h1><a href=""><span></span> Is This A Big Number?</a></h1>
+	        <form method="GET" class="query-form" action="/itabn/compare">
+	                {{ freeForm }}
+	                <button type="submit" class="save btn btn-warning">Ask</button>
+	        </form>
+	        <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion'</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            	<div>
+			<h1><a href=""></span>Numbers in the News</a></h1>
+	                <h4>Some notable numbers we have spotted recently ...</h4>
+	                <p>Content coming soon...</p>
+                </div>
+            </div>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            	<div>
+			<h1><a href=""></span>For the Love of Numbers</a></h1>
+	                <h4>A number-led blog for the truly geeky among us ...</h4>
+	                <p>Content coming soon...</p>
+                </div>
+            </div>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            	<div>
+			<h1><a href=""></span>Know Your Numbers</a></h1>
+	                <h4>A little more knowledge is never a dangerous thing ...</h4>
+	                <p>Content coming soon...</p>
+                </div>
+            </div>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            	<div>
+			<h1><a href=""></span>Landmark Numbers</a></h1>
+	                <h4>Like beacons in a landscape, prominent numbers offer guidance</h4>
+	                <p>Content coming soon...</p>
+                </div>
+            </div>
+        </div>
+{% endblock %}
