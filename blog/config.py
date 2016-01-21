@@ -119,6 +119,7 @@ quip_lists = {
         "There's more to life than money",
         'In school, my favorite subject was math. That\'s where I learned to count money',
         'A nickel ain’t worth a dime anymore',
+        '"Money money money, must be funny, in a rich man\'s world'
 #        '"In school, my favorite subject was math. That\'s where I learned to count money." French Montana'
  #       '"A nickel ain’t worth a dime anymore." Yogi Berra',
         ),
@@ -139,6 +140,7 @@ quotes = (
         "There's safety in numbers",
         "Let's run the numbers",
         "Sharpen your number sense",
+        "Numbers count",
         '"Wherever there is number, there is beauty." Proclus (410-485 A.D.)',
         '"Headlines twice the size of the events." John Galsworthy',
         "An optimist will tell you the glass is half-full; the pessimist, half-empty; and the engineer will tell you the glass is twice the size it needs to be",

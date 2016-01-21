@@ -52,7 +52,10 @@ class NumberQuery(models.Model):
         #todo first convert to default unit
 
         factor = self.setScaleFactor()
-        num_ans = num(self.magnitude) * factor
+        try:
+            num_ans = num(self.magnitude) * factor
+        except:
+            num_ans = 0            
         n = convertToDefault(num_ans, self.unit)
 
         if n>1000000000000:
@@ -75,15 +78,22 @@ class NumberQuery(models.Model):
         for fact in closeEnough:
             closeMatches.append(fact.render)
 #        closeMatches.append(" ".join([str(self.magnitude), str(scale), str(self.fields)]))
-        if len(closeMatches)==0:
+        if n==0:
+            closeMatches.append("Invalid input")
+        elif len(closeMatches)==0:
             closeMatches.append("No close matches found")
         return closeMatches
 
     def getComparisons(self, references):
         factor = self.setScaleFactor()
-        num_ans = num(self.magnitude) * factor
+        try:
+            num_ans = num(self.magnitude) * factor
+        except:
+            num_ans=0
         n = convertToDefault(num_ans, self.unit)
         comparisons = []
+        if (n == 0):
+            comparisons.append({"factor":0, "render":"Invalid input"})
         for reference in references:
             fact = NumberFact.objects.get(title=reference[0])
             factNumber = float(fact.value)*10**fact.scale
@@ -142,7 +152,7 @@ class NumberFact(models.Model):
     subject = models.TextField()
 
     def _display(self):
-        return " ".join([self.title,":",self.magnitude, self.multiple, self.unit, self.subject, self.measure])
+        return " ".join([self.title,":",self.magnitude, self.multiple, self.unit])
 
     def __str__(self):
         return self.title        

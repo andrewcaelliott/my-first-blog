@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}Compare{% endblock %}
+
 {% block quote %}
 	<p>{{ quote }}</p>
 {% endblock %}
@@ -12,7 +14,7 @@
 	                {{ freeForm }}
 	                <button type="submit" class="save btn btn-warning">Ask</button>
 	        </form>
-            <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion'</p>
+            <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion', '1.5e6'</p>
             </div>
         </div>
         <div class="row">

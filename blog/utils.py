@@ -44,10 +44,7 @@ def currency_output(x):
 
 
 def num(s):
-#    try:
-#        return int(s)
-#    except ValueError:
-        return float(s)
+    return float(s)
 
 def getScaleFactor(multiple):
     if multiple == "T":
@@ -162,6 +159,12 @@ def getMeasure(unit):
         else:
             return "c"
 
+def errorParsed():
+    magnitude = 0
+    multiple = "U"
+    unit = "i"
+    measure ="c"
+    return magnitude, multiple, unit, measure 
 
 
 def parseNumber(big_number, regex):
@@ -197,6 +200,7 @@ def parseBigNumber(big_number):
     parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.]+)$")
     if (parsed != None):
         return parsed
+    return errorParsed()
 
 
 def tests():
