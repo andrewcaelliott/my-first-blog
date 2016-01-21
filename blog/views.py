@@ -22,14 +22,18 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import parseBigNumber
-from .dummycontent import storyInfo
+from .dummycontent import storyInfo,storySelection
 
 def home(request):
     freeForm = FreeForm()
     widgets = []
     stories = {}
-#    newsStory = storyInfo()
-    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
+    stories["news"]=storySelection("news")
+    stories["passion"]=storySelection("passion")
+    stories["education"]=storySelection("education")
+    stories["landmark"]=storySelection("landmark")
+
+    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
 
 def itabn(request):
     freeForm = FreeForm()
