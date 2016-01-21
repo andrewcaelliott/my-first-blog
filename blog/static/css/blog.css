@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
     padding: 0 5rem;
 }
 
-.content h1 a, .content h2 {
+.content h1 a, .content h2, .content h3 a {
     color: #487D18
 }
 
