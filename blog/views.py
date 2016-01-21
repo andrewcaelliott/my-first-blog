@@ -32,7 +32,6 @@ def home(request):
     stories["passion"]=storySelection("passion")
     stories["education"]=storySelection("education")
     stories["landmark"]=storySelection("landmark")
-
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
 
 def itabn(request):
