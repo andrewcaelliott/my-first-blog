@@ -45,6 +45,9 @@ def convertToDefaultBase(magnitude, unit):
             if quantity.dimensionality==ureg.s.dimensionality:
                 n = quantity.to(ureg.year).magnitude
                 u = quantity.to(ureg.year).units
+            elif quantity.dimensionality==ureg.g.dimensionality:
+                n = quantity.to(ureg.kg).magnitude
+                u = quantity.to(ureg.kg).units
             else:
                 n = quantity.to_base_units().magnitude
                 u = quantity.to_base_units().units

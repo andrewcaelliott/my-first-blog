@@ -8,7 +8,7 @@ extent_references = [
     ('Height of Cruising Altitude of Airbus commercial jet','{times:20,.2f} times the cruising altitude of a commercial jet','1 / {fraction:20,.0f} of the cruising altitude of a commercial jet'),
     ('Height of Mount Everest','{times:20,.2f} times the height of Mount Everest','1 / {fraction:20,.0f} of the height of Mount Everest'),
     ('Height of Angel Falls (Venuzeula)','{times:20,.2f} times the height of Angel Falls (Venuzeula)','1 / {fraction:20,.0f} of the height of Angel Falls (Venuzeula)'),
-    ('Height of `Burj` Khalifa scyscraper (Dubai)','{times:20,.2f} times the height of the `Burj` Khalifa scyscraper (Dubai)','1 / {fraction:20,.0f} of the height of the `Burj` Khalifa scyscraper (Dubai)'),
+    ('Height of `Burj Khalifa` scyscraper (Dubai)','{times:20,.2f} times the height of the `Burj` Khalifa scyscraper (Dubai)','1 / {fraction:20,.0f} of the height of the `Burj` Khalifa scyscraper (Dubai)'),
     ('Height of London Eye Ferris Wheel','{times:20,.2f} times the height of the London Eye Ferris Wheel','1 / {fraction:20,.0f} of the height of the London Eye Ferris Wheel'),
     ('Height of giraffe','{times:20,.2f} times the height of a giraffe','1 / {fraction:20,.0f} of the height of a giraffe'),
     ('Height of African elephant','{times:20,.2f} times the height of an African elephant','1 / {fraction:20,.0f} of the height of an African elephant'),
@@ -48,11 +48,34 @@ duration_references = [
     ('lifespan of rat','{times:20,.2f} times the lifespan of a rat','{percent:20,.2f} percent of the lifespan of a rat','1 /{fraction:20,.0f} of the lifespan of a rat'),
 ] 
 
+mass_references = [
+    ('Mass of the Sun','{times:20,.2f} times the mass of the Sun','{percent:20,.2f} percent of the mass of the Sun','1 /{fraction:20,.0f} of the mass of a domestic washing machine'),
+    ('Mass of the Earth','{times:20,.2f} times the mass of the Earth','{percent:20,.2f} percent of the mass of the Earth','1 /{fraction:20,.0f} of the mass of the Earth'),
+    ('Mass of the Moon','{times:20,.2f} times the mass of the Moon','{percent:20,.2f} percent of the mass of the Moon','1 /{fraction:20,.0f} of the mass of the Moon'),
+    ('Mass of all the water in the Earth\'s seas','{times:20,.2f} times the mass of all the water in the Earth\'s seas','{percent:20,.2f} percent of the mass of all the water in the Earth\'s seas','1 /{fraction:20,.0f} of the mass all the water in the Earth\'s seas'),
+    ('Mass of all the Earth\'s biomass','{times:20,.2f} times the mass of all the Earth\'s biomass','{percent:20,.2f} percent of the mass of all the Earth\'s biomass','1 /{fraction:20,.0f} of the mass of all the Earth\'s biomass'),
+    ('Mass of all the humans on Earth','{times:20,.2f} times the mass of all the humans on Earth','{percent:20,.2f} percent of the mass of all the humans on Earth','1 /{fraction:20,.0f} of the mass of all the humans on Earth'),
+    ('Mass of the Great Pyramid of Giza','{times:20,.2f} times the mass of the Great Pyramid of Giza','{percent:20,.2f} percent of the mass of the Great Pyramid of Giza','1 /{fraction:20,.0f} of the mass of the Great Pyramid of Giza'),
+    ('Mass of the Titanic','{times:20,.2f} times the mass of the Titanic','{percent:20,.2f} percent of the mass of the Titanic','1 /{fraction:20,.0f} of the mass of the Titanic'),
+    ('Mass of an Airbus a380','{times:20,.2f} times the mass of an Airbus a380','{percent:20,.2f} percent of the mass of an Airbus a380','1 /{fraction:20,.0f} of the mass of an Airbus a380'),
+    ('Mass of a Blue Whale','{times:20,.2f} times the mass of a Blue Whale','{percent:20,.2f} percent of the mass of a Blue Whale','1 /{fraction:20,.0f} of the mass of a Blue Whale'),
+    ('Mass of an M1 Abrams tank','{times:20,.2f} times the mass of an M1 Abrams tank','{percent:20,.2f} percent of the mass of an M1 Abrams tank','1 /{fraction:20,.0f} of the mass of an M1 Abrams tank'),
+    ('Mass of a Rhino','{times:20,.2f} times the mass of a Rhino','{percent:20,.2f} percent of the mass of a Rhino','1 /{fraction:20,.0f} of the mass of a Rhino'),
+    ('Mass of a small passenger car','{times:20,.2f} times the mass of a small passenger car','{percent:20,.2f} percent of the mass of a small passenger car','1 /{fraction:20,.0f} of the mass of a small passenger car'),
+    ('Mass of a domestic washing machine','{times:20,.2f} times the mass of a domestic washing machine','{percent:20,.2f} percent of the mass of a domestic washing machine','1 /{fraction:20,.0f} of the mass of a domestic washing machine'),
+    ('Mass of a large watermelon','{times:20,.2f} times the mass of a large watermelon','{percent:20,.2f} percent of the mass of a large watermelon','1 /{fraction:20,.0f} of the mass of a large watermelon'),
+    ('Mass of a brick','{times:20,.2f} times the mass of a brick','{percent:20,.2f} percent of the mass of a brick','1 /{fraction:20,.0f} of the mass of a brick'),
+    ('Mass of an iPad Air','{times:20,.2f} times the mass of an iPad Air','{percent:20,.2f} percent of the mass of an iPad Air','1 /{fraction:20,.0f} of the mass of an iPad Air'),
+    ('Mass of an iPhone 6','{times:20,.2f} times the mass of an iPhone 6','{percent:20,.2f} percent of the mass of an iPhone 6','1 /{fraction:20,.0f} of the mass of an iPhone 6'),
+]
+
+
 reference_lists = {
     'e': extent_references,
     'c': count_references,
     'a': amount_references,
     'd': duration_references,
+    'm': mass_references,
 }
 
 
@@ -92,14 +115,27 @@ DURATION_UNIT_CHOICES= (
         ('second', 'second'),
     )
 
+MASS_UNIT_CHOICES= (
+        ('t', 'metric_ton'),
+        ('kg', 'kilogram'),
+        ('g', 'gram'),
+        ('ton', 'ton'),
+#        ('cwt', 'hundredweight'),
+        ('st', 'stone'),
+        ('lb', 'pound'),
+    )
+
+
+
 unit_choice_lists = {
     'e': EXTENT_UNIT_CHOICES,
     'c': COUNT_UNIT_CHOICES,
     'a': AMOUNT_UNIT_CHOICES,
     'd': DURATION_UNIT_CHOICES,
+    'm': MASS_UNIT_CHOICES,
 }
 
-all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES
+all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES + MASS_UNIT_CHOICES
 
 quip_lists = {
     "e":(
@@ -130,6 +166,9 @@ quip_lists = {
 #        '"How many years can a mountain exist?" Bob Dyan',
  #       '"Eight Days a Week" The Beatles',
   #      '"Don\'t just count your years, make your years count." George Meredith',
+        ),
+    "m":(
+        'He ain\'t heavy ... ',
         ),
 }
 
@@ -184,16 +223,29 @@ duration_conversion_targets = [
 ]
 
 
+mass_conversion_targets = [
+        ('metric_ton'),
+        ('kilogram'),
+        ('gram'),
+        ('ton'),
+ #       ('hundredweight'),
+        ('stone'),
+        ('pound'),
+]
+
+
 conversion_target_lists = {
     'e': extent_conversion_targets,
     'a': amount_conversion_targets,
     'd': duration_conversion_targets,
+    'm': mass_conversion_targets,
 }
 
 conversion_quip_lists = {
     "e":("The long and winding road ...",),
     "a":("Money makes the world go round ...",),
     "d":("How long has it been ...",),
+    "m":("That\'s massive ...",),
 }
 
 MEASURE_CHOICES = (
@@ -202,6 +254,7 @@ MEASURE_CHOICES = (
     ('e', 'extent'),
     ('d', 'duration'),
     ('n', 'number'),
+    ('m', 'mass'),
 )
 
 MULTIPLE_CHOICES = (
@@ -210,4 +263,8 @@ MULTIPLE_CHOICES = (
     ('M', 'million'),
     ('G', 'billion'),
     ('T', 'trillion'),
+    ('P', 'quadrillion'),
+    ('E', 'quintillion'),
+    ('Z', 'sextillion'),
+    ('Y', 'septillion'),
 )

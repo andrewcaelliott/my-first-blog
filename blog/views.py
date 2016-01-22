@@ -48,11 +48,15 @@ def itabn(request):
     durationForm = QueryForm(initial={'measure': 'd'})
     durationForm.fields['unit'].choices=unit_choice_lists['d']
     durationForm.fields['measure'].widget = forms.HiddenInput()
+    massForm = QueryForm(initial={'measure': 'm'})
+    massForm.fields['unit'].choices=unit_choice_lists['m']
+    massForm.fields['measure'].widget = forms.HiddenInput()
     widgets = [
         {"title":"How Big?","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
         {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
         {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
-        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm}]
+        {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm},
+        {"title":"How Heavy?","glyph":"glyphicon glyphicon-stop","form":massForm}]
     return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
 
 def query_answer(request, numberQuery):
@@ -122,10 +126,15 @@ def convert(request):
     durationForm.fields['unit'].choices=unit_choice_lists['d']
     durationForm.fields['target_unit'].choices=unit_choice_lists['d']
     durationForm.fields['measure'].widget = forms.HiddenInput()
+    massForm = ConvertForm(initial={'measure': 'm'})
+    massForm.fields['unit'].choices=unit_choice_lists['m']
+    massForm.fields['target_unit'].choices=unit_choice_lists['m']
+    massForm.fields['measure'].widget = forms.HiddenInput()
     widgets = [
             {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
             {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
             {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
+            {"title":"Convert Mass","glyph":"glyphicon glyphicon-stop","form":massForm},
         ]
     return render(request, 'blog/convert.html', {'widgets':widgets, 'quote': choice(quotes)})
 

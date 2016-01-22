@@ -8,7 +8,7 @@ def storySelection(category):
         stories={}
         featureStory = storyInfo("You Call That a Number?")
         stories["featured"]=featureStory
-        stories["other"]=[storyInfo("Really, Really Big Numbers"),storyInfo("Infinite Jest")]
+        stories["other"]=[storyInfo("Astronomical Numbers"),storyInfo("Infinite Jest")]
     elif category=="education":
         stories={}
         featureStory = storyInfo("It's All Gone Non-Linear")

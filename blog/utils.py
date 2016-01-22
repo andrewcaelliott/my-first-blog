@@ -47,7 +47,15 @@ def num(s):
     return float(s)
 
 def getScaleFactor(multiple):
-    if multiple == "T":
+    if multiple == "Y":
+        scale = 24
+    elif multiple == "Z":
+        scale = 21
+    elif multiple == "E":
+        scale = 18
+    elif multiple == "P":
+        scale = 15
+    elif multiple == "T":
         scale = 12
     elif multiple == "G":    
         scale = 9
@@ -185,19 +193,19 @@ def parseNumber(big_number, regex):
 
 def parseBigNumber(big_number):
     print(big_number)
-    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
+    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
     if (parsed != None):
         return parsed
-    parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z\/£$€¥](\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.]+)$")
+    parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z\/£$€¥](\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)$")
     if (parsed != None):
         return parsed
-    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.]+)\s*(?P<multiple>[a-zA-Z]*)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
+    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
     if (parsed != None):
         return parsed
-    parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.]+)\s*(?P<multiple>[a-zA-Z]*)$")
+    parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)$")
     if (parsed != None):
         return parsed
-    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.]+)$")
+    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)$")
     if (parsed != None):
         return parsed
     return errorParsed()
