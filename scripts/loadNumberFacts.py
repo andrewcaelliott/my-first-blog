@@ -43,14 +43,14 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 		print(fact.render)
 
 def run():
-    deleteAllFacts()
-    loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
-    loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a")
-    loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
-    loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
-    loadNumberFacts("./blog/data/Reference_Lengths.csv","Length of ","USD p/a")
-    loadNumberFacts("./blog/data/Reference_Masses.csv","Mass of ","kg")
+#    deleteAllFacts()
+   # loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
+   # loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a")
+   # loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
+   # loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
+   # loadNumberFacts("./blog/data/Reference_Lengths.csv","Length of ","USD p/a")
+   # loadNumberFacts("./blog/data/Reference_Masses.csv","Mass of ","kg")
     loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","")
-    loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
-    loadNumberFacts("./blog/data/heights_2015.csv","Height of ","m")
+   # loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
+   # loadNumberFacts("./blog/data/heights_2015.csv","Height of ","m")
 

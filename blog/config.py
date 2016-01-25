@@ -21,13 +21,19 @@ extent_references = [
 count_references = [
     ('Number of atoms in a mole (Avogadro\'s number)','{times:20,.2f} for every atom in a mole (every H atom in 1.008g of hydrogen)','One for every {fraction:20,.0f} atoms in a mole (H atoms in 1.008g of hydrogen)'),
     ('Number of stars in the observable universe','{times:20,.2f} for every star in the observable universe','One for every {fraction:20,.0f} stars in the observable universe'),
+    ('Number of grains of sand on the world\'s beaches','{times:20,.2f} for every grain of sand on the world\'s beaches','One for every {fraction:20,.0f} grains of sand on the world\'s beaches'),
+    ('Number of bacteria on the human body','{times:20,.2f} for every bacterium on the human body','One for every {fraction:20,.0f} bacteria on the human body'),
+    ('Number of synapses in the human brain','{times:20,.2f} for every synapse in the human brain','One for every {fraction:20,.0f} synapses in the human brain'),
+    ('Number of fish in the sea','{times:20,.2f} for every fish in the sea','One for every {fraction:20,.0f} fish in the sea'),
     ('Number of stars in our galaxy','{times:20,.2f} for every star in our galaxy','One for every {fraction:20,.0f} stars in our galaxy'),
     ('Population of World','{times:20,.2f} for every person in the world','One for every {fraction:20,.0f} people in the world'),
     ('Population of China','{times:20,.2f} for every person in China','One for every {fraction:20,.0f} people in China'),
     ('Number of cars in the world','{times:20,.2f} for every car in the world','One for every {fraction:20,.0f} cars in the world'),
+    ('Number of books in the British Library','{times:20,.2f} for every book in the British Library','One for every {fraction:20,.0f} books in the British Library'),
     ('Population of United States','{times:20,.2f} for every person in the USA','One for every {fraction:20,.0f} people in the USA'),
     ('Population of United Kingdom','{times:20,.2f} for every person in the UK','One for every {fraction:20,.0f} people in the UK'),
     ('Number of grains of sugar in a cup','{times:20,.2f} for every grain of sugar in a cup','One for every {fraction:20,.0f} grains of sugar in a cup'),
+    ('Number of strands on a head of hair','{times:20,.2f} for every strand on a head of hair','One for every {fraction:20,.0f} strands on a head of hair'),
 ]
 
 amount_references = [
@@ -182,6 +188,7 @@ quotes = (
         "Let the numbers talk for themselves",
         "Hundreds and thousands",
         "There's safety in numbers",
+        "Strength in numbers",
         "Let's run the numbers",
         "Sharpen your number sense",
         "Numbers count",
