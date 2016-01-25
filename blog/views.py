@@ -56,7 +56,7 @@ def itabn(request):
         {"title":"How Many?","glyph":"glyphicon glyphicon-th","form":countForm},
         {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm},
-        {"title":"How Heavy?","glyph":"glyphicon glyphicon-stop","form":massForm}]
+        {"title":"How Heavy?","glyph":"glyphicon glyphicon-briefcase","form":massForm}]
     return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
 
 def query_answer(request, numberQuery):
@@ -134,7 +134,7 @@ def convert(request):
             {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
             {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
             {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
-            {"title":"Convert Mass","glyph":"glyphicon glyphicon-stop","form":massForm},
+            {"title":"Convert Mass","glyph":"glyphicon glyphicon-briefcase","form":massForm},
         ]
     return render(request, 'blog/convert.html', {'widgets':widgets, 'quote': choice(quotes)})
 

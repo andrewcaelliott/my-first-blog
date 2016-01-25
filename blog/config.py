@@ -8,7 +8,7 @@ extent_references = [
     ('Height of Cruising Altitude of Airbus commercial jet','{times:20,.2f} times the cruising altitude of a commercial jet','1 / {fraction:20,.0f} of the cruising altitude of a commercial jet'),
     ('Height of Mount Everest','{times:20,.2f} times the height of Mount Everest','1 / {fraction:20,.0f} of the height of Mount Everest'),
     ('Height of Angel Falls (Venuzeula)','{times:20,.2f} times the height of Angel Falls (Venuzeula)','1 / {fraction:20,.0f} of the height of Angel Falls (Venuzeula)'),
-    ('Height of `Burj Khalifa` scyscraper (Dubai)','{times:20,.2f} times the height of the `Burj` Khalifa scyscraper (Dubai)','1 / {fraction:20,.0f} of the height of the `Burj` Khalifa scyscraper (Dubai)'),
+    ('Height of `Burj Khalifa` scyscraper (Dubai)','{times:20,.2f} times the height of the `Burj Khalifa` scyscraper (Dubai)','1 / {fraction:20,.0f} of the height of the `Burj Khalifa` scyscraper (Dubai)'),
     ('Height of London Eye Ferris Wheel','{times:20,.2f} times the height of the London Eye Ferris Wheel','1 / {fraction:20,.0f} of the height of the London Eye Ferris Wheel'),
     ('Height of giraffe','{times:20,.2f} times the height of a giraffe','1 / {fraction:20,.0f} of the height of a giraffe'),
     ('Height of African elephant','{times:20,.2f} times the height of an African elephant','1 / {fraction:20,.0f} of the height of an African elephant'),
@@ -19,10 +19,15 @@ extent_references = [
 ]
 
 count_references = [
+    ('Number of atoms in a mole (Avogadro\'s number)','{times:20,.2f} for every atom in a mole (every H atom in 1.008g of hydrogen)','One for every {fraction:20,.0f} atoms in a mole (H atoms in 1.008g of hydrogen)'),
+    ('Number of stars in the observable universe','{times:20,.2f} for every star in the observable universe','One for every {fraction:20,.0f} stars in the observable universe'),
+    ('Number of stars in our galaxy','{times:20,.2f} for every star in our galaxy','One for every {fraction:20,.0f} stars in our galaxy'),
     ('Population of World','{times:20,.2f} for every person in the world','One for every {fraction:20,.0f} people in the world'),
     ('Population of China','{times:20,.2f} for every person in China','One for every {fraction:20,.0f} people in China'),
+    ('Number of cars in the world','{times:20,.2f} for every car in the world','One for every {fraction:20,.0f} cars in the world'),
     ('Population of United States','{times:20,.2f} for every person in the USA','One for every {fraction:20,.0f} people in the USA'),
     ('Population of United Kingdom','{times:20,.2f} for every person in the UK','One for every {fraction:20,.0f} people in the UK'),
+    ('Number of grains of sugar in a cup','{times:20,.2f} for every grain of sugar in a cup','One for every {fraction:20,.0f} grains of sugar in a cup'),
 ]
 
 amount_references = [
@@ -153,9 +158,9 @@ quip_lists = {
         ),
     "a":(
         "There's more to life than money",
-        'In school, my favorite subject was math. That\'s where I learned to count money',
+        '"In school, my favorite subject was math. That\'s where I learned to count money"',
         'A nickel ain’t worth a dime anymore',
-        '"Money money money, must be funny, in a rich man\'s world'
+        '"Money money money, must be funny, in a rich man\'s world"'
 #        '"In school, my favorite subject was math. That\'s where I learned to count money." French Montana'
  #       '"A nickel ain’t worth a dime anymore." Yogi Berra',
         ),
