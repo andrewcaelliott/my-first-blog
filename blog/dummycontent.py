@@ -1,9 +1,9 @@
 def storySelection(category):
     if category=="news":
         stories={}
-        featureStory = storyInfo("Record Powerball Jackpot")
+        featureStory = storyInfo("Magnitude 6.3 Earthquake Strikes Mediterranean")
         stories["featured"]=featureStory
-        stories["other"]=[storyInfo("Replacing UK's Trident Missile System"),storyInfo("Migrant Numbers")]
+        stories["other"]=[storyInfo("Record Powerball Jackpot"),storyInfo("Replacing UK's Trident Missile System"),storyInfo("Migrant Numbers")]
     elif category=="passion":
         stories={}
         featureStory = storyInfo("You Call That a Number?")
@@ -28,7 +28,11 @@ def storySelection(category):
 
 
 def storyInfo(storyName):
-    if storyName == "Record Powerball Jackpot":
+    if storyName == "Magnitude 6.3 Earthquake Strikes Mediterranean":
+        sourceLink = "http://news.sky.com/story/1628939/strong-earthquake-strikes-mediterranean"
+        synopsis = "On Jan 25th 2016, between Spain and Morocco, there was a magnitude 6.3 earthquake. Is that a big earthquake? (A: Property damage but no deaths) Earthquakes are measured on a log scale which makes magnitudes hard to understand. Read on ..."
+        image =""
+    elif storyName == "Record Powerball Jackpot":
         sourceLink = "https://en.wikipedia.org/wiki/Lottery_jackpot_records"
         synopsis = "On Jan 13th, the US Powerball jackpot was a record £1.5864bn. BUT because there were 3 winning tickets, this has not created the world's largest ticket win. That still sits at $370.9m, a record set in May 2013."
         image =""
