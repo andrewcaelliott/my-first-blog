@@ -37,9 +37,9 @@ h1, h2, h3, h4 {
     text-decoration: none;
 }
 
-form p {
+form.freeform p {
     display:inline;
-    font-size: 20px
+    font-size: 32px
 }
 
 .row:nth-child(2) .blog-summary> div {
