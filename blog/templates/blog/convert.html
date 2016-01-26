@@ -8,6 +8,7 @@
 
 
 {% block content %}
+        <div class="row">
         {% for widget in widgets %}
             <!--div class="widget">
 		<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ widget.title }}</a></h1>
@@ -25,6 +26,6 @@
                     </form>
                 </div>
             </div>
-
+        </div>
         {% endfor %}
 {% endblock %}
