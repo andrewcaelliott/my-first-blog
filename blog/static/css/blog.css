@@ -37,6 +37,10 @@ h1, h2, h3, h4 {
     text-decoration: none;
 }
 
+.share {
+    float: right;
+}
+
 form.freeform p {
     display:inline;
     font-size: 32px
