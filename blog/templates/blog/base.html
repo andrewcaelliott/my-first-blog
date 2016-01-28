@@ -28,6 +28,16 @@
   
     </head>
 	<body>
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 	    <div class="page-header">
 	        <!--a href="{% url 'post_new' %}" class="top-menu" title="new post"><span class="glyphicon glyphicon-plus"></span></a>
 	        <a href="{% url 'fact_new' %}" class="top-menu" title="new fact"><span class="glyphicon glyphicon-star"></span></a-->
@@ -37,12 +47,15 @@
 	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a></h1>
 	        <!--p><a href="/">Nuts about numbers? Quizzical about Quantities? Mulling over Measurements?</a></p-->
 		<h4><a href="/">{% block quote %}{% endblock %}</a></h4>
-	        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a>
-	        <span class = "share">
-			<a href="https://twitter.com/itabn_andrew" class="twitter-follow-button top-menu" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @itabn_andrew</a>
+	        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a></h3>
+	        <span class = "sharex">
+
+			<a href="https://twitter.com/itabn_andrew" class="twitter-follow-button top-menu" data-show-count="false" data-show-screen-name="false">Follow @itabn_andrew</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>		
-			<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="... #IsThatABigNumber?" data-via="itabn_andrew" data-size="large" data-hashtags="NumbersCount">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></h3>
+			<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="... #IsThatABigNumber?" data-via="itabn_andrew" data-hashtags="NumbersCount">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    			<div class="fb-like" data-href="https://www.facebook.com/Is-that-a-big-number-1511565142478387/" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
 		</span>
 	    </div>
 	    <section class="content container_fluid">
