@@ -76,12 +76,14 @@ class NumberQuery(models.Model):
         closeEnough = closeEnoughNumberFact(n, temp_scale, 0.2, self.get_measure_display())
         closeMatches = []
         for fact in closeEnough:
-            closeMatches.append(fact.render)
+            match = {"text":fact.render, "link":fact.link}
+            closeMatches.append(match)
+#            closeMatches.append(":".join([fact.render,fact.link]))
 #        closeMatches.append(" ".join([str(self.magnitude), str(scale), str(self.fields)]))
         if n==0:
-            closeMatches.append("Invalid input")
+            closeMatches.append({"text":"Invalid input", "link":"."})
         elif len(closeMatches)==0:
-            closeMatches.append("No close matches found")
+            closeMatches.append({"text":"No close matches found", "link":"."})
         return closeMatches
 
     def getComparisons(self, references):
@@ -108,7 +110,7 @@ class NumberQuery(models.Model):
                     comparisonRender = reference[2].format(times=times, fraction=fraction, percent = percent)
                 else:
                     comparisonRender = reference[3].format(times=times, fraction=fraction, percent = percent)
-                comparison ={"factor":comparisonNumber, "render": comparisonRender}
+                comparison ={"factor":comparisonNumber, "render": comparisonRender, "link":fact.link}
                 comparisons.append(comparison)
         return comparisons
 
@@ -154,10 +156,14 @@ class NumberFact(models.Model):
     def _display(self):
         return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit])
 
+    def _link(self):
+        return "../fact/"+str(self.id)
+
     def __str__(self):
         return self.title        
 
     render = property(_display)
+    link = property(_link)
 
 class Comparison(models.Model):
 
