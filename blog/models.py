@@ -130,7 +130,7 @@ class NumberQuery(models.Model):
 
 
     def _display(self):
-    	return " ".join([self.title,":",str(self.magnitude), self.multiple, self.unit, self.subject])
+        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit])
 
     def __str__(self):
         return self.title        
@@ -152,7 +152,7 @@ class NumberFact(models.Model):
     subject = models.TextField()
 
     def _display(self):
-        return " ".join([self.title,":",self.magnitude, self.multiple, self.unit])
+        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit])
 
     def __str__(self):
         return self.title        

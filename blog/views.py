@@ -69,7 +69,9 @@ def query_answer(request, numberQuery):
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
     answer["closeMatches"] = numberQuery.getCloseMatches()
-    return render(request, 'blog/itabn_answer.html', {'query': query, 'answer':answer, 'quote': choice(quotes)})   
+    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ")
+    #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
+    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes)})   
 
 def query_answer_post(request):
     query =  QueryForm(request.POST)
