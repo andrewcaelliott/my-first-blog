@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+
+{% block quote %}
+	<p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+    <h1>Test Your Number Sense</h1>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="extent" name="measure">
+        <button type="submit" class="save btn btn-default">How Big?</button>
+    </form>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="count" name="measure">
+        <button type="submit" class="save btn btn-default">How Many?</button>
+    </form>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="amount" name="measure">
+        <button type="submit" class="save btn btn-default">How Much?</button>
+    </form>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="duration" name="measure">
+        <button type="submit" class="save btn btn-default">How Long?</button>
+    </form>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="mass" name="measure">
+        <button type="submit" class="save btn btn-default">How Heavy?</button>
+    </form>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="random" name="measure">
+        <button type="submit" class="save btn btn-default">Surprise Me</button>
+    </form>
+    <h2>{{ quiz.assessment }}</h2>
+    <h2>{{ quiz.question }}</h2>
+    <!--h3 title="{{ quiz.hint }}">Hint</h3-->
+    <form method="POST" class="quiz-form" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="answered" name="cycle">
+    	<input type="hidden" value="{{ quiz.measure }}" name="measure">
+    	<input type="hidden" value="{{ quiz.seed }}" name="seed">
+        {% for option in quiz.options %}
+    		<p><input type="radio" name="option" value="{{ option }}"> {{ option }}</p>
+        {% endfor %}
+        {% if quiz.cycle != "correct" %}
+        	<button type="submit" class="save btn btn-default">I've made my choice</button>
+        {% endif %}
+    </form>
+    <form method="POST" action="/quiz/">{% csrf_token %}
+    	<input type="hidden" value="{{ quiz.measure }}" name="measure">
+        <button type="submit" class="save btn btn-default">New Question Like This</button>
+    </form>
+{% endblock %}

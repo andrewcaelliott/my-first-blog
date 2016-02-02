@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from random import sample,seed
+from math import log10
 from pint import UnitRegistry,UndefinedUnitError
 from .fixer_io import convertToCurrency
 from .convert import convertToDefault
@@ -24,6 +26,37 @@ def closeEnoughNumberFact(magnitude, scale, tolerance, measure):
     for fact in nf:
         facts.append(fact)
     return facts
+
+def biggestNumberFact(nfs):
+    biggestValue= 0
+    biggestFact = None
+    for fact in nfs:
+        value = num(fact.magnitude) * 10**num(fact.scale)
+        if value > biggestValue:
+            biggestFact = fact
+            biggestValue = value
+    return biggestFact
+
+
+def numberFactsLikeThis(nf, rseed=None):
+#    tolerances=[0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10, 25, 50, 100]
+    if rseed != None:
+        seed(rseed)
+    tolerances=[1.0, 2.5, 5.0, 10, 25, 50, 100]
+    for tolerance in tolerances:
+        ce=closeEnoughNumberFact(nf.magnitude, nf.scale, tolerance, nf.measure)
+        ce.remove(nf)
+        if len(ce)>=4:
+            bestTolerance = tolerance
+            bestComparisons = sample(ce[1:-1],2)
+            bestComparisons.append(ce[0])
+            bestComparisons.append(ce[-1])
+            bestComparisons = sample(bestComparisons,4)
+            break
+        bestTolerance = tolerance
+        bestComparisons = sample(ce,len(ce))
+    score = round(1*log10(bestTolerance/1000)**2)*(len(bestComparisons)-1)
+    return bestComparisons, bestTolerance, score
 
 
 class NumberQuery(models.Model):

@@ -1,5 +1,5 @@
 from json import loads
-from random import choice
+from random import choice,seed,randint
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -8,6 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
+from .models import numberFactsLikeThis,biggestNumberFact
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -23,6 +24,7 @@ from .config import conversion_quip_lists
 from .utils import num
 from .utils import parseBigNumber
 from .dummycontent import storyInfo,storySelection
+from .hlutils import randomFact
 
 def home(request):
     freeForm = FreeForm()
@@ -33,6 +35,65 @@ def home(request):
     stories["education"]=storySelection("education")
     stories["landmark"]=storySelection("landmark")
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
+
+def quiz(request):
+    params = request.POST
+    try:
+        seed=num(params.get("seed"))
+    except (AttributeError,TypeError):
+        seed = randint(0,1000000)
+    if seed == None:
+        seed = randint(0,1000000)
+
+    try:
+        cycle=params.get("cycle")
+    except (AttributeError,TypeError):
+        cycle="initial"
+
+
+    try:
+        measure=params.get("measure")
+    except (AttributeError,TypeError):
+        measure=choice(["extent", "count", "amount", "duration", "mass"])
+    if measure==None or measure == "random":
+        measure=choice(["extent", "count", "amount", "duration", "mass"])
+
+    quiz={}
+    if measure=="extent":
+        quiz["question"]="Which of these is the biggest?"
+    elif measure=="count":
+        quiz["question"]="Which of these is the most numerous?"
+    elif measure=="amount":
+        quiz["question"]="Which of these is the greatest amount?"
+    elif measure=="duration":
+        quiz["question"]="Which of these is the longest period of time?"
+    else:
+        quiz["question"]="Which of these has the greatest mass?"
+    quiz["measure"]=measure
+    quiz["seed"] = seed
+    rf = randomFact(measure, rseed=seed)
+    quiz["hint"] = rf.render
+    bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
+    quiz["options"]=bestComparisons
+    biggest = biggestNumberFact(bestComparisons)
+    quiz["answer"]=biggest.title
+    if request.method == "POST":
+        response = request.POST
+        if response.get("option")==quiz["answer"] and cycle=="answered":
+            quiz["assessment"] = str(response.get("option"))+" is the correct answer: Well done!"
+            quiz["question"]=""
+            reveal = []
+            for option in bestComparisons:
+                reveal.append(option.render)
+            quiz["options"]=reveal
+            quiz["cycle"]="correct"
+        elif cycle=="answered":
+            quiz["assessment"] = str(response.get("option"))+" is not correct. Try again."
+    else:   
+        pass
+#        form = FactForm()
+ #   return render(request, 'blog/fact_edit.html', {'form': form})   
+    return render(request, 'blog/quiz.html', {'quiz':quiz})
 
 def itabn(request):
     freeForm = FreeForm()
@@ -69,7 +130,7 @@ def query_answer(request, numberQuery):
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
     answer["closeMatches"] = numberQuery.getCloseMatches()
-    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ")
+    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
     #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
     return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes)})   
 

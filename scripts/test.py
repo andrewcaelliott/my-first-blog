@@ -2,9 +2,11 @@
 #from blog.models import NumberQuery
 #from blog.forms import QueryForm
 #from pint import UnitRegistry
-#from math import log10
-
-from blog.utils import parseBigNumber
+from math import log10
+from random import sample,randint
+#from blog.utils import parseBigNumber
+from blog.hlutils import randomFact
+from blog.models import closeEnoughNumberFact, numberFactsLikeThis, biggestNumberFact
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -130,8 +132,23 @@ from blog.utils import parseBigNumber
 	#for fact in nf:
 		#print(fact.value, fact.render)
 
+#def run7():
+#	bn = parseBigNumber("126g767")
+#	print(bn)
+
 def run():
-	bn = parseBigNumber("126g767")
-	print(bn)
+	measure=("amount")
+	seed = randint(0,1000000)
+	rf = randomFact(measure, rseed=seed)
+	print(rf.render)
 
+	bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
 
+	print(tolerance, score)
+	for fact in bestComparisons:
+		print(fact.render)
+		print(fact.magnitude)
+		print(fact.scale)
+
+	biggest = biggestNumberFact(bestComparisons)
+	print(biggest.render)

@@ -250,3 +250,5 @@ def tests():
 #tests()
 
 
+def randomFact(measure):
+    return "dummy"

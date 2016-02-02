@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^convert/answer$', views.conversion_answer_get, name='conversion_answer_get'),
     url(r'^convert/base$', views.conversion_base, name='conversion_base'),
     url(r'^convert/unit$', views.conversion_unit, name='conversion_unit'),
+    url(r'^quiz/$', views.quiz, name='quiz'),
 ]
