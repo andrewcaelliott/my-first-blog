@@ -46,6 +46,10 @@ form.freeform p {
     font-size: 32px
 }
 
+form.choice {
+    display:inline;
+}
+
 .row:nth-child(2) .blog-summary> div {
     height: 50rem;
     overflow: auto;
@@ -82,12 +86,21 @@ div.content.container{
     padding: 1rem;
 }
 
+.content .quiz {
+    background-color: rgba(72,125,24,0.1);
+    padding: 1rem;
+}
+
 .content .widget label {
     width: 7em;
 }
 
 .content .widget input, .content .widget select {
     width: 45%;
+}
+
+form.quiz-form{
+    font-size: 24px;
 }
 
 #ads {
