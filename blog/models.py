@@ -165,7 +165,7 @@ class NumberQuery(models.Model):
 
 
     def _display(self):
-        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit])
+        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
     def __str__(self):
         return self.title        
@@ -187,7 +187,7 @@ class NumberFact(models.Model):
     subject = models.TextField()
 
     def _display(self):
-        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit])
+        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
     def _link(self):
         return "../fact/"+str(self.id)

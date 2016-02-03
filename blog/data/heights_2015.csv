@@ -1,12 +1,12 @@
-1,ostrich,2.7,-0,0,meter,extent,www.onekind.org
-2,African elephant,4.2,-0,0,meter,extent,www.onekind.org
-3,giraffe,5.8,-0,0,meter,extent,www.onekind.org
-4,`Burj Khalifa` scyscraper (Dubai),830,-0,0,meter,extent,Google
-5,`Shard` skyscraper (London),310,-0,0,meter,extent,Wikipedia
-6,London Eye Ferris Wheel,135,-0,0,meter,extent,Wikipedia
-7,Empire State Building (NYC),381,-0,0,meter,extent,Google
-8,Eiffel Tower,310,-0,0,meter,extent,Google
-9,Angel Falls (Venuzeula),979,-0,0,meter,extent,Google
-10,Mount Everest,8848,-0,0,meter,extent,Google
-11,Cruising Altitude of Airbus commercial jet,13,thousand,3,meter,extent,Google
-12,Orbit of International Space Station,400,thousand,3,meter,extent,Google
+1,Height of an ostrich,2.7,unit,0,meter,extent,www.onekind.org
+2,Height of an African elephant,4.2,unit,0,meter,extent,www.onekind.org
+3,Height of a giraffe,5.8,unit,0,meter,extent,www.onekind.org
+4,Height of the `Burj Khalifa` scyscraper (Dubai),830,unit,0,meter,extent,Google
+5,Height of the `Shard` skyscraper (London),310,unit,0,meter,extent,Wikipedia
+6,Height of the London Eye Ferris Wheel,135,unit,0,meter,extent,Wikipedia
+7,Height of the Empire State Building (NYC),381,unit,0,meter,extent,Google
+8,Height of the Eiffel Tower,310,unit,0,meter,extent,Google
+9,Height of the Angel Falls (Venuzeula),979,unit,0,meter,extent,Google
+10,Height of Mount Everest,8848,unit,0,meter,extent,Google
+11,Cruising altitude of Airbus commercial jet,13,thousand,3,meter,extent,Google
+12,Altitude of the orbit of the International Space Station,400,thousand,3,meter,extent,Google
