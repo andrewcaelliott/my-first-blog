@@ -1,8 +1,33 @@
-1,trip from the Earth to the Sun,149.6,billion,9,m,extent,Thanks to Google
-2,trip from the Earth to the Moon,384.4,million,6,m,extent,Thanks to Google
-3,trip around the equator,40.075,million,6,m,extent,Thanks to Google
-4,trip from London to New York,5.576,million,6,m,extent,Thanks to Distance To From
-5,trip from London to Edinburgh,534.7,thousand,3,m,extent,Thanks to FreeMapTools
-6,a football pitch,105,unit,0,m,extent,Thanks to Wikipedia
-7,a London bus,11.23,unit,0,m,extent,Thanks to Google
-8,an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+1,Width of the milky way,1,sextillion,21,m,extent,http://imagine.gsfc.nasa.gov/features/cosmic/milkyway_info.html
+2,A parsec,31,quadrillion,15,m,extent,http://imagine.gsfc.nasa.gov/resources/dict_jp.html#parsec
+3,A light year,9.46,quadrillion,15,m,extent,http://imagine.gsfc.nasa.gov/resources/dict_jp.html#light_year
+4,Halley's comet's furthest Distance from the sun (aphelion),5.25,trillion,12,m,extent,https://en.wikipedia.org/wiki/Halley%27s_Comet
+5,Distance from the Sun to Neptune,4.498,trillion,12,m,extent,Thanks to Google
+6,Distance from the Earth to the Sun,149.6,billion,9,m,extent,Thanks to Google
+7,An AU (astronomical unit),149.6,billion,9,m,extent,https://en.wikipedia.org/wiki/Astronomical_unit
+8,Distance from the Earth to the Moon,384.4,million,6,m,extent,Thanks to Google
+9,Length of the equator,40.075,million,6,m,extent,Thanks to Google
+10,Distance from London to New York,5.576,million,6,m,extent,Thanks to Distance To From
+11,Length of the USA / Canada border,8891,thousand,3,m,extent,Thanks to Google
+12,Length of the Great Wall of China,8852,thousand,3,m,extent,Thanks to Google
+13,Length of North America (North to South),8605,thousand,3,m,extent,http://www.worldatlas.com/webimage/countrys/nalandst.htm#page
+14,Length of Africa (North to South),7248,thousand,3,m,extent,http://www.worldatlas.com/webimage/countrys/aflandst.htm#page
+15,Length of South America (North to South),7149,thousand,3,m,extent,http://www.worldatlas.com/webimage/countrys/salandst.htm
+16,Length of the Congo River,4700,thousand,3,m,extent,Thanks to Google
+17,Length of the Mississippi River,3730,thousand,3,m,extent,Thanks to Wikipedia
+18,Length of the Danube River,2860,thousand,3,m,extent,Thanks to Google
+19,Length of the Rhine River,1233,thousand,3,m,extent,Thanks to Google
+20,Distance from London to Edinburgh,534.7,thousand,3,m,extent,Thanks to FreeMapTools
+21,Length of the Thames River,386,thousand,3,m,extent,Thanks to Google
+22,Length of a Marathon race,42.195,thousand,3,m,extent,Thanks to Google
+23,Length of Tower Bridge over the Thames,244,unit,0,m,extent,https://en.wikipedia.org/wiki/Tower_Bridge
+24,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent,https://en.wikipedia.org/wiki/Pont_Neuf
+25,Length of a football pitch,105,unit,0,m,extent,Thanks to Wikipedia
+26,Distance between bases of a baseball diamond,27.432,unit,0,m,extent,Thanks to Wikipedia
+27,Length of a cricket pitch,20.12,unit,0,m,extent,Thanks to Google
+28,Length of a London bus,11.23,unit,0,m,extent,Thanks to Google
+29,Length of a Nile crocodile,4.2,unit,0,m,extent,Thanks to Google
+30,Length of a standard full size snooker table,3.569,unit,0,m,extent,Thanks to Google
+31,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+32,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
+33,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
