@@ -1,15 +1,40 @@
-1,age of the universe,13.82,billion,9,y,duration,Thanks to Google
-2,age of the Earth,4.543,billion,9,y,duration,Thanks to Google
-3,earliest primates,75,million,6,y,duration,Thanks to Wikipedia
-,extinction of dinosaurs,66,million,6,y,duration,Thanks to Wikipedia
-4,earliest humans,2.8,million,6,y,duration,Thanks to Wikipedia
-5,first modern humans,200,thousand,3,y,duration,Thanks to Wikipedia
-6,earliest writing,5.2,thousand,3,y,duration,Thanks to Google
-7,peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
-8,building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
-9,lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-10,lifespan of human being,80,unit,0,y,duration,Thanks to Google
-11,lifespan of horse,30,unit,0,y,duration,Thanks to Google
-12,human generation,25,unit,0,y,duration,Thanks to Google
-13,lifespan of rat,2,unit,0,y,duration,Thanks to Google
-14,lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+1,Age of the universe,13.82,billion,9,y,duration,Thanks to Google
+2,Time since the start of the formation of the Solar System,4.6,billion,9,y,duration,https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
+3,Age of the Earth,4.543,billion,9,y,duration,Thanks to Google
+4,Time since the emergence of multicellular life,2.1,billion,9,y,duration,http://www.iflscience.com/plants-and-animals/oldest-multicellular-life-revealed-detail
+5,Time since the emergence of earliest fish,530,million,6,y,duration,https://en.wikipedia.org/wiki/Evolution_of_fish
+6,Time since the emergence of earliest insects,480,million,6,y,duration,https://en.wikipedia.org/wiki/Evolution_of_insects
+7,Time since the emergence of earliest reptiles,315,million,6,y,duration,https://en.wikipedia.org/wiki/Evolution_of_reptiles
+8,Break-up of Pangaea into today's continents,175,million,6,y,duration,https://en.wikipedia.org/wiki/Pangaea
+9,Time since the emergence of flowering plants,125,million,6,y,duration,http://www.mnh.si.edu/museum/news/firstflower/
+10,Time since the earliest primates,75,million,6,y,duration,Thanks to Wikipedia
+11,Time since the extinction of dinosaurs,66,million,6,y,duration,Thanks to Wikipedia
+12,Age of earliest mammoth fossils,4.8,million,6,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+13,Time since the start of the Stone Age,3.4,million,6,y,duration,https://en.wikipedia.org/wiki/Stone_Age
+14,Time since the emergence of earliest humans,2.8,million,6,y,duration,Thanks to Wikipedia
+15,Age of earliest Neaderthal fossils,350,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+16,Time since the first modern humans,250,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+17,Time since first humans in Australia,50,thousand,3,y,duration,http://australianmuseum.net.au/the-spread-of-people-to-australia
+18,Age of the earliest cave paintings,35,thousand,3,y,duration,https://en.wikipedia.org/wiki/Cave_painting
+19,Time since first humans in Europe,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Early_human_migrations#Migration_of_the_Cro-Magnons_into_Europe
+20,Time since extinction of Neanderthals,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+21,Time since first humans in Americas,15,thousand,3,y,duration,https://en.wikipedia.org/wiki/Settlement_of_the_Americas
+22,Time since the earliest farming,11.5,thousand,3,y,duration,https://en.wikipedia.org/wiki/History_of_agriculture
+23,Age of the earliest city,6.5,thousand,3,y,duration,http://www.ancient.eu/city/
+24,Time since the start of the Bronze Age,5.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Bronze_Age
+25,Time since the earliest writing,5.2,thousand,3,y,duration,Thanks to Google
+26,Time since earliest wheeled vehicles,4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Wheel
+27,Time since the start of the Iron Age,3.2,thousand,3,y,duration,https://en.wikipedia.org/wiki/Iron_Age
+28,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
+29,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
+30,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
+31,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
+32,Time since the birth of al-Khwarizmi,1240,unit,0,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
+33,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
+34,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
+35,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
+36,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
+37,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
+38,One average human generation,25,unit,0,y,duration,Thanks to Google
+39,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
+40,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
