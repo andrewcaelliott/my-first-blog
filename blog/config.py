@@ -71,15 +71,19 @@ mass_references = [
     ('Mass of the Great Pyramid of Giza','{times:,.2f} times the mass of the Great Pyramid of Giza','{percent:,.2f} percent of the mass of the Great Pyramid of Giza','1 /{fraction:,.0f} of the mass of the Great Pyramid of Giza'),
     ('Mass of the Titanic','{times:,.2f} times the mass of the Titanic','{percent:,.2f} percent of the mass of the Titanic','1 /{fraction:,.0f} of the mass of the Titanic'),
     ('Mass of an Airbus a380','{times:,.2f} times the mass of an Airbus a380','{percent:,.2f} percent of the mass of an Airbus a380','1 /{fraction:,.0f} of the mass of an Airbus a380'),
+    ('Mass of the Statue of Liberty','{times:,.2f} times the mass of the Statue of Liberty','{percent:,.2f} percent of the mass of the Statue of Liberty','1 /{fraction:,.0f} of the mass of the Statue of Liberty'),
     ('Mass of a Blue Whale','{times:,.2f} times the mass of a Blue Whale','{percent:,.2f} percent of the mass of a Blue Whale','1 /{fraction:,.0f} of the mass of a Blue Whale'),
     ('Mass of an M1 Abrams tank','{times:,.2f} times the mass of an M1 Abrams tank','{percent:,.2f} percent of the mass of an M1 Abrams tank','1 /{fraction:,.0f} of the mass of an M1 Abrams tank'),
     ('Mass of a Rhino','{times:,.2f} times the mass of a Rhino','{percent:,.2f} percent of the mass of a Rhino','1 /{fraction:,.0f} of the mass of a Rhino'),
     ('Mass of a small passenger car','{times:,.2f} times the mass of a small passenger car','{percent:,.2f} percent of the mass of a small passenger car','1 /{fraction:,.0f} of the mass of a small passenger car'),
+    ('Mass of a concert grand piano','{times:,.2f} times the mass of a concert grand piano','{percent:,.2f} percent of the mass of a concert grand piano','1 /{fraction:,.0f} of the mass of a concert grand piano'),
+    ('Mass of an adult male red kangaroo','{times:,.2f} times the mass of an adult male red kangaroo','{percent:,.2f} percent of the mass of an adult male red kangaroo','1 /{fraction:,.0f} of the mass of an adult male red kangaroo'),
     ('Mass of a domestic washing machine','{times:,.2f} times the mass of a domestic washing machine','{percent:,.2f} percent of the mass of a domestic washing machine','1 /{fraction:,.0f} of the mass of a domestic washing machine'),
     ('Mass of a large watermelon','{times:,.2f} times the mass of a large watermelon','{percent:,.2f} percent of the mass of a large watermelon','1 /{fraction:,.0f} of the mass of a large watermelon'),
     ('Mass of a brick','{times:,.2f} times the mass of a brick','{percent:,.2f} percent of the mass of a brick','1 /{fraction:,.0f} of the mass of a brick'),
     ('Mass of an iPad Air','{times:,.2f} times the mass of an iPad Air','{percent:,.2f} percent of the mass of an iPad Air','1 /{fraction:,.0f} of the mass of an iPad Air'),
     ('Mass of an iPhone 6','{times:,.2f} times the mass of an iPhone 6','{percent:,.2f} percent of the mass of an iPhone 6','1 /{fraction:,.0f} of the mass of an iPhone 6'),
+    ('Mass of a USA penny (1c piece)','{times:,.2f} times the mass of a USA penny (1c)','{percent:,.2f} percent of the mass of a USA penny (1c)','1 /{fraction:,.0f} of the mass of a USA penny (1c)'),
 ]
 
 
