@@ -36,6 +36,16 @@ def home(request):
     stories["landmark"]=storySelection("landmark")
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
 
+def homealt(request):
+    freeForm = FreeForm()
+    widgets = []
+    stories = {}
+    stories["news"]=storySelection("news")
+    stories["passion"]=storySelection("passion")
+    stories["education"]=storySelection("education")
+    stories["landmark"]=storySelection("landmark")
+    return render(request, 'blog/home-alt.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
+
 def quiz(request):
     params = request.POST
     try:

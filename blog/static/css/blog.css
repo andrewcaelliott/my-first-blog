@@ -111,6 +111,12 @@ form.quiz-form{
 .content .embed {
     float: right;
 }
+.content .twitter-share-button {
+    width: 23px !important;
+    opacity: 0.4;
+    -webkit-filter: grayscale(1);
+    border-radius: 4px;
+}
 
 .tumblr-post .post-header {
     visibility: hidden;
