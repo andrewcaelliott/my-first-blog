@@ -41,7 +41,7 @@
         	<input type="hidden" value="{{ quiz.measure }}" name="measure">
         	<input type="hidden" value="{{ quiz.seed }}" name="seed">
             {% for option in quiz.options %}
-        		<p><input type="radio" name="option" class="option" value="{{ option }}"> {{ option }}</p>
+        		<p><input type="radio" name="option" class="option" value="{{ option.title }}"> {{ option.title }} <a title="Cheat?" href="{{ option.link }}">...</a></p>
             {% endfor %}
             {% if quiz.cycle != "correct" %}
             	<button type="submit" class="save btn btn-default">I've made my choice</button>

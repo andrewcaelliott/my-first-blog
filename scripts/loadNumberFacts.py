@@ -7,12 +7,12 @@ def num(s):
     except ValueError:
         return float(s)
 
-def addFact(title="Test Fact", text="Just a trial", number="100", scale=0, multiple="unit", unit = "n/a", measure = "count"):
+def addFact(title="Test Fact", text="Just a trial", magnitude="100", scale=0, multiple="unit", unit = "n/a", measure = "count"):
 	deleteFacts(title=title)
 	nf = NumberFact()
 	nf.title=title
 	nf.text=text
-	nf.magnitude=number
+	nf.magnitude=magnitude
 	nf.value=num(nf.magnitude)
 	nf.scale=scale
 	nf.unit = unit
@@ -36,10 +36,10 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 	lines = inFile.readlines()
 	for line in lines[0:]:
 		print(line)
-		ordinal, subject, number, multiple, scale, unit, measure, comment = line.split(",")
-		print(ordinal, subject, number, multiple, scale, unit, measure, comment)
+		ordinal, subject, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+		print(ordinal, subject, magnitude, multiple, scale, unit, measure, comment)
 		#print(multiple)
-		fact = addFact(title=metric+subject.replace(";",",").replace("\"",""), text=comment, number=number, scale=scale, multiple=multiple, unit = unit, measure=measure)
+		fact = addFact(title=metric+subject.replace(";",",").replace("\"",""), text=comment, magnitude=magnitude, scale=scale, multiple=multiple, unit = unit, measure=measure)
 		print(fact.render)
 
 def run():

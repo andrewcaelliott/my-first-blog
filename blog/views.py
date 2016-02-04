@@ -84,7 +84,7 @@ def quiz(request):
             quiz["question"]=""
             reveal = []
             for option in bestComparisons:
-                reveal.append(option.render)
+                reveal.append({"title":option.render, "link":option.link})
             quiz["options"]=reveal
             quiz["cycle"]="correct"
         elif cycle=="answered":
@@ -93,7 +93,7 @@ def quiz(request):
         pass
 #        form = FactForm()
  #   return render(request, 'blog/fact_edit.html', {'form': form})   
-    return render(request, 'blog/quiz.html', {'quiz':quiz})
+    return render(request, 'blog/quiz.html', {'quiz':quiz, 'quote': choice(quotes)})
 
 def itabn(request):
     freeForm = FreeForm()
@@ -284,7 +284,11 @@ def post_new(request):
 
 def fact_detail(request, pk):
     fact = get_object_or_404(NumberFact, pk=pk)
-    return render(request, 'blog/fact_detail.html', {'fact': fact})
+    if fact.text.rfind("http")>=0:
+        reflink=fact.text
+    else:
+        reflink="http://www.google.com/?q="+fact.title
+    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes)})
 
 def fact_new(request):
     if request.method == "POST":

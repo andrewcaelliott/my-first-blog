@@ -91,6 +91,11 @@ div.content.container{
     padding: 1rem;
 }
 
+.content .fact {
+    background-color: rgba(72,125,24,0.1);
+    padding: 1rem;
+}
+
 .content .widget label {
     width: 7em;
 }
@@ -101,6 +106,14 @@ div.content.container{
 
 form.quiz-form{
     font-size: 24px;
+}
+
+.content .embed {
+    float: right;
+}
+
+.tumblr-post .post-header {
+    visibility: hidden;
 }
 
 #ads {

@@ -52,13 +52,13 @@ amount_references = [
 ] 
 
 duration_references = [
-    ('age of the universe','{times:,.2f} times the age of the universe','{percent:,.2f} percent of the age of the universe','1 /{fraction:,.0f} of the age of the universe'),
-    ('age of the Earth','{times:,.2f} times the age of the Earth','{percent:,.2f} percent of the age of the Earth','1 /{fraction:,.0f} of the age of the Earth'),
-    ('first modern humans','{times:,.2f} times the period since the emergence of the first modern humans','{percent:,.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:,.0f} of the time since the emergence of the first modern humans'),
-    ('building of Great Wall of China','{times:,.2f} times the period since the building of the Great Wall of China','{percent:,.2f} percent of the time since the building of the Great Wall of China','1 /{fraction:,.0f} of the time since the building of the Great Wall of China'),
-    ('lifespan of Galapagos giant tortoise','{times:,.2f} times the lifespan of a Galapagos giant tortoise','{percent:,.2f} percent of the lifespan of a Galapagos giant tortoise','1 /{fraction:,.0f} of the lifespan of a Galapagos giant tortoise'),
-    ('human generation','{times:,.2f} human generations','{percent:,.2f} percent of a human generation','1 /{fraction:,.0f} of a human generation'),
-    ('lifespan of rat','{times:,.2f} times the lifespan of a rat','{percent:,.2f} percent of the lifespan of a rat','1 /{fraction:,.0f} of the lifespan of a rat'),
+    ('Age of the universe','{times:,.2f} times the age of the universe','{percent:,.2f} percent of the age of the universe','1 /{fraction:,.0f} of the age of the universe'),
+    ('Age of the Earth','{times:,.2f} times the age of the Earth','{percent:,.2f} percent of the age of the Earth','1 /{fraction:,.0f} of the age of the Earth'),
+    ('Time since the first modern humans','{times:,.2f} times the period since the emergence of the first modern humans','{percent:,.2f} percent of the time since the emergence of the first modern humans','1 /{fraction:,.0f} of the time since the emergence of the first modern humans'),
+    ('Time since the building of Great Wall of China','{times:,.2f} times the period since the building of the Great Wall of China','{percent:,.2f} percent of the time since the building of the Great Wall of China','1 /{fraction:,.0f} of the time since the building of the Great Wall of China'),
+    ('Lifespan of Galapagos giant tortoise','{times:,.2f} times the lifespan of a Galapagos giant tortoise','{percent:,.2f} percent of the lifespan of a Galapagos giant tortoise','1 /{fraction:,.0f} of the lifespan of a Galapagos giant tortoise'),
+    ('One average human generation','{times:,.2f} human generations','{percent:,.2f} percent of a human generation','1 /{fraction:,.0f} of a human generation'),
+    ('Lifespan of rat','{times:,.2f} times the lifespan of a rat','{percent:,.2f} percent of the lifespan of a rat','1 /{fraction:,.0f} of the lifespan of a rat'),
 ] 
 
 mass_references = [
@@ -194,6 +194,7 @@ quotes = (
         "Let's run the numbers",
         "Sharpen your number sense",
         "Numbers count",
+        '"... a man with numbers can put your mind at ease." Paul Simon: When Numbers Get Serious',
         '"Wherever there is number, there is beauty." Proclus (410-485 A.D.)',
         '"Headlines twice the size of the events." John Galsworthy',
         "An optimist will tell you the glass is half-full; the pessimist, half-empty; and the engineer will tell you the glass is twice the size it needs to be",
