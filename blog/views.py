@@ -51,9 +51,9 @@ def quiz(request):
     try:
         seed=num(params.get("seed"))
     except (AttributeError,TypeError):
-        seed = randint(0,1000000)
+        seed = randint(0,10000000)
     if seed == None:
-        seed = randint(0,1000000)
+        seed = randint(0,10000000)
 
     try:
         cycle=params.get("cycle")
@@ -82,8 +82,12 @@ def quiz(request):
     quiz["measure"]=measure
     quiz["seed"] = seed
     rf = randomFact(measure, rseed=seed)
-    quiz["hint"] = rf.render
     bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
+    while len(bestComparisons)<4:
+        seed = randint(0,10000000)
+        rf = randomFact(measure, rseed=seed)
+        bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
+    quiz["hint"] = rf.render
     quiz["options"]=bestComparisons
     biggest = biggestNumberFact(bestComparisons)
     quiz["answer"]=biggest.title
