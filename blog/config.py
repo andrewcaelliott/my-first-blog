@@ -206,6 +206,9 @@ quotes = (
         '"Numbers have an important story to tell. They rely on you to give them a voice." Stephen Few',
         '"The price of light is less than the cost of darkness." Arthur C. Nielsen',
         '"It’s easy to lie with statistics. It’s hard to tell the truth without statistics." Andrejs Dunkels',
+        '"It is easy to lie with statistics; it is easier to lie without them." Frederick Mosteller',
+        '"I love the big round numbers. The bigger and rounder they are, the more I love them." Alan Alda',
+        '"Errors using inadequate data are much less than those using no data at all." Charles Babbage',
     )        
 
 
