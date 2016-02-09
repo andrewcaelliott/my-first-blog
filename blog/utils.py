@@ -192,6 +192,7 @@ def parseNumber(big_number, regex):
 
 
 def parseBigNumber(big_number):
+    big_number=big_number.replace(",","")
     print(big_number)
     parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
     if (parsed != None):
@@ -246,8 +247,10 @@ def tests():
     #print(parsed)
     #parsed = parseBigNumber("2556000000")
     #print(parsed)
+    parsed = parseBigNumber("255,600,000.3")
+    print(parsed)
 
-#tests()
+tests()
 
 
 def randomFact(measure):
