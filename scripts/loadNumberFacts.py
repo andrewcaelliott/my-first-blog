@@ -46,7 +46,7 @@ def run():
     deleteAllFacts()
     loadNumberFacts("./blog/data/Company_Revenues.csv","","USD")
     loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
-    loadNumberFacts("./blog/data/Population_of_cities.csv","Population of ","people", encoding="latin1")
+    loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Population_of_cities.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/Animal_Populations.csv","","individuals")
     loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
