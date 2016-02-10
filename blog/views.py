@@ -95,7 +95,7 @@ def quiz(request):
         response = request.POST
         if response.get("option")==quiz["answer"] and cycle=="answered":
             quiz["assessment"] = str(response.get("option"))+" is the correct answer: Well done!"
-            quiz["question"]=""
+            #quiz["question"]=""
             reveal = []
             for option in bestComparisons:
                 reveal.append({"title":option.render, "link":option.link})
