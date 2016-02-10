@@ -250,7 +250,6 @@ def tests():
     parsed = parseBigNumber("255,600,000.3")
     print(parsed)
 
-tests()
 
 
 def randomFact(measure):

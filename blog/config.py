@@ -34,8 +34,11 @@ count_references = [
     ('Number of books in the British Library','{times:,.2f} for every book in the British Library','One for every {fraction:,.0f} books in the British Library'),
     ('Population of United States','{times:,.2f} for every person in the USA','One for every {fraction:,.0f} people in the USA'),
     ('Population of United Kingdom','{times:,.2f} for every person in the UK','One for every {fraction:,.0f} people in the UK'),
+    ('Estimated world population of Horses','{times:,.2f} for every Horse in the world','One for every {fraction:,.0f} Horses in the world'),
     ('Number of grains of sugar in a cup','{times:,.2f} for every grain of sugar in a cup','One for every {fraction:,.0f} grains of sugar in a cup'),
     ('Number of strands on a head of hair','{times:,.2f} for every strand on a head of hair','One for every {fraction:,.0f} strands on a head of hair'),
+    ('High estimate of world population of Lions','{times:,.2f} for every Lion in the world','One for every {fraction:,.0f} Lions in the world'),
+    ('High estimate of world population of Tigers','{times:,.2f} for every Tiger in the world','One for every {fraction:,.0f} Tigers in the world'),
 ]
 
 amount_references = [
