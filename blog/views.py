@@ -86,7 +86,7 @@ def quiz(request):
     while len(bestComparisons)<4:
         seed = randint(0,10000000)
         rf = randomFact(NumberFact, measure, rseed=seed)
-        bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
+        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
     quiz["hint"] = rf.render
     quiz["options"]=bestComparisons
     biggest = biggestNumberFact(bestComparisons)
