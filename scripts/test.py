@@ -1,12 +1,11 @@
-#from blog.models import NumberFact
+from blog.models import NumberFact
 #from blog.models import NumberQuery
 #from blog.forms import QueryForm
 #from pint import UnitRegistry
 from math import log10
 from random import sample,randint
-#from blog.utils import parseBigNumber
-from blog.hlutils import randomFact
-from blog.models import closeEnoughNumberFact, numberFactsLikeThis, biggestNumberFact
+from blog.utils import closeEnoughNumberFact, numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, bracketNumber, randomFact
+
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -127,22 +126,22 @@ from blog.models import closeEnoughNumberFact, numberFactsLikeThis, biggestNumbe
 		#facts.append(fact)
 	#return facts
 #
-#def run6():
-	#nf = closeEnoughNumberFact(500, 6, 0.5,"extent")
-	#for fact in nf:
-		#print(fact.value, fact.render)
+def run6():
+	nf = closeEnoughNumberFact(NumberFact, 900, 3, 0.5,"extent")
+	for fact in nf:
+		print(fact.value, fact.render)
 
 #def run7():
 #	bn = parseBigNumber("126g767")
 #	print(bn)
 
-def run():
+def run8():
 	measure=("amount")
 	seed = randint(0,1000000)
 	rf = randomFact(measure, rseed=seed)
 	print(rf.render)
 
-	bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
+	bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
 
 	print(tolerance, score)
 	for fact in bestComparisons:
@@ -152,3 +151,26 @@ def run():
 
 	biggest = biggestNumberFact(bestComparisons)
 	print(biggest.render)
+
+def run():
+	measure=("mass")
+	seed = randint(0,1000000)
+	rf = randomFact(NumberFact, measure, rseed=seed)
+	magnitude = rf.magnitude
+	scale = rf.scale
+#	print(rf.render)
+#	test = NumberFact.objects.filter().order_by("value")[0:10]#
+#	for item in test:
+#		print(item.render, item.magnitude, item.value)
+
+#	print(bracketNumber(magnitude, scale, measure))
+	for i in range(0,24,3):
+		print(bracketNumber(NumberFact, "1.25", i, "count"))
+		print(bracketNumber(NumberFact, "12.5", i, "count"))
+		print(bracketNumber(NumberFact, "125", i, "count"))
+
+def run10():
+	klass = NumberFact
+	print(NumberFact)
+	print(klass)
+	print(klass.objects)

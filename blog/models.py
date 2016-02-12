@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from random import sample,seed
+from random import sample
 from math import log10
 from pint import UnitRegistry,UndefinedUnitError
 from .fixer_io import convertToCurrency
@@ -8,55 +8,10 @@ from .convert import convertToDefault
 from .convert import AMOUNT_UNITS
 from .config import all_unit_choices
 from .config import MEASURE_CHOICES,MULTIPLE_CHOICES
-from .utils import num,sigfigs,getScaleFactor,output,currency_output
+from .utils import num,sigfigs,getScaleFactor,output,currency_output,closeEnoughNumberFact,bracketNumber
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 UNIT_CHOICES = all_unit_choices
-
-def closeEnoughNumberFact(magnitude, scale, tolerance, measure):
-#   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
-    facts = []
-    nf = NumberFact.objects.filter(value__gte=num(magnitude)*1000/(1+tolerance), value__lt=num(magnitude)*1000*(1+tolerance), scale=scale-3, measure=measure)
-    for fact in nf:
-        facts.append(fact)
-    nf = NumberFact.objects.filter(value__gte=num(magnitude)/(1+tolerance), value__lt=num(magnitude)*(1+tolerance), scale=scale, measure=measure)
-    for fact in nf:
-        facts.append(fact)
-    nf = NumberFact.objects.filter(value__gte=num(magnitude)/1000/(1+tolerance), value__lt=num(magnitude)/1000*(1+tolerance), scale=scale+3, measure=measure)
-    for fact in nf:
-        facts.append(fact)
-    return facts
-
-def biggestNumberFact(nfs):
-    biggestValue= 0
-    biggestFact = None
-    for fact in nfs:
-        value = num(fact.magnitude) * 10**num(fact.scale)
-        if value > biggestValue:
-            biggestFact = fact
-            biggestValue = value
-    return biggestFact
-
-
-def numberFactsLikeThis(nf, rseed=None):
-#    tolerances=[0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10, 25, 50, 100]
-    if rseed != None:
-        seed(rseed)
-    tolerances=[1.0, 2.5, 5.0, 10, 25, 50, 100]
-    for tolerance in tolerances:
-        ce=closeEnoughNumberFact(nf.magnitude, nf.scale, tolerance, nf.measure)
-        ce.remove(nf)
-        if len(ce)>=4:
-            bestTolerance = tolerance
-            bestComparisons = sample(ce[1:-1],2)
-            bestComparisons.append(ce[0])
-            bestComparisons.append(ce[-1])
-            bestComparisons = sample(bestComparisons,4)
-            break
-        bestTolerance = tolerance
-        bestComparisons = sample(ce,len(ce))
-    score = round(1*log10(bestTolerance/1000)**2)*(len(bestComparisons)-1)
-    return bestComparisons, bestTolerance, score
 
 
 class NumberQuery(models.Model):
@@ -80,6 +35,34 @@ class NumberQuery(models.Model):
     def setScaleFactor(self):
         scale, factor = getScaleFactor(self.multiple)
         return factor
+
+
+    def getBrackets(self):
+
+        factor = self.setScaleFactor()
+        try:
+            num_ans = num(self.magnitude) * factor
+        except:
+            num_ans = 0            
+        n = convertToDefault(num_ans, self.unit)
+
+        if n>1000000000000:
+            temp_scale = 12
+            n = n / 1000000000000.0
+        elif n>1000000000:
+            temp_scale = 9
+            n = n / 1000000000.0
+        elif n>1000000:
+            temp_scale = 6
+            n = n / 1000000.0
+        elif n>1000:
+            temp_scale = 3
+            n = n / 1000.0
+        else:
+            temp_scale = 0
+
+        brackets = bracketNumber(NumberFact, str(n), temp_scale, self.get_measure_display())
+        return {"above":brackets[0], "below":brackets[1]}
 
     def getCloseMatches(self):
         #todo first convert to default unit
@@ -106,7 +89,7 @@ class NumberQuery(models.Model):
         else:
             temp_scale = 0
 
-        closeEnough = closeEnoughNumberFact(n, temp_scale, 0.2, self.get_measure_display())
+        closeEnough = closeEnoughNumberFact(NumberFact, n, temp_scale, 0.1, self.get_measure_display())
         closeMatches = []
         for fact in closeEnough:
             match = {"text":fact.render, "link":fact.link}
@@ -115,8 +98,8 @@ class NumberQuery(models.Model):
 #        closeMatches.append(" ".join([str(self.magnitude), str(scale), str(self.fields)]))
         if n==0:
             closeMatches.append({"text":"Invalid input", "link":"."})
-        elif len(closeMatches)==0:
-            closeMatches.append({"text":"No close matches found", "link":"."})
+#        elif len(closeMatches)==0:
+#            closeMatches.append({"text":"No close matches found", "link":"."})
         return closeMatches
 
     def getComparisons(self, references):
