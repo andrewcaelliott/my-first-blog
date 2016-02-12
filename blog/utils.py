@@ -1,3 +1,4 @@
+from random import sample,seed,randint
 from pint import UnitRegistry,UndefinedUnitError
 ureg = UnitRegistry()
 Q_=ureg.Quantity
@@ -136,6 +137,13 @@ std_multiples = {
     "trillion":"T",
 }
 
+def succ(multiple):
+    mults={"U":"k", "k":"M", "M":"G", "G":"T", "T":"P"}
+    if multiple in mults:
+        return mults[multiple]
+    else:        
+        return None
+
 def normalise(parsed):
     magnitude, multiple, unit = parsed
     if (multiple=="U" and unit.lower() in std_multiples):
@@ -146,6 +154,13 @@ def normalise(parsed):
     measure = getMeasure(unit)   
     if multiple.lower() in std_multiples.keys():
         multiple = std_multiples[multiple.lower()]
+
+    value = num(magnitude)
+    while value>1000:
+        value=value/1000
+        multiple = succ(multiple)
+
+    magnitude = str(value)
     return magnitude, multiple, unit, measure 
 
 def getMeasure(unit):
@@ -249,8 +264,95 @@ def tests():
     #print(parsed)
     parsed = parseBigNumber("255,600,000.3")
     print(parsed)
+    parsed = parseBigNumber("8000.3")
+    print(parsed)
+    parsed = parseBigNumber("255,600,123,000.3")
+    print(parsed)
 
-
+#tests()
 
 def randomFact(measure):
     return "dummy"
+
+def bracketNumber(klass, magnitude, scale, measure):
+    #tolerance=10000
+    response = []
+#   nf_gt = NumberFact.objects.filter(value__gt=num(magnitude)*1, value__lt=num(magnitude)*1*(1+tolerance), scale=scale-0, measure=measure).order_by("value")
+    nf_gt = klass.objects.filter(value__gt=num(magnitude)*1, scale=scale-0, measure=measure).order_by("value")
+    if len(nf_gt)==0:
+        nf_gt = klass.objects.filter(value__gt=num(magnitude)/1000, scale=scale+3, measure=measure).order_by("value")
+    if len(nf_gt)==0:
+        nf_gt = klass.objects.filter(value__gt=num(magnitude)/1000000, scale=scale+6, measure=measure).order_by("value")
+    if len(nf_gt)==0:
+        nf_gt = klass.objects.filter(value__gt=num(magnitude)/1000000000, scale=scale+9, measure=measure).order_by("value")
+
+    nf_lt = klass.objects.filter(value__lt=num(magnitude)*1, scale=scale-0, measure=measure).order_by("-value")
+    if len(nf_lt)==0:
+        nf_lt = klass.objects.filter(value__lt=num(magnitude)*1000, scale=scale-3, measure=measure).order_by("-value")
+    if len(nf_lt)==0:
+        nf_lt = klass.objects.filter(value__lt=num(magnitude)*1000000, scale=scale-6, measure=measure).order_by("-value")
+    if len(nf_lt)==0:
+        nf_lt = klass.objects.filter(value__lt=num(magnitude)*1000000000, scale=scale-9, measure=measure).order_by("-value")
+    if len(nf_gt)==0:
+        response.append("No useful upper bracket on file")
+    else:           
+        response.append(" ".join([nf_gt[0].render]))
+    if len(nf_lt)==0:
+        response.append("No useful lower bracket on file")
+    else:           
+        response.append(" ".join([nf_lt[0].render]))
+    return response
+
+
+def closeEnoughNumberFact(klass, magnitude, scale, tolerance, measure):
+#   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
+    facts = []
+    nf = klass.objects.filter(value__gte=num(magnitude)*1000/(1+tolerance), value__lt=num(magnitude)*1000*(1+tolerance), scale=scale-3, measure=measure)
+    for fact in nf:
+        facts.append(fact)
+    nf = klass.objects.filter(value__gte=num(magnitude)/(1+tolerance), value__lt=num(magnitude)*(1+tolerance), scale=scale, measure=measure)
+    for fact in nf:
+        facts.append(fact)
+    nf = klass.objects.filter(value__gte=num(magnitude)/1000/(1+tolerance), value__lt=num(magnitude)/1000*(1+tolerance), scale=scale+3, measure=measure)
+    for fact in nf:
+        facts.append(fact)
+    return facts
+
+def numberFactsLikeThis(klass, nf, rseed=None):
+#    tolerances=[0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10, 25, 50, 100]
+    if rseed != None:
+        seed(rseed)
+    tolerances=[1.0, 2.5, 5.0, 10, 25, 50, 100]
+    for tolerance in tolerances:
+        ce=closeEnoughNumberFact(klass, nf.magnitude, nf.scale, tolerance, nf.measure)
+        ce.remove(nf)
+        if len(ce)>=4:
+            bestTolerance = tolerance
+            bestComparisons = sample(ce[1:-1],2)
+            bestComparisons.append(ce[0])
+            bestComparisons.append(ce[-1])
+            bestComparisons = sample(bestComparisons,4)
+            break
+        bestTolerance = tolerance
+        bestComparisons = sample(ce,len(ce))
+    score = round(1*log10(bestTolerance/1000)**2)*(len(bestComparisons)-1)
+    return bestComparisons, bestTolerance, score
+
+def biggestNumberFact(nfs):
+    biggestValue= 0
+    biggestFact = None
+    for fact in nfs:
+        value = num(fact.magnitude) * 10**num(fact.scale)
+        if value > biggestValue:
+            biggestFact = fact
+            biggestValue = value
+    return biggestFact
+
+
+def randomFact(klass, measure, rseed=None):
+    if rseed!=None:
+        seed(rseed)
+    count = klass.objects.filter(measure=measure).count()
+    rf = klass.objects.filter(measure=measure)[randint(0,count-1)]
+    return rf
+

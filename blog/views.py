@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .models import numberFactsLikeThis,biggestNumberFact
+from .utils import numberFactsLikeThis,biggestNumberFact
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -22,9 +22,9 @@ from .config import quip_lists,quotes
 from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
-from .utils import parseBigNumber
+from .utils import parseBigNumber, randomFact
 from .dummycontent import storyInfo,storySelection
-from .hlutils import randomFact
+
 
 def home(request):
     freeForm = FreeForm()
@@ -81,8 +81,8 @@ def quiz(request):
         quiz["question"]="Which of these has the greatest mass?"
     quiz["measure"]=measure
     quiz["seed"] = seed
-    rf = randomFact(measure, rseed=seed)
-    bestComparisons, tolerance, score  = numberFactsLikeThis(rf, rseed=seed) 
+    rf = randomFact(NumberFact, measure, rseed=seed)
+    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
     while len(bestComparisons)<4:
         seed = randint(0,10000000)
         rf = randomFact(measure, rseed=seed)
@@ -144,7 +144,14 @@ def query_answer(request, numberQuery):
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
     answer["closeMatches"] = numberQuery.getCloseMatches()
-    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
+    answer["brackets"] = numberQuery.getBrackets()
+    for match in answer["closeMatches"]:
+        if match["text"] == answer["brackets"]["above"]:
+            answer["closeMatches"].remove(match)
+        if match["text"] == answer["brackets"]["below"]:
+            answer["closeMatches"].remove(match)
+#    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
+    question = numberQuery.render.replace(" - "," ").replace(" i","")
     #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
     return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes)})   
 

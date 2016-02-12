@@ -23,13 +23,19 @@
         <div class="widget col-lg-6 col-md-6">
             <div>
                 <h2>How big is {{ question }} ?</h2>
-                <h2>Close match to ...</h2>
+                <h2>More or less ...</h2>
+                <div class="comparison">
+                    <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber?  < {{ answer.brackets.above }}">Tweet</a> Smaller than: {{ answer.brackets.above }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                </div>
+                <div class="comparison">
+                    <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? > {{ answer.brackets.below }}">Tweet</a> Bigger than: {{ answer.brackets.below }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                </div>
                 {% for match in answer.closeMatches %}
                     <div class="comparison">
-                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ match.text }}">Tweet</a> {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ match.text }}">Tweet</a> Close to: {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
                     </div>
                 {% endfor %}
-                <h2>That would be ...</h2>
+                <h2>And equivalent to  ...</h2>
                 {% for comparison in answer.comparisons %}
                     <div class="comparison">
                         <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ comparison.render }}">Tweet</a> {{ comparison.render }} <a title="Where does this number come from?" href="{{ comparison.link }}">...</a></p>
