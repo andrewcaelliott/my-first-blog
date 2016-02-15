@@ -1,22 +1,27 @@
-1,atoms in a mole (Avogadro's number),602.2,sextillion,21,,count,Thanks to Google
-2,transistors in the world,2,sextillion,21,,count,Thanks to Google
-3,stars in the observable universe,1,sextillion,21,,count,Thanks to Google
-4,grains of sand on the world's beaches,1,sextillion,21,,count,Thanks to Wikipedia
-5,insects in the world,10,quintillion,18,,count,Thanks to Wikipedia
-6,synapses in the human brain,1,quadrillion,15,,count,Thanks to Wikipedia
-7,fish in the sea,3.5,trillion,12,,count,Thanks to Wikipedia
-8,links in Wikipedia,2,trillion,12,,count,Thanks to Wikipedia
-9,bacteria on the human body,1,trillion,12,,count,Thanks to Wikipedia
-10,stars in our galaxy,300,billion,9,,count,Thanks to Wikipedia
-11,humans who have ever lived,106,billion,9,,count,Thanks to Wikipedia
-12,neurons in the human brain,100,billion,9,,count,Thanks to Wikipedia
-13,galaxies in the observable universe,100,billion,9,,count,Thanks to Google
-14,base pairs in the human genome,3,billion,9,,count,Thanks to Google
-15,cars in the world,1.2,billion,9,,count,Thanks to Google
-16,books in the British Library,150,million,6,,count,Thanks to Wikipedia
-17,words in Tolstoy`s War and Peace,564,thousand,3,,count,Thanks to Wikipedia
-18,grains of sugar in a cup,220,thousand,3,,count,Thanks to www.vendian.org
-19,strands on a head of hair,120,thousand,3,,count,Thanks to Wikipedia
-20,grains of sugar in a teaspoon,4,thousand,3,,count,Thanks to www.vendian.org
-21,letters on a typed page of text,2.5,thousand,3,,count,Thanks to Google
-22,billionaires in the world,1.826,thousand,3,,count,Thanks to Google
+1,atoms in a mole (Avogadro's number),602.2,sextillion,21,atoms,count,Thanks to Google
+2,transistors in the world,2,sextillion,21,transistors,count,Thanks to Google
+3,stars in the observable universe,1,sextillion,21,stars,count,Thanks to Google
+4,grains of sand on the world's beaches,1,sextillion,21,grains,count,Thanks to Wikipedia
+5,insects in the world,10,quintillion,18,insects,count,Thanks to Wikipedia
+6,synapses in the human brain,1,quadrillion,15,synapses,count,Thanks to Wikipedia
+7,fish in the sea,3.5,trillion,12,fish,count,Thanks to Wikipedia
+8,links in Wikipedia,2,trillion,12,links,count,Thanks to Wikipedia
+9,bacteria on the human body,1,trillion,12,bacteria,count,Thanks to Wikipedia
+10,stars in our galaxy,300,billion,9,stars,count,Thanks to Wikipedia
+11,humans who have ever lived,106,billion,9,individuals,count,Thanks to Wikipedia
+12,neurons in the human brain,100,billion,9,neurons,count,Thanks to Wikipedia
+13,galaxies in the observable universe,100,billion,9,galaxies,count,Thanks to Google
+14,base pairs in the human genome,3,billion,9,pairs,count,Thanks to Google
+15,cars in the world,1.2,billion,9,cars,count,Thanks to Google
+16,books in the British Library,150,million,6,books,count,Thanks to Wikipedia
+17,shipping containers in the world,17,million,6,containers,count,https://www.billiebox.co.uk/facts-about-shipping-containers/
+18,words in the St James Bible,783.137,thousand,3,words,count,http://www.billingsfirst.org/clientimages/19106/worship-page/bible-facts/bible-facts.pdf
+19,words in Tolstoy`s War and Peace,564,thousand,3,words,count,Thanks to Wikipedia
+20,grains of sugar in a cup,220,thousand,3,grains,count,Thanks to www.vendian.org
+21,strands on a head of hair,120,thousand,3,strands,count,Thanks to Wikipedia
+22,helicopters in the world,56.2,thousand,3,helicopters,count,http://helicopterblog.com/?p=966
+23,container ships in the world,4.968,thousand,3,ships,count,http://www.worldshipping.org/about-the-industry/liner-ships/container-vessel-fleet
+24,grains of sugar in a teaspoon,4,thousand,3,grains,count,Thanks to www.vendian.org
+25,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
+26,billionaires in the world,1.826,thousand,3,billionaires,count,Thanks to Google
+27,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country

@@ -7,6 +7,6 @@
 7,Height of the Empire State Building (NYC),381,unit,0,meter,extent,Google
 8,Height of the Eiffel Tower,310,unit,0,meter,extent,Google
 9,Height of the Angel Falls (Venuzeula),979,unit,0,meter,extent,Google
-10,Height of Mount Everest,8848,unit,0,meter,extent,Google
+10,Height of Mount Everest,8.848,thousand,3,meter,extent,Google
 11,Cruising altitude of Airbus commercial jet,13,thousand,3,meter,extent,Google
 12,Altitude of the orbit of the International Space Station,400,thousand,3,meter,extent,Google

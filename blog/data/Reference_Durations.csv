@@ -12,30 +12,47 @@
 12,Age of earliest mammoth fossils,4.8,million,6,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
 13,Time since the start of the Stone Age,3.4,million,6,y,duration,https://en.wikipedia.org/wiki/Stone_Age
 14,Time since the emergence of earliest humans,2.8,million,6,y,duration,Thanks to Wikipedia
-15,Age of earliest Neaderthal fossils,350,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-16,Time since the first modern humans,250,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-17,Time since first humans in Australia,50,thousand,3,y,duration,http://australianmuseum.net.au/the-spread-of-people-to-australia
-18,Age of the earliest cave paintings,35,thousand,3,y,duration,https://en.wikipedia.org/wiki/Cave_painting
-19,Time since first humans in Europe,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Early_human_migrations#Migration_of_the_Cro-Magnons_into_Europe
-20,Time since extinction of Neanderthals,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-21,Time since first humans in Americas,15,thousand,3,y,duration,https://en.wikipedia.org/wiki/Settlement_of_the_Americas
-22,Time since the earliest farming,11.5,thousand,3,y,duration,https://en.wikipedia.org/wiki/History_of_agriculture
-23,Age of the earliest city,6.5,thousand,3,y,duration,http://www.ancient.eu/city/
-24,Time since the start of the Bronze Age,5.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Bronze_Age
-25,Time since the earliest writing,5.2,thousand,3,y,duration,Thanks to Google
-26,Time since earliest wheeled vehicles,4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Wheel
-27,Time since the start of the Iron Age,3.2,thousand,3,y,duration,https://en.wikipedia.org/wiki/Iron_Age
-28,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
-29,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
-30,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
-31,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
-32,Time since the birth of al-Khwarizmi,1240,unit,0,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
-33,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
-34,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-35,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
-36,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
-37,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
-38,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
-39,One average human generation,25,unit,0,y,duration,Thanks to Google
-40,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
-41,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+15,Age of earliest stone hand axe,2.6,million,6,y,duration,https://en.wikipedia.org/wiki/Hand_axe#History_and_distribution
+16,Age of earliest Neaderthal fossils,350,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+17,Time since the first modern humans,250,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+18,Time since first humans in Australia,50,thousand,3,y,duration,http://australianmuseum.net.au/the-spread-of-people-to-australia
+19,Age of the earliest cave paintings,35,thousand,3,y,duration,https://en.wikipedia.org/wiki/Cave_painting
+20,Time since first humans in Europe,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Early_human_migrations#Migration_of_the_Cro-Magnons_into_Europe
+21,Time since extinction of Neanderthals,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+22,Age of earliest sewing needle,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Clothing#First_recorded_use
+23,Time since the earliest bread baking,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Clothing#First_recorded_use
+24,Time since first humans in Americas,15,thousand,3,y,duration,https://en.wikipedia.org/wiki/Settlement_of_the_Americas
+25,Time since the earliest farming,11.5,thousand,3,y,duration,https://en.wikipedia.org/wiki/History_of_agriculture
+26,Age of the earliest city,6.5,thousand,3,y,duration,http://www.ancient.eu/city/
+27,Time since the start of the Bronze Age,5.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Bronze_Age
+28,Time since the earliest writing,5.2,thousand,3,y,duration,Thanks to Google
+29,Time since earliest wheeled vehicles,4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Wheel
+30,Time since the start of the Iron Age,3.2,thousand,3,y,duration,https://en.wikipedia.org/wiki/Iron_Age
+31,Time since the birth of Pythagoras,2.59,thousand,3,y,duration,https://en.wikipedia.org/wiki/Pythagoras
+32,Time since the birth of Aristotle,2.4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Aristotle
+33,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
+34,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
+35,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
+36,Time since the birth of Diophantus,1.81,thousand,3,y,duration,https://en.wikipedia.org/wiki/Diophantus
+37,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
+38,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
+39,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
+40,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
+41,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
+42,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
+43,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
+44,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
+45,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
+46,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+47,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
+48,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
+49,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
+50,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
+51,Time since the birth of Einstein,137,unit,0,y,duration,https://en.wikipedia.org/wiki/Albert_Einstein
+52,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
+53,Time since the birth of Turing,104,unit,0,y,duration,https://en.wikipedia.org/wiki/Alan_Turing
+54,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
+55,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
+56,One average human generation,25,unit,0,y,duration,Thanks to Google
+57,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
+58,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google

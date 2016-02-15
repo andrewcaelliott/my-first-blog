@@ -2,8 +2,8 @@
 2,Lamborghini Gallardo car,200,thousand,3,USD,amount,Web consensus 2016
 3,BMW 550i Luxury 4dr car,83,thousand,3,USD,amount,BMW 2016
 4,Ford Focus `Style` car,23,thousand,3,USD,amount,Ford 2016
-5,Big Mac in Switzerland,6.44,-,0,USD,amount,The Economist 2016
-6,Big Mac in UK,4.22,-,0,USD,amount,The Economist 2016
-7,Big Mac in USA,4.93,-,0,USD,amount,The Economist 2016
-8,Big Mac in South Africa,1.77,-,0,USD,amount,The Economist 2016
-9,iPad Air (64GB),500,-,0,USD,amount,Google 2015
+5,Big Mac in Switzerland,6.44,unit,0,USD,amount,The Economist 2016
+6,Big Mac in UK,4.22,unit,0,USD,amount,The Economist 2016
+7,Big Mac in USA,4.93,unit,0,USD,amount,The Economist 2016
+8,Big Mac in South Africa,1.77,unit,0,USD,amount,The Economist 2016
+9,iPad Air (64GB),500,unit,0,USD,amount,Google 2015
