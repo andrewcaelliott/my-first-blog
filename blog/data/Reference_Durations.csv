@@ -26,33 +26,44 @@
 26,Age of the earliest city,6.5,thousand,3,y,duration,http://www.ancient.eu/city/
 27,Time since the start of the Bronze Age,5.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Bronze_Age
 28,Time since the earliest writing,5.2,thousand,3,y,duration,Thanks to Google
-29,Time since earliest wheeled vehicles,4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Wheel
-30,Time since the start of the Iron Age,3.2,thousand,3,y,duration,https://en.wikipedia.org/wiki/Iron_Age
-31,Time since the birth of Pythagoras,2.59,thousand,3,y,duration,https://en.wikipedia.org/wiki/Pythagoras
-32,Time since the birth of Aristotle,2.4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Aristotle
-33,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
-34,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
-35,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
-36,Time since the birth of Diophantus,1.81,thousand,3,y,duration,https://en.wikipedia.org/wiki/Diophantus
-37,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
-38,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
-39,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
-40,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
-41,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
-42,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
-43,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
-44,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
-45,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
-46,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
-47,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
-48,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
-49,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-50,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
-51,Time since the birth of Einstein,137,unit,0,y,duration,https://en.wikipedia.org/wiki/Albert_Einstein
-52,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
-53,Time since the birth of Turing,104,unit,0,y,duration,https://en.wikipedia.org/wiki/Alan_Turing
-54,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
-55,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
-56,One average human generation,25,unit,0,y,duration,Thanks to Google
-57,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
-58,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+29,Time since building of Stonehenge,5.115,thousand,3,y,duration,https://en.wikipedia.org/wiki/Stonehenge
+30,Time since building of the Great Pyramid of Giza / Cheops / Khufu,4.575,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+31,Time since earliest wheeled vehicles,4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Wheel
+32,Time since the start of the Iron Age,3.2,thousand,3,y,duration,https://en.wikipedia.org/wiki/Iron_Age
+33,Time since the birth of Pythagoras,2.59,thousand,3,y,duration,https://en.wikipedia.org/wiki/Pythagoras
+34,Time since start of building of the Parthenon,2.462,thousand,3,y,duration,https://en.wikipedia.org/wiki/Parthenon
+35,Time since the birth of Aristotle,2.4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Aristotle
+36,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
+37,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
+38,Time since start of building of the Great Pyramid of Cholula,2.25,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula
+39,Time since start of building of the Colosseum,1.944,thousand,3,y,duration,https://en.wikipedia.org/wiki/Colosseum
+40,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
+41,Time since the birth of Diophantus,1.81,thousand,3,y,duration,https://en.wikipedia.org/wiki/Diophantus
+42,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
+43,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
+44,Time since start of building of Great Zimbabwe,1,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Zimbabwe
+45,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
+46,Time since building of Angkor Wat,900,unit,0,y,duration,https://en.wikipedia.org/wiki/Angkor_Wat
+47,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
+48,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
+49,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
+50,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
+51,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
+52,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
+53,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+54,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
+55,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
+56,Time since the first passenger steam railway service,191,unit,0,y,duration,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
+57,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
+58,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
+59,Time since the birth of Einstein,137,unit,0,y,duration,https://en.wikipedia.org/wiki/Albert_Einstein
+60,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
+61,Time since the birth of Turing,104,unit,0,y,duration,https://en.wikipedia.org/wiki/Alan_Turing
+62,Time since the first fixed wing scheduled air service,102,unit,0,y,duration,https://en.wikipedia.org/wiki/Airline
+63,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
+64,Time since the first man walked on the moon,47,unit,0,y,duration,https://en.wikipedia.org/wiki/Apollo_11
+65,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
+66,One average human generation,25,unit,0,y,duration,Thanks to Google
+67,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
+68,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+69,Time since the first iron steamship crossed the English Channel,194,unit,0,y,duration,https://en.wikipedia.org/wiki/Steamship
