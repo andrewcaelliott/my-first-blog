@@ -8,7 +8,7 @@
 
 {% block content %}
     <div class="quiz">
-        <h1>Test Your Number Sense</h1>
+        <h1>Test Yourself</h1>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="extent" name="measure">
             <button type="submit" class="save btn btn-default">How Big?</button>

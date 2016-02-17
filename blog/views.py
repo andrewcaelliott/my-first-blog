@@ -1,5 +1,5 @@
 from json import loads
-from random import choice,seed,randint
+from random import choice,seed as set_seed,randint
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -55,6 +55,7 @@ def quiz(request):
     if seed == None:
         seed = randint(0,10000000)
 
+    set_seed(seed)    
     try:
         cycle=params.get("cycle")
     except (AttributeError,TypeError):
@@ -69,16 +70,29 @@ def quiz(request):
         measure=choice(["extent", "count", "amount", "duration", "mass"])
 
     quiz={}
-    if measure=="extent":
-        quiz["question"]="Which of these is the biggest?"
-    elif measure=="count":
-        quiz["question"]="Which of these is the most numerous?"
-    elif measure=="amount":
-        quiz["question"]="Which of these is the greatest amount?"
-    elif measure=="duration":
-        quiz["question"]="Which of these is the longest period of time?"
+    askbiggest = randint(0,1)==0
+    if askbiggest:
+        if measure=="extent":
+            quiz["question"]="Which of these is the biggest?"
+        elif measure=="count":
+            quiz["question"]="Which of these is the most numerous?"
+        elif measure=="amount":
+            quiz["question"]="Which of these is the greatest amount?"
+        elif measure=="duration":
+            quiz["question"]="Which of these is the longest period of time?"
+        else:
+            quiz["question"]="Which of these has the greatest mass?"
     else:
-        quiz["question"]="Which of these has the greatest mass?"
+        if measure=="extent":
+            quiz["question"]="Which of these is the smallest?"
+        elif measure=="count":
+            quiz["question"]="Which of these is the least numerous?"
+        elif measure=="amount":
+            quiz["question"]="Which of these is the smallest amount?"
+        elif measure=="duration":
+            quiz["question"]="Which of these is the shortest period of time?"
+        else:
+            quiz["question"]="Which of these has the least mass?"
     quiz["measure"]=measure
     quiz["seed"] = seed
     rf = randomFact(NumberFact, measure, rseed=seed)
@@ -89,8 +103,11 @@ def quiz(request):
         bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
     quiz["hint"] = rf.render
     quiz["options"]=bestComparisons
-    biggest = biggestNumberFact(bestComparisons)
-    quiz["answer"]=biggest.title
+    if askbiggest:
+        answer = biggestNumberFact(bestComparisons)
+    else: 
+        answer = smallestNumberFact(bestComparisons)
+    quiz["answer"]=answer.title
     if request.method == "POST":
         response = request.POST
         if response.get("option")==quiz["answer"] and cycle=="answered":

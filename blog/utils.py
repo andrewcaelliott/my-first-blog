@@ -326,15 +326,25 @@ def numberFactsLikeThis(klass, nf, rseed=None):
     for tolerance in tolerances:
         ce=closeEnoughNumberFact(klass, nf.magnitude, nf.scale, tolerance, nf.measure)
         ce.remove(nf)
-        if len(ce)>=4:
+        candidates = []
+        for nf_a in ce:
+            duplicate = False
+            for nf_b in candidates:
+                if nf_b.value == nf_a.value:
+                    duplicate = True
+                    break
+            if  not(duplicate):
+                candidates.append(nf_a)    
+
+        if len(candidates)>=4:
             bestTolerance = tolerance
-            bestComparisons = sample(ce[1:-1],2)
-            bestComparisons.append(ce[0])
-            bestComparisons.append(ce[-1])
+            bestComparisons = sample(candidates[1:-1],2)
+            bestComparisons.append(candidates[0])
+            bestComparisons.append(candidates[-1])
             bestComparisons = sample(bestComparisons,4)
             break
         bestTolerance = tolerance
-        bestComparisons = sample(ce,len(ce))
+        bestComparisons = sample(candidates,len(candidates))
     score = round(1*log10(bestTolerance/1000)**2)*(len(bestComparisons)-1)
     return bestComparisons, bestTolerance, score
 
@@ -348,6 +358,15 @@ def biggestNumberFact(nfs):
             biggestValue = value
     return biggestFact
 
+def smallestNumberFact(nfs):
+    smallestValue= 1e100
+    smallestFact = None
+    for fact in nfs:
+        value = num(fact.magnitude) * 10**num(fact.scale)
+        if value < smallestValue:
+            smallestFact = fact
+            smallestValue = value
+    return smallestFact
 
 def randomFact(klass, measure, rseed=None):
     if rseed!=None:

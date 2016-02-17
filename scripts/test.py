@@ -135,10 +135,10 @@ def run6():
 #	bn = parseBigNumber("126g767")
 #	print(bn)
 
-def run8():
-	measure=("amount")
+def run():
+	measure=("extent")
 	seed = randint(0,1000000)
-	rf = randomFact(measure, rseed=seed)
+	rf = randomFact(NumberFact, measure, rseed=seed)
 	print(rf.render)
 
 	bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
@@ -150,9 +150,9 @@ def run8():
 		print(fact.scale)
 
 	biggest = biggestNumberFact(bestComparisons)
-	print(biggest.render)
+	print(">>>", biggest.render)
 
-def run():
+def run9():
 	measure=("mass")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
