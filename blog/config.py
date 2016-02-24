@@ -44,9 +44,10 @@ count_references = [
 amount_references = [
     ('GDP of United States','{times:,.2f} times the USA GDP','{percent:,.2f} percent of the USA GDP','1 /{fraction:,.0f} of the USA GDP'),
     ('GDP of China','{times:,.2f} times the China GDP','{percent:,.2f} percent of the China GDP','1 /{fraction:,.0f} of the China GDP'),
+    ('Total value of all gold ever mined','{times:,.2f} times the value of all the gold ever mined','{percent:,.2f} percent of the value of all the gold ever mined','1 /{fraction:,.0f} of the value of all the gold ever mined'),
     ('GDP of United Kingdom','{times:,.2f} times the UK GDP','{percent:,.2f} percent of the UK GDP','1 /{fraction:,.0f} of the UK GDP'),
     ('GDP of Luxembourg','{times:,.2f} times the Luxembourg GDP','{percent:,.2f} percent of the Luxembourg GDP','1 /{fraction:,.0f} of the Luxembourg GDP'),
-    ('Wealthiest Person','{times:,.2f} times the wealth of the wealthiest person','{percent:,.2f} percent of the wealth of the wealthiest person','1 /{fraction:,.0f} of the wealth of the wealthiest person'),
+    ('Wealth of the wealthiest person in the world','{times:,.2f} times the wealth of the wealthiest person','{percent:,.2f} percent of the wealth of the wealthiest person','1 /{fraction:,.0f} of the wealth of the wealthiest person'),
     ('Largest Win on a Lottery Ticket','{times:,.2f} times the largest-ever lottery win (per ticket)','{percent:,.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:,.0f} of the largest-ever lottery win (per ticket)'),
     ('Cost of Porsche 911 Carrera','{times:,.2f} times the cost of a Porsche 911 Carrera','{percent:,.2f} percent of the cost of a Porsche 911 Carrera','1 /{fraction:,.0f} of the the cost of a Porsche 911 Carrera'),
     ('Cost of Ford Focus `Style` car','{times:,.2f} times the cost of a Ford Focus `Style` car','{percent:,.2f} percent of the cost of a Ford Focus `Style` car','1 /{fraction:,.0f} of the the cost of a Ford Focus `Style` car'),
@@ -212,6 +213,8 @@ quotes = (
         '"It is easy to lie with statistics; it is easier to lie without them." Frederick Mosteller',
         '"I love the big round numbers. The bigger and rounder they are, the more I love them." Alan Alda',
         '"Errors using inadequate data are much less than those using no data at all." Charles Babbage',
+        '"And then kerjillions of stars start to shine ..." Laurie Anderson: My Eyes',
+        '"Two hundred forty million voices / Two hundred forty million names  ..." Laurie Anderson: My Eyes',
     )        
 
 
