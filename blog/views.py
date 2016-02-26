@@ -23,7 +23,8 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import parseBigNumber, randomFact
-from .dummycontent import storyInfo,storySelection
+from .dummycontent import storySelection
+from .tumblr import tumblrSelection
 
 
 def home(request):
@@ -31,7 +32,7 @@ def home(request):
     widgets = []
     stories = {}
     stories["news"]=storySelection("news")
-    stories["passion"]=storySelection("passion")
+    stories["passion"]=tumblrSelection("passion")
     stories["education"]=storySelection("education")
     stories["landmark"]=storySelection("landmark")
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
@@ -189,7 +190,7 @@ def query_compare(request):
     return query_answer(request, numberQuery)
 
 def query_api(request):
-    params = request.GET
+        
     magnitude=params.get("magnitude")
     if magnitude==None:
         return JsonResponse({"success":"false", "message":"'magnitude' parameter missing"})

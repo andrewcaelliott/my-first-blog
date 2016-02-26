@@ -1,0 +1,66 @@
+from pytumblr import TumblrRestClient
+import json
+from bs4 import BeautifulSoup
+
+client = TumblrRestClient('9g1lRa75IJ7HLbnyqMCaXsSsnvyz8uUsa7ZLzyGCipFciA23PM')
+
+def tumblrSelection(category):
+    storyposts = posts(tag=category)
+    #storyposts = [{'body': '<p><a href="https://en.wikipedia.org/wiki/Universe">https://en.wikipedia.org/wiki/Universe</a></p><p>No, literally.</p><p>As Douglas Adams said, the universe is big. Really big</p>', 'short_url': 'https://tmblr.co/ZJc03i22P_y9r', 'tags': ['passion'], 'title': 'Astronomical Numbers', 'plain': 'https://en.wikipedia.org/wiki/UniverseNo, literally.As Douglas Adams said, the universe is big. Really big', 'date': '2016-02-26 10:38:48 GMT', 'img_url': None, 'link_url': '<a href="https://en.wikipedia.org/wiki/Universe">https://en.wikipedia.org/wiki/Universe</a>', 'post_url': 'http://itabn.tumblr.com/post/140022366837/astronomical-numbers'}, {'body': '<p><a href="https://en.wikipedia.org/wiki/Number">https://en.wikipedia.org/wiki/Number</a></p><p>It starts with counting: 1, 2, 3 are what the maths guys call the Natural Numbers. From there it gets more and more UN-natural, all the way to imaginary and beyond, to some very weird structures that still get called numbers.</p>', 'short_url': 'https://tmblr.co/ZJc03i22P_oKs', 'tags': ['passion'], 'title': 'You Call That a Number?', 'plain': 'https://en.wikipedia.org/wiki/NumberIt starts with counting: 1, 2, 3 are what the maths guys call the Natural Numbers. From there it gets more and more UN-natural, all the way to imaginary and beyond, to some very weird structures that still get called numbers.', 'date': '2016-02-26 10:37:01 GMT', 'img_url': None, 'link_url': '<a href="https://en.wikipedia.org/wiki/Number">https://en.wikipedia.org/wiki/Number</a>', 'post_url': 'http://itabn.tumblr.com/post/140022326582/you-call-that-a-number'}]
+    stories={}
+    featureStory = storyposts[0]
+    stories["featured"]=featureStory
+    stories["other"]=storyposts[1:]
+    return stories
+
+def posts(**kwargs):
+    postlist = client.posts('itabn.tumblr.com', filter='html', **kwargs)
+    result = []
+    for post in postlist["posts"]:
+        result.append(post_summary(post))
+    return result
+
+def post_summary(post):
+    body = post["body"]
+    if body.find("<a")>=0:
+        link = body[body.find("<a"):body.find("</a>")+4]
+    else:
+        link = None
+    if link:
+        href_start = link.find("href=")
+        link_url = link[href_start+6:href_start+6+link[href_start+6:].find('"')]
+        #link_url = link[href_start+6:]
+    else:
+        link_url = None
+    img_start = body.find("<img")
+    if img_start>=0:
+        img_url = body[img_start:img_start+body[img_start:].find("/>")+2]
+    else:
+        img_url = None
+    if link:
+        body = body.replace(link, '')
+    soup = BeautifulSoup(body, "html.parser")
+    plain_body = soup.get_text()
+
+    if not(link):
+        link_url = post["post_url"]
+
+    return {
+#{"title":storyName, "synopsis":synopsis,"link":sourceLink}
+        "title":post["title"],
+        "synopsis":plain_body,
+        "link":link_url,
+#        "post_url":post["post_url"],
+#        "short_url":post["short_url"],
+#        "date":post["date"],
+#        "tags":post["tags"],
+#        "body":post["body"],
+#        "link_url":link_url,
+#        "img_url":img_url,
+    }
+
+def run():
+#    posts = client.posts('itabn.tumblr.com', filter='html')
+#    for post in posts["posts"]:
+#        print(post_summary(post))
+    print(posts(tag="test"))        

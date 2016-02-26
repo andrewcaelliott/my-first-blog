@@ -5,7 +5,6 @@ from blog.models import NumberFact
 from math import log10
 from random import sample,randint
 from blog.utils import closeEnoughNumberFact, numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, bracketNumber, randomFact
-
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity

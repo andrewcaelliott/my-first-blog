@@ -38,7 +38,7 @@ def storyInfo(storyName):
         image =""
     elif storyName == "You Call That a Number?":
         sourceLink = "https://en.wikipedia.org/wiki/Number"
-        synopsis = "It starts with counting: 1, 2, 3 are what the maths guys call the Natural Numbers. From there it gets more and more UN-natural, all the way to imaginary and beyond, to some very weird structures that still get called 'numbers'."
+        synopsis = "self."
         image =""
     elif storyName == "It's All Gone Non-Linear":
         sourceLink = "https://en.wikipedia.org/wiki/Number"
