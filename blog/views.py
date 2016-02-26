@@ -47,6 +47,26 @@ def homealt(request):
     stories["landmark"]=storySelection("landmark")
     return render(request, 'blog/home-alt.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
 
+def blog(category, request):
+    stories=tumblrSelection(category)
+    titles = {
+        "news":"Numbers In The News", 
+        "passion":"For the Love of Numbers", 
+        "education":"Know Your Numbers", 
+        "landmark":"Landmark Numbers"
+    }
+    subtitles = {
+        "news":"Some notable numbers we have spotted recently", 
+        "passion":"A number-led blog for the truly geeky among us ...", 
+        "education":"A little more knowledge is never a dangerous thing ...", 
+        "landmark":"Like beacons in a landscape, prominent numbers offer guidance"
+    }
+    return render(request, 'blog/blog.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category]})
+
+
+def blog_flton(request):
+    return blog("passion", request)
+
 def quiz(request):
     params = request.POST
     try:

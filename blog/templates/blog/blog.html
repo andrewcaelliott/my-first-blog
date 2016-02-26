@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ blog_title }}{% endblock %}
+
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <div class="row widget">
+            <div>
+                <h1>{{ blog_title }}</h1>
+                <h4>{{ blog_subtitle }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="widget col-lg-6 col-md-8 col-sm-12 col-xs-12 blog-summary-shallow">
+                <div>
+                    <h3><a href="{{ stories.featured.link }}" target="_blank">{{ stories.featured.title }}</a></h3>
+                    <p>{{ stories.featured.synopsis }}</p>
+                    <p><a href="{{ stories.featured.link }}" target="_blank">{{ stories.featured.link }}</a></p>
+                </div>
+            </div>
+            {% for item in stories.other %}
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary-shallow">
+                <div>
+                    <h3><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h3>
+                    <p>{{ item.synopsis }}</p>
+                    <p><a href="{{ stories.news.featured.link }}" target="_blank">{{ item.link }}</a></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

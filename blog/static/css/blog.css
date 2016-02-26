@@ -55,6 +55,11 @@ form.choice {
     overflow: auto;
 }
 
+.row:nth-child(2) .blog-summary-shallow> div {
+    height: 25rem;
+    overflow: auto;
+}
+
 .row:nth-child(2) .widget > div p a {
     word-break: break-all;
 }
