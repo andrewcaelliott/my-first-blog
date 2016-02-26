@@ -52,4 +52,4 @@ def storyInfo(storyName):
         sourceLink="https://www.google.com"
         synopsis = "Lorem ipsum dolor sit amet, mea et quaeque saperet, ex cum solet evertitur constituto. Nobis intellegat disputationi te duo, diam ludus nonumes mea ea. Te cum commodo appetere, ea melius dolorum sea, erat elitr corrumpit mei et. Dicunt scripta petentium eu usu."        
         image = "" 
-    return {"title":storyName, "synopsis":synopsis,"link":sourceLink}       
+    return {"title":storyName, "synopsis":synopsis,"links":[sourceLink]}       

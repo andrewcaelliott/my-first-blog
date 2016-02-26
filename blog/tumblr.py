@@ -25,8 +25,7 @@ def posts(**kwargs):
         result.append(post_summary(post))
     return result
 
-def post_summary(post):
-    body = post["body"]
+def grab_link(body):
     if body.find("<a")>=0:
         link = body[body.find("<a"):body.find("</a>")+4]
     else:
@@ -35,26 +34,34 @@ def post_summary(post):
         href_start = link.find("href=")
         link_url = link[href_start+6:href_start+6+link[href_start+6:].find('"')]
         #link_url = link[href_start+6:]
+        body = body.replace(link, '')
+        link_url= link_url.replace("http://www.isthatabignumber.com","/.")
     else:
         link_url = None
+    return link_url, body        
+
+def post_summary(post):
+    body = post["body"]
+    link_urls = []
+    while body.find("<a")>=0:
+        link_url, body = grab_link(body)
+        link_urls.append(link_url)
     img_start = body.find("<img")
     if img_start>=0:
         img_url = body[img_start:img_start+body[img_start:].find("/>")+2]
     else:
         img_url = None
-    if link:
-        body = body.replace(link, '')
     soup = BeautifulSoup(body, "html.parser")
     plain_body = soup.get_text()
 
-    if not(link):
-        link_url = post["post_url"]
+    if len(link_urls)==0:
+        link_urls.append(post["post_url"])
 
     return {
 #{"title":storyName, "synopsis":synopsis,"link":sourceLink}
         "title":post["title"],
         "synopsis":plain_body,
-        "link":link_url,
+        "links":link_urls,
         "featured": "featured" in post["tags"]
 #        "post_url":post["post_url"],
 #        "short_url":post["short_url"],
