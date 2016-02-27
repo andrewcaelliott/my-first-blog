@@ -31,7 +31,7 @@ def home(request):
     freeForm = FreeForm()
     widgets = []
     stories = {}
-    stories["news"]=storySelection("news")
+    stories["news"]=tumblrSelection("news")
     stories["passion"]=tumblrSelection("passion")
     stories["education"]=storySelection("education")
     stories["landmark"]=storySelection("landmark")
@@ -57,15 +57,17 @@ def blog(category, request):
     }
     subtitles = {
         "news":"Some notable numbers we have spotted recently", 
-        "passion":"A number-led blog for the truly geeky among us ...", 
+        "passion":"A number-led selection of writings for the truly geeky among us ...", 
         "education":"A little more knowledge is never a dangerous thing ...", 
         "landmark":"Like beacons in a landscape, prominent numbers offer guidance"
     }
     return render(request, 'blog/blog.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category]})
 
-
 def blog_flton(request):
     return blog("passion", request)
+
+def blog_nitn(request):
+    return blog("news", request)
 
 def quiz(request):
     params = request.POST

@@ -51,12 +51,12 @@ form.choice {
 }
 
 .row:nth-child(2) .blog-summary> div {
-    height: 50rem;
+    height: 65rem;
     overflow: auto;
 }
 
 .row:nth-child(2) .blog-summary-shallow> div {
-    height: 25rem;
+    height: 35rem;
     overflow: auto;
 }
 
