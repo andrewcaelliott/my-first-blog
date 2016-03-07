@@ -39,6 +39,8 @@ count_references = [
     ('Number of strands on a head of hair','{times:,.2f} for every strand on a head of hair','One for every {fraction:,.0f} strands on a head of hair'),
     ('High estimate of world population of Lions','{times:,.2f} for every Lion in the world','One for every {fraction:,.0f} Lions in the world'),
     ('High estimate of world population of Tigers','{times:,.2f} for every Tiger in the world','One for every {fraction:,.0f} Tigers in the world'),
+    ('Number of nuclear power plants in the world (2015)','{times:,.2f} for every nuclear power plant in the world','One for every {fraction:,.0f} nuclear power plants in the world'),
+    ('Number of skyscrapers in New York City (>150m tall)','{times:,.2f} for every skyscraper in New York City','One for every {fraction:,.0f} skyscrapers in New York City'),
 ]
 
 amount_references = [
