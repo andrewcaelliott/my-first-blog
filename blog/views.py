@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -35,7 +35,8 @@ def home(request):
     stories["passion"]=tumblrSelection("passion")
     stories["education"]=storySelection("education")
     stories["landmark"]=storySelection("landmark")
-    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories, "dyk":dyk})
 
 def homealt(request):
     freeForm = FreeForm()
@@ -61,7 +62,8 @@ def blog(category, request):
         "education":"A little more knowledge is never a dangerous thing ...", 
         "landmark":"Like beacons in a landscape, prominent numbers offer guidance"
     }
-    return render(request, 'blog/blog.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category]})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/blog.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk})
 
 def blog_flton(request):
     return blog("passion", request)
@@ -147,7 +149,8 @@ def quiz(request):
         pass
 #        form = FactForm()
  #   return render(request, 'blog/fact_edit.html', {'form': form})   
-    return render(request, 'blog/quiz.html', {'quiz':quiz, 'quote': choice(quotes)})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/quiz.html', {'quiz':quiz, 'quote': choice(quotes), "dyk":dyk})
 
 def itabn(request):
     freeForm = FreeForm()
@@ -172,7 +175,8 @@ def itabn(request):
         {"title":"How Much?","glyph":"glyphicon glyphicon-usd","form":amountForm},
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm},
         {"title":"How Heavy?","glyph":"glyphicon glyphicon-briefcase","form":massForm}]
-    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes)})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk})
 
 def query_answer(request, numberQuery):
     query =  QueryForm(instance=numberQuery)
@@ -193,7 +197,8 @@ def query_answer(request, numberQuery):
 #    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
     question = numberQuery.render.replace(" - "," ").replace(" i","")
     #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
-    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes)})   
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes), "dyk":dyk})   
 
 def query_answer_post(request):
     query =  QueryForm(request.POST)
@@ -260,7 +265,8 @@ def convert(request):
             {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
             {"title":"Convert Mass","glyph":"glyphicon glyphicon-briefcase","form":massForm},
         ]
-    return render(request, 'blog/convert.html', {'widgets':widgets, 'quote': choice(quotes)})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/convert.html', {'widgets':widgets, 'quote': choice(quotes), "dyk":dyk})
 
 def conversion_answer(request, conversion):
     conversion.fields['measure'].widget = forms.HiddenInput()
@@ -273,7 +279,8 @@ def conversion_answer(request, conversion):
     conversions = numberQuery.getConversions(conversion_targets)
     answer["requestedConversion"] = conversions[0]
     answer["otherConversions"] = conversions[1:]
-    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer, 'quote': choice(quotes)})   
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer, 'quote': choice(quotes), "dyk":dyk})   
 
 def conversion_answer_post(request):
     return conversion_answer(request, ConvertForm(request.POST))
@@ -320,15 +327,18 @@ def conversion_unit(request):
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
-    return render(request, 'blog/post_list.html', {'posts':posts})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/post_list.html', {'posts':posts, "dyk":dyk})
 
 def fact_list(request):
     facts = NumberFact.objects.filter().order_by('text')  
-    return render(request, 'blog/fact_list.html', {'facts':facts})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/fact_list.html', {'facts':facts, "dyk":dyk})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/post_detail.html', {'post': post, "dyk":dyk})
 
 def post_new(request):
     if request.method == "POST":
@@ -341,7 +351,8 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:   
         form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})    
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/post_edit.html', {'form': form, "dyk":dyk})    
 
 def fact_detail(request, pk):
     fact = get_object_or_404(NumberFact, pk=pk)
@@ -349,7 +360,8 @@ def fact_detail(request, pk):
         reflink=fact.text
     else:
         reflink="http://www.google.com/?q="+fact.title
-    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes)})
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk})
 
 def fact_new(request):
     if request.method == "POST":
@@ -362,4 +374,5 @@ def fact_new(request):
             return redirect('fact_detail', pk=fact.pk)
     else:   
         form = FactForm()
-    return render(request, 'blog/fact_edit.html', {'form': form})   
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk})   

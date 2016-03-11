@@ -1,4 +1,4 @@
-from random import sample,seed,randint
+from random import sample,seed,randint,choice
 from pint import UnitRegistry,UndefinedUnitError
 ureg = UnitRegistry()
 Q_=ureg.Quantity
@@ -271,9 +271,6 @@ def tests():
 
 #tests()
 
-def randomFact(measure):
-    return "dummy"
-
 def bracketNumber(klass, magnitude, scale, measure):
     #tolerance=10000
     response = []
@@ -317,6 +314,29 @@ def closeEnoughNumberFact(klass, magnitude, scale, tolerance, measure):
     for fact in nf:
         facts.append(fact)
     return facts
+
+def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple):
+#   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
+    mag = num(magnitude)*multiple
+    if mag > 1000:
+        mag = mag/1000
+    elif mag > 100:
+        mag = mag/100
+    elif mag > 10:
+        mag = mag/10
+    facts = []
+    nf = klass.objects.filter(value__gte=mag/(1+tolerance), value__lt=mag*(1+tolerance), measure=measure)
+    for fact in nf:
+        facts.append(fact)
+    nf = klass.objects.filter(value__gte=mag*10/(1+tolerance), value__lt=mag*10*(1+tolerance), measure=measure)
+    for fact in nf:
+        facts.append(fact)
+    nf = klass.objects.filter(value__gte=mag*100/(1+tolerance), value__lt=mag*100*(1+tolerance), measure=measure)
+    for fact in nf:
+        facts.append(fact)
+    return facts
+
+
 
 def numberFactsLikeThis(klass, nf, rseed=None):
 #    tolerances=[0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10, 25, 50, 100]
@@ -375,3 +395,52 @@ def randomFact(klass, measure, rseed=None):
     rf = klass.objects.filter(measure=measure)[randint(0,count-1)]
     return rf
 
+def randomFactAny(klass, rseed=None):
+    if rseed!=None:
+        seed(rseed)
+    count = klass.objects.filter().count()
+    rf = klass.objects.filter()[randint(0,count-1)]
+    return rf
+
+def renderInt(i):
+    if i >= 1000000000000:
+        return " ".join([str(int(i/1000000000000)),"trillion"])
+    elif i >= 1000000000:
+        return " ".join([str(int(i/1000000000)),"billion"])
+    elif i >= 1000000:
+        return " ".join([str(int(i/1000000)),"million"])
+    elif i >= 1000:
+        return " ".join([str(int(i/1000)),"thousand"])
+    else:
+        return(str(i))
+
+def spuriousFact(klass):
+    facts = []
+    while len(facts)==0:
+        seed = randint(0,1000000)
+        rf = randomFactAny(klass, rseed=seed)
+        facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, 0.0025,1)
+        facts.remove(rf)
+        facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,2)
+        facts+=facts2
+        facts3 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,3)
+        facts+=facts3
+        facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,4)
+        facts+=facts4
+        facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,5)
+        facts+=facts5
+    fact2 = choice(facts)
+    ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
+    if ratio > 1:
+        fact1 = rf
+    else:
+        fact1 = fact2
+        fact2 = rf
+
+    ratio = (fact1.value/fact2.value)*10**(fact1.scale - fact2.scale)
+    intRatio = sigfigs(ratio, 2)
+    if intRatio==1:
+        comparison = " is about as big as"
+    else:
+        comparison = " ".join(["is", renderInt(intRatio), "x bigger than"])
+    return {"fact1":fact1.render2, "comparison":comparison, "fact2":fact2.render2}

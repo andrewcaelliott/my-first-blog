@@ -172,6 +172,9 @@ class NumberFact(models.Model):
     def _display(self):
         return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
+    def _display2(self):
+        return "".join([self.title," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
+
     def _link(self):
         return "../fact/"+str(self.id)
 
@@ -179,6 +182,7 @@ class NumberFact(models.Model):
         return self.title        
 
     render = property(_display)
+    render2 = property(_display2)
     link = property(_link)
 
 class Comparison(models.Model):

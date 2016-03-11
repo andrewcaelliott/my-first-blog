@@ -6,6 +6,11 @@
 	<p>{{ quote }}</p>
 {% endblock %}
 
+{% block dyk %}
+       	<p><strong>Did you know: </strong>{{ dyk.fact1 }} <em>{{ dyk.comparison }}</em> {{ dyk.fact2 }}</p>
+	<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ dyk.fact1 }} {{ dyk.comparison }} {{ dyk.fact2 }} #IsThatABigNumber? #RandomComparison">Tweet</a>
+{% endblock %}
+
 {% block content %}
         <div class="row widget">
             <div>

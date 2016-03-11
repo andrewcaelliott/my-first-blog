@@ -10,7 +10,7 @@ extent_references = [
     ('Cruising altitude of Airbus commercial jet','{times:,.2f} times the cruising altitude of a commercial jet','1 / {fraction:,.0f} of the cruising altitude of a commercial jet'),
     ('Height of Mount Everest','{times:,.2f} times the height of Mount Everest','1 / {fraction:,.0f} of the height of Mount Everest'),
     ('Height of the Angel Falls (Venuzeula)','{times:,.2f} times the height of Angel Falls (Venuzeula)','1 / {fraction:,.0f} of the height of Angel Falls (Venuzeula)'),
-    ('Height of the `Burj Khalifa` skyscraper (Dubai)','{times:,.2f} times the height of the `Burj Khalifa` scyscraper (Dubai)','1 / {fraction:,.0f} of the height of the `Burj Khalifa` scyscraper (Dubai)'),
+    ('Height of the `Burj Khalifa` skyscraper (Dubai)','{times:,.2f} times the height of the `Burj Khalifa` scyscraper (Dubai)','1 / {fraction:,.0f} of the height of   the `Burj Khalifa` scyscraper (Dubai)'),
     ('Length of Tower Bridge over the Thames','{times:,.2f} times the length of London\'s Tower Bridge','1 / {fraction:,.0f} as long as London\'s Tower Bridge'),
     ('Length of a football pitch','{times:,.2f} football pitches end to end','1 / {fraction:,.0f} as long as a football pitch'),
     ('Length of a London bus','{times:,.2f} London buses end to end','1 / {fraction:,.0f} as long as a London bus'),

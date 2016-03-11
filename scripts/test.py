@@ -3,8 +3,8 @@ from blog.models import NumberFact
 #from blog.forms import QueryForm
 #from pint import UnitRegistry
 from math import log10
-from random import sample,randint
-from blog.utils import closeEnoughNumberFact, numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, bracketNumber, randomFact
+from random import sample,randint,choice
+from blog.utils import closeEnoughNumberFact, closeMagnitudeNumberFact, numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, spuriousFact
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -134,7 +134,7 @@ def run6():
 #	bn = parseBigNumber("126g767")
 #	print(bn)
 
-def run():
+def run7():
 	measure=("extent")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
@@ -173,3 +173,8 @@ def run10():
 	print(NumberFact)
 	print(klass)
 	print(klass.objects)
+
+
+def run():
+	klass = NumberFact
+	print(spuriousFact(klass))
