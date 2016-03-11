@@ -416,9 +416,11 @@ def renderInt(i):
 
 def spuriousFact(klass):
     facts = []
+    measure=choice(["extent","amount","count","duration","mass"])
+    print(measure)
     while len(facts)==0:
         seed = randint(0,1000000)
-        rf = randomFactAny(klass, rseed=seed)
+        rf = randomFact(klass, measure, rseed=seed)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, 0.0025,1)
         facts.remove(rf)
         facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,2)
@@ -442,5 +444,5 @@ def spuriousFact(klass):
     if intRatio==1:
         comparison = " is about as big as"
     else:
-        comparison = " ".join(["is", renderInt(intRatio), "x bigger than"])
+        comparison = " ".join(["is", renderInt(intRatio), "x more than"])
     return {"fact1":fact1.render2, "comparison":comparison, "fact2":fact2.render2}
