@@ -23,24 +23,46 @@
 23,active users of Twitter (2015),300,million,6,users,count,http://www.statista.com/statistics/282087/number-of-monthly-active-twitter-users/
 24,books in the British Library,150,million,6,books,count,Thanks to Wikipedia
 25,shipping containers in the world,17,million,6,containers,count,https://www.billiebox.co.uk/facts-about-shipping-containers/
-26,words in the St James Bible,783.137,thousand,3,words,count,http://www.billingsfirst.org/clientimages/19106/worship-page/bible-facts/bible-facts.pdf
-27,words in Tolstoy`s War and Peace,564,thousand,3,words,count,Thanks to Wikipedia
-28,grains of sugar in a cup,220,thousand,3,grains,count,Thanks to www.vendian.org
-29,strands on a head of hair,120,thousand,3,strands,count,Thanks to Wikipedia
-30,helicopters in the world,56.2,thousand,3,helicopters,count,http://helicopterblog.com/?p=966
-31,container ships in the world,4.968,thousand,3,ships,count,http://www.worldshipping.org/about-the-industry/liner-ships/container-vessel-fleet
-32,satellites orbiting the Earth (2015),4.077,thousand,3,satellites,count,http://www.pixalytics.com/sat-orbit-2015/
-33,grains of sugar in a teaspoon,4,thousand,3,grains,count,Thanks to www.vendian.org
-34,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
-35,billionaires in the world,1.826,thousand,3,billionaires,count,Thanks to Google
-36,Boeing 747's built (2016),1.52,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
-37,nuclear power plants in the world (2015),438,unit,0,powerplants,count,http://www.nei.org/Knowledge-Center/Nuclear-Statistics/World-Statistics
-38,skyscrapers in Hong Kong (>150m tall),380,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-39,skyscrapers in New York City (>150m tall),250,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-40,skyscrapers in Dubai (>150m tall),168,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-41,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
-42,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-43,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-44,submarines in the North Korean Navy (2016),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-45,submarines in the US Navy (2016),75,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-46,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+26,concert-goers at Rod Stewart New Year's Eve concert (Rio 1994),4.2,million,6,people,count,https://en.wikipedia.org/wiki/List_of_largest_concerts
+27,words in the St James Bible,783.137,thousand,3,words,count,http://www.billingsfirst.org/clientimages/19106/worship-page/bible-facts/bible-facts.pdf
+28,words in Tolstoy`s War and Peace,564,thousand,3,words,count,Thanks to Wikipedia
+29,grains of sugar in a cup,220,thousand,3,grains,count,Thanks to www.vendian.org
+30,strands on a head of hair,120,thousand,3,strands,count,Thanks to Wikipedia
+31,seats in the Michigan Stadium (American football stadium),107.601,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_American_football_stadiums_by_capacity
+32,seats in Melbourne Cricket Ground,100.024,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+33,seats in the Rose Bowl (American football stadium),92.542,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_American_football_stadiums_by_capacity
+34,seats in Wembley Stadium,90,thousand,3,seats,count,http://www.wembleystadium.com/Press/Presspack/Stats-and-Facts
+35,seats in the Maracana Stadium (Rio Olympics),90,thousand,3,seats,count,https://en.wikipedia.org/wiki/Venues_of_the_2016_Summer_Olympics_and_Paralympics
+36,seats in Eden Gardens Cricket Ground (India),66,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+37,helicopters in the world,56.2,thousand,3,helicopters,count,http://helicopterblog.com/?p=966
+38,seats in Dodger Stadium (baseball stadium),56,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
+39,seats in Eden Park Cricket Ground (NZ),50,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+40,seats in Yankee Stadium (baseball stadium),49.642,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
+41,seats in Fenway Park (baseball stadium),37.499,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
+42,seats in Wanderers Cricket Ground (SA),34,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+43,seats in Lord's Cricket Ground,30,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+44,seats in Madison Square Garden concert venue (NYC),20,thousand,3,seats,count,https://en.wikipedia.org/wiki/Madison_Square_Garden
+45,rooms in the First World Hotel in Genting Highlands (Malaysia),7.351,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
+46,rooms in the MGM Grand Hotel (Las Vegas),6.852,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
+47,passengers on the Allure of the Seas (and Oasis of the Seas) cruise liners,6.296,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
+48,seats in the Royal Albert Hall,5.272,thousand,3,seats,count,https://en.wikipedia.org/wiki/Royal_Albert_Hall
+49,container ships in the world,4.968,thousand,3,ships,count,http://www.worldshipping.org/about-the-industry/liner-ships/container-vessel-fleet
+50,satellites orbiting the Earth (2015),4.077,thousand,3,satellites,count,http://www.pixalytics.com/sat-orbit-2015/
+51,grains of sugar in a teaspoon,4,thousand,3,grains,count,Thanks to www.vendian.org
+52,seats in Hammersmith Apollo music venue (London),3.632,thousand,3,seats,count,http://www.eventimapollo.com/venueinfo/venue-history
+53,passengers on the Queen Mary 2 cruise liner,3.09,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
+54,seats in Carnegie Hall,2.804,thousand,3,seats,count,https://en.wikipedia.org/wiki/Carnegie_Hall
+55,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
+56,billionaires in the world,1.826,thousand,3,billionaires,count,Thanks to Google
+57,Boeing 747's built (2016),1.52,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
+58,passengers on an Airbus A380 airliner,525,unit,0,passengers,count,https://en.wikipedia.org/wiki/Airbus_A380
+59,nuclear power plants in the world (2015),438,unit,0,powerplants,count,http://www.nei.org/Knowledge-Center/Nuclear-Statistics/World-Statistics
+60,skyscrapers in Hong Kong (>150m tall),380,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+61,skyscrapers in New York City (>150m tall),250,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+62,skyscrapers in Dubai (>150m tall),168,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+63,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
+64,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+65,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+66,submarines in the US Navy (2016),75,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+67,submarines in the North Korean Navy (2016),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+68,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
