@@ -422,11 +422,12 @@ def spuriousFact(klass):
         seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=seed)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, 0.0025,1)
-        facts.remove(rf)
+        try:
+            facts.remove(rf)
+        except:
+            pass
         facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,2)
         facts+=facts2
-        facts3 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,3)
-        facts+=facts3
         facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,4)
         facts+=facts4
         facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,5)
