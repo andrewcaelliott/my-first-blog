@@ -420,25 +420,26 @@ def spuriousFact(klass):
     facts = []
     measure=choice(["extent","amount","count","duration","mass"])
     print(measure)
+    tolerance = 0.01
     while len(facts)==0:
         seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=seed)
-        facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, 0.0025,1)
+        facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1)
         try:
             facts.remove(rf)
         except:
             pass
-        facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,2)
+        facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2)
         facts+=facts2
-        facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,0.5)
+        facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.5)
         facts+=facts2b
-        facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,4)
+        facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4)
         facts+=facts4
-        facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,0.25)
+        facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25)
         facts+=facts4b
-        facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,5)
+        facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5)
         facts+=facts5
-        facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,0.2)
+        facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.2)
         facts+=facts5b
     fact2 = choice(facts)
     ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
