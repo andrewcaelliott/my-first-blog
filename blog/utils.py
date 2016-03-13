@@ -324,6 +324,8 @@ def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple):
         mag = mag/100
     elif mag > 10:
         mag = mag/10
+    elif mag < 1:
+        mag = mag*10
     facts = []
     nf = klass.objects.filter(value__gte=mag/(1+tolerance), value__lt=mag*(1+tolerance), measure=measure)
     for fact in nf:
@@ -428,10 +430,16 @@ def spuriousFact(klass):
             pass
         facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,2)
         facts+=facts2
+        facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,0.5)
+        facts+=facts2b
         facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,4)
         facts+=facts4
+        facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,0.25)
+        facts+=facts4b
         facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,5)
         facts+=facts5
+        facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,0.0025,0.2)
+        facts+=facts5b
     fact2 = choice(facts)
     ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
     if ratio > 1:
@@ -445,5 +453,5 @@ def spuriousFact(klass):
     if intRatio==1:
         comparison = " is about as big as"
     else:
-        comparison = " ".join(["is", renderInt(intRatio), "x more than"])
+        comparison = " ".join(["is", renderInt(intRatio), "x"])
     return {"fact1":fact1.render2, "comparison":comparison, "fact2":fact2.render2}
