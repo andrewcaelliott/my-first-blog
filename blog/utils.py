@@ -404,22 +404,29 @@ def randomFactAny(klass, rseed=None):
     rf = klass.objects.filter()[randint(0,count-1)]
     return rf
 
+def renderMult(value):
+    if int(value)== value:
+        return str(int(value))
+    else:
+        return str(value)
+
 def renderInt(i):
-    if i >= 1000000000000:
-        return " ".join([str(int(i/1000000000000)),"trillion"])
+    if i >= 1000000000000000:
+        return " ".join([renderMult(i/1000000000000000),"quadrillion"])
+    elif i >= 1000000000000:
+        return " ".join([renderMult(i/1000000000000),"trillion"])
     elif i >= 1000000000:
-        return " ".join([str(int(i/1000000000)),"billion"])
+        return " ".join([renderMult(i/1000000000),"billion"])
     elif i >= 1000000:
-        return " ".join([str(int(i/1000000)),"million"])
+        return " ".join([renderMult(i/1000000),"million"])
     elif i >= 1000:
-        return " ".join([str(int(i/1000)),"thousand"])
+        return " ".join([renderMult(i/1000),"thousand"])
     else:
         return(str(i))
 
 def spuriousFact(klass):
     facts = []
     measure=choice(["extent","amount","count","duration","mass"])
-    print(measure)
     tolerance = 0.01
     while len(facts)==0:
         seed = randint(0,1000000)
