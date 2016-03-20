@@ -51,7 +51,7 @@ def run():
     loadNumberFacts("./blog/data/Animal_Populations.csv","","individuals")
     loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
     loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
-    loadNumberFacts("./blog/data/Reference_Lengths.csv","","USD p/a")
+    loadNumberFacts("./blog/data/Reference_Lengths.csv","","")
     loadNumberFacts("./blog/data/Reference_Masses.csv","Mass of ","kg")
     loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","")
     loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")

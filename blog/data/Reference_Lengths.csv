@@ -7,44 +7,79 @@
 7,An AU (astronomical unit),149.6,billion,9,m,extent,https://en.wikipedia.org/wiki/Astronomical_unit
 8,Distance from the Earth to the Moon,384.4,million,6,m,extent,Thanks to Google
 9,Length of the equator,40.075,million,6,m,extent,Thanks to Google
-10,Length of the 2016 Dakar Rally,9.237,million,6,m,extent,https://en.wikipedia.org/wiki/2016_Dakar_Rally
-11,Length of the USA / Canada border,8.891,million,6,m,extent,Thanks to Google
-12,Length of the Great Wall of China,8.852,million,6,m,extent,Thanks to Google
-13,Length of North America (North to South),8.605,million,6,m,extent,http://www.worldatlas.com/webimage/countrys/nalandst.htm#page
-14,Length of Africa (North to South),7.248,million,6,m,extent,http://www.worldatlas.com/webimage/countrys/aflandst.htm#page
-15,Length of South America (North to South),7.149,million,6,m,extent,http://www.worldatlas.com/webimage/countrys/salandst.htm
-16,Distance from London to New York,5.576,million,6,m,extent,Thanks to Distance To From
-17,Length of the Congo River,4.7,million,6,m,extent,Thanks to Google
-18,Width of Australia,4,million,6,m,extent,http://www.ask.com/geography/many-miles-wide-australia-41036d80355d0566
-19,Length of the Mississippi River,3.73,million,6,m,extent,Thanks to Wikipedia
-20,Length of the Danube River,2.86,million,6,m,extent,Thanks to Google
-21,Length of the Rhine River,1.233,million,6,m,extent,Thanks to Google
-22,Distance from London to Edinburgh,534.7,thousand,3,m,extent,Thanks to FreeMapTools
-23,Length of the Thames River,386,thousand,3,m,extent,Thanks to Google
-24,Length of the M25 Orbital motorway around London,188,thousand,3,m,extent,https://en.wikipedia.org/wiki/M25_motorway
-25,Full length of Broadway,53,thousand,3,m,extent,https://en.wikipedia.org/wiki/Broadway_(Manhattan)
-26,Length of a Marathon race,42.195,thousand,3,m,extent,Thanks to Google
-27,Highest freefall parachute jump (2012),38.97,thousand,3,m,extent,http://www.guinnessworldrecords.com/news/60at60/2015/8/2012-highest-freefall-parachute-jump-392848
-28,Length of the Peripherique around Paris,35.04,thousand,3,m,extent,https://en.wikipedia.org/wiki/Boulevard_P%C3%A9riph%C3%A9rique
-29,Narrowest width of the English Channel,32.3,thousand,3,m,extent,https://en.wikipedia.org/wiki/English_Channel
-30,Highest ascent by a propellor-driven aircraft (2001),29.524,thousand,3,m,extent,https://en.wikipedia.org/wiki/Flight_altitude_record
-31,Length of Manhattan Island,21.6,thousand,3,m,extent,https://en.wikipedia.org/wiki/Manhattan
-32,Highest ascent by a hot air balloon (2004),6.614,thousand,3,m,extent,https://en.wikipedia.org/wiki/Flight_altitude_record
-33,Length of Central Park (NYC),4,thousand,3,m,extent,http://www.ask.com/geography/big-central-park-new-york-city-3fd1d686bd03643
-34,Length of the Champs Elysee,1.9,thousand,3,m,extent,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
-35,Length of the Titanic,269,unit,0,m,extent,https://en.wikipedia.org/wiki/RMS_Titanic
-36,Length of Tower Bridge over the Thames,244,unit,0,m,extent,https://en.wikipedia.org/wiki/Tower_Bridge
-37,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent,https://en.wikipedia.org/wiki/Pont_Neuf
-38,Length of a football pitch,105,unit,0,m,extent,Thanks to Wikipedia
-39,Distance between bases of a baseball diamond,27.432,unit,0,m,extent,Thanks to Wikipedia
-40,Length of a tennis court,23.77,unit,0,m,extent,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
-41,Length of a cricket pitch,20.12,unit,0,m,extent,Thanks to Google
-42,Length of a London bus,11.23,unit,0,m,extent,Thanks to Google
-43,World Long Jump Record (1991),8.95,unit,0,m,extent,https://en.wikipedia.org/wiki/Long_jump_world_record_progression
-44,World Pole Vault Record (2014),6.16,unit,0,m,extent,https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
-45,Length of a Nile crocodile,4.2,unit,0,m,extent,Thanks to Google
-46,Length of a standard full size snooker table,3.569,unit,0,m,extent,Thanks to Google
-47,World High Jump Record (1993),2.45,unit,0,m,extent,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
-48,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
-49,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
-50,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
+10,Length of the Trans-Siberian Highway from St Petersburg to Vladivostok,11,million,6,m,extent,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
+11,Length of the 2016 Dakar Rally,9.237,million,6,m,extent,https://en.wikipedia.org/wiki/2016_Dakar_Rally
+12,Length of the USA / Canada border,8.891,million,6,m,extent,Thanks to Google
+13,Length of the Great Wall of China,8.852,million,6,m,extent,Thanks to Google
+14,Length of North America (North to South),8.605,million,6,m,extent,http://www.worldatlas.com/webimage/countrys/nalandst.htm#page
+16,Length of Africa (North to South),8,million,6,m,extent,https://en.wikipedia.org/wiki/Geography_of_Africa
+15,Length of the Trans-Canada Highway from Victoria to St John's City,7.821,million,6,m,extent,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
+17,Direct distance from Cape Town to Cairo,7.248,million,6,m,extent,https://www.freemaptools.com/how-far-is-it-between-cape-town_-south-africa-and-cairo_-egypt.htm
+18,Length of South America (North to South),7.149,million,6,m,extent,http://www.worldatlas.com/webimage/countrys/salandst.htm
+19,Length of the Nile River,6.853,million,6,m,extent,https://en.wikipedia.org/wiki/Nile
+20,Length of the Yangtze River,6.3,million,6,m,extent,https://en.wikipedia.org/wiki/Yangtze
+21,Distance from London to New York,5.576,million,6,m,extent,Thanks to Distance To From
+22,Length of I-90 highway from Boston to Seattle,4.86,million,6,m,extent,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
+23,Length of the Congo River,4.7,million,6,m,extent,Thanks to Google
+24,Length of Chile - North-South,4.27,million,6,m,extent,https://en.wikipedia.org/wiki/Geography_of_Chile
+25,Width of Australia,4,million,6,m,extent,http://www.ask.com/geography/many-miles-wide-australia-41036d80355d0566
+26,Length of the Mississippi River,3.73,million,6,m,extent,Thanks to Wikipedia
+27,Length of the Danube River,2.86,million,6,m,extent,Thanks to Google
+28,Length of the Zambezi River,2.574,million,6,m,extent,https://en.wikipedia.org/wiki/Zambezi
+29,Length of the Beijing-Hangzhou Grand Canal,1.794,million,6,m,extent,https://en.wikipedia.org/wiki/Grand_Canal_(China)
+30,Length of the Rhine River,1.233,million,6,m,extent,Thanks to Google
+31,Length of mainland Italy,1.185,million,6,m,extent,http://science.blurtit.com/749871/what-is-the-length-and-width-of-italy
+32,Direct distance from Land's End to John o' Groats,970,thousand,3,m,extent,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
+33,Distance from London to Edinburgh,534.7,thousand,3,m,extent,Thanks to FreeMapTools
+34,Length of the Thames River,386,thousand,3,m,extent,Thanks to Google
+35,Length of the M25 Orbital motorway around London,188,thousand,3,m,extent,https://en.wikipedia.org/wiki/M25_motorway
+36,Full length of Broadway,53,thousand,3,m,extent,https://en.wikipedia.org/wiki/Broadway_(Manhattan)
+37,Length of a Marathon race,42.195,thousand,3,m,extent,Thanks to Google
+38,Highest freefall parachute jump (2012),38.97,thousand,3,m,extent,http://www.guinnessworldrecords.com/news/60at60/2015/8/2012-highest-freefall-parachute-jump-392848
+39,Length of the Peripherique around Paris,35.04,thousand,3,m,extent,https://en.wikipedia.org/wiki/Boulevard_P%C3%A9riph%C3%A9rique
+40,Narrowest width of the English Channel,32.3,thousand,3,m,extent,https://en.wikipedia.org/wiki/English_Channel
+41,Highest ascent by a propellor-driven aircraft (2001),29.524,thousand,3,m,extent,https://en.wikipedia.org/wiki/Flight_altitude_record
+42,Length of Manhattan Island,21.6,thousand,3,m,extent,https://en.wikipedia.org/wiki/Manhattan
+43,Length of the Rove Canal Tunnel in France,7.12,thousand,3,m,extent,https://en.wikipedia.org/wiki/Rove_Tunnel
+44,Length of the Oxford-Cambridge boat race,6.8,thousand,3,m,extent,http://theboatraces.org/the-course
+45,Highest ascent by a hot air balloon (2004),6.614,thousand,3,m,extent,https://en.wikipedia.org/wiki/Flight_altitude_record
+46,Length of Central Park (NYC),4,thousand,3,m,extent,http://www.ask.com/geography/big-central-park-new-york-city-3fd1d686bd03643
+47,Length of the Champs Elysee,1.9,thousand,3,m,extent,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
+48,Length of Tiananmen square in Beijing,880,unit,0,m,extent,http://tiananmensquarebeijing.com
+49,Length of the Lincoln Memorial Reflecting pool in Washington DC,618,unit,0,m,extent,https://en.wikipedia.org/wiki/Lincoln_Memorial_Reflecting_Pool
+50,Longest golf drive,470.9,unit,0,m,extent,http://news.bbc.co.uk/1/hi/programmes/click_online/9269507.stm
+51,Length of the Titanic,269,unit,0,m,extent,https://en.wikipedia.org/wiki/RMS_Titanic
+52,Length of the longest ski jump ever (2015),251.5,unit,0,m,extent,https://en.wikipedia.org/wiki/List_of_the_longest_ski_jumps
+53,Length of Tower Bridge over the Thames,244,unit,0,m,extent,https://en.wikipedia.org/wiki/Tower_Bridge
+54,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent,https://en.wikipedia.org/wiki/Pont_Neuf
+55,Height of Sagrada Familia Basilica in Barcelona,170,unit,0,m,extent,https://en.wikipedia.org/wiki/Sagrada_Família
+56,Height of Kingda Ka roller coaster,139,unit,0,m,extent,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
+57,Height of the Great Pyramid of Giza,139,unit,0,m,extent,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+58,Height of St Paul's Cathedral in London,111,unit,0,m,extent,https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral
+59,Length of a football pitch,105,unit,0,m,extent,Thanks to Wikipedia
+60,Typical flight of a flying fish,50,unit,0,m,extent,https://en.wikipedia.org/wiki/Flying_fish
+61,Length of a blue whale,30,unit,0,m,extent,https://en.wikipedia.org/wiki/Blue_whale
+62,Distance between bases of a baseball diamond,27.432,unit,0,m,extent,Thanks to Wikipedia
+63,Length of a tennis court,23.77,unit,0,m,extent,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
+64,Length of a cricket pitch,20.12,unit,0,m,extent,Thanks to Google
+65,Length of a London Underground carriage,18,unit,0,m,extent,https://en.wikipedia.org/wiki/London_Underground_rolling_stock
+66,Distance a kangaroo can jump,13.5,unit,0,m,extent,http://www.answers.com/Q/How_far_can_a_kangaroo_jump
+67,Length of a London bus,11.23,unit,0,m,extent,Thanks to Google
+68,World Long Jump Record (1991),8.95,unit,0,m,extent,https://en.wikipedia.org/wiki/Long_jump_world_record_progression
+69,World Pole Vault Record (2014),6.16,unit,0,m,extent,https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
+70,Length of a Nile crocodile,4.2,unit,0,m,extent,Thanks to Google
+71,Length of a standard full size snooker table,3.569,unit,0,m,extent,Thanks to Google
+72,World High Jump Record (1993),2.45,unit,0,m,extent,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
+73,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
+74,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
+75,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
+76,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
+77,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
+78,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+79,Distance a flea can jump,0.33,unit,0,m,extent,https://en.wikipedia.org/wiki/Flea
+80,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+81,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
+82,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+83,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
+84,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
+85,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
