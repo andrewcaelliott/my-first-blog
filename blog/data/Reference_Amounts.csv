@@ -1,23 +1,34 @@
 1,Total value of all gold ever mined,6.75,trillion,12,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-2,Value of USA's gold reserves,321,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-3,Cost of Apollo moon programme (adjusted to 2016 dollars),146,billion,9,USD,amount,https://christopherrcooper.com/blog/was-the-apollo-program-a-prudent-investment-worth-retrying/
-4,Value of Italy's gold reserves,96.6,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-5,Wealth of the wealthiest person in the world,79.2,billion,9,USD,amount,Wikipedia
-6,Value of Russia's gold reserves,54.9,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-7,Cost of Trident Nuclear submarine replacement program,28,billion,9,USD,amount,http://www.bbc.co.uk/news/election-2015-scotland-32236184
-8,Price of an Airbus A380 airliner (2015),428,million,6,USD,amount,http://www.airbus.com/presscentre/pressreleases/press-release-detail/detail/new-airbus-aircraft-list-prices-for-2015/
-9,Cost of most expensive movie ever made,378.5,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
-10,Largest Win on a Lottery Ticket,370.9,million,6,USD,amount,Wikipedia
-11,Highest price for a painting sold at auction,300,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
-12,Cost of making SPECTRE (James Bond Movie),245,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
-13,Cost of making Star Wars: The Force Awakens,200,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
-14,Highest price for a Rembrandt painting sold at auction,180,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
-15,Highest price for a Picasso painting sold at auction,179.4,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
-16,Highest price for a sculpture sold at auction,141.3,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_sculptures
-17,Price of an Gulfstream G650 private jet,65,million,6,USD,amount,http://www.businessinsider.com/photos-tour-the-65-million-gulfstream-g650-2013-7?IR=T
-18,"Sale price in 2015 of the 12.03 carat ""Blue Moon"" diamond",48.4,million,6,USD,amount,http://edition.cnn.com/2015/11/12/luxury/most-expensive-diamond/
-19,Price at 2001 auction of Shakespeare's First Folio,6.1,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_books
-20,Minimum price of a Tesla Roadster (2015),101.5,thousand,3,USD,amount,https://www.truecar.com/prices-new/tesla/
-21,Price of Boston Red Sox infield grandstand season ticket (2016),4.7,thousand,3,USD,amount,http://www.answers.com/Q/How_much_do_Red_Sox_season_tickets_cost
-22,Price of cheapest Manchester United Season ticket (2016),750,unit,0,USD,amount,http://www.manchestereveningnews.co.uk/sport/football/football-news/manchester-united-freeze-season-ticket-10708720
-23,Price of ticket for Glastonbury music festival (2016),228,unit,0,USD,amount,http://www.theweek.co.uk/glastonbury/60687/how-to-get-glastonbury-festival-tickets-2016-prices-and-tips
+2,Cost to USA of the Iraq war (revalued to 2016),826,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+3,Cost to USA of the Vietnam war (revalued to 2016),778,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+4,Cost to USA of the Korean war (revalued to 2016),359,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+5,Value of USA's gold reserves,321,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+6,Cost of Apollo moon programme (adjusted to 2016 dollars),146,billion,9,USD,amount,https://christopherrcooper.com/blog/was-the-apollo-program-a-prudent-investment-worth-retrying/
+7,Cost to USA of the First Gulf war (revalued to 2016),107.5,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+8,Value of Italy's gold reserves,96.6,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+9,Wealth of the wealthiest person in the world,79.2,billion,9,USD,amount,Wikipedia
+10,Value of Russia's gold reserves,54.9,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+11,Cost of Trident Nuclear submarine replacement program,28,billion,9,USD,amount,http://www.bbc.co.uk/news/election-2015-scotland-32236184
+12,Cost of the Gerald R. Ford Aircraft Carrier,10.4,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+13,Price of an Airbus A380 airliner (2015),428,million,6,USD,amount,http://www.airbus.com/presscentre/pressreleases/press-release-detail/detail/new-airbus-aircraft-list-prices-for-2015/
+14,Cost of most expensive movie ever made,378.5,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
+15,Largest Win on a Lottery Ticket,370.9,million,6,USD,amount,Wikipedia
+16,Highest price for a painting sold at auction,300,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+17,Cost of making SPECTRE (James Bond Movie),245,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
+18,Cost of making Star Wars: The Force Awakens,200,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
+19,Highest price for a Rembrandt painting sold at auction,180,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+20,Highest price for a Picasso painting sold at auction,179.4,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+21,Highest price for a sculpture sold at auction,141.3,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_sculptures
+22,Price of an Gulfstream G650 private jet,65,million,6,USD,amount,http://www.businessinsider.com/photos-tour-the-65-million-gulfstream-g650-2013-7?IR=T
+23,Cost of a SpaceX Falcon 9 rocket launch,57,million,6,USD,amount,http://www.airspacemag.com/space/is-spacex-changing-the-rocket-equation-132285884/?no-ist
+24,"Sale price in 2015 of the 12.03 carat ""Blue Moon"" diamond",48.4,million,6,USD,amount,http://edition.cnn.com/2015/11/12/luxury/most-expensive-diamond/
+25,Price at 2001 auction of Shakespeare's First Folio,6.1,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_books
+26,Minimum price of a Tesla Roadster (2015),101.5,thousand,3,USD,amount,https://www.truecar.com/prices-new/tesla/
+27,Cost of Porsche 718 Boxter car,59,thousand,3,USD,amount,http://www.porsche.com/uk/models/718/718-boxster/
+28,Price of Boston Red Sox infield grandstand season ticket (2016),4.7,thousand,3,USD,amount,http://www.answers.com/Q/How_much_do_Red_Sox_season_tickets_cost
+29,Price of cheapest Manchester United Season ticket (2016),750,unit,0,USD,amount,http://www.manchestereveningnews.co.uk/sport/football/football-news/manchester-united-freeze-season-ticket-10708720
+30,Cost of iPhone SE (2016),400,unit,0,USD,amount,http://www.wired.com/2016/03/iphone-se/
+31,Price per head of the tasting menu at Eleven Madison Park Restaurant (NYC),295,unit,0,USD,amount,http://www.elevenmadisonpark.com/menus/
+32,Price per head of a meal at The Fat Duck Restaurant (Bray; UK),255,unit,0,USD,amount,http://www.thefatduck.co.uk/reservations
+33,Price of ticket for Glastonbury music festival (2016),228,unit,0,USD,amount,http://www.theweek.co.uk/glastonbury/60687/how-to-get-glastonbury-festival-tickets-2016-prices-and-tips
+34,Price per head of a meal at Celler de Can Roca Restaurant (Girona),218,unit,0,USD,amount,http://www.viamichelin.co.uk/web/Restaurant/Girona-17007-El_Celler_de_Can_Roca-220312-41102
