@@ -2,95 +2,116 @@
 2,Jupiter,1899,septillion,24,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
 3,Saturn,568,septillion,24,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
 4,the Earth,5.974,septillion,24,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-5,Mars,641.85,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-6,Ganymede,148.2,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-7,the Moon,73.477,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-8,Pluto,13.105,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-9,Charon,1.52,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-10,all the water in the Earth's seas,1.4,sextillion,21,kg,mass,Thanks to Wikipedia
-11,the largest asteroid (Ceres),939,quintillion,18,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
-12,water in Lake Baikal,23.6,quintillion,18,kg,mass,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-13,water in the Great Lakes of North America,22.7,quintillion,18,kg,mass,https://en.wikipedia.org/wiki/Great_Lakes
-14,water in Lake Tanganyika (Africa),18.9,quintillion,18,kg,mass,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+5,Venus,4.867,septillion,24,kg,mass,https://en.wikipedia.org/wiki/Planetary_mass
+6,Mars,641.85,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
+7,Mercury,330.1,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/Planetary_mass
+8,Ganymede (moon of Jupiter),148.2,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
+9,Titan (moon of Saturn),134.52,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/Titan_(moon)
+10,the Moon,73.477,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
+11,Pluto,13.105,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
+12,Charon,1.52,sextillion,21,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
+13,all the water in the Earth's seas,1.4,sextillion,21,kg,mass,Thanks to Wikipedia
+14,the largest asteroid (Ceres),939,quintillion,18,kg,mass,https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size
 15,the Earth's atmosphere,5.148,quintillion,18,kg,mass,http://journals.ametsoc.org/doi/abs/10.1175/JCLI-3299.1
-16,water in Lake Victoria (Africa),2.75,quintillion,18,kg,mass,https://en.wikipedia.org/wiki/Lake_Victoria
-17,water in Lake Zurich,3.9,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/Lake_Zurich
-18,all the Earth's biomass,560,trillion,12,kg,mass,Thanks to Wikipedia
-19,world coal production (2013),7.823,trillion,12,kg,mass,https://www.worldcoal.org/sites/default/files/coal_facts_2014(12_09_2014).pdf
-20,world steel production (2014),1.665,trillion,12,kg,mass,https://www.worldsteel.org/dms/internetDocumentList/bookshop/2015/World-Steel-in-Figures-2015/document/World%20Steel%20in%20Figures%202015.pdf
-21,all the Earth's land mammals,1.3,trillion,12,kg,mass,Thanks to XKCD.com
-22,all the humans on Earth,358,billion,9,kg,mass,Thanks to XKCD.com
-23,water in Windermere (English Lake District),300,billion,9,kg,mass,http://www.kgbanswers.co.uk/how-many-litres-of-water-are-in-windermere-lake-england/16172265
-24,the Great Pyramid of Giza,5.9,billion,9,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
-25,Golden Gate bridge,805,million,6,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
-26,Empire State Building,331,million,6,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
-27,a `supercarrier` aircraft carrier,64,million,6,kg,mass,Thanks to Wikipedia
-28,the Titanic,52,million,6,kg,mass,Thanks to Google
+16,water in Lake Baikal,23.6,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+17,water in the Great Lakes of North America,22.7,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/Great_Lakes
+18,water in Lake Tanganyika (Africa),18.9,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+19,Phobos (moon of Mars),10.8,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/Moons_of_Mars
+20,water in Lake Victoria (Africa),2.75,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/Lake_Victoria
+21,Deimos (moon of Mars),2,quadrillion,15,kg,mass,https://en.wikipedia.org/wiki/Moons_of_Mars
+22,all the Earth's biomass,560,trillion,12,kg,mass,https://en.wikipedia.org/wiki/Biomass_(ecology)
+23,Halley's Comet,220,trillion,12,kg,mass,https://en.wikipedia.org/wiki/Halley%27s_Comet
+24,water in the Aswan Dam (Egypt),169,trillion,12,kg,mass,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+25,water in Lake Geneva,89,trillion,12,kg,mass,https://en.wikipedia.org/wiki/Lake_Geneva
+26,water in the Three Gorges Dam (China),39.3,trillion,12,kg,mass,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+27,water in the Fort Peck Dam (USA),23,trillion,12,kg,mass,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+28,world coal production (2013),7.823,trillion,12,kg,mass,https://www.worldcoal.org/sites/default/files/coal_facts_2014(12_09_2014).pdf
+29,water in Lake Zurich,3.9,trillion,12,kg,mass,https://en.wikipedia.org/wiki/Lake_Zurich
+30,world steel production (2014),1.665,trillion,12,kg,mass,https://www.worldsteel.org/dms/internetDocumentList/bookshop/2015/World-Steel-in-Figures-2015/document/World%20Steel%20in%20Figures%202015.pdf
+31,all the Earth's land mammals,1.3,trillion,12,kg,mass,Thanks to XKCD.com
+32,all the humans on Earth,358,billion,9,kg,mass,Thanks to XKCD.com
+33,water in Windermere (English Lake District),314.5,billion,9,kg,mass,https://en.wikipedia.org/wiki/List_of_lakes_in_the_Lake_District
+34,the Great Pyramid of Giza,5.9,billion,9,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
+35,water in the Hoover Dam,2.48,billion,9,kg,mass,https://en.wikipedia.org/wiki/Hoover_Dam
+36,Golden Gate bridge,805,million,6,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
+37,Empire State Building,331,million,6,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
+38,a `supercarrier` aircraft carrier,64,million,6,kg,mass,Thanks to Wikipedia
+39,the Titanic,52,million,6,kg,mass,Thanks to Google
 40,world silver production (2014),26,million,6,kg,mass,https://en.wikipedia.org/wiki/List_of_countries_by_silver_production
-29,Brooklyn Bridge,13.32,million,6,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
-30,the Eiffel Tower,7.3,million,6,kg,mass,http://wordpress.mrreid.org/2011/02/11/an-interesting-fact-about-the-eiffel-tower/
-31,world gold production (2014),2.99,million,6,kg,mass,https://en.wikipedia.org/wiki/List_of_countries_by_gold_production
-32,the biggest Redwood tree,1.2,million,6,kg,mass,http://www.livescience.com/39461-sequoias-redwood-trees.html
-33,an Airbus a380,575,thousand,3,kg,mass,Thanks to Google
-34,SpaceX Falcon 9 launch rocket,542.3,thousand,3,kg,mass,http://www.spacex.com/falcon9
-35,the International Space Station,400,thousand,3,kg,mass,Thanks to Google
-36,the Statue of Liberty,201.4,thousand,3,kg,mass,http://wordpress.mrreid.org/2011/02/11/an-interesting-fact-about-the-eiffel-tower/
-37,a Blue Whale,190,thousand,3,kg,mass,Thanks to Google
-38,an M1 Abrams tank,62,thousand,3,kg,mass,Thanks to Wikipedia
-39,Gulfstream G650 business jet,45.4,thousand,3,kg,mass,https://en.wikipedia.org/wiki/Gulfstream_G650
-41,an Elephant,7,thousand,3,kg,mass,Thanks to Wikipedia
-42,an adult male giraffe,2.5,thousand,3,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-43,a Rhino,2.3,thousand,3,kg,mass,Thanks to Google
-44,an adult male Walrus,2,thousand,3,kg,mass,https://en.wikipedia.org/wiki/Walrus
-45,a large passenger car,1.5,thousand,3,kg,mass,Thanks to Wikipedia
-46,Cessna 172 aircraft,998,unit,0,kg,mass,https://en.wikipedia.org/wiki/Cessna_172
-47,a small passenger car,800,unit,0,kg,mass,Thanks to Wikipedia
-48,a mature Holstein cow,680,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-49,a concert grand piano,450,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-50,a barrel of crude oil (159l),275,unit,0,kg,mass,http://www.businessdictionary.com/definition/barrel-bbl.html
-51,heaviest weights lifted in Olympic Weightlifting (Clean and Jerk),274,unit,0,kg,mass,https://en.wikipedia.org/wiki/List_of_world_records_in_Olympic_weightlifting
-52,an adult male Bengal Tiger,220,unit,0,kg,mass,https://en.wikipedia.org/wiki/Bengal_tiger
-53,a motorbike,200,unit,0,kg,mass,http://www.visordown.com/forum/general/what-is-the-average-weight-of-a-motorcycle/248279.html
-54,an ostrich (approx),111,unit,0,kg,mass,https://en.wikipedia.org/wiki/Ostrich
-55,an adult male red kangaroo,85,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-56,heaviest Reticulated Python snake,75,unit,0,kg,mass,https://en.wikipedia.org/wiki/Reticulated_python
-57,a domestic washing machine,70,unit,0,kg,mass,Thanks to Google
-58,average human,62,unit,0,kg,mass,https://en.wikipedia.org/wiki/Human_body_weight
-59,Pedal Harp (orchestral instrument),36,unit,0,kg,mass,https://en.wikipedia.org/wiki/Pedal_harp
-60,a full-grown Labrador dog,35,unit,0,kg,mass,Thanks to Google
-61,a typical microwave oven,27,unit,0,kg,mass,http://www.amazon.co.uk/Sharp-R959SLMA-Digital-Combination-Microwave/dp/B000L43KL6
-62,a packed suitcase (maximum checked-in British Airways),23,unit,0,kg,mass,Airline regulations
-63,the heaviest allowable Curling stone,20,unit,0,kg,mass,https://en.wikipedia.org/wiki/Curling#Curling_stone
-64,a case of 12 bottles of wine,16,unit,0,kg,mass,https://www.majesticwinecalais.co.uk/information/car-sizes
-65,a `London Good Delivery` Gold Bar,12.44,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-66,a large watermelon,10,unit,0,kg,mass,Thanks to Google
-67,Double Bass,10,unit,0,kg,mass,https://www.talkbass.com/threads/weight-of-a-double-bass.563350/
-68,Tuba,10,unit,0,kg,mass,https://uk.answers.yahoo.com/question/index?qid=20101118131618AAWvmFq
-69,a regulation mens' shot (in the shot put athletics event),7.26,unit,0,kg,mass,https://en.wikipedia.org/wiki/Shot_put
-70,an adult male Siamese Cat,5.9,unit,0,kg,mass,http://www.travelswithtigger.com/fanciers/trad-siamese-faq.html
-71,a pickaxe,4,unit,0,kg,mass,Thanks to Google
-72,a regulation womens' shot (in the shot put athletics event),4,unit,0,kg,mass,https://en.wikipedia.org/wiki/Shot_put
-73,Selmer MkVI Tenor Saxophone,3.15,unit,0,kg,mass,http://www.shwoodwind.co.uk/Reviews/Saxes/Tenor/selmer_mkvi_tenor.htm
-74,a brick,2.9,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-75,an ostrich egg (approx),1.4,unit,0,kg,mass,https://en.wikipedia.org/wiki/Ostrich
-76,a medium-sized pineapple,0.9,unit,0,kg,mass,http://www.answers.com/Q/Weight_of_a_pineapple&isLookUp=1#Q=weight%20of%20a%20pineapple
-77,a regulation basketball,0.624,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
-78,an iPad Air,0.5,unit,0,kg,mass,Thanks to Google
-79,a medium-sized can of beans (including the can),0.46,unit,0,kg,mass,Direct measurement!
-80,the lightest allowable regulation (soccer) football,0.41,unit,0,kg,mass,https://en.wikipedia.org/wiki/Football_(ball)
-81,Violin,0.4,unit,0,kg,mass,https://uk.answers.yahoo.com/question/index?qid=20100902115754AAA1ZAC
-82,a can of Coke,0.388,unit,0,kg,mass,http://castle.eiu.edu/~scienced/3290/science/discrepant/wannacoke.html
-83,a can of Diet Coke,0.372,unit,0,kg,mass,http://castle.eiu.edu/~scienced/3290/science/discrepant/wannacoke.html
-84,an iPhone 6,0.17,unit,0,kg,mass,Thanks to Google
-85,the lightest allowable regulation baseball,0.142,unit,0,kg,mass,https://en.wikipedia.org/wiki/Baseball_(ball)
-86,a medium-sized apple (fruit),0.068,unit,0,kg,mass,http://www.answers.com/Q/How_much_does_1_medium_apple_weigh
-87,a large hen's egg (approx),0.06,unit,0,kg,mass,https://en.wikipedia.org/wiki/Chicken_egg_sizes
-88,a regulation tennis ball,0.057,unit,0,kg,mass,http://hypertextbook.com/facts/2000/ShefiuAzeez.shtml
-89,heaviest allowable golf ball,0.04593,unit,0,kg,mass,https://en.wikipedia.org/wiki/Golf_ball
-90,an alkaline AA battery,0.023,unit,0,kg,mass,https://en.wikipedia.org/wiki/AA_battery
-91,a house mouse,0.017,unit,0,kg,mass,Thanks to Google
-92,a UK pound coin,0.0095,unit,0,kg,mass,http://www.royalmint.com/discover/uk-coins/coin-design-and-specifications/one-pound-coin
-93,a BIC pen,0.0058,unit,0,kg,mass,http://thinkbic.com/
-94,a USA quarter (25c piece),0.00567,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
-95,a UK penny (1p piece),0.00356,unit,0,kg,mass,http://www.royalmint.com/discover/uk-coins/coin-design-and-specifications/one-penny-coin
-96,a USA penny (1c piece),0.0025,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
+41,Brooklyn Bridge,13.32,million,6,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=100000000000
+42,the Eiffel Tower,7.3,million,6,kg,mass,http://wordpress.mrreid.org/2011/02/11/an-interesting-fact-about-the-eiffel-tower/
+43,space debris in orbit around Earth,5.5,million,6,kg,mass,https://en.wikipedia.org/wiki/Space_debris
+44,world gold production (2014),2.99,million,6,kg,mass,https://en.wikipedia.org/wiki/List_of_countries_by_gold_production
+45,water in an Olympic Swimming pool at minimum depth of 2m,2.5,million,6,kg,mass,http://www.patagoniaalliance.org/wp-content/uploads/2014/08/How-much-water-does-an-Olympic-sized-swimming-pool-hold.pdf
+46,the biggest Redwood tree,1.2,million,6,kg,mass,http://www.livescience.com/39461-sequoias-redwood-trees.html
+47,an Airbus a380,575,thousand,3,kg,mass,Thanks to Google
+48,SpaceX Falcon 9 launch rocket,542.3,thousand,3,kg,mass,http://www.spacex.com/falcon9
+49,the International Space Station,400,thousand,3,kg,mass,Thanks to Google
+50,the Statue of Liberty,201.4,thousand,3,kg,mass,http://wordpress.mrreid.org/2011/02/11/an-interesting-fact-about-the-eiffel-tower/
+51,a Blue Whale,190,thousand,3,kg,mass,Thanks to Google
+52,an M1 Abrams tank,62,thousand,3,kg,mass,Thanks to Wikipedia
+53,Gulfstream G650 business jet,45.4,thousand,3,kg,mass,https://en.wikipedia.org/wiki/Gulfstream_G650
+54,an Elephant,7,thousand,3,kg,mass,Thanks to Wikipedia
+55,an adult male giraffe,2.5,thousand,3,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+56,a Rhino,2.3,thousand,3,kg,mass,Thanks to Google
+57,an adult male Walrus,2,thousand,3,kg,mass,https://en.wikipedia.org/wiki/Walrus
+58,a large passenger car,1.5,thousand,3,kg,mass,Thanks to Wikipedia
+59,Cessna 172 aircraft,998,unit,0,kg,mass,https://en.wikipedia.org/wiki/Cessna_172
+60,a small passenger car,800,unit,0,kg,mass,Thanks to Wikipedia
+61,a mature Holstein cow,680,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+62,a mature thoroughbred racehorse,570,unit,0,kg,mass,http://www.ask.com/pets-animals/much-racehorse-weigh-9764f37cf20f6193
+63,a concert grand piano,450,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+64,a barrel of crude oil (159l),275,unit,0,kg,mass,http://www.businessdictionary.com/definition/barrel-bbl.html
+65,heaviest weights lifted in Olympic Weightlifting (Clean and Jerk),274,unit,0,kg,mass,https://en.wikipedia.org/wiki/List_of_world_records_in_Olympic_weightlifting
+66,an adult male Bengal Tiger,220,unit,0,kg,mass,https://en.wikipedia.org/wiki/Bengal_tiger
+67,a motorbike,200,unit,0,kg,mass,http://www.visordown.com/forum/general/what-is-the-average-weight-of-a-motorcycle/248279.html
+68,an adult male Panda Bear,150,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=2
+69,an ostrich (approx),111,unit,0,kg,mass,https://en.wikipedia.org/wiki/Ostrich
+70,an adult male red kangaroo,85,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+71,heaviest Reticulated Python snake,75,unit,0,kg,mass,https://en.wikipedia.org/wiki/Reticulated_python
+72,a domestic washing machine,70,unit,0,kg,mass,http://www.ask.com/home-garden/much-average-washing-machine-weigh-7f017be24b423199
+73,average human,62,unit,0,kg,mass,https://en.wikipedia.org/wiki/Human_body_weight
+74,Pedal Harp (orchestral instrument),36,unit,0,kg,mass,https://en.wikipedia.org/wiki/Pedal_harp
+75,a full-grown Labrador dog,35,unit,0,kg,mass,Thanks to Google
+76,a packed suitcase (maximum checked-in British Airways),23,unit,0,kg,mass,Airline regulations
+77,the heaviest allowable Curling stone,20,unit,0,kg,mass,https://en.wikipedia.org/wiki/Curling#Curling_stone
+78,a typical microwave oven,18,unit,0,kg,mass,http://www.ehow.com/info_12041682_microwave-ovens-average-weight.html
+79,a case of 12 bottles of wine,16,unit,0,kg,mass,https://www.majesticwinecalais.co.uk/information/car-sizes
+80,a half-filled sandbag as used in flood control,13.6,unit,0,kg,mass,http://lewiscountywa.gov/sandbags-frequently-asked-questions
+81,a `London Good Delivery` Gold Bar,12.44,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+82,a large watermelon,10,unit,0,kg,mass,Thanks to Google
+83,Double Bass,10,unit,0,kg,mass,https://www.talkbass.com/threads/weight-of-a-double-bass.563350/
+84,Tuba,10,unit,0,kg,mass,https://uk.answers.yahoo.com/question/index?qid=20101118131618AAWvmFq
+85,a regulation mens' shot (in the shot put athletics event),7.26,unit,0,kg,mass,https://en.wikipedia.org/wiki/Shot_put
+86,an adult male Siamese Cat,5.9,unit,0,kg,mass,http://www.travelswithtigger.com/fanciers/trad-siamese-faq.html
+87,a pickaxe,4,unit,0,kg,mass,Thanks to Google
+88,a regulation womens' shot (in the shot put athletics event),4,unit,0,kg,mass,https://en.wikipedia.org/wiki/Shot_put
+89,Selmer MkVI Tenor Saxophone,3.15,unit,0,kg,mass,http://www.shwoodwind.co.uk/Reviews/Saxes/Tenor/selmer_mkvi_tenor.htm
+90,a brick,2.9,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+91,an average coconut,1.44,unit,0,kg,mass,https://en.wikipedia.org/wiki/Coconut
+92,an ostrich egg (approx),1.4,unit,0,kg,mass,https://en.wikipedia.org/wiki/Ostrich
+93,an average human brain,1.35,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=2
+94,a medium-sized pineapple,0.9,unit,0,kg,mass,http://www.answers.com/Q/Weight_of_a_pineapple&isLookUp=1#Q=weight%20of%20a%20pineapple
+95,a regulation basketball,0.624,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
+96,an iPad Air,0.5,unit,0,kg,mass,Thanks to Google
+97,a medium-sized can of beans (including the can),0.46,unit,0,kg,mass,Direct measurement!
+98,the lightest allowable regulation (soccer) football,0.41,unit,0,kg,mass,https://en.wikipedia.org/wiki/Football_(ball)
+99,Violin,0.4,unit,0,kg,mass,https://uk.answers.yahoo.com/question/index?qid=20100902115754AAA1ZAC
+100,a can of Coke,0.388,unit,0,kg,mass,http://castle.eiu.edu/~scienced/3290/science/discrepant/wannacoke.html
+101,a can of Diet Coke,0.372,unit,0,kg,mass,http://castle.eiu.edu/~scienced/3290/science/discrepant/wannacoke.html
+102,an average human heart,0.31,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=3
+103,an iPhone 6,0.17,unit,0,kg,mass,Thanks to Google
+104,the lightest allowable regulation baseball,0.142,unit,0,kg,mass,https://en.wikipedia.org/wiki/Baseball_(ball)
+105,an alkaline D battery,0.135,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=5
+106,a medium-sized apple (fruit),0.068,unit,0,kg,mass,http://www.answers.com/Q/How_much_does_1_medium_apple_weigh
+107,a large hen's egg (approx),0.06,unit,0,kg,mass,https://en.wikipedia.org/wiki/Chicken_egg_sizes
+108,a regulation tennis ball,0.057,unit,0,kg,mass,http://hypertextbook.com/facts/2000/ShefiuAzeez.shtml
+109,heaviest allowable golf ball,0.04593,unit,0,kg,mass,https://en.wikipedia.org/wiki/Golf_ball
+110,an alkaline AA battery,0.023,unit,0,kg,mass,https://en.wikipedia.org/wiki/AA_battery
+111,a house mouse,0.017,unit,0,kg,mass,Thanks to Google
+112,a compact disc (CD) / DVD,0.015,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=7
+113,a UK pound coin,0.0095,unit,0,kg,mass,http://www.royalmint.com/discover/uk-coins/coin-design-and-specifications/one-pound-coin
+114,a BIC pen,0.0058,unit,0,kg,mass,http://thinkbic.com/
+115,a USA quarter (25c piece),0.00567,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
+116,a UK penny (1p piece),0.00356,unit,0,kg,mass,http://www.royalmint.com/discover/uk-coins/coin-design-and-specifications/one-penny-coin
+117,a USA penny (1c piece),0.0025,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
