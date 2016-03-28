@@ -468,7 +468,7 @@ def spuriousFact(klass):
 def neatFacts(klass, selectedFact):
     rf = selectedFact
     tolerance = 0.01
-    maxRatio = {"extent":5000, "mass":10000, "duration":5000, "count":500, "amount":500}[rf.measure]
+    maxRatio = {"extent":10000, "mass":20000, "duration":10000, "count":500, "amount":500}[rf.measure]
 
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1)
     try:
