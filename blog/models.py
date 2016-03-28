@@ -38,7 +38,6 @@ class NumberQuery(models.Model):
 
 
     def getBrackets(self):
-
         factor = self.setScaleFactor()
         try:
             num_ans = num(self.magnitude) * factor
@@ -169,6 +168,7 @@ class NumberFact(models.Model):
     measure = models.CharField(max_length=1, choices=MEASURE_CHOICES)
     subject = models.TextField()
 
+
     def _display(self):
         return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
@@ -176,7 +176,7 @@ class NumberFact(models.Model):
         return "".join([self.title," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
 
     def _link(self):
-        return "../fact/"+str(self.id)
+        return "/fact/"+str(self.id)
 
     def __str__(self):
         return self.title        

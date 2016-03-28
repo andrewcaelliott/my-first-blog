@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -361,7 +361,8 @@ def fact_detail(request, pk):
     else:
         reflink="http://www.google.com/?q="+fact.title
     dyk=spuriousFact(NumberFact)
-    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk})
+    neat = neatFacts(NumberFact, fact)
+    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat})
 
 def fact_new(request):
     if request.method == "POST":

@@ -438,16 +438,16 @@ def spuriousFact(klass):
             pass
         facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2)
         facts+=facts2
-        facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.5)
-        facts+=facts2b
+#        facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.5)
+#        facts+=facts2b
         facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4)
         facts+=facts4
         facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25)
         facts+=facts4b
         facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5)
         facts+=facts5
-        facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.2)
-        facts+=facts5b
+ #       facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.2)
+ #       facts+=facts5b
     fact2 = choice(facts)
     ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
     if ratio > 1:
@@ -459,7 +459,52 @@ def spuriousFact(klass):
     ratio = (fact1.value/fact2.value)*10**(fact1.scale - fact2.scale)
     intRatio = sigfigs(ratio, 2)
     if intRatio==1:
-        comparison = " is about as big as"
+        comparison = "is about as big as"
     else:
         comparison = " ".join(["is", renderInt(intRatio), "x"])
     return {"fact1":fact1.render2, "comparison":comparison, "fact2":fact2.render2}
+
+
+def neatFacts(klass, selectedFact):
+    rf = selectedFact
+    tolerance = 0.01
+    maxRatio = {"extent":5000, "mass":10000, "duration":5000, "count":500, "amount":500}[rf.measure]
+
+    facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1)
+    try:
+        facts.remove(rf)
+    except:
+        pass
+    facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2)
+    facts+=facts2
+#    facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.5)
+#    facts+=facts2b
+    facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4)
+    facts+=facts4
+    facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25)
+    facts+=facts4b
+    facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5)
+    facts+=facts5
+#    facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.2)
+#    facts+=facts5b
+
+    neat = []
+
+    for fact in facts:
+        raw_ratio = (rf.value/fact.value)*10**(rf.scale - fact.scale)
+
+        if raw_ratio < 1:
+            intRatio = sigfigs(1/raw_ratio, 2)
+        else:
+            intRatio = sigfigs(raw_ratio, 2)
+        if intRatio==1:
+            comparison = "is about as big as"
+        elif raw_ratio < 1:
+            comparison = "".join(["is 1/", renderMult(intRatio), " of"])
+        else:
+            comparison = "".join(["is ", renderMult(intRatio), " x"])
+        comparison = comparison.replace("1/2.5", "2/5")
+        if intRatio <= maxRatio:
+            neat = neat+[{"fact1":rf, "comparison":comparison, "fact2":fact, "fact2render":fact.render2, "ratio":raw_ratio}]
+    neat = sorted(neat, key = lambda k: k['ratio'])
+    return neat

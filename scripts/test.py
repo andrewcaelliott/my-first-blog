@@ -4,7 +4,10 @@ from blog.models import NumberFact
 #from pint import UnitRegistry
 from math import log10
 from random import sample,randint,choice
-from blog.utils import closeEnoughNumberFact, closeMagnitudeNumberFact, numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, spuriousFact
+from blog.utils import (closeEnoughNumberFact, closeMagnitudeNumberFact, 
+	numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, 
+	bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, 
+	spuriousFact, neatFacts)
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -175,6 +178,17 @@ def run10():
 	print(klass.objects)
 
 
-def run():
+def run11():
 	klass = NumberFact
 	print(spuriousFact(klass))
+
+def run():
+	klass = NumberFact
+	measure=("count")
+	seed = randint(0,1000000)
+	rf = randomFact(NumberFact, measure, rseed=seed)
+	print(rf.render)
+	facts = neatFacts(klass, rf)
+	for fact in facts:
+#		print(fact["comparison"], fact["fact2"].render2)
+		print(fact)
