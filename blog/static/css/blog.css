@@ -96,6 +96,11 @@ div.content.container{
     padding: 1rem;
 }
 
+.content .fact_detail {
+    background-color: rgba(72,125,24,0.1);
+    padding: 1rem;
+}
+
 .content .fact {
     background-color: rgba(72,125,24,0.1);
     padding: 1rem;
