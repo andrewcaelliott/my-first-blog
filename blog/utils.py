@@ -48,7 +48,9 @@ def num(s):
     return float(s)
 
 def getScaleFactor(multiple):
-    if multiple == "Y":
+    if multiple.find("^")>0:
+        scale = int(num(multiple.split('^')[1]))
+    elif multiple == "Y":
         scale = 24
     elif multiple == "Z":
         scale = 21
@@ -129,6 +131,7 @@ std_multiples = {
     "grand":"k",
     "m":"M",
     "mil":"M",
+    "mill":"M",
     "million":"M",
     "b":"G",
     "bn":"G",
@@ -138,7 +141,8 @@ std_multiples = {
 }
 
 def succ(multiple):
-    mults={"U":"k", "k":"M", "M":"G", "G":"T", "T":"P"}
+    mults={"U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
+        "E":"Z", "Z":"Y", "Y":"10^27", "10^27":"10^30", "10^30":"10^33", "10^33":"10^36", "10^36":"10^39", "10^39":"10^42"}
     if multiple in mults:
         return mults[multiple]
     else:        
@@ -146,7 +150,7 @@ def succ(multiple):
 
 def normalise(parsed):
     magnitude, multiple, unit = parsed
-    if (multiple=="U" and unit.lower() in std_multiples):
+    if (multiple=="U" and unit.lower() in std_multiples and unit.lower()!="m"):
         multiple=unit
         unit="i"
     if unit.lower() in std_units.keys():
@@ -158,6 +162,7 @@ def normalise(parsed):
     value = num(magnitude)
     while value>1000:
         value=value/1000
+        value = sigfigs(value,6)
         multiple = succ(multiple)
 
     magnitude = str(value)
@@ -183,9 +188,16 @@ def getMeasure(unit):
             return "c"
 
 def errorParsed():
-    magnitude = 0
+    magnitude = "0"
     multiple = "U"
     unit = "i"
+    measure ="c"
+    return magnitude, multiple, unit, measure 
+
+def literalParsed(literal):
+    magnitude = "1"
+    multiple = "?"
+    unit = literal
     measure ="c"
     return magnitude, multiple, unit, measure 
 
@@ -195,7 +207,13 @@ def parseNumber(big_number, regex):
     m=p.match(big_number)
     if (m==None):
         return m
-    else:        
+    else:      
+        try:
+            literal = m.group('literal')
+            if literal:
+                return literalParsed(literal)   
+        except:
+            pass
         magnitude = m.group('magnitude')
         unit = m.group('unit')
         multiple = 'U'
@@ -208,7 +226,6 @@ def parseNumber(big_number, regex):
 
 def parseBigNumber(big_number):
     big_number=big_number.replace(",","")
-    print(big_number)
     parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
     if (parsed != None):
         return parsed
@@ -216,6 +233,9 @@ def parseBigNumber(big_number):
     if (parsed != None):
         return parsed
     parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
+    if (parsed != None):
+        return parsed
+    parsed = parseNumber(big_number,"^(?P<literal>[\w\s'-]+)$")
     if (parsed != None):
         return parsed
     parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)$")
@@ -230,8 +250,8 @@ def parseBigNumber(big_number):
 def tests():
     parsed = parseBigNumber("100 thou GBP")
     print(parsed)
-    #parsed = parseBigNumber("100kg")
-    #print(parsed)
+    parsed = parseBigNumber("100kg")
+    print(parsed)
     #parsed = parseBigNumber("100m/s")
     #print(parsed)
     #parsed = parseBigNumber("10m/s^2")
@@ -268,8 +288,14 @@ def tests():
     print(parsed)
     parsed = parseBigNumber("255,600,123,000.3")
     print(parsed)
+    parsed = parseBigNumber("30e36")
+    print(parsed)
+    parsed = parseBigNumber("Graham's Number")
+    print(parsed)
+    parsed = parseBigNumber("100m")
+    print(parsed)
 
-#tests()
+tests()
 
 def bracketNumber(klass, magnitude, scale, measure):
     #tolerance=10000

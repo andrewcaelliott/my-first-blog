@@ -184,6 +184,9 @@ def query_answer(request, numberQuery):
     query.fields['measure'].widget = forms.HiddenInput()
     measure = numberQuery.measure
     answer = {"quip":choice(quip_lists[measure])}
+    multiple = numberQuery.multiple
+    if (multiple=='?'):
+        answer["easteregg"]=numberQuery.unit
     query.fields['unit'].choices=unit_choice_lists[measure]
     references = reference_lists[measure]
     answer["comparisons"] = numberQuery.getComparisons(references)
@@ -195,7 +198,18 @@ def query_answer(request, numberQuery):
         if match["text"] == answer["brackets"]["below"]:
             answer["closeMatches"].remove(match)
 #    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
-    question = numberQuery.render.replace(" - "," ").replace(" i","")
+    question = numberQuery.render.replace(" - "," ").replace(" i","").replace(" 10^","*10^")
+    if (multiple=='?'):
+        easteregg={"question":numberQuery.unit}
+        if numberQuery.unit.lower().find("graham")>=0:
+            easteregg["answer"]="Graham's Number is a very big number indeed, way bigger than any context or comparison this site can offer"
+        elif numberQuery.unit.lower().find("infinity")>=0:
+            easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
+        elif numberQuery.unit.lower().find("aleph")>=0:
+            easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
+        else:
+            easteregg["answer"]="I'm sorry, you have me stumped with that one."            
+        answer["easteregg"]=easteregg
     #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
     dyk=spuriousFact(NumberFact)
     return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes), "dyk":dyk})   

@@ -22,6 +22,10 @@
         </div>
         <div class="widget col-lg-6 col-md-6">
             <div>
+                {% if answer.easteregg %}
+                <h2>How big is {{ answer.easteregg.question }} ?</h2>
+                <h3>{{ answer.easteregg.answer }}</h3>
+                {% else %}
                 <h2>How big is {{ question }} ?</h2>
                 <h2>More or less ...</h2>
                 <div class="comparison">
@@ -41,6 +45,7 @@
                         <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ comparison.render }}">Tweet</a> {{ comparison.render }} <a title="Where does this number come from?" href="{{ comparison.link }}">...</a></p>
                     </div>
                 {% endfor %}
+                {% endif %}
             </div>
         </div>
 {% endblock %}
