@@ -202,11 +202,21 @@ def query_answer(request, numberQuery):
     if (multiple=='?'):
         easteregg={"question":numberQuery.unit}
         if numberQuery.unit.lower().find("graham")>=0:
-            easteregg["answer"]="Graham's Number is a very big number indeed, way bigger than any context or comparison this site can offer"
+            easteregg["answer"]="Graham's Number is a very big number indeed, way bigger than any context or comparison this site can offer."
         elif numberQuery.unit.lower().find("infinity")>=0:
             easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
         elif numberQuery.unit.lower().find("aleph")>=0:
             easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
+        elif numberQuery.unit.lower().find("uncount")>=0:
+            easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
+        elif numberQuery.unit.lower().find("googleplex")>=0:
+            easteregg["answer"]="Googleplex is the headquarters of Google. A googolplex, on the other hand, is 10^googol = 10 ^ (10^100), a very big number, bigger than any context or comparison this site can offer."
+        elif numberQuery.unit.lower().find("googolplex")>=0:
+            easteregg["answer"]="A googolplex is 10^googol = 10 ^ (10^100), a very big number, bigger than any context or comparison this site can offer."
+        elif numberQuery.unit.lower().find("google")>=0:
+            easteregg["answer"]="Google is a large technology company. A googol, on the other hand, is 10^100, a big number indeed."
+        elif numberQuery.unit.lower().find("googol")>=0:
+            easteregg["answer"]="A googol is 10^100, a big number indeed."
         else:
             easteregg["answer"]="I'm sorry, you have me stumped with that one."            
         answer["easteregg"]=easteregg
