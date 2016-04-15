@@ -295,7 +295,7 @@ def tests():
     parsed = parseBigNumber("100m")
     print(parsed)
 
-tests()
+#tests()
 
 def bracketNumber(klass, magnitude, scale, measure):
     #tolerance=10000

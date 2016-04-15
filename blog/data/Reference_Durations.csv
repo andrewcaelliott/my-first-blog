@@ -50,69 +50,77 @@
 50,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
 51,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
 52,Time since start of building of the Great Pyramid of Cholula,2.25,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula
-53,Time since start of building of the Colosseum,1.944,thousand,3,y,duration,https://en.wikipedia.org/wiki/Colosseum
-54,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
-55,Duration of Pandyan Empire (South India),1.85,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-56,Time since the birth of Diophantus,1.81,thousand,3,y,duration,https://en.wikipedia.org/wiki/Diophantus
-57,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
-58,Duration of Bruneian Empire (Bornean),1.288,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-59,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
-60,Duration of Byzantine Empire,1.123,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-61,Time since start of building of Great Zimbabwe,1,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Zimbabwe
-62,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
-63,Time since building of Angkor Wat,900,unit,0,y,duration,https://en.wikipedia.org/wiki/Angkor_Wat
-64,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
-65,Duration of Frankish Empire,700,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-66,Duration of Toltec Empire,626,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-67,Duration of Ottoman Empire,623,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-68,Duration of Spanish Empire,573,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-69,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
-70,Duration of Carthaginian Empire,504,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-71,Duration of Roman Empire,503,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-72,Duration of Egyptian Empire,500,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-73,Duration of Roman Republic,482,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-74,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
-75,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
-76,Duration of Dutch Empire,407,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-77,Duration of British Empire,394,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-78,Duration of Mali Empire,375,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-79,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
-80,Duration of Mughal Empire,332,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-81,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
-82,Duration of Ming Dynasty,276,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-83,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
-84,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
-85,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
-86,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
-87,Time since the first iron steamship crossed the English Channel,194,unit,0,y,duration,https://en.wikipedia.org/wiki/Steamship
-88,Time since the first passenger steam railway service,191,unit,0,y,duration,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
-89,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-90,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
-91,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-92,Time since the birth of Einstein,137,unit,0,y,duration,https://en.wikipedia.org/wiki/Albert_Einstein
-93,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
-94,Time since the birth of Turing,104,unit,0,y,duration,https://en.wikipedia.org/wiki/Alan_Turing
-95,Time since the first fixed wing scheduled air service,102,unit,0,y,duration,https://en.wikipedia.org/wiki/Airline
-96,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-97,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-98,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-99,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
-100,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
-101,Length of reign of King Louis XIV of France,72,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-102,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-103,Time since the first man walked on the moon,47,unit,0,y,duration,https://en.wikipedia.org/wiki/Apollo_11
-104,Length of the Wars of the Roses,32,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-105,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
-106,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-107,Length of the Peloponnesian Wars,27,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-108,One average human generation,25,unit,0,y,duration,Thanks to Google
-109,Length of the Vietnam war,19.5,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-110,Length of the Napoleonic wars,12,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-111,Period of Jupiter's orbit,11.86,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-112,Period of Ceres's orbit,4.6,unit,0,y,duration,http://space-facts.com/ceres/
-113,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
-114,Period of Mars's orbit,1.88,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-115,Period of Earth's orbit,1,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-116,Period of Venus's orbit,0.615,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-117,Period of Mercury's orbit,0.241,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-118,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+53,Time since birth of Hero of Alexandria,2.006,thousand,3,y,duration,https://en.wikipedia.org/wiki/Hero_of_Alexandria
+54,Time since start of building of the Colosseum,1.944,thousand,3,y,duration,https://en.wikipedia.org/wiki/Colosseum
+55,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
+56,Duration of Pandyan Empire (South India),1.85,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+57,Time since the birth of Diophantus,1.81,thousand,3,y,duration,https://en.wikipedia.org/wiki/Diophantus
+58,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
+59,Duration of Bruneian Empire (Bornean),1.288,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+60,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
+61,Duration of Byzantine Empire,1.123,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+62,Time since start of building of Great Zimbabwe,1,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Zimbabwe
+63,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
+64,Time since building of Angkor Wat,900,unit,0,y,duration,https://en.wikipedia.org/wiki/Angkor_Wat
+65,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
+66,Time since birth of Fibonacci,846,unit,0,y,duration,https://en.wikipedia.org/wiki/Fibonacci
+67,Duration of Frankish Empire,700,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+68,Duration of Toltec Empire,626,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+69,Duration of Ottoman Empire,623,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+70,Time since invention of the printing press,576,unit,0,y,duration,https://en.wikipedia.org/wiki/Printing_press
+71,Duration of Spanish Empire,573,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+72,Time since birth of Leonardo da Vinci,564,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonardo
+73,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
+74,Duration of Carthaginian Empire,504,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+75,Duration of Roman Empire,503,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+76,Duration of Egyptian Empire,500,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+77,Duration of Roman Republic,482,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+78,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
+79,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
+80,Time since birth of Pierre de Fermat,415,unit,0,y,duration,https://en.wikipedia.org/wiki/Pierre_de_Fermat
+81,Duration of Dutch Empire,407,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+82,Duration of British Empire,394,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+83,Duration of Mali Empire,375,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+84,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
+85,Duration of Mughal Empire,332,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+86,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
+87,Duration of Ming Dynasty,276,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
+88,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
+89,Time since birth of Joseph Fourier,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Joseph_Fourier
+90,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+91,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
+92,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
+93,Time since the first iron steamship crossed the English Channel,194,unit,0,y,duration,https://en.wikipedia.org/wiki/Steamship
+94,Time since the first passenger steam railway service,191,unit,0,y,duration,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
+95,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
+96,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
+97,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+98,Time since the birth of Einstein,137,unit,0,y,duration,https://en.wikipedia.org/wiki/Albert_Einstein
+99,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
+100,Time since first transatlantic wireless communication,115,unit,0,y,duration,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
+101,Time since the birth of Turing,104,unit,0,y,duration,https://en.wikipedia.org/wiki/Alan_Turing
+102,Time since the first fixed wing scheduled air service,102,unit,0,y,duration,https://en.wikipedia.org/wiki/Airline
+103,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+104,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
+105,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+106,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
+107,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
+108,Length of reign of King Louis XIV of France,72,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+109,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+110,Time since the first man walked on the moon,47,unit,0,y,duration,https://en.wikipedia.org/wiki/Apollo_11
+111,Time since first email sent,45,unit,0,y,duration,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
+112,Length of the Wars of the Roses,32,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
+113,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
+114,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+115,Length of the Peloponnesian Wars,27,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
+116,One average human generation,25,unit,0,y,duration,Thanks to Google
+117,Length of the Vietnam war,19.5,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
+118,Length of the Napoleonic wars,12,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
+119,Period of Jupiter's orbit,11.86,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+120,Period of Ceres's orbit,4.6,unit,0,y,duration,http://space-facts.com/ceres/
+121,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
+122,Period of Mars's orbit,1.88,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+123,Period of Earth's orbit,1,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+124,Period of Venus's orbit,0.615,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+125,Period of Mercury's orbit,0.241,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+126,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
