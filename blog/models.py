@@ -8,7 +8,7 @@ from .convert import convertToDefault
 from .convert import AMOUNT_UNITS
 from .config import all_unit_choices
 from .config import MEASURE_CHOICES,MULTIPLE_CHOICES
-from .utils import num,sigfigs,getScaleFactor,output,currency_output,closeEnoughNumberFact,bracketNumber
+from .utils import num,sigfigs,getScaleFactor,output,currency_output,closeEnoughNumberFact,bracketNumber,getMultiple
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 UNIT_CHOICES = all_unit_choices
@@ -91,7 +91,7 @@ class NumberQuery(models.Model):
         closeEnough = closeEnoughNumberFact(NumberFact, n, temp_scale, 0.1, self.get_measure_display())
         closeMatches = []
         for fact in closeEnough:
-            match = {"text":fact.render, "link":fact.link}
+            match = {"text":fact.render_folk_long, "link":fact.link}
             closeMatches.append(match)
 #            closeMatches.append(":".join([fact.render,fact.link]))
 #        closeMatches.append(" ".join([str(self.magnitude), str(scale), str(self.fields)]))
@@ -146,6 +146,7 @@ class NumberQuery(models.Model):
         return conversion_answers
 
 
+    
     def _display(self):
         return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
@@ -168,12 +169,53 @@ class NumberFact(models.Model):
     measure = models.CharField(max_length=1, choices=MEASURE_CHOICES)
     subject = models.TextField()
 
+    def display_folk_number(self, mag, mult, unit, measure):
+        mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure=="extent" and self.scale>0:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-3, measure=measure, unit="km", multiple=getMultiple(self.scale-3))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure=="extent" and self.scale==0 and num(self.magnitude)<1:
+            newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), scale=self.scale, measure=measure, unit="mm", multiple=getMultiple(self.scale))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude)*1000,4))
+
+        if mult=="thousand":
+            newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), multiple="unit", measure=measure, unit=unit)
+            mag = str(sigfigs(num(self.magnitude)*1000,4))
+            mult = "unit"
+
+        if measure=="count":
+            if unit == "people":
+                unit = ""
+            else:
+                unit = " "+unit
+            response = "".join([mag, mult, unit])
+            response = response.replace("billion", "bn").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
+        else:
+            response = " ".join([mag, mult, unit])
+        return response.replace("unit", "").replace(" - ", " ").replace("  "," ")
+
 
     def _display(self):
         return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
     def _display2(self):
         return "".join([self.title," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
+
+    def _display_folk(self):
+        return "".join([self.title," (",
+            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
+            ")" ]).replace("Population", "Pop.").replace("illion", "").replace("thousand", "th")
+
+    def _display_folk_long(self):
+        return "".join([self.title," (",
+            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
+            ")" ])
 
     def _link(self):
         return "/fact/"+str(self.id)
@@ -183,6 +225,8 @@ class NumberFact(models.Model):
 
     render = property(_display)
     render2 = property(_display2)
+    render_folk = property(_display_folk)
+    render_folk_long = property(_display_folk_long)
     link = property(_link)
 
 class Comparison(models.Model):

@@ -140,7 +140,7 @@ def quiz(request):
             #quiz["question"]=""
             reveal = []
             for option in bestComparisons:
-                reveal.append({"title":option.render, "link":option.link})
+                reveal.append({"title":option.render_folk, "link":option.link})
             quiz["options"]=reveal
             quiz["cycle"]="correct"
         elif cycle=="answered":

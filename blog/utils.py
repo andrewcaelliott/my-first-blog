@@ -47,6 +47,30 @@ def currency_output(x):
 def num(s):
     return float(s)
 
+def getMultiple(scale):
+    if scale == 0:
+        return "unit"
+    elif scale == 3:
+        return "thousand"
+    elif scale == 6:
+        return "million"
+    elif scale == 9:
+        return "billion"
+    elif scale == 12:
+        return "trillion"
+    elif scale == 15:
+        return "quadrillion"
+    elif scale == 18:
+        return "quintillion"
+    elif scale == 21:
+        return "sextillion"
+    elif scale == 24:
+        return "septillion"
+    elif scale == 27:
+        return "octillion"
+    else:
+        return "10^"+str(scale)
+
 def getScaleFactor(multiple):
     if multiple.find("^")>0:
         scale = int(num(multiple.split('^')[1]))
@@ -147,6 +171,15 @@ def succ(multiple):
         return mults[multiple]
     else:        
         return None
+
+def prec(multiple):
+    mults={"U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
+        "E":"Z", "Z":"Y", "Y":"10^27", "10^27":"10^30", "10^30":"10^33", "10^33":"10^36", "10^36":"10^39", "10^39":"10^42"}
+    if multiple in mults:
+        return mults[multiple]
+    else:        
+        return None
+
 
 def normalise(parsed):
     magnitude, multiple, unit = parsed
@@ -319,11 +352,11 @@ def bracketNumber(klass, magnitude, scale, measure):
     if len(nf_gt)==0:
         response.append("No useful upper bracket on file")
     else:           
-        response.append(" ".join([nf_gt[0].render]))
+        response.append(" ".join([nf_gt[0].render_folk_long]))
     if len(nf_lt)==0:
         response.append("No useful lower bracket on file")
     else:           
-        response.append(" ".join([nf_lt[0].render]))
+        response.append(" ".join([nf_lt[0].render_folk_long]))
     return response
 
 
@@ -450,6 +483,9 @@ def renderInt(i):
     else:
         return(str(i))
 
+
+
+
 def spuriousFact(klass):
     facts = []
     measure=choice(["extent","amount","count","duration","mass"])
@@ -488,7 +524,7 @@ def spuriousFact(klass):
         comparison = "is about as big as"
     else:
         comparison = " ".join(["is", renderInt(intRatio), "x"])
-    return {"fact1":fact1.render2, "comparison":comparison, "fact2":fact2.render2}
+    return {"fact1":fact1.render_folk, "comparison":comparison, "fact2":fact2.render_folk}
 
 
 def neatFacts(klass, selectedFact):

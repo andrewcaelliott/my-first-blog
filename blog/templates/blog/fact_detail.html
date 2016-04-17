@@ -32,11 +32,11 @@
     <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
 	    <div>
 	    <h2>Neat Ratios ...</h2>
-	    <h3>{{ fact.render2|linebreaks }}</h3>
+	    <h3>{{ fact.render_folk|linebreaks }}</h3>
 	    <ul>
 	   	{% for comparison in neat %}
 		    <div class="comparison">
-		        <li> {{ comparison.comparison }} {{ comparison.fact2.render2 }}<a title="Where does this number come from?" href="{{ comparison.fact2.link }}">...more</a></li>
+		        <li> {{ comparison.comparison }} {{ comparison.fact2.render_folk }}<a title="Where does this number come from?" href="{{ comparison.fact2.link }}">...more</a></li>
 		    </div>
 		 {% endfor %}
 	    </ul>	

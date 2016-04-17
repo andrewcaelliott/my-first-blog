@@ -182,9 +182,9 @@ def run11():
 	klass = NumberFact
 	print(spuriousFact(klass))
 
-def run():
+def run12():
 	klass = NumberFact
-	measure=("count")
+	measure=("extent")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	print(rf.render)
@@ -192,3 +192,10 @@ def run():
 	for fact in facts:
 #		print(fact["comparison"], fact["fact2"].render2)
 		print(fact)
+
+def run():
+	klass = NumberFact
+	measure=("extent")
+	seed = randint(0,1000000)
+	rf = randomFact(NumberFact, measure, rseed=seed)
+	print(rf.render_folk)

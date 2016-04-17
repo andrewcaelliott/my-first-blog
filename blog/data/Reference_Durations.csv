@@ -50,7 +50,7 @@
 50,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
 51,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
 52,Time since start of building of the Great Pyramid of Cholula,2.25,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula
-53,Time since birth of Hero of Alexandria,2.006,thousand,3,y,duration,https://en.wikipedia.org/wiki/Hero_of_Alexandria
+53,Time since the birth of Hero of Alexandria,2.006,thousand,3,y,duration,https://en.wikipedia.org/wiki/Hero_of_Alexandria
 54,Time since start of building of the Colosseum,1.944,thousand,3,y,duration,https://en.wikipedia.org/wiki/Colosseum
 55,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
 56,Duration of Pandyan Empire (South India),1.85,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
@@ -63,13 +63,13 @@
 63,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
 64,Time since building of Angkor Wat,900,unit,0,y,duration,https://en.wikipedia.org/wiki/Angkor_Wat
 65,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
-66,Time since birth of Fibonacci,846,unit,0,y,duration,https://en.wikipedia.org/wiki/Fibonacci
+66,Time since the birth of Fibonacci,846,unit,0,y,duration,https://en.wikipedia.org/wiki/Fibonacci
 67,Duration of Frankish Empire,700,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 68,Duration of Toltec Empire,626,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 69,Duration of Ottoman Empire,623,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 70,Time since invention of the printing press,576,unit,0,y,duration,https://en.wikipedia.org/wiki/Printing_press
 71,Duration of Spanish Empire,573,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-72,Time since birth of Leonardo da Vinci,564,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonardo
+72,Time since the birth of Leonardo da Vinci,564,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonardo
 73,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
 74,Duration of Carthaginian Empire,504,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 75,Duration of Roman Empire,503,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
@@ -77,7 +77,7 @@
 77,Duration of Roman Republic,482,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 78,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
 79,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
-80,Time since birth of Pierre de Fermat,415,unit,0,y,duration,https://en.wikipedia.org/wiki/Pierre_de_Fermat
+80,Time since the birth of Pierre de Fermat,415,unit,0,y,duration,https://en.wikipedia.org/wiki/Pierre_de_Fermat
 81,Duration of Dutch Empire,407,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 82,Duration of British Empire,394,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 83,Duration of Mali Empire,375,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
@@ -86,7 +86,7 @@
 86,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
 87,Duration of Ming Dynasty,276,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
 88,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
-89,Time since birth of Joseph Fourier,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Joseph_Fourier
+89,Time since the birth of Joseph Fourier,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Joseph_Fourier
 90,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
 91,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
 92,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
