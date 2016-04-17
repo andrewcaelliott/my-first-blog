@@ -184,6 +184,12 @@ class NumberFact(models.Model):
             unit = newnumber.unit
             mag = str(sigfigs(num(self.magnitude)*1000,4))
 
+        if measure=="mass" and self.scale==0 and num(self.magnitude)<1:
+            newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), scale=self.scale, measure=measure, unit="g", multiple=getMultiple(self.scale))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude)*1000,4))
+
         if mult=="thousand":
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), multiple="unit", measure=measure, unit=unit)
             mag = str(sigfigs(num(self.magnitude)*1000,4))
