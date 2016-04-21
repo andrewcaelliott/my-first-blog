@@ -18,6 +18,7 @@ extent_references = [
     ('Height of an African elephant','{times:,.2f} times the height of an African elephant','1 / {fraction:,.0f} of the height of an African elephant'),
     ('Height of an ostrich','{times:,.2f} times the height of an ostrich','1 / {fraction:,.0f} of the height of an ostrich'),
     ('Length of an iPhone 6',"{times:,.2f} iPhone 6's end to end",'1 / {fraction:,.0f} as long as an iPhone 6'),
+    ('Height of a standard Lego brick',"{times:,.2f} Lego bricks stacked",'1 / {fraction:,.0f} as high as a Lego brick'),
 ]
 
 count_references = [

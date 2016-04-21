@@ -111,14 +111,23 @@
 111,Distance a flea can jump,0.33,unit,0,m,extent,https://en.wikipedia.org/wiki/Flea
 112,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
 113,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
-114,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
-115,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
-116,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
-117,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
-118,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
-119,Length of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
-120,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
-121,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
-,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+114,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
+115,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
+116,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+117,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
+118,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
+119,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
+120,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
+121,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
+122,Length of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
+123,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+124,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
+125,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
+126,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+127,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+128,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
+129,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
+130,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
+131,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+132,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+133,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
