@@ -190,9 +190,13 @@ class NumberFact(models.Model):
             unit = newnumber.unit
             mag = str(sigfigs(num(self.magnitude)*1000,4))
 
+        if measure == "amount" and unit.find("USD")>=0:
+            unit = "$"
+
         if mult=="thousand":
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), multiple="unit", measure=measure, unit=unit)
             mag = str(sigfigs(num(self.magnitude)*1000,4))
+            mag = mag[:-3]+","+mag[-3:]
             mult = "unit"
 
         if measure=="count":
@@ -203,7 +207,10 @@ class NumberFact(models.Model):
             response = "".join([mag, mult, unit])
             response = response.replace("billion", "bn").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
         else:
-            response = " ".join([mag, mult, unit])
+            if unit == "$":
+                response = "".join([unit, mag, mult])
+            else:    
+                response = " ".join([mag, mult, unit])
         return response.replace("unit", "").replace(" - ", " ").replace("  "," ")
 
 
