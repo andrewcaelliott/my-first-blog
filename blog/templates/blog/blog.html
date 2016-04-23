@@ -32,7 +32,9 @@
             <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary-shallow">
                 <div>
                     <h3><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h3>
-                    <p>{{ item.synopsis }}</p>
+                    {% for line in item.synopsis %}
+                    <p>{{ line }}</p>
+                    {% endfor %}
                     {% for link in item.links %}
                     <p><a href="{{ link }}" target="_blank">{{ link }}</a></p>
                     {% endfor %}
