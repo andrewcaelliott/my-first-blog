@@ -34,8 +34,8 @@ def home(request):
     stories = {}
     stories["news"]=tumblrSelection("news")
     stories["passion"]=tumblrSelection("passion")
-    stories["education"]=storySelection("education")
-    stories["landmark"]=storySelection("landmark")
+    stories["education"]=tumblrSelection("education")
+    stories["landmark"]=tumblrSelection("landmark")
     dyk=spuriousFact(NumberFact)
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories, "dyk":dyk})
 
@@ -71,6 +71,12 @@ def blog_flton(request):
 
 def blog_nitn(request):
     return blog("news", request)
+
+def blog_ggb(request):
+    return blog("education", request)
+
+def blog_lmk(request):
+    return blog("landmark", request)
 
 def quiz(request):
     params = request.POST

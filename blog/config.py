@@ -218,6 +218,7 @@ quotes = (
         '"Errors using inadequate data are much less than those using no data at all." Charles Babbage',
         '"And then kerjillions of stars start to shine ..." Laurie Anderson: My Eyes',
         '"Two hundred forty million voices / Two hundred forty million names  ..." Laurie Anderson: My Eyes',
+        '"What are numbers, really? I\'ve been studying them for 50-odd years and I don\'t think I know." J H Conway',
     )        
 
 

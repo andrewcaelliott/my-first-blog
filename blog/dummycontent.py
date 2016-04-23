@@ -11,9 +11,9 @@ def storySelection(category):
         stories["other"]=[storyInfo("Astronomical Numbers"),storyInfo("Infinite Jest")]
     elif category=="education":
         stories={}
-        featureStory = storyInfo("It's All Gone Non-Linear")
+        featureStory = storyInfo("Numb about Numbers?")
         stories["featured"]=featureStory
-        stories["other"]=[storyInfo("Why the Giant Spiders are Doomed"),storyInfo("The Joy of Logs")]
+        stories["other"]=[storyInfo("It's All Gone Non-Linear"), storyInfo("Why the Giant Spiders are Doomed"),storyInfo("The Power of a Thousand")]
     elif category=="landmark":
         stories={}
         featureStory = storyInfo("Stand on Zanzibar")
@@ -44,6 +44,10 @@ def storyInfo(storyName):
         sourceLink = "https://en.wikipedia.org/wiki/Number"
         synopsis = "By and large we are adapted to a world of small differences and steady growth. We are comfortable with difference being a matter of subtraction. But when we stumble over exponential change, differences won't do. Things have gone Non-Linear."
         image =""
+    elif storyName == "Numb about Numbers?":
+        sourceLink="http://www.andrewcaelliott.com/explorations/2016/1/13/is-that-a-big-number"
+        synopsis = "In 1982 Douglas Hofstadter wrote about Number Numbness. We're still befuddled in the face of millions and billions, let alone trillions or even bigger numbers. That's the reason for www.IsThatABigNumber.com."        
+        image = "" 
     elif storyName == "Stand on Zanzibar":
         sourceLink="https://en.wikipedia.org/wiki/Stand_on_Zanzibar"
         synopsis = "Stand on Zanzibar is a 1968 science fiction novel by John Brunner. It takes its name from the author's projection that by 2010, if all the world's population stood shoulder to shoulder, the island of Zanzibar could accommodate them."        
