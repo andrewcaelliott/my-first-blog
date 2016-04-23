@@ -12,8 +12,8 @@
                 <!--div class="date">
                     <p>published: {{ post.published_date }}</p>
                 </div-->
-                <h1><a href="{% url 'fact_detail' pk=fact.pk %}">{{ fact.title }}</a></h1>
-                <p>{{ fact.render|linebreaks }}</p>
+                <h3><a href="{% url 'fact_detail' pk=fact.pk %}">{{ fact.title }}</a></h3>
+                <p>{{ fact.render_folk|linebreaks }}</p>
                 <p>{{ fact.text|linebreaks }}</p>
             </div>
         {% endfor %}

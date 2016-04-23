@@ -51,13 +51,16 @@ def post_summary(post):
     while body.find("<a")>=0:
         link_url, body = grab_link(body)
         link_urls.append(link_url)
-    img_start = body.find("<img")
+    img_start = body.find('<img src=')
     if img_start>=0:
-        img_url = body[img_start:img_start+body[img_start:].find("/>")+2]
+        img_url = body[img_start+10:img_start+10+body[img_start+10:].find('"')]
     else:
         img_url = None
     soup = BeautifulSoup(body, "html.parser")
-    plain_body = soup.get_text()
+    #plain_body = soup.get_text()
+    plain_body = []
+    for string in soup.stripped_strings:
+        plain_body+=[string]
 
     if len(link_urls)==0:
         link_urls.append(post["post_url"])
@@ -67,18 +70,24 @@ def post_summary(post):
         "title":post["title"],
         "synopsis":plain_body,
         "links":link_urls,
-        "featured": "featured" in post["tags"]
+        "featured": "featured" in post["tags"],
+
 #        "post_url":post["post_url"],
 #        "short_url":post["short_url"],
 #        "date":post["date"],
 #        "tags":post["tags"],
 #        "body":post["body"],
 #        "link_url":link_url,
-#        "img_url":img_url,
+        "img_url":img_url,
     }
 
 def run():
+    print("ok")
 #    posts = client.posts('itabn.tumblr.com', filter='html')
 #    for post in posts["posts"]:
 #        print(post_summary(post))
-    print(posts(tag="test"))        
+    n= tumblrSelection("passion")
+    print(len(n))
+    print(n["featured"])
+
+run()

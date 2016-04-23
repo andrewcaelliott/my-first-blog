@@ -7,10 +7,11 @@
 {% endblock %}
 
 {% block content %}
+  <div class="row widget">
     <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
     	<div>
         <h1>{{ fact.title }}</h1>
-        <p>{{ fact.render|linebreaks }}</p>
+        <p>{{ fact.render_folk|linebreaks }}</p>
         <!--p>{{ fact.text|linebreaks }}</p-->
         <p><a href="{{ reflink }}" target=_blank>Link</a></p>
         </div>
@@ -43,4 +44,5 @@
 	    </div>
     </div>
     {% endif %}
+    </div>
 {% endblock %}

@@ -488,7 +488,7 @@ def renderInt(i):
 
 def spuriousFact(klass):
     facts = []
-    measure=choice(["extent","amount","count","duration","mass"])
+    measure=choice(["extent","extent","amount","count","duration","mass","mass"])
     tolerance = 0.01
     while len(facts)==0:
         seed = randint(0,1000000)

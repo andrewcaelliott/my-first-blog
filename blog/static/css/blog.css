@@ -6,7 +6,7 @@ aside {
     padding:10px;        
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Helvetica', 'Arial', sans-serif;
     xcolor: #7777ff;
 }
@@ -14,12 +14,12 @@ h1, h2, h3, h4 {
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
-    padding: 20px 20px 60px 40px;
+    padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 30pt;
     text-decoration: none;
 }
 
@@ -51,12 +51,12 @@ form.choice {
 }
 
 .row:nth-child(2) .blog-summary> div {
-    height: 65rem;
+    height: 82rem;
     overflow: auto;
 }
 
 .row:nth-child(2) .blog-summary-shallow> div {
-    height: 35rem;
+    height: 40rem;
     overflow: auto;
 }
 
@@ -68,7 +68,7 @@ form.choice {
     padding: 0 5rem;
 }
 
-.content h1 a, .content h2, .content h3 a {
+.content h1 a, .content h2, .content h3 a , .content h4 a {
     color: #487D18
 }
 
@@ -79,6 +79,11 @@ div.content.container{
 .content .widget {
     margin-bottom: 1rem;
     padding: 0.5rem;
+}
+
+.content img {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .content .widget h1 {
@@ -126,6 +131,10 @@ form.quiz-form{
     opacity: 0.4;
     -webkit-filter: grayscale(1);
     border-radius: 4px;
+}
+
+.content .widget .freeform label {
+    width: 350px;
 }
 
 .tumblr-post .post-header {

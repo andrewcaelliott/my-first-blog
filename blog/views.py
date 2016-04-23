@@ -29,6 +29,7 @@ from .tumblr import tumblrSelection
 
 def home(request):
     freeForm = FreeForm()
+    freeForm.fields["number"].label="Is this a big number?"
     widgets = []
     stories = {}
     stories["news"]=tumblrSelection("news")
@@ -154,6 +155,7 @@ def quiz(request):
 
 def itabn(request):
     freeForm = FreeForm()
+    freeForm.fields["number"].label="Is this a big number?"
     extentForm = QueryForm(initial={'measure': 'e'})
     extentForm.fields['unit'].choices=unit_choice_lists['e']
     extentForm.fields['measure'].widget = forms.HiddenInput()
