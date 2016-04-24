@@ -18,7 +18,7 @@
                 <div>
                     <h3><a href="{{ stories.featured.links.0 }}" target="_blank">{{ stories.featured.title }}</a></h3>
                     {% if stories.featured.img_url %}
-                    <img src="{{ stories.featured.img_url }}" />
+                    <a href="{{ stories.featured.links.0 }}" target="_blank"><img src="{{ stories.featured.img_url }}" /></a>
                     {% endif %}
                     {% for line in stories.featured.synopsis %}
                     <p>{{ line }}</p>
@@ -31,7 +31,10 @@
             {% for item in stories.other %}
             <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary-shallow">
                 <div>
-                    <h3><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h3>
+                    <h3><a href="{{ item.links.0 }}" target="_blank">{{ item.title }}</a></h3>
+                    {% if item.img_url %}
+                    <a href="{{ item.links.0 }}" target="_blank"><img src="{{ item.img_url }}" href="{{ item.links.0 }}" /></a>
+                    {% endif %}
                     {% for line in item.synopsis %}
                     <p>{{ line }}</p>
                     {% endfor %}

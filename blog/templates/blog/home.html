@@ -29,7 +29,7 @@
 	                <h5>Notable numbers we have spotted recently</h5>
 	                <h4><a href="{{ stories.news.featured.links.0 }}" target="_blank">{{ stories.news.featured.title }}</a></h4>
 	                {% if stories.news.featured.img_url %}
-	                <img class = "constrained" src="{{ stories.news.featured.img_url }}" />
+	                <a href="{{ stories.news.featured.links.0 }}" target="_blank"><img class = "constrained" src="{{ stories.news.featured.img_url }}" /></a>
 	                {% endif %}
 	                {% for line in stories.news.featured.synopsis %}
 	                <p>{{ line }}</p>
@@ -51,7 +51,7 @@
 	                <h5>Number-led writings for the truly geeky</h5>
 	                <h4><a href="{{ stories.passion.featured.links.0 }}" target="_blank">{{ stories.passion.featured.title }}</a></h4>
 	                {% if stories.passion.featured.img_url %}
-	                <img class = "constrained" src="{{ stories.passion.featured.img_url }}" />
+	                <a href="{{ stories.passion.featured.links.0 }}" target="_blank"><img class = "constrained" src="{{ stories.passion.featured.img_url }}" /></a>
 	                {% endif %}
 	                {% for line in stories.passion.featured.synopsis %}
 	                <p>{{ line }}</p>
@@ -73,7 +73,7 @@
 	                <h5>Stop worrying and learn to love big numbers</h5>
 	                <h4><a href="{{ stories.education.featured.links.0 }}" target="_blank">{{ stories.education.featured.title }}</a></h4>
 	                {% if stories.education.featured.img_url %}
-	                <img class = "constrained" src="{{ stories.education.featured.img_url }}" />
+	                <a href="{{ stories.education.featured.links.0 }}" target="_blank"><img class = "constrained" src="{{ stories.education.featured.img_url }}" /></a>
 	                {% endif %}
 	                {% for line in stories.education.featured.synopsis %}
 	                <p>{{ line }}</p>
@@ -93,7 +93,7 @@
 	                <h5>Beacons in a landscape offer guidance</h5>
 	                <h4><a href="{{ stories.landmark.featured.links.0 }}" target="_blank">{{ stories.landmark.featured.title }}</a></h4>
 	                {% if stories.landmark.featured.img_url %}
-	                <img class="constrained" src="{{ stories.landmark.featured.img_url }}" />
+	                <a href="{{ stories.landmark.featured.links.0 }}" target="_blank"><img class="constrained" src="{{ stories.landmark.featured.img_url }}" /></a>
 	                {% endif %}
 	                {% for line in stories.landmark.featured.synopsis %}
 	                <p>{{ line }}</p>
