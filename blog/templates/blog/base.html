@@ -45,25 +45,23 @@
 	    <div class="page-header">
 	        <!--a href="{% url 'post_new' %}" class="top-menu" title="new post"><span class="glyphicon glyphicon-plus"></span></a>
 	        <a href="{% url 'fact_new' %}" class="top-menu" title="new fact"><span class="glyphicon glyphicon-star"></span></a-->
-		<a href="" class="top-menu" title="Coming soon: browse our database of reference numbers"><span class="glyphicon glyphicon-hdd"></span></a>
-		<a href="" class="top-menu" title="Coming soon: browse our library of number stories"><span class="glyphicon glyphicon-book"></span></a>
 		<!--a href="" class="top-menu" title="Is That A Big Number is here to put numbers in context. Pick any number and ask ..."><span class="glyphicon glyphicon-info-sign"></span></a-->
-	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a></h1>
-	        <!--p><a href="/">Nuts about numbers? Quizzical about Quantities? Mulling over Measurements?</a></p-->
-		<h4><a href="/">{% block quote %}{% endblock %}</a></h4>
-		        <div class="dyk">
-			       	<p><strong>Did you know: </strong>{{ dyk.fact1 }} <em>{{ dyk.comparison }}</em> {{ dyk.fact2 }}
-				<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ dyk.fact1 }} {{ dyk.comparison }} {{ dyk.fact2 }} #IsThatABigNumber? #RandomComparison">Tweet</a></p>
-	    		</div>
-	        <!--div class = "share row">
-		        <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12"-->
-		        <div class="widget">
-			        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a> - <a href ="/quiz/" title="Test your number sense">Quiz</a></h3>
+	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a><span class="social">
 				<a href="https://twitter.com/itabn_andrew" class="twitter-follow-button top-menu" data-show-count="false" data-show-screen-name="false">Follow @itabn_andrew</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>		
 				<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="... #IsThatABigNumber?" data-via="itabn_andrew" data-hashtags="NumbersCount">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	    			<div class="fb-like" data-href="https://www.facebook.com/Is-that-a-big-number-1511565142478387/" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+	    			<span class="fb-like" data-href="https://www.facebook.com/Is-that-a-big-number-1511565142478387/" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span></span></h1>
+	        <!--p><a href="/">Nuts about numbers? Quizzical about Quantities? Mulling over Measurements?</a></p-->
+		<h4><a href="/">{% block quote %}{% endblock %}</a></h4>
+	        <!--div class = "share row">
+		        <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12"-->
+		        <div class="widget">
+			        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a> - <a href ="/quiz/" title="Test your number sense">Quiz</a></h3>
+	    		</div>
+		        <div class="dyk">
+			       	<p class="social"><strong>Did you know: </strong>{{ dyk.fact1 }} <em>{{ dyk.comparison }}</em> {{ dyk.fact2 }}
+				<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ dyk.fact1 }} {{ dyk.comparison }} {{ dyk.fact2 }} #IsThatABigNumber? #RandomComparison">Tweet</a></p>
 	    		</div>
 		        <!--div class="dyk widget col-lg-6 col-md-6 col-sm-6 col-xs-12"-->
 		</div>

@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5 {
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 20px 15px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -32,8 +32,8 @@ h1, h2, h3, h4, h5 {
     text-decoration: none;
 }
 
-.xdyk {
-    background-color: rgba(72,125,24,0.9    );
+.dyk {
+    height: 30px;
 }
 
 
@@ -135,6 +135,7 @@ form.quiz-form{
     opacity: 0.4;
     -webkit-filter: grayscale(1);
     border-radius: 4px;
+    margin-top: 5px;
 }
 
 .content .widget .freeform label {
@@ -157,6 +158,10 @@ form.quiz-form{
 .date {
     float: right;
     color: #6262FF;
+}
+
+.social {
+    float: right;
 }
 
 .xsave {
