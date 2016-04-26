@@ -219,6 +219,8 @@ quotes = (
         '"And then kerjillions of stars start to shine ..." Laurie Anderson: My Eyes',
         '"Two hundred forty million voices / Two hundred forty million names  ..." Laurie Anderson: My Eyes',
         '"What are numbers, really? I\'ve been studying them for 50-odd years and I don\'t think I know." J H Conway',
+        '"Everything around you is mathematics. Everything around you is numbers." Shakuntala Devi',
+        '"Numbers have life; they\'re not just symbols on paper." Shakuntala Devi',
     )        
 
 

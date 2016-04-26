@@ -54,14 +54,14 @@ def blog(category, request):
     titles = {
         "news":"Numbers In The News", 
         "passion":"For the Love of Numbers", 
-        "education":"Know Your Numbers", 
+        "education":"Getting to Grips with Big", 
         "landmark":"Landmark Numbers"
     }
     subtitles = {
         "news":"Some notable numbers we have spotted recently", 
         "passion":"A number-led selection of writings for the truly geeky among us ...", 
-        "education":"A little more knowledge is never a dangerous thing ...", 
-        "landmark":"Like beacons in a landscape, prominent numbers offer guidance"
+        "education":"How to stop worrying and learn to love big numbers", 
+        "landmark":"Prominent and memorable numbers show the way like landmarks on the horizon"
     }
     dyk=spuriousFact(NumberFact)
     return render(request, 'blog/blog.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk})
