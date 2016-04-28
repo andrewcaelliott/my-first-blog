@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Ratios{% endblock %}
+
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <!--form method="GET" class="query-form" action="/itabn/answer">
+            {{ query.as_p }}
+            <button type="submit" class="save btn btn-default">Ask</button>
+        </form-->
+        <div class="widget col-lg-6 col-md-6">
+                <div>
+                <h2>Enter the ratio you're interested in</h2>
+                    <form method="GET" class="query-form" action="/ratio/answer">
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-warning" name="measure" value="extent">How Big?</button>
+                        <button type="submit" class="save btn btn-warning" name="measure" value="count">How Many?</button>
+                        <button type="submit" class="save btn btn-warning" name="measure" value="amount">How Much?</button>
+                        <button type="submit" class="save btn btn-warning" name="measure" value="duration">How Long?</button>
+                        <button type="submit" class="save btn btn-warning" name="measure" value="mass">How Heavy?</button>
+                    </form>
+                    <p>Try ratios like: '1 : 10', '5 to 6', '10' (will be taken as 10 : 1), '1000000'</p>
+                </div>
+        </div>
+        <div class="widget col-lg-6 col-md-6">
+            <div>
+                <h2>What does a ratio of  {{ ratio_str }} look like?</h2>
+                {% for pair in ratio_pairs %}
+                    <div class="comparison">
+                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ match.text }}">Tweet</a> {{ pair.0.render_folk }} : {{ pair.1.render_folk }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}
