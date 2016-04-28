@@ -94,8 +94,9 @@ def ratio(request):
             ratio = num(ratio_str)
             ratio_str = ratio_str + " : 1"
     except:
-        ratio = 1000
-        ratio_str = '1000 : 1'
+        ratio, ratio_str = choice([(1, "1 : 1"), (2, "2 : 1"), (5, "5 : 1"),  (10, "10 : 1"), (100, "100 : 1"), (1000, '1000 : 1')])
+        #ratio = 1000
+        #ratio_str = '1000 : 1'
     freeForm = FreeForm()
     freeForm.fields["number"].label="Ratio"
     freeForm.fields["number"].initial=ratio_str

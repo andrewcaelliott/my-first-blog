@@ -13,7 +13,7 @@
         </form-->
         <div class="widget col-lg-6 col-md-6">
                 <div>
-                <h2>Enter the ratio you're interested in</h2>
+                <h2>Enter the ratio you're interested in:</h2>
                     <form method="GET" class="query-form" action="/ratio/answer">
                         {{ form.as_p }}
                         <button type="submit" class="save btn btn-warning" name="measure" value="extent">How Big?</button>
@@ -30,7 +30,8 @@
                 <h2>What does a ratio of  {{ ratio_str }} look like?</h2>
                 {% for pair in ratio_pairs %}
                     <div class="comparison">
-                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ match.text }}">Tweet</a> {{ pair.0.render_folk }} : {{ pair.1.render_folk }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Ratio of {{ pair.0.render_folk }} : {{ pair.1.render_folk }} is roughly {{ ratio_str }} #IsThatABigNumber?">Tweet</a> {{ pair.0.render_folk }}<a title="Where does this number come from?" href="{{ pair.1.link }}">...</a></p>
+                        <p style="margin-left:5em">:   {{ pair.1.render_folk }}  <a title="Where does this number come from?" href="{{ pair.1.link }}">...</a></p>
                     </div>
                 {% endfor %}
             </div>
