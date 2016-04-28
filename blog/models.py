@@ -7,7 +7,7 @@ from .fixer_io import convertToCurrency
 from .convert import convertToDefault
 from .convert import AMOUNT_UNITS
 from .config import all_unit_choices
-from .config import MEASURE_CHOICES,MULTIPLE_CHOICES
+from .config import MEASURE_CHOICES,MULTIPLE_CHOICES,MULTIPLE_INVERSE
 from .utils import num,sigfigs,getScaleFactor,output,currency_output,closeEnoughNumberFact,bracketNumber,getMultiple
 ureg = UnitRegistry()
 Q_=ureg.Quantity
@@ -196,7 +196,8 @@ class NumberFact(models.Model):
         if mult=="thousand":
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), multiple="unit", measure=measure, unit=unit)
             mag = str(sigfigs(num(self.magnitude)*1000,4))
-            mag = mag[:-3]+","+mag[-3:]
+            if len(mag)>3:
+                mag = mag[:-3]+","+mag[-3:]
             mult = "unit"
 
         if measure=="count":
@@ -212,6 +213,17 @@ class NumberFact(models.Model):
             else:    
                 response = " ".join([mag, mult, unit])
         return response.replace("unit", "").replace(" - ", " ").replace("  "," ")
+
+    def normalise(self):
+        value = num(self.magnitude)
+        while value > 1000:
+            value = value / 1000
+            self.scale = self.scale + 3
+        while value < 1 and self.scale>=3:
+            value = value * 1000
+            self.scale = self.scale - 3
+        self.multiple = MULTIPLE_INVERSE[self.scale]
+        self.magnitude = str(value) 
 
 
     def _display(self):

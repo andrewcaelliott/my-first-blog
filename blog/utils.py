@@ -527,6 +527,40 @@ def spuriousFact(klass):
     return {"fact1":fact1.render_folk, "comparison":comparison, "fact2":fact2.render_folk}
 
 
+
+def neatRatio(klass, selectedFact, ratio, tolerance=0.02):
+    rf = klass()
+    rf.magnitude = str(num(selectedFact.magnitude)/ratio)
+    rf.title = str(ratio)+" times "+selectedFact.title
+    rf.measure = selectedFact.measure
+    rf.scale = selectedFact.scale
+    rf.multiple = selectedFact.multiple
+    rf.unit = selectedFact.unit
+    rf.normalise()
+    facts = closeEnoughNumberFact(klass, rf.magnitude, rf.scale, tolerance, rf.measure)
+    return facts
+
+def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
+    seed = randint(0,1000000)
+    target_facts = []
+    used = []
+    count = 0
+    while len(target_facts) < target and count < 100:
+        count+=1
+        print(count)
+        rf = randomFact(klass, measure)
+        while rf in used:
+            rf = randomFact(klass, measure)
+        used.append(rf)
+        facts = neatRatio(klass, rf, ratio, tolerance=tolerance)
+        if rf in facts:
+            facts.remove(rf)
+        if facts:
+            target_facts.append((rf, facts[0]))
+    return target_facts
+
+
+
 def neatFacts(klass, selectedFact):
     rf = selectedFact
     tolerance = 0.01

@@ -44,7 +44,7 @@
 44,Length of the Murray-Darling River in Australia,3.672,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 45,Length of the Volga River in Russia,3.645,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 46,Length of the Indus River,3.18,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-47,"Length of the Rio Grande (USA; Mexico)",3.057,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+47,Length of the Rio Grande (USA; Mexico),3.057,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 48,Length of the Danube River,2.88,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 49,Length of the Zambezi River,2.574,million,6,m,extent,https://en.wikipedia.org/wiki/Zambezi
 50,Length of the Tigris River,1.95,million,6,m,extent,https://en.wikipedia.org/wiki/List_of_rivers_by_length
@@ -121,34 +121,38 @@
 121,Height of a basketball hoop,3.048,unit,0,m,extent,https://en.wikipedia.org/wiki/Basketball
 122,World High Jump Record (1993),2.45,unit,0,m,extent,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
 123,Height of a football goal,2.44,unit,0,m,extent,https://en.wikipedia.org/wiki/Football_pitch
-124,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
-125,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
-126,Height of a tennis net at the centre,0.914,unit,0,m,extent,http://officialtennisrules.com/official-tennis-court-dimensions/
-127,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
-128,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
-129,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
-130,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
-131,Distance a flea can jump,0.33,unit,0,m,extent,https://en.wikipedia.org/wiki/Flea
-132,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
-133,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
-134,Height of a standard wine bottle,0.291,unit,0,m,extent,http://ezinearticles.com/?The-Dimensions-of-a-Wine-Bottle&id=7915289
-135,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
-136,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
-137,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
-138,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
-139,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
-140,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
-141,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
-142,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
-143,Length of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
-144,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-145,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
-146,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
-147,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-148,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-149,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
-150,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
-151,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
-152,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-153,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-154,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+124,Length of a `king-size` bed,1.98,unit,0,m,extent,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
+125,Length of a standard bed,1.9,unit,0,m,extent,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
+126,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
+127,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
+128,Height of a tennis net at the centre,0.914,unit,0,m,extent,http://officialtennisrules.com/official-tennis-court-dimensions/
+129,Height of a standard washing machine,0.85,unit,0,m,extent,http://www.whitegoodshelp.co.uk/are-all-washing-machines-the-same-size/
+130,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
+131,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
+132,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
+133,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+134,Distance a flea can jump,0.33,unit,0,m,extent,https://en.wikipedia.org/wiki/Flea
+135,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+136,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
+137,Height of a standard wine bottle,0.291,unit,0,m,extent,http://ezinearticles.com/?The-Dimensions-of-a-Wine-Bottle&id=7915289
+138,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
+139,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
+140,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+141,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
+142,Length of a standard index card,0.127,unit,0,m,extent,https://en.wikipedia.org/wiki/Index_card
+143,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
+144,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
+145,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
+146,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
+147,Length of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
+148,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+149,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
+150,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
+151,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+152,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+153,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
+154,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
+155,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
+156,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+157,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+158,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml

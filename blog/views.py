@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -78,6 +78,31 @@ def blog_ggb(request):
 def blog_lmk(request):
     return blog("landmark", request)
 
+
+def ratio(request):
+    params = request.GET
+    try:
+        measure = params["measure"]
+    except:
+        measure ="extent"
+    try:
+        ratio_str = params["number"].replace("to",":")
+        if ratio_str.find(":")>=0:
+            ratio_num, ratio_den = ratio_str.split(":")
+            ratio = num(ratio_num)/num(ratio_den)
+        else:
+            ratio = num(ratio_str)
+            ratio_str = ratio_str + " : 1"
+    except:
+        ratio = 1000
+        ratio_str = '1000 : 1'
+    freeForm = FreeForm()
+    freeForm.fields["number"].label="Ratio"
+    freeForm.fields["number"].initial=ratio_str
+    ratio_pairs = facts_matching_ratio(NumberFact, measure, ratio, 5, tolerance = 0.02)
+    dyk=spuriousFact(NumberFact)
+    return render(request, 'blog/ratio.html', {'form': freeForm, 'ratio_str': ratio_str, 'ratio':ratio, 'ratio_pairs':ratio_pairs, 'quote': choice(quotes), "dyk":dyk})
+
 def quiz(request):
     params = request.POST
     try:
@@ -86,7 +111,6 @@ def quiz(request):
         seed = randint(0,10000000)
     if seed == None:
         seed = randint(0,10000000)
-
     set_seed(seed)    
     try:
         cycle=params.get("cycle")
