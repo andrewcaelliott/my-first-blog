@@ -178,9 +178,9 @@ def run10():
 	print(klass.objects)
 
 
-def run11():
+def run():
 	klass = NumberFact
-	print(spuriousFact(klass))
+	print(spuriousFact(klass, 3, measure="m"))
 
 def run12():
 	klass = NumberFact
@@ -193,7 +193,7 @@ def run12():
 #		print(fact["comparison"], fact["fact2"].render2)
 		print(fact)
 
-def run():
+def run13():
 	klass = NumberFact
 	measure=("extent")
 	seed = randint(0,1000000)

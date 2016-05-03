@@ -374,7 +374,7 @@ def closeEnoughNumberFact(klass, magnitude, scale, tolerance, measure):
         facts.append(fact)
     return facts
 
-def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple):
+def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple, scale, scale_tolerance = 30):
 #   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
     mag = num(magnitude)*multiple
     if mag > 1000:
@@ -386,13 +386,13 @@ def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple):
     elif mag < 1:
         mag = mag*10
     facts = []
-    nf = klass.objects.filter(value__gte=mag/(1+tolerance), value__lt=mag*(1+tolerance), measure=measure)
+    nf = klass.objects.filter(scale__gte=scale-scale_tolerance, scale__lte=scale+scale_tolerance, value__gte=mag/(1+tolerance), value__lt=mag*(1+tolerance), measure=measure)
     for fact in nf:
         facts.append(fact)
-    nf = klass.objects.filter(value__gte=mag*10/(1+tolerance), value__lt=mag*10*(1+tolerance), measure=measure)
+    nf = klass.objects.filter(scale__gte=scale-1-scale_tolerance, scale__lte=scale-1+scale_tolerance, value__gte=mag*10/(1+tolerance), value__lt=mag*10*(1+tolerance), measure=measure)
     for fact in nf:
         facts.append(fact)
-    nf = klass.objects.filter(value__gte=mag*100/(1+tolerance), value__lt=mag*100*(1+tolerance), measure=measure)
+    nf = klass.objects.filter(scale__gte=scale-2-scale_tolerance, scale__lte=scale-2+scale_tolerance, value__gte=mag*100/(1+tolerance), value__lt=mag*100*(1+tolerance), measure=measure)
     for fact in nf:
         facts.append(fact)
     return facts
@@ -486,27 +486,28 @@ def renderInt(i):
 
 
 
-def spuriousFact(klass):
+def spuriousFact(klass, scale_tolerance, measure=None):
     facts = []
-    measure=choice(["extent","extent","amount","count","duration","mass","mass"])
+    if measure == None:
+        measure=choice(["extent","extent","amount","count","duration","mass","mass"])
     tolerance = 0.01
     while len(facts)==0:
         seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=seed)
-        facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1)
+        facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:
             facts.remove(rf)
         except:
             pass
-        facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2)
+        facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts2
 #        facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.5)
 #        facts+=facts2b
-        facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4)
+        facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts4
-        facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25)
+        facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts4b
-        facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5)
+        facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts5
  #       facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.2)
  #       facts+=facts5b
