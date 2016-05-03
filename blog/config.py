@@ -221,6 +221,13 @@ quotes = (
         '"What are numbers, really? I\'ve been studying them for 50-odd years and I don\'t think I know." J H Conway',
         '"Everything around you is mathematics. Everything around you is numbers." Shakuntala Devi',
         '"Numbers have life; they\'re not just symbols on paper." Shakuntala Devi',
+        '"If we succeed in giving the love of learning, the learning itself is sure to follow." John Lubbock',
+        '"The things of this world cannot be made known without a knowledge of mathematics." Roger Bacon',
+        '"It took men about five thousand years, counting from the beginning of number symbols, to think of a symbol for nothing." Isaac Asimov',
+        '"Without numbers, we can understand nothing and know nothing" Philolaus',
+        '"Numbers constitute the only universal language."  Nathanael West',
+        '"The less one knows about the universe, the easier it is to explain." Leon Brunschvicg',
+         
     )        
 
 
