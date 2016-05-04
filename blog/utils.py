@@ -564,7 +564,7 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 
 def neatFacts(klass, selectedFact):
     rf = selectedFact
-    tolerance = 0.01
+    tolerance = 0.02
     maxRatio = {"extent":10000, "mass":20000, "duration":10000, "count":500, "amount":500}[rf.measure]
 
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
