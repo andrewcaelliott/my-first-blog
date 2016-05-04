@@ -567,20 +567,20 @@ def neatFacts(klass, selectedFact):
     tolerance = 0.01
     maxRatio = {"extent":10000, "mass":20000, "duration":10000, "count":500, "amount":500}[rf.measure]
 
-    facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1)
+    facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
     try:
         facts.remove(rf)
     except:
         pass
-    facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2)
+    facts2 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 2, rf.scale)
     facts+=facts2
 #    facts2b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.5)
 #    facts+=facts2b
-    facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4)
+    facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4, rf.scale)
     facts+=facts4
-    facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25)
+    facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25, rf.scale)
     facts+=facts4b
-    facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5)
+    facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5, rf.scale)
     facts+=facts5
 #    facts5b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.2)
 #    facts+=facts5b
