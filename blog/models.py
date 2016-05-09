@@ -168,6 +168,7 @@ class NumberFact(models.Model):
     unit = models.CharField(max_length=10, choices=UNIT_CHOICES)
     measure = models.CharField(max_length=1, choices=MEASURE_CHOICES)
     subject = models.TextField()
+    permlink = models.SlugField(db_index=True, unique=True)
 
     def display_folk_number(self, mag, mult, unit, measure):
         mag = str(sigfigs(num(self.magnitude),4))
@@ -243,7 +244,7 @@ class NumberFact(models.Model):
             ")" ])
 
     def _link(self):
-        return "/fact/"+str(self.id)
+        return "/fact/"+self.permlink
 
     def __str__(self):
         return self.title        

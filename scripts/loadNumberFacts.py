@@ -1,5 +1,6 @@
 from blog.models import NumberFact
 from blog.models import NumberQuery
+from django.utils.text import slugify
 
 def num(s):
     try:
@@ -18,6 +19,7 @@ def addFact(title="Test Fact", text="Just a trial", magnitude="100", scale=0, mu
 	nf.unit = unit
 	nf.measure = measure
 	nf.multiple=multiple
+	nf.permlink = slugify(title)
 	nf.save()
 	return nf
 

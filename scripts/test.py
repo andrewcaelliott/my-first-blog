@@ -180,7 +180,11 @@ def run10():
 
 def run():
 	klass = NumberFact
-	print(spuriousFact(klass, 3, measure="m"))
+	measure=("extent")
+	seed = randint(0,1000000)
+	rf = randomFact(NumberFact, measure, rseed=seed)
+	#print(spuriousFact(klass, 3, measure="m"))
+	print(rf.permlink)
 
 def run12():
 	klass = NumberFact
