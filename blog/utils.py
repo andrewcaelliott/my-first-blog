@@ -525,7 +525,7 @@ def spuriousFact(klass, scale_tolerance, measure=None):
         comparison = "is about as big as"
     else:
         comparison = " ".join(["is", renderInt(intRatio), "x"])
-    return {"fact1":fact1.render_folk, "comparison":comparison, "fact2":fact2.render_folk}
+    return {"fact1":fact1.render_folk, "fact1_link": fact1.link, "comparison":comparison, "fact2":fact2.render_folk, "fact2_link": fact2.link}
 
 
 

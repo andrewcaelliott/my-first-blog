@@ -81,13 +81,4 @@ def post_summary(post):
         "img_url":img_url,
     }
 
-def run():
-    print("ok")
-#    posts = client.posts('itabn.tumblr.com', filter='html')
-#    for post in posts["posts"]:
-#        print(post_summary(post))
-    n= tumblrSelection("passion")
-    print(len(n))
-    print(n["featured"])
 
-run()
