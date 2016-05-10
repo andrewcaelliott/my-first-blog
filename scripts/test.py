@@ -184,7 +184,7 @@ def run():
 #	seed = randint(0,1000000)
 #	rf = randomFact(NumberFact, measure, rseed=seed)
 #	print(rf.permlink)
-	print(spuriousFact(klass, 3, measure="e"))
+	print(spuriousFact(klass, 2, measure="d"))
 
 def run12():
 	klass = NumberFact

@@ -1,126 +1,131 @@
-1,Age of the universe,13.82,billion,9,y,duration,Thanks to Google
-2,Time since the start of the formation of the Solar System,4.6,billion,9,y,duration,https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
-3,Age of the Earth,4.543,billion,9,y,duration,Thanks to Google
-4,Time since the emergence of multicellular life,2.1,billion,9,y,duration,http://www.iflscience.com/plants-and-animals/oldest-multicellular-life-revealed-detail
-5,Time since the end of the Precambrian supereon,541,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-6,Time since the emergence of earliest fish,530,million,6,y,duration,https://en.wikipedia.org/wiki/Evolution_of_fish
-7,Time since the end of the Cambrian geologic period,485,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-8,Time since the emergence of earliest insects,480,million,6,y,duration,https://en.wikipedia.org/wiki/Evolution_of_insects
-9,Time since the end of the Ordovician geologic period,444,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-10,Time since the end of the Silurian geologic period,419,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-11,Time since the end of the Devonian geologic period,359,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-12,Time since the emergence of earliest reptiles,315,million,6,y,duration,https://en.wikipedia.org/wiki/Evolution_of_reptiles
-13,Time since the end of the Carboniferous geologic period,299,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-14,Time since the end of the Permian geologic period,252,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
+1,Age of the universe,13.82,billion,9,y,duration.age,Thanks to Google
+2,Time since the start of the formation of the Solar System,4.6,billion,9,y,duration.age,https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
+3,Age of the Earth,4.543,billion,9,y,duration.age,Thanks to Google
+4,Time since the emergence of multicellular life,2.1,billion,9,y,duration.age,http://www.iflscience.com/plants-and-animals/oldest-multicellular-life-revealed-detail
+5,Time since the end of the Precambrian supereon,541,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+6,Time since the emergence of earliest fish,530,million,6,y,duration.age,https://en.wikipedia.org/wiki/Evolution_of_fish
+7,Time since the end of the Cambrian geologic period,485,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+8,Time since the emergence of earliest insects,480,million,6,y,duration.age,https://en.wikipedia.org/wiki/Evolution_of_insects
+9,Time since the end of the Ordovician geologic period,444,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+10,Time since the end of the Silurian geologic period,419,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+11,Time since the end of the Devonian geologic period,359,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+12,Time since the emergence of earliest reptiles,315,million,6,y,duration.age,https://en.wikipedia.org/wiki/Evolution_of_reptiles
+13,Time since the end of the Carboniferous geologic period,299,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+14,Time since the end of the Permian geologic period,252,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
 15,Galactic Year (period of rotation of the Milky Way galaxy),225,million,6,y,duration,https://en.wikipedia.org/wiki/Galactic_year
-16,Time since the end of the Triassic geologic period,201,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-17,Break-up of Pangaea into today's continents,175,million,6,y,duration,https://en.wikipedia.org/wiki/Pangaea
-18,Time since the end of the Jurassic geologic period,145,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-19,Time since the emergence of flowering plants,125,million,6,y,duration,http://www.mnh.si.edu/museum/news/firstflower/
-20,Time since the earliest primates,75,million,6,y,duration,Thanks to Wikipedia
-21,Time since the extinction of dinosaurs,66,million,6,y,duration,Thanks to Wikipedia
-22,Time since the end of the Cretaceous geologic period,66,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-23,Time since the end of the Paleogene geologic period,23,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-24,Age of earliest mammoth fossils,4.8,million,6,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-25,Time since the start of the Stone Age,3.4,million,6,y,duration,https://en.wikipedia.org/wiki/Stone_Age
-26,Time since the emergence of earliest humans,2.8,million,6,y,duration,Thanks to Wikipedia
-27,Age of earliest stone hand axe,2.6,million,6,y,duration,https://en.wikipedia.org/wiki/Hand_axe#History_and_distribution
-28,Time since the end of the Neogene geologic period,2.58,million,6,y,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-29,Age of earliest Neaderthal fossils,350,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-30,Time since the first modern humans,250,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-31,Time since first humans in Australia,50,thousand,3,y,duration,http://australianmuseum.net.au/the-spread-of-people-to-australia
-32,Age of the earliest cave paintings,35,thousand,3,y,duration,https://en.wikipedia.org/wiki/Cave_painting
-33,Time since first humans in Europe,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Early_human_migrations#Migration_of_the_Cro-Magnons_into_Europe
-34,Time since extinction of Neanderthals,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
-35,Age of earliest sewing needle,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Clothing#First_recorded_use
-36,Time since the earliest bread baking,30,thousand,3,y,duration,https://en.wikipedia.org/wiki/Clothing#First_recorded_use
-37,Time since first humans in Americas,15,thousand,3,y,duration,https://en.wikipedia.org/wiki/Settlement_of_the_Americas
-38,Time since the end of the Pleistocene geologic epoch,11.7,thousand,3,,duration,https://en.wikipedia.org/wiki/Geologic_time_scale
-39,Time since the earliest farming,11.5,thousand,3,y,duration,https://en.wikipedia.org/wiki/History_of_agriculture
-40,Age of the earliest city,6.5,thousand,3,y,duration,http://www.ancient.eu/city/
-41,Time since the start of the Bronze Age,5.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Bronze_Age
-42,Time since the earliest writing,5.2,thousand,3,y,duration,Thanks to Google
-43,Time since building of Stonehenge,5.115,thousand,3,y,duration,https://en.wikipedia.org/wiki/Stonehenge
-44,Time since building of the Great Pyramid of Giza / Cheops / Khufu,4.575,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
-45,Time since earliest wheeled vehicles,4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Wheel
-46,Time since the start of the Iron Age,3.2,thousand,3,y,duration,https://en.wikipedia.org/wiki/Iron_Age
-47,Time since the birth of Pythagoras,2.59,thousand,3,y,duration,https://en.wikipedia.org/wiki/Pythagoras
-48,Time since start of building of the Parthenon,2.462,thousand,3,y,duration,https://en.wikipedia.org/wiki/Parthenon
-49,Time since the birth of Aristotle,2.4,thousand,3,y,duration,https://en.wikipedia.org/wiki/Aristotle
-50,Time since the birth of Euclid,2.38,thousand,3,y,duration,http://www.math.wichita.edu/history/men/euclid.html
-51,Time since the birth of Archimedes,2.3,thousand,3,y,duration,https://en.wikipedia.org/wiki/Archimedes
-52,Time since start of building of the Great Pyramid of Cholula,2.25,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula
-53,Time since the birth of Hero of Alexandria,2.006,thousand,3,y,duration,https://en.wikipedia.org/wiki/Hero_of_Alexandria
-54,Time since start of building of the Colosseum,1.944,thousand,3,y,duration,https://en.wikipedia.org/wiki/Colosseum
-55,Time since the peak of Roman Empire,1.9,thousand,3,y,duration,Thanks to Google
-56,Duration of Pandyan Empire (South India),1.85,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-57,Time since the birth of Diophantus,1.81,thousand,3,y,duration,https://en.wikipedia.org/wiki/Diophantus
-58,Time since the building of Great Wall of China,1.8,thousand,3,y,duration,Thanks to Google
-59,Duration of Bruneian Empire (Bornean),1.288,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-60,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
-61,Duration of Byzantine Empire,1.123,thousand,3,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-62,Time since start of building of Great Zimbabwe,1,thousand,3,y,duration,https://en.wikipedia.org/wiki/Great_Zimbabwe
-63,Time since the birth of Omar Khayyam,968,unit,0,y,duration,https://en.wikipedia.org/wiki/Omar_Khayyam
-64,Time since building of Angkor Wat,900,unit,0,y,duration,https://en.wikipedia.org/wiki/Angkor_Wat
-65,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration,https://en.wikipedia.org/wiki/Averroes
-66,Time since the birth of Fibonacci,846,unit,0,y,duration,https://en.wikipedia.org/wiki/Fibonacci
-67,Duration of Frankish Empire,700,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-68,Duration of Toltec Empire,626,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-69,Duration of Ottoman Empire,623,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-70,Time since invention of the printing press,576,unit,0,y,duration,https://en.wikipedia.org/wiki/Printing_press
-71,Duration of Spanish Empire,573,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-72,Time since the birth of Leonardo da Vinci,564,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonardo
-73,Time since the birth of Copernicus,543,unit,0,y,duration,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
-74,Duration of Carthaginian Empire,504,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-75,Duration of Roman Empire,503,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-76,Duration of Egyptian Empire,500,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-77,Duration of Roman Republic,482,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-78,Time since the birth of Shakespeare,452,unit,0,y,duration,https://en.wikipedia.org/wiki/William_Shakespeare
-79,Time since the birth of Galileo,452,unit,0,y,duration,https://en.wikipedia.org/wiki/Galileo_Galilei
-80,Time since the birth of Pierre de Fermat,415,unit,0,y,duration,https://en.wikipedia.org/wiki/Pierre_de_Fermat
-81,Duration of Dutch Empire,407,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-82,Duration of British Empire,394,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-83,Duration of Mali Empire,375,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-84,Time since the birth of Newton,374,unit,0,y,duration,https://en.wikipedia.org/wiki/Isaac_Newton
-85,Duration of Mughal Empire,332,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-86,Time since the birth of Euler,309,unit,0,y,duration,https://en.wikipedia.org/wiki/Leonhard_Euler
-87,Duration of Ming Dynasty,276,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_empires
-88,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
-89,Time since the birth of Joseph Fourier,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Joseph_Fourier
-90,Time since the birth of Gauss,239,unit,0,y,duration,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
-91,Time since the birth of Darwin,207,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Darwin
-92,Time since the birth of Dickens,204,unit,0,y,duration,https://en.wikipedia.org/wiki/Charles_Dickens
-93,Time since the first iron steamship crossed the English Channel,194,unit,0,y,duration,https://en.wikipedia.org/wiki/Steamship
-94,Time since the first passenger steam railway service,191,unit,0,y,duration,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
-95,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-96,Time since the birth of Cantor,171,unit,0,y,duration,https://en.wikipedia.org/wiki/Georg_Cantor
-97,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-98,Time since the birth of Einstein,137,unit,0,y,duration,https://en.wikipedia.org/wiki/Albert_Einstein
-99,Length of the Hundred Years' War,116,unit,0,y,duration,https://en.wikipedia.org/wiki/Hundred_Years%27_War
-100,Time since first transatlantic wireless communication,115,unit,0,y,duration,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
-101,Time since the birth of Turing,104,unit,0,y,duration,https://en.wikipedia.org/wiki/Alan_Turing
-102,Time since the first fixed wing scheduled air service,102,unit,0,y,duration,https://en.wikipedia.org/wiki/Airline
-103,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-104,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-105,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-106,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
-107,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
-108,Length of reign of King Louis XIV of France,72,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-109,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-110,Time since the first man walked on the moon,47,unit,0,y,duration,https://en.wikipedia.org/wiki/Apollo_11
-111,Time since first email sent,45,unit,0,y,duration,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
-112,Length of the Wars of the Roses,32,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-113,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
-114,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-115,Length of the Peloponnesian Wars,27,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-116,One average human generation,25,unit,0,y,duration,Thanks to Google
-117,Length of the Vietnam war,19.5,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-118,Length of the Napoleonic wars,12,unit,0,y,duration,https://en.wikipedia.org/wiki/List_of_longest_wars
-119,Period of Jupiter's orbit,11.86,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-120,Period of Ceres's orbit,4.6,unit,0,y,duration,http://space-facts.com/ceres/
-121,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
-122,Period of Mars's orbit,1.88,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-123,Period of Earth's orbit,1,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-124,Period of Venus's orbit,0.615,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-125,Period of Mercury's orbit,0.241,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-126,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+16,Time since the end of the Triassic geologic period,201,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+17,Break-up of Pangaea into today's continents,175,million,6,y,duration.age,https://en.wikipedia.org/wiki/Pangaea
+18,Time since the end of the Jurassic geologic period,145,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+19,Time since the emergence of flowering plants,125,million,6,y,duration.age,http://www.mnh.si.edu/museum/news/firstflower/
+20,Time since the earliest primates,75,million,6,y,duration.age,Thanks to Wikipedia
+21,Time since the extinction of dinosaurs,66,million,6,y,duration.age,Thanks to Wikipedia
+22,Time since the end of the Cretaceous geologic period,66,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+,Length of one Alautun; longest unit in Mayan calendar,63.081429,million,6,y,duration,https://en.wikipedia.org/wiki/Maya_calendar#Long_Count
+23,Time since the end of the Paleogene geologic period,23,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+24,Age of earliest mammoth fossils,4.8,million,6,y,duration.age,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+25,Time since the start of the Stone Age,3.4,million,6,y,duration.age,https://en.wikipedia.org/wiki/Stone_Age
+26,Time since the emergence of earliest humans,2.8,million,6,y,duration.age,Thanks to Wikipedia
+27,Age of earliest stone hand axe,2.6,million,6,y,duration.age,https://en.wikipedia.org/wiki/Hand_axe#History_and_distribution
+28,Time since the end of the Neogene geologic period,2.58,million,6,y,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+29,Age of earliest Neaderthal fossils,350,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+30,Time since the first modern humans,250,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+31,Time since first humans in Australia,50,thousand,3,y,duration.age,http://australianmuseum.net.au/the-spread-of-people-to-australia
+32,Age of the earliest cave paintings,35,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Cave_painting
+33,Time since first humans in Europe,30,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Early_human_migrations#Migration_of_the_Cro-Magnons_into_Europe
+34,Time since extinction of Neanderthals,30,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life
+35,Age of earliest sewing needle,30,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Clothing#First_recorded_use
+36,Time since the earliest bread baking,30,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Clothing#First_recorded_use
+37,Time since first humans in Americas,15,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Settlement_of_the_Americas
+38,Time since the end of the Pleistocene geologic epoch,11.7,thousand,3,,duration.age,https://en.wikipedia.org/wiki/Geologic_time_scale
+39,Time since the earliest farming,11.5,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/History_of_agriculture
+40,Age of the earliest city,6.5,thousand,3,y,duration.age,http://www.ancient.eu/city/
+41,Time since the start of the Bronze Age,5.3,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Bronze_Age
+42,Time since the earliest writing,5.2,thousand,3,y,duration.age,Thanks to Google
+43,Time since building of Stonehenge,5.115,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Stonehenge
+44,Time since building of the Great Pyramid of Giza / Cheops / Khufu,4.575,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+45,Time since earliest wheeled vehicles,4,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Wheel
+46,Time since the start of the Iron Age,3.2,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Iron_Age
+47,Time since the birth of Pythagoras,2.59,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Pythagoras
+48,Time since start of building of the Parthenon,2.462,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Parthenon
+49,Time since the birth of Aristotle,2.4,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Aristotle
+50,Time since the birth of Euclid,2.38,thousand,3,y,duration.age,http://www.math.wichita.edu/history/men/euclid.html
+51,Time since the birth of Archimedes,2.3,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Archimedes
+52,Time since start of building of the Great Pyramid of Cholula,2.25,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula
+53,Time since the birth of Hero of Alexandria,2.006,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Hero_of_Alexandria
+54,Time since start of building of the Colosseum,1.944,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Colosseum
+55,Time since the peak of Roman Empire,1.9,thousand,3,y,duration.age,Thanks to Google
+56,Duration of Pandyan Empire (South India),1.85,thousand,3,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+57,Time since the birth of Diophantus,1.81,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Diophantus
+58,Time since the building of Great Wall of China,1.8,thousand,3,y,duration.age,Thanks to Google
+59,Duration of Bruneian Empire (Bornean),1.288,thousand,3,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+60,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
+61,Duration of Byzantine Empire,1.123,thousand,3,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+62,Time since start of building of Great Zimbabwe,1,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Zimbabwe
+63,Time since the birth of Omar Khayyam,968,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Omar_Khayyam
+64,Time since building of Angkor Wat,900,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Angkor_Wat
+65,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Averroes
+66,Time since the birth of Fibonacci,846,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Fibonacci
+67,Duration of Frankish Empire,700,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+68,Duration of Toltec Empire,626,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+69,Duration of Ottoman Empire,623,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+70,Time since invention of the printing press,576,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Printing_press
+71,Duration of Spanish Empire,573,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+72,Time since the birth of Leonardo da Vinci,564,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonardo
+73,Time since the birth of Copernicus,543,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
+74,Duration of Carthaginian Empire,504,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+75,Duration of Roman Empire,503,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+76,Duration of Egyptian Empire,500,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+77,Duration of Roman Republic,482,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+78,Time since the birth of Shakespeare,452,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
+79,Time since the birth of Galileo,452,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Galileo_Galilei
+80,Time since the birth of Pierre de Fermat,415,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Pierre_de_Fermat
+81,Duration of Dutch Empire,407,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+82,Time since the death of Shakespeare,400,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
+83,Duration of British Empire,394,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+84,Duration of Mali Empire,375,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+85,Time since the birth of Newton,374,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Isaac_Newton
+86,Duration of Mughal Empire,332,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+87,Time since the birth of Euler,309,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonhard_Euler
+88,Duration of Ming Dynasty,276,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+89,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
+90,Time since the birth of Joseph Fourier,248,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Joseph_Fourier
+91,Time since birth of Sophie Germain,240,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Sophie_Germain
+92,Time since the birth of Gauss,239,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+93,Time since the birth of Darwin,207,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Darwin
+94,Time since the birth of Dickens,204,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Dickens
+95,Time since the first iron steamship crossed the English Channel,194,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Steamship
+96,Time since the first passenger steam railway service,191,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
+97,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
+98,Time since the birth of Cantor,171,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Georg_Cantor
+99,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+100,Time since the birth of Einstein,137,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albert_Einstein
+101,Time since birth of Emmy Noether,134,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Emmy_Noether
+102,Length of the Hundred Years' War,116,unit,0,y,duration.span,https://en.wikipedia.org/wiki/Hundred_Years%27_War
+103,Time since first transatlantic wireless communication,115,unit,0,y,duration.age,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
+104,Time since the birth of Turing,104,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Alan_Turing
+105,Time since the first fixed wing scheduled air service,102,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Airline
+106,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+107,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+108,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+109,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
+110,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
+111,Length of reign of King Louis XIV of France,72,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+112,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+113,Time since the first man walked on the moon,47,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
+114,Time since first email sent,45,unit,0,y,duration.age,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
+115,Length of the Wars of the Roses,32,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+116,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
+117,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+118,Length of the Peloponnesian Wars,27,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+119,One average human generation,25,unit,0,y,duration,Thanks to Google
+120,Length of the Vietnam war,19.5,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+121,Lifespan of a cat,15,unit,0,y,duration,http://pets.thenest.com/whats-normal-indoor-cat-lifespan-10139.html
+122,Length of the Napoleonic wars,12,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+123,Period of Jupiter's orbit,11.86,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+124,Period of Ceres's orbit,4.6,unit,0,y,duration,http://space-facts.com/ceres/
+125,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
+126,Period of Mars's orbit,1.88,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+127,Period of Earth's orbit,1,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+128,Period of Venus's orbit,0.615,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+129,Period of Mercury's orbit,0.241,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+130,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
