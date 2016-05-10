@@ -173,13 +173,13 @@ class NumberFact(models.Model):
     def display_folk_number(self, mag, mult, unit, measure):
         mag = str(sigfigs(num(self.magnitude),4))
 
-        if measure=="extent" and self.scale>0:
+        if measure.find("extent")>=0 and self.scale>0:
             newnumber = NumberFact(magnitude=mag, scale=self.scale-3, measure=measure, unit="km", multiple=getMultiple(self.scale-3))
             mult = newnumber.multiple
             unit = newnumber.unit
             mag = str(sigfigs(num(self.magnitude),4))
 
-        if measure=="extent" and self.scale==0 and num(self.magnitude)<1:
+        if measure.find("extent")>=0 and self.scale==0 and num(self.magnitude)<1:
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), scale=self.scale, measure=measure, unit="mm", multiple=getMultiple(self.scale))
             mult = newnumber.multiple
             unit = newnumber.unit

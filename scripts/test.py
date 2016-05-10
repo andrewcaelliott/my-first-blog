@@ -178,7 +178,7 @@ def run10():
 	print(klass.objects)
 
 
-def run11():
+def run():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
@@ -186,7 +186,7 @@ def run11():
 #	print(rf.permlink)
 	print(spuriousFact(klass, 3, measure="e"))
 
-def run():
+def run12():
 	klass = NumberFact
 	measure=("extent")
 	seed = randint(0,1000000)

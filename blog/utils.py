@@ -512,7 +512,6 @@ def spuriousFact(klass, scale_tolerance, measure=None):
     while len(facts)==0:
         seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=seed)
-        print(rf.render_folk_long, rf.measure)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:
             facts.remove(rf)
