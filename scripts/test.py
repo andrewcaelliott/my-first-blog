@@ -178,24 +178,26 @@ def run10():
 	print(klass.objects)
 
 
+def run11():
+	klass = NumberFact
+#	measure=("extent")#
+#	seed = randint(0,1000000)
+#	rf = randomFact(NumberFact, measure, rseed=seed)
+#	print(rf.permlink)
+	print(spuriousFact(klass, 3, measure="e"))
+
 def run():
 	klass = NumberFact
 	measure=("extent")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
-	#print(spuriousFact(klass, 3, measure="m"))
-	print(rf.permlink)
-
-def run12():
-	klass = NumberFact
-	measure=("extent")
-	seed = randint(0,1000000)
-	rf = randomFact(NumberFact, measure, rseed=seed)
 	print(rf.render)
+	print(rf.measure)
 	facts = neatFacts(klass, rf)
 	for fact in facts:
 #		print(fact["comparison"], fact["fact2"].render2)
 		print(fact)
+		print(fact["fact2"].measure)
 
 def run13():
 	klass = NumberFact

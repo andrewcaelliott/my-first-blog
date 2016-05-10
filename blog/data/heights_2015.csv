@@ -1,12 +1,12 @@
-12,Altitude of the orbit of the International Space Station,400,thousand,3,m,extent,Google
-11,Cruising altitude of Airbus commercial jet,13,thousand,3,m,extent,Google
-10,Height of Mount Everest,8.848,thousand,3,m,extent,Google
-9,Height of the Angel Falls (Venuzeula),979,unit,0,m,extent,Google
-4,Height of the `Burj Khalifa` skyscraper (Dubai),830,unit,0,m,extent,Google
-7,Height of the Empire State Building (NYC),381,unit,0,m,extent,Google
-5,Height of the `Shard` skyscraper (London),310,unit,0,m,extent,Wikipedia
-8,Height of the Eiffel Tower,310,unit,0,m,extent,Google
-6,Height of the London Eye Ferris Wheel,135,unit,0,m,extent,Wikipedia
-3,Height of a giraffe,5.8,unit,0,m,extent,www.onekind.org
-2,Height of an African elephant,4.2,unit,0,m,extent,www.onekind.org
-1,Height of an ostrich,2.7,unit,0,m,extent,www.onekind.org
+12,Altitude of the orbit of the International Space Station,400,thousand,3,m,extent.ver,Google
+11,Cruising altitude of Airbus commercial jet,13,thousand,3,m,extent.ver,Google
+10,Height of Mount Everest,8.848,thousand,3,m,extent.ver,Google
+9,Height of the Angel Falls (Venuzeula),979,unit,0,m,extent.ver,Google
+4,Height of the `Burj Khalifa` skyscraper (Dubai),830,unit,0,m,extent.ver,Google
+7,Height of the Empire State Building (NYC),381,unit,0,m,extent.ver,Google
+5,Height of the `Shard` skyscraper (London),310,unit,0,m,extent.ver,Wikipedia
+8,Height of the Eiffel Tower,310,unit,0,m,extent.ver,Google
+6,Height of the London Eye Ferris Wheel,135,unit,0,m,extent.ver,Wikipedia
+3,Height of a giraffe,5.8,unit,0,m,extent.ver,www.onekind.org
+2,Height of an African elephant,4.2,unit,0,m,extent.ver,www.onekind.org
+1,Height of an ostrich,2.7,unit,0,m,extent.ver,www.onekind.org

@@ -374,6 +374,21 @@ def closeEnoughNumberFact(klass, magnitude, scale, tolerance, measure):
         facts.append(fact)
     return facts
 
+def range_matches(klass, scale_lower, scale_upper, value_lower, value_upper, measure):
+    if measure.find(".")<0: 
+        return klass.objects.filter(scale__gte=scale_lower, scale__lte=scale_upper, value__gte=value_lower, value__lt=value_upper, measure__startswith=measure)
+    else:
+        truncate_measure = measure[:measure.find(".")]
+        matches = []
+        match1 = klass.objects.filter(scale__gte=scale_lower, scale__lte=scale_upper, value__gte=value_lower, value__lt=value_upper, measure=measure)
+        for fact in match1:
+            matches.append(fact)
+        match2 = klass.objects.filter(scale__gte=scale_lower, scale__lte=scale_upper, value__gte=value_lower, value__lt=value_upper, measure=truncate_measure)
+        for fact in match2:
+            matches.append(fact)
+        return matches
+
+
 def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple, scale, scale_tolerance = 30):
 #   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
     mag = num(magnitude)*multiple
@@ -386,13 +401,16 @@ def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple, sca
     elif mag < 1:
         mag = mag*10
     facts = []
-    nf = klass.objects.filter(scale__gte=scale-scale_tolerance, scale__lte=scale+scale_tolerance, value__gte=mag/(1+tolerance), value__lt=mag*(1+tolerance), measure=measure)
+#    nf = klass.objects.filter(scale__gte=scale-scale_tolerance, scale__lte=scale+scale_tolerance, value__gte=mag/(1+tolerance), value__lt=mag*(1+tolerance), measure=measure)
+    nf = range_matches(klass, scale-scale_tolerance, scale+scale_tolerance, mag/(1+tolerance), mag*(1+tolerance), measure)
     for fact in nf:
         facts.append(fact)
-    nf = klass.objects.filter(scale__gte=scale-1-scale_tolerance, scale__lte=scale-1+scale_tolerance, value__gte=mag*10/(1+tolerance), value__lt=mag*10*(1+tolerance), measure=measure)
+#    nf = klass.objects.filter(scale__gte=scale-1-scale_tolerance, scale__lte=scale-1+scale_tolerance, value__gte=mag*10/(1+tolerance), value__lt=mag*10*(1+tolerance), measure=measure)
+    nf = range_matches(klass, scale-1-scale_tolerance, scale-1+scale_tolerance, mag*10/(1+tolerance), mag*10*(1+tolerance), measure)
     for fact in nf:
         facts.append(fact)
-    nf = klass.objects.filter(scale__gte=scale-2-scale_tolerance, scale__lte=scale-2+scale_tolerance, value__gte=mag*100/(1+tolerance), value__lt=mag*100*(1+tolerance), measure=measure)
+#    nf = klass.objects.filter(scale__gte=scale-2-scale_tolerance, scale__lte=scale-2+scale_tolerance, value__gte=mag*100/(1+tolerance), value__lt=mag*100*(1+tolerance), measure=measure)
+    nf = range_matches(klass, scale-2-scale_tolerance, scale-2+scale_tolerance, mag*100/(1+tolerance), mag*100*(1+tolerance), measure)
     for fact in nf:
         facts.append(fact)
     return facts
@@ -452,8 +470,8 @@ def smallestNumberFact(nfs):
 def randomFact(klass, measure, rseed=None):
     if rseed!=None:
         seed(rseed)
-    count = klass.objects.filter(measure=measure).count()
-    rf = klass.objects.filter(measure=measure)[randint(0,count-1)]
+    count = klass.objects.filter(measure__startswith=measure).count()
+    rf = klass.objects.filter(measure__startswith=measure)[randint(0,count-1)]
     return rf
 
 def randomFactAny(klass, rseed=None):
@@ -494,6 +512,7 @@ def spuriousFact(klass, scale_tolerance, measure=None):
     while len(facts)==0:
         seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=seed)
+        print(rf.render_folk_long, rf.measure)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:
             facts.remove(rf)
@@ -565,7 +584,7 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 def neatFacts(klass, selectedFact):
     rf = selectedFact
     tolerance = 0.02
-    maxRatio = {"extent":10000, "mass":20000, "duration":10000, "count":500, "amount":500}[rf.measure]
+    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "count":500, "amount":500}[rf.measure]
 
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
     try:
