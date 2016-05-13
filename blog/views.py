@@ -114,14 +114,12 @@ def quiz(request):
     if seed == None:
         set_seed()
         seed = randint(0,10000000)
-    print(seed)
     set_seed(seed)    
     try:
         cycle=params.get("cycle")
     except (AttributeError,TypeError):
         cycle="initial"
 
-    print(params)
     askbiggest = randint(0,1)==0
     try:
         measure=params.get("measure")
