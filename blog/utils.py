@@ -470,6 +470,8 @@ def smallestNumberFact(nfs):
 def randomFact(klass, measure, rseed=None):
     if rseed!=None:
         seed(rseed)
+    else:
+        seed()
     count = klass.objects.filter(measure__startswith=measure).count()
     rf = klass.objects.filter(measure__startswith=measure)[randint(0,count-1)]
     return rf
@@ -511,7 +513,7 @@ def spuriousFact(klass, scale_tolerance, measure=None):
     tolerance = 0.01
     while len(facts)==0:
 #        seed = randint(0,1000000)
-        rf = randomFact(klass, measure, rseed=seed)
+        rf = randomFact(klass, measure, rseed=None)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:
             facts.remove(rf)
