@@ -510,7 +510,7 @@ def spuriousFact(klass, scale_tolerance, measure=None):
         measure=choice(["extent","extent","amount","count","duration","mass","mass"])
     tolerance = 0.01
     while len(facts)==0:
-        seed = randint(0,1000000)
+#        seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=seed)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:

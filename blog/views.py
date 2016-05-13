@@ -109,25 +109,28 @@ def quiz(request):
     try:
         seed=num(params.get("seed"))
     except (AttributeError,TypeError):
+        set_seed()
         seed = randint(0,10000000)
     if seed == None:
+        set_seed()
         seed = randint(0,10000000)
+    print(seed)
     set_seed(seed)    
     try:
         cycle=params.get("cycle")
     except (AttributeError,TypeError):
         cycle="initial"
 
-
+    print(params)
+    askbiggest = randint(0,1)==0
     try:
         measure=params.get("measure")
     except (AttributeError,TypeError):
-        measure=choice(["extent", "count", "amount", "duration", "mass"])
+        measure=None
     if measure==None or measure == "random":
         measure=choice(["extent", "count", "amount", "duration", "mass"])
 
     quiz={}
-    askbiggest = randint(0,1)==0
     if askbiggest:
         if measure=="extent":
             quiz["question"]="Which of these is the biggest?"
