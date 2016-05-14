@@ -33,3 +33,7 @@ class ConvertForm(forms.ModelForm):
     class Meta:
         model = NumberQuery
         fields = ('magnitude','multiple','unit','measure','target_unit',)                        
+
+class FilterFactsForm(forms.Form):
+    search = forms.CharField(max_length=50)
+

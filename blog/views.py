@@ -14,6 +14,7 @@ from .forms import FactForm
 from .forms import QueryForm 
 from .forms import FreeForm 
 from .forms import ConvertForm 
+from .forms import FilterFactsForm 
 from .convert import convertToDefaultBase 
 from .convert import convertToUnit 
 from .config import reference_lists
@@ -182,7 +183,7 @@ def quiz(request):
         pass
 #        form = FactForm()
  #   return render(request, 'blog/fact_edit.html', {'form': form})   
-    dyk=spuriousFact(NumberFact,3,measure=measure)
+    dyk=spuriousFact(NumberFact,3,measure=measure, seed=None)
     return render(request, 'blog/quiz.html', {'quiz':quiz, 'quote': choice(quotes), "dyk":dyk})
 
 def itabn(request):
@@ -389,9 +390,18 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts':posts, "dyk":dyk})
 
 def fact_list(request):
-    facts = NumberFact.objects.filter().order_by('text')  
+    params = request.GET
+    try: 
+        search = params["search"]
+    except:
+        search = None
+    if search == None:
+        facts = NumberFact.objects.filter().order_by('title')  
+    else:
+        facts = NumberFact.objects.filter(title__icontains = search).order_by('title')  
+    form = FilterFactsForm(initial={'search': search})
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/fact_list.html', {'facts':facts, "dyk":dyk})
+    return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, "dyk":dyk})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)

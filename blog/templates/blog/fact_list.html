@@ -7,6 +7,10 @@
 {% endblock %}
 
 {% block content %}
+        <form id = "filter" method="GET" class="filter-form" action="/facts/"> 
+            {{ form.as_p}}
+                    <button id="filterButton" type="submit" class="save btn btn-warning">Filter</button>
+        </form>
         {% for fact in facts %}
             <div class="fact">
                 <!--div class="date">

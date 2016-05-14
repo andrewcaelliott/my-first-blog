@@ -178,7 +178,7 @@ def run10():
 	print(klass.objects)
 
 
-def run():
+def run11():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
@@ -205,3 +205,9 @@ def run13():
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	print(rf.render_folk)
+
+def run():
+	target = "olympic"
+	nf = NumberFact.objects.filter(title__icontains=target)
+	for f in nf:
+		print(f)
