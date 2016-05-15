@@ -22,7 +22,7 @@
 22,cars in the world,1.2,billion,9,cars,count,Thanks to Google
 23,active users of LinkedIn (2015),414,million,6,users,count,http://www.statista.com/statistics/274050/quarterly-numbers-of-linkedin-members/
 24,active users of Twitter (2015),300,million,6,users,count,http://www.statista.com/statistics/282087/number-of-monthly-active-twitter-users/
-25,items in the British Library,150,million,6,books,count,https://simple.wikipedia.org/wiki/British_Library
+25,items in the British Library,150,million,6,items,count,https://simple.wikipedia.org/wiki/British_Library
 26,copies of Michael Jackson's Thriller album sold,65,million,6,albums,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000000&sort=cnt&p=1
 27,books in the British Library,25,million,6,books,count,https://simple.wikipedia.org/wiki/British_Library
 28,shipping containers in the world,17,million,6,containers,count,https://www.billiebox.co.uk/facts-about-shipping-containers/
@@ -74,14 +74,16 @@
 74,songs recorded by the Beatles,309,unit,0,songs,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=2
 75,skyscrapers in New York City (>150m tall),250,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 76,bones in the human body,206,unit,0,bones,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=3
-77,skyscrapers in Dubai (>150m tall),168,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-78,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
-79,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-80,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-81,members of US Senate,100,unit,0,members,count,http://www.senate.gov/reference/reference_index_subjects/Senators_vrd.htm
-82,keys on a piano,88,unit,0,keys,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=4
-83,submarines in the US Navy (2016),75,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-84,submarines in the North Korean Navy (2016),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-85,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-86,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html
-87,stories in the Canterbury Tales by Chaucer,24,unit,0,stories,count,https://en.wikipedia.org/wiki/The_Canterbury_Tales
+77,games played in longest-ever tennis match between Isner and Mahut (2010),183,unit,0,games,count,https://en.wikipedia.org/wiki/Isner?Mahut_match_at_the_2010_Wimbledon_Championships
+78,skyscrapers in Dubai (>150m tall),168,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+79,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
+80,floors in the Burj Khalifa skyscraper,163,unit,0,floors,count,https://www.google.co.uk/search?client=opera&q=how+many+stories+in+the+burj+khalifa&sourceid=opera&ie=UTF-8&oe=UTF-8
+81,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+82,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+83,members of US Senate,100,unit,0,members,count,http://www.senate.gov/reference/reference_index_subjects/Senators_vrd.htm
+84,keys on a piano,88,unit,0,keys,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=4
+85,submarines in the US Navy (2016),75,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+86,submarines in the North Korean Navy (2016),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+87,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+88,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html
+89,stories in the Canterbury Tales by Chaucer,24,unit,0,stories,count,https://en.wikipedia.org/wiki/The_Canterbury_Tales

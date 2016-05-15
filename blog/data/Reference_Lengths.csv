@@ -77,7 +77,7 @@
 77,Length of Manhattan Island,21.6,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Manhattan
 78,Length of the Marina beach in Chennai; India,13,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Marina_Beach
 79,Depth of Marianas Trench,10.994,thousand,3,m,extent.ver,http://geology.com/records/deepest-part-of-the-ocean.shtml
-80,Length of the Rove Canal Tunnel in France,7.12,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Rove_Tunnel
+80,Length of the longest canal tunnel (Rove Tunnel in France),7.12,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Rove_Tunnel
 81,Length of the Oxford-Cambridge boat race,6.8,thousand,3,m,extent.hor,http://theboatraces.org/the-course
 82,Highest ascent by a hot air balloon (2004),6.614,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Flight_altitude_record
 83,Height of Mount Kilimanjaro,5.895,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Kilimanjaro
@@ -85,104 +85,113 @@
 85,Length of Central Park (NYC),4,thousand,3,m,extent.hor,http://www.ask.com/geography/big-central-park-new-york-city-3fd1d686bd03643
 86,Length of the Copacabana beach in Rio de Janeiro,4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Copacabana;_Rio_de_Janeiro
 87,Depth of the Mponeng Gold Mine (South Africa),3.9,thousand,3,m,extent.ver,http://www.mining-technology.com/features/feature-top-ten-deepest-mines-world-south-africa/
-88,Length of the Champs Elysee,1.9,thousand,3,m,extent.hor,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
-89,Length of Tiananmen square in Beijing,880,unit,0,m,extent.hor,http://tiananmensquarebeijing.com
-90,Length of the Lincoln Memorial Reflecting pool in Washington DC,618,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Lincoln_Memorial_Reflecting_Pool
-91,Height of the `One World Trade Center` skyscraper in New York City,541.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/One_World_Trade_Center
-92,World record longest flight of an arrow from a bow (2010),484.29,unit,0,m,extent.hor,http://news.bbc.co.uk/local/northampton/hi/people_and_places/history/newsid_8924000/8924976.stm
-93,Longest golf drive,470.9,unit,0,m,extent.hor,http://news.bbc.co.uk/1/hi/programmes/click_online/9269507.stm
-94,Length of the USS Gerald R. Ford supercarrier,337,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/USS_Gerald_R._Ford
-95,Length of the USS Nimitz supercarrier,333,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Supercarrier
-96,Length of the Titanic,269,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/RMS_Titanic
-97,Length of the longest ski jump ever (2015),251.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_the_longest_ski_jumps
-98,Length of Tower Bridge over the Thames,244,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tower_Bridge
-99,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Pont_Neuf
-100,Height of Sagrada Familia Basilica in Barcelona,170,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Sagrada_Família
-101,Height of Kingda Ka roller coaster,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
-102,Height of the Great Pyramid of Giza,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
-103,Height of St Paul's Cathedral in London,111,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral
-104,Length of the Saturn V Apollo Program launch rocket,110.6,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Saturn_V
-105,Length of a football pitch,105,unit,0,m,extent.hor,Thanks to Wikipedia
-106,World record javelin throw,104.8,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Men%27s_javelin_throw_world_record_progression
-107,Wingspan of an Airbus A380,79.75,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
-108,Height of the Taj Mahal in Agra; India,73,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Taj_Mahal
-109,Overall length of an Airbus A380,72.72,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
-110,Length of the SpaceX Falcon 9 launch rocket,70,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Falcon_9
-111,Height of Niagara Falls,57,unit,0,m,extent.ver,http://www.niagaraparks.com/about-niagara-falls/geology-facts-figures.html
-112,Typical flight of a flying fish,50,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flying_fish
-113,Length of the Millennium Falcon spaceship in the Star Wars movies,34.75,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/Millennium_Falcon
-114,Estimated length of Diplodocus hallorum (longest dinosaur),33.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Diplodocus
-115,Length of a blue whale,30,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Blue_whale
-116,Height of the `Christ the Redeemer` statue in Rio de Janeiro,30,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)
-117,Distance between bases of a baseball diamond,27.432,unit,0,m,extent.hor,Thanks to Wikipedia
-118,Length of a tennis court,23.77,unit,0,m,extent.hor,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
-119,Height of an All-Terrain Armored Transport (AT-AT) in Star Wars movies,22.5,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/All_Terrain_Armored_Transport
-120,Length of a cricket pitch,20.12,unit,0,m,extent.hor,Thanks to Google
-121,Men's Olympic Triple Jump record,18.09,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-122,Length of a London Underground carriage,18,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/London_Underground_rolling_stock
-123,Women's Olympic Triple Jump record,15.39,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-124,Length of a basketball court,15,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
-125,Distance a kangaroo can jump,13.5,unit,0,m,extent.hor,http://www.answers.com/Q/How_far_can_a_kangaroo_jump
-126,Length of a T-65 X-Wing starfighter in the Star Wars movies,12.5,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/T-65_X-wing_starfighter
-127,Estimated length of Tyrannosaurus Rex,12.3,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tyrannosaurus
-128,Length of a London bus,11.23,unit,0,m,extent.hor,Thanks to Google
-129,Height of a high-diving platform,10,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Diving_platform
-130,World Long Jump Record (1991),8.95,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Long_jump_world_record_progression
-131,Men's Olympic Long Jump record,8.9,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-132,Women's Olympic Long Jump record,7.4,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-133,Width of a football goal,7.32,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Football_pitch
-134,Maximum length of a Reticulated Python,6.5,unit,0,m,extent,https://en.wikipedia.org/wiki/Reticulated_python
-135,World Pole Vault Record (2014),6.16,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
-136,Men's Olympic Pole Vault record,5.97,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-137,Women's Olympic Pole Vault record,5.05,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-138,Length of a typical Great White Shark,4.6,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Great_white_shark
-139,Length of a Nile crocodile,4.2,unit,0,m,extent.hor,Thanks to Google
-140,Length of a standard full size snooker table,3.569,unit,0,m,extent.hor,Thanks to Google
-141,Wingspan of a Wandering Albatross,3.1,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Wandering_albatross
-142,Height of a basketball hoop,3.048,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Basketball
-143,World High Jump Record (1993),2.45,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
-144,Height of a football goal,2.44,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Football_pitch
-145,Men's Olympic High Jump record,2.39,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-146,Height of Chewbacca in the Star Wars movies,2.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Peter_Mayhew
-147,Women's Olympic High Jump record,2.06,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-148,Length of a `king-size` bed,1.98,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
-149,Length of a standard bed,1.9,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
-150,Length of a lightsaber in the Star Wars movies,1.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Lightsaber
-151,Height of the R2-D2 droid in the Star Wars movies,1.09,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/R2-D2
-152,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
-153,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
-154,Height of a tennis net at the centre,0.914,unit,0,m,extent.ver,http://officialtennisrules.com/official-tennis-court-dimensions/
-155,Height of a standard washing machine,0.85,unit,0,m,extent.ver,http://www.whitegoodshelp.co.uk/are-all-washing-machines-the-same-size/
-156,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
-157,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
-158,Height of BB-8 droid in Star Wars movies,0.67,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/BB-8
-159,Height of Yoda in the Star Wars movies,0.66,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/Yoda
-160,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent.hor,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
-161,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
-162,Distance a flea can jump,0.33,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flea
-163,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
-164,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
-165,Height of a standard wine bottle,0.291,unit,0,m,extent.ver,http://ezinearticles.com/?The-Dimensions-of-a-Wine-Bottle&id=7915289
-166,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
-167,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
-168,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
-169,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
-170,Length of a standard index card,0.127,unit,0,m,extent,https://en.wikipedia.org/wiki/Index_card
-171,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
-172,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
-173,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
-174,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
-175,Diameter of a regulation pool ball,0.05715,unit,0,m,extent,http://www.wpa-pool.com/web/WPA_Tournament_Table_Equipment_Specifications
-176,Length of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
-177,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-178,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
-179,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
-180,Height of a standard Lego minifig person,0.04,unit,0,m,extent.ver,http://lego.wikia.com/wiki/Minifigure
-181,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-182,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-183,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
-184,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
-185,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
-186,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-187,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-188,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+88,Length of the Epsom Derby horse race,2.4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Epsom_Downs_Racecourse
+89,Length of the Kentucky Derby horse race,2,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Kentucky_Derby
+90,Length of the Champs Elysee,1.9,thousand,3,m,extent.hor,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
+91,Length of Tiananmen square in Beijing,880,unit,0,m,extent.hor,http://tiananmensquarebeijing.com
+92,Length of the Lincoln Memorial Reflecting pool in Washington DC,618,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Lincoln_Memorial_Reflecting_Pool
+93,Height of the `One World Trade Center` skyscraper in New York City,541.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/One_World_Trade_Center
+94,World record longest flight of an arrow from a bow (2010),484.29,unit,0,m,extent.hor,http://news.bbc.co.uk/local/northampton/hi/people_and_places/history/newsid_8924000/8924976.stm
+95,Longest golf drive,470.9,unit,0,m,extent.hor,http://news.bbc.co.uk/1/hi/programmes/click_online/9269507.stm
+96,Length of the USS Gerald R. Ford supercarrier,337,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/USS_Gerald_R._Ford
+97,Length of the USS Nimitz supercarrier,333,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Supercarrier
+98,Length of the Titanic,269,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/RMS_Titanic
+99,Length of the longest ski jump ever (2015),251.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_the_longest_ski_jumps
+100,Length of Tower Bridge over the Thames,244,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tower_Bridge
+101,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Pont_Neuf
+102,Height of Sagrada Familia Basilica in Barcelona,170,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Sagrada_Família
+103,Height of Kingda Ka roller coaster,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
+104,Height of the Great Pyramid of Giza,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+105,Height of the tallest Coast Redwood tree (California; USA),115.61,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_superlative_trees
+106,Height of St Paul's Cathedral in London,111,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral
+107,Length of the Saturn V Apollo Program launch rocket,110.6,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Saturn_V
+108,Length of a football pitch,105,unit,0,m,extent.hor,Thanks to Wikipedia
+109,World record javelin throw,104.8,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Men%27s_javelin_throw_world_record_progression
+110,Length overall of the Cutty Sark sailing ship,85.4,unit,0,m,extent.hor,http://www.rmg.co.uk/cutty-sark/history/cutty-sark-construction-facts-figures
+111,Wingspan of an Airbus A380,79.75,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
+112,Height of the Taj Mahal in Agra; India,73,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Taj_Mahal
+113,Overall length of an Airbus A380,72.72,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
+114,Length of the SpaceX Falcon 9 launch rocket,70,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Falcon_9
+115,Height of Niagara Falls,57,unit,0,m,extent.ver,http://www.niagaraparks.com/about-niagara-falls/geology-facts-figures.html
+116,Typical flight of a flying fish,50,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flying_fish
+117,Height of the main mast of the Cutty Sark sailing ship,47,unit,0,m,extent.ver,http://www.rmg.co.uk/cutty-sark/history/cutty-sark-construction-facts-figures
+118,Length of the Millennium Falcon spaceship in the Star Wars movies,34.75,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/Millennium_Falcon
+119,Estimated length of Diplodocus hallorum (longest dinosaur),33.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Diplodocus
+120,Length of a blue whale,30,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Blue_whale
+121,Height of the `Christ the Redeemer` statue in Rio de Janeiro,30,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)
+122,Distance between bases of a baseball diamond,27.432,unit,0,m,extent.hor,Thanks to Wikipedia
+123,Length of a tennis court,23.77,unit,0,m,extent.hor,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
+124,Height of an All-Terrain Armored Transport (AT-AT) in Star Wars movies,22.5,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/All_Terrain_Armored_Transport
+125,Length of a cricket pitch,20.12,unit,0,m,extent.hor,Thanks to Google
+126,Men's Olympic Triple Jump record,18.09,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+127,Length of a London Underground carriage,18,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/London_Underground_rolling_stock
+128,Women's Olympic Triple Jump record,15.39,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+129,Length of a basketball court,15,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
+130,Distance a kangaroo can jump,13.5,unit,0,m,extent.hor,http://www.answers.com/Q/How_far_can_a_kangaroo_jump
+131,Length of a T-65 X-Wing starfighter in the Star Wars movies,12.5,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/T-65_X-wing_starfighter
+132,Estimated length of Tyrannosaurus Rex,12.3,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tyrannosaurus
+133,Length of a London bus,11.23,unit,0,m,extent.hor,Thanks to Google
+134,Height of a high-diving platform,10,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Diving_platform
+135,World Long Jump Record (1991),8.95,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Long_jump_world_record_progression
+136,Men's Olympic Long Jump record,8.9,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+137,Women's Olympic Long Jump record,7.4,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+138,Width of a football goal,7.32,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Football_pitch
+139,Maximum length of a Reticulated Python,6.5,unit,0,m,extent,https://en.wikipedia.org/wiki/Reticulated_python
+140,World Pole Vault Record (2014),6.16,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
+141,Men's Olympic Pole Vault record,5.97,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+142,Women's Olympic Pole Vault record,5.05,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+143,Length of a classic Ford Mustang (first generation) car,4.613,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ford_Mustang_(first_generation)
+144,Length of a typical Great White Shark,4.6,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Great_white_shark
+145,Length of a Nile crocodile,4.2,unit,0,m,extent.hor,Thanks to Google
+146,Length of a classic Volkswagen `Beetle` car,4.079,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Volkswagen_Beetle
+147,Length of a standard full size snooker table,3.569,unit,0,m,extent.hor,Thanks to Google
+148,Wingspan of a Wandering Albatross,3.1,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Wandering_albatross
+149,Height of a basketball hoop,3.048,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Basketball
+150,World High Jump Record (1993),2.45,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
+151,Height of a football goal,2.44,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Football_pitch
+152,Men's Olympic High Jump record,2.39,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+153,Height of Chewbacca in the Star Wars movies,2.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Peter_Mayhew
+154,Women's Olympic High Jump record,2.06,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+155,Length of a `king-size` bed,1.98,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
+156,Length of a standard bed,1.9,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
+157,Length of a lightsaber in the Star Wars movies,1.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Lightsaber
+158,Height of the R2-D2 droid in the Star Wars movies,1.09,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/R2-D2
+159,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
+160,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
+161,Height of a tennis net at the centre,0.914,unit,0,m,extent.ver,http://officialtennisrules.com/official-tennis-court-dimensions/
+162,Height of a standard washing machine,0.85,unit,0,m,extent.ver,http://www.whitegoodshelp.co.uk/are-all-washing-machines-the-same-size/
+163,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
+164,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
+165,Height of BB-8 droid in Star Wars movies,0.67,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/BB-8
+166,Height of Yoda in the Star Wars movies,0.66,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/Yoda
+167,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent.hor,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
+168,Diameter of a regulation dartboard,0.451,unit,0,m,extent,https://en.wikipedia.org/wiki/Darts#Dartboard
+169,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+170,Distance a flea can jump,0.33,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flea
+171,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+172,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
+173,Height of a standard wine bottle,0.291,unit,0,m,extent.ver,http://ezinearticles.com/?The-Dimensions-of-a-Wine-Bottle&id=7915289
+174,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
+175,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
+176,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+177,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
+178,Length of a standard index card,0.127,unit,0,m,extent,https://en.wikipedia.org/wiki/Index_card
+179,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
+180,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
+181,Length of a standard playing card,0.0889,unit,0,m,extent,https://en.wikipedia.org/wiki/Standard_52-card_deck#Size_of_the_cards
+182,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
+183,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
+184,Diameter of a regulation pool ball,0.05715,unit,0,m,extent,http://www.wpa-pool.com/web/WPA_Tournament_Table_Equipment_Specifications
+185,Length of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
+186,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+187,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
+188,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
+189,Height of a standard Lego minifig person,0.04,unit,0,m,extent.ver,http://lego.wikia.com/wiki/Minifigure
+190,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+191,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+192,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
+193,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
+194,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
+195,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+196,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+197,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
