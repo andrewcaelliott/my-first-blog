@@ -1,6 +1,7 @@
 from pytumblr import TumblrRestClient
 import json
 from bs4 import BeautifulSoup
+from random import choice
 
 client = TumblrRestClient('9g1lRa75IJ7HLbnyqMCaXsSsnvyz8uUsa7ZLzyGCipFciA23PM')
 
@@ -13,10 +14,12 @@ def tumblrSelection(category):
     else:
         featureStory = None
     #todo handle zero stories
+    feature_candidates = []
     for post in storyposts:
         if post["featured"]:
-            featureStory = post
-            break
+            feature_candidates.append(post)
+
+    featureStory = choice(feature_candidates)
     stories["featured"]=featureStory
     if featureStory:
         storyposts.remove(featureStory)
