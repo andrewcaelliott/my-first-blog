@@ -183,7 +183,7 @@ def quiz(request):
         pass
 #        form = FactForm()
  #   return render(request, 'blog/fact_edit.html', {'form': form})   
-    dyk=spuriousFact(NumberFact,3,measure=measure, seed=None)
+    dyk=spuriousFact(NumberFact,3,measure=measure)
     return render(request, 'blog/quiz.html', {'quiz':quiz, 'quote': choice(quotes), "dyk":dyk})
 
 def itabn(request):
