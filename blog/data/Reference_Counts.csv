@@ -30,7 +30,7 @@
 30,concert-goers at Rod Stewart New Year's Eve concert (Rio 1994),4.2,million,6,people,count,https://en.wikipedia.org/wiki/List_of_largest_concerts
 31,Automatic Teller Machines (ATM's) in the world,3,million,6,ATM's,count,http://www.statisticbrain.com/atm-machine-statistics/
 32,rivets in the Eiffel Tower,2.5,million,6,rivets,count,http://www.statisticbrain.com/fun-facts/
-33,words in the St James Bible,783.137,thousand,3,words,count,http://www.billingsfirst.org/clientimages/19106/worship-page/bible-facts/bible-facts.pdf
+33,words in the King James Bible,783.137,thousand,3,words,count,http://www.billingsfirst.org/clientimages/19106/worship-page/bible-facts/bible-facts.pdf
 34,words in Tolstoy`s War and Peace,564,thousand,3,words,count,Thanks to Wikipedia
 35,grains of sugar in a cup,220,thousand,3,grains,count,Thanks to www.vendian.org
 36,strands on a head of hair,120,thousand,3,strands,count,Thanks to Wikipedia
@@ -87,3 +87,12 @@
 87,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
 88,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html
 89,stories in the Canterbury Tales by Chaucer,24,unit,0,stories,count,https://en.wikipedia.org/wiki/The_Canterbury_Tales
+,babies born every day,370,thousand,3,babies,count,http://www.answers.com/Q/How_many_babies_are_born_every_day_in_the_world
+,babies born every year,134,million,6,babies,count,http://www.answers.com/Q/How_many_babies_are_born_every_day_in_the_world
+,active personnel in the US Armed Forces,1.3013,million,6,personnel,count,https://en.wikipedia.org/wiki/United_States_Armed_Forces
+,active personnel in the Chinese Armed Forces,2.3,million,6,personnel,count,https://en.wikipedia.org/wiki/People%27s_Liberation_Army
+,active personnel in the Russian Armed Forces,771,thousand,3,personnel,count,https://en.wikipedia.org/wiki/Russian_Armed_Forces
+,active personnel in the Indian Armed Forces,1.325,million,6,personnel,count,https://en.wikipedia.org/wiki/Indian_Armed_Forces
+,active personnel in the North Korean Armed Forces,1.19,million,6,personnel,count,https://en.wikipedia.org/wiki/Korean_People%27s_Army
+,active personnel in the Pakistan Armed Forces,617,thousand,3,personnel,count,https://en.wikipedia.org/wiki/Pakistan_Armed_Forces
+,active personnel in the South Korean Armed Forces,630,thousand,3,personnel,count,https://en.wikipedia.org/wiki/Republic_of_Korea_Armed_Forces
