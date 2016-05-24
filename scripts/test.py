@@ -154,8 +154,8 @@ def run7():
 	biggest = biggestNumberFact(bestComparisons)
 	print(">>>", biggest.render)
 
-def run9():
-	measure=("mass")
+def run():
+	measure=("extent")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	magnitude = rf.magnitude
@@ -165,11 +165,29 @@ def run9():
 #	for item in test:
 #		print(item.render, item.magnitude, item.value)
 
-#	print(bracketNumber(magnitude, scale, measure))
-	for i in range(0,24,3):
-		print(bracketNumber(NumberFact, "1.25", i, "count"))
-		print(bracketNumber(NumberFact, "12.5", i, "count"))
-		print(bracketNumber(NumberFact, "125", i, "count"))
+#	print(bracketNumber(NumberFact, "481", 3, "extent"))
+#	for i in range(-3,24,3):
+#		print(i, bracketNumber(NumberFact, "1.25", i, measure))
+#		print(i+1,bracketNumber(NumberFact, "12.5", i, measure))
+#		print(i+2,bracketNumber(NumberFact, "125", i, measure))
+
+#	for i in range(-3,24,3):
+#		print(i, bracketNumber(NumberFact, "1.0", i, measure))
+#		print(i+1,bracketNumber(NumberFact, "10.0", i, measure))
+#		print(i+2,bracketNumber(NumberFact, "100.0", i, measure))
+
+	for i in range(-3,18,3):
+		print(i, bracketNumber(NumberFact, "1.0", i, measure))
+		print(i,bracketNumber(NumberFact, "2.0", i, measure))
+		print(i,bracketNumber(NumberFact, "4.0", i, measure))
+		print(i,bracketNumber(NumberFact, "8.0", i, measure))
+		print(i,bracketNumber(NumberFact, "16.0", i, measure))
+		print(i,bracketNumber(NumberFact, "32.0", i, measure))
+		print(i,bracketNumber(NumberFact, "64.0", i, measure))
+		print(i,bracketNumber(NumberFact, "125.0", i, measure))
+		print(i,bracketNumber(NumberFact, "250.0", i, measure))
+		print(i,bracketNumber(NumberFact, "500.0", i, measure))
+
 
 def run10():
 	klass = NumberFact
@@ -206,7 +224,7 @@ def run13():
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	print(rf.render_folk)
 
-def run():
+def run14():
 	target = "olympic"
 	nf = NumberFact.objects.filter(title__icontains=target)
 	for f in nf:

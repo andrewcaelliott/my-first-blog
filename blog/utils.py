@@ -330,25 +330,58 @@ def tests():
 
 #tests()
 
+def measure_filter_upper(klass, magnitude_adj, scale_adj, measure):
+    if (scale_adj<0):
+        magnitude_adj = magnitude_adj * 10** scale_adj
+        scale_adj = 0
+    truncate_measure = measure[:measure.find(".")]
+    matches = []
+    match1 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure__startswith=measure).order_by("value")
+    for fact in match1:
+        matches.append(fact)
+    match2 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure=truncate_measure).order_by("value")
+    for fact in match2:
+        matches.append(fact)
+#    print(sorted(matches, key = lambda k: k.value))
+    return sorted(matches, key = lambda k: k.value)
+
+
+def measure_filter_lower(klass, magnitude_adj, scale_adj, measure):
+    if (scale_adj<0):
+        magnitude_adj = magnitude_adj * 10** scale_adj
+        scale_adj = 0
+    truncate_measure = measure[:measure.find(".")]
+    matches = []
+    match1 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure__startswith=measure).order_by("value")
+    for fact in match1:
+        matches.append(fact)
+    match2 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure=truncate_measure).order_by("value")
+    for fact in match2:
+        matches.append(fact)
+    return sorted(matches, key = lambda k: k.value)
+
+
+
 def bracketNumber(klass, magnitude, scale, measure):
     #tolerance=10000
     response = []
 #   nf_gt = NumberFact.objects.filter(value__gt=num(magnitude)*1, value__lt=num(magnitude)*1*(1+tolerance), scale=scale-0, measure=measure).order_by("value")
-    nf_gt = klass.objects.filter(value__gt=num(magnitude)*1, scale=scale-0, measure=measure).order_by("value")
+    nf_gt = measure_filter_upper(klass, num(magnitude)*1, scale-0, measure)
     if len(nf_gt)==0:
-        nf_gt = klass.objects.filter(value__gt=num(magnitude)/1000, scale=scale+3, measure=measure).order_by("value")
+        nf_gt = measure_filter_upper(klass, num(magnitude)/1000, scale+3, measure)
     if len(nf_gt)==0:
-        nf_gt = klass.objects.filter(value__gt=num(magnitude)/1000000, scale=scale+6, measure=measure).order_by("value")
+        nf_gt = measure_filter_upper(klass, num(magnitude)/1000000, scale+6, measure)
     if len(nf_gt)==0:
-        nf_gt = klass.objects.filter(value__gt=num(magnitude)/1000000000, scale=scale+9, measure=measure).order_by("value")
+        nf_gt = measure_filter_upper(klass, num(magnitude)/1000000000, scale+9, measure)
 
-    nf_lt = klass.objects.filter(value__lt=num(magnitude)*1, scale=scale-0, measure=measure).order_by("-value")
+    nf_lt = measure_filter_lower(klass, num(magnitude)*1, scale-0, measure)
     if len(nf_lt)==0:
-        nf_lt = klass.objects.filter(value__lt=num(magnitude)*1000, scale=scale-3, measure=measure).order_by("-value")
+        nf_lt = measure_filter_lower(klass, num(magnitude)*1000, scale-3, measure)
     if len(nf_lt)==0:
-        nf_lt = klass.objects.filter(value__lt=num(magnitude)*1000000, scale=scale-6, measure=measure).order_by("-value")
+        nf_lt = measure_filter_lower(klass, num(magnitude)*1000000, scale-6, measure)
     if len(nf_lt)==0:
-        nf_lt = klass.objects.filter(value__lt=num(magnitude)*1000000000, scale=scale-9, measure=measure).order_by("-value")
+        nf_lt = measure_filter_lower(klass, num(magnitude)*1000000000, scale-9, measure)
+
     if len(nf_gt)==0:
         response.append("No useful upper bracket on file")
     else:           
@@ -356,7 +389,7 @@ def bracketNumber(klass, magnitude, scale, measure):
     if len(nf_lt)==0:
         response.append("No useful lower bracket on file")
     else:           
-        response.append(" ".join([nf_lt[0].render_folk_long]))
+        response.append(" ".join([nf_lt[-1].render_folk_long]))
     return response
 
 
