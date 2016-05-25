@@ -48,6 +48,8 @@ def num(s):
     return float(s)
 
 def getMultiple(scale):
+    if scale == -3:
+        return "thousandth"
     if scale == 0:
         return "unit"
     elif scale == 3:
@@ -92,6 +94,8 @@ def getScaleFactor(multiple):
         scale = 3
     elif multiple == "U":
         scale = 0
+    elif multiple == "m":
+        scale = -3
     else:
         scale = 0
     return scale, 10**scale
@@ -150,6 +154,7 @@ std_units = {
 }
 
 std_multiples = {
+    "thousandth":"m",
     "thousand":"k",
     "thou":"k",
     "grand":"k",
@@ -165,7 +170,7 @@ std_multiples = {
 }
 
 def succ(multiple):
-    mults={"U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
+    mults={"m":"U", "U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
         "E":"Z", "Z":"Y", "Y":"10^27", "10^27":"10^30", "10^30":"10^33", "10^33":"10^36", "10^36":"10^39", "10^39":"10^42"}
     if multiple in mults:
         return mults[multiple]
@@ -173,7 +178,7 @@ def succ(multiple):
         return None
 
 def prec(multiple):
-    mults={"U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
+    mults={"m":"U", "U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
         "E":"Z", "Z":"Y", "Y":"10^27", "10^27":"10^30", "10^30":"10^33", "10^33":"10^36", "10^36":"10^39", "10^39":"10^42"}
     if multiple in mults:
         return mults[multiple]
@@ -336,13 +341,12 @@ def measure_filter_upper(klass, magnitude_adj, scale_adj, measure):
         scale_adj = 0
     truncate_measure = measure[:measure.find(".")]
     matches = []
-    match1 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure__startswith=measure).order_by("value")
+    match1 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure__startswith=measure)
     for fact in match1:
         matches.append(fact)
-    match2 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure=truncate_measure).order_by("value")
+    match2 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure=truncate_measure)
     for fact in match2:
         matches.append(fact)
-#    print(sorted(matches, key = lambda k: k.value))
     return sorted(matches, key = lambda k: k.value)
 
 
@@ -352,10 +356,10 @@ def measure_filter_lower(klass, magnitude_adj, scale_adj, measure):
         scale_adj = 0
     truncate_measure = measure[:measure.find(".")]
     matches = []
-    match1 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure__startswith=measure).order_by("value")
+    match1 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure__startswith=measure)
     for fact in match1:
         matches.append(fact)
-    match2 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure=truncate_measure).order_by("value")
+    match2 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure=truncate_measure)
     for fact in match2:
         matches.append(fact)
     return sorted(matches, key = lambda k: k.value)

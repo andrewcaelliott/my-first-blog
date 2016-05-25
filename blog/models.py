@@ -185,6 +185,12 @@ class NumberFact(models.Model):
             unit = newnumber.unit
             mag = str(sigfigs(num(self.magnitude)*1000,4))
 
+        if measure.find("extent")>=0 and self.scale<0 and num(self.magnitude)<1000:
+            newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude),4)), scale=self.scale+3, measure=measure, unit="mm", multiple=getMultiple(self.scale+3))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
         if measure=="mass" and self.scale==0 and num(self.magnitude)<1:
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), scale=self.scale, measure=measure, unit="g", multiple=getMultiple(self.scale))
             mult = newnumber.multiple
@@ -207,7 +213,7 @@ class NumberFact(models.Model):
             else:
                 unit = " "+unit
             response = "".join([mag, mult, unit])
-            response = response.replace("billion", "bn").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
+            response = response.replace("billion ", "bn ").replace("illion ", " ").replace("thousand ", "th ").replace("Population", "Pop.")
         else:
             if unit == "$":
                 response = "".join([unit, mag, mult])
@@ -220,7 +226,7 @@ class NumberFact(models.Model):
         while value > 1000:
             value = value / 1000
             self.scale = self.scale + 3
-        while value < 1 and self.scale>=3:
+        while value < 1 and self.scale>=0:
             value = value * 1000
             self.scale = self.scale - 3
         self.multiple = MULTIPLE_INVERSE[self.scale]
@@ -236,7 +242,7 @@ class NumberFact(models.Model):
     def _display_folk(self):
         return "".join([self.title," (",
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
-            ")" ]).replace("Population", "Pop.").replace("illion", "").replace("thousand", "th")
+            ")" ]).replace("Population", "Pop.").replace("illion ", " ").replace("thousand ", "th ")
 
     def _display_folk_long(self):
         return "".join([self.title," (",

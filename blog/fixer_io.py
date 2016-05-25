@@ -5,7 +5,9 @@ from .PyHttpCall import callHttpGET
 
 def getUSDConversionFactor(currency):
     response = callHttpGET("http://api.fixer.io/","latest",{"symbols":currency,"base":"USD","callback":"?"}).text
-    jsonResponse = json.loads(response[1:-1])
+    open_b = response.find("{")
+    close_b = response.rfind("}")
+    jsonResponse = json.loads(response[open_b:close_b+1])
     return jsonResponse["rates"][currency]
 
 def convertToUSD(amount, currency):    
