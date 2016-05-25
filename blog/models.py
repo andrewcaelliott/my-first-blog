@@ -197,6 +197,12 @@ class NumberFact(models.Model):
             unit = newnumber.unit
             mag = str(sigfigs(num(self.magnitude)*1000,4))
 
+        if measure.find("mass")>=0 and self.scale<0 and num(self.magnitude)<1000:
+            newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude),4)), scale=self.scale+3, measure=measure, unit="g", multiple=getMultiple(self.scale+3))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
         if measure == "amount" and unit.find("USD")>=0:
             unit = "$"
 

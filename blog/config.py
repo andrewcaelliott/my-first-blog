@@ -227,6 +227,14 @@ quotes = (
         '"Without numbers, we can understand nothing and know nothing" Philolaus',
         '"Numbers constitute the only universal language."  Nathanael West',
         '"The less one knows about the universe, the easier it is to explain." Leon Brunschvicg',
+        '"The book of nature is written in the language of Mathematics." Galileo',
+        '"The computers are not replacing mathematicians; they are breeding them." Martin Gardner',
+        '"Mathematics is not only real, but it is the only reality." Martin Gardner',
+        '"Round numbers are always false." Samuel Johnson',
+        '"You have to be odd to be number one." Dr. Seuss',
+        '"When you can measure what you are speaking about, and express it in numbers, you know something about it" Lord Kelvin',
+        '"You don\'t need people’s opinion on a fact. You might as well have a poll asking: ‘Which number is bigger, 15 or 5?’" John Oliver',
+
          
     )        
 
@@ -317,6 +325,7 @@ MULTIPLE_CHOICES = (
 )
 
 MULTIPLE_INVERSE = {
+    -3:'m',
     0:'U',
     3:'k',
     6:'M',
