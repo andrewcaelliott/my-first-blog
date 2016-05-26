@@ -43,27 +43,28 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 	    <div class="page-header">
-	        <!--a href="{% url 'post_new' %}" class="top-menu" title="new post"><span class="glyphicon glyphicon-plus"></span></a>
-	        <a href="{% url 'fact_new' %}" class="top-menu" title="new fact"><span class="glyphicon glyphicon-star"></span></a-->
-		<!--a href="" class="top-menu" title="Is That A Big Number is here to put numbers in context. Pick any number and ask ..."><span class="glyphicon glyphicon-info-sign"></span></a-->
-	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a><span class="social">
+	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a>
+	        	<span class="social">
 				<a href="https://twitter.com/itabn_andrew" class="twitter-follow-button top-menu" data-show-count="false" data-show-screen-name="false">Follow @itabn_andrew</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>		
 				<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="... #IsThatABigNumber?" data-via="itabn_andrew" data-hashtags="NumbersCount">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	    			<span class="fb-like" data-href="https://www.facebook.com/Is-that-a-big-number-1511565142478387/" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span></span></h1>
-	        <!--p><a href="/">Nuts about numbers? Quizzical about Quantities? Mulling over Measurements?</a></p-->
+	    			<span class="fb-like" data-href="https://www.facebook.com/Is-that-a-big-number-1511565142478387/" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+	    		</span>
+	    	</h1>
 		<h4><a href="/">{% block quote %}{% endblock %}</a></h4>
-	        <!--div class = "share row">
-		        <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12"-->
-		        <div class="widget">
-			        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a> - <a href ="/quiz/" title="Test your number sense">Quiz</a> - <a href ="/ratio/" title="See examples of numbers with a given ratio">Ratios</a></h3>
-	    		</div>
-		        <div class="dyk">
+	        <div class="widget">
+		        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a> - <a href ="/quiz/" title="Test your number sense">Quiz</a> - <a href ="/ratio/" title="See examples of numbers with a given ratio">Ratios</a></h3>
+    		</div>
+		<div class="row">
+                    <div class="widget col-lg-5 col-md-5 col-sm-12 col-xs-12">
+		        <h5><a href ="/nitn/" title="Notable numbers we have spotted recently">Numbers in the News</a> - <a href ="/ftlon/" title="Number-led writings for the truly geeky">For the Love of Numbers</a> - <a href ="/ggb/" title="Stop worrying and learn to love big numbers">Getting to Grips with Big</a> - <a href ="/lmk/" title="Prominent and memorable numbers">Landmark Numbers</a></h5>
+    			</div>
+		        <div class="dyk col-lg-7 col-md-7 col-sm-12 col-xs-12">
 			       	<p class="social"><strong>Did you know: </strong><a href="{{ dyk.fact1_link }}">{{ dyk.fact1 }}</a> <em>{{ dyk.comparison }}</em> <a href="{{ dyk.fact2_link }}">{{ dyk.fact2 }}</a>
 				<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ dyk.fact1 }} {{ dyk.comparison }} {{ dyk.fact2 }} #IsThatABigNumber? #RandomComparison">Tweet</a></p>
 	    		</div>
-		        <!--div class="dyk widget col-lg-6 col-md-6 col-sm-6 col-xs-12"-->
+	    	    </div>	
 		</div>
 	    </div>
 	    <section class="content container_fluid">
