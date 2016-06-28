@@ -186,3 +186,39 @@ form.quiz-form{
 .post h1 a, .post h1 a:visited {
     color: #000000;
 }
+
+
+
+
+/*
+.content .grid-item.doubled {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 48%;
+}
+*/
+.content .grid-item {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 25%;
+}
+
+
+.content .grid-item h1 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.content .grid-item > div {
+    background-color: rgba(72,125,24,0.1);
+    padding: 1rem;
+}
+
+.content .grid-item label {
+    width: 7em;
+}
+
+.content .grid-item input, .content .grid-item select {
+    width: 45%;
+}
+
