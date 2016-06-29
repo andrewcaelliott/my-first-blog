@@ -65,7 +65,7 @@ def blog(category, request):
         "landmark":"Prominent and memorable numbers show the way like landmarks on the horizon"
     }
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/blog.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk})
+    return render(request, 'blog/blog2.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk})
 
 def blog_flton(request):
     return blog("passion", request)
