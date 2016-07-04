@@ -40,11 +40,12 @@ h1, h2, h3, h4, h5 {
     color: white;
     text-decoration: none;
 }
-/*
-.dyk {
-    height: 30px;
+
+.dyk, .dyk a {
+    background-color: #ff9400;
+    color: #403030;
 }
-*/
+
 
 .share {
     height: 3rem;
@@ -75,7 +76,7 @@ form.choice {
 
 .content {
 /*    padding: 0 1rem; */
-    padding: 0 0;
+    padding: 0 1rem;
 }
 
 .content h1 a, .content h2, .content h3 a , .content h4 a {
@@ -85,6 +86,17 @@ form.choice {
 div.content.container{
     xwidth:800px;
 }
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row div {
+    padding-left: 0;
+    padding-right:0;
+}
+
 
 .content .widget {
     margin-bottom: 1rem;
@@ -101,7 +113,7 @@ div.content.container{
 }
 
 .content img.constrained-2{
-    height: 250px;
+    height: 125px;
 }
 
 .content .widget h1 {
@@ -144,11 +156,11 @@ div.content.container{
 }
 
 .content .widget input, .content .widget select {
-    width: 45%;
+    width: 75%;
 }
 
 form.quiz-form{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .quiz h1{
@@ -224,19 +236,16 @@ form.quiz-form{
 }
 
 
-
-
-
 .content .grid-item-doubled {
     margin-bottom: 1rem;
     padding-right: 1rem;
-    width: 660px;
+    width: 340px;
 }
 
 .content .grid-item {
     margin-bottom: 1rem;
     padding-right: 1rem;
-    width: 330px;
+    width: 340px;
 }
 
 .content .grid-item h1,.content .grid-item-doubled h1 {
@@ -256,3 +265,73 @@ form.quiz-form{
 }
 
 
+@media only screen and (min-width: 600px) {
+    /* For tablets and up: */
+
+    .page-header {
+         background-color: #ff9400;
+         margin-top: 0;
+        padding: 10px 20px 15px 40px;
+    }
+
+
+     .content {
+        padding: 0 1rem;
+     }
+
+    .content .grid-item-doubled {
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+        width: 660px;
+    }
+
+    .content .grid-item {
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+        width: 330px;
+    }
+
+
+
+    .content img.constrained-2{
+        height: 250px;
+    }
+
+    .quiz{
+        margin-right:10px;
+    }
+
+
+    form.quiz-form{
+        font-size: 24px;
+    }
+
+    .quiz h1{
+            font-size: 36px
+    }
+
+    .quiz h2{
+            font-size: 30px
+    }
+
+    .comparison p {
+        font-size: 14px;
+    }
+
+    .row {
+        padding-right: 10px;
+    }
+
+
+    .row div {
+        padding-top: 10px;
+        padding-left: 0px;
+    }
+
+    .content .widget input, .content .widget select {
+        width: 40%;
+    }
+
+
+
+}
