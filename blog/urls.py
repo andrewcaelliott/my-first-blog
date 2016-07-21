@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^nitn/$', views.blog_nitn, name='blog_nitn'),
     url(r'^ggb/$', views.blog_ggb, name='blog_ggb'),
     url(r'^lmk/$', views.blog_lmk, name='blog_lmk'),
+    url(r'^sponsor/$', views.article_sponsor, name='article_sponsor'),
     url(r'^itabn/$', views.itabn, name='itabn'),
     url(r'^itabn/answer/post$', views.query_answer_post, name='query_answer_post'),
     url(r'^itabn/answer$', views.query_answer_get, name='query_answer_get'),

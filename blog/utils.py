@@ -1,5 +1,7 @@
+import os
 from random import sample,seed,randint,choice
 from pint import UnitRegistry,UndefinedUnitError
+from mysite.settings import BASE_DIR
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 
@@ -662,3 +664,11 @@ def neatFacts(klass, selectedFact):
             neat = neat+[{"fact1":rf, "comparison":comparison, "fact2":fact, "fact2render":fact.render2, "ratio":raw_ratio}]
     neat = sorted(neat, key = lambda k: k['ratio'])
     return neat
+
+def get_article(article_name):
+    #print(BASE_DIR)
+    filen = os.path.join(BASE_DIR,"blog","static","md",article_name)
+    print(filen)
+    with open (filen, "r") as artfile:
+        content=artfile.read()        
+    return content

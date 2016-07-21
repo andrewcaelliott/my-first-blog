@@ -136,6 +136,12 @@ div.content.container{
     padding: 1rem;
 }
 
+.message  {
+    background-color: rgba(72,125,24,0.1);
+    padding: 1rem;
+}
+
+
 .content .quiz {
     background-color: rgba(72,125,24,0.1);
     padding: 1rem;
@@ -326,6 +332,17 @@ form.quiz-form{
     .row div {
         padding-top: 10px;
         padding-left: 0px;
+    }
+
+
+    .row div .message {
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+
+    .content .widget.article {
+        padding-left: 25%;
+        padding-right: 25%;
     }
 
     .content .widget input, .content .widget select {

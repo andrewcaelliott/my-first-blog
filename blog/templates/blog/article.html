@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ article_title }}{% endblock %}
+
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+{% load md2 %}
+        <div class="row widget article">
+            <div >{{ content|markdown }}</div>
+        </div>
+{% endblock %}

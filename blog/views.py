@@ -23,6 +23,7 @@ from .config import quip_lists,quotes
 from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
+from .utils import get_article
 from .utils import parseBigNumber, randomFact
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
@@ -78,6 +79,14 @@ def blog_ggb(request):
 
 def blog_lmk(request):
     return blog("landmark", request)
+
+def article(article_name, title, subtitle, request):
+    content=get_article(article_name)
+    dyk=spuriousFact(NumberFact,3)
+    return render(request, 'blog/article.html', {'quote': choice(quotes), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
+
+def article_sponsor(request):
+    return article("ITABN-Sponsors.md", "Sponsorship Campaign", "Help IsThatABigNumber grow and promote numeracy more widely", request)
 
 
 def ratio(request):
