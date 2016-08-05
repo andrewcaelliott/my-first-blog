@@ -457,7 +457,7 @@ def fact_new(request):
     return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk})   
 
 def link_redirect(request, link):
-    print(link, "==>", resolve_link(link))
+#    print(link, "==>", resolve_link(link))
     return HttpResponseRedirect(resolve_link(link))
 
 

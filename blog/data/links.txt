@@ -1,2 +1,3 @@
-googl|http://www.google.com
-home|http://www.IsThatABigNumber.com/quiz
+googl|http://www.google.com/
+home|http://www.IsThatABigNumber.com/home/
+quiz|http://www.IsThatABigNumber.com/quiz/

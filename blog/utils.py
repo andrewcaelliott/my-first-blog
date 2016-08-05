@@ -681,7 +681,7 @@ def load_link_redirects(fileName, encoding="UTF-8"):
     links = {}
     for line in lines[0:]:
         try:
-            key, value = line.split("|")
+            key, value = line.strip().split("|")
             links[key]= value
         except:
             print("could not parse line:"+line)
@@ -691,13 +691,13 @@ def load_link_redirects(fileName, encoding="UTF-8"):
 def resolve_link(key):
     global links
     if links==None:
-        links = load_link_redirects("./blog/data/links.txt")
-    print("links")
-    print(links)
+        links = load_link_redirects(os.path.join(BASE_DIR, "blog/data/links.txt"))
+#    print("links")
+#    print(links)
     try:
         return links[key]
     except:
-        links = load_link_redirects("./blog/data/links.txt")
+        links = load_link_redirects(os.path.join(BASE_DIR, "blog/data/links.txt"))
         try:
             return links[key]
         except:
