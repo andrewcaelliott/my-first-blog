@@ -24,10 +24,10 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import get_article
-from .utils import parseBigNumber, randomFact
+from .utils import parseBigNumber, randomFact, resolve_link
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
-
+from django.http import HttpResponseRedirect
 
 def home(request):
     freeForm = FreeForm()
@@ -455,3 +455,9 @@ def fact_new(request):
         form = FactForm()
     dyk=spuriousFact(NumberFact,3)
     return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk})   
+
+def link_redirect(request, link):
+    print(link, "==>", resolve_link(link))
+    return HttpResponseRedirect(resolve_link(link))
+
+

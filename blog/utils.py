@@ -8,6 +8,8 @@ Q_=ureg.Quantity
 from math import log10
 import re
 
+links = None
+
 def sigfigs(x,n):
     l10 = 1+round(log10(x),0)
     x = round(x, int(n-l10))
@@ -672,3 +674,31 @@ def get_article(article_name):
     with open (filen, "r") as artfile:
         content=artfile.read()        
     return content
+
+def load_link_redirects(fileName, encoding="UTF-8"):
+    inFile= open(fileName, encoding=encoding)
+    lines = inFile.readlines()
+    links = {}
+    for line in lines[0:]:
+        try:
+            key, value = line.split("|")
+            links[key]= value
+        except:
+            print("could not parse line:"+line)
+    inFile.close()
+    return links
+
+def resolve_link(key):
+    global links
+    if links==None:
+        links = load_link_redirects("./blog/data/links.txt")
+    print("links")
+    print(links)
+    try:
+        return links[key]
+    except:
+        links = load_link_redirects("./blog/data/links.txt")
+        try:
+            return links[key]
+        except:
+            return "http://IsThatABigNumber.com/sponsor"

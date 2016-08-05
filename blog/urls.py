@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^quiz/$', views.quiz, name='quiz'),
     url(r'^ratio/$', views.ratio, name='ratio'),
     url(r'^ratio/answer/$', views.ratio, name='ratio'),
+    url(r'^link/(?P<link>.*)/$', views.link_redirect, name="link-redirect"),
 ]
