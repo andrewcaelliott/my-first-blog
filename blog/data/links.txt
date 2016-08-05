@@ -1,0 +1,2 @@
+googl|http://www.google.com
+home|http://www.IsThatABigNumber.com/quiz
