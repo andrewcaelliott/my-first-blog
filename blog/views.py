@@ -24,7 +24,7 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import get_article
-from .utils import parseBigNumber, randomFact, resolve_link
+from .utils import parseBigNumber, randomFact, resolve_link, poke_link, save_links
 from django.utils.text import slugify
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
@@ -164,6 +164,8 @@ def quiz_from_seed(seed, params):
 
 def quiz(request):
     params = request.POST
+    if len(params)==0:
+        params = request.GET
     abs_uri = request.build_absolute_uri()            
     protocol, uri = abs_uri.split("://")
     site = protocol+"://"+uri.split("/")[0]+"/"
@@ -172,9 +174,13 @@ def quiz(request):
     except (AttributeError,TypeError):
         cycle="initial"
     try:
-        force_reveal=request.GET.get("reveal")=="true"
+        force_reveal=params.get("reveal")=="true"
     except (AttributeError,TypeError):
         force_reveal=False
+    try:
+        saveas=params.get("saveas")
+    except (AttributeError,TypeError):
+        saveas=None
 
     try:
         spec=request.GET.get("spec")
@@ -219,6 +225,10 @@ def quiz(request):
         else:
             quiz["question"]="Which of these has the least mass?"
     permalink = site+"quiz/?spec="+spec
+    if force_reveal:
+        permalink+="&reveal=true"
+    if saveas:
+        poke_link(permalink, saveas)
     quiz["spec"]=spec
     if quiz["comparison"]=="biggest":
         answer = biggestNumberFact(quiz["options"])
@@ -516,5 +526,9 @@ def fact_new(request):
 def link_redirect(request, link):
     print(link, "==>", resolve_link(link))
     return HttpResponseRedirect(resolve_link(link))
+
+def links_save(request):
+    filename = save_links()
+    return JsonResponse({"links saved":filename})
 
 

@@ -688,6 +688,12 @@ def load_link_redirects(fileName, encoding="UTF-8"):
     inFile.close()
     return links
 
+def save_link_redirects(links, fileName, encoding="UTF-8"):
+    outFile= open(fileName, "w", encoding=encoding)
+    for key in links.keys():
+        line = key+"|"+links[key]+"\n"
+        outFile.write(line)
+
 def resolve_link(key):
     global links
     if links==None:
@@ -702,3 +708,18 @@ def resolve_link(key):
             return links[key]
         except:
             return "http://IsThatABigNumber.com/sponsor"
+
+def save_links():
+    global links
+    if links!=None:
+        filename = os.path.join(BASE_DIR, "blog/data/links.txt")
+        save_link_redirects(links, filename)
+        return filename
+    else: 
+        return "n/a"
+
+def poke_link(link, key):
+    global links
+    if links==None:
+        links = load_link_redirects(os.path.join(BASE_DIR, "blog/data/links.txt"))
+    links[key]=link

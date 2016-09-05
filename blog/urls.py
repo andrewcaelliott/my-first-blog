@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^ratio/$', views.ratio, name='ratio'),
     url(r'^ratio/answer/$', views.ratio, name='ratio'),
     url(r'^link/(?P<link>.*)/$', views.link_redirect, name="link-redirect"),
+    url(r'^links/save/$', views.links_save, name="links-save"),
 ]
