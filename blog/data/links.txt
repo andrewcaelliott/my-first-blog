@@ -1,3 +1,5 @@
 googl|http://www.google.com/
 home|http://www.IsThatABigNumber.com/home/
 quiz|http://www.IsThatABigNumber.com/quiz/
+quiz1a|http://localhost:8000/quiz/?spec=extent,biggest,length-of-i-90-highway-from-boston-to-seattle,length-of-the-beijing-hangzhou-grand-canal,length-of-the-tigris-river,width-of-australia&reveal=true
+quiz1q|http://localhost:8000/quiz/?spec=extent,biggest,length-of-i-90-highway-from-boston-to-seattle,length-of-the-beijing-hangzhou-grand-canal,length-of-the-tigris-river,width-of-australia

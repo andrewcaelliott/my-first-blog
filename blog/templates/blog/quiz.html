@@ -33,13 +33,14 @@
         	<input type="hidden" value="random" name="measure">
             <button type="submit" class="save btn btn-default">Surprise Me</button>
         </form>
-        <h2>{{ quiz.question }}</h2>
+        <h2>{{ quiz.question }} <a href = {{permalink}}>...</a></h2>
         <h2>{{ quiz.assessment }}</h2>
                 <!--h3 title="{{ quiz.hint }}">Hint</h3-->
         <form method="POST" class="quiz-form" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="answered" name="cycle">
         	<input type="hidden" value="{{ quiz.measure }}" name="measure">
-        	<input type="hidden" value="{{ quiz.seed }}" name="seed">
+            <!--input type="hidden" value="{{ quiz.seed }}" name="seed"-->
+            <input type="hidden" value="{{ quiz.spec }}" name="spec">
             {% for option in quiz.options %}
                 {% if quiz.cycle != "correct" %}
         		<p><input type="radio" name="option" class="option" value="{{ option.title }}"> {{ option.title }} <a title="Cheat?" href="{{ option.link }}">...</a></p>

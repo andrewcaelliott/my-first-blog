@@ -25,6 +25,7 @@ from .config import conversion_quip_lists
 from .utils import num
 from .utils import get_article
 from .utils import parseBigNumber, randomFact, resolve_link
+from django.utils.text import slugify
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
@@ -114,23 +115,33 @@ def ratio(request):
     dyk=spuriousFact(NumberFact,3)
     return render(request, 'blog/ratio.html', {'form': freeForm, 'ratio_str': ratio_str, 'ratio':ratio, 'ratio_pairs':ratio_pairs, 'quote': choice(quotes), "dyk":dyk})
 
-def quiz(request):
-    params = request.POST
-    try:
-        seed=num(params.get("seed"))
-    except (AttributeError,TypeError):
-        set_seed()
-        seed = randint(0,10000000)
-    if seed == None:
-        set_seed()
-        seed = randint(0,10000000)
-    set_seed(seed)    
-    try:
-        cycle=params.get("cycle")
-    except (AttributeError,TypeError):
-        cycle="initial"
+def make_spec(bestComparisons, comparison, measure):
+    fact_slugs=[]
+    for fact in bestComparisons:
+        fact_slugs = fact_slugs+[slugify(fact.title)]
+    return ",".join([measure, comparison]+fact_slugs)
 
+def quiz_from_spec(spec):
+    spec_list= spec.split(",")
+    measure = spec_list[0]
+    comparison = spec_list[1]
+    option_slugs = spec_list[2:6]
+    options = []
+    for slug in option_slugs:
+        options = options+[get_object_or_404(NumberFact, permlink=slug)]
+    quiz = {"options":options, "comparison":comparison, "measure":measure}
+    return quiz
+
+def quiz_from_seed(seed, params):
+    quiz={}
+    set_seed(seed)    
     askbiggest = randint(0,1)==0
+    print("biggest?",askbiggest)
+    if askbiggest:
+        quiz["comparison"]="biggest"
+    else:
+        quiz["comparison"] = "smallest"
+    print(quiz["comparison"])
     try:
         measure=params.get("measure")
     except (AttributeError,TypeError):
@@ -138,8 +149,54 @@ def quiz(request):
     if measure==None or measure == "random":
         measure=choice(["extent", "count", "amount", "duration", "mass"])
 
-    quiz={}
-    if askbiggest:
+    quiz["measure"]=measure
+    quiz["seed"] = seed
+    rf = randomFact(NumberFact, measure, rseed=seed)
+    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+    while len(bestComparisons)<4:
+        seed = randint(0,10000000)
+        rf = randomFact(NumberFact, measure, rseed=seed)
+        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+    quiz["hint"] = rf.render
+    quiz["options"]=bestComparisons
+    return quiz
+    
+
+def quiz(request):
+    params = request.POST
+    abs_uri = request.build_absolute_uri()            
+    protocol, uri = abs_uri.split("://")
+    site = protocol+"://"+uri.split("/")[0]+"/"
+    try:
+        cycle=params.get("cycle")
+    except (AttributeError,TypeError):
+        cycle="initial"
+    try:
+        force_reveal=request.GET.get("reveal")=="true"
+    except (AttributeError,TypeError):
+        force_reveal=False
+
+    try:
+        spec=request.GET.get("spec")
+        if spec==None:
+            spec=params.get("spec")
+        quiz = quiz_from_spec(spec)
+    except (AttributeError):
+        spec = None
+    if spec == None:
+        try:
+            seed=num(params.get("seed"))
+        except (AttributeError,TypeError):
+            set_seed()
+            seed = randint(0,10000000)
+        if seed == None:
+            set_seed()
+            seed = randint(0,10000000)
+        quiz = quiz_from_seed(seed, params)
+        spec = make_spec(quiz["options"], quiz["comparison"], quiz["measure"])
+
+    measure = quiz["measure"]
+    if quiz["comparison"]=="biggest":
         if measure=="extent":
             quiz["question"]="Which of these is the biggest?"
         elif measure=="count":
@@ -161,20 +218,12 @@ def quiz(request):
             quiz["question"]="Which of these is the shortest period of time?"
         else:
             quiz["question"]="Which of these has the least mass?"
-    quiz["measure"]=measure
-    quiz["seed"] = seed
-    rf = randomFact(NumberFact, measure, rseed=seed)
-    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
-    while len(bestComparisons)<4:
-        seed = randint(0,10000000)
-        rf = randomFact(NumberFact, measure, rseed=seed)
-        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
-    quiz["hint"] = rf.render
-    quiz["options"]=bestComparisons
-    if askbiggest:
-        answer = biggestNumberFact(bestComparisons)
+    permalink = site+"quiz/?spec="+spec
+    quiz["spec"]=spec
+    if quiz["comparison"]=="biggest":
+        answer = biggestNumberFact(quiz["options"])
     else: 
-        answer = smallestNumberFact(bestComparisons)
+        answer = smallestNumberFact(quiz["options"])
     quiz["answer"]=answer.title
     if request.method == "POST":
         response = request.POST
@@ -182,18 +231,26 @@ def quiz(request):
             quiz["assessment"] = str(response.get("option"))+" is the correct answer: Well done!"
             #quiz["question"]=""
             reveal = []
-            for option in bestComparisons:
+            for option in quiz["options"]:
                 reveal.append({"title":option.render_folk, "link":option.link})
             quiz["options"]=reveal
             quiz["cycle"]="correct"
         elif cycle=="answered":
             quiz["assessment"] = str(response.get("option"))+" is not correct. Try again."
+    if request.method == "GET":
+        if force_reveal:
+            reveal = []
+            for option in quiz["options"]:
+                reveal.append({"title":option.render_folk, "link":option.link})
+            quiz["assessment"] = quiz["answer"]+" is the correct answer."
+            quiz["options"]=reveal
+
     else:   
         pass
 #        form = FactForm()
  #   return render(request, 'blog/fact_edit.html', {'form': form})   
-    dyk=spuriousFact(NumberFact,3,measure=measure)
-    return render(request, 'blog/quiz.html', {'quiz':quiz, 'quote': choice(quotes), "dyk":dyk})
+    dyk=spuriousFact(NumberFact,3,measure=quiz["measure"])
+    return render(request, 'blog/quiz.html', {'quiz':quiz, 'permalink':permalink, 'quote': choice(quotes), "dyk":dyk})
 
 def itabn(request):
     freeForm = FreeForm()
@@ -457,7 +514,7 @@ def fact_new(request):
     return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk})   
 
 def link_redirect(request, link):
-#    print(link, "==>", resolve_link(link))
+    print(link, "==>", resolve_link(link))
     return HttpResponseRedirect(resolve_link(link))
 
 
