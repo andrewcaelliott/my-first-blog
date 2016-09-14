@@ -137,8 +137,8 @@ def run6():
 #	bn = parseBigNumber("126g767")
 #	print(bn)
 
-def run7():
-	measure=("extent")
+def run():
+	measure=("area")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	print(rf.render)
@@ -147,14 +147,15 @@ def run7():
 
 	print(tolerance, score)
 	for fact in bestComparisons:
-		print(fact.render)
+		print(fact.render_folk)
 		print(fact.magnitude)
 		print(fact.scale)
+		print(fact.permlink)
 
 	biggest = biggestNumberFact(bestComparisons)
 	print(">>>", biggest.render)
 
-def run():
+def run8():
 	measure=("extent")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)

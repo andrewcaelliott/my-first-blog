@@ -40,7 +40,8 @@ def home(request):
     stories["education"]=tumblrSelection("education")
     stories["landmark"]=tumblrSelection("landmark")
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories, "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories, "dyk":dyk, "promote":promote})
 
 def homealt(request):
     freeForm = FreeForm()
@@ -67,7 +68,8 @@ def blog(category, request):
         "landmark":"Prominent and memorable numbers show the way like landmarks on the horizon"
     }
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/blog2.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/blog2.html', {'quote': choice(quotes), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk, "promote":promote})
 
 def blog_flton(request):
     return blog("passion", request)
@@ -84,6 +86,7 @@ def blog_lmk(request):
 def article(article_name, title, subtitle, request):
     content=get_article(article_name)
     dyk=spuriousFact(NumberFact,3)
+    promote = choice(["sponsor","donate"])
     return render(request, 'blog/article.html', {'quote': choice(quotes), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
 
 def article_sponsor(request):
@@ -113,7 +116,8 @@ def ratio(request):
     freeForm.fields["number"].initial=ratio_str
     ratio_pairs = facts_matching_ratio(NumberFact, measure, ratio, 5, tolerance = 0.02)
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/ratio.html', {'form': freeForm, 'ratio_str': ratio_str, 'ratio':ratio, 'ratio_pairs':ratio_pairs, 'quote': choice(quotes), "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/ratio.html', {'form': freeForm, 'ratio_str': ratio_str, 'ratio':ratio, 'ratio_pairs':ratio_pairs, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
 def make_spec(bestComparisons, comparison, measure):
     fact_slugs=[]
@@ -147,7 +151,7 @@ def quiz_from_seed(seed, params):
     except (AttributeError,TypeError):
         measure=None
     if measure==None or measure == "random":
-        measure=choice(["extent", "count", "amount", "duration", "mass"])
+        measure=choice(["extent", "count", "amount", "duration", "mass", "area"])
 
     quiz["measure"]=measure
     quiz["seed"] = seed
@@ -211,6 +215,10 @@ def quiz(request):
             quiz["question"]="Which of these is the greatest amount?"
         elif measure=="duration":
             quiz["question"]="Which of these is the longest period of time?"
+        elif measure=="volume":
+            quiz["question"]="Which of these has the greatest volume?"
+        elif measure=="area":
+            quiz["question"]="Which of these has the greatest area?"
         else:
             quiz["question"]="Which of these has the greatest mass?"
     else:
@@ -220,6 +228,10 @@ def quiz(request):
             quiz["question"]="Which of these is the least numerous?"
         elif measure=="amount":
             quiz["question"]="Which of these is the smallest amount?"
+        elif measure=="volume":
+            quiz["question"]="Which of these has the least volume?"
+        elif measure=="area":
+            quiz["question"]="Which of these has the least area?"
         elif measure=="duration":
             quiz["question"]="Which of these is the shortest period of time?"
         else:
@@ -260,7 +272,8 @@ def quiz(request):
 #        form = FactForm()
  #   return render(request, 'blog/fact_edit.html', {'form': form})   
     dyk=spuriousFact(NumberFact,3,measure=quiz["measure"])
-    return render(request, 'blog/quiz.html', {'quiz':quiz, 'permalink':permalink, 'quote': choice(quotes), "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/quiz.html', {'quiz':quiz, 'permalink':permalink, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
 def itabn(request):
     freeForm = FreeForm()
@@ -287,7 +300,8 @@ def itabn(request):
         {"title":"How Long?","glyph":"glyphicon glyphicon-time","form":durationForm},
         {"title":"How Heavy?","glyph":"glyphicon glyphicon-briefcase","form":massForm}]
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
 def query_answer(request, numberQuery):
     query =  QueryForm(instance=numberQuery)
@@ -333,7 +347,8 @@ def query_answer(request, numberQuery):
         answer["easteregg"]=easteregg
     #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes), "dyk":dyk})   
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes), "dyk":dyk, "promote":promote})   
 
 def query_answer_post(request):
     query =  QueryForm(request.POST)
@@ -401,6 +416,7 @@ def convert(request):
             {"title":"Convert Mass","glyph":"glyphicon glyphicon-briefcase","form":massForm},
         ]
     dyk=spuriousFact(NumberFact,3)
+    promote = choice(["sponsor","donate"])
     return render(request, 'blog/convert.html', {'widgets':widgets, 'quote': choice(quotes), "dyk":dyk})
 
 def conversion_answer(request, conversion):
@@ -415,7 +431,8 @@ def conversion_answer(request, conversion):
     answer["requestedConversion"] = conversions[0]
     answer["otherConversions"] = conversions[1:]
     dyk=spuriousFact(NumberFact,4,measure=measure)
-    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer, 'quote': choice(quotes), "dyk":dyk})   
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/conversion_answer.html', {'conversion': conversion, 'answer':answer, 'quote': choice(quotes), "dyk":dyk, "promote":promote})   
 
 def conversion_answer_post(request):
     return conversion_answer(request, ConvertForm(request.POST))
@@ -463,6 +480,7 @@ def conversion_unit(request):
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')  
     dyk=spuriousFact(NumberFact,3)
+    promote = choice(["sponsor","donate"])
     return render(request, 'blog/post_list.html', {'posts':posts, "dyk":dyk})
 
 def fact_list(request):
@@ -477,12 +495,14 @@ def fact_list(request):
         facts = NumberFact.objects.filter(title__icontains = search).order_by('title')  
     form = FilterFactsForm(initial={'search': search})
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, "dyk":dyk, "promote":promote})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/post_detail.html', {'post': post, "dyk":dyk})
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/post_detail.html', {'post': post, "dyk":dyk, "promote":promote})
 
 def post_new(request):
     if request.method == "POST":
@@ -496,7 +516,8 @@ def post_new(request):
     else:   
         form = PostForm()
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/post_edit.html', {'form': form, "dyk":dyk})    
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/post_edit.html', {'form': form, "dyk":dyk, "promote":promote})    
 
 def fact_detail(request, permlink):
     fact = get_object_or_404(NumberFact, permlink=permlink)
@@ -505,9 +526,10 @@ def fact_detail(request, permlink):
     else:
         reflink="http://www.google.com/?q="+fact.title
     dyk=spuriousFact(NumberFact,3)
+    promote = choice(["sponsor","donate"])
     neat = neatFacts(NumberFact, fact)
     permlink = fact.permlink
-    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat, "pl":permlink})
+    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat, "pl":permlink, "promote":promote})
 
 def fact_new(request):
     if request.method == "POST":
@@ -521,7 +543,8 @@ def fact_new(request):
     else:   
         form = FactForm()
     dyk=spuriousFact(NumberFact,3)
-    return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk})   
+    promote = choice(["sponsor","donate"])
+    return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk, "promote":promote})   
 
 def link_redirect(request, link):
     print(link, "==>", resolve_link(link))

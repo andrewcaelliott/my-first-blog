@@ -191,6 +191,18 @@ class NumberFact(models.Model):
             unit = newnumber.unit
             mag = str(sigfigs(num(self.magnitude),4))
 
+        if measure.find("area")>=0 and self.scale>=6:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-6, measure=measure, unit="km^2", multiple=getMultiple(self.scale-6))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure.find("volume")>=0 and self.scale>=9:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-9, measure=measure, unit="km^3", multiple=getMultiple(self.scale-9))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
         if measure=="mass" and self.scale==0 and num(self.magnitude)<1:
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), scale=self.scale, measure=measure, unit="g", multiple=getMultiple(self.scale))
             mult = newnumber.multiple
