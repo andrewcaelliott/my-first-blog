@@ -137,7 +137,7 @@ def run6():
 #	bn = parseBigNumber("126g767")
 #	print(bn)
 
-def run():
+def run7():
 	measure=("area")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
@@ -197,13 +197,14 @@ def run10():
 	print(klass.objects)
 
 
-def run11():
+def run():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
 #	rf = randomFact(NumberFact, measure, rseed=seed)
 #	print(rf.permlink)
-	print(spuriousFact(klass, 2, measure="d"))
+	dyk = spuriousFact(klass, 1, measure="vol")
+	print(dyk["fact1"], dyk["comparison"], dyk["fact2"])
 
 def run12():
 	klass = NumberFact

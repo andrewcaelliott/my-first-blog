@@ -209,7 +209,6 @@ quotes = (
         '"Wherever there is number, there is beauty." Proclus (410-485 A.D.)',
         '"Headlines twice the size of the events." John Galsworthy',
         "An optimist will tell you the glass is half-full; the pessimist, half-empty; and the engineer will tell you the glass is twice the size it needs to be",
-        '"An investment in knowledge pays the best interest." Benjamin Franklin',
         '"Numbers have an important story to tell. They rely on you to give them a voice." Stephen Few',
         '"The price of light is less than the cost of darkness." Arthur C. Nielsen',
         '"It’s easy to lie with statistics. It’s hard to tell the truth without statistics." Andrejs Dunkels',
@@ -226,6 +225,7 @@ quotes = (
         '"It took men about five thousand years, counting from the beginning of number symbols, to think of a symbol for nothing." Isaac Asimov',
         '"Without numbers, we can understand nothing and know nothing" Philolaus',
         '"Numbers constitute the only universal language."  Nathanael West',
+        '"An investment in knowledge pays the best interest." Benjamin Franklin',
         '"The less one knows about the universe, the easier it is to explain." Leon Brunschvicg',
         '"The book of nature is written in the language of Mathematics." Galileo',
         '"The computers are not replacing mathematicians; they are breeding them." Martin Gardner',
@@ -305,6 +305,8 @@ MEASURE_CHOICES = (
     ('d', 'duration'),
     ('n', 'number'),
     ('m', 'mass'),
+    ('r', 'area'),
+    ('v', 'volume'),
 )
 
 MULTIPLE_CHOICES = (

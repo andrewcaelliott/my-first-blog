@@ -345,10 +345,10 @@ def measure_filter_upper(klass, magnitude_adj, scale_adj, measure):
         scale_adj = 0
     truncate_measure = measure[:measure.find(".")]
     matches = []
-    match1 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure__startswith=measure)
+    match1 = klass.objects.filter(value__gte=magnitude_adj, scale=scale_adj, measure__startswith=measure)
     for fact in match1:
         matches.append(fact)
-    match2 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure=truncate_measure)
+    match2 = klass.objects.filter(value__gte=magnitude_adj, scale=scale_adj, measure=truncate_measure)
     for fact in match2:
         matches.append(fact)
     return sorted(matches, key = lambda k: k.value)
@@ -555,6 +555,7 @@ def spuriousFact(klass, scale_tolerance, measure=None):
     while len(facts)==0:
 #        seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=None)
+        print(rf)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:
             facts.remove(rf)
