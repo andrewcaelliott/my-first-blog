@@ -1,0 +1,10 @@
+qt3q|http://www.isthatabignumber.com/quiz/?spec=mass,biggest,mass-of-spacex-falcon-9-launch-rocket,mass-of-a-blue-whale,mass-of-the-international-space-station,mass-of-the-biggest-redwood-tree
+home|http://www.IsThatABigNumber.com/home/
+qt3a|http://www.isthatabignumber.com/quiz/?spec=mass,biggest,mass-of-spacex-falcon-9-launch-rocket,mass-of-a-blue-whale,mass-of-the-international-space-station,mass-of-the-biggest-redwood-tree&reveal=true
+qt1a|http://www.isthatabignumber.com/quiz/?spec=extent,biggest,length-of-chile-north-south,length-of-the-zambezi-river,length-of-the-nile-river,length-of-north-america-north-to-south&reveal=true
+qt1q|http://www.isthatabignumber.com/quiz/?spec=extent,biggest,length-of-chile-north-south,length-of-the-zambezi-river,length-of-the-nile-river,length-of-north-america-north-to-south
+qb001q|http://www.isthatabignumber.com/quiz/?spec=count,biggest,number-of-boeing-747s-built-2016,population-of-falkland-islands,number-of-grains-of-sugar-in-a-teaspoon,number-of-satellites-orbiting-the-earth-2015
+quiz|http://www.IsThatABigNumber.com/quiz/
+qb001a|http://www.isthatabignumber.com/quiz/?spec=count,biggest,number-of-boeing-747s-built-2016,population-of-falkland-islands,number-of-grains-of-sugar-in-a-teaspoon,number-of-satellites-orbiting-the-earth-2015&reveal=true
+q2q|http://www.isthatabignumber.com/quiz/?spec=amount,smallest,cost-of-building-the-burj-khalifa-skyscraper-in-dubai-2010,gdp-of-french-guiana,gdp-of-antigua-and-barbuda,gdp-of-somalia
+googl|http://www.google.com/

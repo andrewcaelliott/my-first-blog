@@ -25,7 +25,7 @@ count_references = [
     ('Number of atoms in a mole (Avogadro\'s number)','{times:,.2f} for every atom in a mole (every H atom in 1.008g of hydrogen)','One for every {fraction:,.0f} atoms in a mole (H atoms in 1.008g of hydrogen)'),
     ('Number of stars in the observable universe','{times:,.2f} for every star in the observable universe','One for every {fraction:,.0f} stars in the observable universe'),
     ('Number of grains of sand on the world\'s beaches','{times:,.2f} for every grain of sand on the world\'s beaches','One for every {fraction:,.0f} grains of sand on the world\'s beaches'),
-    ('Number of bacteria on the human body','{times:,.2f} for every bacterium on the human body','One for every {fraction:,.0f} bacteria on the human body'),
+    ('Number of bacteria in the human body','{times:,.2f} for every bacterium in the human body','One for every {fraction:,.0f} bacteria in the human body'),
     ('Number of synapses in the human brain','{times:,.2f} for every synapse in the human brain','One for every {fraction:,.0f} synapses in the human brain'),
     ('Number of fish in the sea','{times:,.2f} for every fish in the sea','One for every {fraction:,.0f} fish in the sea'),
     ('Number of stars in our galaxy','{times:,.2f} for every star in our galaxy','One for every {fraction:,.0f} stars in our galaxy'),
@@ -56,7 +56,7 @@ amount_references = [
     ('Cost of Ford Focus `Style` car','{times:,.2f} times the cost of a Ford Focus `Style` car','{percent:,.2f} percent of the cost of a Ford Focus `Style` car','1 /{fraction:,.0f} of the the cost of a Ford Focus `Style` car'),
     ('Cost of iPad Air (64GB)','{times:,.2f} times the cost of a iPad Air (64GB)','{percent:,.2f} percent of the cost of a iPad Air (64GB)','1 /{fraction:,.0f} of the the cost of a iPad Air (64GB)'),
     ('Cost of Big Mac in USA','{times:,.2f} times the cost of a Big Mac in USA','{percent:,.2f} percent of the cost of a Big Mac in USA','1 /{fraction:,.0f} of the the cost of a Big Mac in USA'),
-] 
+]
 
 duration_references = [
     ('Age of the universe','{times:,.2f} times the age of the universe','{percent:,.2f} percent of the age of the universe','1 /{fraction:,.0f} of the age of the universe'),
@@ -66,7 +66,7 @@ duration_references = [
     ('Lifespan of Galapagos giant tortoise','{times:,.2f} times the lifespan of a Galapagos giant tortoise','{percent:,.2f} percent of the lifespan of a Galapagos giant tortoise','1 /{fraction:,.0f} of the lifespan of a Galapagos giant tortoise'),
     ('One average human generation','{times:,.2f} human generations','{percent:,.2f} percent of a human generation','1 /{fraction:,.0f} of a human generation'),
     ('Lifespan of rat','{times:,.2f} times the lifespan of a rat','{percent:,.2f} percent of the lifespan of a rat','1 /{fraction:,.0f} of the lifespan of a rat'),
-] 
+]
 
 mass_references = [
     ('Mass of the Sun','{times:,.2f} times the mass of the Sun','{percent:,.2f} percent of the mass of the Sun','1 /{fraction:,.0f} of the mass of a domestic washing machine'),
@@ -236,8 +236,8 @@ quotes = (
         '"You don\'t need people’s opinion on a fact. You might as well have a poll asking: ‘Which number is bigger, 15 or 5?’" John Oliver',
         '"My big thesis is that although the world looks messy and chaotic, if you translate it into the world of numbers and shapes, patterns emerge and you start to understand why things are the way they are". Marcus du Sautoy'
 
-         
-    )        
+
+    )
 
 
 extent_conversion_targets = [
