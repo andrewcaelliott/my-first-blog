@@ -25,7 +25,7 @@ count_references = [
     ('Number of atoms in a mole (Avogadro\'s number)','{times:,.2f} for every atom in a mole (every H atom in 1.008g of hydrogen)','One for every {fraction:,.0f} atoms in a mole (H atoms in 1.008g of hydrogen)'),
     ('Number of stars in the observable universe','{times:,.2f} for every star in the observable universe','One for every {fraction:,.0f} stars in the observable universe'),
     ('Number of grains of sand on the world\'s beaches','{times:,.2f} for every grain of sand on the world\'s beaches','One for every {fraction:,.0f} grains of sand on the world\'s beaches'),
-    ('Number of bacteria on the human body','{times:,.2f} for every bacterium on the human body','One for every {fraction:,.0f} bacteria on the human body'),
+    ('Number of bacteria in the human body','{times:,.2f} for every bacterium on the human body','One for every {fraction:,.0f} bacteria on the human body'),
     ('Number of synapses in the human brain','{times:,.2f} for every synapse in the human brain','One for every {fraction:,.0f} synapses in the human brain'),
     ('Number of fish in the sea','{times:,.2f} for every fish in the sea','One for every {fraction:,.0f} fish in the sea'),
     ('Number of stars in our galaxy','{times:,.2f} for every star in our galaxy','One for every {fraction:,.0f} stars in our galaxy'),

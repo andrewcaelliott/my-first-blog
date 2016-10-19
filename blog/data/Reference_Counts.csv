@@ -45,69 +45,75 @@
 45,active personnel in the South Korean Armed Forces,630,thousand,3,personnel,count,https://en.wikipedia.org/wiki/Republic_of_Korea_Armed_Forces
 46,active personnel in the Pakistan Armed Forces,617,thousand,3,personnel,count,https://en.wikipedia.org/wiki/Pakistan_Armed_Forces
 47,words in Tolstoy`s War and Peace,564,thousand,3,words,count,Thanks to Wikipedia
-48,babies born every day,370,thousand,3,babies,count,http://www.answers.com/Q/How_many_babies_are_born_every_day_in_the_world
-49,grains of sugar in a cup,220,thousand,3,grains,count,Thanks to www.vendian.org
-50,strands on a head of hair,120,thousand,3,strands,count,Thanks to Wikipedia
-51,seats in the Michigan Stadium (American football stadium),107.601,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_American_football_stadiums_by_capacity
-52,seats in Melbourne Cricket Ground,100.024,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
-53,seats in the Rose Bowl (American football stadium),92.542,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_American_football_stadiums_by_capacity
-54,seats in Wembley Stadium,90,thousand,3,seats,count,http://www.wembleystadium.com/Press/Presspack/Stats-and-Facts
-55,seats in the Maracana Stadium (Rio Olympics),90,thousand,3,seats,count,https://en.wikipedia.org/wiki/Venues_of_the_2016_Summer_Olympics_and_Paralympics
-56,seats in Eden Gardens Cricket Ground (India),66,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
-57,helicopters in the world,56.2,thousand,3,helicopters,count,http://helicopterblog.com/?p=966
-58,seats in Dodger Stadium (baseball stadium),56,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
-59,seats in Eden Park Cricket Ground (NZ),50,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
-60,seats in Yankee Stadium (baseball stadium),49.642,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
-61,airports in the world,41.821,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-62,seats in Fenway Park (baseball stadium),37.499,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
-63,seats in Wanderers Cricket Ground (SA),34,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
-64,seats in Lord's Cricket Ground,30,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
-65,seats in Madison Square Garden concert venue (NYC),20,thousand,3,seats,count,https://en.wikipedia.org/wiki/Madison_Square_Garden
-66,airports in the United States,13.5,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-67,stars visible to the naked eye (of magnitude 6.5 or brighter),9.096,thousand,3,stars,count,http://www.skyandtelescope.com/astronomy-resources/how-many-stars-night-sky-09172014/
-68,rooms in the First World Hotel in Genting Highlands (Malaysia),7.351,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
-69,rooms in the MGM Grand Hotel (Las Vegas),6.852,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
-70,passengers on the Allure of the Seas (and Oasis of the Seas) cruise liners,6.296,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
-71,seats in the Royal Albert Hall,5.272,thousand,3,seats,count,https://en.wikipedia.org/wiki/Royal_Albert_Hall
-72,container ships in the world,4.968,thousand,3,ships,count,http://www.worldshipping.org/about-the-industry/liner-ships/container-vessel-fleet
-73,satellites orbiting the Earth (2015),4.077,thousand,3,satellites,count,http://www.pixalytics.com/sat-orbit-2015/
-74,grains of sugar in a teaspoon,4,thousand,3,grains,count,Thanks to www.vendian.org
-75,seats in Hammersmith Apollo music venue (London),3.632,thousand,3,seats,count,http://www.eventimapollo.com/venueinfo/venue-history
-76,airports in the European Union,3.102,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-77,passengers on the Queen Mary 2 cruise liner,3.09,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
-78,seats in Carnegie Hall,2.804,thousand,3,seats,count,https://en.wikipedia.org/wiki/Carnegie_Hall
-79,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
-80,paintings that Picasso painted,1.885,thousand,3,paintings,count,https://en.wikipedia.org/wiki/Pablo_Picasso
-81,billionaires in the world,1.826,thousand,3,billionaires,count,Thanks to Google
-82,Boeing 747's built (2016),1.52,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
-83,patents held by Thomas Edison,1.093,thousand,3,patents,count,https://en.wikipedia.org/wiki/List_of_Edison_patents
-84,books that Barbara Cartland wrote,723,unit,0,books,count,https://en.wikipedia.org/wiki/Barbara_Cartland
-85,members of the UK Parliament (commons),650,unit,0,members,count,https://en.wikipedia.org/wiki/Parliament_of_the_United_Kingdom
-86,musical pieces by Mozart as catalogued by Köchel,626,unit,0,pieces,count,https://en.wikipedia.org/wiki/Köchel_catalogue
-87,Completed buildings designed by Frank Lloyd Wright,532,unit,0,buildings,count,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright
-88,passengers on an Airbus A380 airliner,525,unit,0,passengers,count,https://en.wikipedia.org/wiki/Airbus_A380
-89,airports in China,507,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-90,airports in the United Kingdom,460,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-91,nuclear power plants in the world (2015),438,unit,0,powerplants,count,http://www.nei.org/Knowledge-Center/Nuclear-Statistics/World-Statistics
-92,members of US House of Representatives,434,unit,0,members,count,https://en.wikipedia.org/wiki/United_States_House_of_Representatives
-93,skyscrapers in Hong Kong (>150m tall),380,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-94,songs recorded by the Beatles,309,unit,0,songs,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=2
-95,skyscrapers in New York City (>150m tall),250,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-96,bones in the human body,206,unit,0,bones,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=3
-97,games played in longest-ever tennis match between Isner and Mahut (2010),183,unit,0,games,count,https://en.wikipedia.org/wiki/Isner?Mahut_match_at_the_2010_Wimbledon_Championships
-98,skyscrapers in Dubai (>150m tall),168,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-99,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
-100,floors in the Burj Khalifa skyscraper,163,unit,0,floors,count,https://www.google.co.uk/search?client=opera&q=how+many+stories+in+the+burj+khalifa&sourceid=opera&ie=UTF-8&oe=UTF-8
-101,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-102,airports in Cuba,133,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-103,airports in New Zealand,123,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-104,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
-105,members of US Senate,100,unit,0,members,count,http://www.senate.gov/reference/reference_index_subjects/Senators_vrd.htm
-106,keys on a piano,88,unit,0,keys,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=4
-107,submarines in the US Navy (2016),75,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-108,submarines in the North Korean Navy (2016),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-109,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-110,airports in Israel,47,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-111,airports in Ireland,40,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
-112,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html
-113,stories in the Canterbury Tales by Chaucer,24,unit,0,stories,count,https://en.wikipedia.org/wiki/The_Canterbury_Tales
+48,number of words in Tolkien's Lord of the Rings trilogy,455.125,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
+49,babies born every day,370,thousand,3,babies,count,http://www.answers.com/Q/How_many_babies_are_born_every_day_in_the_world
+50,grains of sugar in a cup,220,thousand,3,grains,count,Thanks to www.vendian.org
+51,number of words in Charles Dickens's Oliver Twist,155.96,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
+52,strands on a head of hair,120,thousand,3,strands,count,Thanks to Wikipedia
+53,seats in the Michigan Stadium (American football stadium),107.601,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_American_football_stadiums_by_capacity
+54,number of words in Harper Lee's To Kill a Mockingbird,100.388,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
+55,seats in Melbourne Cricket Ground,100.024,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+56,seats in the Rose Bowl (American football stadium),92.542,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_American_football_stadiums_by_capacity
+57,seats in Wembley Stadium,90,thousand,3,seats,count,http://www.wembleystadium.com/Press/Presspack/Stats-and-Facts
+58,seats in the Maracana Stadium (Rio Olympics),90,thousand,3,seats,count,https://en.wikipedia.org/wiki/Venues_of_the_2016_Summer_Olympics_and_Paralympics
+59,number of words in George Orwell's Nineteen Eighty-Four,88.942,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
+60,number of words in Robert Louis Stephenson's Treasure Island,66.95,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
+61,seats in Eden Gardens Cricket Ground (India),66,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+62,helicopters in the world,56.2,thousand,3,helicopters,count,http://helicopterblog.com/?p=966
+63,seats in Dodger Stadium (baseball stadium),56,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
+64,seats in Eden Park Cricket Ground (NZ),50,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+65,seats in Yankee Stadium (baseball stadium),49.642,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
+66,airports in the world,41.821,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+67,seats in Fenway Park (baseball stadium),37.499,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_U.S._baseball_stadiums_by_capacity
+68,seats in Wanderers Cricket Ground (SA),34,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+69,number of words in Roald Dahl's Charlie and the Chocolate Factory,30.644,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
+70,seats in Lord's Cricket Ground,30,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
+71,seats in Madison Square Garden concert venue (NYC),20,thousand,3,seats,count,https://en.wikipedia.org/wiki/Madison_Square_Garden
+72,airports in the United States,13.5,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+73,stars visible to the naked eye (of magnitude 6.5 or brighter),9.096,thousand,3,stars,count,http://www.skyandtelescope.com/astronomy-resources/how-many-stars-night-sky-09172014/
+74,rooms in the First World Hotel in Genting Highlands (Malaysia),7.351,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
+75,rooms in the MGM Grand Hotel (Las Vegas),6.852,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
+76,passengers on the Allure of the Seas (and Oasis of the Seas) cruise liners,6.296,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
+77,seats in the Royal Albert Hall,5.272,thousand,3,seats,count,https://en.wikipedia.org/wiki/Royal_Albert_Hall
+78,container ships in the world,4.968,thousand,3,ships,count,http://www.worldshipping.org/about-the-industry/liner-ships/container-vessel-fleet
+79,satellites orbiting the Earth (2015),4.077,thousand,3,satellites,count,http://www.pixalytics.com/sat-orbit-2015/
+80,grains of sugar in a teaspoon,4,thousand,3,grains,count,Thanks to www.vendian.org
+81,seats in Hammersmith Apollo music venue (London),3.632,thousand,3,seats,count,http://www.eventimapollo.com/venueinfo/venue-history
+82,airports in the European Union,3.102,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+83,passengers on the Queen Mary 2 cruise liner,3.09,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
+84,seats in Carnegie Hall,2.804,thousand,3,seats,count,https://en.wikipedia.org/wiki/Carnegie_Hall
+85,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
+86,paintings that Picasso painted,1.885,thousand,3,paintings,count,https://en.wikipedia.org/wiki/Pablo_Picasso
+87,billionaires in the world,1.826,thousand,3,billionaires,count,Thanks to Google
+88,Boeing 747's built (2016),1.52,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
+89,patents held by Thomas Edison,1.093,thousand,3,patents,count,https://en.wikipedia.org/wiki/List_of_Edison_patents
+90,books that Barbara Cartland wrote,723,unit,0,books,count,https://en.wikipedia.org/wiki/Barbara_Cartland
+91,members of the UK Parliament (commons),650,unit,0,members,count,https://en.wikipedia.org/wiki/Parliament_of_the_United_Kingdom
+92,musical pieces by Mozart as catalogued by Köchel,626,unit,0,pieces,count,https://en.wikipedia.org/wiki/Köchel_catalogue
+93,Completed buildings designed by Frank Lloyd Wright,532,unit,0,buildings,count,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright
+94,passengers on an Airbus A380 airliner,525,unit,0,passengers,count,https://en.wikipedia.org/wiki/Airbus_A380
+95,airports in China,507,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+96,airports in the United Kingdom,460,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+97,nuclear power plants in the world (2015),438,unit,0,powerplants,count,http://www.nei.org/Knowledge-Center/Nuclear-Statistics/World-Statistics
+98,members of US House of Representatives,434,unit,0,members,count,https://en.wikipedia.org/wiki/United_States_House_of_Representatives
+99,skyscrapers in Hong Kong (>150m tall),380,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+100,songs recorded by the Beatles,309,unit,0,songs,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=2
+101,skyscrapers in New York City (>150m tall),250,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+102,bones in the human body,206,unit,0,bones,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=3
+103,games played in longest-ever tennis match between Isner and Mahut (2010),183,unit,0,games,count,https://en.wikipedia.org/wiki/Isner?Mahut_match_at_the_2010_Wimbledon_Championships
+104,skyscrapers in Dubai (>150m tall),168,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+105,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
+106,floors in the Burj Khalifa skyscraper,163,unit,0,floors,count,https://www.google.co.uk/search?client=opera&q=how+many+stories+in+the+burj+khalifa&sourceid=opera&ie=UTF-8&oe=UTF-8
+107,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+108,airports in Cuba,133,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+109,airports in New Zealand,123,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+110,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+111,members of US Senate,100,unit,0,members,count,http://www.senate.gov/reference/reference_index_subjects/Senators_vrd.htm
+112,keys on a piano,88,unit,0,keys,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=4
+113,submarines in the US Navy (2016),75,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+114,submarines in the North Korean Navy (2016),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+115,submarines in the Russian Navy (2016),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+116,airports in Israel,47,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+117,airports in Ireland,40,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+118,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html
+119,stories in the Canterbury Tales by Chaucer,24,unit,0,stories,count,https://en.wikipedia.org/wiki/The_Canterbury_Tales
