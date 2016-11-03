@@ -26,8 +26,12 @@
             <button type="submit" class="save btn btn-default">How Long?</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
-        	<input type="hidden" value="mass" name="measure">
+            <input type="hidden" value="mass" name="measure">
             <button type="submit" class="save btn btn-default">How Heavy?</button>
+        </form>
+        <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
+            <input type="hidden" value="speed" name="measure">
+            <button type="submit" class="save btn btn-default">How Fast?</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="random" name="measure">

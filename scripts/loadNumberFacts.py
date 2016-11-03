@@ -47,6 +47,7 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 def run():
     print("ok")
     deleteAllFacts()
+    loadNumberFacts("./blog/data/Reference_Speeds.csv","","km/h")
     loadNumberFacts("./blog/data/Company_Revenues.csv","","USD")
     loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a", encoding="latin1")

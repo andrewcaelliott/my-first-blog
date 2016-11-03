@@ -235,6 +235,7 @@ quotes = (
         '"When you can measure what you are speaking about, and express it in numbers, you know something about it" Lord Kelvin',
         '"You don\'t need people’s opinion on a fact. You might as well have a poll asking: ‘Which number is bigger, 15 or 5?’" John Oliver',
         '"My big thesis is that although the world looks messy and chaotic, if you translate it into the world of numbers and shapes, patterns emerge and you start to understand why things are the way they are". Marcus du Sautoy'
+        '"The hardest arithmetic to master is that which enables us to count our blessings."" Eric Hoffer',
 
 
     )

@@ -151,7 +151,7 @@ def quiz_from_seed(seed, params):
     except (AttributeError,TypeError):
         measure=None
     if measure==None or measure == "random":
-        measure=choice(["extent", "count", "amount", "duration", "mass", "area"])
+        measure=choice(["extent", "count", "amount", "duration", "mass", "area", "speed"])
 
     quiz["measure"]=measure
     quiz["seed"] = seed
@@ -219,6 +219,8 @@ def quiz(request):
             quiz["question"]="Which of these has the greatest volume?"
         elif measure=="area":
             quiz["question"]="Which of these has the greatest area?"
+        elif measure=="speed":
+            quiz["question"]="Which of these is the fastest?"
         else:
             quiz["question"]="Which of these has the greatest mass?"
     else:
@@ -234,6 +236,8 @@ def quiz(request):
             quiz["question"]="Which of these has the least area?"
         elif measure=="duration":
             quiz["question"]="Which of these is the shortest period of time?"
+        elif measure=="speed":
+            quiz["question"]="Which of these is the slowest?"
         else:
             quiz["question"]="Which of these has the least mass?"
     permalink = site+"quiz/?spec="+spec
