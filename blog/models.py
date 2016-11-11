@@ -218,6 +218,36 @@ class NumberFact(models.Model):
         if measure == "amount" and unit.find("USD")>=0:
             unit = "$"
 
+        if measure.find("energy")>=0 and self.scale>0:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-3, measure=measure, unit="kJ", multiple=getMultiple(self.scale-3))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure.find("energy")>=0 and self.scale>3:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-6, measure=measure, unit="MJ", multiple=getMultiple(self.scale-6))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure.find("energy")>=0 and self.scale>6:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-9, measure=measure, unit="GJ", multiple=getMultiple(self.scale-9))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure.find("energy")>=0 and self.scale>9:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-12, measure=measure, unit="TJ", multiple=getMultiple(self.scale-12))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
+        if measure.find("energy")>=0 and self.scale>12:
+            newnumber = NumberFact(magnitude=mag, scale=self.scale-15, measure=measure, unit="TJ", multiple=getMultiple(self.scale-15))
+            mult = newnumber.multiple
+            unit = newnumber.unit
+            mag = str(sigfigs(num(self.magnitude),4))
+
         if mult=="thousand":
             newnumber = NumberFact(magnitude=str(sigfigs(num(self.magnitude)*1000,4)), multiple="unit", measure=measure, unit=unit)
             mag = str(sigfigs(num(self.magnitude)*1000,4))

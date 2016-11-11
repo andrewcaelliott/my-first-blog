@@ -155,6 +155,7 @@ std_units = {
     "secs":"second",
     "sec":"second",
     "s":"second",
+    "J":"Joule",
 }
 
 std_multiples = {

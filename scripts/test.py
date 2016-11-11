@@ -203,7 +203,7 @@ def run():
 #	seed = randint(0,1000000)
 #	rf = randomFact(NumberFact, measure, rseed=seed)
 #	print(rf.permlink)
-	dyk = spuriousFact(klass, 1, measure="speed")
+	dyk = spuriousFact(klass, 2, measure="energy")
 	print(dyk["fact1"], dyk["comparison"], dyk["fact2"])
 
 def run12():
