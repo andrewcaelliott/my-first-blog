@@ -159,6 +159,8 @@ class NumberFact(models.Model):
 
     text = models.TextField()
     title = models.CharField(max_length=50)
+    date = models.DateTimeField(null = True)
+    location = models.TextField()
     magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES)
@@ -280,20 +282,27 @@ class NumberFact(models.Model):
         self.multiple = MULTIPLE_INVERSE[self.scale]
         self.magnitude = str(value) 
 
+    def title_plus(self):
+        if self.date != None:
+            print(self.date)
+            print(self.date.year)
+            return self.title+" ("+str(self.date.year)+")"
+        else:
+            return self.title
 
     def _display(self):
-        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
+        return " ".join([self.title_plus(),":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
 
     def _display2(self):
-        return "".join([self.title," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
+        return "".join([self.title_plus()," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
 
     def _display_folk(self):
-        return "".join([self.title," (",
+        return "".join([self.title_plus()," (",
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
             ")" ]).replace("Population", "Pop.").replace("illion ", " ").replace("thousand ", "th ")
 
     def _display_folk_long(self):
-        return "".join([self.title," (",
+        return "".join([self.title_plus()," (",
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
             ")" ])
 

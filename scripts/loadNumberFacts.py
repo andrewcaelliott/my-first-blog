@@ -1,6 +1,9 @@
 from blog.models import NumberFact
 from blog.models import NumberQuery
 from django.utils.text import slugify
+from datetime import datetime
+from time import strptime
+from pytz import utc
 
 def num(s):
     try:
@@ -8,11 +11,16 @@ def num(s):
     except ValueError:
         return float(s)
 
-def addFact(title="Test Fact", text="Just a trial", magnitude="100", scale=0, multiple="unit", unit = "n/a", measure = "count"):
+def addFact(title="Test Fact", text="Just a trial", datefld=None, location="", magnitude="100", scale=0, multiple="unit", unit = "n/a", measure = "count"):
     deleteFacts(title=title)
     nf = NumberFact()
     nf.title=title
     nf.text=text
+    if datefld:
+        nf.date = utc.localize(datefld)
+    else: 
+        nf.date = None
+    nf.location = location
     nf.magnitude=magnitude
     nf.value=num(nf.magnitude)
     nf.scale=scale
@@ -38,22 +46,46 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
     lines = inFile.readlines()
     for line in lines[0:]:
         print(line)
-        ordinal, subject, magnitude, multiple, scale, unit, measure, comment = line.split(",")
-        print(ordinal, subject, magnitude, multiple, scale, unit, measure, comment)
-        #print(multiple)
-        fact = addFact(title=metric+subject.replace(";",",").replace("\"",""), text=comment, magnitude=magnitude, scale=scale, multiple=multiple, unit = unit, measure=measure)
-        print(fact.render)
+        fields = line.split(",")
+        if len(fields)== 8:
+            ordinal, subject, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+            datefld = None
+            location = ""
+        elif len(fields) == 10:
+            ordinal, subject, datestr, location, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+            if datestr == "":
+                datefld = None
+            else:
+                d = strptime(datestr, "%Y")
+ #               print(d)
+ #               print(d[0:6])
+                dt = datetime(*d[0:6])
+#                dt.replace(tzinfo=utc)
+                utc.localize(dt)
+ #               print(dt)
+#                print(dt.isoformat())
+                datefld = dt
+        else:
+            raise ValueError("wrong number of fields in: "+line)
+        #print(ordinal, subject, magnitude, multiple, scale, unit, measure, comment)
+ #       print(fields)
+ #       print(datefld)
+        fact = addFact(title=metric+subject.replace(";",",").replace("\"",""), text=comment, datefld=datefld, location = location, magnitude=magnitude, scale=scale, multiple=multiple, unit = unit, measure=measure)
+ #       print(fact)
+ #       print(fact.date)
+ #       print(fact.render)
 
 def run():
     print("ok")
     deleteAllFacts()
+    loadNumberFacts("./blog/data/GovtExps.csv","Govt spending in ","USD p/a", encoding="latin1")
+    loadNumberFacts("./blog/data/GovtRevs.csv","Total taxation in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Speeds.csv","","km/h")
+    loadNumberFacts("./blog/data/Area_of_countries.csv","Area of ","m^2")
     loadNumberFacts("./blog/data/Reference_Energy.csv","","J")
     loadNumberFacts("./blog/data/Company_Revenues.csv","","USD")
     loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a", encoding="latin1")
-    loadNumberFacts("./blog/data/GovtRevs.csv","Total taxation in ","USD p/a", encoding="latin1")
-    loadNumberFacts("./blog/data/GovtExps.csv","Govt spending in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Population_of_cities.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/Animal_Populations.csv","","individuals")
     loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
@@ -64,5 +96,4 @@ def run():
     loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
     loadNumberFacts("./blog/data/heights_2015.csv","","m")
     loadNumberFacts("./blog/data/Reference_Volumes.csv","Volume of ","m^3")
-    loadNumberFacts("./blog/data/Area_of_countries.csv","Area of ","m^2")
 

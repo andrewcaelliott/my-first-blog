@@ -197,7 +197,7 @@ def run10():
 	print(klass.objects)
 
 
-def run():
+def run11():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
@@ -231,3 +231,10 @@ def run14():
 	nf = NumberFact.objects.filter(title__icontains=target)
 	for f in nf:
 		print(f)
+
+def run():
+	target = "World"
+	date = "2015"
+	nf = NumberFact.objects.filter(date__year=date, location__icontains=target)
+	for f in nf:
+		print(f.render_folk)
