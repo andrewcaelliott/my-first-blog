@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio, resolve_country_code
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -24,7 +24,7 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import get_article
-from .utils import parseBigNumber, randomFact, resolve_link, poke_link, save_links
+from .utils import parseBigNumber, randomFact, resolve_link, poke_link, save_links, summarise_country_list
 from django.utils.text import slugify
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
@@ -395,6 +395,29 @@ def query_api(request):
         'multiple':str(multiple), 
         'answer': answer, 
         })
+
+def country(request, country_code):
+    params = request.GET
+    try:
+        qnumber = params["number"]
+    except:
+        qnumber = None
+    freeForm = FreeForm()
+    freeForm.fields["number"].label="Is this a big number?"
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["sponsor","donate"])
+    country = resolve_country_code(country_code)
+    country_ask, country_list = summarise_country_list(NumberQuery, NumberFact, country_code, qnumber)
+    panels = []
+    for item in country_list:
+        if item[0] == "Is That A Big Number?":
+            panels+=[{"title":item[0], "facts":item[1:], "featured":True}]
+        else:
+            panels+=[{"title":item[0], "facts":item[1:]}]
+    return render(request, 'blog/country.html', {'ask':country_ask, 'panels': panels, 'country_code':country_code, 'country':country, 'widgets':{}, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+
+
+
 
 def convert(request):
     extentForm = ConvertForm(initial={'measure': 'e'})

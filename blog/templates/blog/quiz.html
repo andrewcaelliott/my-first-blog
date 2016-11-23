@@ -17,10 +17,10 @@
         	<input type="hidden" value="count" name="measure">
             <button type="submit" class="save btn btn-default">How Many?</button>
         </form>
-        <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
+        <!--form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="amount" name="measure">
             <button type="submit" class="save btn btn-default">How Much?</button>
-        </form>
+        </form-->
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="duration" name="measure">
             <button type="submit" class="save btn btn-default">How Long?</button>

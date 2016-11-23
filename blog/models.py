@@ -129,6 +129,35 @@ class NumberQuery(models.Model):
                 comparisons.append(comparison)
         return comparisons
 
+    def getDynamicComparisons(self, factpacks):
+        factor = self.setScaleFactor()
+        try:
+            num_ans = num(self.magnitude) * factor
+        except:
+            num_ans=0
+        n = convertToDefault(num_ans, self.unit)
+        comparisons = []
+        if (n == 0):
+            comparisons.append({"factor":0, "render":"Invalid input"})
+        for factpack in factpacks:
+            fact = factpack[0]
+            factNumber = float(fact.value)*10**fact.scale
+            comparisonNumber = n  / factNumber
+            print("comparisonNumber", comparisonNumber)
+            if (comparisonNumber <= 10000000) and (comparisonNumber >= 0.0000001):
+                times = sigfigs(comparisonNumber,6);
+                fraction = sigfigs(1/comparisonNumber,3);
+                percent = sigfigs(times,6) * 100;
+                if comparisonNumber >=0.5:
+                    comparisonRender = factpack[1].format(times=times, fraction=fraction, percent=percent)
+                elif comparisonNumber >=0.1 or len(factpack)<4:
+                    comparisonRender = factpack[2].format(times=times, fraction=fraction, percent = percent)
+                else:
+                    comparisonRender = factpack[3].format(times=times, fraction=fraction, percent = percent)
+                comparison ={"factor":comparisonNumber, "render": comparisonRender.replace(" i ", " "), "link":None}
+                comparisons.append(comparison)
+        return comparisons
+
     def getConversions(self, conversions):
         conversion_answers = []
         num_ans = num(self.magnitude) * self.setScaleFactor()
@@ -148,7 +177,9 @@ class NumberQuery(models.Model):
 
     
     def _display(self):
-        return " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
+        line = " ".join([self.title,":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
+        line=(line+".").replace(" i.", ".")[:-1]
+        return line
 
     def __str__(self):
         return self.title        
@@ -266,17 +297,20 @@ class NumberFact(models.Model):
             response = response.replace("billion ", "bn ").replace("illion ", " ").replace("thousand ", "th ").replace("Population", "Pop.")
         else:
             if unit == "$":
-                response = "".join([unit, mag, mult])
+                if mag[0] !="-":
+                    response = "".join([unit, mag, mult])
+                else:
+                    response = "".join(["-", unit, mag.replace("-",""), mult])
             else:    
                 response = " ".join([mag, mult, unit])
         return response.replace("unit", "").replace(" - ", " ").replace("  "," ")
 
     def normalise(self):
         value = num(self.magnitude)
-        while value > 1000:
+        while abs(value) > 1000:
             value = value / 1000
             self.scale = self.scale + 3
-        while value < 1 and self.scale>=0:
+        while abs(value) < 1 and self.scale>=0:
             value = value * 1000
             self.scale = self.scale - 3
         self.multiple = MULTIPLE_INVERSE[self.scale]
@@ -284,8 +318,6 @@ class NumberFact(models.Model):
 
     def title_plus(self):
         if self.date != None:
-            print(self.date)
-            print(self.date.year)
             return self.title+" ("+str(self.date.year)+")"
         else:
             return self.title
@@ -299,7 +331,7 @@ class NumberFact(models.Model):
     def _display_folk(self):
         return "".join([self.title_plus()," (",
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
-            ")" ]).replace("Population", "Pop.").replace("illion ", " ").replace("thousand ", "th ")
+            ")" ]).replace("Population", "Pop.").replace("illion", "").replace("thousand ", "th ")
 
     def _display_folk_long(self):
         return "".join([self.title_plus()," (",

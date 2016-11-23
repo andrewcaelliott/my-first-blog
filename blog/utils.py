@@ -5,12 +5,20 @@ from mysite.settings import BASE_DIR
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 
+from blog.config import MULTIPLE_INVERSE
 from math import log10
 import re
 
 links = None
+country_codes = None
+cia_country_names = None
 
 def sigfigs(x,n):
+    negative = False
+    if x ==0:
+        return 0
+    if x<0:
+        return -sigfigs(-x,n)
     l10 = 1+round(log10(x),0)
     x = round(x, int(n-l10))
     if (x==round(x)):
@@ -183,8 +191,8 @@ def succ(multiple):
         return None
 
 def prec(multiple):
-    mults={"m":"U", "U":"k", "k":"M", "M":"G", "G":"T", "T":"P", "P":"E",
-        "E":"Z", "Z":"Y", "Y":"10^27", "10^27":"10^30", "10^30":"10^33", "10^33":"10^36", "10^36":"10^39", "10^39":"10^42"}
+    mults={"U":"m", "k":"U", "M":"k", "G":"M", "T":"G", "P":"T", "E":"P",
+        "Z":"E", "Y":"Z", "10^27":"Y", "10^30":"10^27", "10^33":"10^30", "10^36":"10^33", "10^39":"10^36", "10^42":"10^39"}
     if multiple in mults:
         return mults[multiple]
     else:        
@@ -202,14 +210,32 @@ def normalise(parsed):
     if multiple.lower() in std_multiples.keys():
         multiple = std_multiples[multiple.lower()]
 
+    negative = False
+    print(multiple)
     value = num(magnitude)
-    while value>1000:
-        value=value/1000
-        value = sigfigs(value,6)
-        multiple = succ(multiple)
+    if value!=0:
+        if value < 0:
+            negative = True
+            value = -value
+        while value>1000:
+            value=value/1000
+            value = sigfigs(value,6)
+            multiple = succ(multiple)
+            print(multiple)
+        while value<1 and multiple!="U":
+            value=value*1000
+            value = sigfigs(value,6)
+            multiple = prec(multiple)
 
-    magnitude = str(value)
+        if negative:
+            value = -value
+        magnitude = str(value)
+        print(multiple)
     return magnitude, multiple, unit, measure 
+
+def normalise_nf(nf):
+    nf.magnitude, nf.multiple, nf.unit, nf.measure = normalise((nf.magnitude, MULTIPLE_INVERSE[nf.scale], nf.unit))
+    return nf
 
 def getMeasure(unit):
     try:
@@ -374,7 +400,7 @@ def measure_filter_lower(klass, magnitude_adj, scale_adj, measure):
 def bracketNumber(klass, magnitude, scale, measure):
     #tolerance=10000
     response = []
-#   nf_gt = NumberFact.objects.filter(value__gt=num(magnitude)*1, value__lt=num(magnitude)*1*(1+tolerance), scale=scale-0, measure=measure).order_by("value")
+#   nf_gt = klass.objects.filter(value__gt=num(magnitude)*1, value__lt=num(magnitude)*1*(1+tolerance), scale=scale-0, measure=measure).order_by("value")
     nf_gt = measure_filter_upper(klass, num(magnitude)*1, scale-0, measure)
     if len(nf_gt)==0:
         nf_gt = measure_filter_upper(klass, num(magnitude)/1000, scale+3, measure)
@@ -403,7 +429,7 @@ def bracketNumber(klass, magnitude, scale, measure):
 
 
 def closeEnoughNumberFact(klass, magnitude, scale, tolerance, measure):
-#   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
+#   nf = klass.objects.filter(magnitude__gt=800, scale=scale)
     facts = []
     nf = klass.objects.filter(value__gte=num(magnitude)*1000/(1+tolerance), value__lt=num(magnitude)*1000*(1+tolerance), scale=scale-3, measure=measure)
     for fact in nf:
@@ -432,7 +458,7 @@ def range_matches(klass, scale_lower, scale_upper, value_lower, value_upper, mea
 
 
 def closeMagnitudeNumberFact(klass, magnitude, measure, tolerance, multiple, scale, scale_tolerance = 30):
-#   nf = NumberFact.objects.filter(magnitude__gt=800, scale=scale)
+#   nf = klass.objects.filter(magnitude__gt=800, scale=scale)
     mag = num(magnitude)*multiple
     if mag > 1000:
         mag = mag/1000
@@ -466,7 +492,10 @@ def numberFactsLikeThis(klass, nf, rseed=None):
     tolerances=[1.0, 2.5, 5.0, 10, 25, 50, 100]
     for tolerance in tolerances:
         ce=closeEnoughNumberFact(klass, nf.magnitude, nf.scale, tolerance, nf.measure)
-        ce.remove(nf)
+        try:
+            ce.remove(nf)
+        except:
+            pass
         candidates = []
         for nf_a in ce:
             duplicate = False
@@ -551,7 +580,7 @@ def renderInt(i):
 def spuriousFact(klass, scale_tolerance, measure=None):
     facts = []
     if measure == None:
-        measure=choice(["extent","extent","amount","count","duration","mass","mass"])
+        measure=choice(["extent","extent","count","duration","mass","mass"])
     tolerance = 0.01
     while len(facts)==0:
 #        seed = randint(0,1000000)
@@ -725,3 +754,261 @@ def poke_link(link, key):
     if links==None:
         links = load_link_redirects(os.path.join(BASE_DIR, "blog/data/links.txt"))
     links[key]=link
+
+
+def load_country_codes(fileName, encoding="UTF-8"):
+    inFile= open(fileName, encoding=encoding)
+    lines = inFile.readlines()
+    country_codes = {}
+    cia_country_names = {}
+    for line in lines[0:]:
+        try:
+            key, cia, country = line.strip().split(",")
+            if cia[0]=='"':
+                cia = cia[1:-2]
+            if country[0]=='"':
+                country = country[1:-2]
+            country_codes[key]=country
+            cia_country_names[cia]=key
+        except:
+            print("could not parse line:"+line)
+    inFile.close()
+    return country_codes, cia_country_names
+
+def resolve_country_code(key):
+    global country_codes, cia_country_names
+    if country_codes==None:
+        country_codes, cia_country_names = load_country_codes(os.path.join(BASE_DIR, "blog/data/CountryCodes.csv"))
+    try:
+        return country_codes[key]
+    except:
+        return "unknown country code "+key
+
+def get_country_codes():
+    return load_country_codes(os.path.join(BASE_DIR, "blog/data/CountryCodes.csv"))
+
+def resolve_cia_country(name):
+    global country_codes, cia_country_names
+    if cia_country_names==None:
+        country_codes, cia_country_names = load_country_codes(os.path.join(BASE_DIR, "blog/data/CountryCodes.csv"))
+    try:
+        code = cia_country_names[name]
+        return country_codes[code], code
+    except:
+        return "unknown country name "+name
+
+def val_from(fact):
+    return float(fact.magnitude)*10**fact.scale
+
+def make_amount(klass, magnitude, title):
+    nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit="USD", measure = "amount", title = title)
+    return nf
+
+def make_perc(klass, magnitude, title):
+    nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit="%", measure = "perc", title = title)
+    return nf
+
+def make_count(klass, magnitude, title, unit):
+    nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit=unit, measure = "count", title = title)
+    return nf
+
+
+def summarise_country(klass, code, qamount):
+    response = {}
+    location = code
+    country = resolve_country_code(location)
+    response["country"] = country
+    #facts = klass.objects.filter(location__icontains = location).order_by('title')  
+    #for fact in facts:
+    #   print(fact.render_folk)
+    spend = klass.objects.filter(location__icontains = location, title__icontains = "Govt spending").order_by('-date')[0]  
+    tax = klass.objects.filter(location__icontains = location, title__icontains = "Total taxation").order_by('-date')[0]  
+    GDP = klass.objects.filter(location__icontains = location, title__icontains = "GDP in").order_by('-date')[0]  
+    pop = klass.objects.filter(location__icontains = location, title__icontains = "Population of").order_by('-date')[0]  
+    land = klass.objects.filter(location__icontains = location, title__icontains = "Land Area of").order_by('-date')[0]  
+    try:
+        debt = klass.objects.filter(location__icontains = location, title__icontains = "National Debt").order_by('-date')[0]  
+    except:
+        debt = None
+    try:
+        hhcons = klass.objects.filter(location__icontains = location, title__icontains = "Household Consumption").order_by('-date')[0]  
+    except:
+        hhcons = None
+    try:
+        gvcons = klass.objects.filter(location__icontains = location, title__icontains = "Government Consumption").order_by('-date')[0]  
+    except:
+        gvcons = None
+    try:
+        invcap = klass.objects.filter(location__icontains = location, title__icontains = "Investment in Capital").order_by('-date')[0]  
+    except:
+        invcap = None
+    try:
+        invinv = klass.objects.filter(location__icontains = location, title__icontains = "Investment in Inventories").order_by('-date')[0]  
+    except:
+        invinv = None
+    try:
+        exports = klass.objects.filter(location__icontains = location, title__icontains = "Exports").order_by('-date')[0]  
+    except:
+        exports = None
+    try:
+        imports = klass.objects.filter(location__icontains = location, title__icontains = "Imports").order_by('-date')[0]  
+    except:
+        imports = None
+
+    agri = klass.objects.filter(location__icontains = location, title__icontains = "Agriculture").order_by('-date')[0]  
+    industry = klass.objects.filter(location__icontains = location, title__icontains = "Industrial").order_by('-date')[0]  
+    services = klass.objects.filter(location__icontains = location, title__icontains = "Services").order_by('-date')[0]  
+    basics = {"GDP": GDP, "Population":pop, "Land":land,
+            "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita in "+country),
+            "Population density": make_count(klass, str(round(val_from(pop)/val_from(land),0)), "Population density in "+country, "people")
+    }
+    response["basics"]= basics
+    deficit = make_amount(klass, str(round(val_from(spend) - val_from(tax),0)), "deficit in "+country)
+    deficit.normalise()
+    tax_spend = {
+        "tax": tax,
+#        "tax/capita": round(val_from(tax)/val_from(pop),0),
+        "tax/capita": make_amount(klass, str(round(val_from(tax)/val_from(pop),0)), "tax/capita in "+country),
+#        "tax/GDP": round(100*val_from(tax)/val_from(GDP),0),
+        "tax/GDP": make_perc(klass, str(round(100*val_from(tax)/val_from(GDP),0)), "tax/GDP in "+country),
+        "spend": spend,
+        "spend/capita": make_amount(klass, str(round(val_from(spend)/val_from(pop),0)), "spend/capita in "+country),
+        "spend/GDP": make_perc(klass, str(round(100*val_from(spend)/val_from(GDP),0)), "spend/GDP in "+country),
+#        "deficit": normalise_nf(make_amount(klass, str(round(deficit,0)), "deficit in "+country)),
+        "deficit": deficit,
+        "deficit/capita": make_amount(klass, str(round(val_from(deficit)/val_from(pop),0)), "deficit/capita in "+country),
+        "deficit/GDP": make_perc(klass, str(round(100*val_from(deficit)/val_from(GDP),0)), "deficit/GDP in "+country),
+        "deficit/spend": make_perc(klass, str(round(100*val_from(deficit)/val_from(spend),0)), "deficit/spend in "+country),
+    }
+    response["tax_spend"]= tax_spend
+    if debt:
+        nat_debt = {
+        "nat_debt": debt,
+        "debt/capita": make_amount(klass, str(round(val_from(debt)/val_from(pop),0)), "debt/capita in "+country),
+        "debt/GDP": make_perc(klass, str(round(100*val_from(debt)/val_from(GDP),0)), "debt/GDP in "+country),
+        }
+        response["nat_debt"]=nat_debt
+    uses = {}
+    if hhcons:
+        uses["hhcons"] = hhcons
+        uses["hhcons/capita"] = make_amount(klass, str(round(val_from(hhcons)/val_from(pop),0)), "HC/capita in "+country)
+        uses["hhcons/GDP"]= make_perc(klass, str(round(100*val_from(hhcons)/val_from(GDP),0)), "HC/GDP in "+country)
+    if gvcons:
+        uses["gvcons"] = gvcons
+        uses["gvcons/capita"]= make_amount(klass, str(round(val_from(gvcons)/val_from(pop),0)), "GC/capita in "+country)
+        uses["gvcons/GDP"]= make_perc(klass, str(round(100*val_from(gvcons)/val_from(GDP),0)), "GC/GDP in "+country)
+    if invcap:
+        uses["invcap"] = invcap
+        uses["invcap/capita"] = make_amount(klass, str(round(val_from(invcap)/val_from(pop),0)), "IC/capita in "+country)
+        uses["invcap/GDP"] = make_perc(klass, str(round(100*val_from(invcap)/val_from(GDP),0)), "IC/GDP in "+country)
+    if invinv:
+        uses["invinv"] = invinv
+        uses["invinv/capita"] = make_amount(klass, str(round(val_from(invinv)/val_from(pop),0)), "II/capita in "+country)
+        uses["invinv/GDP"] = make_perc(klass, str(round(100*val_from(invinv)/val_from(GDP),0)), "II/GDP in "+country)
+    if exports:
+        uses["exports"] = exports
+        uses["exports/capita"] = make_amount(klass, str(round(val_from(exports)/val_from(pop),0)), "exports/capita in "+country)
+        uses["exports/GDP"] = make_perc(klass, str(round(100*val_from(exports)/val_from(GDP),0)), "exports/GDP in "+country)
+        print()
+    if imports:
+        uses["imports"] = imports
+        uses["imports/capita"] = make_amount(klass, str(round(val_from(imports)/val_from(pop),0)), "imports/capita in "+country)
+        uses["imports/GDP"] = make_perc(klass, str(round(100*val_from(imports)/val_from(GDP),0)), "imports/GDP in "+country)
+        print()
+    response["uses"]= uses
+    sources = {}
+    sources["agriculture"] = agri
+    sources["agri/capita"] = make_amount(klass, str(round(val_from(agri)/val_from(pop),0)), "agr.prod/capita in "+country)
+    sources["agri/GDP"] = make_perc(klass, str(round(100*val_from(agri)/val_from(GDP),0)), "agr.prod/GDP in "+country)
+    sources["industry"] = industry
+    sources["industry/capita"] = make_amount(klass, str(round(val_from(industry)/val_from(pop),0)), "ind.prod/capita in "+country)
+    sources["industry/GDP"] = make_perc(klass, str(round(100*val_from(industry)/val_from(GDP),0)), "ind.prod/GDP in "+country)
+    sources["services"] = services
+    sources["services/capita"] = make_amount(klass, str(round(val_from(services)/val_from(pop),0)), "serv.prod/capita in "+country)
+    sources["services/GDP"] = make_perc(klass, str(round(100*val_from(services)/val_from(GDP),0)), "serv.prod/GDP in "+country)
+    response["sources"]= sources
+    return response
+
+
+def summarise_country_list(klass1, klass, code, qamount):
+    cdict  = summarise_country(klass, code, qamount)
+    ask = None
+    response = []
+    if qamount:
+#    try:
+        comparator = parseBigNumber(qamount)
+        unit = comparator[2]
+        compnq = klass1(title = "You asked about", magnitude=comparator[0], multiple = comparator[1], unit = comparator[2], measure=comparator[3])
+        print("comparator", comparator, compnq)
+        factpacks = []
+        if compnq.measure == "a":
+            fact = cdict["basics"]["Population"]
+            factpacks.append((fact, '{times:,.2f} USD for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'$1  for every {fraction:,.0f} people in the '+fact.title))
+            fact = cdict["basics"]["GDP"]
+            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'$1  for every {fraction:,.0f} in the '+fact.title))
+        elif compnq.measure == "c":
+            fact = cdict["basics"]["Population"]
+            factpacks.append((fact, '{times:,.2f} for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} people in the '+fact.title))
+            fact = cdict["basics"]["Land"]
+            factpacks.append((fact, '{times:,.2f} for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km2 in the '+fact.title))
+            fact = cdict["basics"]["GDP"]
+            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} USD in the '+fact.title))
+        elif compnq.measure == "e":
+            fact = cdict["basics"]["Population"]
+            factpacks.append((fact, '{times:,.2f} m for every person in the '+fact.title,'{times:,.2f} for every person in the '+fact.title,'1  for every {fraction:,.0f} people in the '+fact.title))
+        else:
+            fact = cdict["basics"]["Population"]
+            factpacks.append((fact, '{times:,.2f} '+unit+' for every person in the '+fact.title,'{percent:,.2f} for every 100 people of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} people in the '+fact.title))
+            fact = cdict["basics"]["Land"]
+            factpacks.append((fact, '{times:,.2f} '+unit+' for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km^2 in the '+fact.title))
+            fact = cdict["basics"]["GDP"]
+            factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} USD in the '+fact.title))
+        print(factpacks)
+        comparisons = compnq.getDynamicComparisons(factpacks)
+
+        #print(compnf.render_folk, compnf.scale)
+        #comparator.title = "You asked about"
+        ask = ["Is That A Big Number?", compnq, comparisons]
+        #response+=[ask]
+ #   except:
+  #      pass
+    basics = ["Basics",
+        cdict["basics"]["Population"],cdict["basics"]["Land"],cdict["basics"]["GDP"], 
+        cdict["basics"]["GDP per capita"],cdict["basics"]["Population density"]
+    ]
+    response+=[basics]
+    tax_spend=["Taxation and Government Expenditure",
+        cdict["tax_spend"]["tax"],cdict["tax_spend"]["tax/capita"],cdict["tax_spend"]["tax/GDP"],
+        cdict["tax_spend"]["spend"],cdict["tax_spend"]["spend/capita"],cdict["tax_spend"]["spend/GDP"],
+        cdict["tax_spend"]["deficit"],cdict["tax_spend"]["deficit/capita"],cdict["tax_spend"]["deficit/GDP"],
+    ]
+    response+=[tax_spend]
+    try:
+        debt = ["National Debt",
+            cdict["nat_debt"]["nat_debt"],cdict["nat_debt"]["debt/capita"],cdict["nat_debt"]["debt/GDP"]
+        ]
+    except:
+        debt = ["National Debt", "No information available"]
+    response += [debt]
+    uses = ["How National Product is used"]
+    try:
+        uses += [cdict["uses"]["hhcons"],cdict["uses"]["hhcons/capita"],cdict["uses"]["hhcons/GDP"]]
+        uses += [cdict["uses"]["gvcons"],cdict["uses"]["gvcons/capita"],cdict["uses"]["gvcons/GDP"]]
+        uses += [cdict["uses"]["invcap"],cdict["uses"]["invcap/capita"],cdict["uses"]["invcap/GDP"]]
+        uses += [cdict["uses"]["invinv"],cdict["uses"]["invinv/capita"],cdict["uses"]["invinv/GDP"]]
+        uses += [cdict["uses"]["exports"],cdict["uses"]["exports/capita"],cdict["uses"]["exports/GDP"]]
+        uses += [cdict["uses"]["imports"],cdict["uses"]["imports/capita"],cdict["uses"]["imports/GDP"]]
+    except:
+        pass
+    response += [uses]
+    sources = ["Where National Product comes from"]
+    if True:
+#    try:
+        sources += [cdict["sources"]["agriculture"],cdict["sources"]["agri/capita"],cdict["sources"]["agri/GDP"]]
+        sources += [cdict["sources"]["industry"],cdict["sources"]["industry/capita"],cdict["sources"]["industry/GDP"]]
+        sources += [cdict["sources"]["services"],cdict["sources"]["services/capita"],cdict["sources"]["services/GDP"]]
+#    except:
+#        pass
+    response += [sources]
+
+    return ask, response

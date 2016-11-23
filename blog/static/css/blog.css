@@ -242,31 +242,24 @@ form.quiz-form{
 }
 
 
-.content .grid-item-doubled {
+.content .grid-item, .content .grid-item-doubled, .content .grid-item-quad {
     margin-bottom: 1rem;
     padding-right: 1rem;
     width: 340px;
 }
 
-.content .grid-item {
-    margin-bottom: 1rem;
-    padding-right: 1rem;
-    width: 340px;
-}
-
-.content .grid-item h1,.content .grid-item-doubled h1 {
+.content .grid-item h1,.content .grid-item-doubled h1 ,.content .grid-item-quad h1 {
     margin-top: 0;
     font-size: 28px;
 }
 
 
-
-.content .grid-item > div, .content .grid-item-doubled > div {
+.content .grid-item > div, .content .grid-item-doubled > div, .content .grid-item-quad > div {
     background-color: rgba(72,125,24,0.1);
     padding: 1rem;
 }
 
-.content .grid-item label, .content .grid-item-doubled label {
+.content .grid-item label, .content .grid-item-doubled label, .content .grid-item-quad label {
     width: 7em;
 }
 
@@ -289,6 +282,12 @@ form.quiz-form{
         margin-bottom: 1rem;
         padding-right: 1rem;
         width: 660px;
+    }
+
+    .content .grid-item-quad {
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+        width: 990px;
     }
 
     .content .grid-item {
