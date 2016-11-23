@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Country{% endblock %}
+
+{% block quote %}
+	<p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <div class="row widget">
+            <div>
+		<h1><a href=""><span></span> Considering {{ country }} </a></h1>
+	        <form method="GET" class="query-form freeform" action="/country/{{ country_code }}">
+	                {{ freeForm.as_p }}
+	                <button type="submit" class="save btn btn-warning">Ask</button>
+	        </form>
+            <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion', '1.5e6', '25 million kg'</p>
+            </div>
+        </div>
+        <div class="grid" data-masonry='{ "itemSelector": ".grid-item,.grid-item-doubled,.grid-item-quad", "columnWidth": ".grid-item", "gutter": 0 }'>
+            {% if ask %}
+           <div class="grid-item-quad blog-summary featured">
+           <div>
+            <h1><a href=""><span class="{{ widget.glyph }}"></span>Is That A Big Number?</a></h1>
+            {{ ask.1.render }}
+            {% for comparison in ask.2 %}
+                <li>{{ comparison.render }}</li>
+            {% endfor %}
+            </div>
+            </div>
+            {% endif %}
+            {% for panel in panels %}
+                <div class="grid-item blog-summary-shallow">
+                <div>
+			<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ panel.title }}</a></h1>
+                        {% for fact in panel.facts %}
+	                <ul>
+                            <li>{{ fact.render_folk }}</li>
+                        </ul>
+                        {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock %}

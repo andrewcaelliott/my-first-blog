@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Comparisons{% endblock %}
+
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <!--form method="GET" class="query-form" action="/itabn/answer">
+            {{ query.as_p }}
+            <button type="submit" class="save btn btn-default">Ask</button>
+        </form-->
+        <h1><a href=""><span></span> Thinking about country {{ country }} </a></h1>
+        <div class="widget col-lg-6 col-md-6">
+                <div>
+                <h2>{{ answer.quip }}</h2>
+                    <form method="GET" class="query-form" action="/itabn/answer">
+                        {{ query.as_p }}
+                        <button type="submit" class="save btn btn-warning">Ask</button>
+                    </form>
+                </div>
+        </div>
+        <div class="widget col-lg-6 col-md-6">
+            <div>
+                {% if answer.easteregg %}
+                <h2>How big is {{ answer.easteregg.question }} ?</h2>
+                <h3>{{ answer.easteregg.answer }}</h3>
+                {% else %}
+                <h2>How big is {{ question }} ?</h2>
+                <h2>More or less ...</h2>
+                <div class="comparison">
+                    <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber?  < {{ answer.brackets.above }}">Tweet</a> Smaller than: {{ answer.brackets.above }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                </div>
+                <div class="comparison">
+                    <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? > {{ answer.brackets.below }}">Tweet</a> Bigger than: {{ answer.brackets.below }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                </div>
+                {% for match in answer.closeMatches %}
+                    <div class="comparison">
+                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ match.text }}">Tweet</a> Close to: {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                    </div>
+                {% endfor %}
+                <h2>And equivalent to  ...</h2>
+                {% for comparison in answer.comparisons %}
+                    <div class="comparison">
+                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ comparison.render }}">Tweet</a> {{ comparison.render }} <a title="Where does this number come from?" href="{{ comparison.link }}">...</a></p>
+                    </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}
