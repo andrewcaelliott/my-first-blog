@@ -45,11 +45,11 @@ count_references = [
 ]
 
 amount_references = [
-    ('GDP of United States','{times:,.2f} times the USA GDP','{percent:,.2f} percent of the USA GDP','1 /{fraction:,.0f} of the USA GDP'),
-    ('GDP of China','{times:,.2f} times the China GDP','{percent:,.2f} percent of the China GDP','1 /{fraction:,.0f} of the China GDP'),
+    ('GDP in United States','{times:,.2f} times the USA GDP','{percent:,.2f} percent of the USA GDP','1 /{fraction:,.0f} of the USA GDP'),
+    ('GDP in China','{times:,.2f} times the China GDP','{percent:,.2f} percent of the China GDP','1 /{fraction:,.0f} of the China GDP'),
     ('Total value of all gold ever mined','{times:,.2f} times the value of all the gold ever mined','{percent:,.2f} percent of the value of all the gold ever mined','1 /{fraction:,.0f} of the value of all the gold ever mined'),
-    ('GDP of United Kingdom','{times:,.2f} times the UK GDP','{percent:,.2f} percent of the UK GDP','1 /{fraction:,.0f} of the UK GDP'),
-    ('GDP of Luxembourg','{times:,.2f} times the Luxembourg GDP','{percent:,.2f} percent of the Luxembourg GDP','1 /{fraction:,.0f} of the Luxembourg GDP'),
+    ('GDP in United Kingdom','{times:,.2f} times the UK GDP','{percent:,.2f} percent of the UK GDP','1 /{fraction:,.0f} of the UK GDP'),
+    ('GDP in Luxembourg','{times:,.2f} times the Luxembourg GDP','{percent:,.2f} percent of the Luxembourg GDP','1 /{fraction:,.0f} of the Luxembourg GDP'),
     ('Wealth of the wealthiest person in the world','{times:,.2f} times the wealth of the wealthiest person','{percent:,.2f} percent of the wealth of the wealthiest person','1 /{fraction:,.0f} of the wealth of the wealthiest person'),
     ('Largest Win on a Lottery Ticket','{times:,.2f} times the largest-ever lottery win (per ticket)','{percent:,.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:,.0f} of the largest-ever lottery win (per ticket)'),
     ('Cost of Porsche 911 Carrera','{times:,.2f} times the cost of a Porsche 911 Carrera','{percent:,.2f} percent of the cost of a Porsche 911 Carrera','1 /{fraction:,.0f} of the the cost of a Porsche 911 Carrera'),
@@ -234,7 +234,7 @@ quotes = (
         '"You have to be odd to be number one." Dr. Seuss',
         '"When you can measure what you are speaking about, and express it in numbers, you know something about it" Lord Kelvin',
         '"You don\'t need people’s opinion on a fact. You might as well have a poll asking: ‘Which number is bigger, 15 or 5?’" John Oliver',
-        '"My big thesis is that although the world looks messy and chaotic, if you translate it into the world of numbers and shapes, patterns emerge and you start to understand why things are the way they are". Marcus du Sautoy'
+        '"My big thesis is that although the world looks messy and chaotic, if you translate it into the world of numbers and shapes, patterns emerge and you start to understand why things are the way they are". Marcus du Sautoy',
         '"The hardest arithmetic to master is that which enables us to count our blessings." Eric Hoffer',
         '[In] Astronomy, if you’re getting within 10 orders of magnitude, you’re okay." Sir Michael Atiyah',
 
@@ -257,6 +257,9 @@ amount_conversion_targets = [
     ('AUD'),
     ('CAD'),
     ('CHF'),
+    ('CNY'),
+    ('INR'),
+    ('RUB'),
     ('EUR'),
     ('GBP'),
     ('HKD'),

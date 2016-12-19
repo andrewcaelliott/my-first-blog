@@ -12,7 +12,7 @@ from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spu
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
-from .forms import FreeForm 
+from .forms import FreeForm,FreeFormCountry
 from .forms import ConvertForm 
 from .forms import FilterFactsForm 
 from .convert import convertToDefaultBase 
@@ -209,7 +209,7 @@ def quiz(request):
     if quiz["comparison"]=="biggest":
         if measure=="extent":
             quiz["question"]="Which of these is the biggest?"
-        elif measure=="count":
+        elif measure.find("count")==0:
             quiz["question"]="Which of these is the most numerous?"
         elif measure=="amount":
             quiz["question"]="Which of these is the greatest amount?"
@@ -226,7 +226,7 @@ def quiz(request):
     else:
         if measure=="extent":
             quiz["question"]="Which of these is the smallest?"
-        elif measure=="count":
+        elif measure.find("count")==0:
             quiz["question"]="Which of these is the least numerous?"
         elif measure=="amount":
             quiz["question"]="Which of these is the smallest amount?"
@@ -402,12 +402,17 @@ def country(request, country_code):
         qnumber = params["number"]
     except:
         qnumber = None
-    freeForm = FreeForm()
+    try:
+        location = params["location"]
+    except:
+        location = "GB"
+    freeForm = FreeFormCountry(initial = {"number":qnumber, "location": location})
     freeForm.fields["number"].label="Is this a big number?"
+    freeForm.fields["location"].label=""
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["sponsor","donate"])
-    country = resolve_country_code(country_code)
-    country_ask, country_list = summarise_country_list(NumberQuery, NumberFact, country_code, qnumber)
+    country = resolve_country_code(location)
+    country_ask, country_list = summarise_country_list(NumberQuery, NumberFact, location, qnumber)
     panels = []
     for item in country_list:
         if item[0] == "Is That A Big Number?":

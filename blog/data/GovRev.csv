@@ -18,14 +18,14 @@
 ,Barbados,2015,BB,1.2,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Belarus,2015,BY,22.97,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Belgium,2015,BE,233.4,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Belize,2015,BZ,500.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Belize,2015,BZ,500,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Benin,2015,BJ,1.476,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Bermuda,2015,BM,897.3,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Bolivia,2015,BO,15.78,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Bosnia and Herzegovina,2015,BA,7.606,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Botswana,2015,BW,5.112,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Brazil,2015,BR,638.0,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,British Virgin Islands,2015,VG,300.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Brazil,2015,BR,638,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,British Virgin Islands,2015,VG,300,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Brunei,2015,BN,4.899,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Bulgaria,2015,BG,18.25,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Burkina Faso,2015,BF,2.16,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -84,7 +84,7 @@
 ,Guinea,2015,GN,1.302,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Guyana,2015,GY,818.3,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Haiti,2015,HT,1.818,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Holy See (Vatican City),2011,VA,308.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Holy See (Vatican City),2011,VA,308,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Honduras,2015,HN,3.992,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Hong Kong,2015,HK,66.06,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Hungary,2015,HU,58.77,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -94,12 +94,12 @@
 ,Iran,2015,IR,61.95,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Iraq,2015,IQ,63.6,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Ireland,2015,IE,78.42,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Isle of Man,2006,IM,965.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Isle of Man,2006,IM,965,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Israel,2015,IL,77.22,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Italy,2015,IT,870.0,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Italy,2015,IT,870,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Jamaica,2015,JM,3.899,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Japan,2015,JP,1.48,trillion,12,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Jersey,2005,JE,829.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Jersey,2005,JE,829,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Jordan,2015,JO,8.324,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Kazakhstan,2015,KZ,34.43,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Kenya,2015,KE,10.76,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -123,7 +123,7 @@
 ,Madagascar,2015,MG,1.149,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Malawi,2015,MW,1.26,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Malaysia,2015,MY,56.1,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Maldives,2014,MV,960.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Maldives,2014,MV,960,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Mali,2015,ML,2.505,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Malta,2015,MT,4.087,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Marshall Islands,2013,MH,116.7,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -140,8 +140,8 @@
 ,Namibia,2015,NA,4.553,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Nauru,2010,NR,57.8,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Nepal,2015,NP,4.394,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Netherlands,2015,NL,324.0,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,New Caledonia,2001,NC,996.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Netherlands,2015,NL,324,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,New Caledonia,2001,NC,996,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,New Zealand,2015,NZ,66.54,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Nicaragua,2015,NI,3.382,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Nigeria,2015,NG,18.21,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -168,7 +168,7 @@
 ,Rwanda,2015,RW,1.969,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Saint Kitts and Nevis,2015,KN,370.4,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Saint Lucia,2011,LC,185.2,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Saint Pierre and Miquelon,1996,PM,70.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Saint Pierre and Miquelon,1996,PM,70,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Saint Vincent and the Grenadines,2015,VC,222.2,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Samoa,2015,WS,208.5,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,San Marino,2011,SM,667.7,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -184,11 +184,11 @@
 ,Solomon Islands,2015,SB,411.9,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Somalia,2014,SO,145.3,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,South Africa,2015,ZA,85.82,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,South Sudan,2013,SS,437.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,South Sudan,2013,SS,437,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Spain,2015,ES,458.8,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Sri Lanka,2015,LK,10.75,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Sudan,2015,SD,6.663,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Suriname,2015,SR,878.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Suriname,2015,SR,878,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Svalbard,2000,SJ,1,unit,0,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Swaziland,2015,SZ,1.121,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Sweden,2015,SE,248.5,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -198,7 +198,7 @@
 ,Tajikistan,2015,TJ,2.606,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Tanzania,2015,TZ,6.022,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Thailand,2015,TH,73.65,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,Timor-Leste,2015,TL,400.0,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,Timor-Leste,2015,TL,400,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Togo,2015,TG,1.061,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Tokelau,1987,TK,430.8,thousand,3,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Tonga,2015,TO,94.98,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
@@ -212,7 +212,7 @@
 ,Ukraine,2015,UA,29.85,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,United Arab Emirates,2015,AE,102.8,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,United Kingdom,2015,GB,1.107,trillion,12,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
-,United States,2015,US,3.249,trillion,12,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
+,United States,2015,US,4.249,trillion,12,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Uruguay,2015,UY,15.21,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Uzbekistan,2015,UZ,21.17,billion,9,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html
 ,Vanuatu,2015,VU,176.2,million,6,USD/a,amount,https://www.cia.gov/library/publications/the-world-factbook/fields/2056.html

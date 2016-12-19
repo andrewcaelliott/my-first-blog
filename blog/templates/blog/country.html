@@ -10,9 +10,10 @@
         <div class="row widget">
             <div>
 		<h1><a href=""><span></span> Considering {{ country }} </a></h1>
-	        <form method="GET" class="query-form freeform" action="/country/{{ country_code }}">
+	        <form method="GET" class="query-form freeform" action="/country/{{ country_code }}" >
 	                {{ freeForm.as_p }}
-	                <button type="submit" class="save btn btn-warning">Ask</button>
+                    <button type="submit" class="save btn btn-warning" onclick='this.form.target="_self";'>Ask in This Tab</button>
+                    <button type="submit" class="save btn btn-warning" onclick='this.form.target="_blank";'>Ask in New Tab</button>
 	        </form>
             <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion', '1.5e6', '25 million kg'</p>
             </div>
@@ -30,12 +31,17 @@
             </div>
             {% endif %}
             {% for panel in panels %}
-                <div class="grid-item blog-summary-shallow">
+                <div class="grid-item blog-summary">
                 <div>
 			<h1><a href=""><span class="{{ widget.glyph }}"></span> {{ panel.title }}</a></h1>
                         {% for fact in panel.facts %}
 	                <ul>
-                            <li>{{ fact.render_folk }}</li>
+                            <li>{{ fact.base.render_equals }}</li>
+                            {% for dfact in fact.derived %}
+                            <ul>
+                                <li><em>{{ dfact.render_equals }}</em></li>
+                            </ul>
+                            {% endfor %}
                         </ul>
                         {% endfor %}
                 </div>

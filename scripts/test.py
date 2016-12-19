@@ -200,13 +200,13 @@ def run10():
 	print(klass.objects)
 
 
-def run11():
+def run():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
 #	rf = randomFact(NumberFact, measure, rseed=seed)
 #	print(rf.permlink)
-	dyk = spuriousFact(klass, 2, measure="energy")
+	dyk = spuriousFact(klass, 2, measure="count.pop")
 	print(dyk["fact1"], dyk["comparison"], dyk["fact2"])
 
 def run12():
@@ -393,7 +393,7 @@ def runbatch():
 
 	sum_country("GB")
 
-def run():
+def run17():
 	print("ok")
 	resp = summarise_country(NumberFact, "JP", "100000")
 	#print(resp)

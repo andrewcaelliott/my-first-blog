@@ -19,7 +19,7 @@ def convertToUSD(amount, currency):
 
 def getCurrencyConversionFactor(currency1, currency2):
     response = callHttpGET("http://api.fixer.io/","latest",{"symbols":currency1,"base":currency2,"callback":"?"}).text
-    jsonResponse = json.loads(response[1:-1])
+    jsonResponse = json.loads(response[2:-1])
     return jsonResponse["rates"][currency1]
 
 def convertToCurrency(amount, currency1, currency2):    

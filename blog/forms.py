@@ -22,6 +22,11 @@ class FreeForm(forms.ModelForm):
         model = NumberQuery
         fields = ('number',)                
 
+class FreeFormCountry(forms.ModelForm):
+    class Meta:
+        model = NumberQuery
+        fields = ('location','number',)                
+
 class QueryForm(forms.ModelForm):
 
     class Meta:

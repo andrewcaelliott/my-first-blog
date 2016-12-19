@@ -8,7 +8,7 @@ from .convert import convertToDefault
 from .convert import AMOUNT_UNITS
 from .config import all_unit_choices
 from .config import MEASURE_CHOICES,MULTIPLE_CHOICES,MULTIPLE_INVERSE
-from .utils import num,sigfigs,getScaleFactor,output,currency_output,closeEnoughNumberFact,bracketNumber,getMultiple
+from .utils import num,sigfigs,getScaleFactor,output,currency_output,closeEnoughNumberFact,bracketNumber,getMultiple,country_code_list,resolve_country_code
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 UNIT_CHOICES = all_unit_choices
@@ -22,7 +22,7 @@ class NumberQuery(models.Model):
     magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
     measure  = models.CharField(max_length=1, choices=MEASURE_CHOICES, default="c")
-    location = models.CharField(max_length=100)
+    location = models.CharField(max_length=2,choices=country_code_list(), default="GB")
     value    = models.DecimalField(max_digits=30, decimal_places=10)
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES, default="U")
     unit     = models.CharField(max_length=10, choices=UNIT_CHOICES)
@@ -225,6 +225,11 @@ class NumberFact(models.Model):
             mag = str(sigfigs(num(self.magnitude),4))
 
         if measure.find("area")>=0 and self.scale>=6:
+            print("Fact")
+            print(self.title)
+            print(mag)
+            print(self.scale)
+            print(self.unit)
             newnumber = NumberFact(magnitude=mag, scale=self.scale-6, measure=measure, unit="km^2", multiple=getMultiple(self.scale-6))
             mult = newnumber.multiple
             unit = newnumber.unit
@@ -333,6 +338,12 @@ class NumberFact(models.Model):
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
             ")" ]).replace("Population", "Pop.").replace("illion", "").replace("thousand ", "th ")
 
+    def _display_equals(self):
+        title = self.title.replace("in "+resolve_country_code(self.location),"")
+        title = title.replace("of "+resolve_country_code(self.location),"").replace("to "+resolve_country_code(self.location),"").replace("from "+resolve_country_code(self.location),"")
+        return "".join([title," = ",
+            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("illion", "").replace("thousand ", "th ").replace(" (2000)", "").replace(" people", "")
+
     def _display_folk_long(self):
         return "".join([self.title_plus()," (",
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
@@ -348,6 +359,7 @@ class NumberFact(models.Model):
     render2 = property(_display2)
     render_folk = property(_display_folk)
     render_folk_long = property(_display_folk_long)
+    render_equals = property(_display_equals)
     link = property(_link)
 
 class Comparison(models.Model):

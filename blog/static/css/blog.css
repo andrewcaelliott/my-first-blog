@@ -56,6 +56,11 @@ form.freeform p {
     font-size: 32px
 }
 
+form.freeform p #id_location{
+    display: block;
+    font-size: 20px
+}
+
 form.choice {
     display:inline;
 }
@@ -163,6 +168,10 @@ div.content.container{
 
 .content .widget input, .content .widget select {
     width: 75%;
+}
+
+.content .widget select#id_location {
+    width: 25%;
 }
 
 form.quiz-form{
@@ -287,7 +296,7 @@ form.quiz-form{
     .content .grid-item-quad {
         margin-bottom: 1rem;
         padding-right: 1rem;
-        width: 990px;
+        width: 1320px;
     }
 
     .content .grid-item {

@@ -787,6 +787,15 @@ def resolve_country_code(key):
 def get_country_codes():
     return load_country_codes(os.path.join(BASE_DIR, "blog/data/CountryCodes.csv"))
 
+def country_code_list():
+    cc_dict = get_country_codes()[0]
+    cc_list = []
+    for key in cc_dict.keys():
+#        cc_list.append((key, key+":"+cc_dict[key]))
+        cc_list.append((key, cc_dict[key]))
+    return sorted(cc_list, key = lambda k: k[1])
+
+
 def resolve_cia_country(name):
     global country_codes, cia_country_names
     if cia_country_names==None:
@@ -855,83 +864,102 @@ def summarise_country(klass, code, qamount):
     except:
         imports = None
 
-    agri = klass.objects.filter(location__icontains = location, title__icontains = "Agriculture").order_by('-date')[0]  
-    industry = klass.objects.filter(location__icontains = location, title__icontains = "Industrial").order_by('-date')[0]  
-    services = klass.objects.filter(location__icontains = location, title__icontains = "Services").order_by('-date')[0]  
+    try:
+        agri = klass.objects.filter(location__icontains = location, title__icontains = "Agriculture").order_by('-date')[0]  
+    except:
+        agri = None
+    try:
+        industry = klass.objects.filter(location__icontains = location, title__icontains = "Industrial").order_by('-date')[0]  
+    except:
+        industry = None
+    try:
+        services = klass.objects.filter(location__icontains = location, title__icontains = "Services").order_by('-date')[0]  
+    except:
+        services = None
     basics = {"GDP": GDP, "Population":pop, "Land":land,
-            "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita in "+country),
-            "Population density": make_count(klass, str(round(val_from(pop)/val_from(land),0)), "Population density in "+country, "people")
+            "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita"),
+            "Population density": make_count(klass, str(round(1000000*val_from(pop)/val_from(land),0)), "Population density", "people")
     }
     response["basics"]= basics
-    deficit = make_amount(klass, str(round(val_from(spend) - val_from(tax),0)), "deficit in "+country)
+    deficit = make_amount(klass, str(round(val_from(spend) - val_from(tax),0)), "Deficit")
     deficit.normalise()
     tax_spend = {
         "tax": tax,
 #        "tax/capita": round(val_from(tax)/val_from(pop),0),
-        "tax/capita": make_amount(klass, str(round(val_from(tax)/val_from(pop),0)), "tax/capita in "+country),
+        "tax/capita": make_amount(klass, str(round(val_from(tax)/val_from(pop),0)), "tax/capita"),
 #        "tax/GDP": round(100*val_from(tax)/val_from(GDP),0),
-        "tax/GDP": make_perc(klass, str(round(100*val_from(tax)/val_from(GDP),0)), "tax/GDP in "+country),
+        "tax/GDP": make_perc(klass, str(round(100*val_from(tax)/val_from(GDP),0)), "tax/GDP"),
         "spend": spend,
-        "spend/capita": make_amount(klass, str(round(val_from(spend)/val_from(pop),0)), "spend/capita in "+country),
-        "spend/GDP": make_perc(klass, str(round(100*val_from(spend)/val_from(GDP),0)), "spend/GDP in "+country),
-#        "deficit": normalise_nf(make_amount(klass, str(round(deficit,0)), "deficit in "+country)),
+        "spend/capita": make_amount(klass, str(round(val_from(spend)/val_from(pop),0)), "spend/capita"),
+        "spend/GDP": make_perc(klass, str(round(100*val_from(spend)/val_from(GDP),0)), "spend/GDP"),
+#        "deficit": normalise_nf(make_amount(klass, str(round(deficit,0)), "deficit")),
         "deficit": deficit,
-        "deficit/capita": make_amount(klass, str(round(val_from(deficit)/val_from(pop),0)), "deficit/capita in "+country),
-        "deficit/GDP": make_perc(klass, str(round(100*val_from(deficit)/val_from(GDP),0)), "deficit/GDP in "+country),
-        "deficit/spend": make_perc(klass, str(round(100*val_from(deficit)/val_from(spend),0)), "deficit/spend in "+country),
+        "deficit/capita": make_amount(klass, str(round(val_from(deficit)/val_from(pop),0)), "deficit/capita"),
+        "deficit/GDP": make_perc(klass, str(round(100*val_from(deficit)/val_from(GDP),0)), "deficit/GDP"),
+        "deficit/spend": make_perc(klass, str(round(100*val_from(deficit)/val_from(spend),0)), "deficit/spend"),
     }
     response["tax_spend"]= tax_spend
     if debt:
         nat_debt = {
         "nat_debt": debt,
-        "debt/capita": make_amount(klass, str(round(val_from(debt)/val_from(pop),0)), "debt/capita in "+country),
-        "debt/GDP": make_perc(klass, str(round(100*val_from(debt)/val_from(GDP),0)), "debt/GDP in "+country),
+        "debt/capita": make_amount(klass, str(round(val_from(debt)/val_from(pop),0)), "debt/capita"),
+        "debt/GDP": make_perc(klass, str(round(100*val_from(debt)/val_from(GDP),0)), "debt/GDP"),
         }
         response["nat_debt"]=nat_debt
     uses = {}
     if hhcons:
         uses["hhcons"] = hhcons
-        uses["hhcons/capita"] = make_amount(klass, str(round(val_from(hhcons)/val_from(pop),0)), "HC/capita in "+country)
-        uses["hhcons/GDP"]= make_perc(klass, str(round(100*val_from(hhcons)/val_from(GDP),0)), "HC/GDP in "+country)
+        uses["hhcons/capita"] = make_amount(klass, str(round(val_from(hhcons)/val_from(pop),0)), "HC/capita")
+        uses["hhcons/GDP"]= make_perc(klass, str(round(100*val_from(hhcons)/val_from(GDP),0)), "HC/GDP")
     if gvcons:
         uses["gvcons"] = gvcons
-        uses["gvcons/capita"]= make_amount(klass, str(round(val_from(gvcons)/val_from(pop),0)), "GC/capita in "+country)
-        uses["gvcons/GDP"]= make_perc(klass, str(round(100*val_from(gvcons)/val_from(GDP),0)), "GC/GDP in "+country)
+        uses["gvcons/capita"]= make_amount(klass, str(round(val_from(gvcons)/val_from(pop),0)), "GC/capita")
+        uses["gvcons/GDP"]= make_perc(klass, str(round(100*val_from(gvcons)/val_from(GDP),0)), "GC/GDP")
+    if invcap and invinv:
+        inv =make_amount(klass, str(round(val_from(invcap)+val_from(invinv),0)), "Investment")
+        uses["inv"] = inv
+        inv.normalise()
+        uses["inv/capita"] = make_amount(klass, str(round(val_from(inv)/val_from(pop),0)), "Inv/capita")
+        uses["inv/GDP"] = make_perc(klass, str(round(100*val_from(inv)/val_from(GDP),0)), "Inv/GDP")
     if invcap:
         uses["invcap"] = invcap
-        uses["invcap/capita"] = make_amount(klass, str(round(val_from(invcap)/val_from(pop),0)), "IC/capita in "+country)
-        uses["invcap/GDP"] = make_perc(klass, str(round(100*val_from(invcap)/val_from(GDP),0)), "IC/GDP in "+country)
+        uses["invcap/capita"] = make_amount(klass, str(round(val_from(invcap)/val_from(pop),0)), "IC/capita")
+        uses["invcap/GDP"] = make_perc(klass, str(round(100*val_from(invcap)/val_from(GDP),0)), "IC/GDP")
     if invinv:
         uses["invinv"] = invinv
-        uses["invinv/capita"] = make_amount(klass, str(round(val_from(invinv)/val_from(pop),0)), "II/capita in "+country)
-        uses["invinv/GDP"] = make_perc(klass, str(round(100*val_from(invinv)/val_from(GDP),0)), "II/GDP in "+country)
+        uses["invinv/capita"] = make_amount(klass, str(round(val_from(invinv)/val_from(pop),0)), "II/capita")
+        uses["invinv/GDP"] = make_perc(klass, str(round(100*val_from(invinv)/val_from(GDP),0)), "II/GDP")
     if exports:
         uses["exports"] = exports
-        uses["exports/capita"] = make_amount(klass, str(round(val_from(exports)/val_from(pop),0)), "exports/capita in "+country)
-        uses["exports/GDP"] = make_perc(klass, str(round(100*val_from(exports)/val_from(GDP),0)), "exports/GDP in "+country)
+        uses["exports/capita"] = make_amount(klass, str(round(val_from(exports)/val_from(pop),0)), "exports/capita")
+        uses["exports/GDP"] = make_perc(klass, str(round(100*val_from(exports)/val_from(GDP),0)), "exports/GDP")
         print()
     if imports:
         uses["imports"] = imports
-        uses["imports/capita"] = make_amount(klass, str(round(val_from(imports)/val_from(pop),0)), "imports/capita in "+country)
-        uses["imports/GDP"] = make_perc(klass, str(round(100*val_from(imports)/val_from(GDP),0)), "imports/GDP in "+country)
+        uses["imports/capita"] = make_amount(klass, str(round(val_from(imports)/val_from(pop),0)), "imports/capita")
+        uses["imports/GDP"] = make_perc(klass, str(round(100*val_from(imports)/val_from(GDP),0)), "imports/GDP")
         print()
     response["uses"]= uses
     sources = {}
-    sources["agriculture"] = agri
-    sources["agri/capita"] = make_amount(klass, str(round(val_from(agri)/val_from(pop),0)), "agr.prod/capita in "+country)
-    sources["agri/GDP"] = make_perc(klass, str(round(100*val_from(agri)/val_from(GDP),0)), "agr.prod/GDP in "+country)
-    sources["industry"] = industry
-    sources["industry/capita"] = make_amount(klass, str(round(val_from(industry)/val_from(pop),0)), "ind.prod/capita in "+country)
-    sources["industry/GDP"] = make_perc(klass, str(round(100*val_from(industry)/val_from(GDP),0)), "ind.prod/GDP in "+country)
-    sources["services"] = services
-    sources["services/capita"] = make_amount(klass, str(round(val_from(services)/val_from(pop),0)), "serv.prod/capita in "+country)
-    sources["services/GDP"] = make_perc(klass, str(round(100*val_from(services)/val_from(GDP),0)), "serv.prod/GDP in "+country)
+    if agri:
+        sources["agriculture"] = agri
+        sources["agri/capita"] = make_amount(klass, str(round(val_from(agri)/val_from(pop),0)), "agr.prod/capita")
+        sources["agri/GDP"] = make_perc(klass, str(round(100*val_from(agri)/val_from(GDP),0)), "agr.prod/GDP")
+    if industry:
+        sources["industry"] = industry
+        sources["industry/capita"] = make_amount(klass, str(round(val_from(industry)/val_from(pop),0)), "ind.prod/capita")
+        sources["industry/GDP"] = make_perc(klass, str(round(100*val_from(industry)/val_from(GDP),0)), "ind.prod/GDP")
+    if services:
+        sources["services"] = services
+        sources["services/capita"] = make_amount(klass, str(round(val_from(services)/val_from(pop),0)), "serv.prod/capita")
+        sources["services/GDP"] = make_perc(klass, str(round(100*val_from(services)/val_from(GDP),0)), "serv.prod/GDP")
     response["sources"]= sources
     return response
 
 
 def summarise_country_list(klass1, klass, code, qamount):
     cdict  = summarise_country(klass, code, qamount)
+    country = resolve_country_code(code)
     ask = None
     response = []
     if qamount:
@@ -945,7 +973,9 @@ def summarise_country_list(klass1, klass, code, qamount):
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} USD for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'$1  for every {fraction:,.0f} people in the '+fact.title))
             fact = cdict["basics"]["GDP"]
-            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'$1  for every {fraction:,.0f} in the '+fact.title))
+            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'{percent:,.2f} percent of the '+fact.title))
+            fact = cdict["tax_spend"]["spend"]
+            factpacks.append((fact, '{times:,.2f} times '+fact.title,'{percent:,.2f} percent of '+fact.title,'{percent:,.2f} percent of '+fact.title))
         elif compnq.measure == "c":
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} people in the '+fact.title))
@@ -972,43 +1002,92 @@ def summarise_country_list(klass1, klass, code, qamount):
         #response+=[ask]
  #   except:
   #      pass
-    basics = ["Basics",
-        cdict["basics"]["Population"],cdict["basics"]["Land"],cdict["basics"]["GDP"], 
-        cdict["basics"]["GDP per capita"],cdict["basics"]["Population density"]
+    basics = [country,
+        {"base":cdict["basics"]["Population"]},
+        {
+            "base":cdict["basics"]["Land"],
+            "derived":[cdict["basics"]["Population density"]]
+        },
+        {
+            "base":cdict["basics"]["GDP"], 
+            "derived":[cdict["basics"]["GDP per capita"]]
+        },
     ]
-    response+=[basics]
     tax_spend=["Taxation and Government Expenditure",
-        cdict["tax_spend"]["tax"],cdict["tax_spend"]["tax/capita"],cdict["tax_spend"]["tax/GDP"],
-        cdict["tax_spend"]["spend"],cdict["tax_spend"]["spend/capita"],cdict["tax_spend"]["spend/GDP"],
-        cdict["tax_spend"]["deficit"],cdict["tax_spend"]["deficit/capita"],cdict["tax_spend"]["deficit/GDP"],
+        { 
+            "base": cdict["tax_spend"]["tax"],
+            "derived": [cdict["tax_spend"]["tax/capita"],cdict["tax_spend"]["tax/GDP"]],
+        },
+        { 
+            "base": cdict["tax_spend"]["spend"],
+            "derived": [cdict["tax_spend"]["spend/capita"],cdict["tax_spend"]["spend/GDP"]],
+        },
+        { 
+            "base": cdict["tax_spend"]["deficit"],
+            "derived": [cdict["tax_spend"]["deficit/capita"],cdict["tax_spend"]["deficit/GDP"]],
+        },
     ]
-    response+=[tax_spend]
     try:
         debt = ["National Debt",
-            cdict["nat_debt"]["nat_debt"],cdict["nat_debt"]["debt/capita"],cdict["nat_debt"]["debt/GDP"]
+            { 
+                "base": cdict["nat_debt"]["nat_debt"],
+                "derived":[cdict["nat_debt"]["debt/capita"],cdict["nat_debt"]["debt/GDP"]]
+            }
         ]
     except:
         debt = ["National Debt", "No information available"]
-    response += [debt]
-    uses = ["How National Product is used"]
+    uses = ["Where GDP goes"]
     try:
-        uses += [cdict["uses"]["hhcons"],cdict["uses"]["hhcons/capita"],cdict["uses"]["hhcons/GDP"]]
-        uses += [cdict["uses"]["gvcons"],cdict["uses"]["gvcons/capita"],cdict["uses"]["gvcons/GDP"]]
-        uses += [cdict["uses"]["invcap"],cdict["uses"]["invcap/capita"],cdict["uses"]["invcap/GDP"]]
-        uses += [cdict["uses"]["invinv"],cdict["uses"]["invinv/capita"],cdict["uses"]["invinv/GDP"]]
-        uses += [cdict["uses"]["exports"],cdict["uses"]["exports/capita"],cdict["uses"]["exports/GDP"]]
-        uses += [cdict["uses"]["imports"],cdict["uses"]["imports/capita"],cdict["uses"]["imports/GDP"]]
+        uses += [{ 
+                "base": cdict["uses"]["hhcons"],
+                "derived": [cdict["uses"]["hhcons/capita"],cdict["uses"]["hhcons/GDP"]]
+        }]
+        uses += [{ 
+                "base": cdict["uses"]["gvcons"],
+                "derived": [cdict["uses"]["gvcons/capita"],cdict["uses"]["gvcons/GDP"]]
+        }]
+        uses += [{ 
+                "base": cdict["uses"]["inv"],
+                "derived":[cdict["uses"]["inv/capita"],cdict["uses"]["inv/GDP"]]
+        }]
+#        uses += [{ 
+#                "base": cdict["uses"]["invcap"],
+#                "derived":[cdict["uses"]["invcap/capita"],cdict["uses"]["invcap/GDP"]]
+#        }]
+#        uses += [{ 
+#                "base": cdict["uses"]["invinv"],
+#                "derived":[cdict["uses"]["invinv/capita"],cdict["uses"]["invinv/GDP"]]
+#        }]
+        uses += [{ 
+                "base": cdict["uses"]["exports"],
+                "derived":[cdict["uses"]["exports/capita"],cdict["uses"]["exports/GDP"]]
+        }]
+        uses += [{ 
+                "base": cdict["uses"]["imports"],
+                "derived":[cdict["uses"]["imports/capita"],cdict["uses"]["imports/GDP"]]
+        }]
     except:
         pass
-    response += [uses]
-    sources = ["Where National Product comes from"]
-    if True:
-#    try:
-        sources += [cdict["sources"]["agriculture"],cdict["sources"]["agri/capita"],cdict["sources"]["agri/GDP"]]
-        sources += [cdict["sources"]["industry"],cdict["sources"]["industry/capita"],cdict["sources"]["industry/GDP"]]
-        sources += [cdict["sources"]["services"],cdict["sources"]["services/capita"],cdict["sources"]["services/GDP"]]
-#    except:
-#        pass
+    sources = ["Where GDP comes from"]
+    try:
+        sources += [{ 
+                "base": cdict["sources"]["agriculture"],
+                "derived": [cdict["sources"]["agri/capita"],cdict["sources"]["agri/GDP"]]
+        }]
+        sources += [{ 
+                "base": cdict["sources"]["industry"],
+                "derived": [cdict["sources"]["industry/capita"],cdict["sources"]["industry/GDP"]]
+        }]
+        sources += [{ 
+                "base": cdict["sources"]["services"],
+                "derived": [cdict["sources"]["services/capita"],cdict["sources"]["services/GDP"]]
+        }]
+    except:
+        pass
+    response+=[basics]
     response += [sources]
+    response += [uses]
+    response+=[tax_spend]
+    response += [debt]
 
     return ask, response
