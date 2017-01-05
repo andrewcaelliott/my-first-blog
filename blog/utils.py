@@ -865,7 +865,7 @@ def summarise_country(klass, code, qamount):
         imports = None
 
     try:
-        agri = klass.objects.filter(location__icontains = location, title__icontains = "Agriculture").order_by('-date')[0]  
+        agri = klass.objects.filter(location__icontains = location, title__icontains = "Agricultural").order_by('-date')[0]  
     except:
         agri = None
     try:
