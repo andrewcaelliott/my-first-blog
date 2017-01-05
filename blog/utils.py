@@ -721,7 +721,7 @@ def load_link_redirects(fileName, encoding="UTF-8"):
 
 def save_link_redirects(links, fileName, encoding="UTF-8"):
     outFile= open(fileName, "w", encoding=encoding)
-    for key in links.keys():
+    for key in sorted(links.keys(), key = lambda k: k):
         line = key+"|"+links[key]+"\n"
         outFile.write(line)
 
