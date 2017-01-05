@@ -90,7 +90,7 @@ def run():
     loadNumberFacts("./blog/data/InvInventories.csv","Investment in Inventories in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Exports.csv","Exports from ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Imports.csv","Imports to ","USD p/a", encoding="latin1")
-    loadNumberFacts("./blog/data/Agriculture.csv","Agriculture production in ","USD p/a", encoding="latin1")
+    loadNumberFacts("./blog/data/Agriculture.csv","Agricultural production in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Industry.csv","Industrial production in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Services.csv","Services production in ","USD p/a", encoding="latin1")
     #loadNumberFacts("./blog/data/GovtExps.csv","Govt spending in ","USD p/a", encoding="latin1")

@@ -405,7 +405,7 @@ def query_api(request):
         'answer': answer, 
         })
 
-def country(request, country_code):
+def country(request):
     params = request.GET
     try:
         qnumber = params["number"]
@@ -428,7 +428,7 @@ def country(request, country_code):
             panels+=[{"title":item[0], "facts":item[1:], "featured":True}]
         else:
             panels+=[{"title":item[0], "facts":item[1:]}]
-    return render(request, 'blog/country.html', {'ask':country_ask, 'panels': panels, 'country_code':country_code, 'country':country, 'widgets':{}, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+    return render(request, 'blog/country.html', {'ask':country_ask, 'panels': panels, 'country_code':location, 'country':country, 'widgets':{}, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
 
 
