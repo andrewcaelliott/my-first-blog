@@ -42,7 +42,7 @@
 41,Time since the start of the Bronze Age,5.3,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Bronze_Age
 42,Time since the earliest writing,5.2,thousand,3,y,duration.age,Thanks to Google
 43,Time since building of Stonehenge,5.115,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Stonehenge
-44,Time since building of the Great Pyramid of Giza / Cheops / Khufu,4.575,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+44,Time since building of the Great Pyramid of Giza / Cheops / Khufu,4.576,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
 45,Time since earliest wheeled vehicles,4,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Wheel
 46,Time since the start of the Iron Age,3.2,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Iron_Age
 47,Time since the birth of Pythagoras,2.59,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Pythagoras
@@ -51,7 +51,7 @@
 50,Time since the birth of Euclid,2.38,thousand,3,y,duration.age,http://www.math.wichita.edu/history/men/euclid.html
 51,Time since the birth of Archimedes,2.3,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Archimedes
 52,Time since start of building of the Great Pyramid of Cholula,2.25,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula
-53,Time since the birth of Hero of Alexandria,2.006,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Hero_of_Alexandria
+53,Time since the birth of Hero of Alexandria,2.007,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Hero_of_Alexandria
 54,Time since start of building of the Colosseum,1.944,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Colosseum
 55,Time since the peak of Roman Empire,1.9,thousand,3,y,duration.age,Thanks to Google
 56,Duration of Pandyan Empire (South India),1.85,thousand,3,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
@@ -61,49 +61,49 @@
 60,Time since the birth of al-Khwarizmi,1.24,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi
 61,Duration of Byzantine Empire,1.123,thousand,3,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 62,Time since start of building of Great Zimbabwe,1,thousand,3,y,duration.age,https://en.wikipedia.org/wiki/Great_Zimbabwe
-63,Time since the birth of Omar Khayyam,968,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Omar_Khayyam
+63,Time since the birth of Omar Khayyam,969,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Omar_Khayyam
 64,Time since building of Angkor Wat,900,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Angkor_Wat
-65,Time since the birth of Ibn Rushd (Averroes),890,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Averroes
-66,Time since the birth of Fibonacci,846,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Fibonacci
+65,Time since the birth of Ibn Rushd (Averroes),891,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Averroes
+66,Time since the birth of Fibonacci,847,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Fibonacci
 67,Duration of Frankish Empire,700,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 68,Duration of Toltec Empire,626,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 69,Duration of Ottoman Empire,623,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-70,Time since invention of the printing press,576,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Printing_press
+70,Time since invention of the printing press,577,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Printing_press
 71,Duration of Spanish Empire,573,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-72,Time since the birth of Leonardo da Vinci,564,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonardo
-73,Time since the birth of Copernicus,543,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
+72,Time since the birth of Leonardo da Vinci,565,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonardo
+73,Time since the birth of Copernicus,544,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
 74,Duration of Carthaginian Empire,504,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 75,Duration of Roman Empire,503,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 76,Duration of Egyptian Empire,500,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 77,Duration of Roman Republic,482,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-78,Time since the birth of Shakespeare,452,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
-79,Time since the birth of Galileo,452,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Galileo_Galilei
-80,Time since the birth of Pierre de Fermat,415,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Pierre_de_Fermat
+78,Time since the birth of Shakespeare,453,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
+79,Time since the birth of Galileo,453,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Galileo_Galilei
+80,Time since the birth of Pierre de Fermat,416,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Pierre_de_Fermat
 81,Duration of Dutch Empire,407,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-82,Time since the death of Shakespeare,400,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
+82,Time since the death of Shakespeare,401,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
 83,Duration of British Empire,394,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 84,Duration of Mali Empire,375,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-85,Time since the birth of Newton,374,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Isaac_Newton
+85,Time since the birth of Newton,375,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Isaac_Newton
 86,Duration of Mughal Empire,332,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-87,Time since the birth of Euler,309,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonhard_Euler
+87,Time since the birth of Euler,310,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonhard_Euler
 88,Duration of Ming Dynasty,276,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 89,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
-90,Time since the birth of Joseph Fourier,248,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Joseph_Fourier
-91,Time since birth of Sophie Germain,240,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Sophie_Germain
-92,Time since the birth of Gauss,239,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
-93,Time since the birth of Darwin,207,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Darwin
-94,Time since the birth of Dickens,204,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Dickens
-95,Time since the first iron steamship crossed the English Channel,194,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Steamship
-96,Time since the first passenger steam railway service,191,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
+90,Time since the birth of Joseph Fourier,249,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Joseph_Fourier
+91,Time since birth of Sophie Germain,241,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Sophie_Germain
+92,Time since the birth of Gauss,240,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+93,Time since the birth of Darwin,208,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Darwin
+94,Time since the birth of Dickens,205,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Dickens
+95,Time since the first iron steamship crossed the English Channel,195,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Steamship
+96,Time since the first passenger steam railway service,192,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
 97,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-98,Time since the birth of Cantor,171,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Georg_Cantor
+98,Time since the birth of Cantor,172,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Georg_Cantor
 99,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-100,Time since the birth of Einstein,137,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albert_Einstein
-101,Time since birth of Emmy Noether,134,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Emmy_Noether
+100,Time since the birth of Einstein,138,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albert_Einstein
+101,Time since birth of Emmy Noether,135,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Emmy_Noether
 102,Length of the Hundred Years' War,116,unit,0,y,duration.span,https://en.wikipedia.org/wiki/Hundred_Years%27_War
-103,Time since first transatlantic wireless communication,115,unit,0,y,duration.age,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
-104,Time since the birth of Turing,104,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Alan_Turing
-105,Time since the first fixed wing scheduled air service,102,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Airline
+103,Time since first transatlantic wireless communication,116,unit,0,y,duration.age,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
+104,Time since the birth of Turing,105,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Alan_Turing
+105,Time since the first fixed wing scheduled air service,103,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Airline
 106,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
 107,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
 108,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
@@ -111,8 +111,8 @@
 110,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
 111,Length of reign of King Louis XIV of France,72,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
 112,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-113,Time since the first man walked on the moon,47,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
-114,Time since first email sent,45,unit,0,y,duration.age,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
+113,Time since the first man walked on the moon,48,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
+114,Time since first email sent,46,unit,0,y,duration.age,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
 115,Length of the Wars of the Roses,32,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
 116,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
 117,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/

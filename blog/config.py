@@ -203,6 +203,7 @@ quotes = (
         "There's safety in numbers",
         "Strength in numbers",
         "Let's run the numbers",
+        "Let's see what the numbers say",
         "Sharpen your number sense",
         "Numbers count",
         '"... a man with numbers can put your mind at ease." Paul Simon: When Numbers Get Serious',

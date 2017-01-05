@@ -200,7 +200,7 @@ def run10():
 	print(klass.objects)
 
 
-def run():
+def run11():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
@@ -303,6 +303,7 @@ def sum_country(code):
 	print(GDP.render_folk)
 	print(pop.render_folk)
 	print("GDP/capita", round(val_from(GDP)/val_from(pop),0))
+	resp = round(val_from(GDP)/val_from(pop),2)
 	print()
 	print(land.render_folk)
 	print("pop/land", round(val_from(pop)/val_from(land),0))
@@ -369,6 +370,7 @@ def sum_country(code):
 	print("services/GDP", round(100*val_from(services)/val_from(GDP),0))
 	print()
 	print()
+	return resp
 
 
 
@@ -377,21 +379,28 @@ def runbatch():
 	bad = 0
 	badlist = []
 	codes = sorted(get_country_codes()[0].keys(), key = lambda k: k)
-	
+	resp = {}
 	for code in codes:
 #	for code in ["CG", "KR", "CD", "CX", "IM", "WF", "SJ", "NF", "JE", "CY", "EH", "FK", "PN", "SH", "FM", "KP", "CZ", "BS", "VA", "GM"]:
 	 	print (code)
 	 	try:
-	 		sum_country(code)
+	 		r = sum_country(code)
 	 		good+=1
+	 		resp[resolve_country_code(code)]=r
 	 	except:
 	 		print("Problem with "+code+" "+resolve_country_code(code))
 	 		bad+=1
 	 		badlist+=[code+" "+resolve_country_code(code)]
 	print("Good",good, "Bad", bad)
 	print (badlist)
+	return resp
 
-	sum_country("GB")
+
+def run():
+	r = runbatch()
+	for key in r.keys():
+		print (key,",",r[key])
+	
 
 def run17():
 	print("ok")

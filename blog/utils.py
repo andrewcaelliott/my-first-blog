@@ -657,7 +657,7 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 def neatFacts(klass, selectedFact):
     rf = selectedFact
     tolerance = 0.02
-    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "amount":500, "volume":10000, "area":10000, "speed":1000}[rf.measure]
+    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "amount":500, "volume":10000, "area":10000, "energy":1000}[rf.measure]
 
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
     try:
@@ -700,7 +700,7 @@ def neatFacts(klass, selectedFact):
 
 def get_article(article_name):
     #print(BASE_DIR)
-    filen = os.path.join(BASE_DIR,"blog","static","md",article_name)
+    filen = os.path.join(BASE_DIR,"blog", "static", "md",article_name)
     print(filen)
     with open (filen, "r") as artfile:
         content=artfile.read()        

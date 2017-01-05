@@ -83,14 +83,19 @@ def blog_ggb(request):
 def blog_lmk(request):
     return blog("landmark", request)
 
-def article(article_name, title, subtitle, request):
+def article(article_name, request):
     content=get_article(article_name)
     dyk=spuriousFact(NumberFact,3)
-    promote = choice(["sponsor","donate"])
-    return render(request, 'blog/article.html', {'quote': choice(quotes), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
+#    promote = choice(["sponsor","donate"])
+#    return render(request, 'blog/article.html', {'quote': choice(quotes), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
+    return render(request, 'blog/article.html', {'quote': choice(quotes), "content": content, "dyk":dyk})
 
 def article_sponsor(request):
-    return article("ITABN-Sponsors.md", "Sponsorship Campaign", "Help IsThatABigNumber grow and promote numeracy more widely", request)
+    return article("ITABN-Sponsors.md", request)
+
+def article_gen(request, article_name):
+    article_name = article_name+".md"
+    return article(article_name, request)
 
 
 def ratio(request):
@@ -221,6 +226,8 @@ def quiz(request):
             quiz["question"]="Which of these has the greatest area?"
         elif measure=="speed":
             quiz["question"]="Which of these is the fastest?"
+        elif measure=="energy":
+            quiz["question"]="Which of these has the most energy?"
         else:
             quiz["question"]="Which of these has the greatest mass?"
     else:
@@ -238,6 +245,8 @@ def quiz(request):
             quiz["question"]="Which of these is the shortest period of time?"
         elif measure=="speed":
             quiz["question"]="Which of these is the slowest?"
+        elif measure=="energy":
+            quiz["question"]="Which of these has the least energy?"
         else:
             quiz["question"]="Which of these has the least mass?"
     permalink = site+"quiz/?spec="+spec
