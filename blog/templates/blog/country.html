@@ -9,8 +9,9 @@
 {% block content %}
         <div class="row widget">
             <div>
-		<h1><a href=""><span></span> Considering {{ country }} </a></h1>
-	        <form method="GET" class="query-form freeform" action="/country/{{ country_code }}" >
+		<h1><a href=""><span></span> Numbers concerning {{ country }} </a></h1>
+                <p>(Numbers taken from 2016 edition of CIA World Factbook, mostly relating to 2015)</p>
+	        <form method="GET" class="query-form freeform" action="/country" >
 	                {{ freeForm.as_p }}
                     <button type="submit" class="save btn btn-warning" onclick='this.form.target="_self";'>Ask in This Tab</button>
                     <button type="submit" class="save btn btn-warning" onclick='this.form.target="_blank";'>Ask in New Tab</button>
