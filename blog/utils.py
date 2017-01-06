@@ -44,7 +44,27 @@ def currency_output(x):
     x = sigfigs(x,6)
     if x/1000000000000 ==int(x/1000000000000):
         return  "{:,.0f} trillion".format(x/1000000000000)    
-    if x/1000000000 ==int(x/1000000000):
+    elif x>1000000000000:
+        return  "{:,.3f} trillion".format(x/1000000000000)    
+    elif x/1000000000 ==int(x/1000000000):
+        return  "{:,.0f} billion".format(x/1000000000)    
+    elif x>1000000000:
+        return  "{:,.3f} billion".format(x/1000000000)    
+    elif x/1000000 ==int(x/1000000):
+        return  "{:,.0f} million".format(x/1000000)    
+    elif x>1000000:
+        return  "{:,.3f} million".format(x/1000000)    
+    elif x/1000 ==int(x/1000):
+        return  "{:,.0f} thousand".format(x/1000)    
+    elif x==int(x):
+        return  "{:,.0f}".format(x)    
+    else:
+        return "{:,.2f}".format(x)
+        """
+    x = sigfigs(x,6)
+    if x/1000000000000 ==int(x/1000000000000):
+        return  "{:,.0f} trillion".format(x/1000000000000)    
+    elif x/1000000000 ==int(x/1000000000):
         return  "{:,.0f} billion".format(x/1000000000)    
     elif x/1000000 ==int(x/1000000):
         return  "{:,.0f} million".format(x/1000000)    
@@ -54,7 +74,7 @@ def currency_output(x):
         return  "{:,.0f}".format(x)    
     else:
         return "{:,.2f}".format(x)
-
+"""
 
 def num(s):
     return float(s)
@@ -211,7 +231,6 @@ def normalise(parsed):
         multiple = std_multiples[multiple.lower()]
 
     negative = False
-    print(multiple)
     value = num(magnitude)
     if value!=0:
         if value < 0:
@@ -221,7 +240,6 @@ def normalise(parsed):
             value=value/1000
             value = sigfigs(value,6)
             multiple = succ(multiple)
-            print(multiple)
         while value<1 and multiple!="U":
             value=value*1000
             value = sigfigs(value,6)
@@ -230,7 +248,6 @@ def normalise(parsed):
         if negative:
             value = -value
         magnitude = str(value)
-        print(multiple)
     return magnitude, multiple, unit, measure 
 
 def normalise_nf(nf):
@@ -585,7 +602,6 @@ def spuriousFact(klass, scale_tolerance, measure=None):
     while len(facts)==0:
 #        seed = randint(0,1000000)
         rf = randomFact(klass, measure, rseed=None)
-        print(rf)
         facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale, scale_tolerance=scale_tolerance)
         try:
             facts.remove(rf)
@@ -640,7 +656,6 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
     count = 0
     while len(target_facts) < target and count < 100:
         count+=1
-        print(count)
         rf = randomFact(klass, measure)
         while rf in used:
             rf = randomFact(klass, measure)
@@ -701,7 +716,6 @@ def neatFacts(klass, selectedFact):
 def get_article(article_name):
     #print(BASE_DIR)
     filen = os.path.join(BASE_DIR,"blog", "static", "md",article_name)
-    print(filen)
     with open (filen, "r") as artfile:
         content=artfile.read()        
     return content
@@ -933,12 +947,10 @@ def summarise_country(klass, code, qamount):
         uses["exports"] = exports
         uses["exports/capita"] = make_amount(klass, str(round(val_from(exports)/val_from(pop),0)), "exports/capita")
         uses["exports/GDP"] = make_perc(klass, str(round(100*val_from(exports)/val_from(GDP),0)), "exports/GDP")
-        print()
     if imports:
         uses["imports"] = imports
         uses["imports/capita"] = make_amount(klass, str(round(val_from(imports)/val_from(pop),0)), "imports/capita")
         uses["imports/GDP"] = make_perc(klass, str(round(100*val_from(imports)/val_from(GDP),0)), "imports/GDP")
-        print()
     response["uses"]= uses
     sources = {}
     if agri:
@@ -967,15 +979,14 @@ def summarise_country_list(klass1, klass, code, qamount):
         comparator = parseBigNumber(qamount)
         unit = comparator[2]
         compnq = klass1(title = "You asked about", magnitude=comparator[0], multiple = comparator[1], unit = comparator[2], measure=comparator[3])
-        print("comparator", comparator, compnq)
         factpacks = []
         if compnq.measure == "a":
             fact = cdict["basics"]["Population"]
-            factpacks.append((fact, '{times:,.2f} USD for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'$1  for every {fraction:,.0f} people in the '+fact.title))
+            factpacks.append((fact, '{times:,.2f} USD for every person in '+fact.title.replace("Population of ",""),'{times:,.2f} USD for every person in '+fact.title.replace("Population of ",""),'$1  for every {fraction:,.0f} people in '+fact.title.replace("Population of ","")))
             fact = cdict["basics"]["GDP"]
-            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'{percent:,.2f} percent of the '+fact.title))
+            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} % of the '+fact.title,'{percent:,.2f} % of the '+fact.title))
             fact = cdict["tax_spend"]["spend"]
-            factpacks.append((fact, '{times:,.2f} times '+fact.title,'{percent:,.2f} percent of '+fact.title,'{percent:,.2f} percent of '+fact.title))
+            factpacks.append((fact, '{times:,.2f} times '+fact.title,'{percent:,.2f} % of '+fact.title,'{percent:,.2f} % of '+fact.title))
         elif compnq.measure == "c":
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} people in the '+fact.title))
@@ -993,12 +1004,16 @@ def summarise_country_list(klass1, klass, code, qamount):
             factpacks.append((fact, '{times:,.2f} '+unit+' for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km^2 in the '+fact.title))
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} USD in the '+fact.title))
-        print(factpacks)
-        comparisons = compnq.getDynamicComparisons(factpacks)
+
+        comparisons = compnq.getDynamicComparisons(factpacks, year="2015")
 
         #print(compnf.render_folk, compnf.scale)
         #comparator.title = "You asked about"
-        ask = ["Is That A Big Number?", compnq, comparisons]
+        if compnq.unit.lower() == "usd":
+            ask = ["Is That A Big Number?", compnq, None, comparisons]
+        else:
+            conversions = compnq.getConversions( ["USD"], year="2015")
+            ask = ["Is That A Big Number?", compnq, conversions[0], comparisons]
         #response+=[ask]
  #   except:
   #      pass

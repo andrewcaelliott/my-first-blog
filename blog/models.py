@@ -36,6 +36,17 @@ class NumberQuery(models.Model):
         scale, factor = getScaleFactor(self.multiple)
         return factor
 
+    def normalise(self):
+        self.scale, factor = getScaleFactor(self.multiple)
+        value = num(self.magnitude)
+        while abs(value) > 1000:
+            value = value / 1000
+            self.scale = self.scale + 3
+        while abs(value) < 1 and self.scale>=0:
+            value = value * 1000
+            self.scale = self.scale - 3
+        self.multiple = MULTIPLE_INVERSE[self.scale]
+        self.magnitude = str(value) 
 
     def getBrackets(self):
         factor = self.setScaleFactor()
@@ -129,13 +140,13 @@ class NumberQuery(models.Model):
                 comparisons.append(comparison)
         return comparisons
 
-    def getDynamicComparisons(self, factpacks):
+    def getDynamicComparisons(self, factpacks, year=None):
         factor = self.setScaleFactor()
         try:
             num_ans = num(self.magnitude) * factor
         except:
             num_ans=0
-        n = convertToDefault(num_ans, self.unit)
+        n = convertToDefault(num_ans, self.unit, year=year)
         comparisons = []
         if (n == 0):
             comparisons.append({"factor":0, "render":"Invalid input"})
@@ -143,7 +154,6 @@ class NumberQuery(models.Model):
             fact = factpack[0]
             factNumber = float(fact.value)*10**fact.scale
             comparisonNumber = n  / factNumber
-            print("comparisonNumber", comparisonNumber)
             if (comparisonNumber <= 10000000) and (comparisonNumber >= 0.0000001):
                 times = sigfigs(comparisonNumber,6);
                 fraction = sigfigs(1/comparisonNumber,3);
@@ -158,12 +168,13 @@ class NumberQuery(models.Model):
                 comparisons.append(comparison)
         return comparisons
 
-    def getConversions(self, conversions):
+    def getConversions(self, conversions, year=None):
         conversion_answers = []
+        self.normalise()
         num_ans = num(self.magnitude) * self.setScaleFactor()
         if self.unit in AMOUNT_UNITS: 
             for conversion in conversions:
-                n = convertToCurrency(num_ans, self.unit, conversion)
+                n = convertToCurrency(num_ans, self.unit, conversion, year=year)
                 mag = round(n,2)
                 conversion_answers.append(" ".join([currency_output(mag), conversion]))
         else:
@@ -225,11 +236,6 @@ class NumberFact(models.Model):
             mag = str(sigfigs(num(self.magnitude),4))
 
         if measure.find("area")>=0 and self.scale>=6:
-            print("Fact")
-            print(self.title)
-            print(mag)
-            print(self.scale)
-            print(self.unit)
             newnumber = NumberFact(magnitude=mag, scale=self.scale-6, measure=measure, unit="km^2", multiple=getMultiple(self.scale-6))
             mult = newnumber.multiple
             unit = newnumber.unit
