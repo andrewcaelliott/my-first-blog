@@ -2,6 +2,7 @@ import os
 from random import sample,seed,randint,choice
 from pint import UnitRegistry,UndefinedUnitError
 from mysite.settings import BASE_DIR
+from .convert import AMOUNT_UNITS
 ureg = UnitRegistry()
 Q_=ureg.Quantity
 
@@ -823,8 +824,8 @@ def resolve_cia_country(name):
 def val_from(fact):
     return float(fact.magnitude)*10**fact.scale
 
-def make_amount(klass, magnitude, title):
-    nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit="USD", measure = "amount", title = title)
+def make_amount(klass, magnitude, title, unit="USD"):
+    nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit=unit, measure = "amount", title = title)
     return nf
 
 def make_perc(klass, magnitude, title):
@@ -836,7 +837,7 @@ def make_count(klass, magnitude, title, unit):
     return nf
 
 
-def summarise_country(klass, code, qamount):
+def summarise_country(klass, code, qamount, currency="USD"):
     response = {}
     location = code
     country = resolve_country_code(location)
@@ -845,70 +846,83 @@ def summarise_country(klass, code, qamount):
     #for fact in facts:
     #   print(fact.render_folk)
     spend = klass.objects.filter(location__icontains = location, title__icontains = "Govt spending").order_by('-date')[0]  
+    spend = spend.getConversions([currency])[0]
     tax = klass.objects.filter(location__icontains = location, title__icontains = "Total taxation").order_by('-date')[0]  
+    tax = tax.getConversions([currency])[0]
     GDP = klass.objects.filter(location__icontains = location, title__icontains = "GDP in").order_by('-date')[0]  
+    GDP = GDP.getConversions([currency])[0]
     pop = klass.objects.filter(location__icontains = location, title__icontains = "Population of").order_by('-date')[0]  
     land = klass.objects.filter(location__icontains = location, title__icontains = "Land Area of").order_by('-date')[0]  
     try:
         debt = klass.objects.filter(location__icontains = location, title__icontains = "National Debt").order_by('-date')[0]  
+        debt = debt.getConversions([currency])[0]
     except:
         debt = None
     try:
         hhcons = klass.objects.filter(location__icontains = location, title__icontains = "Household Consumption").order_by('-date')[0]  
+        hhcons = hhcons.getConversions([currency])[0]
     except:
         hhcons = None
     try:
         gvcons = klass.objects.filter(location__icontains = location, title__icontains = "Government Consumption").order_by('-date')[0]  
+        gvcons = gvcons.getConversions([currency])[0]
     except:
         gvcons = None
     try:
         invcap = klass.objects.filter(location__icontains = location, title__icontains = "Investment in Capital").order_by('-date')[0]  
+        invcap = invcap.getConversions([currency])[0]
     except:
         invcap = None
     try:
         invinv = klass.objects.filter(location__icontains = location, title__icontains = "Investment in Inventories").order_by('-date')[0]  
+        invinv = invinv.getConversions([currency])[0]
     except:
         invinv = None
     try:
         exports = klass.objects.filter(location__icontains = location, title__icontains = "Exports").order_by('-date')[0]  
+        exports = exports.getConversions([currency])[0]
     except:
         exports = None
     try:
         imports = klass.objects.filter(location__icontains = location, title__icontains = "Imports").order_by('-date')[0]  
+        imports = imports.getConversions([currency])[0]
     except:
         imports = None
 
     try:
         agri = klass.objects.filter(location__icontains = location, title__icontains = "Agricultural").order_by('-date')[0]  
+        agri = agri.getConversions([currency])[0]
     except:
         agri = None
     try:
         industry = klass.objects.filter(location__icontains = location, title__icontains = "Industrial").order_by('-date')[0]  
+        industry = industry.getConversions([currency])[0]
     except:
         industry = None
     try:
         services = klass.objects.filter(location__icontains = location, title__icontains = "Services").order_by('-date')[0]  
+        services = services.getConversions([currency])[0]
     except:
         services = None
     basics = {"GDP": GDP, "Population":pop, "Land":land,
-            "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita"),
+            "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita", unit=currency),
             "Population density": make_count(klass, str(round(1000000*val_from(pop)/val_from(land),0)), "Population density", "people")
     }
     response["basics"]= basics
-    deficit = make_amount(klass, str(round(val_from(spend) - val_from(tax),0)), "Deficit")
+    deficit = make_amount(klass, str(round(val_from(spend) - val_from(tax),0)), "Deficit", unit=currency)
     deficit.normalise()
     tax_spend = {
         "tax": tax,
 #        "tax/capita": round(val_from(tax)/val_from(pop),0),
-        "tax/capita": make_amount(klass, str(round(val_from(tax)/val_from(pop),0)), "tax/capita"),
+        "tax/capita": make_amount(klass, str(round(val_from(tax)/val_from(pop),0)), "tax/capita", unit=currency),
 #        "tax/GDP": round(100*val_from(tax)/val_from(GDP),0),
         "tax/GDP": make_perc(klass, str(round(100*val_from(tax)/val_from(GDP),0)), "tax/GDP"),
         "spend": spend,
-        "spend/capita": make_amount(klass, str(round(val_from(spend)/val_from(pop),0)), "spend/capita"),
+        "spend/capita": make_amount(klass, str(round(val_from(spend)/val_from(pop),0)), "spend/capita", unit=currency),
         "spend/GDP": make_perc(klass, str(round(100*val_from(spend)/val_from(GDP),0)), "spend/GDP"),
 #        "deficit": normalise_nf(make_amount(klass, str(round(deficit,0)), "deficit")),
         "deficit": deficit,
-        "deficit/capita": make_amount(klass, str(round(val_from(deficit)/val_from(pop),0)), "deficit/capita"),
+        "deficit/capita": make_amount(klass, str(round(val_from(deficit)/val_from(pop),0)), "deficit/capita", unit=currency),
         "deficit/GDP": make_perc(klass, str(round(100*val_from(deficit)/val_from(GDP),0)), "deficit/GDP"),
         "deficit/spend": make_perc(klass, str(round(100*val_from(deficit)/val_from(spend),0)), "deficit/spend"),
     }
@@ -916,73 +930,81 @@ def summarise_country(klass, code, qamount):
     if debt:
         nat_debt = {
         "nat_debt": debt,
-        "debt/capita": make_amount(klass, str(round(val_from(debt)/val_from(pop),0)), "debt/capita"),
+        "debt/capita": make_amount(klass, str(round(val_from(debt)/val_from(pop),0)), "debt/capita", unit=currency),
         "debt/GDP": make_perc(klass, str(round(100*val_from(debt)/val_from(GDP),0)), "debt/GDP"),
         }
         response["nat_debt"]=nat_debt
     uses = {}
     if hhcons:
         uses["hhcons"] = hhcons
-        uses["hhcons/capita"] = make_amount(klass, str(round(val_from(hhcons)/val_from(pop),0)), "HC/capita")
+        uses["hhcons/capita"] = make_amount(klass, str(round(val_from(hhcons)/val_from(pop),0)), "HC/capita", unit=currency)
         uses["hhcons/GDP"]= make_perc(klass, str(round(100*val_from(hhcons)/val_from(GDP),0)), "HC/GDP")
     if gvcons:
         uses["gvcons"] = gvcons
-        uses["gvcons/capita"]= make_amount(klass, str(round(val_from(gvcons)/val_from(pop),0)), "GC/capita")
+        uses["gvcons/capita"]= make_amount(klass, str(round(val_from(gvcons)/val_from(pop),0)), "GC/capita", unit=currency)
         uses["gvcons/GDP"]= make_perc(klass, str(round(100*val_from(gvcons)/val_from(GDP),0)), "GC/GDP")
     if invcap and invinv:
-        inv =make_amount(klass, str(round(val_from(invcap)+val_from(invinv),0)), "Investment")
+        inv =make_amount(klass, str(round(val_from(invcap)+val_from(invinv),0)), "Investment", unit=currency)
         uses["inv"] = inv
         inv.normalise()
-        uses["inv/capita"] = make_amount(klass, str(round(val_from(inv)/val_from(pop),0)), "Inv/capita")
+        uses["inv/capita"] = make_amount(klass, str(round(val_from(inv)/val_from(pop),0)), "Inv/capita", unit=currency)
         uses["inv/GDP"] = make_perc(klass, str(round(100*val_from(inv)/val_from(GDP),0)), "Inv/GDP")
     if invcap:
         uses["invcap"] = invcap
-        uses["invcap/capita"] = make_amount(klass, str(round(val_from(invcap)/val_from(pop),0)), "IC/capita")
+        uses["invcap/capita"] = make_amount(klass, str(round(val_from(invcap)/val_from(pop),0)), "IC/capita", unit=currency)
         uses["invcap/GDP"] = make_perc(klass, str(round(100*val_from(invcap)/val_from(GDP),0)), "IC/GDP")
     if invinv:
         uses["invinv"] = invinv
-        uses["invinv/capita"] = make_amount(klass, str(round(val_from(invinv)/val_from(pop),0)), "II/capita")
+        uses["invinv/capita"] = make_amount(klass, str(round(val_from(invinv)/val_from(pop),0)), "II/capita", unit=currency)
         uses["invinv/GDP"] = make_perc(klass, str(round(100*val_from(invinv)/val_from(GDP),0)), "II/GDP")
     if exports:
         uses["exports"] = exports
-        uses["exports/capita"] = make_amount(klass, str(round(val_from(exports)/val_from(pop),0)), "exports/capita")
+        uses["exports/capita"] = make_amount(klass, str(round(val_from(exports)/val_from(pop),0)), "exports/capita", unit=currency)
         uses["exports/GDP"] = make_perc(klass, str(round(100*val_from(exports)/val_from(GDP),0)), "exports/GDP")
     if imports:
         uses["imports"] = imports
-        uses["imports/capita"] = make_amount(klass, str(round(val_from(imports)/val_from(pop),0)), "imports/capita")
+        uses["imports/capita"] = make_amount(klass, str(round(val_from(imports)/val_from(pop),0)), "imports/capita", unit=currency)
         uses["imports/GDP"] = make_perc(klass, str(round(100*val_from(imports)/val_from(GDP),0)), "imports/GDP")
     response["uses"]= uses
     sources = {}
     if agri:
         sources["agriculture"] = agri
-        sources["agri/capita"] = make_amount(klass, str(round(val_from(agri)/val_from(pop),0)), "agr.prod/capita")
+        sources["agri/capita"] = make_amount(klass, str(round(val_from(agri)/val_from(pop),0)), "agr.prod/capita", unit=currency)
         sources["agri/GDP"] = make_perc(klass, str(round(100*val_from(agri)/val_from(GDP),0)), "agr.prod/GDP")
     if industry:
         sources["industry"] = industry
-        sources["industry/capita"] = make_amount(klass, str(round(val_from(industry)/val_from(pop),0)), "ind.prod/capita")
+        sources["industry/capita"] = make_amount(klass, str(round(val_from(industry)/val_from(pop),0)), "ind.prod/capita", unit=currency)
         sources["industry/GDP"] = make_perc(klass, str(round(100*val_from(industry)/val_from(GDP),0)), "ind.prod/GDP")
     if services:
         sources["services"] = services
-        sources["services/capita"] = make_amount(klass, str(round(val_from(services)/val_from(pop),0)), "serv.prod/capita")
+        sources["services/capita"] = make_amount(klass, str(round(val_from(services)/val_from(pop),0)), "serv.prod/capita", unit=currency)
         sources["services/GDP"] = make_perc(klass, str(round(100*val_from(services)/val_from(GDP),0)), "serv.prod/GDP")
     response["sources"]= sources
     return response
 
 
 def summarise_country_list(klass1, klass, code, qamount):
-    cdict  = summarise_country(klass, code, qamount)
+    currency = "USD"
+    if qamount:
+#    try:
+        comparator = parseBigNumber(qamount)
+        if comparator[3]=="a":
+            currency = comparator[2]
+    cdict  = summarise_country(klass, code, qamount, currency=currency)
     country = resolve_country_code(code)
     ask = None
     response = []
     if qamount:
 #    try:
-        comparator = parseBigNumber(qamount)
+#        comparator = parseBigNumber(qamount)
         unit = comparator[2]
         compnq = klass1(title = "You asked about", magnitude=comparator[0], multiple = comparator[1], unit = comparator[2], measure=comparator[3])
+        print("compnq")
+        print(compnq.render)
         factpacks = []
         if compnq.measure == "a":
             fact = cdict["basics"]["Population"]
-            factpacks.append((fact, '{times:,.2f} USD for every person in '+fact.title.replace("Population of ",""),'{times:,.2f} USD for every person in '+fact.title.replace("Population of ",""),'$1  for every {fraction:,.0f} people in '+fact.title.replace("Population of ","")))
+            factpacks.append((fact, '{times:,.2f} '+currency+' for every person in '+fact.title.replace("Population of ",""),'{times:,.2f} '+currency+' for every person in '+fact.title.replace("Population of ",""),'1 '+currency+'  for every {fraction:,.0f} people in '+fact.title.replace("Population of ","")))
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} % of the '+fact.title,'{percent:,.2f} % of the '+fact.title))
             fact = cdict["tax_spend"]["spend"]
@@ -991,9 +1013,9 @@ def summarise_country_list(klass1, klass, code, qamount):
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} people in the '+fact.title))
             fact = cdict["basics"]["Land"]
-            factpacks.append((fact, '{times:,.2f} for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km2 in the '+fact.title))
+            factpacks.append((fact, '{times:,.2f} for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km^2 in the '+fact.title))
             fact = cdict["basics"]["GDP"]
-            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} USD in the '+fact.title))
+            factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} '+currency+' in the '+fact.title))
         elif compnq.measure == "e":
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} m for every person in the '+fact.title,'{times:,.2f} for every person in the '+fact.title,'1  for every {fraction:,.0f} people in the '+fact.title))
@@ -1003,7 +1025,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             fact = cdict["basics"]["Land"]
             factpacks.append((fact, '{times:,.2f} '+unit+' for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km^2 in the '+fact.title))
             fact = cdict["basics"]["GDP"]
-            factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} USD in the '+fact.title))
+            factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} '+currency+' in the '+fact.title))
 
         comparisons = compnq.getDynamicComparisons(factpacks, year="2015")
 
@@ -1012,8 +1034,11 @@ def summarise_country_list(klass1, klass, code, qamount):
         if compnq.unit.lower() == "usd":
             ask = ["Is That A Big Number?", compnq, None, comparisons]
         else:
-            conversions = compnq.getConversions( ["USD"], year="2015")
-            ask = ["Is That A Big Number?", compnq, conversions[0], comparisons]
+            if compnq.unit.upper() in AMOUNT_UNITS:
+                conversions = compnq.getConversions( ["USD"], year="2015")
+                ask = ["Is That A Big Number?", compnq, conversions[0], comparisons]
+            else:
+                ask = ["Is That A Big Number?", compnq, None, comparisons]
         #response+=[ask]
  #   except:
   #      pass

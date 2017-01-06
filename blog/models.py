@@ -146,7 +146,8 @@ class NumberQuery(models.Model):
             num_ans = num(self.magnitude) * factor
         except:
             num_ans=0
-        n = convertToDefault(num_ans, self.unit, year=year)
+        n = num_ans
+#        n = convertToDefault(num_ans, self.unit, year=year)
         comparisons = []
         if (n == 0):
             comparisons.append({"factor":0, "render":"Invalid input"})
@@ -172,7 +173,9 @@ class NumberQuery(models.Model):
         conversion_answers = []
         self.normalise()
         num_ans = num(self.magnitude) * self.setScaleFactor()
-        if self.unit in AMOUNT_UNITS: 
+        print("measure")
+        print(self.measure)
+        if (self.measure.find("a")==0):
             for conversion in conversions:
                 n = convertToCurrency(num_ans, self.unit, conversion, year=year)
                 mag = round(n,2)
@@ -261,6 +264,8 @@ class NumberFact(models.Model):
 
         if measure == "amount" and unit.find("USD")>=0:
             unit = "$"
+        if measure == "amount" and unit.find("GBP")>=0:
+            unit = "£"
 
         if measure.find("energy")>=0 and self.scale>0:
             newnumber = NumberFact(magnitude=mag, scale=self.scale-3, measure=measure, unit="kJ", multiple=getMultiple(self.scale-3))
@@ -307,7 +312,7 @@ class NumberFact(models.Model):
             response = "".join([mag, mult, unit])
             response = response.replace("billion ", "bn ").replace("illion ", " ").replace("thousand ", "th ").replace("Population", "Pop.")
         else:
-            if unit == "$":
+            if unit == "$" or unit == "£":
                 if mag[0] !="-":
                     response = "".join([unit, mag, mult])
                 else:
@@ -326,6 +331,33 @@ class NumberFact(models.Model):
             self.scale = self.scale - 3
         self.multiple = MULTIPLE_INVERSE[self.scale]
         self.magnitude = str(value) 
+
+    def getConversions(self, conversions, year=None):
+        conversion_answers = []
+        self.normalise()
+        num_ans = num(self.magnitude) * 10** self.scale
+        if (self.measure.find("amount")==0):
+            if self.unit.find("/")>0:
+                self.unit = self.unit[:self.unit.find("/")]
+#        if self.unit in AMOUNT_UNITS: 
+            for conversion in conversions:
+                n = convertToCurrency(num_ans, self.unit, conversion, year=year)
+                mag = round(n,2)
+                nf = NumberFact(magnitude=mag / 10** self.scale, multiple=self.multiple, scale=self.scale, unit=conversion, measure = self.measure, title = self.title)
+                nf.normalise()
+                nf.value = num(nf.magnitude)
+#                conversion_answers.append(" ".join([currency_output(mag), conversion]))
+                conversion_answers.append(nf)
+        else:
+            quantity = Q_(" ".join([str(num_ans), self.unit]))
+            for conversion in conversions:
+                conv_q = quantity.to(conversion)
+                mag = sigfigs(conv_q.magnitude,6)
+#                conversion_answers.append(" ".join([output(mag), conversion]))
+                nf = NumberFact(magnitude=mag, multiple=self.multiple, scale=self.scale, unit=conversion, measure = self.measure, title = self.title)
+                conversion_answers.append(nf)
+        return conversion_answers
+
 
     def title_plus(self):
         if self.date != None:
