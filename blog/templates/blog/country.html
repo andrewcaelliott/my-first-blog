@@ -10,7 +10,8 @@
         <div class="row widget">
             <div>
 		<h1><a href=""><span></span> Numbers concerning {{ country }} </a></h1>
-                <p>(Numbers taken from 2016 edition of CIA World Factbook, mostly relating to 2015)</p>
+                <p>(Numbers from 2016 CIA World Factbook, relating to 2015. Exchange Rates as in 2015
+                <br/> Disclaimer: work in progress. Intended Use: cross-checking the scale and reasonability of big numbers.)</p>
 	        <form method="GET" class="query-form freeform" action="/country" >
 	                {{ freeForm.as_p }}
                     <button type="submit" class="save btn btn-warning" onclick='this.form.target="_self";'>Ask in This Tab</button>
@@ -25,7 +26,8 @@
            <div>
             <h1><a href=""><span class="{{ widget.glyph }}"></span>Is That A Big Number?</a></h1>
             {{ ask.1.render }}
-            {% for comparison in ask.2 %}
+            {% if ask.2 %}({{ ask.2 }}){% endif %}
+            {% for comparison in ask.3 %}
                 <li>{{ comparison.render }}</li>
             {% endfor %}
             </div>

@@ -35,9 +35,9 @@ def convertToUnit(magnitude, unit, target_unit):
 
 
 
-def convertToDefaultBase(magnitude, unit):
+def convertToDefaultBase(magnitude, unit, year=None):
     if unit in AMOUNT_UNITS: 
-        n = convertToUSD(magnitude, unit)
+        n = convertToUSD(magnitude, unit, year=year)
         u = 'USD'
     else:
         try:
@@ -56,5 +56,5 @@ def convertToDefaultBase(magnitude, unit):
             u = 'unknown'
     return n, u
 
-def convertToDefault(magnitude, unit):
-    return convertToDefaultBase(magnitude, unit)[0]
+def convertToDefault(magnitude, unit, year=None):
+    return convertToDefaultBase(magnitude, unit, year=year)[0]
