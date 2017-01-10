@@ -1110,7 +1110,7 @@ def summarise_country_list(klass1, klass, code, qamount):
         }]
         sources += [{ 
                 "base": {"datum":cdict["sources"]["industry"], "context":context["sources"]["industry"]},
-                "derived": [{"datum":cdict["sources"]["industry/capita"], "context":context["sources"]["industry/capita"]},{"datum":cdict["sources"]["industry/GDP"], "context":context["sources"]["industry/capita"]}]
+                "derived": [{"datum":cdict["sources"]["industry/capita"], "context":context["sources"]["industry/capita"]},{"datum":cdict["sources"]["industry/GDP"], "context":context["sources"]["industry/GDP"]}]
         }]
         sources += [{ 
                 "base": {"datum":cdict["sources"]["services"], "context":context["sources"]["services"]},
