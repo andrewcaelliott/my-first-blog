@@ -10,7 +10,7 @@ from blog.utils import (closeEnoughNumberFact, closeMagnitudeNumberFact,
 	numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, 
 	bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, 
 	spuriousFact, neatFacts, resolve_country_code, resolve_cia_country, 
-	get_country_codes, summarise_country, summarise_country_list)
+	get_country_codes, summarise_country, summarise_country_list, get_country_stats)
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -396,7 +396,7 @@ def runbatch():
 	return resp
 
 
-def run():
+def run16():
 	r = runbatch()
 	for key in r.keys():
 		print (key,",",r[key])
@@ -420,3 +420,83 @@ def run17():
 
 	resp2 = summarise_country_list(NumberFact, "FR", "100000")
 	print(resp2)
+
+def make_country_stats():
+	codes = sorted(get_country_codes()[0].keys(), key = lambda k: k)
+	stats = {}
+	for code in [code for code in codes if code!="World"]:
+		try:
+		        sum = summarise_country(NumberFact, code, None, currency="USD")
+		        for key in sum.keys():
+		        	if key!="country":
+			        	try:
+			        		stats[key]
+			        	except KeyError:
+			        		stats[key]={}
+				        for subkey in sum[key].keys():
+				        	try:
+				        		stats[key][subkey]
+				        	except KeyError:
+				        		stats[key][subkey]={}
+				        	try:
+				        		stats[key][subkey]["items"]
+				        	except KeyError:
+				        		stats[key][subkey]["items"]={}
+				        	stats[key][subkey]["items"][code]=sum[key][subkey]
+		except:
+			print("problem with", code)
+
+
+
+	for key in stats.keys():
+		for subkey in stats[key].keys():
+			statset = stats[key][subkey]
+			n = len(statset["items"])
+			sortedstats = sorted(statset["items"], key = lambda k: statset["items"][k].value*10**statset["items"][k].scale)
+			statset["sortindex"]=sortedstats
+			inverse = {}
+			percentile = {}
+			n = len(sortedstats)
+			for i in range(n):
+				inverse[sortedstats[i]]=i
+				percentile[sortedstats[i]]=round(100*i/n)
+			statset["inverse"]=inverse
+			statset["percentile"]=percentile
+			n = len(statset["items"])
+			q0 = round(n*0)
+			q25 = round(n*0.25)
+			q50 = round(n*0.5)
+			q75 = round(n*0.75)
+			q100 = n-1
+			quantiles=[
+				(sortedstats[q0],statset["items"][sortedstats[q0]]),
+				(sortedstats[q25],statset["items"][sortedstats[q25]]),
+				(sortedstats[q50],statset["items"][sortedstats[q50]]),
+				(sortedstats[q75],statset["items"][sortedstats[q75]]),
+				(sortedstats[q100],statset["items"][sortedstats[q100]])]
+			statset["quantiles"]= quantiles
+
+	return stats
+
+def get_stats_for(statset, countrycode):
+	quantiles = statset["quantiles"]
+	quartiles = list(map(lambda q:[resolve_country_code(q[0]),q[1].render_folk], quantiles))
+	dataquantile = statset["percentile"][countrycode] 
+	return quartiles, dataquantile
+
+def get_all_stats_for(stats, countrycode):
+	costats={}
+	for key in stats.keys():
+		costats[key]={}
+		for subkey in stats[key].keys():
+			statset = stats[key][subkey]
+			costats[key][subkey]=get_stats_for(statset, countrycode)
+	return costats
+
+
+def run():
+#	stats = make_country_stats()	
+#	print(get_all_stats_for(stats, "ZA")["basics"])
+#	print(get_all_stats_for(stats, "DE")["basics"])
+#	print(get_all_stats_for(stats, "AU")["basics"])
+	print(get_country_stats(NumberFact, "AU")["sources"])

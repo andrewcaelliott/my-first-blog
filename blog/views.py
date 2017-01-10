@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio, resolve_country_code
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio, resolve_country_code, get_all_stats_for
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -428,7 +428,10 @@ def country(request):
             panels+=[{"title":item[0], "facts":item[1:], "featured":True}]
         else:
             panels+=[{"title":item[0], "facts":item[1:]}]
-    return render(request, 'blog/country.html', {'ask':country_ask, 'panels': panels, 'country_code':location, 'country':country, 'widgets':{}, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+    return render(request, 'blog/country.html', {
+        'ask':country_ask, 'panels': panels, 'country_code':location, 'country':country, 
+        'widgets':{}, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote
+        })
 
 
 
