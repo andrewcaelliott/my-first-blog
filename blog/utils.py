@@ -1198,7 +1198,8 @@ def get_stats_for(statset, countrycode):
     quantiles = statset["quantiles"]
     quartiles = list(map(lambda q:[resolve_country_code(q[0]),q[1].render_folk], quantiles))
     dataquantile = statset["percentile"][countrycode] 
-    return quartiles, dataquantile
+    highlights = list(map(lambda code:statset["percentile"][code],["US", "RU", "CN"]))
+    return quartiles, dataquantile, highlights
 
 def get_all_stats_for(stats, countrycode):
     costats={}

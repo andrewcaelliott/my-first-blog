@@ -379,7 +379,7 @@ form.quiz-form{
         fill:rgb(0,0,0);
     }
 
-    ul svg.major-quantile circle.datapoint {
+    ul svg.major-quantile circle.datapoint, ul svg.major-quantile circle.refdatapoint {
         stroke:rgb(240,240,240);
         stroke-width:2;
         fill:rgb(160,160,160);
@@ -389,6 +389,12 @@ form.quiz-form{
         stroke:rgb(0,0,0);
         stroke-width:2;
         fill:rgb(255,0,0);
+    }
+
+    ul:hover svg.major-quantile circle.refdatapoint {
+        stroke:rgb(0,0,0);
+        stroke-width:1;
+        fill:rgb(0,0,255);
     }
 
     ul svg.minor-quantile line {
