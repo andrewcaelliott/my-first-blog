@@ -46,12 +46,12 @@
                             <li>{{ fact.base.datum.render_equals }}</li>
                             <svg  class="major-quantile" width="80%" height="12px" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries</title></line>
-                                <circle class="tick" cx="2%", cy="50%", r="4"><title>{{ fact.base.context.0.0}}</title></circle>
+                                <circle class="tick" cx="2%", cy="50%", r="3"><title>{{ fact.base.context.0.0}}</title></circle>
                                 <circle class="tick" cx="26%", cy="50%", r="3"><title>{{ fact.base.context.0.1}}</title></circle>
                                 <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ fact.base.context.0.2}}</title></circle>
                                 <circle class="tick" cx="74%", cy="50%", r="3"><title>{{ fact.base.context.0.3}}</title></circle>
-                                <circle class="tick" cx="98%", cy="50%", r="4"><title>{{ fact.base.context.0.4}}</title></circle>
-                                <circle class="datapoint" cx="{{ fact.base.context.1}}%", cy="50%", r="5"><title>Ranks at percentile {{ fact.base.context.1}}</title></circle>
+                                <circle class="tick" cx="98%", cy="50%", r="3"><title>{{ fact.base.context.0.4}}</title></circle>
+                                <circle class="datapoint" cx="{{ fact.base.context.1}}%", cy="50%", r="4"><title>Ranks at percentile {{ fact.base.context.1}}</title></circle>
                             </svg>
                             {% else %}
                             {% endif %}

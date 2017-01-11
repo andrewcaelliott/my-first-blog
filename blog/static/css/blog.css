@@ -313,42 +313,35 @@ ul:hover svg.major-quantile circle.refdatapoint {
     fill:rgb(0,0,255);
 }
 
-ul svg.minor-quantile line {
-    stroke:rgb(230,230,230);
-    stroke-width:1;
+
+
+@media only screen and (max-width: 599px) {
+/* small devices */
+    ul svg.major-quantile line {
+        stroke:rgb(220,220,220);
+        stroke-width:2;
+    }
+
+    ul svg.major-quantile circle.tick {
+        stroke:rgb(240,240,240);
+        stroke-width:1;
+        fill:rgb(200,200,200);
+    }
+
+    ul svg.major-quantile circle.datapoint {
+        stroke:rgb(127,127,127);
+        stroke-width:1;
+        fill:rgb(255,100,100);
+    }
+
+    ul svg.major-quantile circle.refdatapoint {
+        stroke:rgb(127,127,127);
+        stroke-width:1;
+        fill:rgb(100,100,255);
+    }
+
+
 }
-
-ul:hover svg.minor-quantile line {
-    stroke:rgb(160,160,160);
-    stroke-width:1;
-}
-
-ul svg.minor-quantile circle.tick {
-    stroke:rgb(240,240,240);
-    stroke-width:2;
-    fill:rgb(220,220,220);
-}
-
-ul:hover svg.minor-quantile circle.tick {
-    stroke:rgb(240,240,240);
-    stroke-width:2;
-    fill:rgb(0,0,0);
-}
-
-ul svg.minor-quantile circle.datapoint {
-    stroke:rgb(240,240,240);
-    stroke-width:2;
-    fill:rgb(160,160,160);
-}
-
-ul:hover svg.minor-quantile circle.datapoint {
-    stroke:rgb(0,0,0);
-    stroke-width:2;
-    fill:rgb(255,0,0);
-}
-
-
-
 
 
 @media only screen and (min-width: 600px) {
