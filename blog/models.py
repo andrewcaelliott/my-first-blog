@@ -376,6 +376,10 @@ class NumberFact(models.Model):
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
             ")" ]).replace("Population", "Pop.").replace("illion", "").replace("thousand ", "th ")
 
+    def _display_number(self):
+        return "".join([
+            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("illion", "").replace("thousand ", "th ")
+
     def _display_equals(self):
         title = self.title.replace("in "+resolve_country_code(self.location),"")
         title = title.replace("of "+resolve_country_code(self.location),"").replace("to "+resolve_country_code(self.location),"").replace("from "+resolve_country_code(self.location),"")
@@ -396,6 +400,7 @@ class NumberFact(models.Model):
     render = property(_display)
     render2 = property(_display2)
     render_folk = property(_display_folk)
+    render_number = property(_display_number)
     render_folk_long = property(_display_folk_long)
     render_equals = property(_display_equals)
     link = property(_link)

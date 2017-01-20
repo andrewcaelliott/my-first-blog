@@ -1045,35 +1045,39 @@ def summarise_country_list(klass1, klass, code, qamount):
   #      pass
     context = get_country_stats(klass, code)
     basics = [country,
-        {"base":{"datum":cdict["basics"]["Population"],"context":context["basics"]["Population"]}},
+        {"base":{"stat":("basics","Population"),"datum":cdict["basics"]["Population"],"context":context["basics"]["Population"]}},
         {
-            "base":{"datum":cdict["basics"]["Land"],"context":context["basics"]["Land"]},
-            "derived":[{"datum":cdict["basics"]["Population density"],"context":context["basics"]["Population density"]}]
+            "base":{"stat":("basics","Land"),"datum":cdict["basics"]["Land"],"context":context["basics"]["Land"]},
+            "derived":[{"stat":("basics","Population density"),"datum":cdict["basics"]["Population density"],"context":context["basics"]["Population density"]}]
         },
         {
-            "base":{"datum":cdict["basics"]["GDP"], "context":context["basics"]["GDP"]},
-            "derived":[{"datum":cdict["basics"]["GDP per capita"], "context":context["basics"]["GDP per capita"]}]
+            "base":{"stat":("basics","GDP"),"datum":cdict["basics"]["GDP"], "context":context["basics"]["GDP"]},
+            "derived":[{"stat":("basics","GDP per capita"),"datum":cdict["basics"]["GDP per capita"], "context":context["basics"]["GDP per capita"]}]
         },
     ]
     tax_spend=["Taxation and Government Expenditure",
         { 
-            "base": {"datum":cdict["tax_spend"]["tax"], "context":context["tax_spend"]["tax"]},
-            "derived": [{"datum":cdict["tax_spend"]["tax/capita"], "context":context["tax_spend"]["tax/capita"]},{"datum":cdict["tax_spend"]["tax/GDP"], "context":context["tax_spend"]["tax/GDP"]}],
+            "base": {"stat":("tax_spend","tax"),"datum":cdict["tax_spend"]["tax"], "context":context["tax_spend"]["tax"]},
+            "derived": [{"stat":("tax_spend","tax/capita"),"datum":cdict["tax_spend"]["tax/capita"], "context":context["tax_spend"]["tax/capita"]},
+                           {"stat":("tax_spend","tax/GDP"),"datum":cdict["tax_spend"]["tax/GDP"], "context":context["tax_spend"]["tax/GDP"]}]
         },
         { 
-            "base": {"datum":cdict["tax_spend"]["spend"], "context":context["tax_spend"]["spend"]},
-            "derived": [{"datum":cdict["tax_spend"]["spend/capita"], "context":context["tax_spend"]["spend/capita"]},{"datum":cdict["tax_spend"]["spend/GDP"], "context":context["tax_spend"]["spend/GDP"]}],
+            "base": {"stat":("tax_spend","spend"),"datum":cdict["tax_spend"]["spend"], "context":context["tax_spend"]["spend"]},
+            "derived": [{"stat":("tax_spend","spend/capita"),"datum":cdict["tax_spend"]["spend/capita"], "context":context["tax_spend"]["spend/capita"]},
+                            {"stat":("tax_spend","spend/GDP"),"datum":cdict["tax_spend"]["spend/GDP"], "context":context["tax_spend"]["spend/GDP"]}],
         },
         { 
-            "base": {"datum":cdict["tax_spend"]["deficit"], "context":context["tax_spend"]["deficit"]},
-            "derived": [{"datum":cdict["tax_spend"]["deficit/capita"], "context":context["tax_spend"]["deficit/capita"]},{"datum":cdict["tax_spend"]["deficit/GDP"], "context":context["tax_spend"]["deficit/GDP"]}],
+            "base": {"stat":("tax_spend","deficit"),"datum":cdict["tax_spend"]["deficit"], "context":context["tax_spend"]["deficit"]},
+            "derived": [{"stat":("tax_spend","deficit/capita"),"datum":cdict["tax_spend"]["deficit/capita"], "context":context["tax_spend"]["deficit/capita"]},
+                         {"stat":("tax_spend","deficit/GDP"),"datum":cdict["tax_spend"]["deficit/GDP"], "context":context["tax_spend"]["deficit/GDP"]}],
         },
     ]
     try:
         debt = ["National Debt",
             { 
-                "base": {"datum":cdict["nat_debt"]["nat_debt"], "context":context["nat_debt"]["nat_debt"]},
-                "derived":[{"datum":cdict["nat_debt"]["debt/capita"], "context":context["nat_debt"]["debt/capita"]},{"datum":cdict["nat_debt"]["debt/GDP"], "context":context["nat_debt"]["debt/GDP"]}]
+                "base": {"stat":("nat_debt","nat_debt"),"datum":cdict["nat_debt"]["nat_debt"], "context":context["nat_debt"]["nat_debt"]},
+                "derived":[{"stat":("nat_debt","debt/capita"),"datum":cdict["nat_debt"]["debt/capita"], "context":context["nat_debt"]["debt/capita"]},
+                              {"stat":("nat_debt","debt/GDP"),"datum":cdict["nat_debt"]["debt/GDP"], "context":context["nat_debt"]["debt/GDP"]}]
             }
         ]
     except:
@@ -1081,40 +1085,48 @@ def summarise_country_list(klass1, klass, code, qamount):
     uses = ["Where GDP goes"]
     try:
         uses += [{ 
-                "base": {"datum":cdict["uses"]["hhcons"], "context":context["uses"]["hhcons"]},
-                "derived": [{"datum":cdict["uses"]["hhcons/capita"], "context":context["uses"]["hhcons/capita"]},{"datum":cdict["uses"]["hhcons/GDP"], "context":context["uses"]["hhcons/GDP"]}]
+                "base": {"stat":("uses","hhcons"),"datum":cdict["uses"]["hhcons"], "context":context["uses"]["hhcons"]},
+                "derived": [{"stat":("uses","hhcons/capita"),"datum":cdict["uses"]["hhcons/capita"], "context":context["uses"]["hhcons/capita"]},
+                               {"stat":("uses","hhcons/GDP"),"datum":cdict["uses"]["hhcons/GDP"], "context":context["uses"]["hhcons/GDP"]}]
         }]
         uses += [{ 
-                "base": {"datum":cdict["uses"]["gvcons"], "context":context["uses"]["gvcons"]},
-                "derived": [{"datum":cdict["uses"]["gvcons/capita"], "context":context["uses"]["gvcons/capita"]},{"datum":cdict["uses"]["gvcons/GDP"], "context":context["uses"]["gvcons/GDP"]}]
+                "base": {"stat":("uses","gvcons"),"datum":cdict["uses"]["gvcons"], "context":context["uses"]["gvcons"]},
+                "derived": [{"stat":("uses","gvcons/capita"),"datum":cdict["uses"]["gvcons/capita"], "context":context["uses"]["gvcons/capita"]},
+                                {"stat":("uses","gvcons/GDP"),"datum":cdict["uses"]["gvcons/GDP"], "context":context["uses"]["gvcons/GDP"]}]
         }]
         uses += [{ 
-                "base": {"datum":cdict["uses"]["inv"], "context":context["uses"]["inv"]},
-                "derived":[{"datum":cdict["uses"]["inv/capita"], "context":context["uses"]["inv/capita"]},{"datum":cdict["uses"]["inv/GDP"], "context":context["uses"]["inv/GDP"]}]
+                "base": {"stat":("uses","hhinv"),"datum":cdict["uses"]["inv"], "context":context["uses"]["inv"]},
+                "derived":[{"stat":("uses","inv/capita"),"datum":cdict["uses"]["inv/capita"], "context":context["uses"]["inv/capita"]},
+                              {"stat":("uses","inv/GDP"),"datum":cdict["uses"]["inv/GDP"], "context":context["uses"]["inv/GDP"]}]
         }]
         uses += [{ 
-                "base": {"datum":cdict["uses"]["exports"], "context":context["uses"]["exports"]},
-                "derived":[{"datum":cdict["uses"]["exports/capita"], "context":context["uses"]["exports/capita"]},{"datum":cdict["uses"]["exports/GDP"], "context":context["uses"]["exports/GDP"]}]
+                "base": {"stat":("uses","exports"),"datum":cdict["uses"]["exports"], "context":context["uses"]["exports"]},
+                "derived":[{"stat":("uses","exports/capita"),"datum":cdict["uses"]["exports/capita"], "context":context["uses"]["exports/capita"]},
+                              {"stat":("uses","exports/GDP"),"datum":cdict["uses"]["exports/GDP"], "context":context["uses"]["exports/GDP"]}]
         }]
         uses += [{ 
-                "base": {"datum":cdict["uses"]["imports"], "context":context["uses"]["imports"]},
-                "derived":[{"datum":cdict["uses"]["imports/capita"], "context":context["uses"]["imports/capita"]},{"datum":cdict["uses"]["imports/GDP"], "context":context["uses"]["imports/GDP"]}]
+                "base": {"stat":("uses","imports"),"datum":cdict["uses"]["imports"], "context":context["uses"]["imports"]},
+                "derived":[{"stat":("uses","imports/capita"),"datum":cdict["uses"]["imports/capita"], "context":context["uses"]["imports/capita"]},
+                              {"stat":("uses","imports/GDP"),"datum":cdict["uses"]["imports/GDP"], "context":context["uses"]["imports/GDP"]}]
         }]
     except:
         pass
     sources = ["Where GDP comes from"]
     try:
         sources += [{ 
-                "base": {"datum":cdict["sources"]["agriculture"], "context":context["sources"]["agriculture"]},
-                "derived": [{"datum":cdict["sources"]["agri/capita"], "context":context["sources"]["agri/capita"]},{"datum":cdict["sources"]["agri/GDP"], "context":context["sources"]["agri/GDP"]}]
+                "base": {"stat":("sources","agriculture"),"datum":cdict["sources"]["agriculture"], "context":context["sources"]["agriculture"]},
+                "derived": [{"stat":("sources","agri/capita"),"datum":cdict["sources"]["agri/capita"], "context":context["sources"]["agri/capita"]},
+                                {"stat":("sources","agri/GDP"),"datum":cdict["sources"]["agri/GDP"], "context":context["sources"]["agri/GDP"]}]
         }]
         sources += [{ 
-                "base": {"datum":cdict["sources"]["industry"], "context":context["sources"]["industry"]},
-                "derived": [{"datum":cdict["sources"]["industry/capita"], "context":context["sources"]["industry/capita"]},{"datum":cdict["sources"]["industry/GDP"], "context":context["sources"]["industry/GDP"]}]
+                "base": {"stat":("sources","industry"),"datum":cdict["sources"]["industry"], "context":context["sources"]["industry"]},
+                "derived": [{"stat":("sources","industry/capita"),"datum":cdict["sources"]["industry/capita"], "context":context["sources"]["industry/capita"]},
+                                {"stat":("sources","industry/GDP"),"datum":cdict["sources"]["industry/GDP"], "context":context["sources"]["industry/GDP"]}]
         }]
         sources += [{ 
-                "base": {"datum":cdict["sources"]["services"], "context":context["sources"]["services"]},
-                "derived": [{"datum":cdict["sources"]["services/capita"], "context":context["sources"]["services/capita"]},{"datum":cdict["sources"]["services/GDP"], "context":context["sources"]["services/GDP"]}]
+                "base": {"stat":("sources","services"),"datum":cdict["sources"]["services"], "context":context["sources"]["services"]},
+                "derived": [{"stat":("sources","services/capita"),"datum":cdict["sources"]["services/capita"], "context":context["sources"]["services/capita"]},
+                               {"stat":("sources","services/GDP"),"datum":cdict["sources"]["services/GDP"], "context":context["sources"]["services/GDP"]}]
         }]
     except:
         pass
@@ -1210,3 +1222,10 @@ def get_all_stats_for(stats, countrycode):
             costats[key][subkey]=get_stats_for(statset, countrycode)
     return costats
 
+def get_stat(klass, compkey):
+    global country_stats
+    if country_stats==None:
+        country_stats = make_country_stats(klass)
+    key, subkey = compkey.split(".")
+    fullstat =  country_stats[key][subkey]
+    return list(map(lambda k:(k, fullstat["items"][k]), fullstat["sortindex"]))

@@ -8,7 +8,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
-from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio, resolve_country_code, get_all_stats_for
+from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio, resolve_country_code, get_all_stats_for, get_stat
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
@@ -433,6 +433,20 @@ def country(request):
         'widgets':{}, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote
         })
 
+def stat(request, stat):
+    params = request.GET
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["sponsor","donate"])
+    stats = get_stat(NumberFact, stat)
+    statgroup, statname = stat.split(".")
+    stats.reverse()
+    maxval = max(map(lambda k: k[1].value*10**k[1].scale, stats))
+    minval = min(map(lambda k: k[1].value*10**k[1].scale, stats))
+    displaystats = list(map(lambda k:(resolve_country_code(k[0]), round(100*(k[1].value*10**k[1].scale-minval)/(maxval-minval),1), k[1].render_number), stats))
+    return render(request, 'blog/stat.html', {
+        #'ask':country_ask, 'panels': panels, 'country_code':location, 'country':country, 
+        'widgets':{}, 'quote': choice(quotes), "dyk":dyk, "promote":promote, "stats":displaystats, "statname":statname,
+        })
 
 
 

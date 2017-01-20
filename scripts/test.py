@@ -10,7 +10,8 @@ from blog.utils import (closeEnoughNumberFact, closeMagnitudeNumberFact,
 	numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, 
 	bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, 
 	spuriousFact, neatFacts, resolve_country_code, resolve_cia_country, 
-	get_country_codes, summarise_country, summarise_country_list, get_country_stats)
+	get_country_codes, summarise_country, summarise_country_list, get_country_stats,
+	make_country_stats, get_stat)
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -494,9 +495,23 @@ def get_all_stats_for(stats, countrycode):
 	return costats
 
 
-def run():
+def run18():
 #	stats = make_country_stats()	
 #	print(get_all_stats_for(stats, "ZA")["basics"])
 #	print(get_all_stats_for(stats, "DE")["basics"])
 #	print(get_all_stats_for(stats, "AU")["basics"])
 	print(get_country_stats(NumberFact, "AU")["sources"])
+
+
+#def get_stat(stats, compkey):
+#	key, subkey = compkey.split(".")
+#	fullstat =  stats[key][subkey]
+#	return list(map(lambda k:(k, fullstat["items"][k].render_folk), fullstat["sortindex"]))
+
+def run():
+	stats = make_country_stats()
+	statlist = get_stat(NumberFact, "basics.GDP")
+	statlist.reverse()
+	for item in statlist:
+		print(resolve_country_code(item[0]), item[1])
+	

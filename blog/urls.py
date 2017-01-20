@@ -32,6 +32,6 @@ urlpatterns = [
     url(r'^ratio/answer/$', views.ratio, name='ratio'),
     url(r'^link/(?P<link>.*)/$', views.link_redirect, name="link-redirect"),
     url(r'^country/$', views.country, name="country"),
-#    url(r'^country/(?P<country_code>.+)/compare$', views.country_compare, name='country_compare'),
+    url(r'^stat/(?P<stat>.+)$', views.stat, name='stat'),
     url(r'^links/save/$', views.links_save, name="links-save"),
 ]

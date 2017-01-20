@@ -45,7 +45,9 @@
                             {% if fact.base.datum %}
                             <li>{{ fact.base.datum.render_equals }}</li>
                             <svg  class="major-quantile" width="80%" height="12px" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries</title></line>
+                                <a href ="../stat/{{fact.base.stat.0}}.{{fact.base.stat.1}}">
+                                    <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries - click to see full list</title></line>
+                                </a>
                                 <circle class="tick" cx="2%", cy="50%", r="3"><title>{{ fact.base.context.0.0}}</title></circle>
                                 <circle class="tick" cx="26%", cy="50%", r="3"><title>{{ fact.base.context.0.1}}</title></circle>
                                 <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ fact.base.context.0.2}}</title></circle>
@@ -60,7 +62,9 @@
                                 {% if dfact.datum %}
                                 <li>{{ dfact.datum.render_equals }}</li>
                                 <svg  class="major-quantile" width="80%" height="12px" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries</title></line>
+                                    <a href ="../stat/{{dfact.stat.0}}.{{dfact.stat.1}}">
+                                        <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries - click to see full list - {{ dfact }}</title></line>
+                                    </a>
                                     <circle class="tick" cx="2%", cy="50%", r="3"><title>{{ dfact.context.0.0}}</title></circle>
                                     <circle class="tick" cx="26%", cy="50%", r="3"><title>{{ dfact.context.0.1}}</title></circle>
                                     <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ dfact.context.0.2}}</title></circle>

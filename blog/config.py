@@ -238,6 +238,8 @@ quotes = (
         '"My big thesis is that although the world looks messy and chaotic, if you translate it into the world of numbers and shapes, patterns emerge and you start to understand why things are the way they are". Marcus du Sautoy',
         '"The hardest arithmetic to master is that which enables us to count our blessings." Eric Hoffer',
         '[In] Astronomy, if you’re getting within 10 orders of magnitude, you’re okay." Sir Michael Atiyah',
+        '"When you have mastered numbers, you will in fact no longer be reading numbers, any more than you read words when reading books. You will be reading meanings." W.E.B. Du Bois',
+        '"Numbers are the masters of the weak, but the slaves of the strong." Charles Babbage'
 
 
     )
