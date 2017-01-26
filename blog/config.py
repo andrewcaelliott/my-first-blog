@@ -239,7 +239,10 @@ quotes = (
         '"The hardest arithmetic to master is that which enables us to count our blessings." Eric Hoffer',
         '[In] Astronomy, if you’re getting within 10 orders of magnitude, you’re okay." Sir Michael Atiyah',
         '"When you have mastered numbers, you will in fact no longer be reading numbers, any more than you read words when reading books. You will be reading meanings." W.E.B. Du Bois',
-        '"Numbers are the masters of the weak, but the slaves of the strong." Charles Babbage'
+        '"Numbers are the masters of the weak, but the slaves of the strong." Charles Babbage',
+        '"You don\'t have to be a mathematician to have a feel for numbers." John Forbes Nash, Jr.',
+        '"Numbers are the musical notes with which the symphony of the universe is written" Adam Spencer',
+        '"The simplest schoolboy is now familiar with facts for which Archimedes would have sacrificed his life." Ernest Renan',
 
 
     )
