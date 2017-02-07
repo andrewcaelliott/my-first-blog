@@ -905,6 +905,18 @@ def summarise_country(klass, code, qamount, currency="USD"):
         services = services.getConversions([currency])[0]
     except:
         services = None
+    try:
+        agriland = klass.objects.filter(location__icontains = location, title__icontains = "Land used for agriculture").order_by('-date')[0]  
+    except:
+        agriland = None
+    try:
+        forest = klass.objects.filter(location__icontains = location, title__icontains = "Forest").order_by('-date')[0]  
+    except:
+        forest = None
+    try:
+        other = klass.objects.filter(location__icontains = location, title__icontains = "Other land").order_by('-date')[0]  
+    except:
+        other = None
     basics = {"GDP": GDP, "Population":pop, "Land":land,
             "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita", unit=currency),
             "Population density": make_count(klass, str(round(1000000*val_from(pop)/val_from(land),0)), "Population density", "people")
@@ -980,7 +992,18 @@ def summarise_country(klass, code, qamount, currency="USD"):
         sources["services"] = services
         sources["services/capita"] = make_amount(klass, str(round(val_from(services)/val_from(pop),0)), "serv.prod/capita", unit=currency)
         sources["services/GDP"] = make_perc(klass, str(round(100*val_from(services)/val_from(GDP),0)), "serv.prod/GDP")
-    response["sources"]= sources
+    response["sources"] = sources
+    landuse = {}
+    if agriland:
+        landuse["agriland"] = agriland
+        landuse["agriland/land"] = make_perc(klass, str(round(100*val_from(agriland)/val_from(land),0)), "agricultural land %")
+    if forest:
+        landuse["forest"] = forest
+        landuse["forest/land"] = make_perc(klass, str(round(100*val_from(forest)/val_from(land),0)), "forest %")
+    if other:
+        landuse["other"] = other
+        landuse["other/land"] = make_perc(klass, str(round(100*val_from(other)/val_from(land),0)), "other land %")
+    response["landuse"] = landuse
     return response
 
 
@@ -1000,8 +1023,6 @@ def summarise_country_list(klass1, klass, code, qamount):
 #        comparator = parseBigNumber(qamount)
         unit = comparator[2]
         compnq = klass1(title = "You asked about", magnitude=comparator[0], multiple = comparator[1], unit = comparator[2], measure=comparator[3])
-        print("compnq")
-        print(compnq.render)
         factpacks = []
         if compnq.measure == "a":
             fact = cdict["basics"]["Population"]
@@ -1028,7 +1049,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} '+currency+' in the '+fact.title))
 
-        comparisons = compnq.getDynamicComparisons(factpacks, year="2015")
+        comparisons = compnq.getDynamicComparisons(factpacks, year="2016")
 
         #print(compnf.render_folk, compnf.scale)
         #comparator.title = "You asked about"
@@ -1036,7 +1057,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             ask = ["Is That A Big Number?", compnq, None, comparisons]
         else:
             if compnq.unit.upper() in AMOUNT_UNITS:
-                conversions = compnq.getConversions( ["USD"], year="2015")
+                conversions = compnq.getConversions( ["USD"], year="2016")
                 ask = ["Is That A Big Number?", compnq, conversions[0], comparisons]
             else:
                 ask = ["Is That A Big Number?", compnq, None, comparisons]
@@ -1130,11 +1151,28 @@ def summarise_country_list(klass1, klass, code, qamount):
         }]
     except:
         pass
+    landuse = ["How land is used"]
+    try:
+        landuse += [{ 
+                "base": {"stat":("landuse","agriland"),"datum":cdict["landuse"]["agriland"], "context":context["landuse"]["agriland"]},
+                "derived": [{"stat":("landuse","agriland/land"),"datum":cdict["landuse"]["agriland/land"], "context":context["landuse"]["agriland/land"]}]
+        }]
+        landuse += [{ 
+                "base": {"stat":("landuse","forest"),"datum":cdict["landuse"]["forest"], "context":context["landuse"]["forest"]},
+                "derived": [{"stat":("landuse","forest/land"),"datum":cdict["landuse"]["forest/land"], "context":context["landuse"]["forest/land"]}]
+        }]
+        landuse += [{ 
+                "base": {"stat":("landuse","other"),"datum":cdict["landuse"]["other"], "context":context["landuse"]["other"]},
+                "derived": [{"stat":("landuse","other/land"),"datum":cdict["landuse"]["other/land"], "context":context["landuse"]["other/land"]}]
+        }]
+    except:
+        pass
     response+=[basics]
     response += [sources]
     response += [uses]
     response+=[tax_spend]
     response += [debt]
+    response += [landuse]
 
     return ask, response
 

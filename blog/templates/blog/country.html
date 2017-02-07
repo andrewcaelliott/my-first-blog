@@ -10,9 +10,9 @@
         <div class="row widget">
             <div>
 		<h1><a href=""><span></span> Numbers concerning {{ country }} </a></h1>
-                <p>(Source numbers from 2016 CIA World Factbook, relating to 2015. 
+                <p>(Source numbers from 2017 CIA World Factbook, mostly relating to 2016. 
                 <br/> Disclaimer: work in progress. Intended Use: cross-checking the scale and reasonability of big numbers.
-                <br/> Original numbers in USD. Exchange Rates as at end 2015. If no input amount supplied, displays USD, otherwise displays input amount currency.
+                <br/> Original numbers in USD. Exchange Rates as at end 2016. If no input amount supplied, displays USD, otherwise displays input amount currency.
                 <br/> Spark graphs: Large/red dot shows rank among all countries ordered from min to max. 
                 <br/> Blue dots are comparison points for USA, Russia and China.)</p>
 	        <form method="GET" class="query-form freeform" action="/country" >
@@ -63,7 +63,7 @@
                                 <li>{{ dfact.datum.render_equals }}</li>
                                 <svg  class="major-quantile" width="80%" height="12px" xmlns="http://www.w3.org/2000/svg">
                                     <a href ="../stat/{{dfact.stat.0}}.{{dfact.stat.1}}">
-                                        <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries - click to see full list - {{ dfact }}</title></line>
+                                        <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries - click to see full list</title></line>
                                     </a>
                                     <circle class="tick" cx="2%", cy="50%", r="3"><title>{{ dfact.context.0.0}}</title></circle>
                                     <circle class="tick" cx="26%", cy="50%", r="3"><title>{{ dfact.context.0.1}}</title></circle>
