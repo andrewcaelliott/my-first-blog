@@ -1182,6 +1182,7 @@ def get_country_stats(klass, key):
     if country_stats==None:
         country_stats = make_country_stats(klass)
     try:
+    #if 1:
         return get_all_stats_for(country_stats, key)
     except:
         return "unknown country code "+key
