@@ -244,8 +244,9 @@ quotes = (
         '"Numbers are the musical notes with which the symphony of the universe is written" Adam Spencer',
         '"The simplest schoolboy is now familiar with facts for which Archimedes would have sacrificed his life." Ernest Renan',
         '"Facts are better than myths, especially for understanding the world." Hans Rosling',
-        '"There\'s about one sword-swallower per 2 to 4 million persons in each country". Hans Rosling',
+        '"There\'s about one sword-swallower per 2 to 4 million persons in each country." Hans Rosling',
         '"My interest is not data, it\'s the world. And part of world development you can see in numbers. Others, like human rights, empowerment of women, it\'s very difficult to measure in numbers." Hans Rosling',
+        '"If numbers aren\'t beautiful, I don\'t know what is." Paul Erdos',
 
     )
 

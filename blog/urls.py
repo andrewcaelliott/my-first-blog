@@ -34,4 +34,6 @@ urlpatterns = [
     url(r'^country/$', views.country, name="country"),
     url(r'^stat/(?P<stat>.+)$', views.stat, name='stat'),
     url(r'^links/save/$', views.links_save, name="links-save"),
+    url(r'^ajax/comparison/$', views.comparison, name="comparison"),
+    url(r'^ajax/quote/$', views.quote, name="quote"),
 ]

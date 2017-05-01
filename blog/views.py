@@ -29,6 +29,7 @@ from django.utils.text import slugify
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
+from django.template.loader import render_to_string
 
 def home(request):
     freeForm = FreeForm()
@@ -612,4 +613,12 @@ def links_save(request):
     filename = save_links()
     return JsonResponse({"links saved":filename})
 
+def comparison(request):
+    fact = spuriousFact(NumberFact,3)
+    dyk = render_to_string('blog/dyk.html', {"dyk":fact})
+    return JsonResponse({"dyk":dyk})
 
+def quote(request):
+    quotation = choice(quotes)
+    quote = render_to_string('blog/quote.html', {"quote":quotation})
+    return JsonResponse({"quote":quote})
