@@ -229,6 +229,7 @@ quotes = (
         '"An investment in knowledge pays the best interest." Benjamin Franklin',
         '"The less one knows about the universe, the easier it is to explain." Leon Brunschvicg',
         '"The book of nature is written in the language of Mathematics." Galileo',
+        '"Measure what is measurable, and make measurable what is not so." Galileo',
         '"The computers are not replacing mathematicians; they are breeding them." Martin Gardner',
         '"Mathematics is not only real, but it is the only reality." Martin Gardner',
         '"Round numbers are always false." Samuel Johnson',
@@ -247,6 +248,16 @@ quotes = (
         '"There\'s about one sword-swallower per 2 to 4 million persons in each country." Hans Rosling',
         '"My interest is not data, it\'s the world. And part of world development you can see in numbers. Others, like human rights, empowerment of women, it\'s very difficult to measure in numbers." Hans Rosling',
         '"If numbers aren\'t beautiful, I don\'t know what is." Paul Erdos',
+        '"A mathematician, like a painter or poet, is a maker of patterns." G. H. Hardy',
+        '"The mathematician’s patterns, like the painter’s or the poet’s, must be beautiful; the ideas, like the colours or the words, must fit together in a harmonious way." G. H. Hardy',
+        '"I am accustomed, as a professional mathematician, to living in a sort of vacuum, surrounded by people who declare with an odd sort of pride that they are mathematically illiterate." David Mumford',
+        '"It does not do to leave a live dragon out of your calculations, if you live near him." J. R. R. Tolkien',
+        '"Ford carried on counting quietly. This is about the most aggressive thing you can do to a computer." Douglas Adams',
+        '"Counting at the rate of one number per second, to count to a trillion takes 32,000 years, which is as much time as has elapsed since people first drew on cave walls." Neil deGrasse Tyson',
+        '"There are 350 varieties of shark, not counting loan and pool."" L. M. Boyd',
+        '"Number is the ruler of forms and ideas, and the cause of gods and demons." Pythagoras',
+        '"Numbers are intellectual witnesses that belong only to mankind." Honore de Balzac',
+        '"Anyone who attempts to generate random numbers by deterministic means is, of course, living in a state of sin." John von Neumann',
 
     )
 

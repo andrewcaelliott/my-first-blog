@@ -555,7 +555,7 @@ def fact_list(request):
     form = FilterFactsForm(initial={'search': search})
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["sponsor","donate"])
-    return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, "dyk":dyk, "promote":promote})
+    return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
