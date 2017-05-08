@@ -77,12 +77,11 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 
 def run():
     print("ok")
-    #deleteAllFacts()
+    deleteAllFacts()
     loadNumberFacts("./blog/data/LandArea.csv","Land Area of ","km^2", encoding="latin1")
     loadNumberFacts("./blog/data/LandUseAgri.csv","Land used for agriculture in ","km^2", encoding="latin1")
     loadNumberFacts("./blog/data/LandUseForest.csv","Forest in ","km^2", encoding="latin1")
     loadNumberFacts("./blog/data/LandUseOther.csv","Other land in ","km^2", encoding="latin1")
-    return
     loadNumberFacts("./blog/data/GDP.csv","GDP in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/GovRev.csv","Total taxation in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/GovExp.csv","Govt spending in ","USD p/a", encoding="latin1")
