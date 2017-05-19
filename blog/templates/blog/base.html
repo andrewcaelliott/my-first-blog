@@ -136,7 +136,7 @@
            		event.preventDefault();
  			$.ajax({
 			        url: '/ajax/comparison/',
-			        data: {},
+			        data: {"measure":"{{quiz.measure}}"},
 			        dataType: 'json',
 			        success: function (data) {
 		 			$("#dyk").html(data.dyk);

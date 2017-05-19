@@ -157,7 +157,7 @@ def quiz_from_seed(seed, params):
     except (AttributeError,TypeError):
         measure=None
     if measure==None or measure == "random":
-        measure=choice(["extent", "count", "amount", "duration", "mass", "area", "speed"])
+        measure=choice(["extent", "count", "duration", "mass", "speed"])
 
     quiz["measure"]=measure
     quiz["seed"] = seed
@@ -606,7 +606,6 @@ def fact_new(request):
     return render(request, 'blog/fact_edit.html', {'form': form, "dyk":dyk, "promote":promote})   
 
 def link_redirect(request, link):
-    print(link, "==>", resolve_link(link))
     return HttpResponseRedirect(resolve_link(link))
 
 def links_save(request):
@@ -614,7 +613,12 @@ def links_save(request):
     return JsonResponse({"links saved":filename})
 
 def comparison(request):
-    fact = spuriousFact(NumberFact,3)
+    params = request.GET
+    try: 
+        measure = params["measure"]
+    except:
+        measure = None
+    fact = spuriousFact(NumberFact,3, measure=measure)
     dyk = render_to_string('blog/dyk.html', {"dyk":fact})
     return JsonResponse({"dyk":dyk})
 

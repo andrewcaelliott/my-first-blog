@@ -258,6 +258,7 @@ quotes = (
         '"Number is the ruler of forms and ideas, and the cause of gods and demons." Pythagoras',
         '"Numbers are intellectual witnesses that belong only to mankind." Honore de Balzac',
         '"Anyone who attempts to generate random numbers by deterministic means is, of course, living in a state of sin." John von Neumann',
+        '"Where there is matter, there is geometry." Johannes Kepler',
 
     )
 
