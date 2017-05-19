@@ -201,13 +201,13 @@ def run10():
 	print(klass.objects)
 
 
-def run11():
+def run():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
 #	rf = randomFact(NumberFact, measure, rseed=seed)
 #	print(rf.permlink)
-	dyk = spuriousFact(klass, 2, measure="count.pop")
+	dyk = spuriousFact(klass, 2, measure="amount!")
 	print(dyk["fact1"], dyk["comparison"], dyk["fact2"])
 
 def run12():
@@ -508,7 +508,7 @@ def run18():
 #	fullstat =  stats[key][subkey]
 #	return list(map(lambda k:(k, fullstat["items"][k].render_folk), fullstat["sortindex"]))
 
-def run():
+def run19():
 	stats = make_country_stats()
 	statlist = get_stat(NumberFact, "basics.GDP")
 	statlist.reverse()

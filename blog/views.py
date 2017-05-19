@@ -135,12 +135,30 @@ def quiz_from_spec(spec):
     spec_list= spec.split(",")
     measure = spec_list[0]
     comparison = spec_list[1]
+    print("make from spec")
     option_slugs = spec_list[2:6]
-    options = []
-    for slug in option_slugs:
-        options = options+[get_object_or_404(NumberFact, permlink=slug)]
+    if len(option_slugs)>0:
+        print(option_slugs)
+        options = []
+        for slug in option_slugs:
+            options = options+[get_object_or_404(NumberFact, permlink=slug)]
+    else:
+        print("add from spec")
+        set_seed()
+        seed = randint(0,10000000)
+        rf, options = options_from_seed(seed, measure)
+
     quiz = {"options":options, "comparison":comparison, "measure":measure}
     return quiz
+
+def options_from_seed(seed, measure):
+    rf = randomFact(NumberFact, measure, rseed=seed)
+    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+    while len(bestComparisons)<4:
+        seed = randint(0,10000000)
+        rf = randomFact(NumberFact, measure, rseed=seed)
+        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+    return rf, bestComparisons
 
 def quiz_from_seed(seed, params):
     quiz={}
@@ -157,16 +175,17 @@ def quiz_from_seed(seed, params):
     except (AttributeError,TypeError):
         measure=None
     if measure==None or measure == "random":
-        measure=choice(["extent", "count", "duration", "mass", "speed"])
+        measure=choice(["extent", "count", "amount!", "duration", "mass", "speed"])
 
     quiz["measure"]=measure
     quiz["seed"] = seed
-    rf = randomFact(NumberFact, measure, rseed=seed)
-    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
-    while len(bestComparisons)<4:
-        seed = randint(0,10000000)
-        rf = randomFact(NumberFact, measure, rseed=seed)
-        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+#    rf = randomFact(NumberFact, measure, rseed=seed)
+#    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+#    while len(bestComparisons)<4:
+#        seed = randint(0,10000000)
+#        rf = randomFact(NumberFact, measure, rseed=seed)
+#        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
+    rf, bestComparisons = options_from_seed(seed, measure)
     quiz["hint"] = rf.render
     quiz["options"]=bestComparisons
     return quiz
@@ -213,40 +232,42 @@ def quiz(request):
 
     measure = quiz["measure"]
     if quiz["comparison"]=="biggest":
-        if measure=="extent":
+        if measure.find("extent")>=0:
             quiz["question"]="Which of these is the biggest?"
-        elif measure.find("count")==0:
+        elif measure.find("count")>=0:
             quiz["question"]="Which of these is the most numerous?"
-        elif measure=="amount":
+        elif measure.find("amount")>=0:
             quiz["question"]="Which of these is the greatest amount?"
-        elif measure=="duration":
+        elif measure.find("duration")>=0:
             quiz["question"]="Which of these is the longest period of time?"
-        elif measure=="volume":
+        elif measure.find("volume")>=0:
             quiz["question"]="Which of these has the greatest volume?"
-        elif measure=="area":
+        elif measure.find("area")>=0:
             quiz["question"]="Which of these has the greatest area?"
-        elif measure=="speed":
+        elif measure.find("speed")>=0:
             quiz["question"]="Which of these is the fastest?"
-        elif measure=="energy":
+        elif measure.find("energy")>=0:
             quiz["question"]="Which of these has the most energy?"
         else:
             quiz["question"]="Which of these has the greatest mass?"
     else:
-        if measure=="extent":
+        if measure.find("extent")>=0:
             quiz["question"]="Which of these is the smallest?"
-        elif measure.find("count")==0:
+        elif measure.find("count")>=0:
             quiz["question"]="Which of these is the least numerous?"
-        elif measure=="amount":
+        elif measure.find("amount")>=0:
             quiz["question"]="Which of these is the smallest amount?"
-        elif measure=="volume":
-            quiz["question"]="Which of these has the least volume?"
-        elif measure=="area":
+        elif measure.find("duration")>=0:
+            quiz["question"]="Which of these has the shortest period of time?"
+        elif measure.find("volume")>=0:
+            quiz["question"]="Which of these has the greatest volume?"
+        elif measure.find("area")>=0:
             quiz["question"]="Which of these has the least area?"
         elif measure=="duration":
             quiz["question"]="Which of these is the shortest period of time?"
-        elif measure=="speed":
+        elif measure.find("speed")>=0:
             quiz["question"]="Which of these is the slowest?"
-        elif measure=="energy":
+        elif measure.find("energy")>=0:
             quiz["question"]="Which of these has the least energy?"
         else:
             quiz["question"]="Which of these has the least mass?"

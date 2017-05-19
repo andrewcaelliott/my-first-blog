@@ -463,7 +463,7 @@ def closeEnoughNumberFact(klass, magnitude, scale, tolerance, measure):
 
 def range_matches(klass, scale_lower, scale_upper, value_lower, value_upper, measure):
     if measure.find(".")<0: 
-        return klass.objects.filter(scale__gte=scale_lower, scale__lte=scale_upper, value__gte=value_lower, value__lt=value_upper, measure__startswith=measure)
+        return klass.objects.filter(scale__gte=scale_lower, scale__lte=scale_upper, value__gte=value_lower, value__lt=value_upper, measure__startswith=measure).exclude(measure__contains="~")
     else:
         truncate_measure = measure[:measure.find(".")]
         matches = []
@@ -562,8 +562,12 @@ def randomFact(klass, measure, rseed=None):
         seed(rseed)
     else:
         seed()
-    count = klass.objects.filter(measure__startswith=measure).count()
-    rf = klass.objects.filter(measure__startswith=measure)[randint(0,count-1)]
+    if measure[-1]=="!":
+        candidates = klass.objects.filter(measure=measure[:-1])    
+    else:
+        candidates = klass.objects.filter(measure__startswith=measure)    
+    count = candidates.count()
+    rf = candidates[randint(0,count-1)]
     return rf
 
 def randomFactAny(klass, rseed=None):
