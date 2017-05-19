@@ -131,24 +131,20 @@ def make_spec(bestComparisons, comparison, measure):
         fact_slugs = fact_slugs+[slugify(fact.title)]
     return ",".join([measure, comparison]+fact_slugs)
 
-def quiz_from_spec(spec):
+def quiz_from_spec(seed, spec):
     spec_list= spec.split(",")
     measure = spec_list[0]
     comparison = spec_list[1]
-    print("make from spec")
     option_slugs = spec_list[2:6]
     if len(option_slugs)>0:
-        print(option_slugs)
         options = []
         for slug in option_slugs:
             options = options+[get_object_or_404(NumberFact, permlink=slug)]
     else:
-        print("add from spec")
-        set_seed()
-        seed = randint(0,10000000)
         rf, options = options_from_seed(seed, measure)
 
     quiz = {"options":options, "comparison":comparison, "measure":measure}
+    quiz["seed"] = seed
     return quiz
 
 def options_from_seed(seed, measure):
@@ -164,12 +160,10 @@ def quiz_from_seed(seed, params):
     quiz={}
     set_seed(seed)    
     askbiggest = randint(0,1)==0
-    print("biggest?",askbiggest)
     if askbiggest:
         quiz["comparison"]="biggest"
     else:
         quiz["comparison"] = "smallest"
-    print(quiz["comparison"])
     try:
         measure=params.get("measure")
     except (AttributeError,TypeError):
@@ -179,12 +173,6 @@ def quiz_from_seed(seed, params):
 
     quiz["measure"]=measure
     quiz["seed"] = seed
-#    rf = randomFact(NumberFact, measure, rseed=seed)
-#    bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
-#    while len(bestComparisons)<4:
-#        seed = randint(0,10000000)
-#        rf = randomFact(NumberFact, measure, rseed=seed)
-#        bestComparisons, tolerance, score  = numberFactsLikeThis(NumberFact, rf, rseed=seed) 
     rf, bestComparisons = options_from_seed(seed, measure)
     quiz["hint"] = rf.render
     quiz["options"]=bestComparisons
@@ -212,23 +200,26 @@ def quiz(request):
         saveas=None
 
     try:
+        seed=num(params.get("seed"))
+    except (AttributeError,TypeError):
+        set_seed()
+        seed = randint(0,10000000)
+    if seed == None:
+        set_seed()
+        seed = randint(0,10000000)
+
+
+    try:
         spec=request.GET.get("spec")
         if spec==None:
             spec=params.get("spec")
-        quiz = quiz_from_spec(spec)
+        quiz = quiz_from_spec(seed, spec)
     except (AttributeError):
         spec = None
     if spec == None:
-        try:
-            seed=num(params.get("seed"))
-        except (AttributeError,TypeError):
-            set_seed()
-            seed = randint(0,10000000)
-        if seed == None:
-            set_seed()
-            seed = randint(0,10000000)
         quiz = quiz_from_seed(seed, params)
-        spec = make_spec(quiz["options"], quiz["comparison"], quiz["measure"])
+        
+    spec = make_spec(quiz["options"], quiz["comparison"], quiz["measure"])
 
     measure = quiz["measure"]
     if quiz["comparison"]=="biggest":
