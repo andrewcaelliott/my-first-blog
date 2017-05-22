@@ -134,9 +134,14 @@
 		$("#refresh").click( function()
            	{
            		event.preventDefault();
+           		if ("{{quiz.measure}}"){
+           			dataparm = {"measure":"{{quiz.measure}}"};
+           		} else {
+           			dataparm = {};
+           		}
  			$.ajax({
 			        url: '/ajax/comparison/',
-			        data: {"measure":"{{quiz.measure}}"},
+			        data: dataparm,
 			        dataType: 'json',
 			        success: function (data) {
 		 			$("#dyk").html(data.dyk);
