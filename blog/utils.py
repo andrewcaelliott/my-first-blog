@@ -603,7 +603,7 @@ def renderInt(i):
 def spuriousFact(klass, scale_tolerance, measure=None):
     facts = []
     if measure == None:
-        measure=choice(["extent","extent","count","duration","mass","mass"])
+        measure=choice(["extent","extent","count", "amount!", "duration","mass","mass"])
     tolerance = 0.01
     while len(facts)==0:
 #        seed = randint(0,1000000)

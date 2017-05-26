@@ -159,8 +159,8 @@ def run7():
 	biggest = biggestNumberFact(bestComparisons)
 	print(">>>", biggest.render)
 
-def run8():
-	measure=("extent")
+def run():
+	measure=("mass")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	magnitude = rf.magnitude
@@ -201,7 +201,7 @@ def run10():
 	print(klass.objects)
 
 
-def run():
+def run11():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)

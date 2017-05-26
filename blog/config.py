@@ -77,7 +77,7 @@ mass_references = [
     ('Mass of all the humans on Earth','{times:,.2f} times the mass of all the humans on Earth','{percent:,.2f} percent of the mass of all the humans on Earth','1 /{fraction:,.0f} of the mass of all the humans on Earth'),
     ('Mass of the Great Pyramid of Giza','{times:,.2f} times the mass of the Great Pyramid of Giza','{percent:,.2f} percent of the mass of the Great Pyramid of Giza','1 /{fraction:,.0f} of the mass of the Great Pyramid of Giza'),
     ('Mass of the Titanic','{times:,.2f} times the mass of the Titanic','{percent:,.2f} percent of the mass of the Titanic','1 /{fraction:,.0f} of the mass of the Titanic'),
-    ('Mass of an Airbus a380','{times:,.2f} times the mass of an Airbus a380','{percent:,.2f} percent of the mass of an Airbus a380','1 /{fraction:,.0f} of the mass of an Airbus a380'),
+    ('Mass of an Airbus A380 airliner (max takeoff weight)','{times:,.2f} times the mass of an Airbus A380','{percent:,.2f} percent of the mass of an Airbus A380','1 /{fraction:,.0f} of the mass of an Airbus A380'),
     ('Mass of the Statue of Liberty','{times:,.2f} times the mass of the Statue of Liberty','{percent:,.2f} percent of the mass of the Statue of Liberty','1 /{fraction:,.0f} of the mass of the Statue of Liberty'),
     ('Mass of a Blue Whale','{times:,.2f} times the mass of a Blue Whale','{percent:,.2f} percent of the mass of a Blue Whale','1 /{fraction:,.0f} of the mass of a Blue Whale'),
     ('Mass of an M1 Abrams tank','{times:,.2f} times the mass of an M1 Abrams tank','{percent:,.2f} percent of the mass of an M1 Abrams tank','1 /{fraction:,.0f} of the mass of an M1 Abrams tank'),
