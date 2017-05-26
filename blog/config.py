@@ -259,6 +259,16 @@ quotes = (
         '"Numbers are intellectual witnesses that belong only to mankind." Honore de Balzac',
         '"Anyone who attempts to generate random numbers by deterministic means is, of course, living in a state of sin." John von Neumann',
         '"Where there is matter, there is geometry." Johannes Kepler',
+        '"\'Forty-two,\' said Deep Thought, with infinite majesty and calm." Douglas Adams',
+        '"There is wonder in the world, and it\'s an honour to be part of it." Adam Rutherford',
+        '"Science does not know its debt to imagination." Ralph Waldo Emerson',
+        '"Every culture has contributed to maths just as it has contributed to literature. It\'s a universal language; numbers belong to everyone." Daniel Tammet',
+        '"[Maths is] a universal language; numbers belong to everyone." Daniel Tammet',
+        '"Every culture has contributed to maths just as it has contributed to literature." Daniel Tammet',
+        '"I would play with numbers in a way that other kids would play with their friends." Daniel Tammet',
+        '"Human beings cannot comprehend very large or very small numbers. It would be useful for us to acknowledge that fact." Daniel Kahneman',
+        '"Counting in octal is just like counting in decimal, if you don\'t use your thumbs." Tom Lehrer',
+        '"Numeracy isn\'t a sign of geekiness, but a basic requirement for intelligent discussions of public policy." Nicholas Kristof',
 
     )
 
