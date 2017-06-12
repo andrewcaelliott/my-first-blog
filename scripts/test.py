@@ -11,7 +11,7 @@ from blog.utils import (closeEnoughNumberFact, closeMagnitudeNumberFact,
 	bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, 
 	spuriousFact, neatFacts, resolve_country_code, resolve_cia_country, 
 	get_country_codes, summarise_country, summarise_country_list, get_country_stats,
-	make_country_stats, get_stat)
+	make_country_stats, get_stat, make_number)
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -159,7 +159,7 @@ def run7():
 	biggest = biggestNumberFact(bestComparisons)
 	print(">>>", biggest.render)
 
-def run():
+def run8():
 	measure=("mass")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
@@ -515,3 +515,17 @@ def run19():
 	for item in statlist:
 		print(resolve_country_code(item[0]), item[1])
 	
+def run():
+	klass = NumberFact
+	measure=("duration")
+	seed = randint(0,1000000)
+	rf = make_number(klass, "1723", "test", measure, "years")
+	print(rf)
+	print(rf.render)
+	print(rf.measure)
+	facts = neatFacts(klass, rf, tolerance=0.02)
+	for fact in facts:
+#		print(fact["comparison"], fact["fact2"].render2)
+		print(fact)
+		print(fact["fact2"].measure)
+

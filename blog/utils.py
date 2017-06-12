@@ -675,9 +675,8 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 
 
 
-def neatFacts(klass, selectedFact):
+def neatFacts(klass, selectedFact, tolerance = 0.02):
     rf = selectedFact
-    tolerance = 0.02
     maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "count.pop":500, "amount":500, "volume":10000, "area":10000, "energy":1000}[rf.measure]
 
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
@@ -828,6 +827,10 @@ def resolve_cia_country(name):
 
 def val_from(fact):
     return float(fact.magnitude)*10**fact.scale
+
+def make_number(klass, magnitude, title, measure, unit):
+    nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit=unit, measure = measure, title = title, value=num(magnitude))
+    return nf
 
 def make_amount(klass, magnitude, title, unit="USD"):
     nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit=unit, measure = "amount", title = title, value=num(magnitude))
