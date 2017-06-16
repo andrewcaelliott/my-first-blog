@@ -619,6 +619,8 @@ def spuriousFact(klass, scale_tolerance, measure=None):
 #        facts+=facts2b
         facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts4
+        facts3 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 3, rf.scale, scale_tolerance=scale_tolerance)
+        facts+=facts3
         facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts4b
         facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5, rf.scale, scale_tolerance=scale_tolerance)
