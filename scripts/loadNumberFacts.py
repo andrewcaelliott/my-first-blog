@@ -101,7 +101,7 @@ def run():
     #loadNumberFacts("./blog/data/Area_of_countries.csv","Area of ","m^2")
     loadNumberFacts("./blog/data/Reference_Energy.csv","","J")
     loadNumberFacts("./blog/data/Company_Revenues.csv","","USD")
-    #loadNumberFacts("./blog/data/Population_of_countries.csv","Population of ","people", encoding="latin1")
+    loadNumberFacts("./blog/data/Population_of_countries - Missing.csv","Population of ","people", encoding="latin1")
     #loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Population_of_cities.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/Animal_Populations.csv","","individuals")
