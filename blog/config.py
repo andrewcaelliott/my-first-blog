@@ -269,6 +269,32 @@ quotes = (
         '"Human beings cannot comprehend very large or very small numbers. It would be useful for us to acknowledge that fact." Daniel Kahneman',
         '"Counting in octal is just like counting in decimal, if you don\'t use your thumbs." Tom Lehrer',
         '"Numeracy isn\'t a sign of geekiness, but a basic requirement for intelligent discussions of public policy." Nicholas Kristof',
+        '"If you think education is expensive, wait until you see how much ignorance costs." President Barack Obama',
+        '"Measurement is the first step that leads to control and eventually to improvement. If you can’t measure something, you can’t understand it.” H. James Harrington',
+        '"Time is change; we measure its passing by how much things alter." Nadine Gordimer',
+        '"By any reasonable measure of achievement, the faith of the Enlightenment thinkers in science was justified." E. O. Wilson',
+        '"Be the measure great or small, let it be honest in every part." John Bright',
+        '"I measure in my palm and use my eyes to estimate amounts; a tablespoon is a full palm of dried spices." Rachael Ray',
+        '"Science cannot progress without reliable and accurate measurement of what it is you are trying to study." Robert D. Hare',
+        '"The heart of science is measurement." Erik Brynjolfsson',
+        '"I have been struck again and again by how important measurement is to improving the human condition." Bill Gates',
+        '"From science to business to education to economic policy, good decisions depend on good measurement."" Ben Bernanke',
+        '"The wonder is, not that the field of the stars is so vast, but that man has measured it." Anatole France',
+        '"Our clocks do not measure time. ... Time is defined to be what our clocks measure." Anonymous',
+        '"The first steps in the path of discovery, and the first approximate measures, are those which add most to the existing knowledge of mankind." Charles Babbage',
+        '"Whenever you can, count." Sir Francis Galton',
+        '"Number, the most excellent of all inventions." Aeschylus',
+        '"Statistician: A man who believes figures don\'t lie but admits that, under analysis some of them won\'t stand up either." Evan Esar',
+        '"The number of stars making up the Milky Way is about 10¹¹ or something like the number of raindrops falling in Hyde Park in a day’s heavy rain."" Sir Jack Balwin',
+        '"Truly I say to you, a single number has more genuine and permanent value than an expensive library full of hypotheses." Robert Mayer',
+        'Benford\'s Law of Controversy: "Passion is inversely proportional to the amount of real information available." Gregory (Albert) Benford',
+        '"It seems to me, that if statesmen had a little more arithmetic, or were accustomed to calculation, wars would be much less frequent." Benjamin Franklin',
+        '"Why speculate when you can calculate?" Anonymous',
+        '"Where does our success come from? The answer is synthesis, the ability to combine creativity and calculation, art and science, into whole that is much greater than the sum of its parts." Garry Kasparov',
+        '"A few drops of science will often disinfect an entire barrel full of ignorance and prejudice." Hendrik Willem van Loon',
+
+
+
 
     )
 

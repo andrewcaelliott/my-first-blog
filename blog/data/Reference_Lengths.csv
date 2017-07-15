@@ -88,7 +88,7 @@
 88,Length of the Panama Canal,77,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Panama_Canal
 89,Full length of Broadway,53,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Broadway_(Manhattan)
 90,Length of a Marathon race,42.195,thousand,3,m,extent.hor,Thanks to Google
-91,Highest freefall parachute jump (2012),38.97,thousand,3,m,extent.ver,http://www.guinnessworldrecords.com/news/60at60/2015/8/2012-highest-freefall-parachute-jump-392848
+91,Highest freefall parachute jump (2014),41.425,thousand,3,m,extent.ver,https://www.theverge.com/2014/10/24/7062023/alan-eustace-google-vp-free-fall-parachute-jump-world-record
 92,Length of the Peripherique around Paris,35.04,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Boulevard_P%C3%A9riph%C3%A9rique
 93,Narrowest width of the English Channel,32.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/English_Channel
 94,Highest ascent by a propellor-driven aircraft (2001),29.524,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Flight_altitude_record
@@ -158,6 +158,7 @@
 158,Height of the `Christ the Redeemer` statue in Rio de Janeiro,30,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)
 159,Length of a basketball court,28,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
 160,Distance between bases of a baseball diamond,27.432,unit,0,m,extent.hor,Thanks to Wikipedia
+,Length of the Blue Whale skeleton in London's Natural History Museum,25.2,unit,0,m,extent.hor,http://www.nhm.ac.uk/about-us/news/2017/july/museum-unveils-hope-the-blue-whale-skeleton.html?utm_source=fb-image-post-20170713&utm_medium=social&utm_campaign=hintze-hall
 161,Length of a tennis court,23.77,unit,0,m,extent.hor,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
 162,Height of an All-Terrain Armored Transport (AT-AT) in Star Wars movies,22.5,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/All_Terrain_Armored_Transport
 163,Height of the Great Sphinx of Giza,20.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza
