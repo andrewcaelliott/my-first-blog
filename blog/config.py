@@ -292,7 +292,8 @@ quotes = (
         '"Why speculate when you can calculate?" Anonymous',
         '"Where does our success come from? The answer is synthesis, the ability to combine creativity and calculation, art and science, into whole that is much greater than the sum of its parts." Garry Kasparov',
         '"A few drops of science will often disinfect an entire barrel full of ignorance and prejudice." Hendrik Willem van Loon',
-
+        '"The beauty of mathematics only shows itself to more patient followers." Maryam Mirzakhani',
+        '"It\'s not only the question, but the way you try to solve it." Maryam Mirzakhani',
 
 
 
