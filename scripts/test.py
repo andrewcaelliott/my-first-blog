@@ -201,14 +201,24 @@ def run10():
 	print(klass.objects)
 
 
-def run11():
+def run():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
 #	rf = randomFact(NumberFact, measure, rseed=seed)
 #	print(rf.permlink)
-	dyk = spuriousFact(klass, 2, measure="amount!")
+#	dyk = spuriousFact(klass, 2, measure="amount!")
+	dyk = spuriousFact(klass, 2)
 	print(dyk["fact1"], dyk["comparison"], dyk["fact2"])
+
+def run11a():
+	print(sigfigs(102,2))
+	print(sigfigs(253,2))
+	print(sigfigs(332,2))
+	print(sigfigs(102,3))
+	print(sigfigs(253,3))
+	print(sigfigs(332,3))
+
 
 def run12():
 	klass = NumberFact
@@ -515,7 +525,7 @@ def run19():
 	for item in statlist:
 		print(resolve_country_code(item[0]), item[1])
 	
-def run():
+def run20():
 	klass = NumberFact
 	measure=("duration")
 	seed = randint(0,1000000)
