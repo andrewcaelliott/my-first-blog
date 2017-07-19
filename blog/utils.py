@@ -622,23 +622,21 @@ def spuriousFact(klass, scale_tolerance, measure=None):
         facts+=facts2
         facts4 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 4, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts4
-        facts3 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 3, rf.scale, scale_tolerance=scale_tolerance)
-        facts+=facts3
+#        facts3 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 3, rf.scale, scale_tolerance=scale_tolerance)
+#        facts+=facts3
         facts4b = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 0.25, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts4b
         facts5 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 5, rf.scale, scale_tolerance=scale_tolerance)
         facts+=facts5
-        facts7 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 7, rf.scale, scale_tolerance=scale_tolerance)
-        facts+=facts7
+ #       facts7 = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure,tolerance, 7, rf.scale, scale_tolerance=scale_tolerance)
+ #       facts+=facts7
     fact2 = choice(facts)
     ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
 #    print("ratio", ratio)
 #    print(safeindex(facts3, fact2))
-    while (safeindex(facts3, fact2)>=0 or safeindex(facts7, fact2)>=0) and ratio > 1:
-#        print("rejecting", ratio)
-        fact2 = choice(facts)
-        ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
-#        print(safeindex(facts3, fact2))
+#    while (safeindex(facts3, fact2)>=0 or safeindex(facts7, fact2)>=0) and ratio > 1:
+#        fact2 = choice(facts)
+#        ratio = (rf.value/fact2.value)*10**(rf.scale - fact2.scale)
 
     if ratio > 1:
         fact1 = rf
