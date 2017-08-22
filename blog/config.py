@@ -294,6 +294,10 @@ quotes = (
         '"A few drops of science will often disinfect an entire barrel full of ignorance and prejudice." Hendrik Willem van Loon',
         '"The beauty of mathematics only shows itself to more patient followers." Maryam Mirzakhani',
         '"It\'s not only the question, but the way you try to solve it." Maryam Mirzakhani',
+        '"Mathematics is the sister, as well as the servant, of the arts and is touched by the same madness and genius." Harold Marston Morse',
+        '"Life on Earth gives only a small taste of what can happen in the universe." Carlo Rovelli',
+        '"Ever since we discovered that Earth is round and turns like a mad spinning-top, we have understood that reality is not as it appears to us." Carlo Rovelli',
+
 
 
 
