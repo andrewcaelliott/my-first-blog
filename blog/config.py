@@ -297,6 +297,9 @@ quotes = (
         '"Mathematics is the sister, as well as the servant, of the arts and is touched by the same madness and genius." Harold Marston Morse',
         '"Life on Earth gives only a small taste of what can happen in the universe." Carlo Ravelli',
         '"Ever since we discovered that Earth is round and turns like a mad spinning-top, we have understood that reality is not as it appears to us." Carlo Ravelli',
+        '"Mathematics is the most beautiful and most powerful creation of the human spirit."" Stefan Banach',
+        '"Mathematics is as old as Man."" Stefan Banach',
+        '"Beauty is the first test: there is no permanent place in the world for ugly mathematics." G. H. Hardy',
 
 
 
