@@ -17,6 +17,8 @@
 17,Distance to Pluto (dwarf planet),5.915,trillion,12,m,extent,https://en.wikipedia.org/wiki/Pluto
 18,Halley's comet's furthest distance from the sun (aphelion),5.25,trillion,12,m,extent,https://en.wikipedia.org/wiki/Halley%27s_Comet
 19,Distance from the Sun to Neptune,4.498,trillion,12,m,extent,Thanks to Google
+,Diameter of the star UY Scuti; largest known star,2.377,trillion,12,m,extent,https://en.wikipedia.org/wiki/List_of_largest_stars
+,Diameter of the star Betelgeuse,1.642,trillion,12,m,extent,https://en.wikipedia.org/wiki/List_of_largest_stars
 20,Length (circumference) of Earth's orbit around the Sun,940,billion,9,m,extent,https://en.wikipedia.org/wiki/Earth%27s_orbit
 21,Distance from the Earth to the Sun,149.6,billion,9,m,extent,Thanks to Google
 22,An AU (astronomical unit),149.6,billion,9,m,extent,https://en.wikipedia.org/wiki/Astronomical_unit
@@ -58,6 +60,7 @@
 58,Length of the Congo River,4.7,million,6,m,extent.hor,Thanks to Google
 59,Length of the Mekong River,4.35,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 60,Length of Chile - North-South,4.27,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Geography_of_Chile
+,Length of the Vic-Maui yacht race,4.274,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yacht_racing#Notable_Races
 61,Length of the China-Russia border,4.209,million,6,m,extent.hor,https://en.wikipedia.org/wiki/China%E2%80%93Russia_border
 62,Length of the Yamal-Europe gas pipeline,4.196,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yamal%E2%80%93Europe_pipeline
 63,Width of Australia,4,million,6,m,extent.hor,http://www.ask.com/geography/many-miles-wide-australia-41036d80355d0566
@@ -74,7 +77,9 @@
 74,Length of the Limpopo River,1.8,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 75,Length of the Beijing-Hangzhou Grand Canal,1.794,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Grand_Canal_(China)
 76,Road distance from Land's End to John o' Groats,1.35,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
+,Length of the Sydney-Hobart yacht race,1.263,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yacht_racing#Notable_Races
 77,Length of the Rhine River,1.233,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+,Length of the Fastnet yacht race,1.126,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Fastnet_Race
 78,Length of mainland Italy,1.185,million,6,m,extent.hor,http://science.blurtit.com/749871/what-is-the-length-and-width-of-italy
 79,Direct distance from Land's End to John o' Groats,970,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
 80,Length of the Indianapolis 500 motor race,805,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Indianapolis_500
@@ -82,6 +87,7 @@
 82,Distance from London to Edinburgh,534.7,thousand,3,m,extent.hor,Thanks to FreeMapTools
 83,Length of the River Thames,386,thousand,3,m,extent.hor,Thanks to Google
 84,Length of the British Grand Prix Formula 1 motor race,306.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/British_Grand_Prix
+,Length of the Monaco Formula 1 motor race,260,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Monaco_Grand_Prix
 85,Length of the Suez Canal,193.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Suez_Canal
 86,Length of the M25 Orbital motorway around London,188,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/M25_motorway
 87,Diameter of the (fictional) Death Star in the first Star Wars movie,120,thousand,3,m,extent,http://starwars.wikia.com/wiki/Death_Star
@@ -108,7 +114,10 @@
 108,Depth of the Mponeng Gold Mine (South Africa),3.9,thousand,3,m,extent.ver,http://www.mining-technology.com/features/feature-top-ten-deepest-mines-world-south-africa/
 109,Length of the Epsom Derby horse race,2.4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Epsom_Downs_Racecourse
 110,Length of the Kentucky Derby horse race,2,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Kentucky_Derby
+,Height of Mt Washington; highest point in NE USA,1.917,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Washington_(New_Hampshire)
+,Height of Ben Nevis; highest point in British Isles,1.344,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Ben_Nevis
 111,Length of the Champs Elysee,1.9,thousand,3,m,extent.hor,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
+,Height of Table Moutain; Cape Town,1.085,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Table_Mountain
 112,Length of Tiananmen square in Beijing,880,unit,0,m,extent.hor,http://tiananmensquarebeijing.com
 113,Length of the Lincoln Memorial Reflecting pool in Washington DC,618,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Lincoln_Memorial_Reflecting_Pool
 114,Height of the CN Tower in Toronto,553.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/CN_Tower
@@ -129,7 +138,7 @@
 129,Height of Sagrada Familia Basilica in Barcelona,170,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Sagrada_Família
 130,Height of the Washington Monument in Washington; DC,169,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Washington_Monument
 131,Height of Ulm Minster; Germany,161.5,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_tallest_church_buildings
-132,Height of Kingda Ka roller coaster,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
+132,Height of Kingda Ka; highest roller coaster,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
 133,Height of the Great Pyramid of Giza,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
 134,Height of the spire of Salisbury cathedral,123,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Salisbury_Cathedral
 135,Height of the tallest Coast Redwood tree (California; USA),115.61,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_superlative_trees

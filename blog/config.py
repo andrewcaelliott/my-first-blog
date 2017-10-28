@@ -300,6 +300,16 @@ quotes = (
         '"Mathematics is the most beautiful and most powerful creation of the human spirit."" Stefan Banach',
         '"Mathematics is as old as Man."" Stefan Banach',
         '"Beauty is the first test: there is no permanent place in the world for ugly mathematics." G. H. Hardy',
+        '"The art and science of asking questions is the source of all knowledge". Thomas Berger',
+        '"Science literacy is the artery through which the solutions of tomorrow\'s problems flow." Neil deGrasse Tyson',
+        '"Equipped with his five senses, man explores the universe around him and calls the adventure Science." Edwin Powell Hubble',
+        '"Each problem that I solved became a rule, which served afterwards to solve other problems."" Rene Descartes',
+        '"There are in fact two things, science and opinion; the former begets knowledge, the later ignorance." Hippocrates',
+        '"The fewer the facts, the stronger the opinion." Arnold H. Glasow',
+        '"Science is magic that works." Kurt Vonnegut',
+        '"Knowledge is like money: to be of value it must circulate, and in circulating it can increase in quantity and, hopefully, in value." Louis L\'Amour',
+        '"Being a track sprinter, when it\'s all about a thousandth of a second, there is no escaping the numbers every single day." Victoria Pendleton',
+        
 
 
 
