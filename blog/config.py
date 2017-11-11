@@ -309,8 +309,20 @@ quotes = (
         '"Science is magic that works." Kurt Vonnegut',
         '"Knowledge is like money: to be of value it must circulate, and in circulating it can increase in quantity and, hopefully, in value." Louis L\'Amour',
         '"Being a track sprinter, when it\'s all about a thousandth of a second, there is no escaping the numbers every single day." Victoria Pendleton',
+        '"A lot of civilization is just learning to take advantage of water." Geoffrey Miller',
+        '"Coding is the most powerful medium of developing the sophisticated and rigorous thinking needed for mathematics, for grammar, for physics, for statistics, for all the "hard" subjects." Seymour Papert',
+        '"I can think of no better tool than quantitative thinking to process the information that is thrown at me." Rebecca Goldin',
+        '"We must say that there are as many squares as there are numbers." Galileo Galilei',
+        '"Data allow your political judgments to be based on fact, to the extent that numbers describe realities." Hans Rosling',
+        '"There is strength in numbers, but organizing those numbers is one of the great challenges." John C. Mather',
+        '"On average, people should be more skeptical when they see numbers. They should be more willing to play around with the data themselves." Nate Silver',
+        '"Pure mathematics is, in its way, the poetry of logical ideas." Albert Einstein',
+        '"Mathematics is the music of reason." James Joseph Sylvester',
+        '"To me, mathematics, computer science, and the arts are insanely related. They\'re all creative expressions." Sebastian Thrun',
+        '"Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country." David Hilbert',
+        '"I\'ve always enjoyed mathematics. It is the most precise and concise way of expressing any idea." N. R. Narayana Murthy',
+        '"The definition of a good mathematical problem is the mathematics it generates rather than the problem itself." Andrew Wiles',
         
-
 
 
     )
