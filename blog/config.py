@@ -322,7 +322,24 @@ quotes = (
         '"Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country." David Hilbert',
         '"I\'ve always enjoyed mathematics. It is the most precise and concise way of expressing any idea." N. R. Narayana Murthy',
         '"The definition of a good mathematical problem is the mathematics it generates rather than the problem itself." Andrew Wiles',
-        
+        '"Explore the world. Nearly everything is really interesting if you go into it deeply enough." Richard Feynman',
+        '"A man only becomes wise when he begins to calculate the approximate depth of his ignorance." Gian Carlo Menotti',
+        '"Arithmetic! Algebra! Geometry! Grandiose trinity! Luminous triangle! Whoever has not known you is without sense!" Comte de Lautreamont',
+        '"He who refuses to do arithmetic is doomed to talk nonsense." John McCarthy',
+        '"Computers are better than we are at arithmetic, not because computers are so good at it, but because we are so bad at it." Isaac Asimov',
+        '"I have no satisfaction in formulas unless I feel their arithmetical magnitude." Lord Kelvin',
+        '"[the good of counting is that] it brings every thing to a certainty, which before floated in the mind indefinitely." Samuel Johnson',
+        '"A googleplex is precisely as far from infinity as is the number 1 ... No matter what number you have in mind, infinity is larger." Carl Sagan',
+        '"All the mathematical sciences are founded on relations between physical laws and laws of numbers, so that the aim of exact science is to reduce the problems of nature to the determination of quantities by operations with numbers." James Clerk Maxwell',
+        '"The judicial mind is too commonly characterized by a regard for a fourth decimal as the equal of a whole number." Martin H. Fischer',
+        '[On why are numbers beautiful?] "It’s like asking why is Beethoven’s Ninth Symphony beautiful. If you don’t see why, someone can’t tell you. I know numbers are beautiful. If they aren’t beautiful, nothing is." Paul Erdös',
+        '"Mathematics has a threefold purpose. It must provide an instrument for the study of nature. But this is not all: it has a philosophical purpose, and, I daresay, an aesthetic purpose." Henri Poincaré',
+        '"As history proves abundantly, mathematical achievement, whatever its intrinsic worth, is the most enduring of all." G. H. Hardy',
+        '"Do not imagine that mathematics is harsh and crabbed, and repulsive to common sense. It is merely the etherealisation of common sense." Lord Kelvin',
+        '"I am ever more intrigued by the correspondence between mathematics and physical facts. The adaptability of mathematics to the description of physical phenomena is uncanny." Nicolaas Bloembergen',
+        '"One can argue that mathematics is a human activity deeply rooted in reality, and permanently returning to reality." Yuri I. Manin',
+        '"Uniformity in the currency, weights, and measures of the United States is an object of great importance, and will, I am persuaded, be duly attended to." George Washington',
+        '"[In plotting earthquake measurements] the range between the largest and smallest magnitudes seemed unmanageably large. Dr. Beno Gutenberg then made the natural suggestion to plot the amplitudes logarithmically." Charles Richter',
 
 
     )
