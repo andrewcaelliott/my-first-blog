@@ -340,6 +340,17 @@ quotes = (
         '"One can argue that mathematics is a human activity deeply rooted in reality, and permanently returning to reality." Yuri I. Manin',
         '"Uniformity in the currency, weights, and measures of the United States is an object of great importance, and will, I am persuaded, be duly attended to." George Washington',
         '"[In plotting earthquake measurements] the range between the largest and smallest magnitudes seemed unmanageably large. Dr. Beno Gutenberg then made the natural suggestion to plot the amplitudes logarithmically." Charles Richter',
+        '"Anecdotes are not data but one data point is a hell of a lot better than zero data points." Eliezer Yudkowsky',
+        '"Everything you’ve learned in school as \'obvious\' becomes less and less obvious as you begin to study the universe." Richard Buckminster Fuller',
+        '"The basis for poetry and scientific discovery is the ability to comprehend the unlike in the like and the like in the unlike." Jacob Bronowski',
+        '"Be suspicious of anything that works perfectly - it\'s probably because two errors are canceling each other out." Dave Bartley',
+        '"An educated mind is, as it were, composed of all the minds of preceding ages." Le Bovier de Fontenelle',
+        '"We especially need imagination in science. It is not all mathematics, nor all logic, but it is somewhat beauty and poetry." Maria Mitchell',
+        '"Mathematics is one of the surest ways for a man to feel the power of thought and the magic of the spirit." Malba Tahan',
+        '"There is no absolute scale of size in nature, and the small may be as important, or more so, than the great." Oliver Heaviside',
+        '"Science, like art, music and poetry, tries to reduce #chaos to the clarity and #order of pure beauty." DW Bronk',
+
+
 
 
     )
