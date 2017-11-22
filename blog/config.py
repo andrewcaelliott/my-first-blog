@@ -349,6 +349,23 @@ quotes = (
         '"Mathematics is one of the surest ways for a man to feel the power of thought and the magic of the spirit." Malba Tahan',
         '"There is no absolute scale of size in nature, and the small may be as important, or more so, than the great." Oliver Heaviside',
         '"Science, like art, music and poetry, tries to reduce #chaos to the clarity and #order of pure beauty." DW Bronk',
+        '"The important thing in science is not so much to obtain new facts as to discover new ways of thinking about them." William L Bragg',
+        '"Nothing is more powerful for your future than being a gatherer of good ideas and information. That’s called doing your homework." Jim Rohn',
+        '"Doing mathematics should always mean finding patterns and crafting beautiful and meaningful explanations." Paul Lockhart',
+        '"It is not the job of mathematicians ... to do correct arithmetical operations. It is the job of bank accountants." Samuil Shatunovsky',
+        '"The scientist does not study nature because it is useful; he studies it because he delights in it." H Poincare',
+        '"Time exists in order that everything doesn’t happen all at once, and space exists so that it doesn’t all happen to you." Susan Sontag',
+        '"One measure of our understanding is the number of independent ways we are able to get to the same result." Richard Feynman',
+        '"The mathematical sciences particularly exhibit order symmetry and limitations; and these are the greatest forms of the beautiful." Aristotle',
+        '"Measurement is the link between mathematics and science." Brian Ellis',
+        '"Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write." H G Wells',
+        '"Mathematics is a way of thinking, a language that allows us to translate the complexity of the world into manageable patterns." KC Cole',
+        '"Unless a thing can be defined by measurement, it has no place in a theory." Richard Feynman',
+        '"The moving power of mathematical invention is not reasoning but imagination." Augustus de Morgan',
+        '',
+
+
+
 
 
 
