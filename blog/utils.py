@@ -768,7 +768,7 @@ def resolve_link(key):
         try:
             return links[key]
         except:
-            return "http://IsThatABigNumber.com/sponsor"
+            return "http://IsThatABigNumber.com/badlink"
 
 def save_links():
     global links

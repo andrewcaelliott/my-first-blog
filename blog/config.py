@@ -348,7 +348,7 @@ quotes = (
         '"We especially need imagination in science. It is not all mathematics, nor all logic, but it is somewhat beauty and poetry." Maria Mitchell',
         '"Mathematics is one of the surest ways for a man to feel the power of thought and the magic of the spirit." Malba Tahan',
         '"There is no absolute scale of size in nature, and the small may be as important, or more so, than the great." Oliver Heaviside',
-        '"Science, like art, music and poetry, tries to reduce #chaos to the clarity and #order of pure beauty." DW Bronk',
+        '"Science, like art, music and poetry, tries to reduce chaos to the clarity and order of pure beauty." DW Bronk',
         '"The important thing in science is not so much to obtain new facts as to discover new ways of thinking about them." William L Bragg',
         '"Nothing is more powerful for your future than being a gatherer of good ideas and information. That’s called doing your homework." Jim Rohn',
         '"Doing mathematics should always mean finding patterns and crafting beautiful and meaningful explanations." Paul Lockhart',
@@ -362,7 +362,11 @@ quotes = (
         '"Mathematics is a way of thinking, a language that allows us to translate the complexity of the world into manageable patterns." KC Cole',
         '"Unless a thing can be defined by measurement, it has no place in a theory." Richard Feynman',
         '"The moving power of mathematical invention is not reasoning but imagination." Augustus de Morgan',
-        '',
+        '"Beauty in mathematics is seeing the truth without effort." George Polya',
+        '"I don\'t pretend we have all the answers. But the questions are certainly worth thinking about." Arthur C. Clarke',
+        '"The science of probability gives mathematical expression to our ignorance, not to our wisdom." Samuel R Delany',
+        '"A good math puzzle, paradox, or magic trick can stimulate a child’s #imagination much faster than a practical application." Martin Gardner',
+        
 
 
 

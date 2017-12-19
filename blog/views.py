@@ -94,6 +94,9 @@ def article(article_name, request):
 def article_sponsor(request):
     return article("ITABN-Sponsors.md", request)
 
+def article_badlink(request):
+    return article("ITABN-Bad-Link.md", request)
+
 def article_gen(request, article_name):
     article_name = article_name+".md"
     return article(article_name, request)
