@@ -78,6 +78,8 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 def run():
     print("ok")
     deleteAllFacts()
+    loadNumberFacts("./blog/data/Reference_Information.csv","","KB", encoding="latin1")
+    loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","")
     loadNumberFacts("./blog/data/LandArea.csv","Land Area of ","km^2", encoding="latin1")
     loadNumberFacts("./blog/data/LandUseAgri.csv","Land used for agriculture in ","km^2", encoding="latin1")
     loadNumberFacts("./blog/data/LandUseForest.csv","Forest in ","km^2", encoding="latin1")

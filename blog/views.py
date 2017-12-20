@@ -242,8 +242,10 @@ def quiz(request):
             quiz["question"]="Which of these is the fastest?"
         elif measure.find("energy")>=0:
             quiz["question"]="Which of these has the most energy?"
-        else:
+        elif measure.find("mass")>=0:
             quiz["question"]="Which of these has the greatest mass?"
+        else:
+            quiz["question"]="Which of these is biggest?"
     else:
         if measure.find("extent")>=0:
             quiz["question"]="Which of these is the smallest?"
@@ -263,8 +265,10 @@ def quiz(request):
             quiz["question"]="Which of these is the slowest?"
         elif measure.find("energy")>=0:
             quiz["question"]="Which of these has the least energy?"
-        else:
+        elif measure.find("mass")>=0:
             quiz["question"]="Which of these has the least mass?"
+        else:
+            quiz["question"]="Which of these is smallest?"
     permalink = site+"quiz/?spec="+spec
     if force_reveal:
         permalink+="&reveal=true"

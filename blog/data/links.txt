@@ -38,7 +38,10 @@ q-speed|http://www.isthatabignumber.com/quiz/?spec=speed,biggest,fastest-speed-a
 q-astro|http://www.isthatabignumber.com/quiz/?spec=extent,biggest,an-au-astronomical-unit,distance-from-the-sun-to-neptune,length-circumference-of-earths-orbit-around-the-sun,halleys-comets-furthest-distance-from-the-sun-aphelion
 q-energy|http://www.isthatabignumber.com/quiz/?spec=energy,biggest,energy-released-by-metabolising-1g-of-fat,kinetic-energy-per-gram-of-meteor-hitting-the-earth,energy-released-by-burning-1g-of-petrol-gasoline,energy-released-by-exploding-1g-of-tnt
 q-money|http://www.isthatabignumber.com/quiz/?spec=amount,biggest,cost-of-apollo-moon-programme-adjusted-to-2016-dollars,gdp-in-kuwait,turnover-of-apple-2015,value-of-russias-gold-reserves
+q-info|http://www.isthatabignumber.com/quiz/?spec=info,biggest,memory-of-first-apple-mac-computer,maximum-memory-of-first-ibm-personal-computer,memory-of-bbc-micro-model-b-computer,memory-of-first-commodore-64-computer
+q-maths|http://www.isthatabignumber.com/quiz/?spec=count,biggest,number-of-possible-starting-hands-in-holdem-poker,number-of-ways-a-travelling-salesman-can-visit-six-towns-and-return-home,number-of-digits-used-in-writing-a-googol-in-binary,number-of-ways-of-seating-six-people-around-a-table
 q-pop|http://www.isthatabignumber.com/quiz/?spec=count,biggest,population-of-chongqing-china,population-of-austria,estimated-world-population-of-blue-duiker,population-of-bulgaria
+book|http://www.isthatabignumber.com/article/book
 b-area-urban|http://www.newgeography.com/content/004280-largest-world-cities-2014
 b-count-census|http://www.census.gov/
 b-count-feynman|http://generallythinking.com/richard-feynman-on-thinking-processes-did-he-know-nothing-about-psychology-v/

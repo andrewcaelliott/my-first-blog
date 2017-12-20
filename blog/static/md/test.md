@@ -1,10 +1,3 @@
-# Test Page
-## Why is this important?
-Testing this lot
-
-## There's been a fantastic response, but we can do more
-More testing
-
-Link: [Google](http://www.google.com)
-
-<a href="http://www.google.com/" target="_blank">Hello, google!</a>
+#Test Page
+##This is to test the "article" facility in ITABN
+If this works, this will be callable as /article/test

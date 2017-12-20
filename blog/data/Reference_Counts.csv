@@ -117,3 +117,7 @@
 117,airports in Ireland,40,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 118,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html
 119,stories in the Canterbury Tales by Chaucer,24,unit,0,stories,count,https://en.wikipedia.org/wiki/The_Canterbury_Tales
+,possible starting hands in Hold'em poker,1.326,thousand,3,hands,count,https://en.wikipedia.org/wiki/Texas_hold_%27em_starting_hands
+,ways a travelling salesman can visit six towns (and return home),360,unit,0,words,count,https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms
+,digits used in writing a googol in binary,333,unit,0,digits,count,https://googillion.wordpress.com/2007/12/01/googol-vs-googillion/
+,ways of seating six people around a table,120,unit,0,ways,count,https://www.mytutor.co.uk/answers/8482/GCSE/Further-Maths/How-many-different-ways-are-there-to-seat-6-people-at-a-round-table
