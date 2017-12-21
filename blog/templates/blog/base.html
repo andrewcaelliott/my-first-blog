@@ -30,7 +30,7 @@
 	    enable_page_level_ads: true
 	  });
 	</script>
-	<script id="echoCentralScript" type="text/javascript" data-ec-accountid="2c864536-103f-430a-8648-4d05e39e1973">
+	<!--script id="echoCentralScript" type="text/javascript" data-ec-accountid="2c864536-103f-430a-8648-4d05e39e1973">
 	  var ECHOREFLECTPRELOAD={errors:[]};
 	  (function(w,d,c,t,v){
 	    if(c&&c.error){
@@ -47,7 +47,7 @@
 	    var s=d.getElementsByTagName(t)[0];
 	    setTimeout(function(){s.parentNode.insertBefore(ec,s)},100);
 	  }(window,document,console,'script',ECHOREFLECTPRELOAD));
-	</script>
+	</script-->
   
     </head>
 	<body>
@@ -135,6 +135,11 @@
 				    	<div class="message">
 				    	<h3>We're looking for sponsors</h3>
 				    	<a href ="../sponsor" target="_blank">Help us promote numeracy in engaging new ways</a>
+				    	</div>
+				    	{% elif promote == "book" %}
+				    	<div class="message">
+				    	<h3>Is That A Big Number? - The Book</h3>
+				    	<p>Yes, there's going to be a book based on these numbers. Oxford University Press: July 2018.</p><p><a href ="../article/book" target="_blank">Click here to learn more about it.</a></p>
 				    	</div>
 				    	{% else %}
 				    	<div class="message">
