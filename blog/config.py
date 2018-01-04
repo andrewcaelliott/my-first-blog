@@ -295,8 +295,8 @@ quotes = (
         '"The beauty of mathematics only shows itself to more patient followers." Maryam Mirzakhani',
         '"It\'s not only the question, but the way you try to solve it." Maryam Mirzakhani',
         '"Mathematics is the sister, as well as the servant, of the arts and is touched by the same madness and genius." Harold Marston Morse',
-        '"Life on Earth gives only a small taste of what can happen in the universe." Carlo Ravelli',
-        '"Ever since we discovered that Earth is round and turns like a mad spinning-top, we have understood that reality is not as it appears to us." Carlo Ravelli',
+        '"Life on Earth gives only a small taste of what can happen in the universe." Carlo Rovelli',
+        '"Ever since we discovered that Earth is round and turns like a mad spinning-top, we have understood that reality is not as it appears to us." Carlo Rovelli',
         '"Mathematics is the most beautiful and most powerful creation of the human spirit."" Stefan Banach',
         '"Mathematics is as old as Man."" Stefan Banach',
         '"Beauty is the first test: there is no permanent place in the world for ugly mathematics." G. H. Hardy',
@@ -366,13 +366,16 @@ quotes = (
         '"I don\'t pretend we have all the answers. But the questions are certainly worth thinking about." Arthur C. Clarke',
         '"The science of probability gives mathematical expression to our ignorance, not to our wisdom." Samuel R Delany',
         '"A good math puzzle, paradox, or magic trick can stimulate a child’s #imagination much faster than a practical application." Martin Gardner',
-        
-
-
-
-
-
-
+        '"Mathematics, rightly viewed, possesses not only truth but also supreme beauty - a beauty ... like that of sculpture." Bertrand Russell',
+        '"There is a single light of science, and to brighten it anywhere is to brighten it everywhere." Isaac Asimov ',
+        '"... without at least an elementary instruction in mathematics and science, man will remain a stranger in this world" Ernst Mach',
+        '"The world is full of magical things patiently waiting for our wits to grow sharper."" Bertrand Russell',
+        '"The true spirit of delight, the exaltation, the sense of being more than Man, which is the touchstone of the highest excellence, is to be found in mathematics as surely as poetry." Bertrand Russell',
+        '"Even if the open windows of science at first make us shiver ... in the end, the fresh air brings vigor, and the great spaces have a splendor of their own." Bertrand Russell',
+        '"People who think they know everything are a great annoyance to those of us who do." Isaac Asimov',
+        '"If knowledge can create problems, it is not through ignorance that we can solve them." Isaac Asimov',
+        '"The most exciting phrase to hear in science, the one that heralds new discoveries, is not \'Eureka!\' but \'That\'s funny...\' Isaac Asimov',
+        '"Humanity has the stars in its future, and that future is too important to be lost under the burden of juvenile folly and ignorant superstition." Isaac Asimov',
 
     )
 
