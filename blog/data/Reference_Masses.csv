@@ -195,3 +195,4 @@
 195,a USA penny (1c piece),0.0025,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
 196,a Lego standard 2 x 4 brick,0.00232,unit,0,kg,mass,https://www.bricklink.com/v2/catalog/catalogitem.page?P=3001#T=C
 197,a Lego standard 2 x 2 brick,0.00135,unit,0,kg,mass,https://www.bricklink.com/v2/catalog/catalogitem.page?P=3003#T=C
+,the SpaceX Falcon Heavy rocket,1.421,unit,6,kg,mass,https://en.wikipedia.org/wiki/Falcon_Heavy
