@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^sponsor/$', views.article_sponsor, name='article_sponsor'),
     url(r'^badlink/$', views.article_badlink, name='article_badlink'),
     url(r'^article/(?P<article_name>.*)/$', views.article_gen, name='article_gen'),
+    url(r'^fact/article/(?P<article_name>.*)/$', views.article_gen, name='article_gen'),
     url(r'^itabn/$', views.itabn, name='itabn'),
     url(r'^itabn/answer/post$', views.query_answer_post, name='query_answer_post'),
     url(r'^itabn/answer$', views.query_answer_get, name='query_answer_get'),
