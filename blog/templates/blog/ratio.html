@@ -30,7 +30,7 @@
                 <h2>What does a ratio of  {{ ratio_str }} look like?</h2>
                 {% for pair in ratio_pairs %}
                     <div class="comparison">
-                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Ratio of {{ pair.0.render_folk }} : {{ pair.1.render_folk }} is roughly {{ ratio_str }} #IsThatABigNumber?">Tweet</a> {{ pair.0.render_folk }}<a title="Where does this number come from?" href="{{ pair.1.link }}">...</a></p>
+                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Ratio of {{ pair.0.render_folk }} : {{ pair.1.render_folk }} is roughly {{ ratio_str }} #IsThatABigNumber?">Tweet</a> {{ pair.0.render_folk }}<a title="Where does this number come from?" href="{{ pair.0.link }}">...</a></p>
                         <p style="margin-left:3em">:   {{ pair.1.render_folk }}  <a title="Where does this number come from?" href="{{ pair.1.link }}">...</a></p>
                     </div>
                 {% endfor %}
