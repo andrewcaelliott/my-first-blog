@@ -81,7 +81,7 @@ mass_references = [
     ('Mass of the Statue of Liberty','{times:,.2f} times the mass of the Statue of Liberty','{percent:,.2f} percent of the mass of the Statue of Liberty','1 /{fraction:,.0f} of the mass of the Statue of Liberty'),
     ('Mass of a Blue Whale','{times:,.2f} times the mass of a Blue Whale','{percent:,.2f} percent of the mass of a Blue Whale','1 /{fraction:,.0f} of the mass of a Blue Whale'),
     ('Mass of an M1 Abrams tank','{times:,.2f} times the mass of an M1 Abrams tank','{percent:,.2f} percent of the mass of an M1 Abrams tank','1 /{fraction:,.0f} of the mass of an M1 Abrams tank'),
-    ('Mass of a Rhino','{times:,.2f} times the mass of a Rhino','{percent:,.2f} percent of the mass of a Rhino','1 /{fraction:,.0f} of the mass of a Rhino'),
+    ('Mass of an adult male White Rhino','{times:,.2f} times the mass of a Rhino','{percent:,.2f} percent of the mass of a Rhino','1 /{fraction:,.0f} of the mass of a Rhino'),
     ('Mass of a small passenger car','{times:,.2f} times the mass of a small passenger car','{percent:,.2f} percent of the mass of a small passenger car','1 /{fraction:,.0f} of the mass of a small passenger car'),
     ('Mass of a concert grand piano','{times:,.2f} times the mass of a concert grand piano','{percent:,.2f} percent of the mass of a concert grand piano','1 /{fraction:,.0f} of the mass of a concert grand piano'),
     ('Mass of an adult male red kangaroo','{times:,.2f} times the mass of an adult male red kangaroo','{percent:,.2f} percent of the mass of an adult male red kangaroo','1 /{fraction:,.0f} of the mass of an adult male red kangaroo'),
@@ -89,7 +89,8 @@ mass_references = [
     ('Mass of a large watermelon','{times:,.2f} times the mass of a large watermelon','{percent:,.2f} percent of the mass of a large watermelon','1 /{fraction:,.0f} of the mass of a large watermelon'),
     ('Mass of a brick','{times:,.2f} times the mass of a brick','{percent:,.2f} percent of the mass of a brick','1 /{fraction:,.0f} of the mass of a brick'),
     ('Mass of an iPad Air','{times:,.2f} times the mass of an iPad Air','{percent:,.2f} percent of the mass of an iPad Air','1 /{fraction:,.0f} of the mass of an iPad Air'),
-    ('Mass of an iPhone 6','{times:,.2f} times the mass of an iPhone 6','{percent:,.2f} percent of the mass of an iPhone 6','1 /{fraction:,.0f} of the mass of an iPhone 6'),
+    ('Mass of an iPhone 7 Plus smartphone','{times:,.2f} times the mass of an iPhone 7','{percent:,.2f} percent of the mass of an iPhone 7','1 /{fraction:,.0f} of the mass of an iPhone 7'),
+    ('Mass of a BIC pen','{times:,.2f} times the mass of a BIC pen','{percent:,.2f} percent of the mass of a BIC pen','1 /{fraction:,.0f} of the mass of a BIC pen'),
     ('Mass of a USA penny (1c piece)','{times:,.2f} times the mass of a USA penny (1c)','{percent:,.2f} percent of the mass of a USA penny (1c)','1 /{fraction:,.0f} of the mass of a USA penny (1c)'),
 ]
 
@@ -376,6 +377,8 @@ quotes = (
         '"If knowledge can create problems, it is not through ignorance that we can solve them." Isaac Asimov',
         '"The most exciting phrase to hear in science, the one that heralds new discoveries, is not \'Eureka!\' but \'That\'s funny...\' Isaac Asimov',
         '"Humanity has the stars in its future, and that future is too important to be lost under the burden of juvenile folly and ignorant superstition." Isaac Asimov',
+        '"We are a way for the Cosmos to know itself" Carl Sagan',
+        '"As for everything else, so for a mathematical theory: beauty can be perceived but not explained." Arthur Cayley',
 
     )
 
