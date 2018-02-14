@@ -297,7 +297,7 @@ def errorParsed():
 def literalParsed(literal):
     magnitude = "1"
 #    big_number=big_number.replace("A ","1 ").replace("a ","1 ")
-    if (literal.replace("A ","").replace("a ","") in std_multiples.keys()):
+    if (literal.replace("A ","").replace("a ","").lower() in std_multiples.keys()):
         multiple = literal.replace("A ","").replace("a ","")
         unit = "i"
         measure ="c"
