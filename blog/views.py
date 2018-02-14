@@ -342,6 +342,7 @@ def query_answer(request, numberQuery):
     query.fields['measure'].widget = forms.HiddenInput()
     measure = numberQuery.measure
     answer = {"quip":choice(quip_lists[measure])}
+    print(">>>", numberQuery.magnitude, numberQuery.multiple, numberQuery.unit)
     multiple = numberQuery.multiple
     if (multiple=='?'):
         answer["easteregg"]=numberQuery.unit
@@ -375,6 +376,8 @@ def query_answer(request, numberQuery):
             easteregg["answer"]="Google is a large technology company. A googol, on the other hand, is 10^100, a big number indeed."
         elif numberQuery.unit.lower().find("googol")>=0:
             easteregg["answer"]="A googol is 10^100, a big number indeed."
+        elif numberQuery.unit.lower().find("illion")>=0:
+            easteregg["answer"]="That ("+numberQuery.unit+") is very likely an indefinite hyperbolic numeral. That's big, but no one knows quite how big."
         else:
             easteregg["answer"]="I'm sorry, you have me stumped with that one."            
         answer["easteregg"]=easteregg

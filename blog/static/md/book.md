@@ -62,7 +62,7 @@ Aztec anthropic units
 
 Kevin F's project to build the Empire State Building in Lego
 
-* <a href="http://IsThatABigNumber.com/link/b-measure-legoesb" target="_blank">http://IsThatABigNumber.com/link/b-measure-aztec</a>
+* <a href="http://IsThatABigNumber.com/link/b-measure-legoesb" target="_blank">http://IsThatABigNumber.com/link/b-measure-legoesb</a>
 
 All about the scale used for Lego minifigs
 

@@ -193,15 +193,27 @@ std_multiples = {
     "thousand":"k",
     "thou":"k",
     "grand":"k",
+    "K":"k",
+    "k":"k",
     "m":"M",
     "mil":"M",
     "mill":"M",
     "million":"M",
     "b":"G",
     "bn":"G",
+    "bill":"G",
     "billion":"G",
     "t":"T",
+    "tn":"T",
     "trillion":"T",
+    "trill":"T",
+    "quadrillion":"P",
+    "quintillion":"E",
+    "sextillion":"X",
+    "septillion":"Y",
+    "octillion":"10^27",
+    "nonillion":"10^30",
+    "decillion":"10^33",
 }
 
 def succ(multiple):
@@ -284,10 +296,17 @@ def errorParsed():
 
 def literalParsed(literal):
     magnitude = "1"
-    multiple = "?"
-    unit = literal
-    measure ="c"
-    return magnitude, multiple, unit, measure 
+#    big_number=big_number.replace("A ","1 ").replace("a ","1 ")
+    if (literal.replace("A ","").replace("a ","") in std_multiples.keys()):
+        multiple = literal.replace("A ","").replace("a ","")
+        unit = "i"
+        measure ="c"
+        return normalise((magnitude, multiple, unit))
+    else:
+        multiple = "?"
+        unit = literal
+        measure ="c"
+        return magnitude, multiple, unit, measure 
 
 
 def parseNumber(big_number, regex):
