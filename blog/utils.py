@@ -956,7 +956,7 @@ def summarise_country(klass, code, qamount, currency="USD"):
         other = None
     basics = {"GDP": GDP, "Population":pop, "Land":land,
             "GDP per capita": make_amount(klass, str(round(val_from(GDP)/val_from(pop),0)), "GDP per capita", unit=currency),
-            "Population density": make_count(klass, str(round(1000000*val_from(pop)/val_from(land),0)), "Population density", "people")
+            "Population density": make_count(klass, str(round(val_from(pop)/val_from(land),0)), "Population density", "people")
     }
     response["basics"]= basics
     deficit = make_amount(klass, str(round(val_from(spend) - val_from(tax),0)), "Deficit", unit=currency)
@@ -1086,7 +1086,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} '+currency+' in the '+fact.title))
 
-        comparisons = compnq.getDynamicComparisons(factpacks, year="2016")
+        comparisons = compnq.getDynamicComparisons(factpacks, year="2017")
 
         #print(compnf.render_folk, compnf.scale)
         #comparator.title = "You asked about"
@@ -1094,7 +1094,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             ask = ["Is That A Big Number?", compnq, None, comparisons]
         else:
             if compnq.unit.upper() in AMOUNT_UNITS:
-                conversions = compnq.getConversions( ["USD"], year="2016")
+                conversions = compnq.getConversions( ["USD"], year="2017")
                 ask = ["Is That A Big Number?", compnq, conversions[0], comparisons]
             else:
                 ask = ["Is That A Big Number?", compnq, None, comparisons]

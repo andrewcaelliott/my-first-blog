@@ -6,3 +6,12 @@ db.sqlite3
 .DS_Store
 /*.PNG
 /blog/migrations
+appendix
+/blog/data2/factbook/factbook/css
+/blog/data2/factbook/factbook/docs
+fields
+geos
+graphics
+images
+country
+rankorder
