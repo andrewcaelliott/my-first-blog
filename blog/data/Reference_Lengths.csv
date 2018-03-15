@@ -22,254 +22,265 @@
 22,Length (circumference) of Earth's orbit around the Sun,940,billion,9,m,extent,https://en.wikipedia.org/wiki/Earth%27s_orbit
 23,Distance from the Earth to the Sun,149.6,billion,9,m,extent,Thanks to Google
 24,An AU (astronomical unit),149.6,billion,9,m,extent,https://en.wikipedia.org/wiki/Astronomical_unit
-25,Diameter of the Sun,1.3914,billion,9,m,extent,https://en.wikipedia.org/wiki/Sun
-26,Distance from the Earth to the Moon,384.4,million,6,m,extent,Thanks to Google
-27,Diameter of Saturn's rings,282,million,6,m,extent,http://solarsystem.nasa.gov/planets/saturn/rings
-28,Diameter of Jupiter,139.8,million,6,k,extent,https://en.wikipedia.org/wiki/Jupiter
-29,Diameter of Saturn,116.4,million,6,m,extent,https://en.wikipedia.org/wiki/Saturn
-30,Diameter of Uranus,50.7,million,6,m,extent,https://en.wikipedia.org/wiki/Uranus
-31,Diameter of Neptune,49.2,million,6,m,extent,https://en.wikipedia.org/wiki/Neptune
-32,Length of the equator,40.075,million,6,m,extent.hor,Thanks to Google
-33,Altitude of a geosynchronous orbit of a satellite around the Earth,35.786,million,6,m,extent.ver,https://en.wikipedia.org/wiki/Geosynchronous_orbit
-34,Range of an Airbus A380,15.2,million,6,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
-35,Diameter of the Earth,12.76,million,6,m,extent,http://imagine.gsfc.nasa.gov/features/cosmic/earth.html
-36,Diameter of Venus,12.014,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
-37,Length of the Trans-Siberian Highway from St Petersburg to Vladivostok,11,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
-38,Length of the Trans-Siberian Railway from Moscow to Vladivostok,9.29,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Trans-Siberian_Railway
-39,Length of the 2016 Dakar Rally,9.237,million,6,m,extent.hor,https://en.wikipedia.org/wiki/2016_Dakar_Rally
-40,Length of the USA / Canada border,8.891,million,6,m,extent.hor,Thanks to Google
-41,Length of the Great Wall of China,8.852,million,6,m,extent.hor,Thanks to Google
-42,Length of the West-East gas pipeline in China,8.707,million,6,m,extent.hor,https://www.forbes.com/sites/williampentland/2011/06/17/worlds-longest-natural-gas-pipelines/#709d56cf78ea
-43,Length of North America (North to South),8.605,million,6,m,extent.hor,http://www.worldatlas.com/webimage/countrys/nalandst.htm#page
-44,Length of Africa (North to South),8,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Geography_of_Africa
-45,Length of the Trans-Canada Highway from Victoria to St John's City,7.821,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
-46,Direct distance from Cape Town to Cairo,7.248,million,6,m,extent.hor,https://www.freemaptools.com/how-far-is-it-between-cape-town_-south-africa-and-cairo_-egypt.htm
-47,Length of South America (North to South),7.149,million,6,m,extent.hor,http://www.worldatlas.com/webimage/countrys/salandst.htm
-48,Length of the Amazon River,6.992,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-49,Length of the Nile River,6.853,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Nile
-50,Length of the Kazakhstan-Russia border,6.846,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Kazakhstan%E2%80%93Russia_border
-51,Diameter of Mars,6.792,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
-52,Mean Radius of the Earth,6.371,million,6,m,extent.ver,https://en.wikipedia.org/wiki/Earth_radius
-53,Length of the Yangtze River,6.3,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yangtze
-54,Distance from London to New York,5.576,million,6,m,extent.hor,Thanks to Distance To From
-55,Length of the Siberian Yenisei River,5.539,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yenisei_River
-56,Length of Yellow River (Huang He) in China,5.464,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yellow_River
-57,Length of the Argentina-Chile border,5.15,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Argentina%E2%80%93Chile_border
-58,Diameter of Mercury,4.879,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
-59,Length of I-90 highway from Boston to Seattle,4.86,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
-60,Length of the Congo River,4.7,million,6,m,extent.hor,Thanks to Google
-61,Length of the Mekong River,4.35,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-62,Length of the Vic-Maui yacht race,4.274,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yacht_racing#Notable_Races
-63,Length of Chile - North-South,4.27,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Geography_of_Chile
-64,Length of the China-Russia border,4.209,million,6,m,extent.hor,https://en.wikipedia.org/wiki/China%E2%80%93Russia_border
-65,Length of the Yamal-Europe gas pipeline,4.196,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yamal%E2%80%93Europe_pipeline
-66,Width of Australia,4,million,6,m,extent.hor,http://www.ask.com/geography/many-miles-wide-australia-41036d80355d0566
-67,Length of Route 66 from Chicago to Los Angeles,3.94,million,6,m,extent.hor,http://www.route66guide.com
-68,Length of the Mississippi River,3.73,million,6,m,extent.hor,Thanks to Wikipedia
-69,Length of the Murray-Darling River in Australia,3.672,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-70,Length of the Volga River in Russia,3.645,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-71,Diameter of Earth's Moon,3.475,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
-72,Length of the Indus River,3.18,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-73,Length of the Rio Grande (USA; Mexico),3.057,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-74,Length of the Danube River,2.88,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-75,Length of the Zambezi River,2.574,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Zambezi
-76,Length of the Tigris River,1.95,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-77,Length of the Limpopo River,1.8,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-78,Length of the Beijing-Hangzhou Grand Canal,1.794,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Grand_Canal_(China)
-79,Road distance from Land's End to John o' Groats,1.35,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
-80,Length of the Sydney-Hobart yacht race,1.263,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yacht_racing#Notable_Races
-81,Length of the Rhine River,1.233,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
-82,Length of mainland Italy,1.185,million,6,m,extent.hor,http://science.blurtit.com/749871/what-is-the-length-and-width-of-italy
-83,Length of the Fastnet yacht race,1.126,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Fastnet_Race
-84,Direct distance from Land's End to John o' Groats,970,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
-85,Length of the Indianapolis 500 motor race,805,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Indianapolis_500
-86,Length of the St Lawrence Seaway Canal system,600,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Saint_Lawrence_Seaway
-87,Distance from London to Edinburgh,534.7,thousand,3,m,extent.hor,Thanks to FreeMapTools
-88,Length of the River Thames,386,thousand,3,m,extent.hor,Thanks to Google
-89,Length of the British Grand Prix Formula 1 motor race,306.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/British_Grand_Prix
-90,Length of the Monaco Formula 1 motor race,260,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Monaco_Grand_Prix
-91,Length of the Suez Canal,193.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Suez_Canal
-92,Length of the M25 Orbital motorway around London,188,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/M25_motorway
-93,Diameter of the (fictional) Death Star in the first Star Wars movie,120,thousand,3,m,extent,http://starwars.wikia.com/wiki/Death_Star
-94,Length of Hadrian's Wall in Northern England,117.5,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Hadrian%27s_Wall
-95,Length of the Kiel Canal,98,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Kiel_Canal
-96,Length of the Panama Canal,77,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Panama_Canal
-97,Full length of Broadway,53,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Broadway_(Manhattan)
-98,Length of a Marathon race,42.195,thousand,3,m,extent.hor,Thanks to Google
-99,Highest freefall parachute jump (2014),41.425,thousand,3,m,extent.ver,https://www.theverge.com/2014/10/24/7062023/alan-eustace-google-vp-free-fall-parachute-jump-world-record
-100,Length of the Peripherique around Paris,35.04,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Boulevard_P%C3%A9riph%C3%A9rique
-101,Narrowest width of the English Channel,32.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/English_Channel
-102,Highest ascent by a propellor-driven aircraft (2001),29.524,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Flight_altitude_record
-103,Length of Manhattan Island,21.6,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Manhattan
-104,Length of the Marina beach in Chennai; India,13,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Marina_Beach
-105,Depth of Marianas Trench,10.994,thousand,3,m,extent.ver,http://geology.com/records/deepest-part-of-the-ocean.shtml
-106,Length of the longest canal tunnel (Rove Tunnel in France),7.12,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Rove_Tunnel
-107,Length of the Oxford-Cambridge boat race,6.8,thousand,3,m,extent.hor,http://theboatraces.org/the-course
-108,Length of the Las Vegas Strip,6.8,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Las_Vegas_Strip
-109,Highest ascent by a hot air balloon (2004),6.614,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Flight_altitude_record
-110,Height of Mount Kilimanjaro,5.895,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Kilimanjaro
-111,Highest altitude reached by a single kite,4.8795,thousand,3,m,extent.ver,http://www.guinnessworldrecords.com/world-records/highest-altitude-by-a-single-kite/
-112,Length of Central Park (NYC),4,thousand,3,m,extent.hor,http://www.ask.com/geography/big-central-park-new-york-city-3fd1d686bd03643
-113,Length of the Copacabana beach in Rio de Janeiro,4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Copacabana;_Rio_de_Janeiro
-114,Depth of the Mponeng Gold Mine (South Africa),3.9,thousand,3,m,extent.ver,http://www.mining-technology.com/features/feature-top-ten-deepest-mines-world-south-africa/
-115,Length of the Epsom Derby horse race,2.4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Epsom_Downs_Racecourse
-116,Length of the Kentucky Derby horse race,2,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Kentucky_Derby
-117,Height of Mt Washington; highest point in NE USA,1.917,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Washington_(New_Hampshire)
-118,Length of the Champs Elysee,1.9,thousand,3,m,extent.hor,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
-119,Height of Ben Nevis; highest point in British Isles,1.344,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Ben_Nevis
-120,Height of Table Moutain; Cape Town,1.085,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Table_Mountain
-121,Length of Tiananmen square in Beijing,880,unit,0,m,extent.hor,http://tiananmensquarebeijing.com
-122,Length of the Starship `Discovery` in the Star Trek series of that name,683,unit,0,m,extent.hor,https://imgur.com/gallery/SINOx
-123,Length of the Lincoln Memorial Reflecting pool in Washington DC,618,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Lincoln_Memorial_Reflecting_Pool
-124,Height of the CN Tower in Toronto,553.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/CN_Tower
-125,Height of the `One World Trade Center` skyscraper in New York City,541.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/One_World_Trade_Center
-126,World record longest flight of an arrow from a bow (2010),484.29,unit,0,m,extent.hor,http://news.bbc.co.uk/local/northampton/hi/people_and_places/history/newsid_8924000/8924976.stm
-127,Longest golf drive,470.9,unit,0,m,extent.hor,http://news.bbc.co.uk/1/hi/programmes/click_online/9269507.stm
-128,Length of a TI Class oil tanker,380,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_longest_ships
-129,Length of the USS Gerald R. Ford supercarrier,337,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/USS_Gerald_R._Ford
-130,Length of the USS Nimitz supercarrier,333,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Supercarrier
-131,Length of the Starship `Enterprise` in the Original Star Trek series,289.7,unit,0,m,extent.hor,https://www.quora.com/How-big-is-the-Starship-Enterprise
-132,Length of the Titanic,269,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/RMS_Titanic
-133,Length of the longest ski jump ever (2015),251.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_the_longest_ski_jumps
-134,Length of Tower Bridge over the Thames,244,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tower_Bridge
-135,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Pont_Neuf
-136,Height of the Hoover dam wall,221.4,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Hoover_Dam
-137,Height of the minaret of Hassan II Mosque in Casablanca,210,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Minaret
-138,Height of the Gateway Arch in St Louis,192,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Gateway_Arch
-139,Height of the Space Needle in Seattle,184,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Space_Needle
-140,Height of Sagrada Familia Basilica in Barcelona,170,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Sagrada_Família
-141,Height of the Washington Monument in Washington; DC,169,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Washington_Monument
-142,Height of Ulm Minster; Germany,161.5,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_tallest_church_buildings
-143,Height of Kingda Ka; highest roller coaster,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
-144,Height of the Great Pyramid of Giza,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
-145,Height of the spire of Salisbury cathedral,123,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Salisbury_Cathedral
-146,Height of the tallest Coast Redwood tree (California; USA),115.61,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_superlative_trees
-147,Height of St Paul's Cathedral in London,111,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral
-148,Length of the Saturn V Apollo Program launch rocket,110.6,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Saturn_V
-149,Length of an American Football field,110,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/American_football
-150,Height of the Victoria Falls (Mosi-oa-Tunya) between Zambia and Zimbabwe,108,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Victoria_Falls
-151,Length of a football pitch,105,unit,0,m,extent.hor,Thanks to Wikipedia
-152,World record javelin throw,104.8,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Men%27s_javelin_throw_world_record_progression
-153,Length overall of the Cutty Sark sailing ship,85.4,unit,0,m,extent.hor,http://www.rmg.co.uk/cutty-sark/history/cutty-sark-construction-facts-figures
-154,Wingspan of an Airbus A380,79.75,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
-155,Longest ever discus throw,74.08,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Discus_throw
-156,Height of the Taj Mahal in Agra; India,73,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Taj_Mahal
-157,Length of the Great Sphinx of Giza,73,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza
-158,Overall length of an Airbus A380,72.72,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
-159,Length of a Boeing 747 airliner,70.66,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Boeing_747-400
-160,Length of the SpaceX Falcon 9 launch rocket,70,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Falcon_9
-161,Wingspan of a Boeing 747 airliner,64.44,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Boeing_747-400
-162,Length of an ice-hockey rink,61,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ice_hockey_rink#Goal_posts_and_nets
-163,Height of Niagara Falls,57,unit,0,m,extent.ver,http://www.niagaraparks.com/about-niagara-falls/geology-facts-figures.html
-164,Height of the Leaning Tower of Pisa,56.67,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa
-165,Typical flight of a flying fish,50,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flying_fish
-166,Height of St Basil's Cathedral in Moscow,47.5,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral
-167,Height of the main mast of the Cutty Sark sailing ship,47,unit,0,m,extent.ver,http://www.rmg.co.uk/cutty-sark/history/cutty-sark-construction-facts-figures
-168,Initial height of the world's first skyscraper ? the Home Insurance Building,42,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Home_Insurance_Building
-169,Length of the Millennium Falcon spaceship in the Star Wars movies,34.75,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/Millennium_Falcon
-170,Estimated length of Diplodocus hallorum (longest dinosaur),33.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Diplodocus
-171,Length of a blue whale,30,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Blue_whale
-172,Height of the `Christ the Redeemer` statue in Rio de Janeiro,30,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)
-173,Length of a basketball court,28,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
-174,Distance between bases of a baseball diamond,27.432,unit,0,m,extent.hor,Thanks to Wikipedia
-175,Length overall of the `Mayflower` sailing ship,26,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Mayflower
-176,Length of the Blue Whale skeleton in London's Natural History Museum,25.2,unit,0,m,extent.hor,http://www.nhm.ac.uk/about-us/news/2017/july/museum-unveils-hope-the-blue-whale-skeleton.html?utm_source=fb-image-post-20170713&utm_medium=social&utm_campaign=hintze-hall
-177,Length of a tennis court,23.77,unit,0,m,extent.hor,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
-178,Height of an All-Terrain Armored Transport (AT-AT) in Star Wars movies,22.5,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/All_Terrain_Armored_Transport
-179,Height of the Great Sphinx of Giza,20.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza
-180,Length of a cricket pitch,20.12,unit,0,m,extent.hor,Thanks to Google
-181,Length of a ten pin bowling lane,18.29,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ten-pin_bowling#Playing_area
-182,Men's Olympic Triple Jump record,18.09,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-183,Length of a London Underground carriage,18,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/London_Underground_rolling_stock
-184,Height of the US Presidents' heads carved into Mount Rushmore,18,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Rushmore
-185,Women's Olympic Triple Jump record,15.39,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-186,Width of a basketball court,15,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
-187,Length overall of an `AC50` catamaran used in 2017 America`s cup,15,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/AC50
-188,Distance a kangaroo can jump,13.5,unit,0,m,extent.hor,http://www.answers.com/Q/How_far_can_a_kangaroo_jump
-189,Length of a T-65 X-Wing starfighter in the Star Wars movies,12.5,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/T-65_X-wing_starfighter
-190,Estimated length of Tyrannosaurus Rex,12.3,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tyrannosaurus
-191,Length of a London bus,11.23,unit,0,m,extent.hor,Thanks to Google
-192,Height of a high-diving platform,10,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Diving_platform
-193,World Long Jump Record (1991),8.95,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Long_jump_world_record_progression
-194,Men's Olympic Long Jump record,8.9,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-195,Women's Olympic Long Jump record,7.4,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-196,Width of a football goal,7.32,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Football_pitch
-197,Maximum length of a Reticulated Python,6.5,unit,0,m,extent,https://en.wikipedia.org/wiki/Reticulated_python
-198,World Pole Vault Record (2014),6.16,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
-199,Men's Olympic Pole Vault record,5.97,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-200,Height of the Lincoln statue in the Lincoln Memorial in Washington; DC,5.8,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Abraham_Lincoln_(1920_statue)
-201,Length overall of a `Nacra 17` racing catamaran,5.25,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Nacra_17
-202,Women's Olympic Pole Vault record,5.05,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-203,Length overall of a `49er` racing dinghy,4.876,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/49er_(dinghy)
-204,Length overall of a `470` racing dinghy,4.7,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/470_(dinghy)
-205,Length of a classic Ford Mustang (first generation) car,4.613,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ford_Mustang_(first_generation)
-206,Length of a typical Great White Shark,4.6,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Great_white_shark
-207,Length overall of a `Finn` racing dinghy,4.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Finn_(dinghy)
-208,Length of a Nile crocodile,4.2,unit,0,m,extent.hor,Thanks to Google
-209,Length overall of a `Laser` racing dinghy,4.2,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Laser_(dinghy)
-210,Length of a classic Volkswagen `Beetle` car,4.079,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Volkswagen_Beetle
-211,Length of a standard full size snooker table,3.569,unit,0,m,extent.hor,Thanks to Google
-212,Wingspan of a Wandering Albatross,3.1,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Wandering_albatross
-213,Height of a basketball hoop,3.048,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Basketball
-214,Length overall of a `RS:X` windsurfing board,2.86,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/RS:X
-215,World High Jump Record (1993),2.45,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
-216,Height of a football goal,2.44,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Football_pitch
-217,Men's Olympic High Jump record,2.39,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-218,Height of Chewbacca in the Star Wars movies,2.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Peter_Mayhew
-219,Women's Olympic High Jump record,2.06,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
-220,Length of a `king-size` bed,1.98,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
-221,Length of a standard bed,1.9,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
-222,Width of a ice-hockey goal,1.8,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ice_hockey_rink#Goal_posts_and_nets
-223,Height of a ice-hockey goal,1.2,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Ice_hockey_rink#Goal_posts_and_nets
-224,Length of a lightsaber in the Star Wars movies,1.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Lightsaber
-225,Height of the R2-D2 droid in the Star Wars movies,1.09,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/R2-D2
-226,Height of an Olympic hurdle,1.067,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/110_metres_hurdles
-227,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
-228,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
-229,Height of a tennis net at the centre,0.914,unit,0,m,extent.ver,http://officialtennisrules.com/official-tennis-court-dimensions/
-230,Height of a standard washing machine,0.85,unit,0,m,extent.ver,http://www.whitegoodshelp.co.uk/are-all-washing-machines-the-same-size/
-231,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
-232,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
-233,Height of BB-8 droid in Star Wars movies,0.67,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/BB-8
-234,Height of Yoda in the Star Wars movies,0.66,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/Yoda
-235,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent.hor,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
-236,Side of a classic Monopoly board,0.508,unit,0,m,extent,http://www.answers.com/Q/What_is_the_size_of_a_monopoly_board?#slide=2
-237,Diameter of a regulation dartboard,0.451,unit,0,m,extent,https://en.wikipedia.org/wiki/Darts#Dartboard
-238,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
-239,Distance a flea can jump,0.33,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flea
-240,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
-241,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
-242,Height of a standard Barbie doll,0.292,unit,0,m,extent,https://answers.yahoo.com/question/index?qid=20090219105917AA4HwR6
-243,Height of a standard wine bottle,0.291,unit,0,m,extent.ver,http://ezinearticles.com/?The-Dimensions-of-a-Wine-Bottle&id=7915289
-244,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
-245,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
-246,Length of a Penguin paperback book,0.181,unit,0,m,extent,https://en.wikipedia.org/wiki/Penguin_Composition_Rules
-247,Length of a Samsung Galaxy S8+ smartphone,0.1595,unit,0,m,extent,http://www.samsung.com/global/galaxy/galaxy-s8/specs/
-248,Length of an iPhone 7 plus,0.1582,unit,0,m,extent,http://www.gsmarena.com/apple_iphone_7_plus-8065.php
-249,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
-250,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
-251,Length of a Pixel XL smartphone,0.1547,unit,0,m,extent,https://madeby.google.com/phone/specs/
-252,Length of a BIC Cristal pen,0.149,unit,0,m,extent,https://en.wikipedia.org/wiki/Bic_Cristal
-253,Length of a standard index card,0.127,unit,0,m,extent,https://en.wikipedia.org/wiki/Index_card
-254,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
-255,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
-256,Width of a Penguin paperback book,0.111,unit,0,m,extent,https://en.wikipedia.org/wiki/Penguin_Composition_Rules
-257,Length of a standard playing card,0.0889,unit,0,m,extent,https://en.wikipedia.org/wiki/Standard_52-card_deck#Size_of_the_cards
-258,Length of a credit card,0.0856,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
-259,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
-260,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
-261,Diameter of a regulation pool ball,0.05715,unit,0,m,extent,http://www.wpa-pool.com/web/WPA_Tournament_Table_Equipment_Specifications
-262,Width of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
-263,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-264,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
-265,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
-266,Height of a standard Lego minifig person,0.04,unit,0,m,extent.ver,http://lego.wikia.com/wiki/Minifigure
-267,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-268,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-269,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
-270,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
-271,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
-272,Side of a casino-standard dice,0.019,unit,0,m,extent,http://www.dicegamedepot.com/dice-sizes/
-273,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
-274,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
-275,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+25,Circumference of the Sun,4.371,billion,9,m,extent,https://en.wikipedia.org/wiki/Sun
+26,Diameter of the Sun,1.3914,billion,9,m,extent,https://en.wikipedia.org/wiki/Sun
+27,Circumference of Jupiter,439.2,million,6,m,extent,https://en.wikipedia.org/wiki/Jupiter
+28,Distance from the Earth to the Moon,384.4,million,6,m,extent,Thanks to Google
+29,Circumference of Saturn,365.7,million,6,m,extent,https://en.wikipedia.org/wiki/Saturn
+30,Diameter of Saturn's rings,282,million,6,m,extent,http://solarsystem.nasa.gov/planets/saturn/rings
+31,Circumference of Uranus,159.28,million,6,m,extent,https://en.wikipedia.org/wiki/Uranus
+32,Circumference of Neptune,154.6,million,6,m,extent,https://en.wikipedia.org/wiki/Neptune
+33,Diameter of Jupiter,139.8,million,6,m,extent,https://en.wikipedia.org/wiki/Jupiter
+34,Diameter of Saturn,116.4,million,6,m,extent,https://en.wikipedia.org/wiki/Saturn
+35,Diameter of Uranus,50.7,million,6,m,extent,https://en.wikipedia.org/wiki/Uranus
+36,Diameter of Neptune,49.2,million,6,m,extent,https://en.wikipedia.org/wiki/Neptune
+37,Length of the equator,40.075,million,6,m,extent.hor,Thanks to Google
+38,Circumference of Venus,37.7,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+39,Altitude of a geosynchronous orbit of a satellite around the Earth,35.786,million,6,m,extent.ver,https://en.wikipedia.org/wiki/Geosynchronous_orbit
+40,Circumference of Mars,21.34,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+41,Circumference of Mercury,15.33,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+42,Range of an Airbus A380,15.2,million,6,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
+43,Diameter of the Earth,12.76,million,6,m,extent,http://imagine.gsfc.nasa.gov/features/cosmic/earth.html
+44,Diameter of Venus,12.014,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+45,Length of the Trans-Siberian Highway from St Petersburg to Vladivostok,11,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
+46,Circumference of Earth's Moon,10.92,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+47,Length of the Trans-Siberian Railway from Moscow to Vladivostok,9.29,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Trans-Siberian_Railway
+48,Length of the 2016 Dakar Rally,9.237,million,6,m,extent.hor,https://en.wikipedia.org/wiki/2016_Dakar_Rally
+49,Length of the USA / Canada border,8.891,million,6,m,extent.hor,Thanks to Google
+50,Length of the Great Wall of China,8.852,million,6,m,extent.hor,Thanks to Google
+51,Length of the West-East gas pipeline in China,8.707,million,6,m,extent.hor,https://www.forbes.com/sites/williampentland/2011/06/17/worlds-longest-natural-gas-pipelines/#709d56cf78ea
+52,Length of North America (North to South),8.605,million,6,m,extent.hor,http://www.worldatlas.com/webimage/countrys/nalandst.htm#page
+53,Length of Africa (North to South),8,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Geography_of_Africa
+54,Length of the Trans-Canada Highway from Victoria to St John's City,7.821,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
+55,Circumference of Pluto,7.468,million,6,m,extent,https://en.wikipedia.org/wiki/Pluto
+56,Direct distance from Cape Town to Cairo,7.248,million,6,m,extent.hor,https://www.freemaptools.com/how-far-is-it-between-cape-town_-south-africa-and-cairo_-egypt.htm
+57,Length of South America (North to South),7.149,million,6,m,extent.hor,http://www.worldatlas.com/webimage/countrys/salandst.htm
+58,Length of the Amazon River,6.992,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+59,Length of the Nile River,6.853,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Nile
+60,Length of the Kazakhstan-Russia border,6.846,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Kazakhstan%E2%80%93Russia_border
+61,Diameter of Mars,6.792,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+62,Mean Radius of the Earth,6.371,million,6,m,extent.ver,https://en.wikipedia.org/wiki/Earth_radius
+63,Length of the Yangtze River,6.3,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yangtze
+64,Distance from London to New York,5.576,million,6,m,extent.hor,Thanks to Distance To From
+65,Length of the Siberian Yenisei River,5.539,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yenisei_River
+66,Length of Yellow River (Huang He) in China,5.464,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yellow_River
+67,Length of the Argentina-Chile border,5.15,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Argentina%E2%80%93Chile_border
+68,Diameter of Mercury,4.879,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+69,Length of I-90 highway from Boston to Seattle,4.86,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
+70,Length of the Congo River,4.7,million,6,m,extent.hor,Thanks to Google
+71,Length of the Mekong River,4.35,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+72,Length of the Vic-Maui yacht race,4.274,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yacht_racing#Notable_Races
+73,Length of Chile - North-South,4.27,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Geography_of_Chile
+74,Length of the China-Russia border,4.209,million,6,m,extent.hor,https://en.wikipedia.org/wiki/China%E2%80%93Russia_border
+75,Length of the Yamal-Europe gas pipeline,4.196,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yamal%E2%80%93Europe_pipeline
+76,Width of Australia,4,million,6,m,extent.hor,http://www.ask.com/geography/many-miles-wide-australia-41036d80355d0566
+77,Length of Route 66 from Chicago to Los Angeles,3.94,million,6,m,extent.hor,http://www.route66guide.com
+78,Length of the Mississippi River,3.73,million,6,m,extent.hor,Thanks to Wikipedia
+79,Length of the Murray-Darling River in Australia,3.672,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+80,Length of the Volga River in Russia,3.645,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+81,Diameter of Earth's Moon,3.475,million,6,m,extent,http://nssdc.gsfc.nasa.gov/planetary/factsheet/
+82,Length of the Indus River,3.18,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+83,Length of the Rio Grande (USA; Mexico),3.057,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+84,Length of the Danube River,2.88,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+85,Length of the Zambezi River,2.574,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Zambezi
+86,Diameter of Pluto,2.377,million,6,m,extent,https://en.wikipedia.org/wiki/Pluto
+87,Length of the Tigris River,1.95,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+88,Length of the Limpopo River,1.8,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+89,Length of the Beijing-Hangzhou Grand Canal,1.794,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Grand_Canal_(China)
+90,Road distance from Land's End to John o' Groats,1.35,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
+91,Length of the Sydney-Hobart yacht race,1.263,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Yacht_racing#Notable_Races
+92,Length of the Rhine River,1.233,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
+93,Length of mainland Italy,1.185,million,6,m,extent.hor,http://science.blurtit.com/749871/what-is-the-length-and-width-of-italy
+94,Length of the Fastnet yacht race,1.126,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Fastnet_Race
+95,Direct distance from Land's End to John o' Groats,970,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats
+96,Length of the Indianapolis 500 motor race,805,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Indianapolis_500
+97,Length of the St Lawrence Seaway Canal system,600,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Saint_Lawrence_Seaway
+98,Distance from London to Edinburgh,534.7,thousand,3,m,extent.hor,Thanks to FreeMapTools
+99,Length of the River Thames,386,thousand,3,m,extent.hor,Thanks to Google
+100,Length of the British Grand Prix Formula 1 motor race,306.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/British_Grand_Prix
+101,Length of the Monaco Formula 1 motor race,260,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Monaco_Grand_Prix
+102,Length of the Suez Canal,193.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Suez_Canal
+103,Length of the M25 Orbital motorway around London,188,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/M25_motorway
+104,Diameter of the (fictional) Death Star in the first Star Wars movie,120,thousand,3,m,extent,http://starwars.wikia.com/wiki/Death_Star
+105,Length of Hadrian's Wall in Northern England,117.5,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Hadrian%27s_Wall
+106,Length of the Kiel Canal,98,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Kiel_Canal
+107,Length of the Panama Canal,77,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Panama_Canal
+108,Full length of Broadway,53,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Broadway_(Manhattan)
+109,Length of a Marathon race,42.195,thousand,3,m,extent.hor,Thanks to Google
+110,Highest freefall parachute jump (2014),41.425,thousand,3,m,extent.ver,https://www.theverge.com/2014/10/24/7062023/alan-eustace-google-vp-free-fall-parachute-jump-world-record
+111,Length of the Peripherique around Paris,35.04,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Boulevard_P%C3%A9riph%C3%A9rique
+112,Narrowest width of the English Channel,32.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/English_Channel
+113,Highest ascent by a propellor-driven aircraft (2001),29.524,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Flight_altitude_record
+114,Length of Manhattan Island,21.6,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Manhattan
+115,Length of the Marina beach in Chennai; India,13,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Marina_Beach
+116,Depth of Marianas Trench,10.994,thousand,3,m,extent.ver,http://geology.com/records/deepest-part-of-the-ocean.shtml
+117,Length of the longest canal tunnel (Rove Tunnel in France),7.12,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Rove_Tunnel
+118,Length of the Oxford-Cambridge boat race,6.8,thousand,3,m,extent.hor,http://theboatraces.org/the-course
+119,Length of the Las Vegas Strip,6.8,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Las_Vegas_Strip
+120,Highest ascent by a hot air balloon (2004),6.614,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Flight_altitude_record
+121,Height of Mount Kilimanjaro,5.895,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Kilimanjaro
+122,Highest altitude reached by a single kite,4.8795,thousand,3,m,extent.ver,http://www.guinnessworldrecords.com/world-records/highest-altitude-by-a-single-kite/
+123,Length of Central Park (NYC),4,thousand,3,m,extent.hor,http://www.ask.com/geography/big-central-park-new-york-city-3fd1d686bd03643
+124,Length of the Copacabana beach in Rio de Janeiro,4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Copacabana;_Rio_de_Janeiro
+125,Depth of the Mponeng Gold Mine (South Africa),3.9,thousand,3,m,extent.ver,http://www.mining-technology.com/features/feature-top-ten-deepest-mines-world-south-africa/
+126,Length of the Epsom Derby horse race,2.4,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Epsom_Downs_Racecourse
+127,Length of the Kentucky Derby horse race,2,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Kentucky_Derby
+128,Height of Mt Washington; highest point in NE USA,1.917,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Washington_(New_Hampshire)
+129,Length of the Champs Elysee,1.9,thousand,3,m,extent.hor,https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=length%20of%20champs%20elysees
+130,Height of Ben Nevis; highest point in British Isles,1.344,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Ben_Nevis
+131,Height of Table Moutain; Cape Town,1.085,thousand,3,m,extent.ver,https://en.wikipedia.org/wiki/Table_Mountain
+132,Length of Tiananmen square in Beijing,880,unit,0,m,extent.hor,http://tiananmensquarebeijing.com
+133,Length of the Starship `Discovery` in the Star Trek series of that name,683,unit,0,m,extent.hor,https://imgur.com/gallery/SINOx
+134,Length of the Lincoln Memorial Reflecting pool in Washington DC,618,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Lincoln_Memorial_Reflecting_Pool
+135,Height of the CN Tower in Toronto,553.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/CN_Tower
+136,Height of the `One World Trade Center` skyscraper in New York City,541.3,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/One_World_Trade_Center
+137,World record longest flight of an arrow from a bow (2010),484.29,unit,0,m,extent.hor,http://news.bbc.co.uk/local/northampton/hi/people_and_places/history/newsid_8924000/8924976.stm
+138,Longest golf drive,470.9,unit,0,m,extent.hor,http://news.bbc.co.uk/1/hi/programmes/click_online/9269507.stm
+139,Length of a TI Class oil tanker,380,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_longest_ships
+140,Length of the USS Gerald R. Ford supercarrier,337,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/USS_Gerald_R._Ford
+141,Length of the USS Nimitz supercarrier,333,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Supercarrier
+142,Length of the Starship `Enterprise` in the Original Star Trek series,289.7,unit,0,m,extent.hor,https://www.quora.com/How-big-is-the-Starship-Enterprise
+143,Length of the Titanic,269,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/RMS_Titanic
+144,Length of the longest ski jump ever (2015),251.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_the_longest_ski_jumps
+145,Length of Tower Bridge over the Thames,244,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tower_Bridge
+146,Length of the Pont Neuf bridge over the Seine,232,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Pont_Neuf
+147,Height of the Hoover dam wall,221.4,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Hoover_Dam
+148,Height of the minaret of Hassan II Mosque in Casablanca,210,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Minaret
+149,Height of the Gateway Arch in St Louis,192,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Gateway_Arch
+150,Height of the Space Needle in Seattle,184,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Space_Needle
+151,Height of Sagrada Familia Basilica in Barcelona,170,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Sagrada_Família
+152,Height of the Washington Monument in Washington; DC,169,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Washington_Monument
+153,Height of Ulm Minster; Germany,161.5,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_tallest_church_buildings
+154,Height of Kingda Ka; highest roller coaster,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings
+155,Height of the Great Pyramid of Giza,139,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+156,Height of the spire of Salisbury cathedral,123,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Salisbury_Cathedral
+157,Height of the tallest Coast Redwood tree (California; USA),115.61,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_superlative_trees
+158,Height of St Paul's Cathedral in London,111,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral
+159,Length of the Saturn V Apollo Program launch rocket,110.6,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Saturn_V
+160,Length of an American Football field,110,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/American_football
+161,Height of the Victoria Falls (Mosi-oa-Tunya) between Zambia and Zimbabwe,108,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Victoria_Falls
+162,Length of a football pitch,105,unit,0,m,extent.hor,Thanks to Wikipedia
+163,World record javelin throw,104.8,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Men%27s_javelin_throw_world_record_progression
+164,Length overall of the Cutty Sark sailing ship,85.4,unit,0,m,extent.hor,http://www.rmg.co.uk/cutty-sark/history/cutty-sark-construction-facts-figures
+165,Wingspan of an Airbus A380,79.75,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
+166,Longest ever discus throw,74.08,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Discus_throw
+167,Height of the Taj Mahal in Agra; India,73,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Taj_Mahal
+168,Length of the Great Sphinx of Giza,73,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza
+169,Overall length of an Airbus A380,72.72,unit,0,m,extent.hor,http://www.airbus.com/aircraftfamilies/passengeraircraft/a380family/specifications/
+170,Length of a Boeing 747 airliner,70.66,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Boeing_747-400
+171,Length of the SpaceX Falcon 9 launch rocket,70,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Falcon_9
+172,Wingspan of a Boeing 747 airliner,64.44,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Boeing_747-400
+173,Length of an ice-hockey rink,61,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ice_hockey_rink#Goal_posts_and_nets
+174,Height of Niagara Falls,57,unit,0,m,extent.ver,http://www.niagaraparks.com/about-niagara-falls/geology-facts-figures.html
+175,Height of the Leaning Tower of Pisa,56.67,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa
+176,Typical flight of a flying fish,50,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flying_fish
+177,Height of St Basil's Cathedral in Moscow,47.5,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral
+178,Height of the main mast of the Cutty Sark sailing ship,47,unit,0,m,extent.ver,http://www.rmg.co.uk/cutty-sark/history/cutty-sark-construction-facts-figures
+179,Initial height of the world's first skyscraper ? the Home Insurance Building,42,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Home_Insurance_Building
+180,Length of the Millennium Falcon spaceship in the Star Wars movies,34.75,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/Millennium_Falcon
+181,Estimated length of Diplodocus hallorum (longest dinosaur),33.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Diplodocus
+182,Length of a blue whale,30,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Blue_whale
+183,Height of the `Christ the Redeemer` statue in Rio de Janeiro,30,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)
+184,Length of a basketball court,28,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
+185,Distance between bases of a baseball diamond,27.432,unit,0,m,extent.hor,Thanks to Wikipedia
+186,Length overall of the `Mayflower` sailing ship,26,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Mayflower
+187,Length of the Blue Whale skeleton in London's Natural History Museum,25.2,unit,0,m,extent.hor,http://www.nhm.ac.uk/about-us/news/2017/july/museum-unveils-hope-the-blue-whale-skeleton.html?utm_source=fb-image-post-20170713&utm_medium=social&utm_campaign=hintze-hall
+188,Length of a tennis court,23.77,unit,0,m,extent.hor,http://www.tennisplanet.co.uk/other/information/dimensions-of-a-court/
+189,Height of an All-Terrain Armored Transport (AT-AT) in Star Wars movies,22.5,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/All_Terrain_Armored_Transport
+190,Height of the Great Sphinx of Giza,20.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza
+191,Length of a cricket pitch,20.12,unit,0,m,extent.hor,Thanks to Google
+192,Length of a ten pin bowling lane,18.29,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ten-pin_bowling#Playing_area
+193,Men's Olympic Triple Jump record,18.09,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+194,Length of a London Underground carriage,18,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/London_Underground_rolling_stock
+195,Height of the US Presidents' heads carved into Mount Rushmore,18,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Mount_Rushmore
+196,Women's Olympic Triple Jump record,15.39,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+197,Width of a basketball court,15,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Basketball
+198,Length overall of an `AC50` catamaran used in 2017 America`s cup,15,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/AC50
+199,Distance a kangaroo can jump,13.5,unit,0,m,extent.hor,http://www.answers.com/Q/How_far_can_a_kangaroo_jump
+200,Length of a T-65 X-Wing starfighter in the Star Wars movies,12.5,unit,0,m,extent.hor,http://starwars.wikia.com/wiki/T-65_X-wing_starfighter
+201,Estimated length of Tyrannosaurus Rex,12.3,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Tyrannosaurus
+202,Length of a London bus,11.23,unit,0,m,extent.hor,Thanks to Google
+203,Height of a high-diving platform,10,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Diving_platform
+204,World Long Jump Record (1991),8.95,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Long_jump_world_record_progression
+205,Men's Olympic Long Jump record,8.9,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+206,Women's Olympic Long Jump record,7.4,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+207,Width of a football goal,7.32,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Football_pitch
+208,Maximum length of a Reticulated Python,6.5,unit,0,m,extent,https://en.wikipedia.org/wiki/Reticulated_python
+209,World Pole Vault Record (2014),6.16,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
+210,Men's Olympic Pole Vault record,5.97,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+211,Height of the Lincoln statue in the Lincoln Memorial in Washington; DC,5.8,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Abraham_Lincoln_(1920_statue)
+212,Length overall of a `Nacra 17` racing catamaran,5.25,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Nacra_17
+213,Women's Olympic Pole Vault record,5.05,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+214,Length overall of a `49er` racing dinghy,4.876,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/49er_(dinghy)
+215,Length overall of a `470` racing dinghy,4.7,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/470_(dinghy)
+216,Length of a classic Ford Mustang (first generation) car,4.613,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ford_Mustang_(first_generation)
+217,Length of a typical Great White Shark,4.6,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Great_white_shark
+218,Length overall of a `Finn` racing dinghy,4.5,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Finn_(dinghy)
+219,Length of a Nile crocodile,4.2,unit,0,m,extent.hor,Thanks to Google
+220,Length overall of a `Laser` racing dinghy,4.2,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Laser_(dinghy)
+221,Length of a classic Volkswagen `Beetle` car,4.079,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Volkswagen_Beetle
+222,Length of a standard full size snooker table,3.569,unit,0,m,extent.hor,Thanks to Google
+223,Wingspan of a Wandering Albatross,3.1,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Wandering_albatross
+224,Height of a basketball hoop,3.048,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Basketball
+225,Length overall of a `RS:X` windsurfing board,2.86,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/RS:X
+226,World High Jump Record (1993),2.45,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Men%27s_high_jump_world_record_progression
+227,Height of a football goal,2.44,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Football_pitch
+228,Men's Olympic High Jump record,2.39,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+229,Height of Chewbacca in the Star Wars movies,2.21,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Peter_Mayhew
+230,Women's Olympic High Jump record,2.06,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics
+231,Length of a `king-size` bed,1.98,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
+232,Length of a standard bed,1.9,unit,0,m,extent.hor,http://www.bedtimesuperstores.co.uk/blog/post/uk-standard-bed-sizes-and-dimensions/
+233,Width of a ice-hockey goal,1.8,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Ice_hockey_rink#Goal_posts_and_nets
+234,Height of a ice-hockey goal,1.2,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/Ice_hockey_rink#Goal_posts_and_nets
+235,Length of a lightsaber in the Star Wars movies,1.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Lightsaber
+236,Height of the R2-D2 droid in the Star Wars movies,1.09,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/R2-D2
+237,Height of an Olympic hurdle,1.067,unit,0,m,extent.ver,https://en.wikipedia.org/wiki/110_metres_hurdles
+238,Maximum length of a baseball bat,1.067,unit,0,m,extent,https://www.google.co.uk/search?client=opera&q=length+of+a+baseball+bat&sourceid=opera&ie=UTF-8&oe=UTF-8
+239,Maximum length of a cricket bat,0.965,unit,0,m,extent,https://en.wikipedia.org/wiki/Cricket_bat
+240,Height of a tennis net at the centre,0.914,unit,0,m,extent.ver,http://officialtennisrules.com/official-tennis-court-dimensions/
+241,Height of a standard washing machine,0.85,unit,0,m,extent.ver,http://www.whitegoodshelp.co.uk/are-all-washing-machines-the-same-size/
+242,Maximum length of a tennis racket,0.737,unit,0,m,extent,http://officialtennisrules.com/official-dimensions-for-tennis-rackets/
+243,Length of a tenor saxophone,0.71,unit,0,m,extent,http://www.ehow.com/info_8275964_sizes-sax-vs-alto-sax.html
+244,Height of BB-8 droid in Star Wars movies,0.67,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/BB-8
+245,Height of Yoda in the Star Wars movies,0.66,unit,0,m,extent.ver,http://starwars.wikia.com/wiki/Yoda
+246,Maximum length of carry-on luggage (per United Airlines),0.56,unit,0,m,extent.hor,https://www.united.com/CMS/en-US/travel/Pages/BaggageCarry-On.aspx
+247,Side of a classic Monopoly board,0.508,unit,0,m,extent,http://www.answers.com/Q/What_is_the_size_of_a_monopoly_board?#slide=2
+248,Diameter of a regulation dartboard,0.451,unit,0,m,extent,https://en.wikipedia.org/wiki/Darts#Dartboard
+249,Length of US Legal page of paper,0.356,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+250,Distance a flea can jump,0.33,unit,0,m,extent.hor,https://en.wikipedia.org/wiki/Flea
+251,Length of a Foolscap page of paper,0.33,unit,0,m,extent,http://www.papersizes.org/a4-foolscap-letter.htm
+252,Length of an A4 page of paper,0.297,unit,0,m,extent,http://www.stephenwiltshire.co.uk/paper_sizes.aspx
+253,Height of a standard Barbie doll,0.292,unit,0,m,extent,https://answers.yahoo.com/question/index?qid=20090219105917AA4HwR6
+254,Height of a standard wine bottle,0.291,unit,0,m,extent.ver,http://ezinearticles.com/?The-Dimensions-of-a-Wine-Bottle&id=7915289
+255,Length of a standard DL business envelope,0.22,unit,0,m,extent,https://en.wikipedia.org/wiki/Envelope#International_standard_sizes
+256,Length of a pencil,0.19,unit,0,m,extent,https://en.wikipedia.org/wiki/Pencil
+257,Length of a Penguin paperback book,0.181,unit,0,m,extent,https://en.wikipedia.org/wiki/Penguin_Composition_Rules
+258,Length of a Samsung Galaxy S8+ smartphone,0.1595,unit,0,m,extent,http://www.samsung.com/global/galaxy/galaxy-s8/specs/
+259,Length of an iPhone 7 plus,0.1582,unit,0,m,extent,http://www.gsmarena.com/apple_iphone_7_plus-8065.php
+260,Length of an iPhone 6,0.1581,unit,0,m,extent,Thanks to Google
+261,Length of USA dollar bill,0.156,unit,0,m,extent,http://www.enchantedlearning.com/math/money/bills/one/
+262,Length of a Pixel XL smartphone,0.1547,unit,0,m,extent,https://madeby.google.com/phone/specs/
+263,Length of a BIC Cristal pen,0.149,unit,0,m,extent,https://en.wikipedia.org/wiki/Bic_Cristal
+264,Length of a standard index card,0.127,unit,0,m,extent,https://en.wikipedia.org/wiki/Index_card
+265,Length of an iPhone SE,0.1238,unit,0,m,extent,http://www.idownloadblog.com/2016/03/21/hardware-differences-between-iphone-se-and-iphone-6s/
+266,Diameter of a CD / DVD,0.12,unit,0,m,extent,http://www.encyclopedia.com/topic/compact_disc.aspx
+267,Width of a Penguin paperback book,0.111,unit,0,m,extent,https://en.wikipedia.org/wiki/Penguin_Composition_Rules
+268,Length of a standard playing card,0.0889,unit,0,m,extent,https://en.wikipedia.org/wiki/Standard_52-card_deck#Size_of_the_cards
+269,Length of a credit card,0.0856,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
+270,Size of a standard square Post-It note,0.0762,unit,0,m,extent,http://www.post-it.com/3M/en_US/post-it/products/~/Post-it-Products/Notes/?N=4327+5927575+3294529207+3294857497&rt=r3
+271,Diameter of regulation baseball,0.0737,unit,0,m,extent,https://en.wikipedia.org/wiki/Baseball_(ball)
+272,Diameter of a regulation pool ball,0.05715,unit,0,m,extent,http://www.wpa-pool.com/web/WPA_Tournament_Table_Equipment_Specifications
+273,Width of a credit card,0.05398,unit,0,m,extent,https://en.wikipedia.org/wiki/ISO/IEC_7810
+274,Length of a standard matchbox,0.047,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+275,Minimum diameter of a golf ball,0.04267,unit,0,m,extent,https://en.wikipedia.org/wiki/Golf_ball
+276,Diameter of a regulation table tennis ball,0.04,unit,0,m,extent,https://en.wikipedia.org/wiki/Table_tennis#Ball
+277,Height of a standard Lego minifig person,0.04,unit,0,m,extent.ver,http://lego.wikia.com/wiki/Minifigure
+278,Width of a standard matchbox,0.034,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+279,Length of a standard 4 x 2 Lego brick,0.0318,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+280,Diameter of US dollar coin,0.0265,unit,0,m,extent,https://en.wikipedia.org/wiki/Dollar_coin_(United_States)
+281,Diameter of a UK 1p coin,0.0203,unit,0,m,extent,Thanks to Google
+282,Diameter of a US 1c coin,0.019,unit,0,m,extent,Thanks to Google
+283,Side of a casino-standard dice,0.019,unit,0,m,extent,http://www.dicegamedepot.com/dice-sizes/
+284,Width of a standard 4 x 2 Lego brick,0.0158,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml
+285,Height of a standard matchbox,0.013,unit,0,m,extent,http://www.alibaba.com/product-detail/Standard-Size-Safety-Matchbox_139185685.html
+286,Height of a standard Lego brick,0.0096,unit,0,m,extent,http://www.robertcailliau.eu/Lego/Dimensions/zMeasurements-en.xhtml

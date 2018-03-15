@@ -379,7 +379,8 @@ quotes = (
         '"Humanity has the stars in its future, and that future is too important to be lost under the burden of juvenile folly and ignorant superstition." Isaac Asimov',
         '"We are a way for the Cosmos to know itself" Carl Sagan',
         '"As for everything else, so for a mathematical theory: beauty can be perceived but not explained." Arthur Cayley',
-
+        '"My goal is simple. It is a complete understanding of the universe, why it is as it is and why it exists at all." Stephen Hawking',
+        '"The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge." Stephen Hawkins',
     )
 
 
