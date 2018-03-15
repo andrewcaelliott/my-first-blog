@@ -51,22 +51,20 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
             ordinal, subject, magnitude, multiple, scale, unit, measure, comment = line.split(",")
             datefld = None
             location = ""
-        elif len(fields) == 10:
-            ordinal, subject, datestr, location, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+        else:
+            if len(fields) == 10:
+                ordinal, subject, datestr, location, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+            elif len(fields) == 9:
+                subject, datestr, location, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+            else:
+                raise ValueError("wrong number of fields in: "+line)
             if datestr == "":
                 datefld = None
             else:
                 d = strptime(datestr, "%Y")
- #               print(d)
- #               print(d[0:6])
                 dt = datetime(*d[0:6])
-#                dt.replace(tzinfo=utc)
                 utc.localize(dt)
- #               print(dt)
-#                print(dt.isoformat())
                 datefld = dt
-        else:
-            raise ValueError("wrong number of fields in: "+line)
         #print(ordinal, subject, magnitude, multiple, scale, unit, measure, comment)
  #       print(fields)
  #       print(datefld)
@@ -99,13 +97,10 @@ def run():
     loadNumberFacts("./blog/data/Reference_Index.csv","","", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Information.csv","","KB", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","")
-    #loadNumberFacts("./blog/data/GovtExps.csv","Govt spending in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Speeds.csv","","km/h")
-    #loadNumberFacts("./blog/data/Area_of_countries.csv","Area of ","m^2")
     loadNumberFacts("./blog/data/Reference_Energy.csv","","J")
     loadNumberFacts("./blog/data/Company_Revenues.csv","","USD")
     loadNumberFacts("./blog/data/Population_of_countries - Missing.csv","Population of ","people", encoding="latin1")
-    #loadNumberFacts("./blog/data/GDP_of_countries.csv","GDP of ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data/Population_of_cities.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/Animal_Populations.csv","","individuals")
     loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
