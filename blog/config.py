@@ -380,8 +380,8 @@ quotes = (
         '"We are a way for the Cosmos to know itself" Carl Sagan',
         '"As for everything else, so for a mathematical theory: beauty can be perceived but not explained." Arthur Cayley',
         '"My goal is simple. It is a complete understanding of the universe, why it is as it is and why it exists at all." Stephen Hawking',
-        '"The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge." Stephen Hawkins',
-        '"We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the universe. That makes us something very special." Stephen Hawkins',
+        '"The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge." Stephen Hawking',
+        '"We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the universe. That makes us something very special." Stephen Hawking',
     )
 
 
