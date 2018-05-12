@@ -201,7 +201,7 @@ def run10():
 	print(klass.objects)
 
 
-def run():
+def run11():
 	klass = NumberFact
 #	measure=("extent")#
 #	seed = randint(0,1000000)
@@ -209,6 +209,7 @@ def run():
 #	print(rf.permlink)
 #	dyk = spuriousFact(klass, 2, measure="amount!")
 	dyk = spuriousFact(klass, 2)
+	print(dyk)
 	print(dyk["fact1"], dyk["comparison"], dyk["fact2"])
 
 def run11a():
@@ -220,7 +221,7 @@ def run11a():
 	print(sigfigs(332,3))
 
 
-def run12():
+def run():
 	klass = NumberFact
 	measure=("extent")
 	seed = randint(0,1000000)
@@ -230,8 +231,9 @@ def run12():
 	facts = neatFacts(klass, rf)
 	for fact in facts:
 #		print(fact["comparison"], fact["fact2"].render2)
-		print(fact)
-		print(fact["fact2"].measure)
+#		print(fact["fact2"].measure)
+		print(fact["fact1"].render0, fact["comparison"], fact["fact2"].render2)
+		print(fact["fact2"].render2, fact["inversecomparison"], fact["fact1"].render0)
 
 def run13():
 	klass = NumberFact

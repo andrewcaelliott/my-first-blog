@@ -21,13 +21,11 @@
     {% if neat %}
     <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
 	    <div>
-	    <h2>Neat Ratios ...</h2>
-	    <h3>{{ fact.render_folk|linebreaks }}</h3>
-        <p><a title="If this was a standard unit ..." href="{{ fact.linkasunit }}">If this was a standard unit ...</a></p>
+	    <h2>If {{ fact.render_folk }} was a standard unit <a title="About this number fact" href="{{ fact.link }}">...</a></h2>
 	    <ul>
 	   	{% for comparison in neat %}
 		    <div class="comparison">
-		        <li> {{ comparison.comparison }} {{ comparison.fact2.render_folk }}<a title="Where does this number come from?" href="{{ comparison.fact2.link }}">...more</a></li>
+		        <li> {{ comparison.fact2.render_folk }}<a title="Where does this number come from?" href="{{ comparison.fact2.linkasunit }}">...more</a> would be {{ comparison.inversecomparison }} {{fact.title}} </li>
 		    </div>
 		 {% endfor %}
 	    </ul>	

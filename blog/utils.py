@@ -669,6 +669,8 @@ def spuriousFact(klass, scale_tolerance, measure=None):
         comparison = "is about as big as"
     else:
         comparison = " ".join(["is", renderInt(intRatio), "x"])
+
+
     return {"fact1":fact1.render_folk, "fact1_link": fact1.link, "comparison":comparison, "fact2":fact2.render_folk, "fact2_link": fact2.link}
 
 
@@ -738,13 +740,19 @@ def neatFacts(klass, selectedFact, tolerance = 0.02):
             intRatio = sigfigs(raw_ratio, 2)
         if intRatio==1:
             comparison = "is about as big as"
+            inversecomparison = "is about as big as"
         elif raw_ratio < 1:
             comparison = "".join(["is 1/", renderMult(intRatio), " of"])
+            inversecomparison = "".join(["is ", renderMult(intRatio), " x"])
+
         else:
             comparison = "".join(["is ", renderMult(intRatio), " x"])
+            inversecomparison = "".join(["is 1/", renderMult(intRatio), " of"])
         comparison = comparison.replace("1/2.5", "2/5")
+        inversecomparison = inversecomparison.replace("1/2.5", "2/5")
+        inversecomparison = inversecomparison.replace("is ", "")
         if intRatio <= maxRatio:
-            neat = neat+[{"fact1":rf, "comparison":comparison, "fact2":fact, "fact2render":fact.render2, "ratio":raw_ratio}]
+            neat = neat+[{"fact1":rf, "comparison":comparison, "inversecomparison":inversecomparison, "fact2":fact, "fact2render":fact.render2, "ratio":raw_ratio}]
     neat = sorted(neat, key = lambda k: k['ratio'])
     return neat
 

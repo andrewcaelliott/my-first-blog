@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^fact/new/$', views.fact_new, name='fact_new'),
     url(r'^fact/(?P<permlink>.+)/$', views.fact_detail, name='fact_detail'),
+    url(r'^factasunit/(?P<permlink>.+)/$', views.fact_asunit, name='fact_as_unit'),
     url(r'^convert/$', views.convert, name='convert'),
     url(r'^convert/answer/post$', views.conversion_answer_post, name='conversion_answer_post'),
     url(r'^convert/answer$', views.conversion_answer_get, name='conversion_answer_get'),

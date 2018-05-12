@@ -612,6 +612,19 @@ def fact_detail(request, permlink):
     permlink = fact.permlink
     return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat, "pl":permlink, "promote":promote})
 
+def fact_asunit(request, permlink):
+    fact = get_object_or_404(NumberFact, permlink=permlink)
+    print(fact)
+    if fact.text.rfind("http")>=0:
+        reflink=fact.text
+    else:
+        reflink="http://www.google.com/?q="+fact.title
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["book", "book", "sponsor","donate","click"])
+    neat = neatFacts(NumberFact, fact)
+    permlink = fact.permlink
+    return render(request, 'blog/fact_as_unit.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat, "pl":permlink, "promote":promote})
+
 def fact_new(request):
     if request.method == "POST":
         form = FactForm(request.POST)
