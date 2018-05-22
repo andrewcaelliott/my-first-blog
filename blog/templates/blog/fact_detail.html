@@ -23,7 +23,6 @@
 	    <div>
 	    <h2>Neat Ratios ...</h2>
 	    <h3>{{ fact.render_folk|linebreaks }}</h3>
-        <p><a title="If this was a standard unit ..." href="{{ fact.linkasunit }}">If this was a standard unit ...</a></p>
 	    <ul>
 	   	{% for comparison in neat %}
 		    <div class="comparison">
@@ -31,7 +30,7 @@
 		    </div>
 		 {% endfor %}
 	    </ul>	
-	    </div>
+        <p><a title="If this was a standard unit ..." href="{{ fact.linkasunit }}">If this was a standard unit ...</a></p>	    </div>
     </div>
     {% endif %}
     </div>

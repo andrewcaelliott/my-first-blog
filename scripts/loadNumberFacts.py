@@ -109,6 +109,5 @@ def run():
     loadNumberFacts("./blog/data/Reference_Masses.csv","Mass of ","kg")
     loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","")
     loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
-    loadNumberFacts("./blog/data/heights_2015.csv","","m")
     loadNumberFacts("./blog/data/Reference_Volumes.csv","Volume of ","m^3")
 

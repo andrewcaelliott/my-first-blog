@@ -125,11 +125,11 @@
 125,a mature thoroughbred racehorse,570,unit,0,kg,mass,http://www.ask.com/pets-animals/much-racehorse-weigh-9764f37cf20f6193
 126,a concert grand piano,450,unit,0,kg,mass,http://www.bluebulbprojects.com/measureofthings/
 127,an adult male North American Black Bear,280,unit,0,kg,mass,http://bearwithus.org/8-bears-of-the-world/
-128,a barrel of crude oil (159l),275,unit,0,kg,mass,http://www.businessdictionary.com/definition/barrel-bbl.html
 129,heaviest weights lifted in Olympic Weightlifting (Clean and Jerk),274,unit,0,kg,mass,https://en.wikipedia.org/wiki/List_of_world_records_in_Olympic_weightlifting
 130,an adult male Bengal Tiger,220,unit,0,kg,mass,https://en.wikipedia.org/wiki/Bengal_tiger
 131,a motorbike,200,unit,0,kg,mass,http://www.visordown.com/forum/general/what-is-the-average-weight-of-a-motorcycle/248279.html
 132,an adult male Panda Bear,150,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=2
+128,a barrel of crude oil (159l),139,unit,0,kg,mass,http://www.businessdictionary.com/definition/barrel-bbl.html
 133,an ostrich (approx),111,unit,0,kg,mass,https://en.wikipedia.org/wiki/Ostrich
 134,Vespa Primavera 50 scooter,108,unit,0,kg,mass,file:///C:/Users/Andrew/Downloads/Vespa_Version_21_Mar_6-lowres.pdf
 135,lightest allowable Heavyweight boxer,90.8,unit,0,kg,mass,https://en.wikipedia.org/wiki/Weight_class_(boxing)#Professional_boxing
@@ -192,22 +192,23 @@
 192,the lightest allowable regulation cricket ball,0.156,unit,0,kg,mass,https://en.wikipedia.org/wiki/Cricket_ball
 193,the lightest allowable regulation baseball,0.142,unit,0,kg,mass,https://en.wikipedia.org/wiki/Baseball_(ball)
 194,an alkaline D battery,0.135,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=5
-195,a medium-sized apple (fruit),0.068,unit,0,kg,mass,http://www.answers.com/Q/How_much_does_1_medium_apple_weigh
-196,a large hen's egg (approx),0.06,unit,0,kg,mass,https://en.wikipedia.org/wiki/Chicken_egg_sizes
-197,a regulation tennis ball,0.057,unit,0,kg,mass,http://hypertextbook.com/facts/2000/ShefiuAzeez.shtml
-198,heaviest allowable golf ball,0.04593,unit,0,kg,mass,https://en.wikipedia.org/wiki/Golf_ball
-199,a South African Krugerrand coin,0.03393,unit,0,kg,mass,https://en.wikipedia.org/wiki/Krugerrand
-200,an alkaline AA battery,0.023,unit,0,kg,mass,https://en.wikipedia.org/wiki/AA_battery
-201,a house mouse,0.017,unit,0,kg,mass,Thanks to Google
-202,a compact disc (CD) / DVD,0.015,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=7
-203,a UK pound coin (2017),0.00875,unit,0,kg,mass,https://en.wikipedia.org/wiki/One_pound_(British_coin)
-204,a British gold sovereign coin,0.007988,unit,0,kg,mass,https://en.wikipedia.org/wiki/Sovereign_(British_coin)
-205,a Gold Sovereign,0.00798,unit,0,kg,mass,https://goldsovereigns.co.uk/bullion.html
-206,a BIC pen,0.0058,unit,0,kg,mass,http://thinkbic.com/
-207,a USA quarter (25c piece),0.00567,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
-208,a UK penny (1p piece),0.00356,unit,0,kg,mass,http://www.royalmint.com/discover/uk-coins/coin-design-and-specifications/one-penny-coin
-209,a Lego miniature figure,0.00325,unit,0,kg,mass,https://bricks.stackexchange.com/questions/8782/how-much-does-a-lego-character-weigh
-210,a table tennis ball,0.0027,unit,0,kg,mass,https://en.wikipedia.org/wiki/Table_tennis#Ball
-211,a USA penny (1c piece),0.0025,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
-212,a Lego standard 2 x 4 brick,0.00232,unit,0,kg,mass,https://www.bricklink.com/v2/catalog/catalogitem.page?P=3001#T=C
-213,a Lego standard 2 x 2 brick,0.00135,unit,0,kg,mass,https://www.bricklink.com/v2/catalog/catalogitem.page?P=3003#T=C
+195,deck of Bicycle playing cards,0.096,unit,0,kg,mass,http://howmuchdoesitweigh.blogspot.co.uk/2009/07/deck-of-cards-weighs-96-grams-or-34.html
+196,a medium-sized apple (fruit),0.068,unit,0,kg,mass,http://www.answers.com/Q/How_much_does_1_medium_apple_weigh
+197,a large hen's egg (approx),0.06,unit,0,kg,mass,https://en.wikipedia.org/wiki/Chicken_egg_sizes
+198,a regulation tennis ball,0.057,unit,0,kg,mass,http://hypertextbook.com/facts/2000/ShefiuAzeez.shtml
+199,heaviest allowable golf ball,0.04593,unit,0,kg,mass,https://en.wikipedia.org/wiki/Golf_ball
+200,a South African Krugerrand coin,0.03393,unit,0,kg,mass,https://en.wikipedia.org/wiki/Krugerrand
+201,an alkaline AA battery,0.023,unit,0,kg,mass,https://en.wikipedia.org/wiki/AA_battery
+202,a house mouse,0.017,unit,0,kg,mass,Thanks to Google
+203,a compact disc (CD) / DVD,0.015,unit,0,kg,mass,http://www.bluebulbprojects.com/MeasureOfThings/results.php?comp=weight&unit=kgms&amt=10&sort=pr&p=7
+204,a UK pound coin (2017),0.00875,unit,0,kg,mass,https://en.wikipedia.org/wiki/One_pound_(British_coin)
+205,a British gold sovereign coin,0.007988,unit,0,kg,mass,https://en.wikipedia.org/wiki/Sovereign_(British_coin)
+206,a Gold Sovereign,0.00798,unit,0,kg,mass,https://goldsovereigns.co.uk/bullion.html
+207,a BIC pen,0.0058,unit,0,kg,mass,http://thinkbic.com/
+208,a USA quarter (25c piece),0.00567,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
+209,a UK penny (1p piece),0.00356,unit,0,kg,mass,http://www.royalmint.com/discover/uk-coins/coin-design-and-specifications/one-penny-coin
+210,a Lego miniature figure,0.00325,unit,0,kg,mass,https://bricks.stackexchange.com/questions/8782/how-much-does-a-lego-character-weigh
+211,a table tennis ball,0.0027,unit,0,kg,mass,https://en.wikipedia.org/wiki/Table_tennis#Ball
+212,a USA penny (1c piece),0.0025,unit,0,kg,mass,https://www.usmint.gov/about_the_mint/?action=coin_specifications
+213,a Lego standard 2 x 4 brick,0.00232,unit,0,kg,mass,https://www.bricklink.com/v2/catalog/catalogitem.page?P=3001#T=C
+214,a Lego standard 2 x 2 brick,0.00135,unit,0,kg,mass,https://www.bricklink.com/v2/catalog/catalogitem.page?P=3003#T=C
