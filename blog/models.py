@@ -21,7 +21,7 @@ class NumberQuery(models.Model):
     number      = models.CharField(max_length=40)
     magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
-    measure  = models.CharField(max_length=1, choices=MEASURE_CHOICES, default="c")
+    measure  = models.CharField(max_length=2, choices=MEASURE_CHOICES, default="c")
     location = models.CharField(max_length=2,choices=country_code_list(), default="GB")
     value    = models.DecimalField(max_digits=30, decimal_places=10)
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES, default="U")
@@ -126,17 +126,22 @@ class NumberQuery(models.Model):
             fact = NumberFact.objects.get(title=reference[0])
             factNumber = float(fact.value)*10**fact.scale
             comparisonNumber = n  / factNumber
+            print("==Comparison",n,factNumber, comparisonNumber, 1/comparisonNumber, fact.render)
             if (comparisonNumber <= 10000) and (comparisonNumber >= 0.0001):
-                times = sigfigs(comparisonNumber,6);
+                times = sigfigs(comparisonNumber,4);
                 fraction = sigfigs(1/comparisonNumber,3);
                 percent = sigfigs(times,6) * 100;
-                if comparisonNumber >=0.5:
-                    comparisonRender = reference[1].format(times=times, fraction=fraction, percent=percent)
+                if comparisonNumber >=0.32:
+                    if comparisonNumber >=10:
+                        comparisonRender = reference[1].replace(".2f", ".0f").format(times=times, fraction=fraction, percent=percent)
+                    else:
+                        comparisonRender = reference[1].format(times=times, fraction=fraction, percent=percent)
+                #to do? 2/3, 3/4, 2/5, 3/5, 4/5
                 elif comparisonNumber >=0.1 or len(reference)<4:
                     comparisonRender = reference[2].format(times=times, fraction=fraction, percent = percent)
                 else:
                     comparisonRender = reference[3].format(times=times, fraction=fraction, percent = percent)
-                comparison ={"factor":comparisonNumber, "render": comparisonRender, "link":fact.link}
+                comparison ={"factor":comparisonNumber, "render": comparisonRender+" ("+fact.render_number+")", "link":fact.link}
                 comparisons.append(comparison)
         return comparisons
 
@@ -219,6 +224,8 @@ class NumberFact(models.Model):
 
     def display_folk_number(self, mag, mult, unit, measure):
         mag = str(sigfigs(num(self.magnitude),4))
+        if (measure == "e"):
+            measure = "extent"
 
         if measure.find("extent")>=0 and self.scale>0:
             newnumber = NumberFact(magnitude=mag, scale=self.scale-3, measure=measure, unit="km", multiple=getMultiple(self.scale-3))
@@ -319,7 +326,7 @@ class NumberFact(models.Model):
                     response = "".join(["-", unit, mag.replace("-",""), mult])
             else:    
                 response = " ".join([mag, mult, unit])
-        return response.replace("unit", "").replace(" - ", " ").replace("  "," ")
+        return response.replace("unit", "").replace(" unknown", "").replace(" - ", " ").replace("  "," ")
 
     def normalise(self):
         value = num(self.magnitude)
@@ -428,7 +435,11 @@ class Comparison(models.Model):
     def _display(self):
         return " ".join([self.title,":",self.numberFact1, self.numberFact2])
 
+    def _display_folk(self):
+        return " ".join([self.title,":",self.numberFact1, self.numberFact2])
+
     render = property(_display)
+    render_folk = property(_display_folk)
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')

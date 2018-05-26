@@ -27,24 +27,36 @@
                 <h3>{{ answer.easteregg.answer }}</h3>
                 {% else %}
                 <h2>How big is {{ question }} ?</h2>
+                {% if question.unit != basefact.unit %}
+                    <li> Equivalent to {{ basefact.render_number }}  <a title="Where does this number come from?" href="{{ basefact.link }}">...</a></li>
+                {% endif %}
                 <h2>More or less ...</h2>
                 <div class="comparison">
-                    <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber?  < {{ answer.brackets.above }}">Tweet</a> Smaller than: {{ answer.brackets.above }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                    <li> Smaller than: {{ answer.brackets.above }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></li>
                 </div>
                 <div class="comparison">
-                    <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? > {{ answer.brackets.below }}">Tweet</a> Bigger than: {{ answer.brackets.below }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                    <li> Bigger than: {{ answer.brackets.below }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></li>
                 </div>
                 {% for match in answer.closeMatches %}
                     <div class="comparison">
-                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ match.text }}">Tweet</a> Close to/Same as: {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></p>
+                        <li> Close to/Same as: {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></li>
                     </div>
                 {% endfor %}
                 <h2>And equivalent to  ...</h2>
                 {% for comparison in answer.comparisons %}
                     <div class="comparison">
-                        <p><a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ question }} #IsThatABigNumber? {{ comparison.render }}">Tweet</a> {{ comparison.render }} <a title="Where does this number come from?" href="{{ comparison.link }}">...</a></p>
+                        <li> {{ comparison.render }} <a title="Where does this number come from?" href="{{ comparison.link }}">...</a></li>
                     </div>
                 {% endfor %}
+                {% if neat %}
+                <h2>And, neatly, although approximately ...</h2>
+                {% for comparison in neat %}
+                    <div class="comparison">
+                        <li> {{ comparison.comparison }} {{ comparison.fact2.render_folk }}<a title="Where does this number come from?" href="{{ comparison.fact2.link }}">...</a></li>
+                    </div>
+                {% endfor %}
+
+                {% endif %}
                 {% endif %}
             </div>
         </div>

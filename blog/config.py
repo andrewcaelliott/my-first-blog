@@ -96,11 +96,11 @@ mass_references = [
 
 
 reference_lists = {
-    'e': extent_references,
-    'c': count_references,
-    'a': amount_references,
-    'd': duration_references,
-    'm': mass_references,
+    'ex': extent_references,
+    'co': count_references,
+    'am': amount_references,
+    'du': duration_references,
+    'ma': mass_references,
 }
 
 
@@ -153,46 +153,41 @@ MASS_UNIT_CHOICES= (
 
 
 unit_choice_lists = {
-    'e': EXTENT_UNIT_CHOICES,
-    'c': COUNT_UNIT_CHOICES,
-    'a': AMOUNT_UNIT_CHOICES,
-    'd': DURATION_UNIT_CHOICES,
-    'm': MASS_UNIT_CHOICES,
+    'ex': EXTENT_UNIT_CHOICES,
+    'co': COUNT_UNIT_CHOICES,
+    'am': AMOUNT_UNIT_CHOICES,
+    'du': DURATION_UNIT_CHOICES,
+    'ma': MASS_UNIT_CHOICES,
 }
 
 all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES + MASS_UNIT_CHOICES
 
 quip_lists = {
-    "e":(
+    "ex":(
         "It's a long, long way to ...",
         "Size matters ...",
         '"Shorth is better than length." Dr Seuss',
         '"Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean, you may think it\'s a long way down the road to the drug store, but that\'s just peanuts to space." Douglas Adams',
         ),
-    "c":(
+    "co":(
         "Let me count the ways ...",
         "It's the little things that count",
         "Not everything that can be counted counts",
         "Not everything that counts can be counted",
         "Shh ... I'm counting",
         ),
-    "a":(
+    "am":(
         "There's more to life than money",
         '"In school, my favorite subject was math. That\'s where I learned to count money"',
         'A nickel ain’t worth a dime anymore',
         '"Money money money, must be funny, in a rich man\'s world"'
-#        '"In school, my favorite subject was math. That\'s where I learned to count money." French Montana'
- #       '"A nickel ain’t worth a dime anymore." Yogi Berra',
         ),
-    "d":(
+    "du":(
         'How many years can a mountain exist?',
         'Eight Days a Week',
         'Don\'t just count your years, make your years count.',
-#        '"How many years can a mountain exist?" Bob Dyan',
- #       '"Eight Days a Week" The Beatles',
-  #      '"Don\'t just count your years, make your years count." George Meredith',
         ),
-    "m":(
+    "ma":(
         'He ain\'t heavy ... ',
         ),
 }
@@ -433,28 +428,29 @@ mass_conversion_targets = [
 
 
 conversion_target_lists = {
-    'e': extent_conversion_targets,
-    'a': amount_conversion_targets,
-    'd': duration_conversion_targets,
-    'm': mass_conversion_targets,
+    'ex': extent_conversion_targets,
+    'am': amount_conversion_targets,
+    'du': duration_conversion_targets,
+    'ma': mass_conversion_targets,
 }
 
 conversion_quip_lists = {
-    "e":("The long and winding road ...",),
-    "a":("Money makes the world go round ...",),
-    "d":("How long has it been ...",),
-    "m":("That\'s massive ...",),
+    "ex":("The long and winding road ...",),
+    "am":("Money makes the world go round ...",),
+    "du":("How long has it been ...",),
+    "ma":("That\'s massive ...",),
 }
 
 MEASURE_CHOICES = (
-    ('c', 'count'),
-    ('a', 'amount'),
-    ('e', 'extent'),
-    ('d', 'duration'),
-    ('n', 'number'),
-    ('m', 'mass'),
-    ('r', 'area'),
-    ('v', 'volume'),
+    ('co', 'count'),
+    ('am', 'amount'),
+    ('ex', 'extent'),
+    ('du', 'duration'),
+    ('nu', 'number'),
+    ('ma', 'mass'),
+    ('ar', 'area'),
+    ('vo', 'volume'),
+    ('en', 'energy'),
 )
 
 MULTIPLE_CHOICES = (

@@ -16,6 +16,7 @@ from .forms import FreeForm,FreeFormCountry
 from .forms import ConvertForm 
 from .forms import FilterFactsForm 
 from .convert import convertToDefaultBase 
+from .convert import convertToDefault
 from .convert import convertToUnit 
 from .config import reference_lists
 from .config import unit_choice_lists
@@ -24,7 +25,7 @@ from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
 from .utils import get_article
-from .utils import parseBigNumber, randomFact, resolve_link, poke_link, save_links, summarise_country_list
+from .utils import parseBigNumber, randomFact, resolve_link, poke_link, save_links, summarise_country_list, make_number2
 from django.utils.text import slugify
 from .dummycontent import storySelection
 from .tumblr import tumblrSelection
@@ -336,13 +337,18 @@ def itabn(request):
     promote = choice(["book", "book", "sponsor","donate","click"])
     return render(request, 'blog/itabn.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
-def query_answer(request, numberQuery):
+def query_answer(request, numberQuery, numberFact):
     query =  QueryForm(instance=numberQuery)
 #    query.fields['magnitude'].value=numberQuery.magnitude
     query.fields['measure'].widget = forms.HiddenInput()
+
+#    query =  FreeForm(request.GET)
+#    magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
+#    mag2, unit2 = convertToDefaultBase(magnitude, unit)
+#    numberFact = make_number2(NumberFact, str(mag2), multiple, "Your number", measure, str(unit2))
+
     measure = numberQuery.measure
     answer = {"quip":choice(quip_lists[measure])}
-    print(">>>", numberQuery.magnitude, numberQuery.multiple, numberQuery.unit)
     multiple = numberQuery.multiple
     if (multiple=='?'):
         answer["easteregg"]=numberQuery.unit
@@ -382,9 +388,10 @@ def query_answer(request, numberQuery):
             easteregg["answer"]="I'm sorry, you have me stumped with that one."            
         answer["easteregg"]=easteregg
     #question = question.replace(" times ", " x ").replace(" the ", " ").replace(" distance ", " dist ")
+    neat = neatFacts(NumberFact, numberFact)
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["book", "book", "sponsor","donate","click"])
-    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'quote': choice(quotes), "dyk":dyk, "promote":promote})   
+    return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'neat':neat,'basefact': numberFact,'quote': choice(quotes), "dyk":dyk, "promote":promote})   
 
 def query_answer_post(request):
     query =  QueryForm(request.POST)
@@ -394,13 +401,26 @@ def query_answer_post(request):
 def query_answer_get(request):
     query =  QueryForm(request.GET)
     numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
-    return query_answer(request, numberQuery)
+    #magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
+    mag2, unit2 = convertToDefaultBase(numberQuery.magnitude, numberQuery.unit)
+    numberFact = make_number2(NumberFact, str(mag2), numberQuery.multiple, "Your number", numberQuery.measure, str(unit2))
+    return query_answer(request, numberQuery, numberFact)
 
 def query_compare(request):
     query =  FreeForm(request.GET)
     magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
     numberQuery = NumberQuery(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
-    return query_answer(request, numberQuery)
+    mag2, unit2 = convertToDefaultBase(magnitude, unit)
+    numberFact = make_number2(NumberFact, str(mag2), multiple, "Your number", measure, str(unit2))
+    return query_answer(request, numberQuery, numberFact)
+
+def query_compare2(request):
+    query =  FreeForm(request.GET)
+    magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
+    mag2, unit2 = convertToDefaultBase(magnitude, unit)
+    numberFact = make_number2(NumberFact, str(mag2), multiple, "Your number", measure, str(unit2))
+    #numberFact = NumberFact(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
+    return query_answer2(request, numberFact)
 
 def query_api(request):
         
@@ -600,8 +620,18 @@ def post_new(request):
     promote = choice(["book", "book", "sponsor","donate","click"])
     return render(request, 'blog/post_edit.html', {'form': form, "dyk":dyk, "promote":promote})    
 
+def query_answer2(request, fact):
+    reflink=""
+    ##fact=
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["book", "book", "sponsor","donate","click"])
+    neat = neatFacts(NumberFact, fact)
+    permlink = fact.permlink
+    return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat, "pl":permlink, "promote":promote})
+
 def fact_detail(request, permlink):
     fact = get_object_or_404(NumberFact, permlink=permlink)
+    print("}}}", fact.render_folk_long, fact.measure)
     if fact.text.rfind("http")>=0:
         reflink=fact.text
     else:

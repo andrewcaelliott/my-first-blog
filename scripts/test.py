@@ -221,7 +221,7 @@ def run11a():
 	print(sigfigs(332,3))
 
 
-def run():
+def run12():
 	klass = NumberFact
 	measure=("extent")
 	seed = randint(0,1000000)
@@ -541,3 +541,14 @@ def run20():
 		print(fact)
 		print(fact["fact2"].measure)
 
+def run():
+	klass = NumberFact
+	measure=("extent")
+	seed = randint(0,1000000)
+	rf = make_number(klass, "2723", "test", measure, "m")
+	print(rf.render_folk)
+	facts = neatFacts(klass, rf, tolerance=0.02)
+	for fact in facts:
+#		print(fact["comparison"], fact["fact2"].render2)
+		print(fact)
+		print(fact["fact2"].measure)

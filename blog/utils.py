@@ -272,26 +272,26 @@ def getMeasure(unit):
     try:
         dim = ureg.parse_expression(unit).dimensionality 
         if dim == ureg.parse_expression('m').dimensionality :
-            return "e"
+            return "ex"
         elif dim == ureg.parse_expression('s').dimensionality :
-            return "d"
+            return "du"
         elif dim == ureg.parse_expression('kg').dimensionality :
-            return "m"
+            return "ma"
         else:
             return "?"
     except UndefinedUnitError:
         p = re.compile("^[A-Z]{3}$")
         m=p.match(unit)
         if m!=None:
-            return "a"
+            return "am"
         else:
-            return "c"
+            return "co"
 
 def errorParsed():
     magnitude = "0"
     multiple = "U"
     unit = "i"
-    measure ="c"
+    measure ="co"
     return magnitude, multiple, unit, measure 
 
 def literalParsed(literal):
@@ -300,12 +300,12 @@ def literalParsed(literal):
     if (literal.replace("A ","").replace("a ","").lower() in std_multiples.keys()):
         multiple = literal.replace("A ","").replace("a ","")
         unit = "i"
-        measure ="c"
+        measure ="co"
         return normalise((magnitude, multiple, unit))
     else:
         multiple = "?"
         unit = literal
-        measure ="c"
+        measure ="co"
         return magnitude, multiple, unit, measure 
 
 
@@ -709,8 +709,10 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 
 def neatFacts(klass, selectedFact, tolerance = 0.02):
     rf = selectedFact
-    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "count.pop":500, "amount":500, "volume":10000, "area":10000, "energy":1000, "info":1000000}[rf.measure]
-
+#    rf=normalise_nf(rf)
+    print(">>>", rf.render_folk_long, rf.measure)
+    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "count.pop":500, "amount":500, "volume":10000, "area":10000, "energy":1000, "info":1000000,
+                    "ex":10000000, "ma":20000, "du":10000, "am":500, "co":500, "?": 1000}[rf.measure]
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
     try:
         facts.remove(rf)
@@ -733,7 +735,7 @@ def neatFacts(klass, selectedFact, tolerance = 0.02):
 
     for fact in facts:
         raw_ratio = (rf.value/fact.value)*10**(rf.scale - fact.scale)
-
+ 
         if raw_ratio < 1:
             intRatio = sigfigs(1/raw_ratio, 2)
         else:
@@ -868,6 +870,13 @@ def val_from(fact):
 
 def make_number(klass, magnitude, title, measure, unit):
     nf = klass(magnitude=magnitude, multiple="unit", scale=0, unit=unit, measure = measure, title = title, value=num(magnitude))
+    return nf
+
+def make_number2(klass, magnitude, multiple, title, measure, unit):
+    scale=getScaleFactor(multiple)
+    print(">>", magnitude, multiple, title, measure, unit)
+    nf = klass(magnitude=magnitude, multiple=multiple, scale=scale[0], unit=unit, measure = measure, title = title, value=num(magnitude))
+    print(">>", nf.render_folk_long)
     return nf
 
 def make_amount(klass, magnitude, title, unit="USD"):
@@ -1057,7 +1066,7 @@ def summarise_country_list(klass1, klass, code, qamount):
     if qamount:
 #    try:
         comparator = parseBigNumber(qamount)
-        if comparator[3]=="a":
+        if comparator[3]=="am":
             currency = comparator[2]
     cdict  = summarise_country(klass, code, qamount, currency=currency)
     country = resolve_country_code(code)
@@ -1069,21 +1078,21 @@ def summarise_country_list(klass1, klass, code, qamount):
         unit = comparator[2]
         compnq = klass1(title = "You asked about", magnitude=comparator[0], multiple = comparator[1], unit = comparator[2], measure=comparator[3])
         factpacks = []
-        if compnq.measure == "a":
+        if compnq.measure == "am":
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} '+currency+' for every person in '+fact.title.replace("Population of ",""),'{times:,.2f} '+currency+' for every person in '+fact.title.replace("Population of ",""),'1 '+currency+'  for every {fraction:,.0f} people in '+fact.title.replace("Population of ","")))
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} % of the '+fact.title,'{percent:,.2f} % of the '+fact.title))
             fact = cdict["tax_spend"]["spend"]
             factpacks.append((fact, '{times:,.2f} times '+fact.title,'{percent:,.2f} % of '+fact.title,'{percent:,.2f} % of '+fact.title))
-        elif compnq.measure == "c":
+        elif compnq.measure == "co":
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} for every person in the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} people in the '+fact.title))
             fact = cdict["basics"]["Land"]
             factpacks.append((fact, '{times:,.2f} for every km^2 of the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} km^2 in the '+fact.title))
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f} times the '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} '+currency+' in the '+fact.title))
-        elif compnq.measure == "e":
+        elif compnq.measure == "ex":
             fact = cdict["basics"]["Population"]
             factpacks.append((fact, '{times:,.2f} m for every person in the '+fact.title,'{times:,.2f} for every person in the '+fact.title,'1  for every {fraction:,.0f} people in the '+fact.title))
         else:

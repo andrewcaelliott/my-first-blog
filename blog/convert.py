@@ -37,6 +37,8 @@ def convertToUnit(magnitude, unit, target_unit):
 
 def convertToDefaultBase(magnitude, unit, year=None):
     if unit in AMOUNT_UNITS: 
+        if isinstance(magnitude, str):
+            magnitude = float(magnitude)
         n = convertToUSD(magnitude, unit, year=year)
         u = 'USD'
     else:
