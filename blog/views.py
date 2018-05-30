@@ -391,6 +391,7 @@ def query_answer(request, numberQuery, numberFact):
     neat = neatFacts(NumberFact, numberFact)
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["book", "book", "sponsor","donate","click"])
+    numberFact.normalise()
     return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'neat':neat,'basefact': numberFact,'quote': choice(quotes), "dyk":dyk, "promote":promote})   
 
 def query_answer_post(request):
@@ -403,6 +404,7 @@ def query_answer_get(request):
     numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
     #magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
     mag2, unit2 = convertToDefaultBase(numberQuery.magnitude, numberQuery.unit)
+    print("making",str(mag2), numberQuery.multiple, "Your number", numberQuery.measure, str(unit2))
     numberFact = make_number2(NumberFact, str(mag2), numberQuery.multiple, "Your number", numberQuery.measure, str(unit2))
     return query_answer(request, numberQuery, numberFact)
 
@@ -631,13 +633,13 @@ def query_answer2(request, fact):
 
 def fact_detail(request, permlink):
     fact = get_object_or_404(NumberFact, permlink=permlink)
-    print("}}}", fact.render_folk_long, fact.measure)
     if fact.text.rfind("http")>=0:
         reflink=fact.text
     else:
         reflink="http://www.google.com/?q="+fact.title
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["book", "book", "sponsor","donate","click"])
+    print("}}}", fact.render_folk_long, fact.measure)
     neat = neatFacts(NumberFact, fact)
     permlink = fact.permlink
     return render(request, 'blog/fact_detail.html', {'fact': fact, 'reflink':reflink, 'quote': choice(quotes), "dyk":dyk, "neat":neat, "pl":permlink, "promote":promote})

@@ -94,6 +94,9 @@ mass_references = [
     ('Mass of a USA penny (1c piece)','{times:,.2f} times the mass of a USA penny (1c)','{percent:,.2f} percent of the mass of a USA penny (1c)','1 /{fraction:,.0f} of the mass of a USA penny (1c)'),
 ]
 
+energy_references = [
+    ('Energy in boiling a kettle','{times:,.2f} times the energy used in boiling a kettle','{percent:,.2f} percent of the energy used in boiling a kettle','1 /{fraction:,.0f} of the energy used in boiling a kettle'),
+]
 
 reference_lists = {
     'ex': extent_references,
@@ -101,6 +104,7 @@ reference_lists = {
     'am': amount_references,
     'du': duration_references,
     'ma': mass_references,
+    'en': energy_references,
 }
 
 
@@ -150,6 +154,19 @@ MASS_UNIT_CHOICES= (
         ('lb', 'pound'),
     )
 
+ENERGY_UNIT_CHOICES= (
+        ('J', 'joule'),
+        ('erg', 'erg'),
+        ('kWh', 'Kilowatt Hour'),
+        ('MWh', 'Megawatt Hour'),
+        ('GWh', 'Gigawatt Hour'),
+        ('TWh', 'Terawatt Hour'),
+        ('PWh', 'Petawatt Hour'),
+        ('BTU', 'British Thermal Unit'),
+        ('cal', 'Thermochemical calorie'),
+        ('kcal', 'Food Calorie'),
+    )
+
 
 
 unit_choice_lists = {
@@ -158,9 +175,10 @@ unit_choice_lists = {
     'am': AMOUNT_UNIT_CHOICES,
     'du': DURATION_UNIT_CHOICES,
     'ma': MASS_UNIT_CHOICES,
+    'en': ENERGY_UNIT_CHOICES,
 }
 
-all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES + MASS_UNIT_CHOICES
+all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES + MASS_UNIT_CHOICES + ENERGY_UNIT_CHOICES
 
 quip_lists = {
     "ex":(
@@ -189,6 +207,9 @@ quip_lists = {
         ),
     "ma":(
         'He ain\'t heavy ... ',
+        ),
+    "en":(
+        'Full of beans ... ',
         ),
 }
 

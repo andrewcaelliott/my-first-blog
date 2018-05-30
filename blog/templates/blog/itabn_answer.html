@@ -28,7 +28,7 @@
                 {% else %}
                 <h2>How big is {{ question }} ?</h2>
                 {% if question.unit != basefact.unit %}
-                    <li> Equivalent to {{ basefact.render_number }}  <a title="Where does this number come from?" href="{{ basefact.link }}">...</a></li>
+                    <li> Equivalent to {{ basefact.render_number }}</li>
                 {% endif %}
                 <h2>More or less ...</h2>
                 <div class="comparison">

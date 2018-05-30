@@ -44,12 +44,16 @@ def convertToDefaultBase(magnitude, unit, year=None):
     else:
         try:
             quantity = Q_(" ".join([str(magnitude), unit]))
+            print("Converting:",)
             if quantity.dimensionality==ureg.s.dimensionality:
                 n = quantity.to(ureg.year).magnitude
                 u = quantity.to(ureg.year).units
             elif quantity.dimensionality==ureg.g.dimensionality:
                 n = quantity.to(ureg.kg).magnitude
                 u = quantity.to(ureg.kg).units
+            elif quantity.dimensionality==ureg.J.dimensionality:
+                n = quantity.to(ureg.J).magnitude
+                u = quantity.to(ureg.J).units
             else:
                 n = quantity.to_base_units().magnitude
                 u = quantity.to_base_units().units

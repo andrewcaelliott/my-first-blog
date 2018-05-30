@@ -262,6 +262,7 @@ def normalise(parsed):
         if negative:
             value = -value
         magnitude = str(value)
+    print(">>>",magnitude, multiple, unit, measure )
     return magnitude, multiple, unit, measure 
 
 def normalise_nf(nf):
@@ -277,6 +278,8 @@ def getMeasure(unit):
             return "du"
         elif dim == ureg.parse_expression('kg').dimensionality :
             return "ma"
+        elif dim == ureg.parse_expression('J').dimensionality :
+            return "en"
         else:
             return "?"
     except UndefinedUnitError:
@@ -328,6 +331,7 @@ def parseNumber(big_number, regex):
             multiple = m.group('multiple')
         except:
             pass
+        print(">>"+ unit)
         return normalise((magnitude, multiple, unit))
 
 
@@ -710,9 +714,8 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 def neatFacts(klass, selectedFact, tolerance = 0.02):
     rf = selectedFact
 #    rf=normalise_nf(rf)
-    print(">>>", rf.render_folk_long, rf.measure)
     maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "count.pop":500, "amount":500, "volume":10000, "area":10000, "energy":1000, "info":1000000,
-                    "ex":10000000, "ma":20000, "du":10000, "am":500, "co":500, "?": 1000}[rf.measure]
+                    "ex":10000000, "ma":20000, "du":10000, "am":500, "co":500, "en": 1000, "?": 1000}[rf.measure]
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
     try:
         facts.remove(rf)
@@ -874,9 +877,7 @@ def make_number(klass, magnitude, title, measure, unit):
 
 def make_number2(klass, magnitude, multiple, title, measure, unit):
     scale=getScaleFactor(multiple)
-    print(">>", magnitude, multiple, title, measure, unit)
     nf = klass(magnitude=magnitude, multiple=multiple, scale=scale[0], unit=unit, measure = measure, title = title, value=num(magnitude))
-    print(">>", nf.render_folk_long)
     return nf
 
 def make_amount(klass, magnitude, title, unit="USD"):

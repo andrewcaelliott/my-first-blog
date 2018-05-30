@@ -126,7 +126,6 @@ class NumberQuery(models.Model):
             fact = NumberFact.objects.get(title=reference[0])
             factNumber = float(fact.value)*10**fact.scale
             comparisonNumber = n  / factNumber
-            print("==Comparison",n,factNumber, comparisonNumber, 1/comparisonNumber, fact.render)
             if (comparisonNumber <= 10000) and (comparisonNumber >= 0.0001):
                 times = sigfigs(comparisonNumber,4);
                 fraction = sigfigs(1/comparisonNumber,3);
