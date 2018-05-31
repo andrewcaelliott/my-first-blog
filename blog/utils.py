@@ -241,6 +241,8 @@ def normalise(parsed):
     if unit.lower() in std_units.keys():
         unit = std_units[unit.lower()]
     measure = getMeasure(unit)   
+    if measure == "co":
+        unit = "things"
     if multiple.lower() in std_multiples.keys():
         multiple = std_multiples[multiple.lower()]
 
@@ -262,7 +264,6 @@ def normalise(parsed):
         if negative:
             value = -value
         magnitude = str(value)
-    print(">>>",magnitude, multiple, unit, measure )
     return magnitude, multiple, unit, measure 
 
 def normalise_nf(nf):
@@ -281,7 +282,7 @@ def getMeasure(unit):
         elif dim == ureg.parse_expression('J').dimensionality :
             return "en"
         else:
-            return "?"
+            return "co"
     except UndefinedUnitError:
         p = re.compile("^[A-Z]{3}$")
         m=p.match(unit)
@@ -331,7 +332,6 @@ def parseNumber(big_number, regex):
             multiple = m.group('multiple')
         except:
             pass
-        print(">>"+ unit)
         return normalise((magnitude, multiple, unit))
 
 
