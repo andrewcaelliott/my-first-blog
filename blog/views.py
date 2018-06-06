@@ -257,7 +257,7 @@ def quiz(request):
         elif measure.find("duration")>=0:
             quiz["question"]="Which of these has the shortest period of time?"
         elif measure.find("volume")>=0:
-            quiz["question"]="Which of these has the greatest volume?"
+            quiz["question"]="Which of these has the smallest volume?"
         elif measure.find("area")>=0:
             quiz["question"]="Which of these has the least area?"
         elif measure=="duration":

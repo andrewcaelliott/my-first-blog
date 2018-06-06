@@ -177,7 +177,6 @@ class NumberQuery(models.Model):
         conversion_answers = []
         self.normalise()
         num_ans = num(self.magnitude) * self.setScaleFactor()
-        print("measure")
         print(self.measure)
         if (self.measure.find("a")==0):
             for conversion in conversions:
@@ -272,7 +271,7 @@ class NumberFact(models.Model):
             unit = "$"
         if measure == "amount" and unit.find("GBP")>=0:
             unit = "£"
-
+                
         if measure.find("energy")>=0 and self.scale>0:
             newnumber = NumberFact(magnitude=mag, scale=self.scale-3, measure=measure, unit="kJ", multiple=getMultiple(self.scale-3))
             mult = newnumber.multiple
