@@ -6,6 +6,7 @@ from blog.models import NumberFact
 #from pint import UnitRegistry
 from math import log10
 from random import sample,randint,choice
+from blog.views import quiz_from_seed
 from blog.utils import (closeEnoughNumberFact, closeMagnitudeNumberFact, 
 	numberFactsLikeThis, biggestNumberFact,parseBigNumber, num, 
 	bracketNumber, randomFact, randomFactAny, sigfigs, renderInt, 
@@ -541,7 +542,7 @@ def run20():
 		print(fact)
 		print(fact["fact2"].measure)
 
-def run():
+def run21():
 	klass = NumberFact
 	measure=("extent")
 	seed = randint(0,1000000)
@@ -552,3 +553,12 @@ def run():
 #		print(fact["comparison"], fact["fact2"].render2)
 		print(fact)
 		print(fact["fact2"].measure)
+
+def run():
+	klass = NumberFact
+	params = {"measure":"amount"}
+	seed = randint(0,1000000)
+	quiz = quiz_from_seed(seed, params)
+	print(quiz["comparison"])
+	for option in quiz["options"]:
+		print (option.render_folk)

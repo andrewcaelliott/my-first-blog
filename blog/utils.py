@@ -337,25 +337,31 @@ def parseNumber(big_number, regex):
 
 def parseBigNumber(big_number):
     big_number=big_number.replace(",","")
-    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
-    if (parsed != None):
-        return parsed
-    parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z\/£$€¥](\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)$")
-    if (parsed != None):
-        return parsed
-    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
-    if (parsed != None):
-        return parsed
-    parsed = parseNumber(big_number,"^(?P<literal>[\w\s'-]+)$")
-    if (parsed != None):
-        return parsed
-    parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)$")
-    if (parsed != None):
-        return parsed
-    parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)$")
-    if (parsed != None):
-        return parsed
-    return errorParsed()
+    try:
+        parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
+        if (parsed != None):
+            return parsed
+        parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z\/£$€¥](\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)$")
+        if (parsed != None):
+            return parsed
+        parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
+        if (parsed != None):
+            return parsed
+        parsed = parseNumber(big_number,"^(?P<literal>[\w\s'-]+)$")
+        if (parsed != None):
+            return parsed
+        parsed = parseNumber(big_number,"^(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)\s*(?P<magnitude>[\-0-9\.e]+)\s*(?P<multiple>[a-zA-Z]*)$")
+        if (parsed != None):
+            return parsed
+        parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)$")
+        if (parsed != None):
+            return parsed
+        return errorParsed()
+    except OverflowError:
+        return literalParsed('_'+big_number+'_overflow')
+    except ValueError:
+        return literalParsed(big_number)
+
 
 
 def tests():
@@ -531,7 +537,9 @@ def numberFactsLikeThis(klass, nf, rseed=None):
 #    tolerances=[0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10, 25, 50, 100]
     if rseed != None:
         seed(rseed)
-    tolerances=[1.0, 2.5, 5.0, 10, 25, 50, 100]
+#    tolerances=[1.0, 2.5, 5.0, 10, 25, 50, 100]
+# Temp for A Bellos
+    tolerances=[2.5, 5.0, 10, 25, 50, 100]
     for tolerance in tolerances:
         ce=closeEnoughNumberFact(klass, nf.magnitude, nf.scale, tolerance, nf.measure)
         try:

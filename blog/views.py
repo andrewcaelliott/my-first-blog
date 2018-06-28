@@ -370,6 +370,9 @@ def query_answer(request, numberQuery, numberFact):
             easteregg["answer"]="Graham's Number is a very big number indeed, way bigger than any context or comparison this site can offer."
         elif numberQuery.unit.lower().find("infinity")>=0:
             easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
+        elif numberQuery.unit.lower().find("overflow")>=0:
+            easteregg["question"] = numberQuery.unit.replace("_","").replace("overflow","")
+            easteregg["answer"]="That IS a big number. In fact so big that I have nothing to compare it to. Sorry!"
         elif numberQuery.unit.lower().find("aleph")>=0:
             easteregg["answer"]="Sorry, this site does not (yet) deal in infinities. Check back later!"
         elif numberQuery.unit.lower().find("uncount")>=0:
@@ -404,7 +407,6 @@ def query_answer_get(request):
     numberQuery = NumberQuery(magnitude=query["magnitude"].value(), multiple=query["multiple"].value(), unit=query["unit"].value(), measure=query["measure"].value())
     #magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
     mag2, unit2 = convertToDefaultBase(numberQuery.magnitude, numberQuery.unit)
-    print("making",str(mag2), numberQuery.multiple, "Your number", numberQuery.measure, str(unit2))
     numberFact = make_number2(NumberFact, str(mag2), numberQuery.multiple, "Your number", numberQuery.measure, str(unit2))
     return query_answer(request, numberQuery, numberFact)
 
