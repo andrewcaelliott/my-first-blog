@@ -36,7 +36,7 @@ Breaking the big number down into smaller parts and working with the parts.
 ### Ticking Away
 Measurement of time has been a spur to technology for thousands of years, and we've had to struggle to accommodate the natural cycles of the Earth and the Moon to make useful clocks and calendars. Some of the big numbers that are hardest to grasp are the numbers that describe the Earth's deep past: after all recorded history is barely one-millionth of the Earth's lifespan. _An Even Briefer History of Time_ gives a numbers-based view of prehistory and ancient history.
 ### Multidimensional Measures
-Areas and volumes increase much faster than linear measures, and this throws off our ability to accurately guage the numbers involved. Historically, land was measured by how much we could plough in a day, but when we start measuring bigger areas we reach for other measures, such as "the size of Wales". And when we're shipping valuable liquids (such as oil and alcohol) we've developed all sorts of ways of measuring their volume.
+Areas and volumes increase much faster than linear measures, and this throws off our ability to accurately gauge the numbers involved. Historically, land was measured by how much we could plough in a day, but when we start measuring bigger areas we reach for other measures, such as "the size of Wales". And when we're shipping valuable liquids (such as oil and alcohol) we've developed all sorts of ways of measuring their volume.
 ### _4th Technique: Rates and Ratios_
 Bringing numbers down to size, by expressing them as a proportion of some base.
 ### Massive Numbers
@@ -54,7 +54,7 @@ The numbers of science start stretching our capacity for thinking about big numb
 ### A Bundle of Energy
 Measuring energy is problematic, perhaps because "energy" as a formally unified concept appears only quite recently in human history. So, while in theory the joule underlies them all, in practice we have different schemes for measuring energy of different kinds: electrical, food energy, explosive energy, fuel energy. This makes comparisons hard to do and sometimes surprising in outcome.
 ### Bits, Bytes, and Words
-We live in an information-rish society, and measuring information has become important in many ways. It's also one area where we have lived through a period where the everyday measurements of data storage has progressed from kilobytes to Megabytes, Gigabytes, Terabytes, Petabytes and beyond.  
+We live in an information-rich society, and measuring information has become important in many ways. It's also one area where we have lived through a period where the everyday measurements of data storage has progressed from kilobytes to Megabytes, Gigabytes, Terabytes, Petabytes and beyond.  
 ### Let Me Count the Ways
 This is not a book of mathematics. But the mathematical field of combinatorics involves counting combinations and permutations, and this gives rise to some very big numbers indeed, and some of these are very important to understanding what problems can and cannot be solved in a practical sense by computer techniques.
 

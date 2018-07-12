@@ -42,7 +42,7 @@ def home(request):
     stories["education"]=tumblrSelection("education")
     stories["landmark"]=tumblrSelection("landmark")
     dyk=spuriousFact(NumberFact,3)
-    promote = choice(["book", "book", "sponsor","donate","click"])
+    promote = choice(["book", "book2", "book3","book4","click"])
     return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories, "dyk":dyk, "promote":promote})
 
 def homealt(request):
