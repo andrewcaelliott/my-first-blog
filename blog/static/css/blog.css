@@ -114,11 +114,11 @@ div.content.container{
 }
 
 .content img.constrained{
-    height: 125px;
+    height: 250px;
 }
 
 .content img.constrained-2{
-    height: 125px;
+    height: 250px;
 }
 
 .content .widget h1 {
@@ -366,6 +366,15 @@ ul:hover svg.major-quantile circle.refdatapoint {
             /*display: none;*/
     }
 
+    .content img.constrained{
+        height: 160px;
+    }
+
+    .content img.constrained-2{
+        height: 160px;
+    }
+
+
 }
 
 
@@ -407,7 +416,7 @@ ul:hover svg.major-quantile circle.refdatapoint {
 
 
     .content img.constrained-2{
-        height: 250px;
+        height: 300px;
     }
 
     .quiz{

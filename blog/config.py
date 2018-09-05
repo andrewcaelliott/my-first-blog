@@ -317,7 +317,7 @@ quotes = (
         '"I have been struck again and again by how important measurement is to improving the human condition." Bill Gates',
         '"From science to business to education to economic policy, good decisions depend on good measurement."" Ben Bernanke',
         '"The wonder is, not that the field of the stars is so vast, but that man has measured it." Anatole France',
-        '"Our clocks do not measure time. ... Time is defined to be what our clocks measure." Anonymous',
+        '"Our clocks do not measure time. ... Time is defined to be that which our clocks measure." Anonymous',
         '"The first steps in the path of discovery, and the first approximate measures, are those which add most to the existing knowledge of mankind." Charles Babbage',
         '"Whenever you can, count." Sir Francis Galton',
         '"Number, the most excellent of all inventions." Aeschylus',
@@ -418,6 +418,14 @@ quotes = (
         '"My goal is simple. It is a complete understanding of the universe, why it is as it is and why it exists at all." Stephen Hawking',
         '"The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge." Stephen Hawking',
         '"We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the universe. That makes us something very special." Stephen Hawking',
+        '"As bad as we are at remembering names and phone numbers ..., we have really exceptional visual and spatial memories." Joshua Foer',
+        '"We don\'t have parades for mathematicians, we have parades for astronauts. You don\'t think about all the thousands of people who worked on that capsule and crunched the numbers and were integral in getting that into space." Theodore Melfi',
+        '"We find them smaller and fainter, in constantly increasing numbers, and we know that we are reaching into space, farther and farther, until, with the faintest nebulae that can be detected with the greatest telescopes, we arrive at the frontier of the known universe." Edwin Powell Hubble',
+        '"There are two types of claims: those based on hard numbers and those based on slippery numbers."" Simon Sinek',
+        '"I learned quickly, as I tell my graduate students now, there are no answers in the back of the book when the equipment doesn\'t work or the measurements look strange."" Martin Lewis Perl',
+        '"To understand numbers you first have to look at their relationship with each other." Anthony T. Hincks',
+        '"It is given to us to calculate, to weigh, to measure, to observe, this is natural philosophy; almost all the rest is chimera." Voltaire',
+
     )
 
 

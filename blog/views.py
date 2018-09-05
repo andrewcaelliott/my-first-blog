@@ -1,5 +1,5 @@
 from json import loads
-from random import choice,seed as set_seed,randint
+from random import choice,seed as set_seed,randint,sample
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -36,14 +36,38 @@ def home(request):
     freeForm = FreeForm()
     freeForm.fields["number"].label="Is this a big number?"
     widgets = []
-    stories = {}
-    stories["news"]=tumblrSelection("news")
-    stories["passion"]=tumblrSelection("passion")
-    stories["education"]=tumblrSelection("education")
-    stories["landmark"]=tumblrSelection("landmark")
+    for section in ["news", "passion", "education", "landmark"]:
+        widget = buildSection(section)
+        widgets += [widget]
     dyk=spuriousFact(NumberFact,3)
-    promote = choice(["book", "book2", "book3","book4","click"])
-    return render(request, 'blog/home.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories, "dyk":dyk, "promote":promote})
+    promote = choice(["book", "book2", "book3","book4","book5"])
+    return render(request, 'blog/home.html', {'widgets':sample(widgets,3), 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+
+contexts = ["nitn", "ftlon", "ggb", "lmk"]
+titles = [""]
+
+
+def buildSection(section):
+    widget = {}
+    if section == "news":
+        widget["title"] = "Numbers In The News"
+        widget["subtitle"] = "Notable numbers we have spotted recently"
+        widget["context"] = "nitn"
+    elif section == "passion":
+        widget["title"] = "For the Love of Numbers"
+        widget["subtitle"] = "Number-led writings for the truly geeky"
+        widget["context"] = "ftlon"
+    elif section == "education":
+        widget["title"] = "Getting to Grips with Big"
+        widget["subtitle"] = "Stop worrying and learn to love big numbers"
+        widget["context"] = "ggb"
+    else:
+        widget["title"] = "Landmark Numbers"
+        widget["subtitle"] = "Prominent and memorable numbers"
+        widget["context"] = "lmk"
+
+    widget["stories"] = tumblrSelection(section)
+    return widget
 
 def homealt(request):
     freeForm = FreeForm()
@@ -53,7 +77,7 @@ def homealt(request):
     stories["passion"]=storySelection("passion")
     stories["education"]=storySelection("education")
     stories["landmark"]=storySelection("landmark")
-    return render(request, 'blog/home-alt.html', {'widgets':widgets, 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
+    return render(request, 'blog/home-alt.html', {'widgets':random.sample(widgets,3), 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
 
 def blog(category, request):
     stories=tumblrSelection(category)
