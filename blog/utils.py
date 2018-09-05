@@ -7,6 +7,7 @@ ureg = UnitRegistry()
 Q_=ureg.Quantity
 
 from blog.config import MULTIPLE_INVERSE
+from blog.config_measures import neatRatioLimits
 from math import log10
 import re
 
@@ -281,6 +282,8 @@ def getMeasure(unit):
             return "ma"
         elif dim == ureg.parse_expression('J').dimensionality :
             return "en"
+        elif dim == ureg.parse_expression('ml').dimensionality :
+            return "ca"
         else:
             return "co"
     except UndefinedUnitError:
@@ -722,8 +725,9 @@ def facts_matching_ratio(klass, measure, ratio, target, tolerance = 0.02):
 def neatFacts(klass, selectedFact, tolerance = 0.02):
     rf = selectedFact
 #    rf=normalise_nf(rf)
-    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "count.pop":500, "amount":500, "volume":10000, "area":10000, "energy":1000, "info":1000000, "speed":1000,
-                    "ex":10000000, "ma":20000, "du":10000, "am":500, "co":500, "en": 1000, "?": 1000}[rf.measure]
+#    maxRatio = {"extent":10000, "extent.hor":10000, "extent.ver":10000, "mass":20000, "duration":10000, "duration.age":10000, "duration.span":10000, "count":500, "count.pop":500, "amount":500, "volume":10000, "area":10000, "energy":1000, "info":1000000, "speed":1000,
+#                    "ex":10000000, "ma":20000, "du":10000, "am":500, "co":500, "en": 1000, "?": 1000}[rf.measure]
+    maxRatio = neatRatioLimits[rf.measure]
     facts = closeMagnitudeNumberFact(klass, rf.magnitude, rf.measure, tolerance, 1, rf.scale)
     try:
         facts.remove(rf)

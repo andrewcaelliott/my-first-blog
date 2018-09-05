@@ -98,6 +98,10 @@ energy_references = [
     ('Energy in boiling a kettle','{times:,.2f} times the energy used in boiling a kettle','{percent:,.2f} percent of the energy used in boiling a kettle','1 /{fraction:,.0f} of the energy used in boiling a kettle'),
 ]
 
+capacity_references = [
+    ('Volume of blood in an average human body','{times:,.2f} times the volume of blood in an average human body','{percent:,.2f} percent of the volume of blood in an average human body','1 /{fraction:,.0f} of the volume of blood in an average human body'),
+]
+
 reference_lists = {
     'ex': extent_references,
     'co': count_references,
@@ -105,6 +109,7 @@ reference_lists = {
     'du': duration_references,
     'ma': mass_references,
     'en': energy_references,
+    'ca': capacity_references,
 }
 
 
@@ -167,6 +172,17 @@ ENERGY_UNIT_CHOICES= (
         ('kcal', 'Food Calorie'),
     )
 
+CAPACITY_UNIT_CHOICES= (
+        ('mL', 'millilitre'),
+        ('L', 'litre'),
+        ('kL', 'Kilolitre'),
+        ('ML', 'Megalitre'),
+        ('imperial_pint', 'imperial pint'),
+        ('imperial_gallon', 'imperial gallon'),
+        ('pint', 'US pint'),
+        ('gallon', 'US gallon'),
+    )
+
 
 
 unit_choice_lists = {
@@ -176,9 +192,10 @@ unit_choice_lists = {
     'du': DURATION_UNIT_CHOICES,
     'ma': MASS_UNIT_CHOICES,
     'en': ENERGY_UNIT_CHOICES,
+    'ca': CAPACITY_UNIT_CHOICES,
 }
 
-all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES + MASS_UNIT_CHOICES + ENERGY_UNIT_CHOICES
+all_unit_choices = EXTENT_UNIT_CHOICES + COUNT_UNIT_CHOICES + AMOUNT_UNIT_CHOICES + DURATION_UNIT_CHOICES + MASS_UNIT_CHOICES + ENERGY_UNIT_CHOICES + CAPACITY_UNIT_CHOICES
 
 quip_lists = {
     "ex":(
@@ -210,6 +227,9 @@ quip_lists = {
         ),
     "en":(
         'Full of beans ... ',
+        ),
+    "ca":(
+        'I\'ll take a pint of that ... ',
         ),
 }
 
@@ -447,12 +467,21 @@ mass_conversion_targets = [
         ('pound'),
 ]
 
+capacity_conversion_targets = [
+        ('L'),
+        ('ml'),
+        ('imperial_pint'),
+        ('imperial_gallon'),
+        ('pint'),
+        ('gallon'),
+]
 
 conversion_target_lists = {
     'ex': extent_conversion_targets,
     'am': amount_conversion_targets,
     'du': duration_conversion_targets,
     'ma': mass_conversion_targets,
+    'ca': capacity_conversion_targets,
 }
 
 conversion_quip_lists = {
@@ -460,6 +489,7 @@ conversion_quip_lists = {
     "am":("Money makes the world go round ...",),
     "du":("How long has it been ...",),
     "ma":("That\'s massive ...",),
+    "ca":("Deep ...",),
 }
 
 MEASURE_CHOICES = (
@@ -472,6 +502,7 @@ MEASURE_CHOICES = (
     ('ar', 'area'),
     ('vo', 'volume'),
     ('en', 'energy'),
+    ('ca', 'capacity'),
 )
 
 MULTIPLE_CHOICES = (

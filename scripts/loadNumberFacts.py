@@ -76,6 +76,7 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 def run():
     print("ok")
     deleteAllFacts()
+    print("deleted")
     loadNumberFacts("./blog/data2/Population.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data2/GDP.csv","GDP in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data2/GovExp.csv","Govt spending in ","USD p/a", encoding="latin1")
@@ -108,6 +109,7 @@ def run():
     loadNumberFacts("./blog/data/Reference_Lengths.csv","","")
     loadNumberFacts("./blog/data/Reference_Masses.csv","Mass of ","kg")
     loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","")
+    loadNumberFacts("./blog/data/Reference_Capacity.csv","","L")
     loadNumberFacts("./blog/data/costs_2015.csv","Cost of ","m")
     loadNumberFacts("./blog/data/Reference_Volumes.csv","Volume of ","m^3")
 

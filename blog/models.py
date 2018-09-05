@@ -21,7 +21,7 @@ class NumberQuery(models.Model):
     number      = models.CharField(max_length=40)
     magnitude = models.CharField(max_length=20)
     scale = models.IntegerField()
-    measure  = models.CharField(max_length=2, choices=MEASURE_CHOICES, default="c")
+    measure  = models.CharField(max_length=2, choices=MEASURE_CHOICES, default="co")
     location = models.CharField(max_length=2,choices=country_code_list(), default="GB")
     value    = models.DecimalField(max_digits=30, decimal_places=10)
     multiple = models.CharField(max_length=1, choices=MULTIPLE_CHOICES, default="U")

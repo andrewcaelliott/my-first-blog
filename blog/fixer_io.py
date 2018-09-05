@@ -8,7 +8,7 @@ def getUSDConversionFactor(currency, year = None):
         version = "latest"
     else:
         version = year+"-12-31"
-    response = callHttpGET("http://api.fixer.io/",version,{"symbols":currency,"base":"USD","callback":"?"}).text
+    response = callHttpGET("http://data.fixer.io/api/",version,{"access_key":"c65acaa2ab282e6eb961788d69eacc69","symbols":currency,"base":"USD","callback":"?"}).text
     open_b = response.find("{")
     close_b = response.rfind("}")
     jsonResponse = json.loads(response[open_b:close_b+1])

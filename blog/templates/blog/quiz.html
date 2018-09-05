@@ -11,27 +11,31 @@
         <h1>Test Yourself</h1>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="extent" name="measure">
-            <button type="submit" class="save btn btn-default">How Big?</button>
+            <button type="submit" class="save btn btn-default">How Big?<br/>(length)</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="count" name="measure">
-            <button type="submit" class="save btn btn-default">How Many?</button>
+            <button type="submit" class="save btn btn-default">How Many?<br/>(count)</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="amount!" name="measure">
-            <button type="submit" class="save btn btn-default">How Much?</button>
+            <button type="submit" class="save btn btn-default">How Much?<br/>(money)</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="duration" name="measure">
-            <button type="submit" class="save btn btn-default">How Long?</button>
+            <button type="submit" class="save btn btn-default">How Long?<br/>(duration)</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
             <input type="hidden" value="mass" name="measure">
-            <button type="submit" class="save btn btn-default">How Heavy?</button>
+            <button type="submit" class="save btn btn-default">How Heavy?<br/>(mass)</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
             <input type="hidden" value="speed" name="measure">
-            <button type="submit" class="save btn btn-default">How Fast?</button>
+            <button type="submit" class="save btn btn-default">How Fast?<br/>(speed)</button>
+        </form>
+        <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
+            <input type="hidden" value="capacity" name="measure">
+            <button type="submit" class="save btn btn-default">How Much?<br/>(volume)</button>
         </form>
         <form class="choice" method="POST" action="/quiz/">{% csrf_token %}
         	<input type="hidden" value="random" name="measure">

@@ -44,7 +44,7 @@ def convertToDefaultBase(magnitude, unit, year=None):
     else:
         try:
             quantity = Q_(" ".join([str(magnitude), unit]))
-            print("Converting:",)
+            print("Converting:",magnitude, unit,"==>",quantity)
             if quantity.dimensionality==ureg.s.dimensionality:
                 n = quantity.to(ureg.year).magnitude
                 u = quantity.to(ureg.year).units
@@ -54,9 +54,13 @@ def convertToDefaultBase(magnitude, unit, year=None):
             elif quantity.dimensionality==ureg.J.dimensionality:
                 n = quantity.to(ureg.J).magnitude
                 u = quantity.to(ureg.J).units
+            elif quantity.dimensionality==ureg.L.dimensionality:
+                n = quantity.to(ureg.L).magnitude
+                u = quantity.to(ureg.L).units
             else:
                 n = quantity.to_base_units().magnitude
                 u = quantity.to_base_units().units
+            print(n,u)
         except UndefinedUnitError as e:
             n = magnitude
             u = 'unknown'

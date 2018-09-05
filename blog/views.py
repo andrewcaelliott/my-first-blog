@@ -363,7 +363,7 @@ def query_answer(request, numberQuery, numberFact):
         if match["text"] == answer["brackets"]["below"]:
             answer["closeMatches"].remove(match)
 #    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
-    question = numberQuery.render.replace(" - "," ").replace(" i","").replace(" 10^","*10^")
+    question = numberQuery.render.replace(" - "," ").replace("imperial","Imperial").replace(" i","").replace(" 10^","*10^")
     if (multiple=='?'):
         easteregg={"question":numberQuery.unit}
         if numberQuery.unit.lower().find("graham")>=0:
@@ -498,27 +498,32 @@ def stat(request, stat):
 
 
 def convert(request):
-    extentForm = ConvertForm(initial={'measure': 'e'})
-    extentForm.fields['unit'].choices=unit_choice_lists['e']
-    extentForm.fields['target_unit'].choices=unit_choice_lists['e']
+    extentForm = ConvertForm(initial={'measure': 'ex'})
+    extentForm.fields['unit'].choices=unit_choice_lists['ex']
+    extentForm.fields['target_unit'].choices=unit_choice_lists['ex']
     extentForm.fields['measure'].widget = forms.HiddenInput()
-    amountForm = ConvertForm(initial={'measure': 'a'})
-    amountForm.fields['unit'].choices=unit_choice_lists['a']
-    amountForm.fields['target_unit'].choices=unit_choice_lists['a']
+    amountForm = ConvertForm(initial={'measure': 'am'})
+    amountForm.fields['unit'].choices=unit_choice_lists['am']
+    amountForm.fields['target_unit'].choices=unit_choice_lists['am']
     amountForm.fields['measure'].widget = forms.HiddenInput()
-    durationForm = ConvertForm(initial={'measure': 'd'})
-    durationForm.fields['unit'].choices=unit_choice_lists['d']
-    durationForm.fields['target_unit'].choices=unit_choice_lists['d']
+    durationForm = ConvertForm(initial={'measure': 'du'})
+    durationForm.fields['unit'].choices=unit_choice_lists['du']
+    durationForm.fields['target_unit'].choices=unit_choice_lists['du']
     durationForm.fields['measure'].widget = forms.HiddenInput()
-    massForm = ConvertForm(initial={'measure': 'm'})
-    massForm.fields['unit'].choices=unit_choice_lists['m']
-    massForm.fields['target_unit'].choices=unit_choice_lists['m']
+    massForm = ConvertForm(initial={'measure': 'ma'})
+    massForm.fields['unit'].choices=unit_choice_lists['ma']
+    massForm.fields['target_unit'].choices=unit_choice_lists['ma']
     massForm.fields['measure'].widget = forms.HiddenInput()
+    capacityForm = ConvertForm(initial={'measure': 'ca'})
+    capacityForm.fields['unit'].choices=unit_choice_lists['ca']
+    capacityForm.fields['target_unit'].choices=unit_choice_lists['ca']
+    capacityForm.fields['measure'].widget = forms.HiddenInput()
     widgets = [
             {"title":"Convert Length","glyph":"glyphicon glyphicon-resize-horizontal","form":extentForm},
             {"title":"Convert Amount","glyph":"glyphicon glyphicon-usd","form":amountForm},
             {"title":"Convert Time","glyph":"glyphicon glyphicon-time","form":durationForm},
             {"title":"Convert Mass","glyph":"glyphicon glyphicon-briefcase","form":massForm},
+            {"title":"Convert Capacity","glyph":"glyphicon glyphicon-briefcase","form":capacityForm},
         ]
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["book", "book", "sponsor","donate","click"])
