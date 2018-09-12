@@ -186,7 +186,13 @@ std_units = {
     "secs":"second",
     "sec":"second",
     "s":"second",
-    "J":"Joule",
+    "j":"joule",
+    "l":"litre",
+    "liter":"litre",
+    "gallon":"imperial_gallon",
+    "gallons":"imperial_gallon",
+    "pint":"imperial_pint",
+    "pints":"imperial_pint"
 }
 
 std_multiples = {

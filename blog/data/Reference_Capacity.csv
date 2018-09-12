@@ -1,47 +1,60 @@
-1,Volume of all the water in the Earth's seas,1.4,sextillion,21,L,capacity,Thanks to Wikipedia
-2,Volume of all the water in the World Ocean,1.332,sextillion,21,L,capacity,https://en.wikipedia.org/wiki/World_Ocean
-3,Volume of water in Lake Baikal,23.6,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-4,Volume of water in the Great Lakes of North America,22.7,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/Great_Lakes
-5,Volume of water in Lake Tanganyika (Africa),18.9,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-6,Volume of water in Lake Superior,11.6,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-7,Volume of water in Lake Michigan-Huron,8.44,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-8,Volume of water in Lake Malawi,7.725,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-9,Volume of water in Lake Vostok (subglacial lake in Antarctica),6.2,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-10,Volume of water in Lake Victoria (Africa),2.75,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/Lake_Victoria
-11,Volume of water in Great Bear Lake (Canada),2.24,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
-12,Estimated remaining economically recoverable oil reserves,240,trillion,12,L,capacity,thanks to Google
-13,Volume of water in the Kariba Dam (Africa),180.6,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
-14,Volume of water in the Aswan Dam (Egypt),169,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
-15,Volume of water in the Bratsk Dam (Russia),169,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
-16,Volume of water in the Akosombo Dam (Ghana),150,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
-17,Volume of water in the Daniel-Johnson Dam (Canada),142,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
-18,Volume of water in the Guri Dam (Venezuela),135,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
-19,Volume of water in Lake Geneva,89,trillion,12,L,capacity,https://en.wikipedia.org/wiki/Lake_Geneva
-20,Volume of water in the Samara Dam (Russia),57.3,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
-21,Volume of water in the Ataturk Dam (Turkey),48.7,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
-22,Volume of water in the Three Gorges Dam (China),39.3,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
-23,Volume of water in the Fort Peck Dam (USA),23,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
-24,Volume of water in Lake Zurich,3.9,trillion,12,L,capacity,https://en.wikipedia.org/wiki/Lake_Zurich
-25,Volume of water in Windermere (English Lake District),314.5,billion,9,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_in_the_Lake_District
-26,Volume of water in the Hoover Dam,2.48,billion,9,L,capacity,https://en.wikipedia.org/wiki/Hoover_Dam
-27,Capacity of oil tanker ,300,million,6,L,capacity,thanks to Google
-28,Volume of water in an Olympic Swimming pool at minimum depth of 2m,2.5,million,6,L,capacity,http://www.patagoniaalliance.org/wp-content/uploads/2014/08/How-much-water-does-an-Olympic-sized-swimming-pool-hold.pdf
-29,Fuel capacity of a Boeing 747 airliner,240,thousand,3,L,capacity,https://www.flightdeckfriend.com/ask-a-captain/how-much-fuel-does-a-jumbo-jet-burn/
-30,Capacity of petrol/gasoline road tanker,30,thousand,3,L,capacity,thanks to Google
-31,Capacity of a large domestic water butt,1,thousand,3,L,capacity,to be added
-32,Volume of blood in an average elephant's body,450,unit,0,L,capacity,https://animalcorner.co.uk/animals/african-elephant/
-33,Capacity of an average wheelie bin,240,unit,0,L,capacity,https://wheeliebinwarehouse.com/
-34,Capacity of a standard oil barrel,159,unit,0,L,capacity,thanks to Google
-35,Capacity of a typical small bathtub,150,unit,0,L,capacity,to be added
-36,Capacity of a typical private car's fuel tank,60,unit,0,L,capacity,thanks to Google
-37,"Capacity of a ""Balthazar"" wine bottle",12,unit,0,L,capacity,to be added
-38,Capacity of a typical household bucket,10,unit,0,L,capacity,to be added
-39,"Capacity of a ""Methuselah"" wine bottle",6,unit,0,L,capacity,to be added
-40,Volume of blood in an average human body,5,unit,0,L,capacity,to be added
-41,"Capacity of a ""Jereboam"" wine bottle",3,unit,0,L,capacity,to be added
-42,"Capacity of a ""Magnum"" wine bottle",1.5,unit,0,L,capacity,to be added
-43,Capacity of a wine bottle,0.75,unit,0,L,capacity,to be added
-44,Capacity of a cup,0.25,unit,0,L,capacity,to be added
-45,Capacity of a wine glass,0.125,unit,0,L,capacity,to be added
-46,Capacity of a tablespoon,0.015,unit,0,L,capacity,to be added
-47,Capacity of a teaspoon,0.005,unit,0,L,capacity,to be added
+1,Estimated volume of water on Ganymede (moon of Jupiter),35.4,sextillion,21,L,capacity,http://uk.businessinsider.com/water-space-volume-planets-moons-2016-10
+2,Estimated volume of water on Titan (moon of Saturn),18.6,sextillion,21,L,capacity,http://uk.businessinsider.com/water-space-volume-planets-moons-2016-10
+3,Estimated volume of water on Europa (moon of Jupiter),2.6,sextillion,21,L,capacity,http://uk.businessinsider.com/water-space-volume-planets-moons-2016-10
+4,Estimated volume of water on Callisto (moon of Jupiter),5.3,sextillion,21,L,capacity,http://uk.businessinsider.com/water-space-volume-planets-moons-2016-10
+5,Volume of all the water in the Earth's seas,1.335,sextillion,21,L,capacity,http://uk.businessinsider.com/water-space-volume-planets-moons-2016-10
+6,Volume of all the water in the World Ocean,1.332,sextillion,21,L,capacity,https://en.wikipedia.org/wiki/World_Ocean
+7,Volume of the water in the Pacific Ocean,710,quintillion,18,L,capacity,https://en.wikipedia.org/wiki/Pacific_Ocean
+8,Volume of the water in the Atlantic Ocean,310,quintillion,18,L,capacity,https://en.wikipedia.org/wiki/Atlantic_Ocean
+9,Volume of the water in the Mediterranean Sea,3.75,quintillion,18,L,capacity,https://en.wikipedia.org/wiki/Mediterranean_Sea
+10,Volume of water in Lake Baikal,23.6,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+11,Volume of water in the Great Lakes of North America,22.7,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/Great_Lakes
+12,Volume of water in Lake Tanganyika (Africa),18.9,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+13,Volume of water in Lake Superior,11.6,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+14,Volume of water in Lake Michigan-Huron,8.44,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+15,Volume of water in Lake Malawi,7.725,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+16,Volume of water in Lake Vostok (subglacial lake in Antarctica),6.2,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+17,Volume of water in Lake Victoria (Africa),2.75,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/Lake_Victoria
+18,Volume of water in Great Bear Lake (Canada),2.24,quadrillion,15,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_by_volume
+19,Estimated remaining economically recoverable oil reserves,240,trillion,12,L,capacity,thanks to Google
+20,Volume of water in the Kariba Dam (Africa),180.6,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
+21,Volume of water in the Aswan Dam (Egypt),169,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+22,Volume of water in the Bratsk Dam (Russia),169,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
+23,Volume of water in the Akosombo Dam (Ghana),150,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
+24,Volume of water in the Daniel-Johnson Dam (Canada),142,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
+25,Volume of water in the Guri Dam (Venezuela),135,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+26,Volume of water in Lake Geneva,89,trillion,12,L,capacity,https://en.wikipedia.org/wiki/Lake_Geneva
+27,Volume of water in the Samara Dam (Russia),57.3,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+28,Volume of water in the Ataturk Dam (Turkey),48.7,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+29,Volume of water in the Three Gorges Dam (China),39.3,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+30,Volume of water in the Fort Peck Dam (USA),22.8,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_largest_dams_in_the_world
+31,Volume of water in Lake Zurich,3.9,trillion,12,L,capacity,https://en.wikipedia.org/wiki/Lake_Zurich
+32,Volume of water in Windermere (English Lake District),314.5,billion,9,L,capacity,https://en.wikipedia.org/wiki/List_of_lakes_in_the_Lake_District
+33,Volume of water in the Hoover Dam,37.3,trillion,12,L,capacity,https://en.wikipedia.org/wiki/List_of_reservoirs_by_volume
+34,Capacity of oil tanker ,300,million,6,L,capacity,thanks to Google
+35,Amount of jet fuel carried by a Nimitz-class aircraft carrier,3.5,million,6,L,capacity,https://www.quora.com/How-much-fuel-do-aircraft-carriers-carry
+36,Volume of water in an Olympic Swimming pool at minimum depth of 2m,2.5,million,6,L,capacity,http://www.patagoniaalliance.org/wp-content/uploads/2014/08/How-much-water-does-an-Olympic-sized-swimming-pool-hold.pdf
+37,Fuel capacity of an Airbus A380,320,thousand,3,L,capacity,http://www.modernairliners.com/airbus-a380/airbus-a380-specs/
+38,Fuel capacity of a Boeing 747 airliner,240,thousand,3,L,capacity,https://www.flightdeckfriend.com/ask-a-captain/how-much-fuel-does-a-jumbo-jet-burn/
+39,Capacity of petrol/gasoline road tanker,30,thousand,3,L,capacity,thanks to Google
+40,Capacity of a large domestic water butt,1,thousand,3,L,capacity,to be added
+41,Volume of blood in a Blue Whale's body,10,thousand,3,L,capacity,https://www.coolantarctica.com/Antarctica%20fact%20file/wildlife/whales/whale_species.htm
+42,Volume of blood in an average elephant's body,450,unit,0,L,capacity,https://animalcorner.co.uk/animals/african-elephant/
+43,Capacity of an average wheelie bin,240,unit,0,L,capacity,https://wheeliebinwarehouse.com/
+44,Capacity of a standard oil barrel,159,unit,0,L,capacity,thanks to Google
+45,Capacity of a typical small bathtub,150,unit,0,L,capacity,to be added
+46,Capacity of a typical private car's fuel tank,60,unit,0,L,capacity,thanks to Google
+47,Capacity of a water cooler bottle,19,unit,0,L,capacity,https://en.wikipedia.org/wiki/Water_cooler
+48,"Capacity of a ""Balthazar"" wine bottle",12,unit,0,L,capacity,to be added
+49,Capacity of a typical household bucket,10,unit,0,L,capacity,to be added
+50,"Capacity of a ""Methuselah"" wine bottle",6,unit,0,L,capacity,to be added
+51,Volume of blood in an average human body,5,unit,0,L,capacity,to be added
+52,"Capacity of a ""Jereboam"" wine bottle",3,unit,0,L,capacity,to be added
+53,"Capacity of a ""Magnum"" wine bottle",1.5,unit,0,L,capacity,to be added
+54,Capacity of a wine bottle,0.75,unit,0,L,capacity,to be added
+55,Capacity of a Coke can,0.355,unit,0,L,capacity,http://jwilson.coe.uga.edu/emt725/class/trabue/can/prob1.html
+56,Capacity of a cup,0.25,unit,0,L,capacity,to be added
+57,Capacity of a wine glass,0.125,unit,0,L,capacity,to be added
+58,Capacity of a tablespoon,0.015,unit,0,L,capacity,to be added
+59,Capacity of a teaspoon,0.005,unit,0,L,capacity,to be added
+60,Capacity of a thimble,0.0021,unit,0,L,capacity,https://www.flickr.com/photos/29233640@N07/3659192652

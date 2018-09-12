@@ -315,7 +315,7 @@ class NumberFact(models.Model):
             else:
                 unit = " "+unit
             response = "".join([mag, mult, unit])
-            response = response.replace("billion ", "bn ").replace("illion ", " ").replace("thousand ", "th ").replace("Population", "Pop.")
+            response = response.replace("billion ", "bn ").replace("thousand ", "th ").replace("Population", "Pop.")
         else:
             if unit == "$" or unit == "£":
                 if mag[0] !="-":
@@ -374,25 +374,26 @@ class NumberFact(models.Model):
         return self.title_plus()
 
     def _display(self):
-        return " ".join([self.title_plus(),":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ")
+        return " ".join([self.title_plus(),":",self.magnitude, self.get_multiple_display(), self.unit]).replace(" unit ", " ").replace(" - ", " ").replace("iter", "itre")
 
     def _display2(self):
-        return "".join([self.title_plus()," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("illion", "").replace("thousand", "th").replace("Population", "Pop.")
+        return "".join([self.title_plus()," (",self.magnitude, " ", self.get_multiple_display(), " ",self.unit,")" ]).replace(" unit ", " ").replace(" - ", " ").replace("thousand", "th").replace("Population", "Pop.").replace("iter", "itre")
 
     def _display_folk(self):
         return "".join([self.title_plus()," (",
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure),
-            ")" ]).replace("Population", "Pop.").replace("illion", "").replace("thousand ", "th ")
+            ")" ]).replace("Population", "Pop.").replace("thousand ", "th ")
 
     def _display_number(self):
+        print("render", self.unit)
         return "".join([
-            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("illion", "").replace("thousand ", "th ")
+            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("thousand ", "th ").replace("iter", "itre")
 
     def _display_equals(self):
         title = self.title.replace("in "+resolve_country_code(self.location),"")
         title = title.replace("of "+resolve_country_code(self.location),"").replace("to "+resolve_country_code(self.location),"").replace("from "+resolve_country_code(self.location),"")
         return "".join([title," = ",
-            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("illion", "").replace("thousand ", "th ").replace(" (2000)", "").replace(" people", "")
+            self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("thousand ", "th ").replace(" (2000)", "").replace(" people", "")
 
     def _display_folk_long(self):
         return "".join([self.title_plus()," (",
