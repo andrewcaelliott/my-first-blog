@@ -56,7 +56,16 @@ class NumberQuery(models.Model):
             num_ans = 0            
         n = convertToDefault(num_ans, self.unit)
 
-        if n>1000000000000:
+        if n>1000000000000000000000:
+            temp_scale = 21
+            n = n / 1000000000000000000000.0
+        elif n>1000000000000000000:
+            temp_scale = 18
+            n = n / 1000000000000000000.0
+        elif n>1000000000000000:
+            temp_scale = 15
+            n = n / 1000000000000000.0
+        elif n>1000000000000:
             temp_scale = 12
             n = n / 1000000000000.0
         elif n>1000000000:
@@ -71,7 +80,9 @@ class NumberQuery(models.Model):
         else:
             temp_scale = 0
 
+        print("Bracketing:", str(n), temp_scale, self.get_measure_display())
         brackets = bracketNumber(NumberFact, str(n), temp_scale, self.get_measure_display())
+        print(brackets)
         return {"above":brackets[0], "below":brackets[1]}
 
     def getCloseMatches(self):

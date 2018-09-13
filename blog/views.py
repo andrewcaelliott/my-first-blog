@@ -365,7 +365,6 @@ def query_answer(request, numberQuery, numberFact):
     query =  QueryForm(instance=numberQuery)
 #    query.fields['magnitude'].value=numberQuery.magnitude
     query.fields['measure'].widget = forms.HiddenInput()
-    print(">>",query.fields["unit"].initial)
 
 #    query =  FreeForm(request.GET)
 #    magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
@@ -420,9 +419,6 @@ def query_answer(request, numberQuery, numberFact):
     dyk=spuriousFact(NumberFact,3)
     promote = choice(["book", "book", "sponsor","donate","click"])
     numberFact.normalise()
-    print(">>2",query.fields["unit"].initial)
-    print(">>2",query.fields["multiple"].initial)
-    print(">>2",numberFact.render_number)
     return render(request, 'blog/itabn_answer.html', {'query': query, 'question': question[3:]+"\n", 'answer':answer, 'neat':neat,'basefact': numberFact,'quote': choice(quotes), "dyk":dyk, "promote":promote})   
 
 def query_answer_post(request):

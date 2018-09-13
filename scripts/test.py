@@ -160,8 +160,8 @@ def run7():
 	biggest = biggestNumberFact(bestComparisons)
 	print(">>>", biggest.render)
 
-def run8():
-	measure=("mass")
+def run():
+	measure=("capacity")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	magnitude = rf.magnitude
@@ -182,7 +182,8 @@ def run8():
 #		print(i+1,bracketNumber(NumberFact, "10.0", i, measure))
 #		print(i+2,bracketNumber(NumberFact, "100.0", i, measure))
 
-	for i in range(-3,18,3):
+#	for i in range(-3,18,3):
+	for i in range(3,6,3):
 		print(i, bracketNumber(NumberFact, "1.0", i, measure))
 		print(i,bracketNumber(NumberFact, "2.0", i, measure))
 		print(i,bracketNumber(NumberFact, "4.0", i, measure))
@@ -193,6 +194,8 @@ def run8():
 		print(i,bracketNumber(NumberFact, "125.0", i, measure))
 		print(i,bracketNumber(NumberFact, "250.0", i, measure))
 		print(i,bracketNumber(NumberFact, "500.0", i, measure))
+
+	print(1, bracketNumber(NumberFact, "100", 18, measure))
 
 
 def run10():
@@ -554,7 +557,7 @@ def run21():
 		print(fact)
 		print(fact["fact2"].measure)
 
-def run():
+def run22():
 	klass = NumberFact
 	params = {"measure":"amount"}
 	seed = randint(0,1000000)
