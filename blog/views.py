@@ -389,7 +389,12 @@ def query_answer(request, numberQuery, numberFact):
 #    question = numberQuery.render.replace("million","m").replace("billion","bn").replace("trillion","tn").replace("thousand","k").replace(" - "," ").replace(" i","")
     question = numberQuery.render.replace(" - "," ").replace("imperial","Imperial").replace(" i","").replace(" 10^","*10^")
     if (multiple=='?'):
-        easteregg={"question":numberQuery.unit}
+        print("?",numberQuery.unit)
+        if numberQuery.unit.find("?")>=0:
+            easteregg={"question":numberQuery.unit}
+        else:
+            easteregg={"question":numberQuery.unit+"?"}
+        print("?",easteregg)
         if numberQuery.unit.lower().find("graham")>=0:
             easteregg["answer"]="Graham's Number is a very big number indeed, way bigger than any context or comparison this site can offer."
         elif numberQuery.unit.lower().find("infinity")>=0:
@@ -437,6 +442,7 @@ def query_answer_get(request):
 def query_compare(request):
     query =  FreeForm(request.GET)
     magnitude, multiple, unit, measure = parseBigNumber(query["number"].value())
+    print("number >>", query["number"].value())
     numberQuery = NumberQuery(magnitude=magnitude, multiple=multiple, unit=unit, measure=measure)
     mag2, unit2 = convertToDefaultBase(magnitude, unit)
     numberFact = make_number2(NumberFact, str(mag2), multiple, "Your number", measure, str(unit2))

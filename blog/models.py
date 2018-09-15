@@ -37,7 +37,9 @@ class NumberQuery(models.Model):
         return factor
 
     def normalise(self):
+        print("normalise>>", self)
         self.scale, factor = getScaleFactor(self.multiple)
+        print("normalise>>", self, self.scale, factor)
         value = num(self.magnitude)
         while abs(value) > 1000:
             value = value / 1000

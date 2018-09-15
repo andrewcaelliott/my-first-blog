@@ -271,6 +271,9 @@ def normalise(parsed):
         if negative:
             value = -value
         magnitude = str(value)
+        if multiple==None:
+            print("Exception>>", parsed)
+            raise Exception('value %s outside bounds' % (str(parsed)))
     return magnitude, multiple, unit, measure 
 
 def normalise_nf(nf):
@@ -341,11 +344,18 @@ def parseNumber(big_number, regex):
             multiple = m.group('multiple')
         except:
             pass
-        return normalise((magnitude, multiple, unit))
+        try:
+            return normalise((magnitude, multiple, unit))
+        except Exception as ex:
+            print("Caught:",ex)
+            if str(ex).find("outside bounds")>0:
+                return literalParsed(big_number+"? more than even this website can compare - sorry!")
+            raise ex
 
 
 def parseBigNumber(big_number):
-    big_number=big_number.replace(",","")
+    big_number=big_number.replace(",","").replace("10^","1e").replace("^"," power")
+
     try:
         parsed = parseNumber(big_number,"^(?P<magnitude>[\-0-9\.e]+)\s*(?P<unit>[a-zA-Z/£$€¥]*(\^-?[0-9]*)?)$")
         if (parsed != None):
