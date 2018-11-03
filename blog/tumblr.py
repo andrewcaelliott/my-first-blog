@@ -5,7 +5,7 @@ from random import choice
 
 client = TumblrRestClient('9g1lRa75IJ7HLbnyqMCaXsSsnvyz8uUsa7ZLzyGCipFciA23PM')
 
-def tumblrSelection(category):
+def tumblrSelection(category, topstory = None):
     storyposts = posts(tag=category)
     #storyposts = [{'body': '<p><a href="https://en.wikipedia.org/wiki/Universe">https://en.wikipedia.org/wiki/Universe</a></p><p>No, literally.</p><p>As Douglas Adams said, the universe is big. Really big</p>', 'short_url': 'https://tmblr.co/ZJc03i22P_y9r', 'tags': ['passion'], 'title': 'Astronomical Numbers', 'plain': 'https://en.wikipedia.org/wiki/UniverseNo, literally.As Douglas Adams said, the universe is big. Really big', 'date': '2016-02-26 10:38:48 GMT', 'img_url': None, 'link_url': '<a href="https://en.wikipedia.org/wiki/Universe">https://en.wikipedia.org/wiki/Universe</a>', 'post_url': 'http://itabn.tumblr.com/post/140022366837/astronomical-numbers'}, {'body': '<p><a href="https://en.wikipedia.org/wiki/Number">https://en.wikipedia.org/wiki/Number</a></p><p>It starts with counting: 1, 2, 3 are what the maths guys call the Natural Numbers. From there it gets more and more UN-natural, all the way to imaginary and beyond, to some very weird structures that still get called numbers.</p>', 'short_url': 'https://tmblr.co/ZJc03i22P_oKs', 'tags': ['passion'], 'title': 'You Call That a Number?', 'plain': 'https://en.wikipedia.org/wiki/NumberIt starts with counting: 1, 2, 3 are what the maths guys call the Natural Numbers. From there it gets more and more UN-natural, all the way to imaginary and beyond, to some very weird structures that still get called numbers.', 'date': '2016-02-26 10:37:01 GMT', 'img_url': None, 'link_url': '<a href="https://en.wikipedia.org/wiki/Number">https://en.wikipedia.org/wiki/Number</a>', 'post_url': 'http://itabn.tumblr.com/post/140022326582/you-call-that-a-number'}]
     stories={}
@@ -18,8 +18,10 @@ def tumblrSelection(category):
     for post in storyposts:
         if post["featured"]:
             feature_candidates.append(post)
-
-    featureStory = choice(feature_candidates)
+        if topstory and (post["title"] == topstory):
+            featureStory = post
+    if not topstory:
+        featureStory = choice(feature_candidates)
     stories["featured"]=featureStory
     if featureStory:
         storyposts.remove(featureStory)

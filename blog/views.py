@@ -80,7 +80,10 @@ def homealt(request):
     return render(request, 'blog/home-alt.html', {'widgets':random.sample(widgets,3), 'freeForm':freeForm, 'quote': choice(quotes), 'stories':stories})
 
 def blog(category, request):
-    stories=tumblrSelection(category)
+
+    params = request.GET
+
+    stories=tumblrSelection(category, params["topstory"])
     titles = {
         "news":"Numbers In The News", 
         "passion":"For the Love of Numbers", 

@@ -113,8 +113,12 @@ div.content.container{
     margin-bottom: 10px;
 }
 
-.content img.constrained{
+.content img.constrained-0{
     height: 250px;
+}
+
+.content img.constrained{
+    height: 125px;
 }
 
 .content img.constrained-2{

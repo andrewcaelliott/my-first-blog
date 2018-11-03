@@ -30,7 +30,7 @@
 	                <h5>{{widget.subtitle}}</h5>
 	                <h4><a href="{{ widget.stories.featured.links.0 }}" target="_blank">{{ widget.stories.featured.title }}</a></h4>
 	                {% if widget.stories.featured.img_url %}
-	                <a href="{{ widget.stories.featured.links.0 }}" target="_blank"><img class = "constrained" src="{{ widget.stories.featured.img_url }}" /></a>
+	                <a href="{{ widget.stories.featured.links.0 }}" target="_blank"><img class = "constrained-0" src="{{ widget.stories.featured.img_url }}" /></a>
 	                {% endif %}
 	                {% for line in widget.stories.featured.synopsis %}
 	                <p>{{ line }}</p>
@@ -41,7 +41,7 @@
 	                <div class="blog-summary-footer">
 		                <h3>More ...</h3>
 			        {% for item in widget.stories.other %}
-			                <p><a href="../nitn">{{ item.title }}</a></p>
+			                <p><a href="../{{widget.context}}?topstory={{item.title}}">{{ item.title }}</a></p>
 			        {% endfor %}
 		        	</div>
             	</div>
