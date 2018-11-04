@@ -83,7 +83,11 @@ def blog(category, request):
 
     params = request.GET
 
-    stories=tumblrSelection(category, params["topstory"])
+    try:
+       topstory = params["topstory"]
+    except :
+        topstory = None
+    stories=tumblrSelection(category, topstory)
     titles = {
         "news":"Numbers In The News", 
         "passion":"For the Love of Numbers", 
