@@ -1,7 +1,13 @@
 # Is That A Big Number?
 ## by Andrew C. A. Elliott
 
-_Is That A Big Number?_ is now a book, and will be published by Oxford University Press in July 2018. 
+_Is That A Big Number?_ is now a book (Oxford University Press July 2018). 
+
+Hear Andrew being interviewed by Jim Stein for New Books Network: 
+
+[https://newbooksnetwork.com/andrew-c-a-elliott-is-that-a-big-number/](https://newbooksnetwork.com/andrew-c-a-elliott-is-that-a-big-number/)
+
+Available from all good booksellers, including:
 
 UK: [https://amazon.co.uk/That-Big-Number-Andrew-Elliott/dp/0198821220/](https://amazon.co.uk/That-Big-Number-Andrew-Elliott/dp/0198821220/)
 

@@ -422,9 +422,13 @@ quotes = (
         '"We don\'t have parades for mathematicians, we have parades for astronauts. You don\'t think about all the thousands of people who worked on that capsule and crunched the numbers and were integral in getting that into space." Theodore Melfi',
         '"We find them smaller and fainter, in constantly increasing numbers, and we know that we are reaching into space, farther and farther, until, with the faintest nebulae that can be detected with the greatest telescopes, we arrive at the frontier of the known universe." Edwin Powell Hubble',
         '"There are two types of claims: those based on hard numbers and those based on slippery numbers."" Simon Sinek',
-        '"I learned quickly, as I tell my graduate students now, there are no answers in the back of the book when the equipment doesn\'t work or the measurements look strange."" Martin Lewis Perl',
+        '"I learned quickly, as I tell my graduate students now, there are no answers in the back of the book when the equipment doesn\'t work or the measurements look strange." Martin Lewis Perl',
         '"To understand numbers you first have to look at their relationship with each other." Anthony T. Hincks',
         '"It is given to us to calculate, to weigh, to measure, to observe, this is natural philosophy; almost all the rest is chimera." Voltaire',
+        '"There is not much difference between the delight a novice experiences in cracking a clever brain teaser and the delight a mathematician experiences in mastering a more advanced problem" Martin Gardner',
+        '"Whoever despises the high wisdom of mathematics nourishes himself on delusion" Leonardo da Vinci',
+        '"He who loves practice without theory is like a seafarer who boards ship without wheel or compass and knows not wither he travels." Leonardo da Vinci',
+        '"Just as iron rusts from disuse and stagnant water putrefies, or when cold turns to ice, so our intellect wastes unless it is kept in use." Leonardo da Vinci',
 
     )
 
