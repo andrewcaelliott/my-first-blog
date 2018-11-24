@@ -85,74 +85,84 @@
 85,Time since invention of the printing press,578,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Printing_press
 86,Duration of Spanish Empire,573,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
 87,Time since the birth of Leonardo da Vinci,566,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonardo
-88,Time since the birth of Albrecht Dürer,547,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albrecht_D%C3%BCrer
+88,Time since the birth of Albrecht Durer,547,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albrecht_D%C3%BCrer
 89,Time since the birth of Copernicus,545,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
-90,Duration of Carthaginian Empire,504,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-91,Duration of Roman Empire,503,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-92,Duration of Egyptian Empire,500,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-93,Duration of Roman Republic,482,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-94,Time since the birth of Shakespeare,454,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
-95,Time since the birth of Galileo,454,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Galileo_Galilei
-96,Time since the birth of Pierre de Fermat,417,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Pierre_de_Fermat
-97,Duration of Dutch Empire,407,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-98,Time since the death of Shakespeare,402,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
-99,Duration of British Empire,394,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-100,Time since the birth of Newton,376,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Isaac_Newton
-101,Duration of Mali Empire,375,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-102,Duration of Mughal Empire,332,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-103,Time since the birth of Euler,311,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonhard_Euler
-104,Duration of Ming Dynasty,276,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
-105,Time since the birth of Joseph Fourier,250,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Joseph_Fourier
-106,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
-107,Time since birth of Sophie Germain,242,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Sophie_Germain
-108,Time since the birth of Gauss,241,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
-109,Time since the birth of Darwin,209,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Darwin
-110,Time since the birth of Dickens,206,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Dickens
-111,Time since the first iron steamship crossed the English Channel,196,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Steamship
-112,Time since the first passenger steam railway service,193,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
-113,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
-114,Time since the birth of Cantor,173,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Georg_Cantor
-115,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-116,Time since the birth of Einstein,139,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albert_Einstein
-117,Time since birth of Emmy Noether,136,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Emmy_Noether
-118,Time since birth of M. C. Escher,120,unit,0,y,duration.age,https://en.wikipedia.org/wiki/M._C._Escher
-119,Time since first transatlantic wireless communication,117,unit,0,y,duration.age,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
-120,Length of the Hundred Years' War,116,unit,0,y,duration.span,https://en.wikipedia.org/wiki/Hundred_Years%27_War
-121,Time since first Model T Ford launched,110,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Ford_Model_T
-122,Time since the birth of Turing,106,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Alan_Turing
-123,Time since the first fixed wing scheduled air service,104,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Airline
-124,Time since Charles Lindbergh first flew across the Atlantic,91,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Lindbergh
-125,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-126,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
-127,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-128,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
-129,Time since the first Volkswagen Beetle produced,80,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Volkswagen_Beetle
-130,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
-131,Time since introduction of the first mass-produced helicopter (Sikorsky R-4),74,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Helicopter#First_flights
-132,Length of reign of King Louis XIV of France,72,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-133,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-134,Time since the first man walked on the moon,49,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
-135,Time since first Boeing 747 entering service,48,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Boeing_747#Entry_into_service
-136,Time since first email sent,47,unit,0,y,duration.age,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
-137,Time since Concorde Supersonic Airliner entered service,42,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Concorde
-138,Time since first Apple ][ computer launched,41,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apple_II_series
-139,Time since first IBM Personal Computer launched,37,unit,0,y,duration.age,https://en.wikipedia.org/wiki/IBM_Personal_Computer
-140,Time since first Apple Macintosh Computer launched,34,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Macintosh
-141,Length of the Wars of the Roses,32,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
-142,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
-143,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-144,Length of the Peloponnesian Wars,27,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
-145,One average human generation,25,unit,0,y,duration,Thanks to Google
-146,Length of the Vietnam war,19.5,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
-147,Lifespan of a cat,15,unit,0,y,duration,http://pets.thenest.com/whats-normal-indoor-cat-lifespan-10139.html
-148,Length of the Napoleonic wars,12,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
-149,Period of Jupiter's orbit,11.86,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-150,Time since first iPhone launched,11,unit,0,y,duration.age,https://en.wikipedia.org/wiki/History_of_iPhone
-151,Time since first Tesla Model S launched,6,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Tesla_Model_S
-152,Period of Ceres's orbit,4.6,unit,0,y,duration,http://space-facts.com/ceres/
-153,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
-154,Period of Mars's orbit,1.88,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-155,Period of Earth's orbit,1,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-156,Period of Venus's orbit,0.615,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-157,Period of Mercury's orbit,0.241,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
-158,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google
+90,Time since the Caxton's first edition of Chaucer's The Canterbury Tales,542,unit,0,y,duration.age,https://www.bl.uk/treasures/caxton/homepage.html
+91,Duration of Carthaginian Empire,504,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+92,Duration of Roman Empire,503,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+93,Duration of Egyptian Empire,500,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+94,Duration of Roman Republic,482,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+95,Time since the publication of Copernicus's sun-centred model of the solar system,475,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Nicolaus_Copernicus
+96,Time since the birth of Shakespeare,454,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
+97,Time since the birth of Galileo,454,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Galileo_Galilei
+98,Time since Shakespeare's play Hamlet was written,419,unit,0,y,duration.age,https://www.britannica.com/topic/Hamlet-by-Shakespeare
+99,Time since the birth of Pierre de Fermat,417,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Pierre_de_Fermat
+100,Duration of Dutch Empire,407,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+101,Time since the death of Shakespeare,402,unit,0,y,duration.age,https://en.wikipedia.org/wiki/William_Shakespeare
+102,Duration of British Empire,394,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+103,Time since the birth of Newton,376,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Isaac_Newton
+104,Duration of Mali Empire,375,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+105,Duration of Mughal Empire,332,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+106,Time since the publication of Isaac Newton's major work; the Principia,331,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica
+107,Time since the birth of Euler,311,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Leonhard_Euler
+108,Duration of Ming Dynasty,276,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_empires
+109,Time since the birth of Joseph Fourier,250,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Joseph_Fourier
+110,Period of Pluto's orbit,248,unit,0,y,duration,https://en.wikipedia.org/wiki/Pluto
+111,Time since birth of Sophie Germain,242,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Sophie_Germain
+112,Time since the birth of Gauss,241,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+113,Time since the birth of Darwin,209,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Darwin
+114,Time since the birth of Dickens,206,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Dickens
+115,Time since the first iron steamship crossed the English Channel,196,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Steamship
+116,Time since the first passenger steam railway service,193,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway
+117,Lifespan of Galapagos giant tortoise,190,unit,0,y,duration,Thanks to MostToday
+118,Time since the birth of Cantor,173,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Georg_Cantor
+119,Period of Neptune's orbit,164.8,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+120,"Time since the publication of Dickens's ""Tale of Two Cities""",159,unit,0,y,duration.age,https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities
+121,"Time since the publication of Darwin's ""On the Origin of Species""",159,unit,0,y,duration.age,https://en.wikipedia.org/wiki/On_the_Origin_of_Species
+122,Time since the publication of Volume 1 of Marx's Das Kapital,151,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Das_Kapital
+123,Time since the birth of Einstein,139,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albert_Einstein
+124,Time since birth of Emmy Noether,136,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Emmy_Noether
+125,Time since birth of M. C. Escher,120,unit,0,y,duration.age,https://en.wikipedia.org/wiki/M._C._Escher
+126,Time since first transatlantic wireless communication,117,unit,0,y,duration.age,http://www.history.com/this-day-in-history/marconi-sends-first-atlantic-wireless-transmission
+127,Length of the Hundred Years' War,116,unit,0,y,duration.span,https://en.wikipedia.org/wiki/Hundred_Years%27_War
+128,Time since the publication of Einstein's theory of Special Relativity,113,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Albert_Einstein#First_scientific_papers
+129,Time since first Model T Ford launched,110,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Ford_Model_T
+130,Time since the birth of Turing,106,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Alan_Turing
+131,Time since the first fixed wing scheduled air service,104,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Airline
+132,Time since Charles Lindbergh first flew across the Atlantic,91,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Charles_Lindbergh
+133,Period of Uranus's orbit,84,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+134,Length of the Punic Wars (Rome v Carthage),82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+135,Length of reign of King Sobhuza II of Swaziland ,82,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+136,Lifespan of human being,80,unit,0,y,duration,Thanks to Google
+137,Time since the first Volkswagen Beetle produced,80,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Volkswagen_Beetle
+138,Period of Halley's Comet's orbit,75.3,unit,0,y,duration,https://en.wikipedia.org/wiki/Halley%27s_Comet
+139,Time since introduction of the first mass-produced helicopter (Sikorsky R-4),74,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Helicopter#First_flights
+140,Length of reign of King Louis XIV of France,72,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+141,Time since the invention of the transistor,71,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Transistor
+142,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
+143,Time since the first man walked on the moon,49,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
+144,Time since first Boeing 747 entering service,48,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Boeing_747#Entry_into_service
+145,Time since first email sent,47,unit,0,y,duration.age,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
+146,"Time since the launch of Intel's first microprocessor; the ""4004""",47,unit,0,y,duration.age,http://www.computerhistory.org/siliconengine/microprocessor-integrates-cpu-function-onto-a-single-chip/
+147,Time since Concorde Supersonic Airliner entered service,42,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Concorde
+148,Time since first Apple ][ computer launched,41,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apple_II_series
+149,Time since first IBM Personal Computer launched,37,unit,0,y,duration.age,https://en.wikipedia.org/wiki/IBM_Personal_Computer
+150,Time since first Apple Macintosh Computer launched,34,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Macintosh
+151,Length of the Wars of the Roses,32,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+152,Lifespan of horse,30,unit,0,y,duration,Thanks to Google
+153,Period of Saturn's orbit,29.5,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+154,Length of the Peloponnesian Wars,27,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+155,One average human generation,25,unit,0,y,duration,Thanks to Google
+156,Length of the Vietnam war,19.5,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+157,Lifespan of a cat,15,unit,0,y,duration,http://pets.thenest.com/whats-normal-indoor-cat-lifespan-10139.html
+158,Length of the Napoleonic wars,12,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest_wars
+159,Period of Jupiter's orbit,11.86,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+160,Time since first iPhone launched,11,unit,0,y,duration.age,https://en.wikipedia.org/wiki/History_of_iPhone
+161,Time since first Tesla Model S launched,6,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Tesla_Model_S
+162,Period of Ceres's orbit,4.6,unit,0,y,duration,http://space-facts.com/ceres/
+163,Lifespan of rat,2,unit,0,y,duration,Thanks to Google
+164,Period of Mars's orbit,1.88,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+165,Period of Earth's orbit,1,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+166,Period of Venus's orbit,0.615,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+167,Period of Mercury's orbit,0.241,unit,0,y,duration,http://www.universetoday.com/37507/years-of-the-planets/
+168,Lifespan of housefly,0.077,unit,0,y,duration,Thanks to Google

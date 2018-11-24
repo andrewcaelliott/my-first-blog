@@ -429,6 +429,7 @@ quotes = (
         '"Whoever despises the high wisdom of mathematics nourishes himself on delusion" Leonardo da Vinci',
         '"He who loves practice without theory is like a seafarer who boards ship without wheel or compass and knows not wither he travels." Leonardo da Vinci',
         '"Just as iron rusts from disuse and stagnant water putrefies, or when cold turns to ice, so our intellect wastes unless it is kept in use." Leonardo da Vinci',
+        '"Most people would die sooner than think – in fact they do so." Bertrand Russell',
 
     )
 

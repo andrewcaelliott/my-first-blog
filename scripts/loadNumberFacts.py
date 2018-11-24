@@ -38,8 +38,9 @@ def deleteFacts(title=None):
 
 def deleteAllFacts():
     facts = NumberFact.objects.all()
-    for fact in facts:
-        fact.delete()
+    facts.delete()
+#    for fact in facts:
+#        fact.delete()
 
 def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
     inFile= open(fileName, encoding=encoding)
@@ -104,7 +105,7 @@ def run():
     loadNumberFacts("./blog/data/Population_of_countries - Missing.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/Population_of_cities.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data/Animal_Populations.csv","","individuals")
-    loadNumberFacts("./blog/data/Reference_Durations.csv","","USD p/a")
+    loadNumberFacts("./blog/data/Reference_Durations.csv","","y")
     loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
     loadNumberFacts("./blog/data/Reference_Lengths.csv","","")
     loadNumberFacts("./blog/data/Reference_Masses.csv","Mass of ","kg")
