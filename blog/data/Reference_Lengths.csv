@@ -1,4 +1,4 @@
-1,Diameter of the observable universe,879.9,septillion,24,m,extent,https://en.wikipedia.org/wiki/Observable_universe
+y,Diameter of the observable universe,879.9,septillion,24,m,extent,https://en.wikipedia.org/wiki/Observable_universe
 2,Diameter of Laniakea supercluster of galaxies,4.92,septillion,24,m,extent,https://en.wikipedia.org/wiki/Laniakea_Supercluster
 3,Diameter of our Local Group of galaxies,946,sextillion,21,m,extent,https://en.wikipedia.org/wiki/Local_Group
 4,Distance to Andromeda (closest galaxy to the Milky Way),24.22,sextillion,21,m,extent,https://en.wikipedia.org/wiki/Andromeda_Galaxy
@@ -54,6 +54,8 @@
 54,Length of the Trans-Canada Highway from Victoria to St John's City,7.821,million,6,m,extent.hor,http://www.roadtraffic-technology.com/features/feature-the-worlds-longest-highways/
 55,Circumference of Pluto,7.468,million,6,m,extent,https://en.wikipedia.org/wiki/Pluto
 56,Direct distance from Cape Town to Cairo,7.248,million,6,m,extent.hor,https://www.freemaptools.com/how-far-is-it-between-cape-town_-south-africa-and-cairo_-egypt.htm
+,Length of coast-to-coast American Discovery Trail (Southern Route),8.138,million,6,m,extent.hor,https://en.wikipedia.org/wiki/American_Discovery_Trail
+,Length of coast-to-coast American Discovery Trail (Northern Route),7.78,million,6,m,extent.hor,https://en.wikipedia.org/wiki/American_Discovery_Trail
 57,Length of South America (North to South),7.149,million,6,m,extent.hor,http://www.worldatlas.com/webimage/countrys/salandst.htm
 58,Length of the Amazon River,6.992,million,6,m,extent.hor,https://en.wikipedia.org/wiki/List_of_rivers_by_length
 59,Length of the Nile River,6.853,million,6,m,extent.hor,https://en.wikipedia.org/wiki/Nile
@@ -97,7 +99,7 @@
 97,Length of the St Lawrence Seaway Canal system,600,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Saint_Lawrence_Seaway
 98,Distance from London to Edinburgh,534.7,thousand,3,m,extent.hor,Thanks to FreeMapTools
 99,Altitude of the orbit of the International Space Station,400,thousand,3,m,extent.ver,Google
-100,Length of the River Thames,386,thousand,3,m,extent.hor,Thanks to Google
+100,Length of the River Thames,346,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/River_Thames
 101,Length of the British Grand Prix Formula 1 motor race,306.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/British_Grand_Prix
 102,Length of the Monaco Formula 1 motor race,260,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Monaco_Grand_Prix
 103,Length of the Suez Canal,193.3,thousand,3,m,extent.hor,https://en.wikipedia.org/wiki/Suez_Canal
