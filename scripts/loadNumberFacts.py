@@ -76,8 +76,6 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 
 def run():
     print("ok")
-    loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
-    return
     deleteAllFacts()
     print("deleted")
     loadNumberFacts("./blog/data2/Population.csv","Population of ","people", encoding="latin1")
