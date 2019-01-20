@@ -137,7 +137,7 @@ class NumberQuery(models.Model):
             fact = NumberFact.objects.get(title=reference[0])
             factNumber = float(fact.value)*10**fact.scale
             comparisonNumber = n  / factNumber
-            if (comparisonNumber <= 10000) and (comparisonNumber >= 0.0001):
+            if (comparisonNumber <= 1000000) and (comparisonNumber >= 0.0001):
                 times = sigfigs(comparisonNumber,4);
                 fraction = sigfigs(1/comparisonNumber,3);
                 percent = sigfigs(times,6) * 100;

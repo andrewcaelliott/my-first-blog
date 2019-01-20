@@ -26,7 +26,7 @@ def getCurrencyConversionFactor(currency1, currency2, year = None):
         version = "latest"
     else:
         version = year+"-12-31"
-    response = callHttpGET("http://api.fixer.io/",version,{"symbols":currency1,"base":currency2,"callback":"?"}).text
+    response = callHttpGET("http://data.fixer.io/api/",version,{"access_key":"c65acaa2ab282e6eb961788d69eacc69","symbols":currency1,"base":currency2,"callback":"?"}).text
     open_b = response.find("{")
     close_b = response.rfind("}")
     jsonResponse = json.loads(response[open_b:close_b+1])
@@ -34,6 +34,8 @@ def getCurrencyConversionFactor(currency1, currency2, year = None):
     return jsonResponse["rates"][currency1]
 
 def convertToCurrency(amount, currency1, currency2, year = None):    
+    if currency1.find("USD")>=0:
+        currency1 = "USD"
     if (currency1==currency2):
         return amount
     else:

@@ -17,7 +17,12 @@
                 <br/> Spark graphs: Large/red dot shows rank among all countries ordered from min to max. 
                 <br/> Blue dots are comparison points for USA, Russia and China.)</p>
 	        <form method="GET" class="query-form freeform" action="/country" >
-	                {{ freeForm.as_p }}
+                    <!--{{ freeForm.as_p }}-->
+                    <p>With reference to ...</p>
+                    <p>{{ freeForm.location}}</p>
+                    <b><p>{{ freeForm.number.label }}</p></b>
+                    <br/>
+                    <p>{{ freeForm.number}}</p>
                     <button type="submit" class="save btn btn-warning" onclick='this.form.target="_self";'>Ask in This Tab</button>
                     <button type="submit" class="save btn btn-warning" onclick='this.form.target="_blank";'>Ask in New Tab</button>
 	        </form>

@@ -49,14 +49,14 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
         print(line)
         fields = line.split(",")
         if len(fields)== 8:
-            ordinal, subject, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+            ordinal, subject, magnitude, multiple, scale, lineunit, measure, comment = line.split(",")
             datefld = None
             location = ""
         else:
             if len(fields) == 10:
-                ordinal, subject, datestr, location, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+                ordinal, subject, datestr, location, magnitude, multiple, scale, lineunit, measure, comment = line.split(",")
             elif len(fields) == 9:
-                subject, datestr, location, magnitude, multiple, scale, unit, measure, comment = line.split(",")
+                subject, datestr, location, magnitude, multiple, scale, lineunit, measure, comment = line.split(",")
             else:
                 raise ValueError("wrong number of fields in: "+line)
             if datestr == "":
@@ -76,6 +76,8 @@ def loadNumberFacts(fileName, metric, unit, encoding="UTF-8"):
 
 def run():
     print("ok")
+    loadNumberFacts("./blog/data/Reference_Amounts.csv","","")
+    return
     deleteAllFacts()
     print("deleted")
     loadNumberFacts("./blog/data2/Population.csv","Population of ","people", encoding="latin1")

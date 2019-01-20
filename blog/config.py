@@ -51,11 +51,16 @@ amount_references = [
     ('GDP in United Kingdom','{times:,.2f} times the UK GDP','{percent:,.2f} percent of the UK GDP','1 /{fraction:,.0f} of the UK GDP'),
     ('GDP in Luxembourg','{times:,.2f} times the Luxembourg GDP','{percent:,.2f} percent of the Luxembourg GDP','1 /{fraction:,.0f} of the Luxembourg GDP'),
     ('Wealth of the wealthiest person in the world','{times:,.2f} times the wealth of the wealthiest person','{percent:,.2f} percent of the wealth of the wealthiest person','1 /{fraction:,.0f} of the wealth of the wealthiest person'),
-    ('Largest Win on a Lottery Ticket','{times:,.2f} times the largest-ever lottery win (per ticket)','{percent:,.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:,.0f} of the largest-ever lottery win (per ticket)'),
-    ('Cost of Porsche 911 Carrera','{times:,.2f} times the cost of a Porsche 911 Carrera','{percent:,.2f} percent of the cost of a Porsche 911 Carrera','1 /{fraction:,.0f} of the the cost of a Porsche 911 Carrera'),
+    ('Largest Win on a Lottery Ticket','{times:,.2f} times the largest-ever lottery win','{percent:,.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:,.0f} of the largest-ever lottery win (per ticket)'),
+    ('Highest price for a painting sold at auction','{times:,.2f} times the highest price paid for a painting','{percent:,.2f} percent of the highest price ever paid for a painting','1 /{fraction:,.0f} of the highest price ever paid for a painting'),
+    ('Cost of making Avengers: Infinity War movie','{times:,.2f} times the cost of making Avengers: Infinity War movie','{percent:,.2f} percent of the cost of making Avengers: Infinity War movie','1 /{fraction:,.0f} of the cost of making Avengers: Infinity War movie'),
+    ('Cost of Lamborghini Huracan Spyder Convertible AWD car (2018)','{times:,.2f} times the cost of a Lamborghini Huracan Spyder Convertible AWD car','{percent:,.2f} percent of the cost of a Lamborghini Huracan Spyder Convertible AWD car','1 /{fraction:,.0f} of the the cost of a Lamborghini Huracan Spyder Convertible AWD car'),
+    ('Cost of Porsche Carrera 4S Coupe AWD car (2018)','{times:,.2f} times the cost of a Porsche Carrera 4S','{percent:,.2f} percent of the cost of a Porsche Carrera 4S','1 /{fraction:,.0f} of the the cost of a Porsche Carrera 4S'),
     ('Cost of Ford Focus `Style` car','{times:,.2f} times the cost of a Ford Focus `Style` car','{percent:,.2f} percent of the cost of a Ford Focus `Style` car','1 /{fraction:,.0f} of the the cost of a Ford Focus `Style` car'),
+    ('Price of Boston Red Sox grandstand season ticket (2019)','{times:,.2f} times the cost of a Red Sox season ticket','{percent:,.2f} percent of the cost of a Red Sox season ticket','1 /{fraction:,.0f} of the the cost of a Red Sox season ticket'),
     ('Cost of iPad Air (64GB)','{times:,.2f} times the cost of a iPad Air (64GB)','{percent:,.2f} percent of the cost of a iPad Air (64GB)','1 /{fraction:,.0f} of the the cost of a iPad Air (64GB)'),
-    ('Cost of Big Mac in USA','{times:,.2f} times the cost of a Big Mac in USA','{percent:,.2f} percent of the cost of a Big Mac in USA','1 /{fraction:,.0f} of the the cost of a Big Mac in USA'),
+    ('Price of a Big Mac hamburger in the United States (2018)','{times:,.2f} times the cost of a Big Mac in USA','{percent:,.2f} percent of the cost of a Big Mac in USA','1 /{fraction:,.0f} of the the cost of a Big Mac in USA'),
+    ('Price of a Big Mac hamburger in Russia (2018)','{times:,.2f} times the cost of a Big Mac in Russia','{percent:,.2f} percent of the cost of a Big Mac in Russia','1 /{fraction:,.0f} of the the cost of a Big Mac in Russia'),
 ]
 
 duration_references = [
@@ -430,6 +435,9 @@ quotes = (
         '"He who loves practice without theory is like a seafarer who boards ship without wheel or compass and knows not wither he travels." Leonardo da Vinci',
         '"Just as iron rusts from disuse and stagnant water putrefies, or when cold turns to ice, so our intellect wastes unless it is kept in use." Leonardo da Vinci',
         '"Most people would die sooner than think – in fact they do so." Bertrand Russell',
+        '"It is true that a mathematician who is not also something of a poet will never be a perfect mathematician." Karl Weierstrass',
+        '"All of science comes from people noticing interesting side paths. You’ve got to have a very flexible approach to exploration and allow different people to try different things." Michael Atiyah',
+        '"We as mathematicians don’t have to be apologetic about saying we like beautiful things. We live on beautiful things." Sir Michael Atiyah',
 
     )
 
