@@ -232,7 +232,6 @@ class NumberFact(models.Model):
     permlink = models.SlugField(db_index=True, unique=True)
 
     def display_folk_number(self, mag, mult, unit, measure):
-        print(">> rendering", self, mag, mult, unit, measure)
         mag = str(sigfigs(num(self.magnitude),4))
         if (measure == "e"):
             measure = "extent"
@@ -336,7 +335,6 @@ class NumberFact(models.Model):
                     response = "".join(["-", unit, mag.replace("-",""), mult])
             else:    
                 response = " ".join([mag, mult, unit])
-        print(">> rendered", response.replace("unit", "").replace(" unknown", "").replace(" - ", " ").replace("  "," "))
         return response.replace("unit", "").replace(" unknown", "").replace(" - ", " ").replace("  "," ")
 
     def normalise(self):
