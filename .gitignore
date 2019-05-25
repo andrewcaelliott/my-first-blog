@@ -2,6 +2,8 @@
 __pycache__
 myvenv
 bignumvenv
+explain
+tweetcards
 db.sqlite3
 /static
 .DS_Store
