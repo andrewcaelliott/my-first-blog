@@ -1,0 +1,16 @@
+Ord,Subject,Probability,Items,ItemCount,Repetitions,RepetitionCount,Hits,Repeats,Reference
+1,winning the main prize in the UK National Lottery,1 in 45057473,players,100,plays,100,wins,repeats,https://en.wikipedia.org/wiki/National_Lottery_(United_Kingdom)#2018_changes
+2,winning on a single number playing US roulette,1 in 38,players,100,spins,100,wins,repeats,https://en.wikipedia.org/wiki/Roulette
+3,heads on a coin flip,1 to 1,coins,10,flips,100,heads,repeats,https://en.wikipedia.org/wiki/Probability
+4,six on a dice roll,1 in 6,dice,3,rolls,100,sixes,repeats,https://en.wikipedia.org/wiki/Probability
+5,winning on a single number playing French roulette,1 in 37,players,100,spins,100,wins,repeats,https://en.wikipedia.org/wiki/Roulette
+,winning on red playing US roulette,18 in 38,players,100,spins,38,wins,repeats,https://en.wikipedia.org/wiki/Roulette
+,winning on red playing French roulette,18 in 37,players,100,spins,38,wins,repeats,https://en.wikipedia.org/wiki/Roulette
+,getting 10 heads in a sequence of 10 flips of a coin,1 in 1024,coins,100,sequences,100,successes,repeats,https://en.wikipedia.org/wiki/Probability
+,rolling a total of 7 with 2 dice,6 in 36,pairs of dice,100,rolls,100,sevens,repeats,https://en.wikipedia.org/wiki/Probability
+,becoming pregnant each cycle (when trying),38%,women,100,cycles,36,pregnancy,removes,https://www.todaysparent.com/getting-pregnant/trying-to-conceive/what-are-your-odds-of-getting-pregnant-each-month/
+,dying when skydiving,1 in 159000,skydivers,100,jumps,50,fatalities,removes,https://uspa.org/Find/FAQs/Safety
+,dying of cardiac arrest while running a marathon,1 in 126000,runners,100,marathons,10,deaths,removes,http://www.bandolier.org.uk/booth/Risk/sports.html
+,dying while skiing,1 in 1557000,skiers,100,visits,20,deaths,removes,http://www.bandolier.org.uk/booth/Risk/sports.html
+,being killed on a sortie in the Battle of Britain,3%,pilots,100,sorties,30,fatalities,removes,https://www.pprune.org/military-aviation/522123-risk-being-shot-down-battle-britain-pilot-same-odds.html
+,a bomber being shot down on bombing operation  in WWII,8325 in 364514,bombers,100,operations,30,losses,removes,https://en.wikipedia.org/wiki/RAF_Bomber_Command

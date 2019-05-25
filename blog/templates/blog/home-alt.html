@@ -1,0 +1,78 @@
+{% extends 'blog/base-alt.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block quote %}
+	<p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <div class="row widget">
+            <div>
+		<h1><a href="">Is This A Big Number?</a></h1>
+	        <form method="GET" class="query-form freeform" action="/itabn/compare">
+	                {{ freeForm.as_p }}
+	                <button type="submit" class="save btn btn-warning">Ask</button>
+	        </form>
+	        <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion', '1.5e6', '25 million kg'</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary">
+            	<div>
+			<h1><a href="">Numbers in the News</a></h1>
+	                <h4>Some notable numbers we have spotted recently</h4>
+	                <h3><a href="{{ stories.news.featured.link }}" target="_blank">{{ stories.news.featured.title }}</a></h3>
+	                <p>{{ stories.news.featured.synopsis }}</p>
+	                <p><a href="{{ stories.news.featured.link }}" target="_blank">{{ stories.news.featured.link }}</a></p>
+	                <h3>More ...</h3>
+		        {% for item in stories.news.other %}
+		                <p><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></p>
+		        {% endfor %}
+                </div>
+            </div>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary">
+            	<div>
+			<h1><a href="">For the Love of Numbers</a></h1>
+	                <h4>A number-led blog for the truly geeky among us ...</h4>
+	                <h3><a href="{{ stories.passion.featured.link }}" target="_blank">{{ stories.passion.featured.title }}</a></h3>
+	                <p>{{ stories.passion.featured.synopsis }}</p>
+	                <p><a href="{{ stories.passion.featured.link }}" target="_blank">{{ stories.passion.featured.link }}</a></p>
+	                <div class="blog-summary-footer">
+		                <h3>More ...</h3>
+			        {% for item in stories.passion.other %}
+			                <p><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></p>
+			        {% endfor %}
+		        </div>
+                </div>
+            </div>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary">
+            	<div>
+			<h1><a href="">Know Your Numbers</a></h1>
+	                <h4>A little more knowledge is never a dangerous thing ...</h4>
+	                <h3><a href="{{ stories.education.featured.link }}" target="_blank">{{ stories.education.featured.title }}</a></h3>
+	                <p>{{ stories.education.featured.synopsis }}</p>
+	                <p><a href="{{ stories.education.featured.link }}" target="_blank">{{ stories.education.featured.link }}</a></p>
+	                <div class="blog-summary-footer">
+		                <h3>More ...</h3>
+			        {% for item in stories.education.other %}
+			                <p><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></p>
+			        {% endfor %}
+		        </div>
+                </div>
+            </div>
+            <div class="widget col-lg-3 col-md-4 col-sm-6 col-xs-12 blog-summary">
+            	<div>
+			<h1><a href="">Landmark Numbers</a></h1>
+	                <h4>Like beacons in a landscape, prominent numbers offer guidance</h4>
+	                <h3><a href="{{ stories.landmark.featured.link }}" target="_blank">{{ stories.landmark.featured.title }}</a></h3>
+	                <p>{{ stories.landmark.featured.synopsis }}</p>
+	                <p><a href="{{ stories.landmark.featured.link }}" target="_blank">{{ stories.landmark.featured.link }}</a></p>
+	                <h3>More ...</h3>
+		        {% for item in stories.landmark.other %}
+		                <p><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></p>
+		        {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

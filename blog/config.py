@@ -395,6 +395,8 @@ quotes = (
         '"Doing mathematics should always mean finding patterns and crafting beautiful and meaningful explanations." Paul Lockhart',
         '"It is not the job of mathematicians ... to do correct arithmetical operations. It is the job of bank accountants." Samuil Shatunovsky',
         '"The scientist does not study nature because it is useful; he studies it because he delights in it." H Poincare',
+        '"The scientist does not study nature because it is useful to do so. He studies it because he takes pleasure in it, and he takes pleasure in it because it is beautiful." H Poincare',
+        '"If nature were not beautiful it would not be worth knowing, and life would not be worth living." H Poincare',
         '"Time exists in order that everything doesn’t happen all at once, and space exists so that it doesn’t all happen to you." Susan Sontag',
         '"One measure of our understanding is the number of independent ways we are able to get to the same result." Richard Feynman',
         '"The mathematical sciences particularly exhibit order symmetry and limitations; and these are the greatest forms of the beautiful." Aristotle',
@@ -452,6 +454,21 @@ quotes = (
         '"Mathematics expresses values that reflect the cosmos, including orderliness, balance, harmony, logic, and abstract beauty." Deepak Chopra',
         '"Mathematics is the cheapest science. Unlike physics or chemistry, it does not require any expensive equipment. All one needs for mathematics is a pencil and paper." George Polya',
         '"Mathematics and poetry are the two ways to drink the beauty of truth." Amit Ray',
+        '"To raise new questions, new possibilities, to regard old problems from a new angle, requires creative imagination and marks real advance in science". Albert Einstein',
+        '"I am among those who think that science has great beauty." Marie Curie',
+        '"Nothing has such power to broaden the mind as the ability to investigate systematically and truly all that comes under thy observation in life." Marcus Aurelius',
+        '"Science, my lad, is made up of mistakes, but they are mistakes which it is useful to make, because they lead little by little to the truth." Jules Verne',
+        '"Science is not everything, but science is very beautiful." J. Robert Oppenheimer',
+        '"Mathematical science shows what is. It is the language of unseen relations between things. But to use and apply that language, we must be able fully to appreciate, to feel, to seize the unseen, the unconscious." Ada Lovelace',
+        '"You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete." R. Buckminster Fuller',
+        '"When I am working on a problem, I never think about beauty but when I have finished, if the solution is not beautiful, I know it is wrong." R. Buckminster Fuller',
+        '"Nature uses only the longest threads to weave her patterns, so that each small piece of her fabric reveals the organization of the entire tapestry." Richard P. Feynman',
+        '"For 13 to be unlucky would require there to be some kind of cosmic intelligence that counts things that humans count and that also makes certain things happen on certain dates or in certain places according to whether the number 13 is involved." Douglas Hofstadter',
+        '"The greatest mathematicians, as Archimedes, Newton, and Gauss, always united theory and applications in equal measure." Felix Klein',
+        '"Mathematicians stand on each other\'s shoulders." Carl Friedrich Gauss',
+        '"The problem of distinguishing prime numbers from composite numbers and of resolving the latter into their prime factors is known to be one of the most important and useful in arithmetic." Carl Friedrich Gauss',
+        '"Only those who attempt the absurd will achieve the impossible. I think it\'s in my basement... let me go upstairs and check." M. C. Escher',
+
 
 
 

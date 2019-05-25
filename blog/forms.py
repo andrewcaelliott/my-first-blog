@@ -3,6 +3,7 @@ from django import forms
 from .models import Post
 from .models import NumberFact
 from .models import NumberQuery
+from .models import ChanceQuery
 
 class PostForm(forms.ModelForm):
 
@@ -41,4 +42,10 @@ class ConvertForm(forms.ModelForm):
 
 class FilterFactsForm(forms.Form):
     search = forms.CharField(max_length=50)
+
+class ChanceForm(forms.ModelForm):
+
+    class Meta:
+        model = ChanceQuery
+        fields = ('probability', 'exposed_items', 'item_text', 'exposed_repetitions', 'repetition_text', 'outcome_count', 'outcome_text', 'repeat_mode')    
 

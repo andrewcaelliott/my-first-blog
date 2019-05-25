@@ -468,3 +468,32 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class ChanceQuery(models.Model):
+
+    probability    = models.CharField(max_length=50)
+    item_text       = models.CharField(max_length=200)
+    exposed_items    = models.IntegerField()
+    repetition_text       = models.CharField(max_length=200)
+    exposed_repetitions    = models.IntegerField()
+    outcome_count = models.IntegerField()
+    outcome_text       = models.CharField(max_length=200)
+    repeat_mode = models.CharField(max_length=10, choices=[("repeats","repeats"), ("removes","removes")])
+    calc_target = models.CharField(max_length=10, choices=[("probability", "probability"), ("items", "items"), ("repetitions", "repetitions"), ("hits", "hits")])
+
+class ChanceFact(models.Model):
+
+    text = models.TextField()
+    title = models.CharField(max_length=50)
+    probability = models.CharField(max_length=50)
+    item_text       = models.CharField(max_length=200)
+    exposed_items    = models.IntegerField()
+    repetition_text       = models.CharField(max_length=200)
+    exposed_repetitions    = models.IntegerField()
+    outcome_text       = models.CharField(max_length=200)
+    repeat_mode = models.CharField(max_length=10, choices=[("repeats","repeats"), ("removes","removes")])
+    permlink = models.SlugField(db_index=True, unique=True)
+
+    def _display_folk(self):
+        return "".join(["The chance of ", self.title, " is ", self.probability])
+
+    render_folk = property(_display_folk)

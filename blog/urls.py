@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^itabn/api$', views.query_api, name='query_api'),
     url(r'^posts/$', views.post_list, name='post_list'),
     url(r'^facts/$', views.fact_list, name='fact_list'),
+    url(r'^chances/$', views.chancefact_list, name='chancefact_list'),
     url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^fact/new/$', views.fact_new, name='fact_new'),
@@ -40,4 +41,8 @@ urlpatterns = [
     url(r'^links/save/$', views.links_save, name="links-save"),
     url(r'^ajax/comparison/$', views.comparison, name="comparison"),
     url(r'^ajax/quote/$', views.quote, name="quote"),
+    url(r'^chance/$', views.chance, name="chance"),
+    url(r'^chance/answer/$', views.chance, name="chance"),
+    url(r'^gridpng/$', views.grid, name="grid"),
+    url(r'^gridchancepng/$', views.gridchance, name="gridchance"),
 ]

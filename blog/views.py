@@ -1,17 +1,20 @@
 from json import loads
+from fractions import Fraction
 from random import choice,seed as set_seed,randint,sample
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django import forms
 from .models import Post
 from .models import NumberFact
+from .models import ChanceFact
 from .models import NumberQuery
 from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spuriousFact,neatFacts, facts_matching_ratio, resolve_country_code, get_all_stats_for, get_stat
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
+from .forms import ChanceForm 
 from .forms import FreeForm,FreeFormCountry
 from .forms import ConvertForm 
 from .forms import FilterFactsForm 
@@ -31,6 +34,8 @@ from .dummycontent import storySelection
 from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
+from .chance_utils import fillcolours, drawgrid, odds,do_trial,parse_probability, distribution,summary
+from .chance_utils import compute_chance_grid,draw_chance_grid,draw_count_grid
 
 def home(request):
     freeForm = FreeForm()
@@ -645,6 +650,21 @@ def fact_list(request):
     promote = choice(["book", "book", "sponsor","donate","click"])
     return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
+def chancefact_list(request):
+    params = request.GET
+    try: 
+        search = params["search"]
+    except:
+        search = None
+    if search == None:
+        facts = ChanceFact.objects.filter().order_by('title')  
+    else:
+        facts = ChanceFact.objects.filter(title__icontains = search).order_by('title')  
+    form = FilterFactsForm(initial={'search': search})
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["book", "book", "sponsor","donate","click"])
+    return render(request, 'blog/chancefact_list.html', {'form': form, 'facts':facts, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     dyk=spuriousFact(NumberFact,3)
@@ -737,3 +757,164 @@ def quote(request):
     quotation = choice(quotes)
     quote = render_to_string('blog/quote.html', {"quote":quotation})
     return JsonResponse({"quote":quote})
+
+def chance(request):
+    params = request.GET
+    form = ChanceForm()
+    probability = getParamDefault(params, "probability", "0.1")
+    chance_function = getParamDefault(params, "chance_function", "equalchance")
+    increase = getParamDefault(params, "increase", "0")
+    exposed_items = getParamDefault(params, "exposed_items", "100")
+    item_text = getParamDefault(params, "item_text", "items")
+    exposed_repetitions = getParamDefault(params, "exposed_repetitions", "100")
+    repetition_text = getParamDefault(params, "repetition_text", "times")
+    outcome_count = getParamDefault(params, "outcome_count", "100")
+    outcome_text = getParamDefault(params, "outcome_text", "hits")
+    repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
+    hits = num(outcome_count)
+    target = getParamDefault(params, "calc_target", "hits")
+    description = "this"
+    permlink = getParamDefault(params, "fact", None)
+    if permlink:
+        chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
+        probability = chanceFact.probability
+        exposed_items = chanceFact.exposed_items
+        item_text = chanceFact.item_text
+        exposed_repetitions = chanceFact.exposed_repetitions
+        repetition_text = chanceFact.repetition_text
+        outcome_text = chanceFact.outcome_text
+        repeat_mode = chanceFact.repeat_mode
+        description = chanceFact.title
+
+    form.fields["probability"].initial = probability
+    form.fields["exposed_items"].initial = exposed_items
+    form.fields["exposed_items"].label = "How many things?"
+    form.fields["item_text"].initial = item_text
+    form.fields["item_text"].label = "What things are they?"
+    form.fields["exposed_repetitions"].initial = exposed_repetitions
+    form.fields["exposed_repetitions"].label = "Repeated how many times?"
+    form.fields["repetition_text"].initial = repetition_text
+    form.fields["repetition_text"].label = "Times are called?"
+    form.fields["outcome_text"].initial = outcome_text
+    form.fields["outcome_text"].label = "Hits are called?"
+    form.fields["repeat_mode"].initial = repeat_mode
+    form.fields["repeat_mode"].label = "repeats for "+item_text+" or removes?"
+    form.fields["outcome_count"].initial = outcome_count
+    form.fields["outcome_count"].label = "Average number of hits"
+
+    prob = parse_probability(probability)
+    items = int(exposed_items)
+    repetitions = int(exposed_repetitions)
+
+#    form.fields["calc_target"].initial = target
+    if (target == 'hits'):
+        if repeat_mode == "repeats":
+            calc_hits = prob * items * repetitions
+            calc_hits_item = prob * repetitions
+            form.fields["outcome_count"].initial = str(calc_hits)
+        else:
+            calc_wait = 1 / prob
+            survival_prob = (1 - prob) ** repetitions
+            calc_hits_item = (1 - survival_prob) * items
+            form.fields["outcome_count"].initial = str(calc_wait)
+
+    if (target == 'probability'):
+        calc_prob = hits / (items * repetitions)
+        prob = calc_prob
+        form.fields["probability"].initial = str(calc_prob)
+    if (target == 'items'):
+        calc_items = int(hits / (prob * repetitions))
+        items = calc_items
+        form.fields["exposed_items"].initial = str(calc_items)
+        print("items", calc_items, form.fields["exposed_items"].initial)
+    if (target == 'repetitions'):
+        calc_repetitions = int(hits / (prob * items))
+        repetitions = calc_repetitions
+        form.fields["exposed_repetitions"].initial = str(calc_repetitions)
+    fraction = Fraction(prob).limit_denominator(1000)
+    odds_raw = odds(prob, maxerror = 0.0005)
+    odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
+    percentage = prob * 100
+    seed = randint(1,1000000)    
+    equivalents = {
+        "supplied": probability,
+        "probability": prob,
+        "percentage": percentage,
+        "fraction": fraction,
+        "odds": odds_raw,
+    }
+    trial = {
+        "items": items,
+        "repetitions": repetitions,
+        "exposure": items * repetitions,
+        "probability": prob,
+        "repeat_mode": repeat_mode,
+        "seed": seed,
+        "probability_model":"chance_function="+chance_function+"&increase="+increase,
+        "chance_function":chance_function,
+        "increase":increase
+    }
+    dyk=spuriousFact(NumberFact,3)
+    trial["hits"], trial["item_hits"], trial["repetition_hits"] = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed)
+    trial["item_hits_distribution"]=distribution(trial["item_hits"])
+    trial["item_hits_summary"]=summary(trial["item_hits_distribution"])
+    trial["repetition_hits_distribution"]=distribution(trial["repetition_hits"])
+    trial["repetition_hits_summary"]=summary(trial["repetition_hits_distribution"])
+    trial["hit_percentage"]= 100 * trial["hits"] / trial["exposure"]
+    promote = choice(["book", "book", "book"])
+    return render(request, 'blog/chance.html', {'description': description, 'form': form, 'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+
+
+def getParamDefault(params, key, default, preserve_plus=False):
+    try:
+        result = params.get(key)
+        if result == None:
+            return default
+        elif result == "":
+            return default
+        else:
+            if preserve_plus:
+                return result
+            else:
+                return result.replace("+"," ")
+    except:
+        return default
+
+def grid(request):
+    params = request.GET
+    width = int(getParamDefault(params, "width", "20"))
+    exposed = width
+    depth = int(getParamDefault(params, "depth", "1"))
+    hits = int(getParamDefault(params, "hits", "5"))
+    invert = getParamDefault(params, "invert", "F")
+    fillcolour = fillcolours()
+    colourset = ((12, fillcolour[0]), (25, fillcolour[1]), (81, fillcolour[2]), (1056, fillcolour[3]))
+    if width > 200:
+        depth = int((width+199) / 200)
+        width = 200
+
+    surface = draw_count_grid(width, depth, hits, exposed, invert = invert.find("T")>=0)
+    response = HttpResponse(content_type="image/png")
+    surface.write_to_png(response)
+    return response
+
+def gridchance(request):
+    params = request.GET
+    width = int(getParamDefault(params, "width", "20"))
+    depth = int(getParamDefault(params, "depth", "10"))
+    repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
+    try:
+        seed = int(getParamDefault(params, "seed", None))
+    except:
+        seed = None
+    probability = num(getParamDefault(params, "probability", "0.1"))
+    fillcolour = fillcolours()
+    colourset = ((12, fillcolour[0]), (25, fillcolour[1]), (81, fillcolour[2]), (1056, fillcolour[3]))
+    count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
+    surface = draw_chance_grid(grid, width, depth)
+    response = HttpResponse(content_type="image/png")
+    surface.write_to_png(response)
+    return response
+
+
+

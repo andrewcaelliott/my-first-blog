@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Is That A Big Number? - {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	<link href="http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	<link rel='shortcut icon' type='image/x-icon' href="{% static './favicon.ico' %}"/>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@itabn_andrew" />
+	<meta name="twitter:title" content="Is That A Big Number?" />
+	<meta name="twitter:description" content="Put Big Numbers in context. Develop a Number Sense. Numbers-led Blog." />
+	<meta name="twitter:image" content="http://www.isthatabignumber.com/static/itabn-twit.png" />
+	<script id="echoCentralScript" type="text/javascript" data-ec-accountid="2c864536-103f-430a-8648-4d05e39e1973">
+	  var ECHOREFLECTPRELOAD={errors:[]};
+	  (function(w,d,c,t,v){
+	    if(c&&c.error){
+	      var oce=c.error;
+	      c.error=function(){
+	        v.errors.push({u:"console",e:arguments})
+	        oce.apply(c,arguments);}}
+	    w.onerror=function(m,u,l,co,e){
+	      v.errors.push({m:m,u:u,l:l,c:co,e:e});
+	      return false;}
+	    var ec=d.createElement(t);
+	    ec.type='text/javascript';ec.async=true;ec.defer=true;ec.id='ecLWC';
+	    ec.src=('https:'==d.location.protocol?'https://':'http://')+'script.echo-central.com/echoREFLECT.js';
+	    var s=d.getElementsByTagName(t)[0];
+	    setTimeout(function(){s.parentNode.insertBefore(ec,s)},100);
+	  }(window,document,console,'script',ECHOREFLECTPRELOAD));
+	</script>
+  
+    </head>
+	<body>
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+	    <div class="page-header">
+	        <!--a href="{% url 'post_new' %}" class="top-menu" title="new post"><span class="glyphicon glyphicon-plus"></span></a>
+	        <a href="{% url 'fact_new' %}" class="top-menu" title="new fact"><span class="glyphicon glyphicon-star"></span></a-->
+		<a href="" class="top-menu" title="Coming soon: browse our database of reference numbers"><span class="glyphicon glyphicon-hdd"></span></a>
+		<a href="" class="top-menu" title="Coming soon: browse our library of number stories"><span class="glyphicon glyphicon-book"></span></a>
+		<!--a href="" class="top-menu" title="Is That A Big Number is here to put numbers in context. Pick any number and ask ..."><span class="glyphicon glyphicon-info-sign"></span></a-->
+	        <h1><a href="/"><img src="{% static 'itabn_logo.png' %}"/></a></h1>
+	        <!--p><a href="/">Nuts about numbers? Quizzical about Quantities? Mulling over Measurements?</a></p-->
+		<h4><a href="/">{% block quote %}{% endblock %}</a></h4>
+	        <h3><a href ="/home/" title="Take me home">Home</a> - <a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversion Centre</a> - <a href ="/facts/" title="Explore our treasury of numbers">Number Facts</a> - <a href ="/quiz/" title="Test your number sense">Quiz</a></h3>
+	        <div class = "share">
+
+			<a href="https://twitter.com/itabn_andrew" class="twitter-follow-button top-menu" data-show-count="false" data-show-screen-name="false">Follow @itabn_andrew</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>		
+			<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="... #IsThatABigNumber?" data-via="itabn_andrew" data-hashtags="NumbersCount">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    			<div class="fb-like" data-href="https://www.facebook.com/Is-that-a-big-number-1511565142478387/" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+		</div>
+	    </div>
+	    <section class="content container_fluid">
+		        <div class="row">
+		            <div class="col-md-10">
+			            {% block content %}
+			            {% endblock %}
+		            </div>
+		            <div>
+			            <div id="ads" class="col-md-2">
+			            	<h3><span class="glyphicon glyphicon-info-sign"></span> Thank You for Visiting</h3>
+			            	<hr>
+			            	<h4>IsThatABigNumber.com:</h4>
+			            	<ul>
+			            		<li>Is in a very early state of development!</li>
+			            		<li>Puts numbers into a context we can understand. </li>
+			            		<li>Billions and trillions, whether in science or economics, are hard to grasp. We try to reduce these big numbers to understandable comparisons.</li>
+			            		<li>Champions numeracy through engaging articles about numbers and how they are used to describe, understand and control the world.</li>
+			            		<li>Lets you discover number facts, and share them.</li>
+			            		<li>Has an explicit educational objective, to develop a more advanced number sense in a gentle and entertaining way.</li>
+			            		<li>(For the techies) Has a web service API, allowing you to incorporate our content in your website</li>
+			            		<li>Is in a very early state of development!</li>
+			            		<li>Would love your support in any form: share the link, write to us, write about us, or donate to this project.</li>
+			            	</ul>
+			            	<hr></hr>
+			            	<!--p>Email us:<a href="mailto:andrewcaelliott+itabn@gmail.com?Subject=IsThatABigNumber" target="_blank">Send Mail</a></p-->
+				    </div>
+			    </div>
+		        </div>
+	    </section>    
+	    <!--aside>
+	    	<h2>Other Sections</h2>
+	    	<article><h3>Is that a big number?</h3><p>Compare your number to ...</p></article>
+	    	<article><h3>Numbers in the News</h3><p>Mountain or molehill?</p></article>
+	    	<article><h3>Landmark Numbers</h3><p>Reference points for comparison</p></article>
+	    	<article><h3>For the Love of Numbers</h3><p>Number-led Blog</p></article>
+	    	<article><h3>Know your Numbers</h3><p>Know your Tera from your Peta?</p></article>
+	    	<article><h3>Conversion Centre</h3><p>USD <> GBP, miles <> km, furlongs <> fathoms, etc</p></article>
+	    </aside-->
+	</body>
+</html>
