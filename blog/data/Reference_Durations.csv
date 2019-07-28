@@ -150,7 +150,8 @@
 150,Length of reign of King Louis XIV of France,72,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
 151,Time since the invention of the transistor,72,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Transistor
 152,Length of reign of Queen Victoria of the United Kingdom,63,unit,0,y,duration.span,https://en.wikipedia.org/wiki/List_of_longest-reigning_monarchs
-153,Time since the first man walked on the moon,50,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
+,Time since first human went into space,58,unit,0,y,duration.span,https://en.wikipedia.org/wiki/Yuri_Gagarin
+153,Time since the first human walked on the moon,50,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Apollo_11
 154,Time since first Boeing 747 entering service,49,unit,0,y,duration.age,https://en.wikipedia.org/wiki/Boeing_747#Entry_into_service
 155,Time since first email sent,48,unit,0,y,duration.age,http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/
 156,"Time since the launch of Intel's first microprocessor; the ""4004""",48,unit,0,y,duration.age,http://www.computerhistory.org/siliconengine/microprocessor-integrates-cpu-function-onto-a-single-chip/

@@ -34,7 +34,7 @@ from .dummycontent import storySelection
 from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
-from .chance_utils import fillcolours, drawgrid, odds,do_trial,parse_probability, distribution,summary
+from .chance_utils import fillcolours, drawgrid, odds2, do_trial,parse_probability, distribution,summary
 from .chance_utils import compute_chance_grid,draw_chance_grid,draw_count_grid
 
 def home(request):
@@ -762,7 +762,7 @@ def chance(request):
     params = request.GET
     form = ChanceForm()
     probability = getParamDefault(params, "probability", "0.1")
-    chance_function = getParamDefault(params, "chance_function", "equalchance")
+    chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
     increase = getParamDefault(params, "increase", "0")
     exposed_items = getParamDefault(params, "exposed_items", "100")
     item_text = getParamDefault(params, "item_text", "items")
@@ -787,6 +787,9 @@ def chance(request):
         description = chanceFact.title
 
     form.fields["probability"].initial = probability
+    form.fields["probability"].label = "Chance"
+    form.fields["chance_function"].initial = chance_function
+    form.fields["chance_function"].label = "Advanced"
     form.fields["exposed_items"].initial = exposed_items
     form.fields["exposed_items"].label = "How many things?"
     form.fields["item_text"].initial = item_text
@@ -832,7 +835,7 @@ def chance(request):
         repetitions = calc_repetitions
         form.fields["exposed_repetitions"].initial = str(calc_repetitions)
     fraction = Fraction(prob).limit_denominator(1000)
-    odds_raw = odds(prob, maxerror = 0.0005)
+    odds_raw = odds2(prob, tolerance = 0.0005)
     odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
     percentage = prob * 100
     seed = randint(1,1000000)    
@@ -850,7 +853,7 @@ def chance(request):
         "probability": prob,
         "repeat_mode": repeat_mode,
         "seed": seed,
-        "probability_model":"chance_function="+chance_function+"&increase="+increase,
+        "probability_model":"chance_function="+chance_function,
         "chance_function":chance_function,
         "increase":increase
     }
@@ -903,6 +906,8 @@ def gridchance(request):
     width = int(getParamDefault(params, "width", "20"))
     depth = int(getParamDefault(params, "depth", "10"))
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
+    top_down_param = getParamDefault(params, "top_down", "false")
+    top_down = top_down_param.lower()[0] == "t"
     try:
         seed = int(getParamDefault(params, "seed", None))
     except:
@@ -911,7 +916,7 @@ def gridchance(request):
     fillcolour = fillcolours()
     colourset = ((12, fillcolour[0]), (25, fillcolour[1]), (81, fillcolour[2]), (1056, fillcolour[3]))
     count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
-    surface = draw_chance_grid(grid, width, depth)
+    surface = draw_chance_grid(grid, width, depth, top_down = top_down)
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)
     return response

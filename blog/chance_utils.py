@@ -5,6 +5,8 @@ from .utils import num
 import re
 import collections
 from django.utils.datastructures import MultiValueDictKeyError
+from fractions import Fraction
+
 def square(ctx, square_size, squash, offset_x, offset_y, fillcolour):
 
 		ctx.move_to(offset_x+0, offset_y / squash +0)
@@ -83,23 +85,62 @@ def cell_drawonly(ctx, cell_value, square_size, squash, offset_x, offset_y, grid
 			fillcolour = (0.0, 0.0, 0.0, 1.0)
 		elif cell_value == 1:
 			fillcolour = (1.0, 0.6, 0.2, 1.0)
+		elif cell_value == 2:
+			fillcolour = (0.6, 1.0, 0.8, 1.0)
+		elif cell_value == 3:
+			fillcolour = (0.9, 0.7, 1.0, 1.0)
 		else:
-			fillcolour = (0.2, 0.6, 0.1, 1.0)
+			fillcolour = (0.15, 0.45, 0.08, 1.0)
 		square(ctx, square_size, squash, offset_x*gridcell_x, offset_y*gridcell_y, fillcolour)
 
 def equalchance(params, repetition):
-	return params["chance"]
+	return params[0]
 
 def expchance(params, repetition):
-	p = params["chance"] * (1+params["increase_num"])**repetition
+	p = params[0] * (1+params[1])**repetition
 	return p
 
-def cell_outcome(chance_f, params = {}, repetition = 1):
+def constant(params, repetition):
+	return params[0]
+
+def increase(params, repetition):
+	p = params[0] * (1+params[1])**repetition
+	return p
+
+def decrease(params, repetition):
+	p = (params[0]*(1-params[1])**(repetition))
+	return p
+
+def escchance(params, repetition):
+	p = params[0] * (1+params[1])**repetition
+	return (p/(1+p))
+
+def mort1(params, repetition):
+	p = params[0] * (1+params[1])**repetition + params[2]
+	return (p/(1+p))
+
+def mort2(params, repetition):
+	child_p = (params[3]*4**(-repetition))
+	adult_p = params[0] * (1+params[1])**repetition + params[2]
+	p = child_p + adult_p
+	return (p/(1+p))
+
+
+def cell_outcomex(chance_f, params = {}, repetition = 1):
 		rnd = random.random()
 		if (rnd < chance_f(params, repetition)):
 			return 1
 		else:
 			return 0
+
+def cell_outcome(chance_functions, repetition = 1):
+		for i in range(len(chance_functions)):
+			rnd = random.random()
+			chance_f = chance_functions[i][0]
+			params = chance_functions[i][1]
+			if (rnd < chance_f(params, repetition)):
+				return 1+i
+		return 0
 
 def count_cell(ctx, square_size, offset_x, offset_y, gridcell_x, gridcell_y, range_y, hits, exposed, count, invert=False):
 	if invert:
@@ -156,7 +197,7 @@ def grid1(ctx, range_x, range_y, chance, repeat_mode="repeats", xy=False):
 					cell1(ctx, square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y, chance, count, alive_x, repeat_mode=repeat_mode)
 					count+=1
 
-def grid_drawonly(ctx, grid, range_x, range_y, xy=False):
+def grid_drawonly(ctx, grid, range_x, range_y, xy=False, top_down= False):
 		square_size = 0.9/range_x
 		gridcell_x = 0.9/range_x
 		gridcell_y = gridcell_x
@@ -166,12 +207,20 @@ def grid_drawonly(ctx, grid, range_x, range_y, xy=False):
 		if xy:
 			for offset_x in range(0,range_x):
 				for offset_y in range(0,range_y):
-					cell_drawonly(ctx, grid[offset_y][offset_x], square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y)
+					if top_down:
+						cell_y = offset_y
+					else:
+						cell_y = (range_y-1)-offset_y
+					cell_drawonly(ctx, grid[cell_y][offset_x], square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y)
 					count+=1
 		else:
 			for offset_y in range(0,range_y):
 				for offset_x in range(0,range_x):
-					cell_drawonly(ctx,  grid[offset_y][offset_x], square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y)
+					if top_down:
+						cell_y = offset_y
+					else:
+						cell_y = (range_y-1)-offset_y
+					cell_drawonly(ctx, grid[cell_y][offset_x], square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y)
 					count+=1
 
 
@@ -181,21 +230,29 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
 	range_x = trial["items"]
 	range_y = trial["repetitions"]
 	chance = trial["probability"]
+	probability = chance
 	chance_f = equalchance
+	chance_function_name = "equalchance"
 	chance_params = {}
 	chance_params["chance"] = chance
-	try:
+
+	if "chance_function" in params.keys():
 		chance_function = params["chance_function"]
-	except MultiValueDictKeyError:
+	elif "chance_function" in trial.keys():
 		chance_function = trial["chance_function"]
-	except ValueError:
+	else:
 		chance_function = "equalchance"
 
-	if chance_function=="escalating":
-		chance_f = expchance
-		chance_params["increase_num"] = num(params["increase"])
-		#params = {"initprob":chance, "increase":0.0715}
-		print("escalating")
+	chance_functions = parse_chance_functions(chance_function).split("|")
+	pairs = []
+	for function in chance_functions:
+		chance_function_name, chance_function_params = parse_chance_function(function)
+		print("chance function", function, chance_function_name, chance_function_params)
+		function_pair =(eval(chance_function_name), eval(chance_function_params+","))
+		pairs.append(function_pair)
+
+	print("chance_functions", pairs)
+
 	count_hits_x = [0] * range_x
 	count_hits_y = [0] * range_y
 	count_hits = 0
@@ -203,13 +260,14 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
 	alive_x = [True] * range_x
 	for offset_y in range(0,range_y):
 		for offset_x in range(0,range_x):
-			outcome = cell_outcome(chance_f, chance_params, offset_y)
+			outcome = cell_outcome(pairs, offset_y)
 			if alive_x[offset_x]:
 				outcomes[offset_y][offset_x] = outcome
-				count_hits+=outcome
+				count_hits+=int(outcome>0)
+#				count_hits_x[offset_x]+=int(outcome>0)
 				count_hits_x[offset_x]+=outcome
-				count_hits_y[offset_y]+=outcome
-				if repeat_mode == "removes" and outcome==1:
+				count_hits_y[offset_y]+=int(outcome>0)
+				if repeat_mode == "removes" and outcome>0:
 					alive_x[offset_x] = False
 			
 	if verbose:
@@ -274,13 +332,13 @@ def drawgrid1x(range_x, range_y, chance, repeat_mode="repeats", seed = None, xy=
 		grid1(ctx, range_x, range_y, chance, repeat_mode, xy)
 		return surface
 
-def draw_chance_grid(grid, range_x, range_y, xy=False):
+def draw_chance_grid(grid, range_x, range_y, xy=False, top_down=False):
 		WIDTH, HEIGHT = 1500, int(1500.0 * range_y / range_x)
 		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
 		ctx = cairo.Context(surface)
 		ctx.scale(WIDTH, HEIGHT)  # Normalizing the canvas
 		ctx.translate(0.05, 0.0)  # Changing the current transformation matrix
-		grid_drawonly(ctx, grid, range_x, range_y, xy)
+		grid_drawonly(ctx, grid, range_x, range_y, xy, top_down)
 		return surface
 
 def compute_chance_grid(range_x, range_y, chance, params, repeat_mode="repeats", seed = None, xy=False):
@@ -331,14 +389,45 @@ def odds(proportion, maxerror=0.0):
 	else:
 		return (best_odds1, best_odds2)
 
+def odds2(proportion, tolerance=0.01):
+	odds_on = False
+	if proportion > 0.5:
+		odds_on = True
+		proportion = 1 - proportion
+	if proportion == 0:
+		return (1,0)
+	if proportion ==1:
+		return (0,1)
+#	fineness = round(math.log10(proportion))-1
+	frac = Fraction(1-proportion).limit_denominator(40)
+	if (proportion > 0.01) and abs(frac - (1-proportion))<tolerance:
+		print("close enough", frac, proportion)
+		return(frac.numerator, frac.denominator - frac.numerator)
 
+	fineness = min(math.log10(proportion)-1,-1.4)
+	fineadjust = round(10 ** -fineness)
+	limit = int(1.2*fineadjust)
+	fracpair = (round(fineadjust*(1-proportion)), fineadjust)
+	round_num = round_sigfigs(fracpair[0],0)
+	print(fracpair)
+	print(round_num , round(round_num * fracpair[1] / fracpair[0]))
+	frac2 = Fraction(round_num / round(round_num * fracpair[1] / fracpair[0])).limit_denominator(limit)
+	if odds_on:
+		return frac2.denominator - frac2.numerator, frac2.numerator
+	else:
+		return frac2.numerator, frac2.denominator - frac2.numerator
+
+def round_sigfigs(amount, level=1):
+	scale = int(math.log10(amount))
+	rounded = round(amount/10**(scale-level))
+	return rounded * 10**(scale-level)
 
 
 def round_money(amount, level=1):
 	scale = int(math.log10(amount))
 	rounded = round(amount/10**(scale-1))
-#	print(">>>>")
-#	print("odds", scale, amount, rounded)
+	print(">>>>")
+	print("odds", scale, amount, rounded)
 	if rounded >= 195:
 		rounded = int(0.5 + rounded/5.0) * 5
 	elif rounded >= 126:
@@ -347,6 +436,31 @@ def round_money(amount, level=1):
 		rounded = int(rounded)
 
 	return rounded * 10**(scale-1)
+
+
+def parse_chance_function(chance_function):
+	regex="^((?P<name>[a-z|A-Z|0-9]+)\((?P<params>.*)\),?)+$"
+	p = re.compile(regex)
+	m=p.match(chance_function)
+	if (m!=None):
+		try:
+			name = m.group('name')
+			params = m.group('params')
+			return name, params
+		except:
+			return None
+
+def parse_chance_functions(chance_functions):
+	regex="^\[(?P<functions>.*)\]$"
+	p = re.compile(regex)
+	m=p.match(chance_functions)
+	if (m!=None):
+		try:
+			functions = m.group('functions')
+			return functions
+		except:
+			return None
+
 
 
 def parse_probability(probability):

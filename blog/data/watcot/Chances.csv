@@ -14,3 +14,14 @@ Ord,Subject,Probability,Items,ItemCount,Repetitions,RepetitionCount,Hits,Repeats
 ,dying while skiing,1 in 1557000,skiers,100,visits,20,deaths,removes,http://www.bandolier.org.uk/booth/Risk/sports.html
 ,being killed on a sortie in the Battle of Britain,3%,pilots,100,sorties,30,fatalities,removes,https://www.pprune.org/military-aviation/522123-risk-being-shot-down-battle-britain-pilot-same-odds.html
 ,a bomber being shot down on bombing operation  in WWII,8325 in 364514,bombers,100,operations,30,losses,removes,https://en.wikipedia.org/wiki/RAF_Bomber_Command
+,a clover having four leaves,1 in 10000,plants,100,patches,100,four-leaf clovers,repeats,https://www.housebeautiful.com/uk/lifestyle/a21253660/brain-teaser-spot-four-leaf-clover-puzzle/
+,dealing a flush in 5-card poker,5108 in 2598960,sessions,100,hands dealt,100,flushes,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing a straight in 5-card poker,10200 in 2598960,sessions,100,hands dealt,100,straights,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing a royal flush in 5-card poker,4 in 2598960,sessions,100,hands dealt,100,royal flushes,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing a straight flush (not royal) in 5-card poker,36 in 2598960,sessions,100,hands dealt,100,straight flushes,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing 4 of a kind in 5-card poker,624 in 2598960,sessions,100,hands dealt,100,four-of-a-kinds,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing a full house in 5-card poker,3744 in 2598960,sessions,100,hands dealt,100,full houses,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing two pairs in 5-card poker,123552 in 2598960,sessions,100,hands dealt,100,two-pairs,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing 3 of a kind in 5-card poker,54912 in 2598960,sessions,100,hands dealt,100,three-of-a-kinds,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing one pair in 5-card poker,1098240 in 2598960,sessions,100,hands dealt,100,one-pairs,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
+,dealing no pair in 5-card poker,1302540 in 2598960,sessions,100,hands dealt,100,no-pairs,repeats,https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands
