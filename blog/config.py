@@ -14,7 +14,7 @@ extent_references = [
     ('Length of Tower Bridge over the Thames','{times:,.2f} times the length of London\'s Tower Bridge','1 / {fraction:,.0f} as long as London\'s Tower Bridge'),
     ('Length of a football pitch','{times:,.2f} football pitches end to end','1 / {fraction:,.0f} as long as a football pitch'),
     ('Length of a London bus','{times:,.2f} London buses end to end','1 / {fraction:,.0f} as long as a London bus'),
-    ('Height of a giraffe','{times:,.2f} times the height of a giraffe','1 / {fraction:,.0f} of the height of a giraffe'),
+    ('Typical height of a giraffe','{times:,.2f} times the typical height of a giraffe','1 / {fraction:,.0f} of the typical height of a giraffe'),
     ('Height of an African elephant','{times:,.2f} times the height of an African elephant','1 / {fraction:,.0f} of the height of an African elephant'),
     ('Height of an ostrich','{times:,.2f} times the height of an ostrich','1 / {fraction:,.0f} of the height of an ostrich'),
     ('Length of an iPhone 6',"{times:,.2f} iPhone 6's end to end",'1 / {fraction:,.0f} as long as an iPhone 6'),
@@ -468,6 +468,7 @@ quotes = (
         '"Mathematicians stand on each other\'s shoulders." Carl Friedrich Gauss',
         '"The problem of distinguishing prime numbers from composite numbers and of resolving the latter into their prime factors is known to be one of the most important and useful in arithmetic." Carl Friedrich Gauss',
         '"Only those who attempt the absurd will achieve the impossible. I think it\'s in my basement... let me go upstairs and check." M. C. Escher',
+        '"Many persons who have not studied mathematics confuse it with arithmetic and consider it a dry and arid science. Actually, however, this science requires great fantasy." Sophia Kovalevsky',
 
 
 
