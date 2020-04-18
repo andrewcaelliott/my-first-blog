@@ -99,6 +99,7 @@ def run():
     loadNumberFacts("./blog/data/Reference_Index.csv","","", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Information.csv","","KB", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Counts.csv","Number of ","", encoding="latin1")
+    loadNumberFacts("./blog/data/Reference_Counts_Deaths.csv","Number of ","", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Speeds.csv","","km/h", encoding="latin1")
     loadNumberFacts("./blog/data/Reference_Energy.csv","","J", encoding="latin1")
     loadNumberFacts("./blog/data/Company_Revenues.csv","","USD", encoding="latin1")

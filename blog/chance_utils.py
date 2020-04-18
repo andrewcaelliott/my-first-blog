@@ -84,13 +84,19 @@ def cell_drawonly(ctx, cell_value, square_size, squash, offset_x, offset_y, grid
 		if cell_value == None:
 			fillcolour = (0.0, 0.0, 0.0, 1.0)
 		elif cell_value == 1:
-			fillcolour = (1.0, 0.6, 0.2, 1.0)
+			fillcolour = (1.0, 0.65, 0.22, 1.0)
 		elif cell_value == 2:
-			fillcolour = (0.6, 1.0, 0.8, 1.0)
+			fillcolour = (0.5, 0.8, 0.5, 1.0)
 		elif cell_value == 3:
-			fillcolour = (0.9, 0.7, 1.0, 1.0)
+			fillcolour = (0.3, 0.6, 0.7, 1.0)
+		elif cell_value == 4:
+			fillcolour = (0.3, 0.4, 0.8, 1.0)
+		elif cell_value == 5:
+			fillcolour = (0.5, 0.8, 0.2, 1.0)
+		elif cell_value == 6:
+			fillcolour = (0.5, 0.5, 0.5, 1.0)
 		else:
-			fillcolour = (0.15, 0.45, 0.08, 1.0)
+			fillcolour = (0.12, 0.36, 0.064, 1.0)
 		square(ctx, square_size, squash, offset_x*gridcell_x, offset_y*gridcell_y, fillcolour)
 
 def equalchance(params, repetition):
@@ -460,8 +466,6 @@ def parse_chance_functions(chance_functions):
 			return functions
 		except:
 			return None
-
-
 
 def parse_probability(probability):
 	probability = probability.replace("+"," ").replace(",","")
