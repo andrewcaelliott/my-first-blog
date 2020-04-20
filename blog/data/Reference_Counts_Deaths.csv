@@ -23,4 +23,11 @@
 ,Annual average of deaths due to assault in the United Kingdom 2013-2018,290,unit,0,people,count.deaths,https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths
 ,Deaths in the Lion Air Flight 610 crash in 2018,189,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Lion_Air_Flight_610
 ,Deaths due to terrorism in the UK from 1970-2018,3410,unit,0,people,count.deaths,https://ourworldindata.org/terrorism#all-charts-preview
-,Hospital deaths from Coronavirus in the UK up to 18 Apr 2020,15464,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/uk/
+,Hospital deaths from Coronavirus in the UK up to 18 Apr 2020,16060,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/uk/
+,Recorded Coronavirus Hospital Deaths in the UK for 18 Apr 2020,596,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the USA for 18 Apr 2020,1539,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Deaths due to the the sinking of the Titanic in 1912,1496,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Sinking_of_the_RMS_Titanic
+,Deaths from Coronavirus in the USA up to 18 Apr 2020,40553,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Deaths of UK soldiers in the battle of the Somme in 1916,420,thousand,3,people,count.deaths,https://en.wikipedia.org/wiki/Battle_of_the_Somme
+,Deaths of British soldiers in the Charge of the Light Brigade in 1854,110,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Charge_of_the_Light_Brigade
+,Deaths of Allied soldiers in the D-Day Landings in 1944,4414,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Normandy_landings
