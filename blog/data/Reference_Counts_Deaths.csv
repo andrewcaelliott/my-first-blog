@@ -1,33 +1,50 @@
-1,Recorded Coronavirus Hospital Deaths in the UK for 17 Apr 2020,888,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 16 Apr 2020,847,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 15 Apr 2020,861,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 14 Apr 2020,761,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 13 Apr 2020,778,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 12 Apr 2020,717,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 11 Apr 2020,737,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for week 11-17 Apr 2020,5589,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 10 Apr 2020,917,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 9 Apr 2020,980,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 8 Apr 2020,881,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 7 Apr 2020,938,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 6 Apr 2020,786,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 5 Apr 2020,439,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 4 Apr 2020,621,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for week 4-10 Apr 2020,5562,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for fortnight 4-17 Apr 2020,11151,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 3 Apr 2020,708,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Hospital  Deaths in the UK for 2 Apr 2020,684,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+1,Recorded Coronavirus Deaths in the UK for 17 Apr 2020,1115,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 16 Apr 2020,935,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 15 Apr 2020,1029,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 14 Apr 2020,842,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 13 Apr 2020,1044,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 12 Apr 2020,744,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 11 Apr 2020,686,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for week 11-17 Apr 2020,6395,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 10 Apr 2020,839,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 9 Apr 2020,1152,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 8 Apr 2020,1103,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 7 Apr 2020,1034,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 6 Apr 2020,1038,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 5 Apr 2020,568,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 4 Apr 2020,644,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for week 4-10 Apr 2020,6378,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for fortnight 4-17 Apr 2020,12773,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 3 Apr 2020,760,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 2 Apr 2020,714,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 1 Apr 2020,652,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Deaths in the Hillsborough Stadium disaster in 1989,96,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Hillsborough_disaster
 ,Deaths in the 9/11 terrorist attacks in the United States in 2001,2996,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Hillsborough_disaster
 ,Annual average road traffic deaths in the United Kingdom 2013-2018,1623,unit,0,people,count.deaths,https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths
 ,Annual average of deaths due to assault in the United Kingdom 2013-2018,290,unit,0,people,count.deaths,https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths
 ,Deaths in the Lion Air Flight 610 crash in 2018,189,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Lion_Air_Flight_610
 ,Deaths due to terrorism in the UK from 1970-2018,3410,unit,0,people,count.deaths,https://ourworldindata.org/terrorism#all-charts-preview
-,Hospital deaths from Coronavirus in the UK up to 18 Apr 2020,16060,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/uk/
-,Recorded Coronavirus Hospital Deaths in the UK for 18 Apr 2020,596,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Deaths from Coronavirus in the UK up to 18 Apr 2020,16060,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/uk/
+,Recorded Coronavirus Deaths in the UK for 18 Apr 2020,498,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Recorded Coronavirus Deaths in the USA for 18 Apr 2020,1539,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
 ,Deaths due to the the sinking of the Titanic in 1912,1496,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Sinking_of_the_RMS_Titanic
 ,Deaths from Coronavirus in the USA up to 18 Apr 2020,40553,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
 ,Deaths of UK soldiers in the battle of the Somme in 1916,420,thousand,3,people,count.deaths,https://en.wikipedia.org/wiki/Battle_of_the_Somme
 ,Deaths of British soldiers in the Charge of the Light Brigade in 1854,110,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Charge_of_the_Light_Brigade
 ,Deaths of Allied soldiers in the D-Day Landings in 1944,4414,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Normandy_landings
+,Recorded Coronavirus Deaths in the UK for 19 Apr 2020,559,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 20 Apr 2020,1172,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 21 Apr 2020,837,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Estimated civilian deaths in the Blitz bombing of British cities World War II,43,thousand,3,people,count.deaths,https://www.britannica.com/event/the-Blitz
+,Recorded Coronavirus Deaths in the UK for 22 Apr 2020,727,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 23 Apr 2020,1005,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 24 Apr 2020,843,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 25 Apr 2021,420,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 26 Apr 2021,338,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 27 Apr 2021,909,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 28 Apr 2022,795,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 29 Apr 2022,674,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 30 Apr 2022,739,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for week 18-24 Apr 2020,5641,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 1 May 2022,621,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for week 25 Apr - 1 May 2020,4496,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
