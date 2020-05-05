@@ -39,12 +39,58 @@
 ,Recorded Coronavirus Deaths in the UK for 22 Apr 2020,727,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Recorded Coronavirus Deaths in the UK for 23 Apr 2020,1005,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Recorded Coronavirus Deaths in the UK for 24 Apr 2020,843,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Deaths in the UK for 25 Apr 2021,420,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Deaths in the UK for 26 Apr 2021,338,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Deaths in the UK for 27 Apr 2021,909,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Deaths in the UK for 28 Apr 2022,795,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Deaths in the UK for 29 Apr 2022,674,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
-,Recorded Coronavirus Deaths in the UK for 30 Apr 2022,739,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 25 Apr 2020,420,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 26 Apr 2020,338,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 27 Apr 2020,909,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 28 Apr 2020,795,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 29 Apr 2020,674,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 30 Apr 2020,739,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Recorded Coronavirus Deaths in the UK for week 18-24 Apr 2020,5641,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Recorded Coronavirus Deaths in the UK for 1 May 2022,621,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
 ,Recorded Coronavirus Deaths in the UK for week 25 Apr - 1 May 2020,4496,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for Apr 2020,24415,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for fortnight 18 Apr - 1 May 2020,10137,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the UK for 2 May 2020,315,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Deaths in the battle of Trafalgar in 1805,458,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/Battle_of_Trafalgar
+,"Deaths resulting from the Atomic bomb dropped on Hiroshima, Japan in 1945",146,thousand,3,people,count.deaths,https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki
+,Deaths in the battle of Stalingrad in 1942,850,thousand,3,people,count.deaths,https://en.wikipedia.org/wiki/Battle_of_Stalingrad
+,Deaths in the sinking of the Herald of Free Enterprise in the English Channel 1987,193,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/List_of_maritime_disasters_in_the_20th_century
+,"Deaths in the bombing of Pearl Harbour, Hawaii in 1941",2500,unit,0,people,count.deaths,https://en.wikipedia.org/wiki/List_of_battles_and_other_violent_events_by_death_toll
+,Recorded Coronavirus Deaths in the UK for 3 May 2020,288,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk
+,Recorded Coronavirus Deaths in the US for 2020-04-01,1182,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-02,1263,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-03,1545,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-04,1409,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-05,1505,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-06,2228,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-07,2165,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-08,2111,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-09,2236,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-10,2024,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-11,1727,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-12,1726,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-13,2566,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-14,2631,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-15,2193,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-16,2543,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-17,1883,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-18,1570,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-19,1952,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-20,2683,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-21,2358,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-22,2340,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-23,1957,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-24,2065,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-25,1156,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-26,1383,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-27,2470,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-28,2390,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-29,2201,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-04-30,1897,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for 2020-05-01,1691,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for the week starting 2020-04-04,13678,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for the week starting 2020-04-11,15269,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for the week starting 2020-04-18,14925,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for the week starting 2020-04-25,13188,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the US for April 2020,59359,unit,0,people,count.deaths,https://www.worldometers.info/coronavirus/country/us/
+,Recorded Coronavirus Deaths in the UK for 4 May 2020,693,unit,0,people,count.deaths,https://twitter.com/DHSCgovuk

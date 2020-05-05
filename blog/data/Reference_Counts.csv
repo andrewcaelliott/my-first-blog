@@ -69,6 +69,8 @@
 69,number of words in Roald Dahl's Charlie and the Chocolate Factory,30.644,thousand,3,words,count,http://commonplacebook.com/art/books/word-count-for-famous-novels/
 70,seats in Lord's Cricket Ground,30,thousand,3,seats,count,https://en.wikipedia.org/wiki/List_of_cricket_grounds_by_capacity
 71,seats in Madison Square Garden concert venue (NYC),20,thousand,3,seats,count,https://en.wikipedia.org/wiki/Madison_Square_Garden
+,seats in the Hollywood Bowl auditorium,17.5,thousand,3,seats,count,https://en.wikipedia.org/wiki/Hollywood_Bowl
+,"seats in the Arena in Verona, Italy",15,thousand,3,seats,count,https://en.wikipedia.org/wiki/Verona_Arena
 72,airports in the United States,13.5,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 73,stars visible to the naked eye (of magnitude 6.5 or brighter),9.096,thousand,3,stars,count,http://www.skyandtelescope.com/astronomy-resources/how-many-stars-night-sky-09172014/
 74,rooms in the First World Hotel in Genting Highlands (Malaysia),7.351,thousand,3,rooms,count,https://en.wikipedia.org/wiki/List_of_largest_hotels_in_the_world
@@ -78,28 +80,40 @@
 78,container ships in the world,4.968,thousand,3,ships,count,http://www.worldshipping.org/about-the-industry/liner-ships/container-vessel-fleet
 79,satellites orbiting the Earth (2015),4.077,thousand,3,satellites,count,http://www.pixalytics.com/sat-orbit-2015/
 80,grains of sugar in a teaspoon,4,thousand,3,grains,count,http://www.vendian.org/envelope/dir0/grain_feel.html
+,seats in New York City's Metropolitan Opera,3.8,thousand,3,seats,count,https://en.wikipedia.org/wiki/Metropolitan_Opera_House_(Lincoln_Center)
 81,seats in Hammersmith Apollo music venue (London),3.632,thousand,3,seats,count,http://www.eventimapollo.com/venueinfo/venue-history
 82,airports in the European Union,3.102,thousand,3,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 83,passengers on the Queen Mary 2 cruise liner,3.09,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
 84,seats in Carnegie Hall,2.804,thousand,3,seats,count,https://en.wikipedia.org/wiki/Carnegie_Hall
 ,seats in Royal Festival Hall,2.7,thousand,3,seats,count,https://www.southbankcentre.co.uk/venues/royal-festival-hall
 85,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
+,"seats in La Scala opera house, Milan",2.03,thousand,3,seats,count,https://en.wikipedia.org/wiki/La_Scala
 86,paintings that Picasso painted,1.885,thousand,3,paintings,count,https://en.wikipedia.org/wiki/Pablo_Picasso
 87,billionaires in the world,1.826,thousand,3,billionaires,count,Thanks to Google
 88,Boeing 747's built (2016),1.52,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
 ,possible starting hands in Hold'em poker,1.326,thousand,3,hands,count,https://en.wikipedia.org/wiki/Texas_hold_%27em_starting_hands
+,passengers on an Underground train on London's Central Line,1.047,thousand,3,passengers,count,https://www.ianvisits.co.uk/blog/2016/08/05/london-tube-train-capacities/
 89,patents held by Thomas Edison,1.093,thousand,3,patents,count,https://en.wikipedia.org/wiki/List_of_Edison_patents
 ,seats in London's Olivier Theatre,1.16,thousand,3,seats,count,https://en.wikipedia.org/wiki/Royal_National_Theatre
+,passengers on an Airbus A380-800 airliner (certified capacity),853,unit,0,passengers,count,https://en.wikipedia.org/wiki/Airbus_A380
+,passengers on an Underground train on London's Bakerloo Line,847,unit,0,passengers,count,https://www.ianvisits.co.uk/blog/2016/08/05/london-tube-train-capacities/
+,passengers on an Underground train on London's Northern Line,800,unit,0,passengers,count,https://www.ianvisits.co.uk/blog/2016/08/05/london-tube-train-capacities/
 90,books that Barbara Cartland wrote,723,unit,0,books,count,https://en.wikipedia.org/wiki/Barbara_Cartland
 91,members of the UK Parliament (commons),650,unit,0,members,count,https://en.wikipedia.org/wiki/Parliament_of_the_United_Kingdom
 92,musical pieces by Mozart as catalogued by Köchel,626,unit,0,pieces,count,https://en.wikipedia.org/wiki/Köchel_catalogue
+,passengers on a Boeing 777-300 airliner (certified capacity),550,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 93,Completed buildings designed by Frank Lloyd Wright,532,unit,0,buildings,count,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright
-94,passengers on an Airbus A380 airliner,525,unit,0,passengers,count,https://en.wikipedia.org/wiki/Airbus_A380
+94,passengers on an Airbus A380 airliner (typical configuration),525,unit,0,passengers,count,https://en.wikipedia.org/wiki/Airbus_A380
+,passengers on a Boeing 747-400 airliner (maximum capacity),524,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 95,airports in China,507,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+,passengers on a Airbus A340-600 airliner (maximum capacity),475,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 96,airports in the United Kingdom,460,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 97,nuclear power plants in the world (2015),438,unit,0,powerplants,count,http://www.nei.org/Knowledge-Center/Nuclear-Statistics/World-Statistics
 98,members of US House of Representatives,434,unit,0,members,count,https://en.wikipedia.org/wiki/United_States_House_of_Representatives
+,passengers on a Boeing 747-400 airliner (typical configuration),416,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
+,passengers on a Airbus A340-600 airliner (maximum capacity),380,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 99,skyscrapers in Hong Kong (>150m tall),380,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+,passengers on a Boeing 777-300 airliner (typical configuration),368,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 ,ways a travelling salesman can visit six towns (and return home),360,unit,0,words,count,https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms
 ,digits used in writing a googol in binary,333,unit,0,digits,count,https://googillion.wordpress.com/2007/12/01/googol-vs-googillion/
 100,songs recorded by the Beatles,309,unit,0,songs,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=2
@@ -112,6 +126,7 @@
 107,skyscrapers in Shanghai (>150m tall),135,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 108,airports in Cuba,133,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 109,airports in New Zealand,123,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
+,passengers in a carriage of an Underground train on London's Bakerloo line,121,unit,0,passengers,count,https://www.ianvisits.co.uk/blog/2016/08/05/london-tube-train-capacities/
 ,ways of seating six people around a table,120,unit,0,ways,count,https://www.mytutor.co.uk/answers/8482/GCSE/Further-Maths/How-many-different-ways-are-there-to-seat-6-people-at-a-round-table
 110,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 111,members of US Senate,100,unit,0,members,count,http://www.senate.gov/reference/reference_index_subjects/Senators_vrd.htm
