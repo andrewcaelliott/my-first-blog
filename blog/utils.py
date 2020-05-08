@@ -612,8 +612,8 @@ def randomFact(klass, measure, rseed=None):
         seed(rseed)
     else:
         seed()
-    if measure[-1]=="!":
-        candidates = klass.objects.filter(measure=measure[:-1])    
+    if measure[-1] == "!":
+        candidates = klass.objects.filter(measure__startswith=measure[:-1]).exclude(measure__contains='~')    
     else:
         candidates = klass.objects.filter(measure__startswith=measure)    
     count = candidates.count()

@@ -160,8 +160,8 @@ def run7():
 	biggest = biggestNumberFact(bestComparisons)
 	print(">>>", biggest.render)
 
-def run():
-	measure=("capacity")
+def run8():
+	measure=("count")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
 	magnitude = rf.magnitude
@@ -197,6 +197,12 @@ def run():
 
 	print(1, bracketNumber(NumberFact, "100", 18, measure))
 
+def run():
+	measure=("mass")
+	seed = randint(0,1000000)
+	rf = randomFact(NumberFact, measure, rseed=seed)
+	print(rf)
+	print(rf.measure)
 
 def run10():
 	klass = NumberFact

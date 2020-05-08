@@ -9,16 +9,16 @@
 	  	gtag('js', new Date());
   		gtag('config', 'UA-107670583-1');
 	</script>
-       <title>Is That A Big Number? - {% block title %}{% endblock %}</title>
+       <title>What are the Chances of That? - {% block title %}{% endblock %}</title>
        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	<link rel="stylesheet" href="{% static 'css/watcot_blog.css' %}">
 	<link href="http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 	<link rel='shortcut icon' type='image/x-icon' href="{% static './favicon.ico' %}"/>
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@itabn_andrew" />
-	<meta name="twitter:title" content="Is That A Big Number?" />
-	<meta name="twitter:description" content="Put Big Numbers in context. Develop a Number Sense. Numbers-led Blog." />
+	<meta name="twitter:title" content="What are the Chances of That?" />
+	<meta name="twitter:description" content="Explore the numbers behind chance and uncertainty" />
 	<meta name="twitter:image" content="http://www.isthatabignumber.com/static/itabn-twit.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
@@ -94,7 +94,7 @@
 		        	</span>
 		</h4>			        	
 	        <div class="widget">
-		        <h3><a href ="/home/" title="Take me home">Home</a> - <!--a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversions</a> - --><a href ="/facts/" title="Explore our treasury of numbers">Facts</a> - <a href ="/quiz/" title="Test your number sense">Quiz</a> - <a href ="/ratio/" title="See examples of numbers with a given ratio">Ratios</a> - <a href ="/country/" title="Explore numbers for particular countries">Countries</a><!-- - <a href ="/watcot_home/" title="What are the Chances of That?">Chances</a> --></h3>
+		        <h3><a href ="/home/" title="Take me home">Home</a> - <!--a href ="/itabn/" title="Widgets for every kind of number available">How Big?</a> - <a href ="/convert/" title="Convert between different units">Conversions</a> - --><a href ="/facts/" title="Explore our collection of chances">Chances</a> - <a href ="/chance/" title="Experiment with chances">Play</a> - <a href ="/itabn_home/" title="Is That a Big Number?">Numbers</a></h3>
     		</div>
 		<div class="row">
                     <div class="widget col-lg-5 col-md-5 col-sm-12 col-xs-12">
@@ -155,11 +155,18 @@
 				    	<h3>Is That A Big Number? - The Book</h3>
 				    	<p>Yes, there's now an engaging, informative book based on these numbers. Oxford University Press: July 2018.</p><p><a href ="../article/book-synopsis" target="_blank">Click here to learn more about it.</a></p><p><a href ="https://newbooksnetwork.com/andrew-c-a-elliott-is-that-a-big-number/" target="_blank">Click here for Podcast: Andrew Elliott interviewed for New Books Network.</a></p>
 				    	</div>
+				    	{% elif promote == "watcot-book" %}
+				    	<div class="message">
+				    	<h3>What are the Chances of That? - The Book</h3>
+				    	<p>Five reasons that we find it hard to think about uncertainty. To be published by Oxford University Press in 2021.</p><p><a href ="../article/watcot-book-synopsis" target="_blank">Click here to learn more about it.</a></p>
+				    	</div>
 				    	{% else %}
 				    	<div class="message">
 				    	<h3>Read all about it!</h3>
+				    	<h4>What are the Chances of That? - the book - will be published in 2021.</h4>
+				    	<p>Five reasons that we find it hard to think about uncertainty.</p><p><a href ="../watcot-book-synopsis" target="_blank">Click here to learn more about it.</a></p>
 				    	<h4>Is That a Big Number? - the book - is now available from all good booksellers.</h4>
-				    	<p>"This is a fun and riveting book. Written in an accessible and engaging way, it is unputdownable." Frost Magazine</p><p><a href ="../article/book-synopsis" target="_blank">Click here to learn more about it.</a></p><p><a href ="https://newbooksnetwork.com/andrew-c-a-elliott-is-that-a-big-number/" target="_blank">Click here for Podcast: Andrew Elliott interviewed for New Books Network.</a></p>
+				    	<p>"This is a fun and riveting book. Written in an accessible and engaging way, it is unputdownable." Frost Magazine</p><p><a href ="../book-synopsis" target="_blank">Click here to learn more about it.</a></p>
 				    	</div>
 				    	{% endif %}
 					<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/cpETHSzuKqn7I7CzxFgXRA/138631317782" data-did="84bc0fdf6dfb9a30c7f7a364018ec26086f1e047"><a href="http://itabn.tumblr.com/post/138631317782/this-website">http://itabn.tumblr.com/post/138631317782/this-website</a>

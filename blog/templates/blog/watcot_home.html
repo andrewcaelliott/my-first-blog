@@ -1,0 +1,53 @@
+{% extends 'blog/watcot_base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{ % block quote %}
+	<p>{{ quote }}</p>
+{% endblock % }
+
+{# % block dyk %}
+       	<p><strong>Did you know: </strong>{{ dyk.fact1 }} <em>{{ dyk.comparison }}</em> {{ dyk.fact2 }}</p>
+	<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="{{ dyk.fact1 }} {{ dyk.comparison }} {{ dyk.fact2 }} #IsThatABigNumber? #RandomComparison">Tweet</a>
+{% endblock % #}
+
+{% block content %}
+        <div class="row widget">
+            <div>
+		<!--h1><a href="">Is This A Big Number?</a></h1-->
+	        <form method="GET" class="query-form freeform" action="/itabn/compare">
+                    <b><p>{{ freeForm.number.label }}</p></b>
+                    <br/>
+                    <p>{{ freeForm.number}}</p>
+	                <button type="submit" class="save btn btn-warning">Ask</button>
+	        </form>
+	        <p>Free-form entry eg: '125000km', '1.5 million inches', '$67bn', '45000000 AUD', 100years', '123456789', '1 trillion', '1.5e6', '25 million kg'</p>
+            </div>
+        </div>
+        <div class="row">
+        	{% for widget in widgets %}
+            <div class="widget col-lg-4 col-md-6 col-sm-6 col-xs-12 blog-summary">
+            	<div>
+					<h1><a href="../{{widget.context}}">{{widget.title}}</a></h1>
+	                <h5>{{widget.subtitle}}</h5>
+	                <h4><a href="{{ widget.stories.featured.links.0 }}" target="_blank">{{ widget.stories.featured.title }}</a></h4>
+	                {% if widget.stories.featured.img_url %}
+	                <a href="{{ widget.stories.featured.links.0 }}" target="_blank"><img class = "constrained-0" src="{{ widget.stories.featured.img_url }}" /></a>
+	                {% endif %}
+	                {% for line in widget.stories.featured.synopsis %}
+	                <p>{{ line }}</p>
+	                {% endfor %}
+	                {% for link in widget.stories.featured.links %}
+	                <p><a href="{{ link }}" target="_blank">{{ link }}</a></p>
+	                {% endfor %}
+	                <div class="blog-summary-footer">
+		                <h3>More ...</h3>
+			        {% for item in widget.stories.other %}
+			                <p><a href="../{{widget.context}}?topstory={{item.title}}">{{ item.title }}</a></p>
+			        {% endfor %}
+		        	</div>
+            	</div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

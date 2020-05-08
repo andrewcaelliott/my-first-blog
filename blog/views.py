@@ -36,20 +36,28 @@ from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from .chance_utils import fillcolours, drawgrid, odds2, do_trial,parse_probability, distribution,summary
 from .chance_utils import compute_chance_grid,draw_chance_grid,draw_count_grid
+from .watcot_views import watcot_home, article as watcot_article
 
-def home(request):
+contexts = ["nitn", "ftlon", "ggb", "lmk"]
+titles = [""]
+
+
+def itabn_home(request):
     freeForm = FreeForm()
     freeForm.fields["number"].label="Is this a big number?"
     widgets = []
     for section in ["news", "passion", "education", "landmark"]:
         widget = buildSection(section)
         widgets += [widget]
-    dyk=spuriousFact(NumberFact,3)
+    dyk=spuriousFact(NumberFact,3)  
     promote = choice(["book", "book2", "book3","book4","book5"])
     return render(request, 'blog/home.html', {'widgets':sample(widgets,3), 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
-contexts = ["nitn", "ftlon", "ggb", "lmk"]
-titles = [""]
+def home(request):
+    host =request.build_absolute_uri()
+    if host.find('chance')>=0:
+        return watcot_home(request)
+    return itabn_home(request)
 
 
 def buildSection(section):
@@ -122,11 +130,20 @@ def blog_lmk(request):
     return blog("landmark", request)
 
 def article(article_name, request):
+    host =request.build_absolute_uri()
+    if host.find('chance')>=0:
+        return watcot_article(article_name, request)
+    return itabn_article(article_name, request)
+
+
+def itabn_article(article_name, request):
     content=get_article(article_name)
     dyk=spuriousFact(NumberFact,3)
 #    promote = choice(["sponsor","donate"])
 #    return render(request, 'blog/article.html', {'quote': choice(quotes), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
     return render(request, 'blog/article.html', {'quote': choice(quotes), "content": content, "dyk":dyk})
+
+
 
 def article_sponsor(request):
     return article("ITABN-Sponsors.md", request)
