@@ -85,7 +85,7 @@ form.choice {
 }
 
 .content h1 a, .content h2, .content h3, .content h3 a , .content h4 a {
-    color: #487D18
+    color: #c05000;
 }
 
 div.content.container{
@@ -145,7 +145,7 @@ div.content.container{
 
 
 .content .widget > div {
-    background-color: rgba(72,125,24,0.1);
+    background-color: #fff0e0;
     padding: 1rem;
 }
 

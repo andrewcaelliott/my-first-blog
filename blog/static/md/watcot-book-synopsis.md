@@ -11,28 +11,28 @@ Here's an idea of what the book contains:
 ## Introduction - Living in an Uncertain World
 
 ## Part 1 - Pure Chance
-### John Scarne - White-hat Hustler
+### John Scarne: White-hat Hustler
 ### The Roll of the Dice
 ### Reckoning the Chances
 ### Random Thoughts
 ### Patterns of Probability
 
 ## Part 2 - The Chances of Life
-### John Graunt
-### Isn't that a Coincidence
+### John Graunt: Watching the Hatching and Dispatching
+### Isn't that a Coincidence?
 ### Finding Fortune
 ### Taking a Gamble
 ### Danger of Death
 ### Why Worry?
 
 ## Part 3 - Happy Accidents
-### Iannis Xenakis
+### Iannis Xenakis: Maker of Mathematical Music
 ### Chance Discoveries
 ### Mixing it Up
 ### A Chance to Live
 
 ## Part 4 - Taking Charge of Chance
-### Florence Nightingale
+### Florence Nightingale: the Lady with the Stats
 ### Weight of Evidence
 ### Clarity from Chaos
 ### Sharing the Risk
