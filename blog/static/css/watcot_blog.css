@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .page-header {
-    background-color: #18b018;
+    background-color: #24b024;
     margin-top: 0;
     margin-bottom: 0;
     padding: 10px 10px 15px 10px;
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .dyk, .dyk a {
-    background-color: #18b018;
+    background-color: #24b024;
     color: #403030;
 }
 
@@ -393,7 +393,7 @@ ul:hover svg.major-quantile circle.refdatapoint {
 
 
     .page-header {
-         background-color: #18b018;
+         background-color: #24b024;
          margin-top: 0;
         padding: 10px 20px 15px 40px;
     }
