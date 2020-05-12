@@ -1351,3 +1351,18 @@ def get_stat(klass, compkey):
     key, subkey = compkey.split(".")
     fullstat =  country_stats[key][subkey]
     return list(map(lambda k:(k, fullstat["items"][k]), fullstat["sortindex"]))
+
+def getParamDefault(params, key, default, preserve_plus=False):
+    try:
+        result = params.get(key)
+        if result == None:
+            return default
+        elif result == "":
+            return default
+        else:
+            if preserve_plus:
+                return result
+            else:
+                return result.replace("+"," ")
+    except:
+        return default

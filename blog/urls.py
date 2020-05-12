@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from . import views
+from . import watcot_views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -43,8 +44,8 @@ urlpatterns = [
     url(r'^links/save/$', views.links_save, name="links-save"),
     url(r'^ajax/comparison/$', views.comparison, name="comparison"),
     url(r'^ajax/quote/$', views.quote, name="quote"),
-    url(r'^chance/$', views.chance, name="chance"),
-    url(r'^chance/answer/$', views.chance, name="chance"),
+    url(r'^chance/$', watcot_views.chance, name="chance"),
+    url(r'^chance/answer/$', watcot_views.chance, name="chance"),
     url(r'^gridpng/$', views.grid, name="grid"),
     url(r'^gridchancepng/$', views.gridchance, name="gridchance"),
 ]
