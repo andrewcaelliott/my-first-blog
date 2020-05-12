@@ -8,7 +8,6 @@ db.sqlite3
 /static
 .DS_Store
 /*.PNG
-/blog/migrations
 appendix
 /blog/data2/factbook/factbook/css
 /blog/data2/factbook/factbook/docs
