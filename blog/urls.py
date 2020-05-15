@@ -46,6 +46,7 @@ urlpatterns = [
     url(r'^ajax/quote/$', views.quote, name="quote"),
     url(r'^chance/$', watcot_views.chance, name="chance"),
     url(r'^chance/answer/$', watcot_views.chance, name="chance"),
-    url(r'^gridpng/$', views.grid, name="grid"),
-    url(r'^gridchancepng/$', views.gridchance, name="gridchance"),
+    url(r'^basegridpng/$', watcot_views.basegrid, name="basegrid"),
+    url(r'^gridpng/$', watcot_views.grid, name="grid"),
+    url(r'^gridchancepng/$', watcot_views.gridchance, name="gridchance"),
 ]

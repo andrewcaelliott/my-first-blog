@@ -34,8 +34,9 @@ from .dummycontent import storySelection
 from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
-from .chance_utils import fillcolours, drawgrid, odds2, do_trial,parse_probability, distribution,summary
-from .chance_utils import compute_chance_grid,draw_chance_grid,draw_count_grid
+from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
+from .chance_utils import compute_chance_grid
+from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
 from .watcot_views import watcot_home, article as watcot_article
 from .utils import getParamDefault
 
@@ -776,45 +777,6 @@ def quote(request):
     quote = render_to_string('blog/quote.html', {"quote":quotation})
     return JsonResponse({"quote":quote})
 
-
-
-def grid(request):
-    params = request.GET
-    width = int(getParamDefault(params, "width", "20"))
-    exposed = width
-    depth = int(getParamDefault(params, "depth", "1"))
-    hits = int(getParamDefault(params, "hits", "5"))
-    invert = getParamDefault(params, "invert", "F")
-    fillcolour = fillcolours()
-    colourset = ((12, fillcolour[0]), (25, fillcolour[1]), (81, fillcolour[2]), (1056, fillcolour[3]))
-    if width > 200:
-        depth = int((width+199) / 200)
-        width = 200
-
-    surface = draw_count_grid(width, depth, hits, exposed, invert = invert.find("T")>=0)
-    response = HttpResponse(content_type="image/png")
-    surface.write_to_png(response)
-    return response
-
-def gridchance(request):
-    params = request.GET
-    width = int(getParamDefault(params, "width", "20"))
-    depth = int(getParamDefault(params, "depth", "10"))
-    repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
-    top_down_param = getParamDefault(params, "top_down", "false")
-    top_down = top_down_param.lower()[0] == "t"
-    try:
-        seed = int(getParamDefault(params, "seed", None))
-    except:
-        seed = None
-    probability = num(getParamDefault(params, "probability", "0.1"))
-    fillcolour = fillcolours()
-    colourset = ((12, fillcolour[0]), (25, fillcolour[1]), (81, fillcolour[2]), (1056, fillcolour[3]))
-    count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
-    surface = draw_chance_grid(grid, width, depth, top_down = top_down)
-    response = HttpResponse(content_type="image/png")
-    surface.write_to_png(response)
-    return response
 
 
 

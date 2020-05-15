@@ -34,8 +34,9 @@ from .dummycontent import storySelection
 from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
-from .chance_utils import fillcolours, drawgrid, odds2, do_trial,parse_probability, distribution,summary
-from .chance_utils import compute_chance_grid,draw_chance_grid,draw_count_grid
+from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
+from .chance_utils import compute_chance_grid
+from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
 from .utils import getParamDefault
 
 contexts = ["nitn", "ftlon", "ggb", "lmk"]
@@ -96,6 +97,7 @@ def chance(request):
     outcome_count = getParamDefault(params, "outcome_count", "100")
     outcome_text = getParamDefault(params, "outcome_text", "hits")
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
+    palette = getParamDefault(params, "palette", "default")
     hits = num(outcome_count)
     target = getParamDefault(params, "calc_target", "hits")
     description = "this"
@@ -154,12 +156,11 @@ def chance(request):
         calc_items = int(hits / (prob * repetitions))
         items = calc_items
         form.fields["exposed_items"].initial = str(calc_items)
-        print("items", calc_items, form.fields["exposed_items"].initial)
     if (target == 'repetitions'):
         calc_repetitions = int(hits / (prob * items))
         repetitions = calc_repetitions
         form.fields["exposed_repetitions"].initial = str(calc_repetitions)
-    fraction = Fraction(prob).limit_denominator(1000)
+    fraction = Fraction(prob).limit_denominator(10000)
     odds_raw = odds2(prob, tolerance = 0.0005)
     odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
     percentage = prob * 100
@@ -192,3 +193,57 @@ def chance(request):
     promote = choice(["book", "book", "book"])
     return render(request, 'blog/chance.html', {'description': description, 'form': form, 'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
+
+
+def basegrid(request):
+    params = request.GET
+    width = int(getParamDefault(params, "width", "20"))
+    depth = int(getParamDefault(params, "depth", "1"))
+    aspect = float(getParamDefault(params, "aspect", "10"))
+    exposed = width * depth
+    hits = int(getParamDefault(params, "hits", "5"))
+    palette = get_palette(getParamDefault(params, "palette_name", "default"))
+    invert = getParamDefault(params, "invert", "F")
+    xy = getParamDefault(params, "xy", "F")
+    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0)
+    response = HttpResponse(content_type="image/png")
+    surface.write_to_png(response)
+    return response
+
+def grid(request):
+    params = request.GET
+    width = int(getParamDefault(params, "width", "20"))
+    aspect = float(getParamDefault(params, "aspect", "10"))
+    depth = int(getParamDefault(params, "depth", "1"))
+    exposed = int(getParamDefault(params, "exposed", width*depth))
+    hits = int(getParamDefault(params, "hits", "5"))
+    palette = get_palette(getParamDefault(params, "palette_name", "default"))
+    invert = getParamDefault(params, "invert", "F")
+    xy = getParamDefault(params, "xy", "F")
+    cutoff = 100
+    if exposed > cutoff and depth == 1:
+        depth = int((exposed+cutoff - 1) / cutoff)
+        width = int(exposed / depth +0.99)
+    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0)
+    response = HttpResponse(content_type="image/png")
+    surface.write_to_png(response)
+    return response
+
+def gridchance(request):
+    params = request.GET
+    width = int(getParamDefault(params, "width", "20"))
+    depth = int(getParamDefault(params, "depth", "10"))
+    repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
+    palette = get_palette(getParamDefault(params, "palette_name", "default"))
+    top_down_param = getParamDefault(params, "top_down", "false")
+    top_down = top_down_param.lower()[0] == "t"
+    try:
+        seed = int(getParamDefault(params, "seed", None))
+    except:
+        seed = None
+    probability = num(getParamDefault(params, "probability", "0.1"))
+    count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
+    surface = draw_chance_grid(grid, width, depth, palette=palette, top_down = top_down)
+    response = HttpResponse(content_type="image/png")
+    surface.write_to_png(response)
+    return response

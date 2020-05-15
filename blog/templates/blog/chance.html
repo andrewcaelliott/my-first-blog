@@ -42,11 +42,11 @@
                 <h3>As a rounded-off proportion</h3>
                 <li>{{equivalents.fraction.numerator}} in {{equivalents.fraction.denominator}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ fraction.denominator }}&depth=1&hits={{ fraction.numerator }}">
+                <img src="/gridpng/?width={{ fraction.denominator }}&palette_name={{ params.palette }}&xy=true&hits={{ fraction.numerator }}">
                 <h3>As approximate fair betting odds</h3>
                 <li>{{equivalents.odds.0}} : {{equivalents.odds.1}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ odds_fraction.1 }}&depth=1&hits={{ odds_fraction.0 }}&invert=True">
+                <img src="/gridpng/?width={{ odds_fraction.1 }}&palette_name={{ params.palette }}&xy=true&hits={{ odds_fraction.0 }}&invert=True">
             </div>
         </div>
         <div class="widget col-lg-12 col-md-12">
@@ -72,7 +72,7 @@
                 <li>Summary for {{ form.repetition_text.value }}: {{ trial.repetition_hits_summary}}</li>
                 {% endif %}
                 <p></p>
-                <img src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&seed={{ trial.seed }}&{{ trial.probability_model }}">
+                <img src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette }}&seed={{ trial.seed }}&{{ trial.probability_model }}">
             </div>
         </div>
 {% endblock %}
