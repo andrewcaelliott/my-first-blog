@@ -28,7 +28,8 @@ print_palette = {
             (0.5, 0.0, 0.5, 1.0), #
             (0.0, 0.5, 0.5, 1.0), #
             ],
-        'background': (0.8, 0.9, 0.75, 1.0), #Green
+        'background': (0.72, 0.9, 0.64, 1.0), #Green
+        #72,125,24,
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
 monochrome_palette = {
@@ -51,8 +52,6 @@ palettes = {
 }
 
 def get_palette(palette_name):
-    print(palette_name)
-    print(palettes.get(palette_name))
     return palettes.get(palette_name,default_palette)
 
 def square(ctx, square_size, squash, offset_x, offset_y, fillcolour, gridcolour):
@@ -108,8 +107,6 @@ def count_cell(ctx, offset_x, offset_y, gridcell_x, gridcell_y, range_y, hits, e
 
 
 def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False):
-    print("Palette %s" % palette)
-
     square_size = 0.9 / range_x
     gridcell_x = 0.9 / range_x
     gridcell_y = (0.9 / aspect) / range_y

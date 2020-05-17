@@ -104,7 +104,6 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
         chance_function = trial["chance_function"]
     else:
         chance_function = "[constant(probability)]"
-
     chance_functions = parse_chance_functions(chance_function).split("|")
     pairs = []
     for function in chance_functions:
@@ -230,8 +229,6 @@ def round_sigfigs(amount, level=1):
 def round_money(amount, level=1):
     scale = int(math.log10(amount))
     rounded = round(amount/10**(scale-1))
-    print(">>>>")
-    print("odds", scale, amount, rounded)
     if rounded >= 195:
         rounded = int(0.5 + rounded/5.0) * 5
     elif rounded >= 126:
@@ -253,13 +250,13 @@ def parse_chance_function(chance_function):
             return name, params
         except:
             return None
+    return 'constant', chance_function
 
 def parse_chance_functions(chance_functions):
-    regex="^\[(?P<functions>.*)\]$"
-    print(chance_functions)
+    chance_functions = chance_functions.replace("[",'').replace("]",'')
+    regex="^(?P<functions>.*)$"
     p = re.compile(regex)
     m=p.match(chance_functions)
-    print(m)
     if (m!=None):
         try:
             functions = m.group('functions')

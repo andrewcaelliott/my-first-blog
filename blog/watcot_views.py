@@ -14,7 +14,7 @@ from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spu
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
-from .forms import ChanceForm 
+from .forms import ChanceForm, SimpleChanceForm 
 from .forms import FreeForm,FreeFormCountry
 from .forms import ConvertForm 
 from .forms import FilterFactsForm 
@@ -86,19 +86,30 @@ def article(article_name, request):
 
 def chance(request):
     params = request.GET
-    form = ChanceForm()
-    probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
+    if getParamDefault(params, "form", "simple") == 'advanced':
+        form_type = 'advanced'
+        form = ChanceForm()
+        exposed_items = getParamDefault(params, "exposed_items", "100")
+        item_text = getParamDefault(params, "item_text", "items")
+        exposed_repetitions = getParamDefault(params, "exposed_repetitions", "100")
+        repetition_text = getParamDefault(params, "repetition_text", "times")
+    else:
+        form_type = 'simple'
+        form = SimpleChanceForm()
+        items = getParamDefault(params, "items", "100 items")
+        split_i = items.split(' ')
+        exposed_items =int(split_i[0])
+        item_text = ' '.join(split_i[1:])
+        repetitions = getParamDefault(params, "repetitions", "100 repetitions")
+        split_r = repetitions.split(' ')
+        exposed_repetitions =int(split_r[0])
+        repetition_text = ' '.join(split_r[1:])
+
     chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
-    increase = getParamDefault(params, "increase", "0")
-    exposed_items = getParamDefault(params, "exposed_items", "100")
-    item_text = getParamDefault(params, "item_text", "items")
-    exposed_repetitions = getParamDefault(params, "exposed_repetitions", "100")
-    repetition_text = getParamDefault(params, "repetition_text", "times")
-    outcome_count = getParamDefault(params, "outcome_count", "100")
+    probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
     outcome_text = getParamDefault(params, "outcome_text", "hits")
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
-    palette = getParamDefault(params, "palette", "default")
-    hits = num(outcome_count)
+    palette_name = getParamDefault(params, "palette", "default")
     target = getParamDefault(params, "calc_target", "hits")
     description = "this"
     permlink = getParamDefault(params, "fact", None)
@@ -115,22 +126,28 @@ def chance(request):
 
     form.fields["probability"].initial = probability
     form.fields["probability"].label = "Chance"
-    form.fields["chance_function"].initial = chance_function
-    form.fields["chance_function"].label = "Advanced"
-    form.fields["exposed_items"].initial = exposed_items
-    form.fields["exposed_items"].label = "How many things?"
-    form.fields["item_text"].initial = item_text
-    form.fields["item_text"].label = "What things are they?"
-    form.fields["exposed_repetitions"].initial = exposed_repetitions
-    form.fields["exposed_repetitions"].label = "Repeated how many times?"
-    form.fields["repetition_text"].initial = repetition_text
-    form.fields["repetition_text"].label = "Times are called?"
+    if form_type == 'advanced':
+        form.fields["chance_function"].initial = chance_function
+        form.fields["chance_function"].label = "Advanced"
+        form.fields["exposed_items"].initial = exposed_items
+        form.fields["exposed_items"].label = "How many things?"
+        form.fields["item_text"].initial = item_text
+        form.fields["item_text"].label = "What things are they?"
+        form.fields["exposed_repetitions"].initial = exposed_repetitions
+        form.fields["exposed_repetitions"].label = "Repeated how many times?"
+        form.fields["repetition_text"].initial = repetition_text
+        form.fields["repetition_text"].label = "Times are called?"
+        form.fields["repeat_mode"].initial = repeat_mode
+        form.fields["repeat_mode"].label = "repeats for "+item_text+" or removes?"
+        form.fields["palette_name"].initial = palette_name
+        form.fields["palette_name"].label = "Palette"
+    else:
+        form.fields["items"].initial = items
+        form.fields["items"].label = "How many things?"
+        form.fields["repetitions"].initial = repetitions
+        form.fields["repetitions"].label = "Repeated how many times?"
     form.fields["outcome_text"].initial = outcome_text
     form.fields["outcome_text"].label = "Hits are called?"
-    form.fields["repeat_mode"].initial = repeat_mode
-    form.fields["repeat_mode"].label = "repeats for "+item_text+" or removes?"
-    form.fields["outcome_count"].initial = outcome_count
-    form.fields["outcome_count"].label = "Average number of hits"
 
     prob = parse_probability(probability)
     items = int(exposed_items)
@@ -141,12 +158,12 @@ def chance(request):
         if repeat_mode == "repeats":
             calc_hits = prob * items * repetitions
             calc_hits_item = prob * repetitions
-            form.fields["outcome_count"].initial = str(calc_hits)
+            calc_wait = 1 / prob
         else:
             calc_wait = 1 / prob
+            calc_hits = -1
             survival_prob = (1 - prob) ** repetitions
             calc_hits_item = (1 - survival_prob) * items
-            form.fields["outcome_count"].initial = str(calc_wait)
 
     if (target == 'probability'):
         calc_prob = hits / (items * repetitions)
@@ -174,16 +191,21 @@ def chance(request):
     }
     trial = {
         "items": items,
+        "item_text": item_text,
         "repetitions": repetitions,
+        "repetition_text": repetition_text,
         "exposure": items * repetitions,
         "probability": prob,
         "repeat_mode": repeat_mode,
+        "calc_hits": calc_hits,
+        "hits_text": outcome_text,
+        "hit_wait": calc_wait,
         "seed": seed,
         "probability_model":"chance_function="+chance_function,
         "chance_function":chance_function,
-        "increase":increase
     }
-    dyk=spuriousFact(NumberFact,3)
+    print(trial)
+    dyk = spuriousFact(NumberFact,3)
     trial["hits"], trial["item_hits"], trial["repetition_hits"] = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed)
     trial["item_hits_distribution"]=distribution(trial["item_hits"])
     trial["item_hits_summary"]=summary(trial["item_hits_distribution"])

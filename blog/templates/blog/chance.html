@@ -22,17 +22,17 @@
         <div class="widget col-lg-6 col-md-6">
             <div>
                 <h2>The chances are:</h2>
-                {% if form.repeat_mode.value == "repeats"%}
-                    {% if form.exposed_repetitions.value = "1" %}
-                    <p>For {{ form.exposed_items.value }} {{ form.item_text.value }}, each with probability {{ equivalents.supplied }}, on average there will be {{ form.outcome_count.value | floatformat }} {{ form.outcome_text.value }}.</p>
-                    <p>On average there will be {{ hits_item | floatformat }} {{ form.outcome_text.value }} for each of the {{ form.item_text.value }}.</p>
+                {% if trial.repeat_mode == "repeats"%}
+                    {% if trial.repetitions == 1 %}
+                    <p>For {{ trial.items }} {{ trial.item_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.calc_hits | floatformat }} {{ trial.hits_text }}.</p>
+                    <p>On average there will be {{ hits_item | floatformat }} {{ trial.hits_text }} for each of the {{ trial.item_text }}.</p>
                     {% else %}
-                    <p>For {{ form.exposed_items.value }} {{ form.item_text.value }}, over {{ form.exposed_repetitions.value }} {{ form.repetition_text.value }}, each with probability {{ equivalents.supplied }}, on average there will be {{ form.outcome_count.value | floatformat }} {{ form.outcome_text.value }}.</p>
-                    <p>Over {{ form.exposed_repetitions.value }} {{ form.repetition_text.value }}, on average there will be {{ hits_item | floatformat }} {{ form.outcome_text.value }} for each of the {{ form.item_text.value }}.</p>
+                    <p>For {{ trial.items }} {{ trial.item_text }}, over {{ trial.repetitions }} {{ trial.repetition_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.calc_hits | floatformat }} {{ trial.hits_text }}.</p>
+                    <p>Over {{ trial.repetitions }} {{ trial.repetition_text }}, on average there will be {{ hits_item | floatformat }} {{ form.outcome_text.value }} for each of the {{ trial.item_text }}.</p>
                     {% endif %}
                 {% else %}
-                    <p>For multiple {{ form.repetition_text.value }}, each with probability {{ equivalents.supplied }}, on average there will be {{ form.outcome_count.value | floatformat }}  {{ form.repetition_text.value }} until {{ form.outcome_text.value }}.</p>
-                    <p>On average, with up to {{ form.exposed_repetitions.value }} repeated  {{ form.repetition_text.value }}, there will be {{ hits_item | floatformat }} {{ form.item_text.value }} with {{ form.outcome_text.value }}.</p>
+                    <p>For multiple {{ trial.repetition_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.hit_wait | floatformat }}  {{ trial.repetition_text }} until {{ trial.hits_text}}.</p>
+                    <p>On average, with up to {{ trial.repetitions }} repeated  {{ trial.repetition_text }}, there will be {{ hits_item | floatformat }} {{ trial.item_text}} with {{ trial.hits_text }}.</p>
                 {% endif %}
 
                 <h3>Probability</h3>
@@ -42,17 +42,17 @@
                 <h3>As a rounded-off proportion</h3>
                 <li>{{equivalents.fraction.numerator}} in {{equivalents.fraction.denominator}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ fraction.denominator }}&palette_name={{ params.palette }}&xy=true&hits={{ fraction.numerator }}">
+                <img src="/gridpng/?width={{ fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ fraction.numerator }}">
                 <h3>As approximate fair betting odds</h3>
                 <li>{{equivalents.odds.0}} : {{equivalents.odds.1}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ odds_fraction.1 }}&palette_name={{ params.palette }}&xy=true&hits={{ odds_fraction.0 }}&invert=True">
+                <img src="/gridpng/?width={{ odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ odds_fraction.0 }}&invert=True">
             </div>
         </div>
         <div class="widget col-lg-12 col-md-12">
             <div>
                 <h3>Representative example</h3>
-                {% if form.repeat_mode.value == "repeats"%}
+                {% if trial.repeat_mode == "repeats"%}
                     <li>{{trial.items}} {{ form.item_text.value }} x {{trial.repetitions}} {{ form.repetition_text.value }} = {{ trial.exposure }} chances for {{ form.outcome_text.value }}</li>
                     <li>Observed {{ form.outcome_text.value }}: {{ trial.hits }} = {{ trial.hit_percentage | floatformat:3}}% (expected average: 
                     {{ form.outcome_count.value | floatformat }} = {{ equivalents.percentage | floatformat:3 }}%)</li>
@@ -61,18 +61,18 @@
                     <li>Observed {{ form.outcome_text.value }}: {{ trial.hits }} (expected average: 
                     {{ hits_item | floatformat }})</li>
                 {% endif %}
-                <h4>For {{ form.item_text.value }}</h4>
-                <li>Counts for {{ form.item_text.value }}: {{ trial.item_hits}}</li>
+                <h4>For {{ trial.item_text }}</h4>
+                <li>Counts for {{ trial.item_text }}: {{ trial.item_hits}}</li>
                 <li>Distribution for {{ form.item_text.value }}: {{ trial.item_hits_distribution}}</li>
                 <li>Summary for {{ form.item_text.value }}: {{ trial.item_hits_summary}}</li>
                 {% if form.exposed_repetitions.value != "1" %}
-                <h4>For {{ form.repetition_text.value }}</h4>
-                <li>Counts for {{ form.repetition_text.value }}: {{ trial.repetition_hits}}</li>
+                <h4>For {{ trial.repetition_text }}</h4>
+                <li>Counts for {{ trial.repetition_text }}: {{ trial.repetition_hits}}</li>
                 <li>Distribution for {{ form.repetition_text.value }}: {{ trial.repetition_hits_distribution}}</li>
                 <li>Summary for {{ form.repetition_text.value }}: {{ trial.repetition_hits_summary}}</li>
                 {% endif %}
                 <p></p>
-                <img src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette }}&seed={{ trial.seed }}&{{ trial.probability_model }}">
+                <img src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&{{ trial.probability_model }}">
             </div>
         </div>
 {% endblock %}

@@ -472,14 +472,17 @@ class ChanceQuery(models.Model):
 
     probability    = models.CharField(max_length=50)
     chance_function    = models.CharField(max_length=150)
-    item_text       = models.CharField(max_length=200)
+    item_text = models.CharField(max_length=200)
+    items = models.CharField(max_length=200)
     exposed_items    = models.IntegerField()
     repetition_text       = models.CharField(max_length=200)
+    repetitions = models.CharField(max_length=200)
     exposed_repetitions    = models.IntegerField()
     outcome_count = models.IntegerField()
     outcome_text       = models.CharField(max_length=200)
     repeat_mode = models.CharField(max_length=10, choices=[("repeats","repeats"), ("removes","removes")])
     calc_target = models.CharField(max_length=10, choices=[("probability", "probability"), ("items", "items"), ("repetitions", "repetitions"), ("hits", "hits")])
+    palette_name = models.CharField(max_length=10)
 
 class ChanceFact(models.Model):
 

@@ -355,6 +355,7 @@ def quiz(request):
                 reveal.append({"title":option.render_folk, "link":option.link})
             quiz["assessment"] = quiz["answer"]+" is the correct answer."
             quiz["options"]=reveal
+            quiz["cycle"]="correct"
 
     else:   
         pass
