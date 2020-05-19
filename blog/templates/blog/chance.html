@@ -28,15 +28,15 @@
             }
             </script>
 
-            <span><button id=smp_adv onclick="toggleForms()">Advanced</button></span>
-            <div id=adv_form style="display:none">
+            <span><button id=smp_adv onclick="toggleForms()">{% if form_style == 'adv' %}Simple{% else %}Advanced{% endif %}</button></span>
+            <div id=adv_form style="display:{% if form_style == 'adv' %}block{% else %}none{% endif %}">
                 <h2>What are the chances of {{ description }}?</h2>
                     <form method="GET" class="query-form" action="/chance/answer">
                         {{ adv_form.as_p }}
                         <button type="submit" class="save btn btn-warning" name="calc_target" value="hits">Show</button>
                     </form>
             </div>
-            <div id=smp_form>
+            <div id=smp_form style="display:{% if form_style == 'smp'%}block{% else %}none{% endif %}">
                 <h2>What are the chances of {{ description }}?</h2>
                     <form method="GET" class="query-form" action="/chance/answer">
                         {{ smp_form.as_p }}

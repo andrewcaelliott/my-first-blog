@@ -323,7 +323,7 @@ ul:hover svg.major-quantile circle.refdatapoint {
 
 
 
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 799px) {
 /* small devices */
     ul svg.major-quantile line {
         stroke:rgb(220,220,220);
@@ -387,7 +387,7 @@ ul:hover svg.major-quantile circle.refdatapoint {
 
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
     /* For tablets and up: */
 
 
@@ -465,8 +465,8 @@ ul:hover svg.major-quantile circle.refdatapoint {
     }
 
     .content .widget.article {
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 15%;
+        padding-right: 15%;
     }
 
     .content .widget input, .content .widget select {

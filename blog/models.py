@@ -483,6 +483,7 @@ class ChanceQuery(models.Model):
     repeat_mode = models.CharField(max_length=10, choices=[("repeats","repeats"), ("removes","removes")])
     calc_target = models.CharField(max_length=10, choices=[("probability", "probability"), ("items", "items"), ("repetitions", "repetitions"), ("hits", "hits")])
     palette_name = models.CharField(max_length=10)
+    form_style = models.CharField(max_length=3)
 
 class ChanceFact(models.Model):
 
