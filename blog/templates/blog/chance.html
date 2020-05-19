@@ -8,14 +8,39 @@
 
 {% block content %}
         <div class="widget col-lg-6 col-md-6">
-            <div>
+            <script>
+            function toggleForms() {
+              var btn = document.getElementById("smp_adv")
+              var adv_form = document.getElementById("adv_form");
+              if (adv_form.style.display === "none") {
+                adv_form.style.display = "block";
+                btn.innerHTML = "Simple"
+              } else {
+                adv_form.style.display = "none";
+              }
+              var smp_form = document.getElementById("smp_form");
+              if (smp_form.style.display === "none") {
+                smp_form.style.display = "block";
+                btn.innerHTML = "Advanced"
+              } else {
+                smp_form.style.display = "none";
+              }
+            }
+            </script>
+
+            <span><button id=smp_adv onclick="toggleForms()">Advanced</button></span>
+            <div id=adv_form style="display:none">
                 <h2>What are the chances of {{ description }}?</h2>
                     <form method="GET" class="query-form" action="/chance/answer">
-                        {{ form.as_p }}
+                        {{ adv_form.as_p }}
                         <button type="submit" class="save btn btn-warning" name="calc_target" value="hits">Show</button>
-                        <!--button type="submit" class="save btn btn-warning" name="calc_target" value="items">How Many?</button>
-                        <button type="submit" class="save btn btn-warning" name="calc_target" value="repetitions">How Long?</button>
-                        <button type="submit" class="save btn btn-warning" name="calc_target" value="probability">What Chance?</button-->
+                    </form>
+            </div>
+            <div id=smp_form>
+                <h2>What are the chances of {{ description }}?</h2>
+                    <form method="GET" class="query-form" action="/chance/answer">
+                        {{ smp_form.as_p }}
+                        <button type="submit" class="save btn btn-warning" name="calc_target" value="hits">Show</button>
                     </form>
             </div>
         </div>

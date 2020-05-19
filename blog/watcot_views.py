@@ -86,24 +86,20 @@ def article(article_name, request):
 
 def chance(request):
     params = request.GET
-    if getParamDefault(params, "form", "simple") == 'advanced':
-        form_type = 'advanced'
-        form = ChanceForm()
-        exposed_items = getParamDefault(params, "exposed_items", "100")
-        item_text = getParamDefault(params, "item_text", "items")
-        exposed_repetitions = getParamDefault(params, "exposed_repetitions", "100")
-        repetition_text = getParamDefault(params, "repetition_text", "times")
-    else:
-        form_type = 'simple'
-        form = SimpleChanceForm()
-        items = getParamDefault(params, "items", "100 items")
-        split_i = items.split(' ')
-        exposed_items =int(split_i[0])
-        item_text = ' '.join(split_i[1:])
-        repetitions = getParamDefault(params, "repetitions", "100 repetitions")
-        split_r = repetitions.split(' ')
-        exposed_repetitions =int(split_r[0])
-        repetition_text = ' '.join(split_r[1:])
+    adv_form = ChanceForm()
+    exposed_items = getParamDefault(params, "exposed_items", "100")
+    item_text = getParamDefault(params, "item_text", "items")
+    exposed_repetitions = getParamDefault(params, "exposed_repetitions", "100")
+    repetition_text = getParamDefault(params, "repetition_text", "times")
+    smp_form = SimpleChanceForm()
+    items = getParamDefault(params, "items", "100 items")
+    split_i = items.split(' ')
+    exposed_items =int(split_i[0])
+    item_text = ' '.join(split_i[1:])
+    repetitions = getParamDefault(params, "repetitions", "100 repetitions")
+    split_r = repetitions.split(' ')
+    exposed_repetitions =int(split_r[0])
+    repetition_text = ' '.join(split_r[1:])
 
     chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
     probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
@@ -124,30 +120,31 @@ def chance(request):
         repeat_mode = chanceFact.repeat_mode
         description = chanceFact.title
 
-    form.fields["probability"].initial = probability
-    form.fields["probability"].label = "Chance"
-    if form_type == 'advanced':
-        form.fields["chance_function"].initial = chance_function
-        form.fields["chance_function"].label = "Advanced"
-        form.fields["exposed_items"].initial = exposed_items
-        form.fields["exposed_items"].label = "How many things?"
-        form.fields["item_text"].initial = item_text
-        form.fields["item_text"].label = "What things are they?"
-        form.fields["exposed_repetitions"].initial = exposed_repetitions
-        form.fields["exposed_repetitions"].label = "Repeated how many times?"
-        form.fields["repetition_text"].initial = repetition_text
-        form.fields["repetition_text"].label = "Times are called?"
-        form.fields["repeat_mode"].initial = repeat_mode
-        form.fields["repeat_mode"].label = "repeats for "+item_text+" or removes?"
-        form.fields["palette_name"].initial = palette_name
-        form.fields["palette_name"].label = "Palette"
-    else:
-        form.fields["items"].initial = items
-        form.fields["items"].label = "How many things?"
-        form.fields["repetitions"].initial = repetitions
-        form.fields["repetitions"].label = "Repeated how many times?"
-    form.fields["outcome_text"].initial = outcome_text
-    form.fields["outcome_text"].label = "Hits are called?"
+    adv_form.fields["probability"].initial = probability
+    adv_form.fields["probability"].label = "Chance"
+    adv_form.fields["chance_function"].initial = chance_function
+    adv_form.fields["chance_function"].label = "Advanced"
+    adv_form.fields["exposed_items"].initial = exposed_items
+    adv_form.fields["exposed_items"].label = "How many things?"
+    adv_form.fields["item_text"].initial = item_text
+    adv_form.fields["item_text"].label = "What things are they?"
+    adv_form.fields["exposed_repetitions"].initial = exposed_repetitions
+    adv_form.fields["exposed_repetitions"].label = "Repeated how many times?"
+    adv_form.fields["repetition_text"].initial = repetition_text
+    adv_form.fields["repetition_text"].label = "Times are called?"
+    adv_form.fields["repeat_mode"].initial = repeat_mode
+    adv_form.fields["repeat_mode"].label = "repeats for "+item_text+" or removes?"
+    adv_form.fields["palette_name"].initial = palette_name
+    adv_form.fields["palette_name"].label = "Palette"
+    adv_form.fields["outcome_text"].initial = outcome_text
+    adv_form.fields["outcome_text"].label = "Hits are called?"
+    
+    smp_form.fields["probability"].initial = probability
+    smp_form.fields["probability"].label = "Chance"
+    smp_form.fields["items"].initial = items
+    smp_form.fields["items"].label = "How many things?"
+    smp_form.fields["repetitions"].initial = repetitions
+    smp_form.fields["repetitions"].label = "Repeated how many times?"
 
     prob = parse_probability(probability)
     items = int(exposed_items)
@@ -165,18 +162,6 @@ def chance(request):
             survival_prob = (1 - prob) ** repetitions
             calc_hits_item = (1 - survival_prob) * items
 
-    if (target == 'probability'):
-        calc_prob = hits / (items * repetitions)
-        prob = calc_prob
-        form.fields["probability"].initial = str(calc_prob)
-    if (target == 'items'):
-        calc_items = int(hits / (prob * repetitions))
-        items = calc_items
-        form.fields["exposed_items"].initial = str(calc_items)
-    if (target == 'repetitions'):
-        calc_repetitions = int(hits / (prob * items))
-        repetitions = calc_repetitions
-        form.fields["exposed_repetitions"].initial = str(calc_repetitions)
     fraction = Fraction(prob).limit_denominator(10000)
     odds_raw = odds2(prob, tolerance = 0.0005)
     odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
@@ -212,8 +197,9 @@ def chance(request):
     trial["repetition_hits_distribution"]=distribution(trial["repetition_hits"])
     trial["repetition_hits_summary"]=summary(trial["repetition_hits_distribution"])
     trial["hit_percentage"]= 100 * trial["hits"] / trial["exposure"]
-    promote = choice(["book", "book", "book"])
-    return render(request, 'blog/chance.html', {'description': description, 'form': form, 'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+    promote = choice(["watcot-book"])
+    return render(request, 'blog/chance.html', {'description': description, 
+        'adv_form': adv_form, 'smp_form': smp_form, 'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
 
 
 
