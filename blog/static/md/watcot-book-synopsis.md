@@ -5,6 +5,9 @@
 ___What are the Chances of That?___ is a new book from the author of _Is That a Big Number?_. It will be published by Oxford University Press in 2021, and will be available from all good booksellers (details to come).
 
 Here's an idea of what the book contains:
+
+---
+
 ## Introduction - Living in an Uncertain World
 Understanding chance can be a matter of life and death - five dualities that confuse us when we think about uncertainty - what this book is NOT - what this book IS - the language we use to talk about chance - Ways to show chance.
 
