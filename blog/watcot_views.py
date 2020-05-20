@@ -23,7 +23,7 @@ from .convert import convertToDefault
 from .convert import convertToUnit 
 from .config import reference_lists
 from .config import unit_choice_lists
-from .config import quip_lists,quotes
+from .config import quip_lists, choose_quote
 from .config import conversion_target_lists
 from .config import conversion_quip_lists
 from .utils import num
@@ -51,7 +51,7 @@ def watcot_home(request):
         widgets += [widget]
     dyk=spuriousFact(NumberFact,3)  
     promote = choice(["watcot-book"])
-    return render(request, 'blog/watcot_home.html', {'widgets':sample(widgets,3), 'freeForm':freeForm, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+    return render(request, 'blog/watcot_home.html', {'widgets':sample(widgets,3), 'freeForm':freeForm, 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
 
 def buildSection(section):
     widget = {}
@@ -81,8 +81,8 @@ def article(article_name, request):
     content=get_article(article_name)
     dyk=spuriousFact(NumberFact,3)
 #    promote = choice(["sponsor","donate"])
-#    return render(request, 'blog/article.html', {'quote': choice(quotes), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
-    return render(request, 'blog/watcot_article.html', {'quote': choice(quotes), "content": content, "dyk":dyk})
+#    return render(request, 'blog/article.html', {'quote': choose_quote('s'), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
+    return render(request, 'blog/watcot_article.html', {'quote': choose_quote('s'), "content": content, "dyk":dyk})
 
 def chance(request):
     params = request.GET
@@ -106,7 +106,7 @@ def chance(request):
     probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
     outcome_text = getParamDefault(params, "outcome_text", "hits")
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
-    palette_name = getParamDefault(params, "palette", "default")
+    palette_name = getParamDefault(params, "palette_name", "default")
     target = getParamDefault(params, "calc_target", "hits")
     description = "this"
     permlink = getParamDefault(params, "fact", None)
@@ -142,6 +142,8 @@ def chance(request):
     smp_form.fields["items"].label = "How many things?"
     smp_form.fields["repetitions"].initial = repetitions
     smp_form.fields["repetitions"].label = "Repeated how many times?"
+    smp_form.fields["outcome_text"].initial = outcome_text
+    smp_form.fields["outcome_text"].label = "Hits are called?"
     smp_form.fields["form_style"].initial = 'smp'
     smp_form.fields['form_style'].widget = forms.HiddenInput()
 
@@ -188,7 +190,6 @@ def chance(request):
         "probability_model":"chance_function="+chance_function,
         "chance_function":chance_function,
     }
-    print(trial)
     dyk = spuriousFact(NumberFact,3)
     trial["hits"], trial["item_hits"], trial["repetition_hits"] = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed)
     trial["item_hits_distribution"]=distribution(trial["item_hits"])
@@ -199,7 +200,7 @@ def chance(request):
     promote = choice(["watcot-book"])
     return render(request, 'blog/chance.html', {'description': description, 
         'adv_form': adv_form, 'smp_form': smp_form, 'form_style': form_style,
-        'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choice(quotes), "dyk":dyk, "promote":promote})
+        'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
 
 
 

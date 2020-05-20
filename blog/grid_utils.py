@@ -44,10 +44,23 @@ monochrome_palette = {
         'background': (0.9, 0.9, 0.9, 1.0), #Light Grey
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
+print2_palette = {
+        'features':[
+        (0.7, 0.0, 0.0, 1.0),  # Red
+        (0.0, 0.5, 0.0, 1.0),  # Green
+        (0.0, 0.0, 0.7, 1.0),  # Blue
+        (0.95, 0.7, 0.7, 1.0),  # Pale Red
+        (0.65, 0.9, 0.65, 1.0),  # Pale Green 
+        (0.7, 0.8, 1.0, 1.0),  # Pale Blue
+        ],
+        'background': (0.93, 0.93, 0.93, 1.0), #Light Grey
+        'canvas': (1.0, 1.0, 1.0, 1.0), #White
+    }
 
 palettes = {
     'default': default_palette,
     'print': print_palette,
+    'print2': print2_palette,
     'mono': monochrome_palette
 }
 

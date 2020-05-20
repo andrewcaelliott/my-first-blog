@@ -196,7 +196,7 @@
            		event.preventDefault();
  			$.ajax({
 			        url: '/ajax/quote/',
-			        data: {},
+			        data: {'tag':'s'},
 			        dataType: 'json',
 			        success: function (data) {
 		 			$("#quote").html(data.quote);
