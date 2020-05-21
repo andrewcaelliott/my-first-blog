@@ -76,6 +76,10 @@ def buildSection(section):
         widget["title"] = "Getting to Grips with Big"
         widget["subtitle"] = "Stop worrying and learn to love big numbers"
         widget["context"] = "ggb"
+    elif section == "chance":
+        widget["title"] = "The Uncertain World"
+        widget["subtitle"] = "Chance would be a fine thing"
+        widget["context"] = "tuw"
     else:
         widget["title"] = "Landmark Numbers"
         widget["subtitle"] = "Prominent and memorable numbers"
@@ -95,7 +99,6 @@ def homealt(request):
     return render(request, 'blog/home-alt.html', {'widgets':random.sample(widgets,3), 'freeForm':freeForm, 'quote': choose_quote('n'), 'stories':stories})
 
 def blog(category, request):
-
     params = request.GET
 
     try:
@@ -107,17 +110,23 @@ def blog(category, request):
         "news":"Numbers In The News", 
         "passion":"For the Love of Numbers", 
         "education":"Getting to Grips with Big", 
-        "landmark":"Landmark Numbers"
+        "landmark":"Landmark Numbers",
+        "chance":"The Uncertain World"
     }
     subtitles = {
         "news":"Some notable numbers we have spotted recently", 
         "passion":"A number-led selection of writings for the truly geeky among us ...", 
         "education":"How to stop worrying and learn to love big numbers", 
-        "landmark":"Prominent and memorable numbers show the way like landmarks on the horizon"
+        "landmark":"Prominent and memorable numbers show the way like landmarks on the horizon",
+        "chance":"Chance would be a fine thing"
     }
-    dyk=spuriousFact(NumberFact,3)
+    if category == "chance":
+        template = "blog/watcot_blog.html"
+    else:
+        template = "blog/blog2.html"
+    dyk = spuriousFact(NumberFact,3)
     promote = choice(["book", "book", "sponsor","donate","click"])
-    return render(request, 'blog/blog2.html', {'quote': choose_quote('n'), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk, "promote":promote})
+    return render(request, template, {'quote': choose_quote('n'), 'stories':stories, 'blog_title':titles[category], 'blog_subtitle':subtitles[category], "dyk":dyk, "promote":promote})
 
 def blog_flton(request):
     return blog("passion", request)
@@ -130,6 +139,10 @@ def blog_ggb(request):
 
 def blog_lmk(request):
     return blog("landmark", request)
+
+def blog_tuw(request):
+    return blog("chance", request)
+
 
 def article(article_name, request):
     host =request.build_absolute_uri()

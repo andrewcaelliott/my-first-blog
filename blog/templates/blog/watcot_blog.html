@@ -1,0 +1,48 @@
+{% extends 'blog/watcot_base.html' %}
+
+{% block title %}{{ blog_title }}{% endblock %}
+
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div>
+                <h1>{{ blog_title }}</h1>
+                <h4>{{ blog_subtitle }}</h4>
+            </div>
+        </div>
+        <div class="grid" data-masonry='{ "itemSelector": ".grid-item,.grid-item-doubled", "columnWidth": ".grid-item", "gutter": 0 }'>
+            <div class="grid-item-doubled blog-summary featured">
+                <div>
+                    <h3><a href="{{ stories.featured.links.0 }}" target="_blank">{{ stories.featured.title }}</a></h3>
+                    {% if stories.featured.img_url %}
+                    <a href="{{ stories.featured.links.0 }}" target="_blank"><img  class="constrained-2" src="{{ stories.featured.img_url }}" /></a>
+                    {% endif %}
+                    {% for line in stories.featured.synopsis %}
+                    <p>{{ line }}</p>
+                    {% endfor %}
+                    {% for link in stories.featured.links %}
+                    <p><a href="{{ link }}" target="_blank">{{ link|truncatechars:40 }}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% for item in stories.other %}
+            <div class="grid-item blog-summary-shallow">
+                <div>
+                    <h3><a href="{{ item.links.0 }}" target="_blank">{{ item.title }}</a></h3>
+                    {% if item.img_url %}
+                    <a href="{{ item.links.0 }}" target="_blank"><img class="constrained" src="{{ item.img_url }}" href="{{ item.links.0 }}" /></a>
+                    {% endif %}
+                    {% for line in item.synopsis %}
+                    <p>{{ line }}</p>
+                    {% endfor %}
+                    {% for link in item.links %}
+                    <p><a href="{{ link }}" target="_blank">{{ link|truncatechars:40 }}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

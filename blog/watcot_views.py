@@ -46,7 +46,7 @@ def watcot_home(request):
     freeForm = FreeForm()
     freeForm.fields["number"].label="What are the chances of that?"
     widgets = []
-    for section in ["news", "passion", "education", "landmark"]:
+    for section in ["news", "chance", "education"]:
         widget = buildSection(section)
         widgets += [widget]
     dyk=spuriousFact(NumberFact,3)  
@@ -67,6 +67,10 @@ def buildSection(section):
         widget["title"] = "Getting to Grips with Big"
         widget["subtitle"] = "Stop worrying and learn to love big numbers"
         widget["context"] = "ggb"
+    elif section == "chance":
+        widget["title"] = "The Uncertain World"
+        widget["subtitle"] = "Chance would be a fine thing"
+        widget["context"] = "tuw"
     else:
         widget["title"] = "Landmark Numbers"
         widget["subtitle"] = "Prominent and memorable numbers"
