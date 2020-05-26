@@ -44,7 +44,7 @@ titles = [""]
 
 def watcot_home(request):
     freeForm = FreeForm()
-    freeForm.fields["number"].label="What are the chances of that?"
+    freeForm.fields["number"].label="What are the chances of this?"
     widgets = []
     for section in ["news", "chance", "education"]:
         widget = buildSection(section)
@@ -167,7 +167,7 @@ def chance(request):
             survival_prob = (1 - prob) ** repetitions
             calc_hits_item = (1 - survival_prob) * items
 
-    fraction = Fraction(prob).limit_denominator(10000)
+    fraction = Fraction(prob).limit_denominator(200)
     odds_raw = odds2(prob, tolerance = 0.0005)
     odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
     percentage = prob * 100
@@ -224,12 +224,29 @@ def basegrid(request):
     return response
 
 def grid(request):
+    stacked = 0
     params = request.GET
     width = int(getParamDefault(params, "width", "20"))
     aspect = float(getParamDefault(params, "aspect", "10"))
     depth = int(getParamDefault(params, "depth", "1"))
     exposed = int(getParamDefault(params, "exposed", width*depth))
     hits = int(getParamDefault(params, "hits", "5"))
+    print("hits, exposed")
+    print(hits, exposed)
+    if hits > 0 :
+        print("adjusting")
+        while (hits / exposed) < 0.01:
+            if exposed == (exposed // 1000) *1000:
+                width = width // 1000
+                exposed = exposed // 1000
+                stacked += 1
+            else:
+                width = width // 100
+                exposed = exposed // 100
+                hits = hits * 10
+                stacked += 1
+
+
     palette = get_palette(getParamDefault(params, "palette_name", "default"))
     invert = getParamDefault(params, "invert", "F")
     xy = getParamDefault(params, "xy", "F")
@@ -237,7 +254,7 @@ def grid(request):
     if exposed > cutoff and depth == 1:
         depth = int((exposed+cutoff - 1) / cutoff)
         width = int(exposed / depth +0.99)
-    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0)
+    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0, stacked=stacked)
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)
     return response
@@ -260,3 +277,4 @@ def gridchance(request):
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)
     return response
+

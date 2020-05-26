@@ -53,7 +53,7 @@ print2_palette = {
         (0.65, 0.9, 0.65, 1.0),  # Pale Green 
         (0.7, 0.8, 1.0, 1.0),  # Pale Blue
         ],
-        'background': (0.93, 0.93, 0.93, 1.0), #Light Grey
+        'background': (0.85, 0.85, 0.85, 1.0), #Light Grey
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
 
@@ -82,6 +82,37 @@ def square(ctx, square_size, squash, offset_x, offset_y, fillcolour, gridcolour)
     ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )
     ctx.fill()
 
+def zoom(ctx, offset_x, offset_y, top_width, bottom_width, depth, fillcolour, gridcolour, invert=False):
+    print(offset_x, offset_y, top_width, bottom_width, depth, fillcolour, gridcolour)
+    if not invert:
+        ctx.move_to(offset_x+0, offset_y+0)
+        ctx.line_to(top_width, offset_y+0)  # Line to (x,y)
+        ctx.line_to(offset_x+bottom_width, offset_y+depth)  # Line to (x,y)
+        ctx.line_to(offset_x+0, offset_y+depth)  # Line to (x,y)
+        ctx.line_to(offset_x+0, offset_y+0)
+        ctx.close_path()
+
+    #    ctx.set_source_rgba(gridcolour[0], gridcolour[1], gridcolour[2], gridcolour[3] ) 
+        ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )  # Solid color
+    #    ctx.set_line_width(min(rect_width/20,0.002))
+        ctx.stroke_preserve()
+    #    ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )  # Solid color
+        ctx.fill()
+    else:
+        ctx.move_to(offset_x+0.8, offset_y+depth)
+        ctx.line_to(offset_x+0.8 + top_width, offset_y+depth)  
+        ctx.line_to(offset_x+0.8 + top_width, offset_y)  # Line to (x,y)
+        ctx.line_to(offset_x+0.8 + top_width-bottom_width, offset_y)  # Line to (x,y)
+        ctx.line_to(offset_x+0.8, offset_y+depth)
+        ctx.close_path()
+
+    #    ctx.set_source_rgba(gridcolour[0], gridcolour[1], gridcolour[2], gridcolour[3] ) 
+        ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )  # Solid color
+    #    ctx.set_line_width(min(rect_width/20,0.002))
+        ctx.stroke_preserve()
+    #    ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )  # Solid color
+        ctx.fill()
+
 
 def rect(ctx, rect_width, rect_depth, offset_x, offset_y, range_y, fillcolour, gridcolour):
     ctx.move_to(offset_x+0, offset_y+0)
@@ -100,50 +131,74 @@ def rect(ctx, rect_width, rect_depth, offset_x, offset_y, range_y, fillcolour, g
 
 
 
-def count_cell(ctx, offset_x, offset_y, gridcell_x, gridcell_y, range_y, hits, exposed, count, invert=False, palette=default_palette):
+def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, invert=False, palette=default_palette, pale=False):
     if invert:
         if (count < (exposed-hits)):
             fillcolour = palette['background']
         elif (count < exposed):
-            fillcolour = palette['features'][0]
+            if pale:
+                fillcolour = palette['features'][3]
+            else:
+                fillcolour = palette['features'][0]
         else:
             fillcolour = palette['canvas']
     else:
         if (count < hits):
-            fillcolour = palette['features'][0]
+            if pale:
+                fillcolour = palette['features'][3]
+            else:
+                fillcolour = palette['features'][0]
         elif (count < exposed):
             fillcolour = palette['background']
         else:
             fillcolour = palette['canvas']
     if count < exposed:
-        rect(ctx, gridcell_x, gridcell_y, offset_x*gridcell_x, offset_y*gridcell_y, range_y, fillcolour, palette['canvas'])
+        #print(offset_x*gridcell_x, offset_y*gridcell_y)
+        rect(ctx, gridcell_x, gridcell_y, offset_x*gridcell_x, offset_y*gridcell_y+offset_frame, range_y, fillcolour, palette['canvas'])
 
 
-def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False):
+def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False, offset_frame=0, pale=False):
     square_size = 0.9 / range_x
     gridcell_x = 0.9 / range_x
     gridcell_y = (0.9 / aspect) / range_y
+    print(offset_frame, hits, exposed, range_x, range_y)
     count = 0
     if xy:
         for offset_x in range(0,range_x):
             for offset_y in range(0,range_y):
-                count_cell(ctx, offset_x, offset_y, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert)
+                count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale)
                 count+=1
     else:
         for offset_y in range(0,range_y):
             for offset_x in range(0,range_x):
-                count_cell(ctx, offset_x, offset_y, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert)
+                count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale)
                 count+=1
 
 
 
-def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False):
-    WIDTH, HEIGHT = 2000, int(2000/aspect)
+def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False, stacked=0):
+    stack_height = int(2000/aspect * 1.4)
+    WIDTH, HEIGHT = 2000, int(2000/aspect + stacked * stack_height)
+    print(WIDTH, HEIGHT, stack_height)
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
     ctx = cairo.Context(surface)
     ctx.scale(WIDTH, WIDTH)  # Normalizing the canvas
     ctx.translate(0.05, 0.005)  # Changing the current transformation matrix
-    count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=palette, xy=xy, invert=invert)
+    offset_frame = 0
+    if invert:
+        offset_frame = 12.5/100 * stacked
+    print("offset_frame %s" % offset_frame)
+    print("stacked %s" % stacked)
+    count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=palette, offset_frame=offset_frame, xy=xy, invert=invert)
+    print(stack_height / WIDTH)
+    for i in range(stacked):
+        zoom(ctx, 0, ((i+1)* 252 -70) / WIDTH, 0.1, 0.01, 68/WIDTH, palette['background'], None, invert)
+        if invert:
+            offset_frame = 12/100 * i 
+        else:
+            offset_frame = 12.5/100 * (i+1) 
+        print("offset_frame %s" % offset_frame)
+        count_grid(ctx, 100, 10, aspect, 1, 1000, palette=palette, offset_frame=offset_frame, pale=True, invert=invert)
     return surface
 
 def cell_drawonly(ctx, cell_value, square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y, palette=default_palette):
