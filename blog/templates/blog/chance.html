@@ -47,13 +47,16 @@
         <div class="widget col-lg-6 col-md-6">
             <div>
                 <h2>The chances are:</h2>
-                {% if trial.repeat_mode == "repeats"%}
+                    {% for summary in summaries %}
+                    <hr/>
+                    <div>
+                    {% if trial.repeat_mode == "repeats"%}
                     {% if trial.repetitions == 1 %}
-                    <p>For {{ trial.items }} {{ trial.item_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.calc_hits | floatformat }} {{ trial.hits_text }}.</p>
+                    <p>For {{ trial.items }} {{ trial.item_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
                     <p>On average there will be {{ hits_item | floatformat }} {{ trial.hits_text }} for each of the {{ trial.item_text }}.</p>
                     {% else %}
-                    <p>For {{ trial.items }} {{ trial.item_text }}, over {{ trial.repetitions }} {{ trial.repetition_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.calc_hits | floatformat }} {{ trial.hits_text }}.</p>
-                    <p>Over {{ trial.repetitions }} {{ trial.repetition_text }}, on average there will be {{ hits_item | floatformat }} {{ form.outcome_text.value }} for each of the {{ trial.item_text }}.</p>
+                    <p>For {{ trial.items }} {{ trial.item_text }}, over {{ trial.repetitions }} {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
+                    <p>Over {{ trial.repetitions }} {{ trial.repetition_text }}, on average there will be {{ summary.hits_item | floatformat }} {{ summary.hits_text }} for each of the {{ trial.item_text }}.</p>
                     {% endif %}
                 {% else %}
                     <p>For multiple {{ trial.repetition_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.hit_wait | floatformat }}  {{ trial.repetition_text }} until {{ trial.hits_text}}.</p>
@@ -61,17 +64,19 @@
                 {% endif %}
 
                 <h3>Probability</h3>
-                <li>{{equivalents.probability| floatformat:4}}</li>
+                <li>{{summary.equivalents.probability| floatformat:4}}</li>
                 <h3>As a percentage</h3>
-                <li>{{equivalents.percentage | floatformat:2}}%</li>
+                <li>{{summary.equivalents.percentage | floatformat:2}}%</li>
                 <h3>As a rounded-off proportion</h3>
-                <li>{{equivalents.fraction.numerator}} in {{equivalents.fraction.denominator}}</li>
+                <li>{{summary.equivalents.fraction.numerator}} in {{summary.equivalents.fraction.denominator}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ fraction.numerator }}">
+                <img src="/gridpng/?width={{ summary.equivalents.fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.fraction.numerator }}&colour={{forloop.counter0}}">
                 <h3>As approximate fair betting odds</h3>
-                <li>{{equivalents.odds.0}} : {{equivalents.odds.1}}</li>
+                <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ odds_fraction.0 }}&invert=True">
+                <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
+            </div>
+            {% endfor %}    
             </div>
         </div>
         <div class="widget col-lg-12 col-md-12">

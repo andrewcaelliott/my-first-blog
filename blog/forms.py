@@ -47,7 +47,7 @@ class ChanceForm(forms.ModelForm):
 
     class Meta:
         model = ChanceQuery
-        fields = ('probability', 'chance_function', 'items', 'repetitions', 'outcome_text', 'palette_name', 'repeat_mode', 'form_style')    
+        fields = ('probability', 'items', 'repetitions', 'outcome_text', 'palette_name', 'repeat_mode', 'form_style')    
 
 class SimpleChanceForm(forms.ModelForm):
 

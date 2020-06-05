@@ -470,8 +470,8 @@ class Post(models.Model):
 
 class ChanceQuery(models.Model):
 
-    probability    = models.CharField(max_length=50)
-    chance_function    = models.CharField(max_length=150)
+    probability    = models.CharField(max_length=150)
+    # chance_function    = models.CharField(max_length=150)
     item_text = models.CharField(max_length=200)
     items = models.CharField(max_length=200)
     exposed_items    = models.IntegerField()
@@ -489,8 +489,8 @@ class ChanceFact(models.Model):
 
     text = models.TextField()
     title = models.CharField(max_length=50)
-    probability = models.CharField(max_length=50)
-    chance_function    = models.CharField(max_length=150)
+    probability    = models.CharField(max_length=150)
+    # chance_function    = models.CharField(max_length=150)
     item_text       = models.CharField(max_length=200)
     exposed_items    = models.IntegerField()
     repetition_text       = models.CharField(max_length=200)

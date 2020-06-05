@@ -82,33 +82,30 @@ def cell_outcome(chance_functions, repetition = 1):
             return 1+i
     return 0
 
-
-
-
 def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
     if seed:
         random.seed(seed)
     range_x = trial["items"]
     range_y = trial["repetitions"]
-    chance = trial["probability"]
-    probability = chance
-    p = probability
-    chance_f = equalchance
-    chance_function_name = "equalchance"
-    chance_params = {}
-    chance_params["chance"] = chance
+    chance_function_str = trial["probability"]
+    #probability = chance
+    #p = probability
+    #chance_f = equalchance
+    #chance_function_name = "equalchance"
+    #chance_params = {}
+    #chance_params["chance"] = chance
 
-    if "chance_function" in params.keys():
-        chance_function = params["chance_function"]
-    elif "chance_function" in trial.keys():
-        chance_function = trial["chance_function"]
-    else:
-        chance_function = "[constant(probability)]"
-    chance_functions = parse_chance_functions(chance_function).split("|")
+    #if "chance_function" in params.keys():
+    #    chance_function = params["chance_function"]
+    #elif "chance_function" in trial.keys():
+    #    chance_function = trial["chance_function"]
+    #else:
+    #    chance_function = "[constant(probability)]"
+    chance_functions = parse_chance_functions(chance_function_str).split("|")
     pairs = []
     for function in chance_functions:
         chance_function_name, chance_function_params = parse_chance_function(function)
-        function_pair =(eval(chance_function_name), eval(chance_function_params+","))
+        function_pair =(eval(chance_function_name), eval(('parse_probability("%s")' % chance_function_params)+","))
         pairs.append(function_pair)
 
     count_hits_x = [0] * range_x
@@ -334,3 +331,39 @@ def summary(sorted_dist):
         if not(median==None):
             break
     return {"min":k[0], "max":k[-1], "mean": mean, "median": median}
+
+def get_prob_summary(args):
+    probability, prob, label, items, repetitions, repeat_mode = args
+    if repeat_mode == "repeats":
+        calc_hits = prob * items * repetitions
+        calc_hits_item = prob * repetitions
+        survival_prob = 1
+        calc_wait = 1 / prob
+    else:
+        calc_wait = 1 / prob
+        calc_hits = -1
+        survival_prob = (1 - prob) ** repetitions
+        calc_hits_item = (1 - survival_prob) * items
+
+    fraction = Fraction(prob).limit_denominator(200)
+    odds_raw = odds2(prob, tolerance=0.0005)
+    odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
+    percentage = prob * 100
+    equivalents = {
+        "supplied": probability.strip(),
+        "probability": prob,
+        "percentage": percentage,
+        "fraction": fraction,
+        "odds": odds_raw,
+        "odds_fraction": odds_fraction,
+    }
+    return {
+        "repeat_mode": repeat_mode,
+        "hits": calc_hits,
+        "hits_item": calc_hits_item,
+        "hits_text": label,
+        "wait": calc_wait,
+        "survival_prob":1,
+        "equivalents":equivalents
+        }
+

@@ -57,10 +57,39 @@ print2_palette = {
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
 
+print3_palette = {
+        'features':[
+        (0.7, 0.0, 0.0, 1.0),  # Red
+        (0.0, 0.5, 0.0, 1.0),  # Green
+        (0.0, 0.0, 0.7, 1.0),  # Blue
+        (0.0, 0.3, 0.3, 1.0),  # Turquoise
+        (0.95, 0.7, 0.7, 1.0),  # Pale Red
+        (0.65, 0.9, 0.65, 1.0),  # Pale Green 
+        (0.7, 0.8, 1.0, 1.0),  # Pale Blue
+        (0.65, 0.85, 0.85, 1.0),  # Pale Turquoise
+        ],
+        'background': (0.85, 0.85, 0.85, 1.0), #Light Grey
+        'canvas': (1.0, 1.0, 1.0, 1.0), #White
+    }
+
+red_grad_palette = {
+        'features':[
+        (0.3, 0.0, 0.0, 1.0),  # Dark Red
+        (0.7, 0.0, 0.0, 1.0),  # Red
+        (0.78, 0.23, 0.23, 1.0),  # 
+        (0.86, 0.46, 0.46, 1.0),  # 
+        (0.94, 0.69, 0.69, 1.0),  # Pale Red
+        ],
+        'background': (0.85, 0.85, 0.85, 1.0), #Light Grey
+        'canvas': (1.0, 1.0, 1.0, 1.0), #White
+    }
+
 palettes = {
     'default': default_palette,
     'print': print_palette,
     'print2': print2_palette,
+    'print3': print3_palette,
+    'red_grad': red_grad_palette,
     'mono': monochrome_palette
 }
 
@@ -131,7 +160,7 @@ def rect(ctx, rect_width, rect_depth, offset_x, offset_y, range_y, fillcolour, g
 
 
 
-def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, invert=False, palette=default_palette, pale=False):
+def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, invert=False, palette=default_palette, pale=False, colour=0):
     if invert:
         if (count < (exposed-hits)):
             fillcolour = palette['background']
@@ -139,7 +168,7 @@ def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, ra
             if pale:
                 fillcolour = palette['features'][3]
             else:
-                fillcolour = palette['features'][0]
+                fillcolour = palette['features'][colour]
         else:
             fillcolour = palette['canvas']
     else:
@@ -147,7 +176,7 @@ def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, ra
             if pale:
                 fillcolour = palette['features'][3]
             else:
-                fillcolour = palette['features'][0]
+                fillcolour = palette['features'][colour]
         elif (count < exposed):
             fillcolour = palette['background']
         else:
@@ -157,7 +186,7 @@ def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, ra
         rect(ctx, gridcell_x, gridcell_y, offset_x*gridcell_x, offset_y*gridcell_y+offset_frame, range_y, fillcolour, palette['canvas'])
 
 
-def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False, offset_frame=0, pale=False):
+def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False, offset_frame=0, pale=False, colour=0):
     square_size = 0.9 / range_x
     gridcell_x = 0.9 / range_x
     gridcell_y = (0.9 / aspect) / range_y
@@ -166,17 +195,17 @@ def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_pal
     if xy:
         for offset_x in range(0,range_x):
             for offset_y in range(0,range_y):
-                count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale)
+                count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale, colour=colour)
                 count+=1
     else:
         for offset_y in range(0,range_y):
             for offset_x in range(0,range_x):
-                count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale)
+                count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale, colour=colour)
                 count+=1
 
 
 
-def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False, stacked=0):
+def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False, stacked=0, colour=0):
     stack_height = int(2000/aspect * 1.4)
     WIDTH, HEIGHT = 2000, int(2000/aspect + stacked * stack_height)
     print(WIDTH, HEIGHT, stack_height)
@@ -189,7 +218,7 @@ def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=defaul
         offset_frame = 12.5/100 * stacked
     print("offset_frame %s" % offset_frame)
     print("stacked %s" % stacked)
-    count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=palette, offset_frame=offset_frame, xy=xy, invert=invert)
+    count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=palette, offset_frame=offset_frame, xy=xy, invert=invert, colour=colour)
     print(stack_height / WIDTH)
     for i in range(stacked):
         zoom(ctx, 0, ((i+1)* 252 -70) / WIDTH, 0.1, 0.01, 68/WIDTH, palette['background'], None, invert)

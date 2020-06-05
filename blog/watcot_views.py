@@ -35,7 +35,7 @@ from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
-from .chance_utils import compute_chance_grid
+from .chance_utils import compute_chance_grid, get_prob_summary
 from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
 from .utils import getParamDefault
 
@@ -106,8 +106,8 @@ def chance(request):
     exposed_repetitions =int(split_r[0])
     repetition_text = ' '.join(split_r[1:])
 
-    chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
-    probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
+    #chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
+    probability = getParamDefault(params, "probability", "0.1")
     outcome_text = getParamDefault(params, "outcome_text", "hits")
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
     palette_name = getParamDefault(params, "palette_name", "default")
@@ -125,8 +125,6 @@ def chance(request):
 
     adv_form.fields["probability"].initial = probability
     adv_form.fields["probability"].label = "Chance"
-    adv_form.fields["chance_function"].initial = chance_function
-    adv_form.fields["chance_function"].label = "Advanced"
     adv_form.fields["items"].initial = items
     adv_form.fields["items"].label = "How many things?"
     adv_form.fields["repetitions"].initial = repetitions
@@ -151,27 +149,31 @@ def chance(request):
     smp_form.fields["form_style"].initial = 'smp'
     smp_form.fields['form_style'].widget = forms.HiddenInput()
 
-    prob = parse_probability(probability)
+    probs = [parse_probability(pstr) for pstr in probability.split('|')]
+    classes = len(probs)
+    hitnames = outcome_text.split("|") if "|" in outcome_text else outcome_text * classes
+
     items = int(exposed_items)
     repetitions = int(exposed_repetitions)
+    paramsets = zip(probability.split('|'), probs, hitnames, [items]*classes, [repetitions] * classes, [repeat_mode] * classes)
 
-#    form.fields["calc_target"].initial = target
-    if (target == 'hits'):
-        if repeat_mode == "repeats":
-            calc_hits = prob * items * repetitions
-            calc_hits_item = prob * repetitions
-            calc_wait = 1 / prob
-        else:
-            calc_wait = 1 / prob
-            calc_hits = -1
-            survival_prob = (1 - prob) ** repetitions
-            calc_hits_item = (1 - survival_prob) * items
+    summaries = [get_prob_summary(paramset) for paramset in paramsets]
+    prob = probs[0]
+    '''
+    if repeat_mode == "repeats":
+        calc_hits = prob * items * repetitions
+        calc_hits_item = prob * repetitions
+        calc_wait = 1 / prob
+    else:
+        calc_wait = 1 / prob
+        calc_hits = -1
+        survival_prob = (1 - prob) ** repetitions
+        calc_hits_item = (1 - survival_prob) * items
 
     fraction = Fraction(prob).limit_denominator(200)
     odds_raw = odds2(prob, tolerance = 0.0005)
     odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
     percentage = prob * 100
-    seed = randint(1,1000000)    
     equivalents = {
         "supplied": probability,
         "probability": prob,
@@ -179,20 +181,23 @@ def chance(request):
         "fraction": fraction,
         "odds": odds_raw,
     }
+    '''
+    summarised = summaries[0]
+    seed = randint(1,1000000)    
     trial = {
         "items": items,
         "item_text": item_text,
         "repetitions": repetitions,
         "repetition_text": repetition_text,
         "exposure": items * repetitions,
-        "probability": prob,
+        "probability": probability,
         "repeat_mode": repeat_mode,
-        "calc_hits": calc_hits,
+        #"calc_hits": calc_hits,
         "hits_text": outcome_text,
-        "hit_wait": calc_wait,
+        #"hit_wait": calc_wait,
         "seed": seed,
-        "probability_model":"chance_function="+chance_function,
-        "chance_function":chance_function,
+        #"probability_model":"chance_function="+chance_function,
+        #"chance_function":chance_function,
     }
     dyk = spuriousFact(NumberFact,3)
     trial["hits"], trial["item_hits"], trial["repetition_hits"] = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed)
@@ -204,7 +209,7 @@ def chance(request):
     promote = choice(["watcot-book"])
     return render(request, 'blog/chance.html', {'description': description, 
         'adv_form': adv_form, 'smp_form': smp_form, 'form_style': form_style,
-        'params': params, 'equivalents': equivalents, 'fraction': fraction, 'odds_fraction': odds_fraction, 'hits_item':calc_hits_item, 'trial':trial, 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
+        'params': params, 'summaries': summaries, 'trial':trial, 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
 
 
 
@@ -231,11 +236,10 @@ def grid(request):
     depth = int(getParamDefault(params, "depth", "1"))
     exposed = int(getParamDefault(params, "exposed", width*depth))
     hits = int(getParamDefault(params, "hits", "5"))
-    print("hits, exposed")
-    print(hits, exposed)
+    colour = int(getParamDefault(params, "colour", "0"))
     if hits > 0 :
         print("adjusting")
-        while (hits / exposed) < 0.01:
+        while (hits / exposed) < 0.001:
             if exposed == (exposed // 1000) *1000:
                 width = width // 1000
                 exposed = exposed // 1000
@@ -246,7 +250,6 @@ def grid(request):
                 hits = hits * 10
                 stacked += 1
 
-
     palette = get_palette(getParamDefault(params, "palette_name", "default"))
     invert = getParamDefault(params, "invert", "F")
     xy = getParamDefault(params, "xy", "F")
@@ -254,7 +257,7 @@ def grid(request):
     if exposed > cutoff and depth == 1:
         depth = int((exposed+cutoff - 1) / cutoff)
         width = int(exposed / depth +0.99)
-    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0, stacked=stacked)
+    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0, stacked=stacked, colour=colour)
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)
     return response
@@ -271,7 +274,7 @@ def gridchance(request):
         seed = int(getParamDefault(params, "seed", None))
     except:
         seed = None
-    probability = num(getParamDefault(params, "probability", "0.1"))
+    probability = getParamDefault(params, "probability", "0.1")
     count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
     surface = draw_chance_grid(grid, width, depth, palette=palette, top_down = top_down)
     response = HttpResponse(content_type="image/png")
