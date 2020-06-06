@@ -107,7 +107,7 @@ def chance(request):
     repetition_text = ' '.join(split_r[1:])
 
     #chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
-    probability = getParamDefault(params, "probability", "0.1")
+    probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
     outcome_text = getParamDefault(params, "outcome_text", "hits")
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
     palette_name = getParamDefault(params, "palette_name", "default")
@@ -151,37 +151,13 @@ def chance(request):
 
     probs = [parse_probability(pstr) for pstr in probability.split('|')]
     classes = len(probs)
-    hitnames = outcome_text.split("|") if "|" in outcome_text else outcome_text * classes
+    hitnames = outcome_text.split("|") if "|" in outcome_text else [outcome_text] * classes
 
     items = int(exposed_items)
     repetitions = int(exposed_repetitions)
     paramsets = zip(probability.split('|'), probs, hitnames, [items]*classes, [repetitions] * classes, [repeat_mode] * classes)
 
     summaries = [get_prob_summary(paramset) for paramset in paramsets]
-    prob = probs[0]
-    '''
-    if repeat_mode == "repeats":
-        calc_hits = prob * items * repetitions
-        calc_hits_item = prob * repetitions
-        calc_wait = 1 / prob
-    else:
-        calc_wait = 1 / prob
-        calc_hits = -1
-        survival_prob = (1 - prob) ** repetitions
-        calc_hits_item = (1 - survival_prob) * items
-
-    fraction = Fraction(prob).limit_denominator(200)
-    odds_raw = odds2(prob, tolerance = 0.0005)
-    odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
-    percentage = prob * 100
-    equivalents = {
-        "supplied": probability,
-        "probability": prob,
-        "percentage": percentage,
-        "fraction": fraction,
-        "odds": odds_raw,
-    }
-    '''
     summarised = summaries[0]
     seed = randint(1,1000000)    
     trial = {

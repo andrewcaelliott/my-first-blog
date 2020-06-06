@@ -190,7 +190,6 @@ def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_pal
     square_size = 0.9 / range_x
     gridcell_x = 0.9 / range_x
     gridcell_y = (0.9 / aspect) / range_y
-    print(offset_frame, hits, exposed, range_x, range_y)
     count = 0
     if xy:
         for offset_x in range(0,range_x):
@@ -208,7 +207,6 @@ def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_pal
 def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False, stacked=0, colour=0):
     stack_height = int(2000/aspect * 1.4)
     WIDTH, HEIGHT = 2000, int(2000/aspect + stacked * stack_height)
-    print(WIDTH, HEIGHT, stack_height)
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
     ctx = cairo.Context(surface)
     ctx.scale(WIDTH, WIDTH)  # Normalizing the canvas
@@ -216,17 +214,13 @@ def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=defaul
     offset_frame = 0
     if invert:
         offset_frame = 12.5/100 * stacked
-    print("offset_frame %s" % offset_frame)
-    print("stacked %s" % stacked)
     count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=palette, offset_frame=offset_frame, xy=xy, invert=invert, colour=colour)
-    print(stack_height / WIDTH)
     for i in range(stacked):
         zoom(ctx, 0, ((i+1)* 252 -70) / WIDTH, 0.1, 0.01, 68/WIDTH, palette['background'], None, invert)
         if invert:
             offset_frame = 12/100 * i 
         else:
             offset_frame = 12.5/100 * (i+1) 
-        print("offset_frame %s" % offset_frame)
         count_grid(ctx, 100, 10, aspect, 1, 1000, palette=palette, offset_frame=offset_frame, pale=True, invert=invert)
     return surface
 

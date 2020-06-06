@@ -42,7 +42,7 @@ def expchance(params, repetition):
     return p
 
 def constant(params, repetition):
-    return params[0]
+    return params
 
 def increase(params, repetition):
     p = params[0] * (1+params[1])**repetition
@@ -75,7 +75,7 @@ def cell_outcome(chance_functions, repetition = 1):
         rnd = random.random()
         chance_f = chance_functions[i][0]
         params = chance_functions[i][1]
-        raw_prob = chance_f(params, repetition) 
+        raw_prob = chance_f(params[0], repetition) 
         prob = raw_prob / remaining_prob
         remaining_prob = remaining_prob - raw_prob
         if (rnd < prob):
@@ -105,9 +105,10 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
     pairs = []
     for function in chance_functions:
         chance_function_name, chance_function_params = parse_chance_function(function)
+        print("params")
+        print(chance_function_params)
         function_pair =(eval(chance_function_name), eval(('parse_probability("%s")' % chance_function_params)+","))
         pairs.append(function_pair)
-
     count_hits_x = [0] * range_x
     count_hits_y = [0] * range_y
     count_hits = 0
@@ -202,17 +203,19 @@ def odds2(proportion, tolerance=0.01):
     frac = Fraction(1-proportion).limit_denominator(40)
     if (proportion > 0.01) and abs(frac - (1-proportion))<tolerance:
         print("close enough", frac, proportion)
-        return(frac.numerator, frac.denominator - frac.numerator)
+        if odds_on:
+            return frac.denominator - frac.numerator, frac.numerator
+        else:
+            return frac.numerator, frac.denominator - frac.numerator
 
     fineness = min(math.log10(proportion)-1,-1.4)
     fineadjust = round(10 ** -fineness)
     limit = int(1.2*fineadjust)
     fracpair = (round(fineadjust*(1-proportion)), fineadjust)
     round_num = round_sigfigs(fracpair[0],0)
-    print(fracpair)
-    print(round_num , round(round_num * fracpair[1] / fracpair[0]))
     frac2 = Fraction(round_num / round(round_num * fracpair[1] / fracpair[0])).limit_denominator(limit)
     if odds_on:
+        print("odds_on")
         return frac2.denominator - frac2.numerator, frac2.numerator
     else:
         return frac2.numerator, frac2.denominator - frac2.numerator
@@ -239,7 +242,7 @@ def round_money(amount, level=1):
 def parse_chance_function(chance_function):
     regex="^((?P<name>[a-z|A-Z|0-9]+)\((?P<params>.*)\),?)+$"
     p = re.compile(regex)
-    m=p.match(chance_function)
+    m=p.match(chance_function.strip())
     if (m!=None):
         try:
             name = m.group('name')
@@ -262,37 +265,45 @@ def parse_chance_functions(chance_functions):
             return None
 
 def parse_probability(probability):
-    probability = probability.replace("+"," ").replace(",","")
-    regex_odds="^\s*(?P<miss>[0-9\.]+)\s*(:|to)\s*(?P<hit>[0-9\.]+)\s*$"
-    p = re.compile(regex_odds)
-    m=p.match(probability)
-    if (m!=None):
+    probability_list=probability.split(",")
+    if len(probability_list) > 1:
+        return [parse_probability(p) for p in probability_list ]
+    else:
+        probability = probability.replace("+"," ").replace(",","")
+        regex_odds="^\s*(?P<miss>[0-9\.]+)\s*(:|to)\s*(?P<hit>[0-9\.]+)\s*$"
+        p = re.compile(regex_odds)
+        m=p.match(probability)
+        if (m!=None):
+            try:
+                miss = num(m.group('miss'))
+                hit = num(m.group('hit'))
+                return hit/(hit+miss)
+            except:
+                return None
+        regex_prop="^\s*(?P<hit>[0-9\.]+)\s*(\/|in)\s*(?P<all>[0-9\.]+)\s*$"
+        p = re.compile(regex_prop)
+        m=p.match(probability)
+        if (m!=None):
+            try:
+                total = num(m.group('all'))
+                hit = num(m.group('hit'))
+                return hit/total
+            except:
+                return None
+        regex_perc="^\s*(?P<perc>[0-9\.]+)\s*(%|pc|perc|percent|percentage)\s*$"
+        p = re.compile(regex_perc)
+        m=p.match(probability)
+        if (m!=None):
+            try:
+                perc = num(m.group('perc'))
+                return perc/100
+            except:
+                return None
         try:
-            miss = num(m.group('miss'))
-            hit = num(m.group('hit'))
-            return hit/(hit+miss)
+            prob = num(probability)
         except:
-            return None
-    regex_prop="^\s*(?P<hit>[0-9\.]+)\s*(\/|in)\s*(?P<all>[0-9\.]+)\s*$"
-    p = re.compile(regex_prop)
-    m=p.match(probability)
-    if (m!=None):
-        try:
-            total = num(m.group('all'))
-            hit = num(m.group('hit'))
-            return hit/total
-        except:
-            return None
-    regex_perc="^\s*(?P<perc>[0-9\.]+)\s*(%|pc|perc|percent|percentage)\s*$"
-    p = re.compile(regex_perc)
-    m=p.match(probability)
-    if (m!=None):
-        try:
-            perc = num(m.group('perc'))
-            return perc/100
-        except:
-            return None
-    return num(probability)
+            prob = 0
+        return prob
 
 def distribution(array):
     table = {}
@@ -338,17 +349,33 @@ def get_prob_summary(args):
         calc_hits = prob * items * repetitions
         calc_hits_item = prob * repetitions
         survival_prob = 1
-        calc_wait = 1 / prob
+        try:
+            calc_wait = 1 / prob
+        except:
+            calc_wait = 0
     else:
-        calc_wait = 1 / prob
+        try:
+            calc_wait = 1 / prob
+        except:
+            calc_wait = 0
         calc_hits = -1
         survival_prob = (1 - prob) ** repetitions
         calc_hits_item = (1 - survival_prob) * items
 
-    fraction = Fraction(prob).limit_denominator(200)
-    odds_raw = odds2(prob, tolerance=0.0005)
-    odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
-    percentage = prob * 100
+    try:
+        fraction = Fraction(prob).limit_denominator(200)
+    except:
+        fraction = Fraction(0)
+    
+    try:
+        odds_raw = odds2(prob, tolerance=0.0005)
+        print("odds raw", odds_raw)
+        odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
+        percentage = prob * 100
+    except:
+        odds_raw = odds2(0, tolerance=0.0005)
+        odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
+        percentage = 0
     equivalents = {
         "supplied": probability.strip(),
         "probability": prob,

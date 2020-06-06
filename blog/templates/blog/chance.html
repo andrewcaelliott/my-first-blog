@@ -27,8 +27,18 @@
               }
             }
             </script>
+            <script>
+            function openTab(tabName) {
+              var i;
+              var x = document.getElementsByClassName("tab");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              document.getElementById(tabName).style.display = "block";  
+            }
+            </script>
 
-            <span><button id=smp_adv onclick="toggleForms()">{% if form_style == 'adv' %}Simple{% else %}Advanced{% endif %}</button></span>
+            <span><button id=smp_adv class="save btn btn-warning" onclick="toggleForms()">{% if form_style == 'adv' %}Simple{% else %}Advanced{% endif %}</button></span>
             <div id=adv_form style="display:{% if form_style == 'adv' %}block{% else %}none{% endif %}">
                 <h2>What are the chances of {{ description }}?</h2>
                     <form method="GET" class="query-form" action="/chance/answer">
@@ -47,9 +57,13 @@
         <div class="widget col-lg-6 col-md-6">
             <div>
                 <h2>The chances are:</h2>
-                    {% for summary in summaries %}
-                    <hr/>
                     <div>
+                    {% for summary in summaries %}
+                        <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}')">{{ summary.hits_text }}</button>
+                    {% endfor %}
+                    </div>    
+                    {% for summary in summaries %}
+                    <div id="tab{{ forloop.counter }}" class="tab" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
                     {% if trial.repeat_mode == "repeats"%}
                     {% if trial.repetitions == 1 %}
                     <p>For {{ trial.items }} {{ trial.item_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
@@ -58,9 +72,9 @@
                     <p>For {{ trial.items }} {{ trial.item_text }}, over {{ trial.repetitions }} {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
                     <p>Over {{ trial.repetitions }} {{ trial.repetition_text }}, on average there will be {{ summary.hits_item | floatformat }} {{ summary.hits_text }} for each of the {{ trial.item_text }}.</p>
                     {% endif %}
-                {% else %}
-                    <p>For multiple {{ trial.repetition_text }}, each with probability {{ equivalents.supplied }}, on average there will be {{ trial.hit_wait | floatformat }}  {{ trial.repetition_text }} until {{ trial.hits_text}}.</p>
-                    <p>On average, with up to {{ trial.repetitions }} repeated  {{ trial.repetition_text }}, there will be {{ hits_item | floatformat }} {{ trial.item_text}} with {{ trial.hits_text }}.</p>
+                    {% else %}
+                    <p>For multiple {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hit_wait | floatformat }}  {{ trial.repetition_text }} until {{ summary.hits_text}}.</p>
+                    <p>On average, with up to {{ trial.repetitions }} repeated  {{ trial.repetition_text }}, there will be {{ summary.hits_item | floatformat }} {{ trial.item_text}} with {{ summary.hits_text }}.</p>
                 {% endif %}
 
                 <h3>Probability</h3>
@@ -72,7 +86,11 @@
                 <p></p>
                 <img src="/gridpng/?width={{ summary.equivalents.fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.fraction.numerator }}&colour={{forloop.counter0}}">
                 <h3>As approximate fair betting odds</h3>
+                {% if summary.equivalents.odds.0 < summary.equivalents.odds.1 %}
+                <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}} ({{summary.equivalents.odds.1}} : {{summary.equivalents.odds.0}} on)</li>
+                {% else %}
                 <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}}</li>
+                {% endif %}
                 <p></p>
                 <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
             </div>
