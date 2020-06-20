@@ -35,7 +35,7 @@ from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
-from .chance_utils import compute_chance_grid, get_prob_summary
+from .chance_utils import compute_chance_grid, get_prob_summary, collect_lower, collect_left
 from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
 from .utils import getParamDefault
 
@@ -124,28 +124,28 @@ def chance(request):
         description = chanceFact.title
 
     adv_form.fields["probability"].initial = probability
-    adv_form.fields["probability"].label = "Chance"
+    adv_form.fields["probability"].label = "Chances?"
     adv_form.fields["items"].initial = items
-    adv_form.fields["items"].label = "How many things?"
+    adv_form.fields["items"].label = "Columns?"
     adv_form.fields["repetitions"].initial = repetitions
-    adv_form.fields["repetitions"].label = "Repeated how many times?"
+    adv_form.fields["repetitions"].label = "Rows?"
     adv_form.fields["repeat_mode"].initial = repeat_mode
-    adv_form.fields["repeat_mode"].label = "repeats for "+item_text+" or removes?"
+    adv_form.fields["repeat_mode"].label = "repeats or removes?"
     adv_form.fields["palette_name"].initial = palette_name
     adv_form.fields["palette_name"].label = "Palette"
     adv_form.fields["outcome_text"].initial = outcome_text
-    adv_form.fields["outcome_text"].label = "Hits are called?"
+    adv_form.fields["outcome_text"].label = "Outcomes?"
     adv_form.fields["form_style"].initial = 'adv'
     adv_form.fields['form_style'].widget = forms.HiddenInput()
     
     smp_form.fields["probability"].initial = probability
-    smp_form.fields["probability"].label = "Chance"
+    smp_form.fields["probability"].label = "Chances?"
     smp_form.fields["items"].initial = items
-    smp_form.fields["items"].label = "How many things?"
+    smp_form.fields["items"].label = "Columns?"
     smp_form.fields["repetitions"].initial = repetitions
-    smp_form.fields["repetitions"].label = "Repeated how many times?"
+    smp_form.fields["repetitions"].label = "Rows?"
     smp_form.fields["outcome_text"].initial = outcome_text
-    smp_form.fields["outcome_text"].label = "Hits are called?"
+    smp_form.fields["outcome_text"].label = "Outcomes?"
     smp_form.fields["form_style"].initial = 'smp'
     smp_form.fields['form_style'].widget = forms.HiddenInput()
 
@@ -176,16 +176,25 @@ def chance(request):
         #"chance_function":chance_function,
     }
     dyk = spuriousFact(NumberFact,3)
-    trial["hits"], trial["item_hits"], trial["repetition_hits"] = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed)
-    trial["item_hits_distribution"]=distribution(trial["item_hits"])
-    trial["item_hits_summary"]=summary(trial["item_hits_distribution"])
-    trial["repetition_hits_distribution"]=distribution(trial["repetition_hits"])
-    trial["repetition_hits_summary"]=summary(trial["repetition_hits_distribution"])
-    trial["hit_percentage"]= 100 * trial["hits"] / trial["exposure"]
+    trial_outcomes = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed, include_none = False)
+    for level, trial_outcome in trial_outcomes.items():
+        trial_outcome["hit_name"] = "None" if level == 0 else hitnames[level-1]
+        trial_outcome["item_hits"] = trial_outcome['x_hits'].values()
+        trial_outcome["repetition_hits"] = trial_outcome['y_hits'].values()
+        item_distribution = distribution(trial_outcome["item_hits"])
+        trial_outcome["item_hits_distribution"]=[(k,v) for k,v in item_distribution.items()]
+        trial_outcome["item_hits_summary"]=summary(item_distribution)
+        repetition_distribution = distribution(trial_outcome["repetition_hits"])
+        trial_outcome["repetition_hits_distribution"]=[(k,v) for k,v in repetition_distribution.items()]
+        trial_outcome["repetition_hits_summary"]=summary(repetition_distribution)
+        trial_outcome["exposure"] = trial['exposure']
+        trial_outcome["hit_percentage"]= 100 * trial_outcome["hits"] / trial_outcome["exposure"]
+        trial_outcome["expected_hits"]= 0 if level == 0 else summaries[level-1]['hits']
+        trial_outcome["expected_percentage"]= 0 if level == 0 else summaries[level-1]['equivalents']['percentage']
     promote = choice(["watcot-book"])
     return render(request, 'blog/chance.html', {'description': description, 
         'adv_form': adv_form, 'smp_form': smp_form, 'form_style': form_style,
-        'params': params, 'summaries': summaries, 'trial':trial, 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
+        'params': params, 'summaries': summaries, 'trial':trial, 'trial_outcomes': [outcome for level, outcome in trial_outcomes.items()], 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
 
 
 
@@ -243,15 +252,26 @@ def gridchance(request):
     width = int(getParamDefault(params, "width", "20"))
     depth = int(getParamDefault(params, "depth", "10"))
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
+    display = getParamDefault(params, "display", "default")
     palette = get_palette(getParamDefault(params, "palette_name", "default"))
     top_down_param = getParamDefault(params, "top_down", "false")
     top_down = top_down_param.lower()[0] == "t"
+    top_down_param = getParamDefault(params, "top_down", "false")
     try:
         seed = int(getParamDefault(params, "seed", None))
     except:
         seed = None
     probability = getParamDefault(params, "probability", "0.1")
-    count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
+    level_counts, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
+    if display == 'collect_lower':
+        grid = collect_lower(grid)
+    if display == 'collect_left':
+        grid = collect_left(grid)
+    if display == 'sort_lower':
+        grid = collect_lower(grid, sort=True)
+    if display == 'sort_left':
+        grid = collect_left(grid, sort=True)
+    #count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
     surface = draw_chance_grid(grid, width, depth, palette=palette, top_down = top_down)
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)

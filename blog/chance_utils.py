@@ -82,36 +82,29 @@ def cell_outcome(chance_functions, repetition = 1):
             return 1+i
     return 0
 
-def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
+def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False, include_none = False):
     if seed:
         random.seed(seed)
     range_x = trial["items"]
     range_y = trial["repetitions"]
     chance_function_str = trial["probability"]
-    #probability = chance
-    #p = probability
-    #chance_f = equalchance
-    #chance_function_name = "equalchance"
-    #chance_params = {}
-    #chance_params["chance"] = chance
-
-    #if "chance_function" in params.keys():
-    #    chance_function = params["chance_function"]
-    #elif "chance_function" in trial.keys():
-    #    chance_function = trial["chance_function"]
-    #else:
-    #    chance_function = "[constant(probability)]"
     chance_functions = parse_chance_functions(chance_function_str).split("|")
     pairs = []
     for function in chance_functions:
         chance_function_name, chance_function_params = parse_chance_function(function)
-        print("params")
-        print(chance_function_params)
         function_pair =(eval(chance_function_name), eval(('parse_probability("%s")' % chance_function_params)+","))
         pairs.append(function_pair)
-    count_hits_x = [0] * range_x
-    count_hits_y = [0] * range_y
-    count_hits = 0
+    level_counts = {}
+    for outcome in range(len(pairs)):
+        stats = {}
+        stats['hits']=0
+        stats['x_hits'] = {}
+        for offset_x in range(0,range_x):
+            stats['x_hits'][offset_x] = 0
+        stats['y_hits'] = {}
+        for offset_y in range(0,range_y):
+            stats['y_hits'][offset_y] = 0
+        level_counts[outcome+1]=stats
     outcomes = [[None] * range_x for i in range(range_y)]
     alive_x = [True] * range_x
     for offset_y in range(0,range_y):
@@ -119,17 +112,65 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False):
             outcome = cell_outcome(pairs, offset_y)
             if alive_x[offset_x]:
                 outcomes[offset_y][offset_x] = outcome
-                count_hits+=int(outcome>0)
-#               count_hits_x[offset_x]+=int(outcome>0)
-                count_hits_x[offset_x]+=outcome
-                count_hits_y[offset_y]+=int(outcome>0)
-                if repeat_mode == "removes" and outcome>0:
+                if outcome > 0:
+                    if outcome in level_counts.keys():
+                        level_counts[outcome]['hits'] += 1
+                        level_counts[outcome]['x_hits']
+                        if offset_x in level_counts[outcome]['x_hits']:
+                            level_counts[outcome]['x_hits'][offset_x] += 1
+                        else:    
+                            level_counts[outcome]['x_hits'][offset_x] = 1
+                        if offset_y in level_counts[outcome]['y_hits']:
+                            level_counts[outcome]['y_hits'][offset_y] += 1
+                        else:    
+                            level_counts[outcome]['y_hits'][offset_y] = 1
+                    else:
+                        level_count = {}
+                        level_count['hits'] = 1
+                        level_count['x_hits'] = {offset_x : 1}
+                        level_count['y_hits'] = {offset_y : 1}
+                        level_counts[outcome] = level_count
+                if repeat_mode == "removes" and outcome > 0:
                     alive_x[offset_x] = False
             
     if verbose:
-        return count_hits, count_hits_x, count_hits_y, outcomes
+        return level_counts, outcomes
     else:
-        return count_hits, count_hits_x, count_hits_y
+        return level_counts
+
+def replace_cell(c, a, b):
+    if c == a:
+        return b
+    else:
+        return c
+
+
+def collect_left(outcomes_before, sort=False):
+    outcomes_after = []
+    rows_count_0 = []
+    for y in range(len(outcomes_before)):
+        outcomes_after_col = []
+        newcol = [replace_cell(cell, 1000, 0) for cell in sorted([replace_cell(cell, 0, 1000) for cell in outcomes_before[y]])]
+        rows_count_0.append(newcol.count(0))
+        outcomes_after.append(newcol)
+    if sort:
+        outcomes_after = list(zip(*sorted(zip(rows_count_0,outcomes_after), reverse=True)))[1]        
+    return outcomes_after
+
+def collect_lower(outcomes_before, sort=False):
+    outcomes_before = [[outcomes_before[j][i] for j in range(len(outcomes_before))] for i in range(len(outcomes_before[0]))] 
+    outcomes_after = []
+    rows_count_0 = []
+    for y in range(len(outcomes_before)):
+        outcomes_after_col = []
+        newcol = [replace_cell(cell, 1000, 0) for cell in sorted([replace_cell(cell, 0, 1000) for cell in outcomes_before[y]])]
+        rows_count_0.append(newcol.count(0))
+        outcomes_after.append(newcol)
+    if sort:
+        outcomes_after = list(zip(*sorted(zip(rows_count_0,outcomes_after), reverse=True)))[1]        
+    outcomes_after = [[outcomes_after[j][i] for j in range(len(outcomes_after))] for i in range(len(outcomes_after[0]))] 
+    return outcomes_after
+
 
 def kfillcolours():
         fillcolour0 = (1, 1, 1)  # Solid color

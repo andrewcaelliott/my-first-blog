@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-        <div class="widget col-lg-6 col-md-6">
+        <div class="widget col-lg-2 col-md-2">
             <script>
             function toggleForms() {
               var btn = document.getElementById("smp_adv")
@@ -26,8 +26,6 @@
                 smp_form.style.display = "none";
               }
             }
-            </script>
-            <script>
             function openTab(tabName) {
               var i;
               var x = document.getElementsByClassName("tab");
@@ -36,7 +34,62 @@
               }
               document.getElementById(tabName).style.display = "block";  
             }
+            function showOutcome(outcomeName) {
+              var i;
+              var x = document.getElementsByClassName("outcome");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              document.getElementById(outcomeName).style.display = "block";  
+            }
+            function redoGrid(gridType){
+                event.preventDefault();
+                $('#grid_div').empty()
+                var img = $('<img id="grid_image_id">');
+                switch (gridType){
+                    case 0:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}');
+                        break;
+                    case 1:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_lower');
+                        break;
+                    case 2:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=sort_lower');
+                        break;
+                    case 3:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_left');
+                        break;
+                    case 4:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=sort_left');
+                        break;
+                }
+                img.appendTo('#grid_div');                 
+            }
             </script>
+            <!--
+            function redoGrid(gridType){
+                event.preventDefault();
+            alert("here")
+            $.ajax({
+                    url: '/gridchancepng/',
+                    type: 'get'
+                    data: {
+                        'width':'{{ trial.items }}',
+                        'depth':'{{ trial.repetitions }}',
+                        'probability':'{{ trial.probability }}',
+                        'repeat_mode':'{{ trial.repeat_mode }}',
+                        'palette_name': 'default',
+                        'seed':'123'
+                    },
+                    dataType: 'html',
+                    success: function (data) {
+                        $("#quote").html(data.quote);
+                        alert("there")
+                    }
+                  });                   
+            return false;
+            }
+            -->
 
             <span><button id=smp_adv class="save btn btn-warning" onclick="toggleForms()">{% if form_style == 'adv' %}Simple{% else %}Advanced{% endif %}</button></span>
             <div id=adv_form style="display:{% if form_style == 'adv' %}block{% else %}none{% endif %}">
@@ -54,38 +107,44 @@
                     </form>
             </div>
         </div>
-        <div class="widget col-lg-6 col-md-6">
+        <div class="widget col-lg-10 col-md-10">
+            <span>
+            {% for summary in summaries %}
+                <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}')">{{ summary.hits_text }}</button>
+            {% endfor %}
+            </span>    
+        </div>
+        {% for summary in summaries %}
+        <div id="tab{{ forloop.counter }}" class="tab" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
+        <div class="widget col-lg-5 col-md-5">
             <div>
-                <h2>The chances are:</h2>
-                    <div>
-                    {% for summary in summaries %}
-                        <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}')">{{ summary.hits_text }}</button>
-                    {% endfor %}
-                    </div>    
-                    {% for summary in summaries %}
-                    <div id="tab{{ forloop.counter }}" class="tab" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
+                <h2>The chances of {{ summary.hits_text }} are:</h2>
                     {% if trial.repeat_mode == "repeats"%}
-                    {% if trial.repetitions == 1 %}
-                    <p>For {{ trial.items }} {{ trial.item_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
-                    <p>On average there will be {{ hits_item | floatformat }} {{ trial.hits_text }} for each of the {{ trial.item_text }}.</p>
+                        {% if trial.repetitions == 1 %}
+                        <p>For {{ trial.items }} {{ trial.item_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
+                        <p>On average there will be {{ hits_item | floatformat }} {{ trial.hits_text }} for each of the {{ trial.item_text }}.</p>
+                        {% else %}
+                        <p>For {{ trial.items }} {{ trial.item_text }}, over {{ trial.repetitions }} {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
+                        <p>Over {{ trial.repetitions }} {{ trial.repetition_text }}, on average there will be {{ summary.hits_item | floatformat }} {{ summary.hits_text }} for each of the {{ trial.item_text }}.</p>
+                        {% endif %}
                     {% else %}
-                    <p>For {{ trial.items }} {{ trial.item_text }}, over {{ trial.repetitions }} {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
-                    <p>Over {{ trial.repetitions }} {{ trial.repetition_text }}, on average there will be {{ summary.hits_item | floatformat }} {{ summary.hits_text }} for each of the {{ trial.item_text }}.</p>
+                        <p>For multiple {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hit_wait | floatformat }}  {{ trial.repetition_text }} until {{ summary.hits_text}}.</p>
+                        <p>On average, with up to {{ trial.repetitions }} repeated  {{ trial.repetition_text }}, there will be {{ summary.hits_item | floatformat }} {{ trial.item_text}} with {{ summary.hits_text }}.</p>
                     {% endif %}
-                    {% else %}
-                    <p>For multiple {{ trial.repetition_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hit_wait | floatformat }}  {{ trial.repetition_text }} until {{ summary.hits_text}}.</p>
-                    <p>On average, with up to {{ trial.repetitions }} repeated  {{ trial.repetition_text }}, there will be {{ summary.hits_item | floatformat }} {{ trial.item_text}} with {{ summary.hits_text }}.</p>
-                {% endif %}
 
-                <h3>Probability</h3>
+                <h4>Probability</h4>
                 <li>{{summary.equivalents.probability| floatformat:4}}</li>
-                <h3>As a percentage</h3>
+                <h4>As a percentage</h4>
                 <li>{{summary.equivalents.percentage | floatformat:2}}%</li>
-                <h3>As a rounded-off proportion</h3>
+                </div>
+        </div>
+        <div class="widget col-lg-5 col-md-5">
+            <div>
+                <h4>As a rounded-off proportion</h4>
                 <li>{{summary.equivalents.fraction.numerator}} in {{summary.equivalents.fraction.denominator}}</li>
                 <p></p>
                 <img src="/gridpng/?width={{ summary.equivalents.fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.fraction.numerator }}&colour={{forloop.counter0}}">
-                <h3>As approximate fair betting odds</h3>
+                <h4>As approximate fair betting odds</h4>
                 {% if summary.equivalents.odds.0 < summary.equivalents.odds.1 %}
                 <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}} ({{summary.equivalents.odds.1}} : {{summary.equivalents.odds.0}} on)</li>
                 {% else %}
@@ -94,33 +153,54 @@
                 <p></p>
                 <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
             </div>
-            {% endfor %}    
-            </div>
         </div>
-        <div class="widget col-lg-12 col-md-12">
+            </div>
+            {% endfor %}    
+        <div class="widget col-lg-10 col-md-10">
             <div>
                 <h3>Representative example</h3>
-                {% if trial.repeat_mode == "repeats"%}
-                    <li>{{trial.items}} {{ form.item_text.value }} x {{trial.repetitions}} {{ form.repetition_text.value }} = {{ trial.exposure }} chances for {{ form.outcome_text.value }}</li>
-                    <li>Observed {{ form.outcome_text.value }}: {{ trial.hits }} = {{ trial.hit_percentage | floatformat:3}}% (expected average: 
-                    {{ form.outcome_count.value | floatformat }} = {{ equivalents.percentage | floatformat:3 }}%)</li>
-                {% else %}
-                    <li>{{trial.items}} {{ form.item_text.value }} x {{trial.repetitions}} {{ form.repetition_text.value }} max </li>
-                    <li>Observed {{ form.outcome_text.value }}: {{ trial.hits }} (expected average: 
-                    {{ hits_item | floatformat }})</li>
-                {% endif %}
-                <h4>For {{ trial.item_text }}</h4>
-                <li>Counts for {{ trial.item_text }}: {{ trial.item_hits}}</li>
-                <li>Distribution for {{ form.item_text.value }}: {{ trial.item_hits_distribution}}</li>
-                <li>Summary for {{ form.item_text.value }}: {{ trial.item_hits_summary}}</li>
-                {% if form.exposed_repetitions.value != "1" %}
-                <h4>For {{ trial.repetition_text }}</h4>
-                <li>Counts for {{ trial.repetition_text }}: {{ trial.repetition_hits}}</li>
-                <li>Distribution for {{ form.repetition_text.value }}: {{ trial.repetition_hits_distribution}}</li>
-                <li>Summary for {{ form.repetition_text.value }}: {{ trial.repetition_hits_summary}}</li>
-                {% endif %}
+                <div>
+                {% for trial_outcome in trial_outcomes %}
+                    <button type="submit" class="save btn btn-warning" name="calc_target" onclick="showOutcome('outcome{{ forloop.counter }}')">{{ trial_outcome.hit_name }}</button>
+                {% endfor %}
+                </div>    
+                {% for trial_outcome in trial_outcomes %}
+                    <div id="outcome{{ forloop.counter }}" class="outcome" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
+                    <h4>For {{ trial_outcome.hit_name }}</h4>
+                    {% if trial.repeat_mode == "repeats"%}
+                        <li>{{trial.items}} {{ trial.item_text }} x {{trial.repetitions}} {{ trial.repetition_text }} = {{ trial.exposure }} chances for {{ trial_outcome.hit_name }}</li>
+                        <li>Observed {{ trial_outcome.hit_name }}: {{ trial_outcome.hits }} = {{ trial_outcome.hit_percentage | floatformat:3}}% (expected average: 
+                        {{ trial_outcome.expected_hits | floatformat }} = {{ trial_outcome.expected_percentage | floatformat:3 }}%)</li>
+                    {% else %}
+                        <li>{{trial.items}} {{ trial.item_text }} x {{trial.repetitions}} {{ trial.repetition_text }} max </li>
+                        <li>Observed {{ trial_outcome.hit_name }}: {{ trial_outcome.hits }} </li>
+                    {% endif %}
+                    <div class="widget col-lg-6 col-md-6">
+                    <h5>For {{ trial.item_text }} (columns)</h5>
+                        <li>Summary for {{ trial.item_text }}: {{ trial_outcome.item_hits_summary}}</li>
+                        <li title="{{ trial_outcome.item_hits}}">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.item_text }} ...</li>
+                        <li title="{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}">Distribution: How many {{ trial.item_text }} for each different number of {{ trial_outcome.hit_name }} ... </li>
+                    </div>
+                    {% if form.exposed_repetitions.value != "1" %}
+                    <div class="widget col-lg-6 col-md-6">
+                    <h5>For {{ trial.repetition_text }} (rows)</h5>
+                        <li>Summary for {{ trial.repetition_text }}: {{ trial_outcome.repetition_hits_summary}}</li>
+                        <li title="{{ trial_outcome.repetition_hits}}">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.repetition_text }} ...</li>
+                        <li title="{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}">Distribution: How many {{ trial.repetition_text }} for each different number of {{ trial_outcome.hit_name }} ... </li>
+                    </div>
+                    {% endif %}
+                    </div>
+                {% endfor %}
                 <p></p>
-                <img src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&{{ trial.probability_model }}">
+                    <button type="submit" class="save btn btn-warning" name="grid_0" onclick="redoGrid(0)">As Originally Distributed</button>
+                    <button type="submit" class="save btn btn-warning" name="grid_1" onclick="redoGrid(1)">Collect Lower</button>
+                    <button type="submit" class="save btn btn-warning" name="grid_2" onclick="redoGrid(2)">Collect Lower &amp; Sort</button>
+                    <button type="submit" class="save btn btn-warning" name="grid_3" onclick="redoGrid(3)">Collect Left</button>
+                    <button type="submit" class="save btn btn-warning" name="grid_4" onclick="redoGrid(4)">Collect Left &amp; Sort</button>
+
+                <div id="grid_div">
+                <img id="grid_image_id" src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}">
+                </div>
             </div>
         </div>
 {% endblock %}
