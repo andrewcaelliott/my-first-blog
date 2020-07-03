@@ -171,6 +171,38 @@ def collect_lower(outcomes_before, sort=False):
     outcomes_after = [[outcomes_after[j][i] for j in range(len(outcomes_after))] for i in range(len(outcomes_after[0]))] 
     return outcomes_after
 
+def collect_all(outcomes_before, sort=False):
+    outcomes_before = [[outcomes_before[j][i] for j in range(len(outcomes_before))] for i in range(len(outcomes_before[0]))] 
+    outcomes_after = []
+    cells = flatten(outcomes_before)
+    sorted_cells = [replace_cell(cell, 1000, 0) for cell in sorted([replace_cell(cell, 0, 1000) for cell in cells])]
+    i = 0
+    for y in range(len(outcomes_before)):
+        outcomes_after_col = []
+        for x in range(len(outcomes_before[y])):
+            outcomes_after_col.append(sorted_cells[i])
+            i+=1
+        outcomes_after.append(outcomes_after_col)
+    outcomes_after = [[outcomes_after[j][i] for j in range(len(outcomes_after))] for i in range(len(outcomes_after[0]))] 
+    return outcomes_after
+
+def collect_corner(outcomes_before, sort=False):
+    outcomes_before = [[outcomes_before[j][i] for j in range(len(outcomes_before))] for i in range(len(outcomes_before[0]))] 
+    rows = len(outcomes_before)
+    cols = len(outcomes_before[0])
+    outcomes_after = [ [ 0 for i in range(cols) ] for j in range(rows) ]
+    count_all = rows * cols
+    cells = [cell for cell in flatten(outcomes_before) if cell != 0]
+    sorted_cells = sorted(cells)
+    ratio = math.sqrt(len(cells) / count_all)
+    rows_count = math.ceil(rows * ratio)
+    cols_count = math.ceil(cols * ratio)
+    for i in range(len(cells)):
+        outcomes_after[i // cols_count][i % cols_count] = sorted_cells[i]
+    outcomes_after = [[outcomes_after[j][i] for j in range(len(outcomes_after))] for i in range(len(outcomes_after[0]))] 
+    return outcomes_after
+
+
 
 def kfillcolours():
         fillcolour0 = (1, 1, 1)  # Solid color
@@ -359,6 +391,13 @@ def distribution(array):
 
     return sorted_table
 
+def flatten(array):
+    flat = []
+    for row in array:
+        for col in row:
+            flat.append(col)
+    return flat
+
 def summary(sorted_dist):
     k = list(sorted_dist.keys())
     m = len(k)
@@ -396,6 +435,10 @@ def get_prob_summary(args):
             calc_wait = 0
     else:
         try:
+            prob = prob[0]
+        except:
+            pass
+        try:
             calc_wait = 1 / prob
         except:
             calc_wait = 0
@@ -404,7 +447,7 @@ def get_prob_summary(args):
         calc_hits_item = (1 - survival_prob) * items
 
     try:
-        fraction = Fraction(prob).limit_denominator(200)
+        fraction = Fraction(prob).limit_denominator(1000)
     except:
         fraction = Fraction(0)
     

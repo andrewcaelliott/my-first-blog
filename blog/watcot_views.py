@@ -35,7 +35,7 @@ from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
-from .chance_utils import compute_chance_grid, get_prob_summary, collect_lower, collect_left
+from .chance_utils import compute_chance_grid, get_prob_summary, collect_lower, collect_left, collect_all, collect_corner
 from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
 from .utils import getParamDefault
 
@@ -224,7 +224,7 @@ def grid(request):
     colour = int(getParamDefault(params, "colour", "0"))
     if hits > 0 :
         print("adjusting")
-        while (hits / exposed) < 0.001:
+        while (hits / exposed) < 0.0009:
             if exposed == (exposed // 1000) *1000:
                 width = width // 1000
                 exposed = exposed // 1000
@@ -271,6 +271,10 @@ def gridchance(request):
         grid = collect_lower(grid, sort=True)
     if display == 'sort_left':
         grid = collect_left(grid, sort=True)
+    if display == 'collect_all':
+        grid = collect_all(grid, sort=True)
+    if display == 'collect_corner':
+        grid = collect_corner(grid, sort=True)
     #count, count_items, count_repetitions, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
     surface = draw_chance_grid(grid, width, depth, palette=palette, top_down = top_down)
     response = HttpResponse(content_type="image/png")

@@ -72,6 +72,21 @@ print3_palette = {
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
 
+print4_palette = {
+        'features':[
+        (0.7, 0.0, 0.0, 1.0),  # Red
+        (0.0, 0.4, 0.0, 1.0),  # Green
+        (0.0, 0.0, 0.7, 1.0),  # Blue
+        (0.3, 0.0, 0.3, 1.0),  # Magenta
+        (0.0, 0.4, 0.4, 1.0),  # Turquoise
+        (0.3, 0.3, 0.0, 1.0),  # Olive
+        (0.2, 0.2, 0.2, 1.0),  # Dark Grey
+        (0.65, 0.85, 0.85, 1.0),  
+        ],
+        'background': (0.85, 0.85, 0.85, 1.0), #Light Grey
+        'canvas': (1.0, 1.0, 1.0, 1.0), #White
+    }
+
 red_grad_palette = {
         'features':[
         (0.3, 0.0, 0.0, 1.0),  # Dark Red
@@ -89,6 +104,7 @@ palettes = {
     'print': print_palette,
     'print2': print2_palette,
     'print3': print3_palette,
+    'print4': print4_palette,
     'red_grad': red_grad_palette,
     'mono': monochrome_palette
 }
