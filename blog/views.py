@@ -164,6 +164,9 @@ def article_sponsor(request):
     return article("ITABN-Sponsors.md", request)
 
 def article_badlink(request):
+    host =request.build_absolute_uri()
+    if host.find('chance') >= 0:
+        return article("WATCOT-Bad-Link.md", request)
     return article("ITABN-Bad-Link.md", request)
 
 def article_gen(request, article_name):

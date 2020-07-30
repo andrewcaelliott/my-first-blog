@@ -142,3 +142,5 @@ b-summary-wb|https://data.worldbank.org/
 b-summary-oecd|https://data.oecd.org/
 b-summary-ons|https://www.ons.gov.uk/
 b-summary-xkcd|https://xkcd.com/
+w-general-uu|https://understandinguncertainty.org/
+w-patterns-quincunx|https://www.mathsisfun.com/data/quincunx.html/

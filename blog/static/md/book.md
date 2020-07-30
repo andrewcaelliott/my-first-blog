@@ -1,6 +1,6 @@
 # _Is That A Big Number?_ The Book.
 
-_Is That A Big Number?_ is now a book, and will be published by Oxford University Press in July 2018. This page provides all the web links listed in the "Back of the Book" section.
+_Is That A Big Number?_ is now a book, and published by Oxford University Press in July 2018. This page provides all the web links listed in the "Back of the Book" section.
 
 ### Introduction
 Quiz Web link: [http://IsThatABigNumber.com/link/q-intro](http://IsThatABigNumber.com/link/q-intro)

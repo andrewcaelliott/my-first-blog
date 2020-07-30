@@ -49,9 +49,11 @@ What happens when an engineer-architect turns his hand to avant-garde music?
 ### Chance Discoveries
 Buried treasure - the role of sloppy laboratories in chemistry - a taxonomy of serendipity - accidental or inevitable?
 ### Mixing it Up
-Random Mozart - musical improvisation - using chance in composition - the usefulness of noise - sponaneity.
+Random Mozart - musical improvisation - using chance in composition - sponaneity.
 ### A Chance to Live
-The role of chance in assembling DNA - random damage to DNA - the chance of evolving a banana - evolution seen through the five dualities - what are the chances that we are here now? - genetic algorithms.
+The role of chance in assembling DNA - random damage to DNA - the chance of evolving a banana - evolution seen through the five dualities - what are the chances that we are here now?.
+### Random Technologies
+ Beautiful noise - jittering, dithering, and scrambling - evolution in the machine - genetic algorithms.
 
 ---
 
