@@ -149,6 +149,8 @@ def chance(request):
     smp_form.fields["form_style"].initial = 'smp'
     smp_form.fields['form_style'].widget = forms.HiddenInput()
 
+    probability=probability.replace(";", "|")
+    outcome_text    =outcome_text.replace(";", "|")
     probs = [parse_probability(pstr) for pstr in probability.split('|')]
     classes = len(probs)
     hitnames = outcome_text.split("|") if "|" in outcome_text else [outcome_text] * classes
