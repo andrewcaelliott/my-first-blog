@@ -284,7 +284,10 @@ def chance_std(request):
     outcome_text =outcome_text.replace(",", "|")
     probs = [parse_probability(pstr) for pstr in probability.split('|')]
     classes = len(probs)
-    hitnames = outcome_text.split("|") if "|" in outcome_text else [' '.join(pair) for pair in zip([outcome_text] * classes, [str(i+1) for i in range(classes)])]
+    if classes == 1:
+        hitnames = [outcome_text]
+    else:
+        hitnames = outcome_text.split("|") if "|" in outcome_text else [' '.join(pair) for pair in zip([outcome_text] * classes, [str(i+1) for i in range(classes)])]
 
     items = int(exposed_items)
     repetitions = int(exposed_repetitions)
