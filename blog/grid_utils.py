@@ -72,6 +72,17 @@ print3_palette = {
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
 
+screen_palette = {
+        'features':[
+        (0.7, 0.0, 0.0, 1.0),  # Red - true positives
+        (0.0, 0.5, 0.0, 1.0),  # Green - false positives
+        (0.8, 0.3, 0.3, 1.0),  # Pale Red - false negatives
+        (0.6, 0.8, 0.6, 1.0),  # Pale Green - true negatives
+        ],
+        'background': (0.85, 0.85, 0.85, 1.0), #Light Grey
+        'canvas': (1.0, 1.0, 1.0, 1.0), #White
+    }
+
 print4_palette = {
         'features':[
         (0.7, 0.0, 0.0, 1.0),  # Red
@@ -106,7 +117,8 @@ palettes = {
     'print3': print3_palette,
     'print4': print4_palette,
     'red_grad': red_grad_palette,
-    'mono': monochrome_palette
+    'mono': monochrome_palette,
+    'screen': screen_palette
 }
 
 def get_palette(palette_name):
@@ -241,7 +253,7 @@ def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=defaul
     return surface
 
 def cell_drawonly(ctx, cell_value, square_size, squash, offset_x, offset_y, gridcell_x, gridcell_y, palette=default_palette):
-    if cell_value == None:
+    if cell_value is None:
         fillcolour = palette["canvas"]
     elif cell_value == 0:
         fillcolour = palette["background"]

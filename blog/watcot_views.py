@@ -1,3 +1,4 @@
+from math import sqrt
 from json import loads
 from fractions import Fraction
 from random import choice,seed as set_seed,randint,sample
@@ -14,7 +15,7 @@ from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spu
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
-from .forms import ChanceForm, SimpleChanceForm 
+from .forms import ChanceForm, SimpleChanceForm, SingleChanceForm 
 from .forms import FreeForm,FreeFormCountry
 from .forms import ConvertForm 
 from .forms import FilterFactsForm 
@@ -35,9 +36,10 @@ from .tumblr import tumblrSelection
 from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
-from .chance_utils import compute_chance_grid, get_prob_summary, collect_lower, collect_left, collect_all, collect_corner
+from .chance_utils import compute_chance_grid, get_prob_summary, get_single_prob_summary, collect_lower, collect_left, collect_all, collect_corner
 from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
 from .utils import getParamDefault
+from user_agents import parse
 
 contexts = ["nitn", "ftlon", "ggb", "lmk"]
 titles = [""]
@@ -88,23 +90,145 @@ def article(article_name, request):
 #    return render(request, 'blog/article.html', {'quote': choose_quote('s'), 'article_title':title, 'article_subtitle':subtitle, "content": content, "dyk":dyk})
     return render(request, 'blog/watcot_article.html', {'quote': choose_quote('s'), "content": content, "dyk":dyk})
 
+def chance_fact_list(request):
+    params = request.GET
+    try: 
+        search = params["search"]
+    except:
+        search = None
+    if search == None:
+        facts = ChanceFact.objects.filter(fact_type = 'fact').order_by('title')  
+    else:
+        facts = ChanceFact.objects.filter(fact_type = 'fact', title__icontains = search).order_by('title')  
+    form = FilterFactsForm(initial={'search': search})
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["book", "book", "sponsor","donate","click"])
+    return render(request, 'blog/chancefact_list.html', {'fact_type': 'chances', 'form': form, 'facts':facts, 'quote': choose_quote('n'), "dyk":dyk, "promote":promote})
+
+def chance_example_list(request):
+    params = request.GET
+    try: 
+        search = params["search"]
+    except:
+        search = None
+    if search == None:
+        facts = ChanceFact.objects.filter(fact_type = 'example').order_by('title')  
+    else:
+        facts = ChanceFact.objects.filter(fact_type = 'example', title__icontains = search).order_by('title')  
+    form = FilterFactsForm(initial={'search': search})
+    dyk=spuriousFact(NumberFact,3)
+    promote = choice(["book", "book", "sponsor","donate","click"])
+    return render(request, 'blog/chancefact_list.html', {'fact_type': 'examples', 'form': form, 'facts':facts, 'quote': choose_quote('n'), "dyk":dyk, "promote":promote})
+
+
+
 def chance(request):
     params = request.GET
+    permlink = getParamDefault(params, "fact", None)
+    if permlink:
+        chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
+        form_style = chanceFact.page_type
+        print(form_style)
+    else:
+        form_style = getParamDefault(params, "form_style", "smp")
+    if form_style == 'smp':
+        return chance_std(request)
+    if form_style == 'adv':
+        return chance_std(request)
+    if form_style == 'sng':
+        return chance_single(request)
+    if form_style == 'scr':
+        return chance_screen(request)
+    
+def chance_screen(request):
+    params = request.GET
+    form_style = "screen"
+    form = ScreenForm()
+
+def chance_single(request):
+    params = request.GET
+    user_agent = parse(request.META["HTTP_USER_AGENT"])
+    form_style = "sng"
+    form = SingleChanceForm()
+    items = getParamDefault(params, "items", "1000 trials")
+    if user_agent.is_mobile:
+        aspect_default = 0.5
+    else:
+        aspect_default = 2
+    aspect = float(getParamDefault(params, "aspect", aspect_default))
+    probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
+    outcome_text = getParamDefault(params, "outcome_text", "hits")
+    palette_name = getParamDefault(params, "palette_name", "default")
+    description = "this"
+    permlink = getParamDefault(params, "fact", None)
+    if permlink:
+        chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
+        probability = chanceFact.probability
+        items = ' '. join([str(chanceFact.exposed_items), chanceFact.item_text])
+        outcome_text = chanceFact.outcome_text
+        description = chanceFact.title
+    split_i = items.split(' ')
+    item_num =int(split_i[0])
+    item_text = ' '.join(split_i[1:])
+    form.fields["probability"].initial = probability
+    form.fields["probability"].label = "Chances?"
+    form.fields["items"].initial = items
+    form.fields["items"].label = "Trials?"
+    form.fields["outcome_text"].initial = outcome_text
+    form.fields["outcome_text"].label = "Outcomes?"
+    form.fields["form_style"].initial = 'sng'
+    form.fields['form_style'].widget = forms.HiddenInput()
+    probability = probability.replace(",", "|")
+    outcome_text = outcome_text.replace(",", "|")
+    probs = [parse_probability(pstr) for pstr in probability.split('|')]
+    classes = len(probs)
+    hitnames = outcome_text.split("|") if "|" in outcome_text else [outcome_text] * classes
+
+    paramsets = zip(probability.split('|'), probs, hitnames, [item_num]*classes)
+    summaries = [get_single_prob_summary(paramset) for paramset in paramsets]
+    summarised = summaries[0]
+    seed = randint(1,1000000)    
+    exposure = item_num
+    trial_repetitions = int(0.999+sqrt(exposure / aspect))
+    trial_items = int(0.999+exposure / trial_repetitions)
+    single_trial = {
+        "items": trial_items,
+        "item_text": item_text,
+        "repetitions": trial_repetitions,
+        "repetition_text": 'rows',
+        "exposure": exposure,
+        "repeat_mode": "repeats",
+        "probability": probability,
+        "hits_text": outcome_text,
+        "seed": seed,
+    }
+    trial_outcomes = do_trial(single_trial, params, seed = seed, include_none = False)
+    for level, trial_outcome in trial_outcomes.items():
+        trial_outcome["hit_name"] = "None" if level == 0 else hitnames[level-1]
+        print(trial_outcome)
+        trial_outcome["hits"] = trial_outcome['hits']
+        trial_outcome["exposure"] = single_trial['exposure']
+        trial_outcome["hit_percentage"]= 100 * trial_outcome["hits"] / trial_outcome["exposure"]
+        trial_outcome["expected_hits"]= 0 if level == 0 else summaries[level-1]['hits']
+        trial_outcome["expected_percentage"]= 0 if level == 0 else summaries[level-1]['equivalents']['percentage']
+    promote = choice(["watcot-book"])
+    dyk = spuriousFact(NumberFact,3)
+    return render(request, 'blog/chance_single.html', {'description': description, 
+        'form': form, 'form_style': form_style,
+        'params': params, 'summaries': summaries, 'trial':single_trial, 'trial_outcomes': [outcome for level, outcome in trial_outcomes.items()], 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
+ 
+
+def chance_std(request):
+    params = request.GET
+    form_style = getParamDefault(params, "form_style", "smp")
     adv_form = ChanceForm()
     exposed_items = getParamDefault(params, "exposed_items", "100")
-    form_style = getParamDefault(params, "form_style", "smp")
     item_text = getParamDefault(params, "item_text", "items")
     exposed_repetitions = getParamDefault(params, "exposed_repetitions", "100")
+    repetitions = getParamDefault(params, "repetitions", "100 repetitions")
     repetition_text = getParamDefault(params, "repetition_text", "times")
     smp_form = SimpleChanceForm()
     items = getParamDefault(params, "items", "100 items")
-    split_i = items.split(' ')
-    exposed_items =int(split_i[0])
-    item_text = ' '.join(split_i[1:])
-    repetitions = getParamDefault(params, "repetitions", "100 repetitions")
-    split_r = repetitions.split(' ')
-    exposed_repetitions =int(split_r[0])
-    repetition_text = ' '.join(split_r[1:])
 
     #chance_function = getParamDefault(params, "chance_function", "[constant(probability)]")
     probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
@@ -122,6 +246,13 @@ def chance(request):
         outcome_text = chanceFact.outcome_text
         repeat_mode = chanceFact.repeat_mode
         description = chanceFact.title
+
+    split_i = items.split(' ')
+    exposed_items =int(split_i[0])
+    item_text = ' '.join(split_i[1:])
+    split_r = repetitions.split(' ')
+    exposed_repetitions =int(split_r[0])
+    repetition_text = ' '.join(split_r[1:])
 
     adv_form.fields["probability"].initial = probability
     adv_form.fields["probability"].label = "Chances?"
@@ -149,11 +280,11 @@ def chance(request):
     smp_form.fields["form_style"].initial = 'smp'
     smp_form.fields['form_style'].widget = forms.HiddenInput()
 
-    probability=probability.replace(";", "|")
-    outcome_text    =outcome_text.replace(";", "|")
+    probability=probability.replace(",", "|")
+    outcome_text =outcome_text.replace(",", "|")
     probs = [parse_probability(pstr) for pstr in probability.split('|')]
     classes = len(probs)
-    hitnames = outcome_text.split("|") if "|" in outcome_text else [outcome_text] * classes
+    hitnames = outcome_text.split("|") if "|" in outcome_text else [' '.join(pair) for pair in zip([outcome_text] * classes, [str(i+1) for i in range(classes)])]
 
     items = int(exposed_items)
     repetitions = int(exposed_repetitions)
@@ -170,14 +301,9 @@ def chance(request):
         "exposure": items * repetitions,
         "probability": probability,
         "repeat_mode": repeat_mode,
-        #"calc_hits": calc_hits,
         "hits_text": outcome_text,
-        #"hit_wait": calc_wait,
         "seed": seed,
-        #"probability_model":"chance_function="+chance_function,
-        #"chance_function":chance_function,
     }
-    dyk = spuriousFact(NumberFact,3)
     trial_outcomes = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed, include_none = False)
     for level, trial_outcome in trial_outcomes.items():
         trial_outcome["hit_name"] = "None" if level == 0 else hitnames[level-1]
@@ -194,6 +320,7 @@ def chance(request):
         trial_outcome["expected_hits"]= 0 if level == 0 else summaries[level-1]['hits']
         trial_outcome["expected_percentage"]= 0 if level == 0 else summaries[level-1]['equivalents']['percentage']
     promote = choice(["watcot-book"])
+    dyk = spuriousFact(NumberFact,3)
     return render(request, 'blog/chance.html', {'description': description, 
         'adv_form': adv_form, 'smp_form': smp_form, 'form_style': form_style,
         'params': params, 'summaries': summaries, 'trial':trial, 'trial_outcomes': [outcome for level, outcome in trial_outcomes.items()], 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
@@ -225,7 +352,6 @@ def grid(request):
     hits = int(getParamDefault(params, "hits", "5"))
     colour = int(getParamDefault(params, "colour", "0"))
     if hits > 0 :
-        print("adjusting")
         while (hits / exposed) < 0.0009:
             if exposed == (exposed // 1000) *1000:
                 width = width // 1000
@@ -253,18 +379,19 @@ def gridchance(request):
     params = request.GET
     width = int(getParamDefault(params, "width", "20"))
     depth = int(getParamDefault(params, "depth", "10"))
+    exposure = int(getParamDefault(params, "exposure", str(width * depth)))
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
     display = getParamDefault(params, "display", "default")
     palette = get_palette(getParamDefault(params, "palette_name", "default"))
     top_down_param = getParamDefault(params, "top_down", "false")
     top_down = top_down_param.lower()[0] == "t"
-    top_down_param = getParamDefault(params, "top_down", "false")
     try:
         seed = int(getParamDefault(params, "seed", None))
     except:
         seed = None
     probability = getParamDefault(params, "probability", "0.1")
-    level_counts, grid = compute_chance_grid(width, depth, probability, params, repeat_mode = repeat_mode, seed=seed)
+    print(repeat_mode)
+    level_counts, grid = compute_chance_grid(width, depth, exposure, probability, params, repeat_mode=repeat_mode, seed=seed)
     if display == 'collect_lower':
         grid = collect_lower(grid)
     if display == 'collect_left':

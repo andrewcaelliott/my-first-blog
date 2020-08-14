@@ -324,7 +324,10 @@ ul:hover svg.major-quantile circle.refdatapoint {
     fill:rgb(0,0,255);
 }
 
-
+.btn.action {
+    font-size: 8pt;
+    padding: 4px 8px;
+}
 
 @media only screen and (max-width: 799px) {
 /* small devices */

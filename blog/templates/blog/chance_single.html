@@ -1,0 +1,131 @@
+{% extends 'blog/watcot_base.html' %}
+
+{% block title %}Chance{% endblock %}
+
+{% block quote %}
+    <p>{{ quote }}</p>
+{% endblock %}
+
+{% block content %}
+        <div class="widget col-lg-2 col-md-2">
+            <script>
+            function openTab(tabName) {
+              var i;
+              var x = document.getElementsByClassName("tab");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              document.getElementById(tabName).style.display = "block";  
+            }
+            function showOutcome(outcomeName) {
+              var i;
+              var x = document.getElementsByClassName("outcome");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              document.getElementById(outcomeName).style.display = "block";  
+            }
+            function redoGrid(gridType){
+                event.preventDefault();
+                $('#grid_div').empty()
+                var img = $('<img id="grid_image_id">');
+                switch (gridType){
+                    case 0:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}');
+                        break;
+                    case 1:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_lower');
+                        break;
+                    case 2:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=sort_lower');
+                        break;
+                    case 3:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_left');
+                        break;
+                    case 4:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=sort_left');
+                        break;
+                    case 5:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_all');
+                        break;
+                    case 6:
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_corner');
+                        break;
+                }
+                img.appendTo('#grid_div');                 
+            }
+            </script>
+
+            <div id=single_form style="display:block">
+                <h2>What are the chances of {{ description }}?</h2>
+                    <form method="GET" class="query-form" action="/chance/answer">
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-warning" name="calc_target" value="hits">Show</button>
+                    </form>
+            </div>
+        </div>
+        <div class="widget col-lg-10 col-md-10">
+            <span>
+            {% for summary in summaries %}
+                <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}')">{{ summary.hits_text }}</button>
+            {% endfor %}
+            </span>    
+        </div>
+        {% for summary in summaries %}
+        <div id="tab{{ forloop.counter }}" class="tab" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
+        <div class="widget col-lg-5 col-md-5">
+            <div>
+                <h2>The chances of {{ summary.hits_text }} are:</h2>
+                    <p>For {{ trial.exposure }} {{ trial.item_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
+
+                <h4>Probability</h4>
+                <li>{{summary.equivalents.probability| floatformat:4}}</li>
+                <h4>As a percentage</h4>
+                <li>{{summary.equivalents.percentage | floatformat:2}}%</li>
+                </div>
+        </div>
+        <div class="widget col-lg-5 col-md-5">
+            <div>
+                <h4>As a rounded-off proportion</h4>
+                <li>{{summary.equivalents.fraction.numerator}} in {{summary.equivalents.fraction.denominator}}</li>
+                <p></p>
+                <img src="/gridpng/?width={{ summary.equivalents.fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.fraction.numerator }}&colour={{forloop.counter0}}">
+                <h4>As approximate fair betting odds</h4>
+                {% if summary.equivalents.odds.0 < summary.equivalents.odds.1 %}
+                <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}} ({{summary.equivalents.odds.1}} : {{summary.equivalents.odds.0}} on)</li>
+                {% else %}
+                <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}}</li>
+                {% endif %}
+                <p></p>
+                <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
+            </div>
+        </div>
+            </div>
+            {% endfor %}    
+        <div class="widget col-lg-10 col-md-10">
+            <div>
+                <h3>Representative example</h3>
+                <div>
+                {% for trial_outcome in trial_outcomes %}
+                    <button type="submit" class="save btn btn-warning" name="calc_target" onclick="showOutcome('outcome{{ forloop.counter }}')">{{ trial_outcome.hit_name }}</button>
+                {% endfor %}
+                </div>    
+                {% for trial_outcome in trial_outcomes %}
+                    <div id="outcome{{ forloop.counter }}" class="outcome" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
+                    <h4>For {{ trial_outcome.hit_name }}</h4>
+                        <li>{{ trial.exposure }} chances for {{ trial_outcome.hit_name }}</li>
+                        <li>Observed {{ trial_outcome.hit_name }}: {{ trial_outcome.hits }} = {{ trial_outcome.hit_percentage | floatformat:3}}% (expected average: 
+                        {{ trial_outcome.expected_hits | floatformat }} = {{ trial_outcome.expected_percentage | floatformat:3 }}%)</li>
+                    </div>
+                {% endfor %}
+                <p></p>
+                    <button type="submit" class="action btn btn-warning" name="grid_0" onclick="redoGrid(0)">Distributed</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_5" onclick="redoGrid(5)">Collect Left</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_6" onclick="redoGrid(6)">Collect in corner</button>
+
+                <div id="grid_div">
+                <img id="grid_image_id" src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}">
+                </div>
+            </div>
+        </div>
+{% endblock %}

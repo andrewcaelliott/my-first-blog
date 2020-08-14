@@ -198,13 +198,13 @@
                     </div>
                 {% endfor %}
                 <p></p>
-                    <button type="submit" class="save btn btn-warning" name="grid_0" onclick="redoGrid(0)">As originally distributed</button>
-                    <button type="submit" class="save btn btn-warning" name="grid_1" onclick="redoGrid(1)">Collect for {{ trial.item_text}}</button>
-                    <button type="submit" class="save btn btn-warning" name="grid_2" onclick="redoGrid(2)">Collect for {{ trial.item_text}} &amp; sort</button>
-                    <button type="submit" class="save btn btn-warning" name="grid_3" onclick="redoGrid(3)">Collect for {{ trial.repetition_text}}</button>
-                    <button type="submit" class="save btn btn-warning" name="grid_4" onclick="redoGrid(4)">Collect for {{ trial.repetition_text}} &amp; sort</button>
-                    <button type="submit" class="save btn btn-warning" name="grid_5" onclick="redoGrid(5)">Collect Left</button>
-                    <button type="submit" class="save btn btn-warning" name="grid_6" onclick="redoGrid(6)">Collect in corner</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_0" onclick="redoGrid(0)">Distributed</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_1" onclick="redoGrid(1)">Collect for {{ trial.item_text}}</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_2" onclick="redoGrid(2)">Collect for {{ trial.item_text}} &amp; sort</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_3" onclick="redoGrid(3)">Collect for {{ trial.repetition_text}}</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_4" onclick="redoGrid(4)">Collect for {{ trial.repetition_text}} &amp; sort</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_5" onclick="redoGrid(5)">Collect Left</button>
+                    <button type="submit" class="action btn btn-warning" name="grid_6" onclick="redoGrid(6)">Collect in corner</button>
 
                 <div id="grid_div">
                 <img id="grid_image_id" src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}">

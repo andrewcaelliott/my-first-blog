@@ -8,32 +8,6 @@ from fractions import Fraction
 from .utils import num
 from .grid_utils import draw_count_grid
 
-'''
-def colour_band(count, rule_params):
-    bands = rule_params[0]
-    fillcolour = (1,1,1)
-    for colour in bands:
-        if count < colour[0]:
-            fillcolour = colour[1]
-            break
-    return fillcolour
-
-def colour_div(count, rule_params):
-    fillcolours = rule_params[0]
-    fillcolour = (1,1,1)
-    if (count % 2 ==0):
-        fillcolour=fillcolours[1]
-    elif (count % 3 ==0):
-        fillcolour=fillcolours[2]
-    elif (count % 5 ==0):
-        fillcolour=fillcolours[3]
-    elif (count % 7 ==0):
-        fillcolour=fillcolours[4]
-    elif (count % 11 ==0):
-        fillcolour=fillcolours[5]
-    return fillcolour
-
-'''
 def equalchance(params, repetition):
     return params[0]
 
@@ -87,6 +61,7 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False, i
         random.seed(seed)
     range_x = trial["items"]
     range_y = trial["repetitions"]
+    exposure = trial["exposure"]
     chance_function_str = trial["probability"]
     chance_functions = parse_chance_functions(chance_function_str).split("|")
     pairs = []
@@ -109,29 +84,30 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False, i
     alive_x = [True] * range_x
     for offset_y in range(0,range_y):
         for offset_x in range(0,range_x):
-            outcome = cell_outcome(pairs, offset_y)
-            if alive_x[offset_x]:
-                outcomes[offset_y][offset_x] = outcome
-                if outcome > 0:
-                    if outcome in level_counts.keys():
-                        level_counts[outcome]['hits'] += 1
-                        level_counts[outcome]['x_hits']
-                        if offset_x in level_counts[outcome]['x_hits']:
-                            level_counts[outcome]['x_hits'][offset_x] += 1
-                        else:    
-                            level_counts[outcome]['x_hits'][offset_x] = 1
-                        if offset_y in level_counts[outcome]['y_hits']:
-                            level_counts[outcome]['y_hits'][offset_y] += 1
-                        else:    
-                            level_counts[outcome]['y_hits'][offset_y] = 1
-                    else:
-                        level_count = {}
-                        level_count['hits'] = 1
-                        level_count['x_hits'] = {offset_x : 1}
-                        level_count['y_hits'] = {offset_y : 1}
-                        level_counts[outcome] = level_count
-                if repeat_mode == "removes" and outcome > 0:
-                    alive_x[offset_x] = False
+            if offset_x+(offset_y * range_x) < exposure:
+                outcome = cell_outcome(pairs, offset_y)
+                if alive_x[offset_x]:
+                    outcomes[offset_y][offset_x] = outcome
+                    if outcome > 0:
+                        if outcome in level_counts.keys():
+                            level_counts[outcome]['hits'] += 1
+                            level_counts[outcome]['x_hits']
+                            if offset_x in level_counts[outcome]['x_hits']:
+                                level_counts[outcome]['x_hits'][offset_x] += 1
+                            else:    
+                                level_counts[outcome]['x_hits'][offset_x] = 1
+                            if offset_y in level_counts[outcome]['y_hits']:
+                                level_counts[outcome]['y_hits'][offset_y] += 1
+                            else:    
+                                level_counts[outcome]['y_hits'][offset_y] = 1
+                        else:
+                            level_count = {}
+                            level_count['hits'] = 1
+                            level_count['x_hits'] = {offset_x : 1}
+                            level_count['y_hits'] = {offset_y : 1}
+                            level_counts[outcome] = level_count
+                    if repeat_mode == "removes" and outcome > 0:
+                        alive_x[offset_x] = False
             
     if verbose:
         return level_counts, outcomes
@@ -141,8 +117,13 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False, i
 def replace_cell(c, a, b):
     if c == a:
         return b
-    else:
-        return c
+    return c
+
+def replace_cell_m(c, pairs):
+    for pair in pairs:
+        if c == pair[0]:
+            return pair[1]
+    return c
 
 
 def collect_left(outcomes_before, sort=False):
@@ -150,7 +131,7 @@ def collect_left(outcomes_before, sort=False):
     rows_count_0 = []
     for y in range(len(outcomes_before)):
         outcomes_after_col = []
-        newcol = [replace_cell(cell, 1000, 0) for cell in sorted([replace_cell(cell, 0, 1000) for cell in outcomes_before[y]])]
+        newcol = [replace_cell_m(cell, [(1000, 0),(1001, None)]) for cell in sorted([replace_cell_m(cell, [(0, 1000),(None, 1001)]) for cell in outcomes_before[y]])]
         rows_count_0.append(newcol.count(0))
         outcomes_after.append(newcol)
     if sort:
@@ -175,7 +156,7 @@ def collect_all(outcomes_before, sort=False):
     outcomes_before = [[outcomes_before[j][i] for j in range(len(outcomes_before))] for i in range(len(outcomes_before[0]))] 
     outcomes_after = []
     cells = flatten(outcomes_before)
-    sorted_cells = [replace_cell(cell, 1000, 0) for cell in sorted([replace_cell(cell, 0, 1000) for cell in cells])]
+    sorted_cells = [replace_cell_m(cell, [(1000, 0),(1001, None)]) for cell in sorted([replace_cell_m(cell, [(0, 1000),(None, 1001)]) for cell in cells])]
     i = 0
     for y in range(len(outcomes_before)):
         outcomes_after_col = []
@@ -190,14 +171,17 @@ def collect_corner(outcomes_before, sort=False):
     outcomes_before = [[outcomes_before[j][i] for j in range(len(outcomes_before))] for i in range(len(outcomes_before[0]))] 
     rows = len(outcomes_before)
     cols = len(outcomes_before[0])
-    outcomes_after = [ [ 0 for i in range(cols) ] for j in range(rows) ]
+    outcomes_after = [ [ None for i in range(cols) ] for j in range(rows) ]
     count_all = rows * cols
-    cells = [cell for cell in flatten(outcomes_before) if cell != 0]
-    sorted_cells = sorted(cells)
-    ratio = math.sqrt(len(cells) / count_all)
+    all_cells = [cell for cell in flatten(outcomes_before) if cell is not None]
+    filled_cells = [cell for cell in flatten(outcomes_before) if cell != 0 and cell is not None]
+    sorted_cells = sorted(filled_cells)
+    ratio = math.sqrt(len(filled_cells) / count_all)
     rows_count = math.ceil(rows * ratio)
     cols_count = math.ceil(cols * ratio)
-    for i in range(len(cells)):
+    for i in range(len(all_cells)):
+        outcomes_after[i // cols][i % cols] = 0
+    for i in range(len(filled_cells)):
         outcomes_after[i // cols_count][i % cols_count] = sorted_cells[i]
     outcomes_after = [[outcomes_after[j][i] for j in range(len(outcomes_after))] for i in range(len(outcomes_after[0]))] 
     return outcomes_after
@@ -224,13 +208,14 @@ def kfillcolours_graded_blue():
 
 
 
-def compute_chance_grid(range_x, range_y, chance, params, repeat_mode="repeats", seed = None, xy=False):
+def compute_chance_grid(range_x, range_y, exposure, chance, params, repeat_mode="repeats", seed = None, xy=False):
     if seed:
         random.seed(seed)
     trial = {
         "items": range_x,
         "repetitions": range_y,
-        "probability": chance
+        "probability": chance,
+        "exposure": exposure
     }
     return do_trial(trial, params, repeat_mode=repeat_mode, verbose = True)
 
@@ -320,7 +305,7 @@ def parse_chance_function(chance_function):
         try:
             name = m.group('name')
             params = m.group('params')
-            return name, params
+            return name, params.replace(":",',')
         except:
             return None
     return 'constant', chance_function
@@ -423,6 +408,42 @@ def summary(sorted_dist):
             break
     return {"min":k[0], "max":k[-1], "mean": mean, "median": median}
 
+def get_single_prob_summary(args):
+    probability, prob, label, items = args
+    calc_hits = prob * items
+    survival_prob = 1
+    try:
+        calc_wait = 1 / prob
+    except:
+        calc_wait = 0
+    try:
+        fraction = Fraction(prob).limit_denominator(1000)
+    except:
+        fraction = Fraction(0)
+    try:
+        odds_raw = odds2(prob, tolerance=0.0005)
+        odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
+        percentage = prob * 100
+    except:
+        odds_raw = odds2(0, tolerance=0.0005)
+        odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
+        percentage = 0
+    equivalents = {
+        "supplied": probability.strip(),
+        "probability": prob,
+        "percentage": percentage,
+        "fraction": fraction,
+        "odds": odds_raw,
+        "odds_fraction": odds_fraction,
+    }
+    return {
+        "hits": calc_hits,
+        "hits_text": label,
+        "wait": calc_wait,
+        "survival_prob":1,
+        "equivalents":equivalents
+        }
+
 def get_prob_summary(args):
     probability, prob, label, items, repetitions, repeat_mode = args
     if repeat_mode == "repeats":
@@ -453,7 +474,6 @@ def get_prob_summary(args):
     
     try:
         odds_raw = odds2(prob, tolerance=0.0005)
-        print("odds raw", odds_raw)
         odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
         percentage = prob * 100
     except:

@@ -498,8 +498,14 @@ class ChanceFact(models.Model):
     outcome_text       = models.CharField(max_length=200)
     repeat_mode = models.CharField(max_length=10, choices=[("repeats","repeats"), ("removes","removes")])
     permlink = models.SlugField(db_index=True, unique=True)
+    fact_type = models.CharField(max_length=10, choices=[("fact","fact"), ("example","example"), ("proportion","proportion")])
+    page_type = models.CharField(max_length=10, choices=[("sng","sng"), ("smp","smp"), ("adv","adv"), ("scr","scr")])
 
     def _display_folk(self):
-        return "".join(["The chance of ", self.title, " is ", self.probability])
+        if self.fact_type == 'fact':
+            return "".join(["The chance of ", self.title, " is ", self.probability])
+        elif self.fact_type == 'example':
+            return "".join(["An example of ", self.title, " using ", self.probability])
+
 
     render_folk = property(_display_folk)

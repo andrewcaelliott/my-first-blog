@@ -686,21 +686,6 @@ def fact_list(request):
     promote = choice(["book", "book", "sponsor","donate","click"])
     return render(request, 'blog/fact_list.html', {'form': form, 'facts':facts, 'quote': choose_quote('n'), "dyk":dyk, "promote":promote})
 
-def chancefact_list(request):
-    params = request.GET
-    try: 
-        search = params["search"]
-    except:
-        search = None
-    if search == None:
-        facts = ChanceFact.objects.filter().order_by('title')  
-    else:
-        facts = ChanceFact.objects.filter(title__icontains = search).order_by('title')  
-    form = FilterFactsForm(initial={'search': search})
-    dyk=spuriousFact(NumberFact,3)
-    promote = choice(["book", "book", "sponsor","donate","click"])
-    return render(request, 'blog/chancefact_list.html', {'form': form, 'facts':facts, 'quote': choose_quote('n'), "dyk":dyk, "promote":promote})
-
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     dyk=spuriousFact(NumberFact,3)

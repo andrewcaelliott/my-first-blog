@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-        <form id = "filter" method="GET" class="filter-form" action="/facts/"> 
+        <form id = "filter" method="GET" class="filter-form" action="/{{ fact_type }}/"> 
             {{ form.as_p}}
                     <button id="filterButton" type="submit" class="save btn btn-warning">Filter</button>
         </form>
