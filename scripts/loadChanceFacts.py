@@ -58,6 +58,6 @@ def run():
     print("ok")
     deleteAllChanceFacts()
     print("deleted")
-    loadChanceFacts("../blog/data/watcot/Chances.csv","Chance of ", encoding="latin1")
+    loadChanceFacts("./blog/data/watcot/Chances.csv","Chance of ", encoding="latin1")
 
 
