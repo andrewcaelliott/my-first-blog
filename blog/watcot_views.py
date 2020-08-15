@@ -185,7 +185,7 @@ def chance_single(request):
     if classes == 1:
         hitnames = [outcome_text]
     else:
-        hitnames = outcome_text.split("|") if "|" in outcome_text else [outcome_text] * classes
+        hitnames = outcome_text.split("|") if "|" in outcome_text else [' '.join(pair) for pair in zip([outcome_text] * classes, [str(i+1) for i in range(classes)])]
 
     paramsets = zip(probability.split('|'), probs, hitnames, [item_num]*classes)
     summaries = [get_single_prob_summary(paramset) for paramset in paramsets]
