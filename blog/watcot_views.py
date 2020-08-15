@@ -151,7 +151,7 @@ def chance_single(request):
     form_style = "sng"
     form = SingleChanceForm()
     items = getParamDefault(params, "items", "1000 trials")
-    if user_agent.is_mobile:
+    if user_agent.is_mobile or user_agent.is_tablet:
         aspect_default = 0.5
     else:
         aspect_default = 2
