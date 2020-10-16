@@ -32,3 +32,5 @@ Ord,Subject,Probability,Items,ItemCount,Repetitions,RepetitionCount,Hits,Repeats
 ,multiple probabilities,4%;6%;8%,trials,200,,1,type1;type2;type3,repeats,sng,example,help
 ,multiple items; multiple repetitions,17%,items,50,repetitions,20,successes,repeats,smp,example,help
 ,flower field,increase(17%:1%)|decrease(30%:1%)|10%,items,500,repetitions,180,flowers of type,repeats,smp,example,help
+,various outcomes in medical screening,1 in 100,patients,10000,,1,true pos|false pos|false neg,repeats,scr,example,help
+,various outcomes in threat screening,1 in 10000,suspects,10000,,1,real threats detected|falsely detected|real threats missed,repeats,scr,example,help

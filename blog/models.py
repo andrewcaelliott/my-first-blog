@@ -471,6 +471,8 @@ class Post(models.Model):
 class ChanceQuery(models.Model):
 
     probability    = models.CharField(max_length=150)
+    probability_a    = models.CharField(max_length=150)
+    probability_b    = models.CharField(max_length=150)
     # chance_function    = models.CharField(max_length=150)
     item_text = models.CharField(max_length=200)
     items = models.CharField(max_length=200)

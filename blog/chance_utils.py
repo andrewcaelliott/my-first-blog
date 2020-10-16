@@ -8,40 +8,48 @@ from fractions import Fraction
 from .utils import num
 from .grid_utils import draw_count_grid
 
-def equalchance(params, repetition):
+def equalchance(params, repetition, item):
     return params[0]
 
-def expchance(params, repetition):
+def expchance(params, repetition, item):
     p = params[0] * (1+params[1])**repetition
     return p
 
-def constant(params, repetition):
+def constant(params, repetition, item):
     return params
 
-def increase(params, repetition):
+def increase(params, repetition, item):
     p = params[0] * (1+params[1])**repetition
     return p
 
-def decrease(params, repetition):
+def increase2(params, repetition, item):
+    p = params[0] * (1+params[1])**repetition * (1+params[2])** item
+    return p
+
+def decrease(params, repetition, item):
     p = (params[0]*(1-params[1])**(repetition))
     return p
 
-def escchance(params, repetition):
+def decrease2(params, repetition, item):
+    p = (params[0]*(1-params[1])**(repetition) *(1-params[1])**(item))
+    return p
+
+def escchance(params, repetition, item):
     p = params[0] * (1+params[1])**repetition
     return (p/(1+p))
 
-def mort1(params, repetition):
+def mort1(params, repetition, item):
     p = params[0] * (1+params[1])**repetition + params[2]
     return (p/(1+p))
 
-def mort2(params, repetition):
+def mort2(params, repetition, item):
     child_p = (params[3]*4**(-repetition))
     adult_p = params[0] * (1+params[1])**repetition + params[2]
     p = child_p + adult_p
     return (p/(1+p))
 
 
-def cell_outcome(chance_functions, repetition = 1):
+def cell_outcome(chance_functions, repetition = 0, item=0):
     remaining_prob = 1
     for i in range(len(chance_functions)):
         if remaining_prob <= 0: 
@@ -49,7 +57,7 @@ def cell_outcome(chance_functions, repetition = 1):
         rnd = random.random()
         chance_f = chance_functions[i][0]
         params = chance_functions[i][1]
-        raw_prob = chance_f(params[0], repetition) 
+        raw_prob = chance_f(params[0], repetition, item) 
         prob = raw_prob / remaining_prob
         remaining_prob = remaining_prob - raw_prob
         if (rnd < prob):
@@ -85,7 +93,7 @@ def do_trial(trial, params, repeat_mode="repeats", seed = None, verbose=False, i
     for offset_y in range(0,range_y):
         for offset_x in range(0,range_x):
             if offset_x+(offset_y * range_x) < exposure:
-                outcome = cell_outcome(pairs, offset_y)
+                outcome = cell_outcome(pairs, offset_y, offset_x)
                 if alive_x[offset_x]:
                     outcomes[offset_y][offset_x] = outcome
                     if outcome > 0:
@@ -282,6 +290,15 @@ def round_sigfigs(amount, level=1):
     scale = int(math.log10(amount))
     rounded = round(amount/10**(scale-level))
     return rounded * 10**(scale-level)
+
+def format_round_sigfigs(amount, level=1):
+    if amount == 0:
+        return "0"
+    scale = math.ceil(math.log10(amount))
+    rounded = round(amount/10**(scale-level))
+    if scale < 0:
+        return(''.join(["0.", "0"*(-(scale)), str(rounded).strip("0")]))
+    return(str(rounded * 10**(scale-level)))
 
 
 def round_money(amount, level=1):

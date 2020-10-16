@@ -31,25 +31,25 @@
                 var img = $('<img id="grid_image_id">');
                 switch (gridType){
                     case 0:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}');
                         break;
                     case 1:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_lower');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}&display=collect_lower');
                         break;
                     case 2:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=sort_lower');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}&display=sort_lower');
                         break;
                     case 3:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_left');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}&display=collect_left');
                         break;
                     case 4:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=sort_left');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}&display=sort_left');
                         break;
                     case 5:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_all');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}&display=collect_all');
                         break;
                     case 6:
-                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}&display=collect_corner');
+                        img.attr('src', '/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}&display=collect_corner');
                         break;
                 }
                 img.appendTo('#grid_div');                 
@@ -76,7 +76,7 @@
         <div class="widget col-lg-5 col-md-5">
             <div>
                 <h2>The chances of {{ summary.hits_text }} are:</h2>
-                    <p>For {{ trial.exposure }} {{ trial.item_text }}, each with probability {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
+                    <p>For {{ trial.exposure }} {{ trial.item_text }}, each with probability = {{ summary.equivalents.supplied }}, on average there will be {{ summary.hits | floatformat }} {{ summary.hits_text }}.</p>
 
                 <h4>Probability</h4>
                 <li>{{summary.equivalents.probability| floatformat:4}}</li>
@@ -89,7 +89,7 @@
                 <h4>As a rounded-off proportion</h4>
                 <li>{{summary.equivalents.fraction.numerator}} in {{summary.equivalents.fraction.denominator}}</li>
                 <p></p>
-                <img src="/gridpng/?width={{ summary.equivalents.fraction.denominator }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.fraction.numerator }}&colour={{forloop.counter0}}">
+                <img src="/gridpng/?width={{ summary.equivalents.fraction.denominator }}&palette_name={{ palette_name }}&xy=true&hits={{ summary.equivalents.fraction.numerator }}&colour={{forloop.counter0}}">
                 <h4>As approximate fair betting odds</h4>
                 {% if summary.equivalents.odds.0 < summary.equivalents.odds.1 %}
                 <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}} ({{summary.equivalents.odds.1}} : {{summary.equivalents.odds.0}} on)</li>
@@ -97,7 +97,7 @@
                 <li>{{summary.equivalents.odds.0}} : {{summary.equivalents.odds.1}}</li>
                 {% endif %}
                 <p></p>
-                <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ params.palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
+                <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
             </div>
         </div>
             </div>
@@ -124,7 +124,7 @@
                     <button type="submit" class="action btn btn-warning" name="grid_6" onclick="redoGrid(6)">Collect in corner</button>
 
                 <div id="grid_div">
-                <img id="grid_image_id" src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ params.palette_name }}&seed={{ trial.seed }}">
+                <img id="grid_image_id" src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}">
                 </div>
             </div>
         </div>

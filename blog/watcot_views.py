@@ -15,7 +15,8 @@ from .utils import numberFactsLikeThis,biggestNumberFact, smallestNumberFact,spu
 from .forms import PostForm 
 from .forms import FactForm 
 from .forms import QueryForm 
-from .forms import ChanceForm, SimpleChanceForm, SingleChanceForm 
+from .forms import ChanceForm, SimpleChanceForm, SingleChanceForm, ScreenChanceForm 
+from .chance_case import SimpleChanceCase, SingleChanceCase, ScreenChanceCase
 from .forms import FreeForm,FreeFormCountry
 from .forms import ConvertForm 
 from .forms import FilterFactsForm 
@@ -128,7 +129,6 @@ def chance(request):
     if permlink:
         chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
         form_style = chanceFact.page_type
-        print(form_style)
     else:
         form_style = getParamDefault(params, "form_style", "smp")
     if form_style == 'smp':
@@ -140,56 +140,57 @@ def chance(request):
     if form_style == 'scr':
         return chance_screen(request)
     
-def chance_screen(request):
+def chance_smp(request):
     params = request.GET
-    form_style = "screen"
-    form = ScreenForm()
+    user_agent = parse(request.META["HTTP_USER_AGENT"])
+    case = SimpleChanceCase()
+    return chance_base(request, params, user_agent, case, case.form_style, case.form)
 
 def chance_single(request):
     params = request.GET
     user_agent = parse(request.META["HTTP_USER_AGENT"])
-    form_style = "sng"
-    form = SingleChanceForm()
-    items = getParamDefault(params, "items", "1000 trials")
-    if user_agent.is_mobile or user_agent.is_tablet:
-        aspect_default = 0.5
-    else:
-        aspect_default = 2
+    case = SingleChanceCase()
+    return chance_base(request, params, user_agent, case, case.form_style, case.form)
+
+def chance_screen(request):
+    params = request.GET
+    user_agent = parse(request.META["HTTP_USER_AGENT"])
+    case = ScreenChanceCase()
+    return chance_base(request, params, user_agent, case, case.form_style, case.form)
+
+def chance_base(request, params, user_agent, case, form_style, xform):
+    aspect_default = 0.5 if (user_agent.is_mobile or user_agent.is_tablet) else 2
     aspect = float(getParamDefault(params, "aspect", aspect_default))
-    probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
-    outcome_text = getParamDefault(params, "outcome_text", "hits")
-    palette_name = getParamDefault(params, "palette_name", "default")
+    case.set_params(params)
+    items = case.items
+    outcome_text = getParamDefault(params, "outcome_text", case.outcome_text)
+    palette_name = case.palette
     description = "this"
     permlink = getParamDefault(params, "fact", None)
     if permlink:
         chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
-        probability = chanceFact.probability
+        case.probability = chanceFact.probability
+        case.outcome_text = chanceFact.outcome_text
         items = ' '. join([str(chanceFact.exposed_items), chanceFact.item_text])
+        case.items = items
         outcome_text = chanceFact.outcome_text
         description = chanceFact.title
     split_i = items.split(' ')
     item_num =int(split_i[0])
     item_text = ' '.join(split_i[1:])
-    form.fields["probability"].initial = probability
-    form.fields["probability"].label = "Chances?"
-    form.fields["items"].initial = items
-    form.fields["items"].label = "Trials?"
-    form.fields["outcome_text"].initial = outcome_text
-    form.fields["outcome_text"].label = "Outcomes?"
-    form.fields["form_style"].initial = 'sng'
-    form.fields['form_style'].widget = forms.HiddenInput()
-    probability = probability.replace(",", "|")
+    caseform = case.prepare_form()
+
+    trial_probability = case.build_probability()
     outcome_text = outcome_text.replace(",", "|")
-    probs = [parse_probability(pstr) for pstr in probability.split('|')]
+    probs = [parse_probability(pstr) for pstr in trial_probability.split('|')]
     classes = len(probs)
     if classes == 1:
         hitnames = [outcome_text]
     else:
         hitnames = outcome_text.split("|") if "|" in outcome_text else [' '.join(pair) for pair in zip([outcome_text] * classes, [str(i+1) for i in range(classes)])]
 
-    paramsets = zip(probability.split('|'), probs, hitnames, [item_num]*classes)
+    paramsets = zip(trial_probability.split('|'), probs, hitnames, [item_num]*classes)
     summaries = [get_single_prob_summary(paramset) for paramset in paramsets]
-    summarised = summaries[0]
     seed = randint(1,1000000)    
     exposure = item_num
     trial_repetitions = int(0.999+sqrt(exposure / aspect))
@@ -201,14 +202,13 @@ def chance_single(request):
         "repetition_text": 'rows',
         "exposure": exposure,
         "repeat_mode": "repeats",
-        "probability": probability,
+        "probability": trial_probability,
         "hits_text": outcome_text,
         "seed": seed,
     }
     trial_outcomes = do_trial(single_trial, params, seed = seed, include_none = False)
     for level, trial_outcome in trial_outcomes.items():
         trial_outcome["hit_name"] = "None" if level == 0 else hitnames[level-1]
-        print(trial_outcome)
         trial_outcome["hits"] = trial_outcome['hits']
         trial_outcome["exposure"] = single_trial['exposure']
         trial_outcome["hit_percentage"]= 100 * trial_outcome["hits"] / trial_outcome["exposure"]
@@ -217,10 +217,9 @@ def chance_single(request):
     promote = choice(["watcot-book"])
     dyk = spuriousFact(NumberFact,3)
     return render(request, 'blog/chance_single.html', {'description': description, 
-        'form': form, 'form_style': form_style,
+        'form': caseform, 'form_style': form_style, 'palette_name': palette_name,
         'params': params, 'summaries': summaries, 'trial':single_trial, 'trial_outcomes': [outcome for level, outcome in trial_outcomes.items()], 'quote': choose_quote('s'), "dyk":dyk, "promote":promote})
  
-
 def chance_std(request):
     params = request.GET
     form_style = getParamDefault(params, "form_style", "smp")

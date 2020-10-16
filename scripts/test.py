@@ -13,6 +13,7 @@ from blog.utils import (closeEnoughNumberFact, closeMagnitudeNumberFact,
 	spuriousFact, neatFacts, resolve_country_code, resolve_cia_country, 
 	get_country_codes, summarise_country, summarise_country_list, get_country_stats,
 	make_country_stats, get_stat, make_number)
+from blog.chance_utils import format_round_sigfigs
 #
 #ureg = UnitRegistry()
 #Q_=ureg.Quantity
@@ -197,7 +198,7 @@ def run8():
 
 	print(1, bracketNumber(NumberFact, "100", 18, measure))
 
-def run():
+def run9():
 	measure=("mass")
 	seed = randint(0,1000000)
 	rf = randomFact(NumberFact, measure, rseed=seed)
@@ -571,3 +572,8 @@ def run22():
 	print(quiz["comparison"])
 	for option in quiz["options"]:
 		print (option.render_folk)
+
+def run():
+	p = 2612.345678
+	s = format_round_sigfigs(p, level=3)
+	print(s)

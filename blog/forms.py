@@ -61,3 +61,9 @@ class SingleChanceForm(forms.ModelForm):
         model = ChanceQuery
         fields = ('probability', 'items', 'outcome_text', 'form_style')    
 
+class ScreenChanceForm(forms.ModelForm):
+
+    class Meta:
+        model = ChanceQuery
+        fields = ('probability', 'probability_a', 'probability_b', 'items', 'outcome_text', 'palette_name', 'form_style')    
+

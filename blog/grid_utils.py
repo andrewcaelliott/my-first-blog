@@ -74,12 +74,12 @@ print3_palette = {
 
 screen_palette = {
         'features':[
-        (0.7, 0.0, 0.0, 1.0),  # Red - true positives
+        (0.8, 0.0, 0.0, 1.0),  # Red - true positives
         (0.0, 0.5, 0.0, 1.0),  # Green - false positives
-        (0.8, 0.3, 0.3, 1.0),  # Pale Red - false negatives
-        (0.6, 0.8, 0.6, 1.0),  # Pale Green - true negatives
+        (0.8, 0.5, 0.5, 1.0),  # Pale Red - false negatives
+        (0.6, 0.7, 0.6, 1.0),  # Pale Green - true negatives
         ],
-        'background': (0.85, 0.85, 0.85, 1.0), #Light Grey
+        'background': (0.6, 0.7, 0.6, 1.0), # Pale Green
         'canvas': (1.0, 1.0, 1.0, 1.0), #White
     }
 
