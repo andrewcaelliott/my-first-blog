@@ -76,11 +76,14 @@ class ScreenChanceCase(ChanceCase):
         i = parse_probability(self.probability)
         p = parse_probability(self.sensitivity)
         n = parse_probability(self.specificity)
+        print(i,p,n)
         ptp = i * p
         pfn = i * (1 - p)
         pfp = (1 - i) * (1 - n)
         ptn = (1 - i) * n
+        print(ptp, pfp, pfn)
         # return '%s | %s | %s | %s' % (ptp, pfp, pfn, ptn)
         formatted = tuple((format_round_sigfigs(prob,4) for prob in (ptp, pfp, pfn)))
+        print("Formatted=", formatted)
         return '%s | %s | %s ' % (formatted)
 

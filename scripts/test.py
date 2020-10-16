@@ -574,6 +574,6 @@ def run22():
 		print (option.render_folk)
 
 def run():
-	p = 2612.345678
-	s = format_round_sigfigs(p, level=3)
+	p = 10
+	s = format_round_sigfigs(p, level=4)
 	print(s)

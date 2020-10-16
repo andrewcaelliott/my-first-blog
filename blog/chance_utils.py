@@ -294,7 +294,8 @@ def round_sigfigs(amount, level=1):
 def format_round_sigfigs(amount, level=1):
     if amount == 0:
         return "0"
-    scale = math.ceil(math.log10(amount))
+    scale = math.ceil(math.log10(amount)+0.00000000001)
+    print(math.log10(amount)-0.000000001, scale)
     rounded = round(amount/10**(scale-level))
     if scale < 0:
         return(''.join(["0.", "0"*(-(scale)), str(rounded).strip("0")]))
