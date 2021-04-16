@@ -480,6 +480,7 @@ quotes = [
         (['n', ], '"The problem of distinguishing prime numbers from composite numbers and of resolving the latter into their prime factors is known to be one of the most important and useful in arithmetic." Carl Friedrich Gauss'),
         (['n', ], '"Only those who attempt the absurd will achieve the impossible. I think it\'s in my basement... let me go upstairs and check." M. C. Escher'),
         (['n', ], '"Many persons who have not studied mathematics confuse it with arithmetic and consider it a dry and arid science. Actually, however, this science requires great fantasy." Sophia Kovalevsky'),
+        (['n', 's' ], '"Mathematics is a wonderful, mad subject, full of imagination, fantasy, and creativity  that is not limited by the petty details of the physical world, but only by the strength of our inner light." Gregory Chaitin'),
 
 
     ]
