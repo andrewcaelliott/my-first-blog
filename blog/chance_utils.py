@@ -256,7 +256,7 @@ def odds(proportion, maxerror=0.0):
     else:
         return (best_odds1, best_odds2)
 
-def odds2(proportion, tolerance=0.01):
+def odds2a(proportion, tolerance=0.01):
     odds_on = False
     if proportion > 0.5:
         odds_on = True
@@ -285,6 +285,49 @@ def odds2(proportion, tolerance=0.01):
         return frac2.denominator - frac2.numerator, frac2.numerator
     else:
         return frac2.numerator, frac2.denominator - frac2.numerator
+
+
+def odds2(prop, tolerance=0.01):
+    odds_on = False
+    if prop > 0.5:
+        odds_on = True
+        prop = 1 - prop
+    if prop == 0:
+        return (1,0)
+    if prop ==1:
+        return (0,1)
+
+    proportion = prop / (1-prop)
+
+    scale_up = 1
+    if proportion < 0.01:
+        while proportion < 0.01:
+            scale_up = scale_up * 100
+            proportion = proportion * 100
+
+
+    acceptable = collections.OrderedDict()
+#    for a in range(1,20,1):
+    for a in range(1,21,1):
+        for b in [1, 2, 5]:
+            acceptable[a * b] = None
+    
+    candidates = sorted(list(acceptable.keys()))
+    scaled = [item * proportion for item in candidates]
+    rounded = [round(item, 0) for item in scaled]
+    diff = [round(abs(item - round(item, 0))/item,5) for item in scaled]
+    best = diff.index(min(diff))
+    #print(scaled)
+    #print(rounded)
+    #print(diff)
+    #print(best, candidates[best], diff[best])
+    if odds_on:
+        return (int(rounded[best]), int(candidates[best]) * scale_up)    
+    return (int(candidates[best]) * scale_up, int(rounded[best]))
+    #print([abs(item - round(item * proportion)) for item in candidates])
+
+
+
 
 def round_sigfigs(amount, level=1):
     scale = int(math.log10(amount))

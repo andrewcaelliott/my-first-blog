@@ -170,6 +170,12 @@ def chance_base(request, params, user_agent, case, form_style, xform):
     if permlink:
         chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
         case.probability = chanceFact.probability
+        if '|' in case.probability:
+            case.probability, case.sensitivity, case.specificity = (case.probability.split('|')+["0.9", "0.9"])[:3]
+        else:
+            case.sensitivity = getParamDefault(params, "probability_a", getParamDefault(params, "number", "0.9"))
+            case.specificity = getParamDefault(params, "probability_b", getParamDefault(params, "number", "0.9"))
+
         case.outcome_text = chanceFact.outcome_text
         items = ' '. join([str(chanceFact.exposed_items), chanceFact.item_text])
         case.items = items
@@ -183,6 +189,7 @@ def chance_base(request, params, user_agent, case, form_style, xform):
     trial_probability = case.build_probability()
     outcome_text = outcome_text.replace(",", "|")
     probs = [parse_probability(pstr) for pstr in trial_probability.split('|')]
+    print("probs", probs)
     classes = len(probs)
     if classes == 1:
         hitnames = [outcome_text]
@@ -191,6 +198,7 @@ def chance_base(request, params, user_agent, case, form_style, xform):
 
     paramsets = zip(trial_probability.split('|'), probs, hitnames, [item_num]*classes)
     summaries = [get_single_prob_summary(paramset) for paramset in paramsets]
+    print("summaries", summaries)
     seed = randint(1,1000000)    
     exposure = item_num
     trial_repetitions = int(0.999+sqrt(exposure / aspect))
@@ -356,8 +364,11 @@ def grid(request):
     exposed = int(getParamDefault(params, "exposed", width*depth))
     hits = int(getParamDefault(params, "hits", "5"))
     colour = int(getParamDefault(params, "colour", "0"))
+    frame_aspect = aspect
+    '''
     if hits > 0 :
-        while (hits / exposed) < 0.0009:
+        while (hits / exposed) < 0.00099:
+            print(exposed, hits, width, depth)
             if exposed == (exposed // 1000) *1000:
                 width = width // 1000
                 exposed = exposed // 1000
@@ -367,15 +378,30 @@ def grid(request):
                 exposed = exposed // 100
                 hits = hits * 10
                 stacked += 1
+    '''
+    if hits > 0:
+        if (hits / exposed) < 1/1000.0:
+            aspect = 1
+            width = 10
+            depth = 10
+            this_exp = exposed
+            next_exp = exposed / (width * depth) 
+            while (hits / this_exp) < 1/101.0:
+                stacked +=1
+                this_exp = next_exp
+                next_exp = this_exp / (width * depth) 
+            hits = round(hits * 100 / this_exp)
+            exposed = 100
+
 
     palette = get_palette(getParamDefault(params, "palette_name", "default"))
     invert = getParamDefault(params, "invert", "F")
     xy = getParamDefault(params, "xy", "F")
     cutoff = 100
-    if exposed > cutoff and depth == 1:
+    if stacked == 0 and exposed > cutoff and depth == 1:
         depth = int((exposed+cutoff - 1) / cutoff)
         width = int(exposed / depth +0.99)
-    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0, stacked=stacked, colour=colour)
+    surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, frame_aspect=frame_aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0, stacked=stacked, colour=colour)
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)
     return response
@@ -395,7 +421,6 @@ def gridchance(request):
     except:
         seed = None
     probability = getParamDefault(params, "probability", "0.1")
-    print(repeat_mode)
     level_counts, grid = compute_chance_grid(width, depth, exposure, probability, params, repeat_mode=repeat_mode, seed=seed)
     if display == 'collect_lower':
         grid = collect_lower(grid)

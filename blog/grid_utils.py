@@ -139,8 +139,23 @@ def square(ctx, square_size, squash, offset_x, offset_y, fillcolour, gridcolour)
     ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )
     ctx.fill()
 
+def zoomlr(ctx, offset_x, offset_y, left_height, right_height, width, fillcolour, gridcolour, invert=False):
+    ctx.move_to(offset_x+0, offset_y+right_height)
+    ctx.line_to(offset_x+0, offset_y+right_height-left_height)  # Line to (x,y)
+    ctx.line_to(offset_x+width, offset_y+0)  # Line to (x,y)
+    ctx.line_to(offset_x+width, offset_y+right_height)  # Line to (x,y)
+    ctx.line_to(offset_x+0, offset_y++right_height)
+    ctx.close_path()
+
+#    ctx.set_source_rgba(gridcolour[0], gridcolour[1], gridcolour[2], gridcolour[3] ) 
+    ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], 0.5 )  # Solid color
+#    ctx.set_line_width(min(rect_width/20,0.002))
+    ctx.stroke_preserve()
+#    ctx.set_source_rgba(fillcolour[0], fillcolour[1], fillcolour[2], fillcolour[3] )  # Solid color
+    ctx.fill()
+
+
 def zoom(ctx, offset_x, offset_y, top_width, bottom_width, depth, fillcolour, gridcolour, invert=False):
-    print(offset_x, offset_y, top_width, bottom_width, depth, fillcolour, gridcolour)
     if not invert:
         ctx.move_to(offset_x+0, offset_y+0)
         ctx.line_to(top_width, offset_y+0)  # Line to (x,y)
@@ -211,13 +226,13 @@ def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, ra
             fillcolour = palette['canvas']
     if count < exposed:
         #print(offset_x*gridcell_x, offset_y*gridcell_y)
-        rect(ctx, gridcell_x, gridcell_y, offset_x*gridcell_x, offset_y*gridcell_y+offset_frame, range_y, fillcolour, palette['canvas'])
+        rect(ctx, gridcell_x, gridcell_y, offset_x*gridcell_x+offset_frame, offset_y*gridcell_y, range_y, fillcolour, palette['canvas'])
 
 
 def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False, offset_frame=0, pale=False, colour=0):
-    square_size = 0.9 / range_x
-    gridcell_x = 0.9 / range_x
-    gridcell_y = (0.9 / aspect) / range_y
+    square_size = aspect * 0.09 / range_x
+    gridcell_x = aspect * 0.09 / range_x
+    gridcell_y = (0.09 ) / range_y
     count = 0
     if xy:
         for offset_x in range(0,range_x):
@@ -230,9 +245,30 @@ def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_pal
                 count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, palette=palette, invert=invert, pale=pale, colour=colour)
                 count+=1
 
+def draw_count_grid(range_x, range_y, hits, exposed, aspect=10, frame_aspect=10, palette=default_palette, xy=False, invert=False, stacked=0, colour=0):
+    #stack_height = int(2000/aspect * 1.4)
+    #WIDTH, HEIGHT = 2000, int(2000/aspect + stacked * stack_height)
+    WIDTH, HEIGHT = 2000, int(2000/ frame_aspect)
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
+    ctx = cairo.Context(surface)
+    ctx.scale(WIDTH, WIDTH)  # Normalizing the canvas
+    ctx.translate(0.05, 0.005)  # Changing the current transformation matrix
+    offset_frame = 0
+    if invert:
+        offset_frame = 16/100 * stacked
+    count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=palette, offset_frame=offset_frame, xy=xy, invert=invert, colour=colour)
+    for i in range(stacked):
+        zoomlr(ctx, ( (i+1) * 320 - 139) / WIDTH, 0, 0.009, 0.09, 138/WIDTH, palette['background'], None, invert)
+        if invert:
+            offset_frame = 16/100 * i 
+        else:
+            offset_frame = 12.5/100 * (i+1) 
+        count_grid(ctx, 10, 10, aspect, 1, 100, palette=palette, offset_frame=offset_frame, pale=True, invert=invert)
+    return surface
 
 
-def draw_count_grid(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False, stacked=0, colour=0):
+
+def draw_count_gridx(range_x, range_y, hits, exposed, aspect = 10, palette=default_palette, xy=False, invert=False, stacked=0, colour=0):
     stack_height = int(2000/aspect * 1.4)
     WIDTH, HEIGHT = 2000, int(2000/aspect + stacked * stack_height)
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)

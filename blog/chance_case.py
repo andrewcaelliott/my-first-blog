@@ -1,7 +1,7 @@
 from django import forms
 from .forms import SimpleChanceForm, ScreenChanceForm, SingleChanceForm
 from .chance_utils import parse_probability, format_round_sigfigs
-from .utils import getParamDefault
+from .utils import getParamDefault, popover_html
 
 class ChanceCase():
     outcome_text = "hits"
@@ -48,23 +48,31 @@ class ScreenChanceCase(ChanceCase):
 
     def set_params(self, params):
         self.probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
-        self.sensitivity = getParamDefault(params, "probability_a", getParamDefault(params, "number", "0.9"))
-        self.specificity = getParamDefault(params, "probability_b", getParamDefault(params, "number", "0.9"))
+        if '|' in self.probability:
+            self.probability, self.sensitivity, self.specificity = (self.probability.split('|')+["0.9", "0.9"])[:3]
+        else:
+            self.sensitivity = getParamDefault(params, "probability_a", getParamDefault(params, "number", "0.9"))
+            self.specificity = getParamDefault(params, "probability_b", getParamDefault(params, "number", "0.9"))
         self.items = getParamDefault(params, "items", "10000 trials")
         self.palette = getParamDefault(params, "palette_name", "screen")
         self.outcome_text = getParamDefault(params, "outcome_text", self.outcome_text)
 
     def prepare_form(self):
         self.form.fields["probability"].initial = self.probability
-        self.form.fields["probability"].label = "Base Incidence?"
+        self.form.fields["probability"].label = 'Base Incidence?'
+        self.form.fields["probability"].help_text = '<a title="The probability of a positive case in the population">?</a>'
         self.form.fields["probability_a"].initial = self.sensitivity
         self.form.fields["probability_a"].label = "Sensitivity?"
+        self.form.fields["probability_a"].help_text = '<a title="The probability that a positive case tests positive (true positive)">?</a>'
         self.form.fields["probability_b"].initial = self.specificity
         self.form.fields["probability_b"].label = "Specificity?"
+        self.form.fields["probability_b"].help_text = '<a title="The probability that a negative case tests negative (true negative)">?</a>'
         self.form.fields["items"].initial = self.items
         self.form.fields["items"].label = "Cases?"
+        self.form.fields["items"].help_text = '<a title="Number of cases to simulate">?</a>'
         self.form.fields["outcome_text"].initial = self.outcome_text
         self.form.fields["outcome_text"].label = "Outcomes?"
+        self.form.fields["outcome_text"].help_text = '<a title="What to call true positives | false positives | false negatives">?</a>'
         self.form.fields["form_style"].initial = 'scr'
         self.form.fields['form_style'].widget = forms.HiddenInput()
         self.form.fields["palette_name"].initial = self.palette

@@ -1367,3 +1367,8 @@ def getParamDefault(params, key, default, preserve_plus=False):
                 return result.replace("+"," ")
     except:
         return default
+
+def popover_html(label, content):
+    return label + ' <a tabindex="0" role="button" data-toggle="popover" data-html="true" \
+                            data-trigger="hover" data-placement="auto" data-content="' + content + '"> \
+                            <span class="glyphicon glyphicon-info-sign"></span></a>'
