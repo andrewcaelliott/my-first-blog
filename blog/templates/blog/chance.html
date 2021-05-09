@@ -180,12 +180,12 @@
                 <div class="container">
                     <div class="row">
                     {% for trial_outcome in trial_outcomes %}
-                    <div class="col-xs-1 text-center" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">
+                    <div class="col-xs-2 text-center" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">
                         <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ params.palette_name }}">
                         <span>{{trial_outcome.hit_name}}</span>
                     </div>
                     {% endfor %}
-                    <div class="col-xs-1 text-center">
+                    <div class="col-xs-2 text-center">
                         <img id="grid_legend_id" src="/gridlegendpng/?hit_type=0&palette_name={{ params.palette_name }}">
                         <span>other</span>
                     </div>
