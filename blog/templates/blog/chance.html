@@ -123,7 +123,7 @@
                 <div class="container">
                     <div class="row">
                     {% for summary in summaries %}
-                    <div class="col-xs-1 text-center">
+                    <div class="col-xs-2 text-center">
                         <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">{{ summary.hits_text }}</button>
                         <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ summary.palette_name }}">
                     </div>

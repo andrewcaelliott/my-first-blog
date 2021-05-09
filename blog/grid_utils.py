@@ -341,7 +341,7 @@ def draw_chance_grid(grid, range_x, range_y, palette=default_palette, xy=False, 
     return surface
 
 def draw_grid_legend(hit_type, palette=default_palette):
-    WIDTH, HEIGHT = 150, 10
+    WIDTH, HEIGHT = 300, 20
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
     ctx = cairo.Context(surface)
     ctx.scale(WIDTH, HEIGHT)  # Normalizing the canvas
