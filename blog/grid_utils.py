@@ -201,8 +201,6 @@ def rect(ctx, rect_width, rect_depth, offset_x, offset_y, range_y, fillcolour, g
     ctx.fill()
 
 
-
-
 def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, range_y, hits, exposed, count, invert=False, palette=default_palette, pale=False, colour=0):
     if invert:
         if (count < (exposed-hits)):
@@ -228,6 +226,14 @@ def count_cell(ctx, offset_x, offset_y, offset_frame, gridcell_x, gridcell_y, ra
         #print(offset_x*gridcell_x, offset_y*gridcell_y)
         rect(ctx, gridcell_x, gridcell_y, offset_x*gridcell_x+offset_frame, offset_y*gridcell_y, range_y, fillcolour, palette['canvas'])
 
+def grid_legend(ctx, hit_type, palette=default_palette):
+    cell_width = 1.0
+    cell_height = 1.0
+    if hit_type == -1:
+        fillcolour = palette['background']
+    else:
+        fillcolour = palette['features'][hit_type]            
+    rect(ctx, cell_width, cell_height, 0, 0, 1, fillcolour, palette['canvas'])
 
 def count_grid(ctx, range_x, range_y, aspect, hits, exposed, palette=default_palette, xy=False, invert=False, offset_frame=0, pale=False, colour=0):
     square_size = aspect * 0.09 / range_x
@@ -334,3 +340,11 @@ def draw_chance_grid(grid, range_x, range_y, palette=default_palette, xy=False, 
     grid_drawonly(ctx, grid, range_x, range_y, palette=palette, xy=xy, top_down=top_down)
     return surface
 
+def draw_grid_legend(hit_type, palette=default_palette):
+    WIDTH, HEIGHT = 150, 10
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
+    ctx = cairo.Context(surface)
+    ctx.scale(WIDTH, HEIGHT)  # Normalizing the canvas
+    ctx.translate(0.05, 0.005)  # Changing the current transformation matrix
+    grid_legend(ctx, hit_type-1, palette=palette)
+    return surface

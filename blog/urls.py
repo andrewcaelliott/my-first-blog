@@ -51,5 +51,6 @@ urlpatterns = [
     url(r'^chance/article/(?P<article_name>.*)/$', views.article_gen, name='article_gen'),
     url(r'^basegridpng/$', watcot_views.basegrid, name="basegrid"),
     url(r'^gridpng/$', watcot_views.grid, name="grid"),
+    url(r'^gridlegendpng/$', watcot_views.gridlegend, name="gridlegend"),
     url(r'^gridchancepng/$', watcot_views.gridchance, name="gridchance"),
 ]

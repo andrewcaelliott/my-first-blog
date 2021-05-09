@@ -38,7 +38,7 @@ from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from .chance_utils import odds2, do_trial,parse_probability, distribution,summary
 from .chance_utils import compute_chance_grid, get_prob_summary, get_single_prob_summary, collect_lower, collect_left, collect_all, collect_corner
-from .grid_utils import draw_chance_grid, draw_count_grid, get_palette
+from .grid_utils import draw_chance_grid, draw_count_grid, get_palette, draw_grid_legend
 from .utils import getParamDefault
 from user_agents import parse
 
@@ -304,6 +304,8 @@ def chance_std(request):
     paramsets = zip(probability.split('|'), probs, hitnames, [items]*classes, [repetitions] * classes, [repeat_mode] * classes)
 
     summaries = [get_prob_summary(paramset) for paramset in paramsets]
+    for summry in summaries:
+        summry['palette_name'] = palette_name
     summarised = summaries[0]
     seed = randint(1,1000000)    
     trial = {
@@ -440,3 +442,11 @@ def gridchance(request):
     surface.write_to_png(response)
     return response
 
+def gridlegend(request):
+    params = request.GET
+    hit_type = int(getParamDefault(params, "hit_type", 1))
+    palette = get_palette(getParamDefault(params, "palette_name", "default"))
+    surface = draw_grid_legend(hit_type, palette=palette)
+    response = HttpResponse(content_type="image/png")
+    surface.write_to_png(response)
+    return response

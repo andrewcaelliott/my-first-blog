@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+
         <div class="widget col-lg-2 col-md-2">
             <script>
             function openTab(tabName) {
@@ -64,12 +65,16 @@
                     </form>
             </div>
         </div>
-        <div class="widget col-lg-10 col-md-10">
-            <span>
-            {% for summary in summaries %}
-                <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}')">{{ summary.hits_text }}</button>
-            {% endfor %}
-            </span>    
+        <div class="col-lg-10 col-md-10">
+                <div class="container">
+                    <div class="row">
+                    {% for summary in summaries %}
+                    <div class="col-xs-1 text-center">
+                        <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">{{ summary.hits_text }}</button>
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ palette_name }}">
+                    </div>
+                    {% endfor %}
+                    </div>
         </div>
         {% for summary in summaries %}
         <div id="tab{{ forloop.counter }}" class="tab" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
@@ -100,16 +105,25 @@
                 <img src="/gridpng/?width={{ summary.equivalents.odds_fraction.1 }}&palette_name={{ palette_name }}&xy=true&hits={{ summary.equivalents.odds_fraction.0 }}&invert=True&colour={{forloop.counter0}}">
             </div>
         </div>
-            </div>
-            {% endfor %}    
+        </div>
+            {% endfor %}   
         <div class="widget col-lg-10 col-md-10">
             <div>
                 <h3>Representative example</h3>
-                <div>
-                {% for trial_outcome in trial_outcomes %}
-                    <button type="submit" class="save btn btn-warning" name="calc_target" onclick="showOutcome('outcome{{ forloop.counter }}')">{{ trial_outcome.hit_name }}</button>
-                {% endfor %}
-                </div>    
+                <div class="container">
+                    <div class="row">
+                    {% for trial_outcome in trial_outcomes %}
+                    <div class="col-xs-1 text-center" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ palette_name }}">
+                        <span>{{trial_outcome.hit_name}}</span>
+                    </div>
+                    {% endfor %}
+                    <div class="col-xs-1 text-center">
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type=0&palette_name={{ palette_name }}">
+                        <span>other</span>
+                    </div>
+                </div>
+                </div>
                 {% for trial_outcome in trial_outcomes %}
                     <div id="outcome{{ forloop.counter }}" class="outcome" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
                     <h4>For {{ trial_outcome.hit_name }}</h4>
@@ -124,8 +138,11 @@
                     <button type="submit" class="action btn btn-warning" name="grid_6" onclick="redoGrid(6)">Collect in corner</button>
 
                 <div id="grid_div">
+
                 <img id="grid_image_id" src="/gridchancepng/?width={{ trial.items }}&depth={{trial.repetitions}}&exposure={{trial.exposure}}&top_down=true&probability={{ trial.probability }}&repeat_mode={{ trial.repeat_mode }}&palette_name={{ palette_name }}&seed={{ trial.seed }}">
                 </div>
             </div>
         </div>
+        </div> 
+
 {% endblock %}
