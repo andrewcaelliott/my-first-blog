@@ -13,6 +13,7 @@ class ChanceCase():
         self.probability = getParamDefault(params, "probability", getParamDefault(params, "number", "0.1"))
         self.items = getParamDefault(params, "items", "1000 trials")
         self.palette = getParamDefault(params, "palette_name", "default")
+        self.outcome_text = getParamDefault(params, "outcome_text", self.outcome_text)
 
 
     def build_probability(self):
@@ -25,6 +26,7 @@ class SimpleChanceCase(ChanceCase):
 class SingleChanceCase(ChanceCase):
     form_style = 'sng'
     form = SingleChanceForm()
+
 
     def prepare_form(self):
         self.form.fields["probability"].initial = self.probability

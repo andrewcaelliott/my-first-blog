@@ -329,6 +329,13 @@ ul:hover svg.major-quantile circle.refdatapoint {
     padding: 4px 8px;
 }
 
+div .toggledetail {
+    display:none;
+    background-color: #ffffff !important;
+}
+
+
+
 @media only screen and (max-width: 799px) {
 /* small devices */
     ul svg.major-quantile line {
@@ -478,7 +485,5 @@ ul:hover svg.major-quantile circle.refdatapoint {
     .content .widget input, .content .widget select {
         width: 40   %;
     }
-
-
 
 }

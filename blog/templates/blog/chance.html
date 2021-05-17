@@ -9,6 +9,14 @@
 {% block content %}
         <div class="widget col-lg-2 col-md-2">
             <script>
+            function toggleDiv(divid) {
+              var x = document.getElementById(divid);
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }                
             function toggleForms() {
               var btn = document.getElementById("smp_adv")
               var adv_form = document.getElementById("adv_form");
@@ -98,7 +106,7 @@
             -->
 
             <div id=adv_form style="display:{% if form_style == 'adv' %}block{% else %}none{% endif %}">
-                <h2>What are the chances of {{ description }}?</h2>
+                <h2>{{ description }}</h2>
                     <form method="GET" class="query-form" action="/chance/answer">
                         {{ adv_form.as_p }}
                         <button type="submit" class="save btn btn-warning" name="calc_target" value="hits">Show</button>
@@ -106,7 +114,7 @@
             <span><button id=smp_adv class="save btn btn-warning" onclick="toggleForms()">{% if form_style == 'adv' %}Simple{% else %}Advanced{% endif %}</button></span>
             </div>
             <div id=smp_form style="display:{% if form_style == 'smp'%}block{% else %}none{% endif %}">
-                <h2>What are the chances of {{ description }}?</h2>
+                <h2>{{ description }}</h2>
                     <form method="GET" class="query-form" action="/chance/answer">
                         {{ smp_form.as_p }}
                         <button type="submit" class="save btn btn-warning" name="calc_target" value="hits">Show</button>
@@ -123,11 +131,15 @@
                 <div class="container">
                     <div class="row">
                     {% for summary in summaries %}
-                    <div class="col-xs-2 text-center">
-                        <button type="submit" class="save btn btn-warning" name="calc_target" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">{{ summary.hits_text }}</button>
-                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ summary.palette_name }}">
+                    <div class="col-xs-2 text-center"  onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ palette_name }}">
+                        <button type="submit" class="save btn btn-warning" name="calc_target">{{ summary.hits_text }}</button>
                     </div>
                     {% endfor %}
+                    <div class="col-xs-2 text-center">
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type=0&palette_name={{ palette_name }}">
+                        <button type="submit" class="save btn btn-warning" name="calc_target" disabled>other</button>
+                    </div>
                     </div>
                 </div>
 
@@ -151,9 +163,9 @@
                     {% endif %}
 
                 <h4>Probability</h4>
-                <li>{{summary.equivalents.probability| floatformat:4}}</li>
+                <li>{{summary.equivalents.probability| floatformat:6}}</li>
                 <h4>As a percentage</h4>
-                <li>{{summary.equivalents.percentage | floatformat:2}}%</li>
+                <li>{{summary.equivalents.percentage | floatformat:4}}%</li>
                 </div>
         </div>
         <div class="widget col-lg-5 col-md-5">
@@ -181,15 +193,15 @@
                     <div class="row">
                     {% for trial_outcome in trial_outcomes %}
                     <div class="col-xs-2 text-center" onclick="openTab('tab{{ forloop.counter }}'); showOutcome('outcome{{ forloop.counter }}')">
-                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ params.palette_name }}">
-                        <span>{{trial_outcome.hit_name}}</span>
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type={{ forloop.counter }}&palette_name={{ palette_name }}">
+                        <button type="submit" class="save btn btn-warning" name="calc_target">{{trial_outcome.hit_name}}</button>
                     </div>
                     {% endfor %}
                     <div class="col-xs-2 text-center">
-                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type=0&palette_name={{ params.palette_name }}">
-                        <span>other</span>
+                        <img id="grid_legend_id" src="/gridlegendpng/?hit_type=0&palette_name={{ palette_name }}">
+                        <button type="submit" class="save btn btn-warning" name="calc_target" disabled>other</button>
                     </div>
-                </div>
+                    </div>
                 </div>
                 {% for trial_outcome in trial_outcomes %}
                     <div id="outcome{{ forloop.counter }}" class="outcome" {% if forloop.counter0 > 0 %} style="display:none" {% endif %}>
@@ -205,15 +217,19 @@
                     <div class="widget col-lg-6 col-md-6">
                     <h5>For {{ trial.item_text }} (columns)</h5>
                         <li>Summary for {{ trial.item_text }}: {{ trial_outcome.item_hits_summary}}</li>
-                        <li title="{{ trial_outcome.item_hits}}">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.item_text }} ...</li>
-                        <li title="{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}">Distribution: How many {{ trial.item_text }} for each different number of {{ trial_outcome.hit_name }} ... </li>
+                        <li title="{{ trial_outcome.item_hits}}" onclick="toggleDiv('columnSummary')">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.item_text }}? [Click to show]</li>
+                        <div id=columnSummary class="toggledetail">{{ trial_outcome.item_hits}}</div>
+                        <li title="{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}" onclick="toggleDiv('columnDistribution')">Distribution: How many {{ trial.item_text }} for each different number of {{ trial_outcome.hit_name }}? [Click to show] </li>
+                        <div id=columnDistribution class="toggledetail">{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }}; {% endfor %}</div>
                     </div>
                     {% if form.exposed_repetitions.value != "1" %}
                     <div class="widget col-lg-6 col-md-6">
                     <h5>For {{ trial.repetition_text }} (rows)</h5>
                         <li>Summary for {{ trial.repetition_text }}: {{ trial_outcome.repetition_hits_summary}}</li>
-                        <li title="{{ trial_outcome.repetition_hits}}">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.repetition_text }} ...</li>
-                        <li title="{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}">Distribution: How many {{ trial.repetition_text }} for each different number of {{ trial_outcome.hit_name }} ... </li>
+                        <li title="{{ trial_outcome.repetition_hits}}" onclick="toggleDiv('rowSummary')">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.repetition_text }}? [Click to show]</li>
+                        <div id=rowSummary class="toggledetail">{{ trial_outcome.repetition_hits}}</div>
+                        <li title="{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}" onclick="toggleDiv('rowDistribution')">Distribution: How many {{ trial.repetition_text }} for each different number of {{ trial_outcome.hit_name }}? [Click to show] </li>
+                        <div id=rowDistribution class="toggledetail">{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }}; {% endfor %}</div>
                     </div>
                     {% endif %}
                     </div>

@@ -150,6 +150,7 @@ def chance_single(request):
     params = request.GET
     user_agent = parse(request.META["HTTP_USER_AGENT"])
     case = SingleChanceCase()
+    case.set_params(params)
     return chance_base(request, params, user_agent, case, case.form_style, case.form)
 
 def chance_screen(request):
@@ -165,7 +166,7 @@ def chance_base(request, params, user_agent, case, form_style, xform):
     items = case.items
     outcome_text = getParamDefault(params, "outcome_text", case.outcome_text)
     palette_name = case.palette
-    description = "this"
+    description = "What are the chances of this?"
     permlink = getParamDefault(params, "fact", None)
     if permlink:
         chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
@@ -246,7 +247,7 @@ def chance_std(request):
     repeat_mode = getParamDefault(params, "repeat_mode", "repeats")
     palette_name = getParamDefault(params, "palette_name", "default")
     target = getParamDefault(params, "calc_target", "hits")
-    description = "this"
+    description = "What are the chances of this?"
     permlink = getParamDefault(params, "fact", None)
     if permlink:
         chanceFact = get_object_or_404(ChanceFact, permlink=permlink)
@@ -306,7 +307,6 @@ def chance_std(request):
     summaries = [get_prob_summary(paramset) for paramset in paramsets]
     for summry in summaries:
         summry['palette_name'] = palette_name
-    summarised = summaries[0]
     seed = randint(1,1000000)    
     trial = {
         "items": items,
@@ -322,8 +322,8 @@ def chance_std(request):
     trial_outcomes = do_trial(trial, params, repeat_mode=repeat_mode, seed = seed, include_none = False)
     for level, trial_outcome in trial_outcomes.items():
         trial_outcome["hit_name"] = "None" if level == 0 else hitnames[level-1]
-        trial_outcome["item_hits"] = trial_outcome['x_hits'].values()
-        trial_outcome["repetition_hits"] = trial_outcome['y_hits'].values()
+        trial_outcome["item_hits"] = list(trial_outcome['x_hits'].values())
+        trial_outcome["repetition_hits"] = list(trial_outcome['y_hits'].values())
         item_distribution = distribution(trial_outcome["item_hits"])
         trial_outcome["item_hits_distribution"]=[(k,v) for k,v in item_distribution.items()]
         trial_outcome["item_hits_summary"]=summary(item_distribution)
@@ -382,7 +382,8 @@ def grid(request):
                 stacked += 1
     '''
     if hits > 0:
-        if (hits / exposed) < 1/1000.0:
+        print(hits, exposed)
+        if (hits / exposed) < 1/1001.0:
             aspect = 1
             width = 10
             depth = 10
@@ -392,17 +393,40 @@ def grid(request):
                 stacked +=1
                 this_exp = next_exp
                 next_exp = this_exp / (width * depth) 
-            hits = round(hits * 100 / this_exp)
-            exposed = 100
+            print(hits, exposed, this_exp)
+            hits = round(hits * round(this_exp) / this_exp)
+            exposed = round(this_exp)
+            #hits = round(hits * 1000 / this_exp)
+            #exposed = 1000
+            print(hits, exposed)
+            fraction = Fraction(hits, exposed).limit_denominator(100)   
+            hits = fraction.numerator
+            exposed = fraction.denominator
+            #print(hits, exposed)
+            
+            #odds = odds2(hits/exposed)
+            #hits = odds[1]
+            #exposed = odds[0]+odds[1]
+
+        print(hits, exposed)
 
 
     palette = get_palette(getParamDefault(params, "palette_name", "default"))
     invert = getParamDefault(params, "invert", "F")
     xy = getParamDefault(params, "xy", "F")
     cutoff = 100
-    if stacked == 0 and exposed > cutoff and depth == 1:
-        depth = int((exposed+cutoff - 1) / cutoff)
-        width = int(exposed / depth +0.99)
+    if stacked == 0:
+        cutoff = 100
+        if exposed > cutoff and depth == 1:
+            depth = int((exposed+cutoff - 1) / cutoff)
+            width = int(exposed / depth +0.999)
+    else:
+        cutoff = 10
+        if True:
+        #if exposed > cutoff:
+            depth = int((exposed+cutoff - 1) // cutoff)
+            width = int(exposed / depth +0.999)
+        print(hits, exposed, cutoff, depth, width)
     surface = draw_count_grid(width, depth, hits, exposed, aspect=aspect, frame_aspect=frame_aspect, palette=palette, invert = invert.upper().find("T")>=0, xy = xy.upper().find("T")>=0, stacked=stacked, colour=colour)
     response = HttpResponse(content_type="image/png")
     surface.write_to_png(response)

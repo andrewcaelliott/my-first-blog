@@ -286,6 +286,31 @@ def odds2a(proportion, tolerance=0.01):
     else:
         return frac2.numerator, frac2.denominator - frac2.numerator
 
+def coarse_round(n, acceptable_n):
+    diff = [abs(n - item) for item in acceptable_n]
+    return acceptable_n[diff.index(min(diff))]
+
+def fraction2(proportion):
+    print("fraction2", proportion)
+    acceptable_d = collections.OrderedDict()
+    for a in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 18, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]:
+        for b in [1, 2, 3, 4, 5, 8, 10]:
+            acceptable_d[a * b] = None
+    
+    acceptable_n_s = set()
+    for a in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+        for b in [0, 1, 2, 5, 7, 10]:
+            acceptable_n_s.add(a * b)          
+    acceptable_n = sorted(list(acceptable_n_s))
+
+    candidates = sorted(list(acceptable_d.keys()))
+    scaled = [item * proportion for item in candidates]
+    rounded2 = [coarse_round(item, acceptable_n) for item in scaled] # Consider coarser rounding
+    diff = [round(abs(item - coarse_round(item, acceptable_n))/item, 5) for item in scaled]
+    best = diff.index(min(diff))
+    fraction = Fraction(int(rounded2[best]), int(candidates[best]))
+    return fraction
+
 
 def odds2(prop, tolerance=0.01):
     odds_on = False
@@ -306,24 +331,28 @@ def odds2(prop, tolerance=0.01):
             proportion = proportion * 100
 
 
-    acceptable = collections.OrderedDict()
-#    for a in range(1,20,1):
-    for a in range(1,21,1):
-        for b in [1, 2, 5]:
-            acceptable[a * b] = None
+    acceptable_d = collections.OrderedDict()
+    for a in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 18, 20]:
+        for b in [1, 2, 5, 13]:
+            acceptable_d[a * b] = None
     
-    candidates = sorted(list(acceptable.keys()))
+    acceptable_n_s = set()
+    for a in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+        for b in [1, 2, 5]:
+            acceptable_n_s.add(a * b)          
+    acceptable_n = sorted(list(acceptable_n_s))
+
+    candidates = sorted(list(acceptable_d.keys()))
     scaled = [item * proportion for item in candidates]
-    rounded = [round(item, 0) for item in scaled]
-    diff = [round(abs(item - round(item, 0))/item,5) for item in scaled]
+    rounded = [round(item, 0) for item in scaled] # Consider coarser rounding
+    rounded2 = [coarse_round(item, acceptable_n) for item in scaled] # Consider coarser rounding
+    diff0 = [round(abs(item - round(item, 0))/item, 5) for item in scaled]
+    diff = [round(abs(item - coarse_round(item, acceptable_n))/item, 5) for item in scaled]
     best = diff.index(min(diff))
-    #print(scaled)
-    #print(rounded)
-    #print(diff)
-    #print(best, candidates[best], diff[best])
+    fraction = Fraction(int(rounded2[best]), int(candidates[best]))
     if odds_on:
-        return (int(rounded[best]), int(candidates[best]) * scale_up)    
-    return (int(candidates[best]) * scale_up, int(rounded[best]))
+        return (fraction.numerator, fraction.denominator * scale_up)    
+    return (fraction.denominator * scale_up, fraction.numerator)
     #print([abs(item - round(item * proportion)) for item in candidates])
 
 
@@ -481,6 +510,7 @@ def get_single_prob_summary(args):
         fraction = Fraction(prob).limit_denominator(1000)
     except:
         fraction = Fraction(0)
+    fraction = fraction2(prob)
     try:
         odds_raw = odds2(prob, tolerance=0.0005)
         odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
@@ -528,11 +558,13 @@ def get_prob_summary(args):
         survival_prob = (1 - prob) ** repetitions
         calc_hits_item = (1 - survival_prob) * items
 
-    try:
-        fraction = Fraction(prob).limit_denominator(1000)
-    except:
-        fraction = Fraction(0)
-    
+    #try:
+    #    fraction = Fraction(prob).limit_denominator(1000)
+    #except:
+    #    fraction = Fraction(0)
+
+    fraction = fraction2(prob)
+
     try:
         odds_raw = odds2(prob, tolerance=0.0005)
         odds_fraction = (odds_raw[1], (odds_raw[0] + odds_raw[1]))
@@ -549,6 +581,8 @@ def get_prob_summary(args):
         "odds": odds_raw,
         "odds_fraction": odds_fraction,
     }
+    print("equiv")
+    print(equivalents)
     return {
         "repeat_mode": repeat_mode,
         "hits": calc_hits,
