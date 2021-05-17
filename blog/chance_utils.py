@@ -306,7 +306,7 @@ def fraction2(proportion):
     candidates = sorted(list(acceptable_d.keys()))
     scaled = [item * proportion for item in candidates]
     rounded2 = [coarse_round(item, acceptable_n) for item in scaled] # Consider coarser rounding
-    diff = [round(abs(item - coarse_round(item, acceptable_n))/item, 5) for item in scaled]
+    diff = [round(abs(item - coarse_round(item, acceptable_n))/max(1,item), 5) for item in scaled]
     best = diff.index(min(diff))
     fraction = Fraction(int(rounded2[best]), int(candidates[best]))
     return fraction
@@ -581,8 +581,8 @@ def get_prob_summary(args):
         "odds": odds_raw,
         "odds_fraction": odds_fraction,
     }
-    print("equiv")
-    print(equivalents)
+    #print("equiv")
+    #print(equivalents)
     return {
         "repeat_mode": repeat_mode,
         "hits": calc_hits,
