@@ -396,6 +396,13 @@ div .toggledetail {
     }
 
 
+    div .toggledetail {
+        display:none;
+        background-color: #ffffff !important;
+    }
+
+
+
 }
 
 
@@ -485,5 +492,12 @@ div .toggledetail {
     .content .widget input, .content .widget select {
         width: 40   %;
     }
+
+    div .toggledetail {
+        display:none;
+        background-color: #ffffff !important;
+    }
+
+
 
 }
