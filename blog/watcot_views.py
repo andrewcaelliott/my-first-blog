@@ -367,23 +367,8 @@ def grid(request):
     hits = int(getParamDefault(params, "hits", "5"))
     colour = int(getParamDefault(params, "colour", "0"))
     frame_aspect = aspect
-    '''
-    if hits > 0 :
-        while (hits / exposed) < 0.00099:
-            print(exposed, hits, width, depth)
-            if exposed == (exposed // 1000) *1000:
-                width = width // 1000
-                exposed = exposed // 1000
-                stacked += 1
-            else:
-                width = width // 100
-                exposed = exposed // 100
-                hits = hits * 10
-                stacked += 1
-    '''
     if hits > 0:
-        print(hits, exposed)
-        if (hits / exposed) < 1/1001.0:
+        if (hits / exposed) < 1/1001.0 or exposed > 2000:
             aspect = 1
             width = 10
             depth = 10
@@ -393,22 +378,11 @@ def grid(request):
                 stacked +=1
                 this_exp = next_exp
                 next_exp = this_exp / (width * depth) 
-            print(hits, exposed, this_exp)
             hits = round(hits * round(this_exp) / this_exp)
             exposed = round(this_exp)
-            #hits = round(hits * 1000 / this_exp)
-            #exposed = 1000
-            print(hits, exposed)
             fraction = Fraction(hits, exposed).limit_denominator(100)   
             hits = fraction.numerator
             exposed = fraction.denominator
-            #print(hits, exposed)
-            
-            #odds = odds2(hits/exposed)
-            #hits = odds[1]
-            #exposed = odds[0]+odds[1]
-
-        print(hits, exposed)
 
 
     palette = get_palette(getParamDefault(params, "palette_name", "default"))

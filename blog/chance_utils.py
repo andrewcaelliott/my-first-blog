@@ -293,10 +293,12 @@ def coarse_round(n, acceptable_n):
 def fraction2(proportion):
     print("fraction2", proportion)
     acceptable_d = collections.OrderedDict()
-    for a in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 18, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]:
-        for b in [1, 2, 3, 4, 5, 8, 10]:
+    for a in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+        for b in [1, 2, 5, 10]:
             acceptable_d[a * b] = None
-    
+    for c in [7, 9, 11, 13, 14, 17, 18, 19, 52, 70, 80, 90]:
+        acceptable_d[c] = None
+
     acceptable_n_s = set()
     for a in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
         for b in [0, 1, 2, 5, 7, 10]:
@@ -306,7 +308,7 @@ def fraction2(proportion):
     candidates = sorted(list(acceptable_d.keys()))
     scaled = [item * proportion for item in candidates]
     rounded2 = [coarse_round(item, acceptable_n) for item in scaled] # Consider coarser rounding
-    diff = [round(abs(item - coarse_round(item, acceptable_n))/max(1,item), 5) for item in scaled]
+    diff = [round(abs(item - coarse_round(item, acceptable_n))/max(0.0001,item), 5) for item in scaled]
     best = diff.index(min(diff))
     fraction = Fraction(int(rounded2[best]), int(candidates[best]))
     return fraction
@@ -332,13 +334,15 @@ def odds2(prop, tolerance=0.01):
 
 
     acceptable_d = collections.OrderedDict()
-    for a in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 18, 20]:
-        for b in [1, 2, 5, 13]:
+    for a in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+        for b in [1, 2, 5, 10]:
             acceptable_d[a * b] = None
+    for c in [7, 9, 11, 13, 14, 17, 18, 19, 70, 80, 90]:
+        acceptable_d[c] = None
     
     acceptable_n_s = set()
     for a in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
-        for b in [1, 2, 5]:
+        for b in [1, 2, 3, 4, 5]:
             acceptable_n_s.add(a * b)          
     acceptable_n = sorted(list(acceptable_n_s))
 
