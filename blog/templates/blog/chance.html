@@ -217,19 +217,19 @@
                     <div class="widget col-lg-6 col-md-6">
                     <h5>For {{ trial.item_text }} (columns)</h5>
                         <li>Summary for {{ trial.item_text }}: {{ trial_outcome.item_hits_summary}}</li>
-                        <li title="{{ trial_outcome.item_hits}}" onclick="toggleDiv('columnSummary')">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.item_text }}? [Click to show]</li>
-                        <div id=columnSummary class="toggledetail">{{ trial_outcome.item_hits}}</div>
-                        <li title="{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}" onclick="toggleDiv('columnDistribution')">Distribution: How many {{ trial.item_text }} for each different number of {{ trial_outcome.hit_name }}? [Click to show] </li>
-                        <div id=columnDistribution class="toggledetail">{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }}; {% endfor %}</div>
+                        <li title="{{ trial_outcome.item_hits}}" onclick="toggleDiv('columnSummary{{ forloop.counter }}')">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.item_text }}? [Click to show]</li>
+                        <div id="columnSummary{{ forloop.counter }}" class="toggledetail">{{ trial_outcome.item_hits}}</div>
+                        <li title="{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}" onclick="toggleDiv('columnDistribution{{ forloop.counter }}')">Distribution: How many {{ trial.item_text }} for each different number of {{ trial_outcome.hit_name }}? [Click to show] </li>
+                        <div id="columnDistribution{{ forloop.counter }}" class="toggledetail">{% for cell in trial_outcome.item_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }}; {% endfor %}</div>
                     </div>
                     {% if form.exposed_repetitions.value != "1" %}
                     <div class="widget col-lg-6 col-md-6">
                     <h5>For {{ trial.repetition_text }} (rows)</h5>
                         <li>Summary for {{ trial.repetition_text }}: {{ trial_outcome.repetition_hits_summary}}</li>
-                        <li title="{{ trial_outcome.repetition_hits}}" onclick="toggleDiv('rowSummary')">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.repetition_text }}? [Click to show]</li>
-                        <div id=rowSummary class="toggledetail">{{ trial_outcome.repetition_hits}}</div>
-                        <li title="{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}" onclick="toggleDiv('rowDistribution')">Distribution: How many {{ trial.repetition_text }} for each different number of {{ trial_outcome.hit_name }}? [Click to show] </li>
-                        <div id=rowDistribution class="toggledetail">{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }}; {% endfor %}</div>
+                        <li title="{{ trial_outcome.repetition_hits}}" onclick="toggleDiv('rowSummary{{ forloop.counter }}')">Counts: How many {{ trial_outcome.hit_name }} for each of the {{ trial.repetition_text }}? [Click to show]</li>
+                        <div id="rowSummary{{ forloop.counter }}" class="toggledetail">{{ trial_outcome.repetition_hits}}</div>
+                        <li title="{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }} {% endfor %}" onclick="toggleDiv('rowDistribution{{ forloop.counter }}')">Distribution: How many {{ trial.repetition_text }} for each different number of {{ trial_outcome.hit_name }}? [Click to show] </li>
+                        <div id="rowDistribution{{ forloop.counter }}" class="toggledetail">{% for cell in trial_outcome.repetition_hits_distribution %} {{cell.1}} with {{cell.0}} {{ trial_outcome.hit_name }}; {% endfor %}</div>
                     </div>
                     {% endif %}
                     </div>
