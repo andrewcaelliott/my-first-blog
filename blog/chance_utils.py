@@ -296,7 +296,7 @@ def fraction2(proportion):
     for a in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
         for b in [1, 2, 5, 10]:
             acceptable_d[a * b] = None
-    for c in [7, 9, 11, 13, 14, 17, 18, 19, 52, 70, 80, 90]:
+    for c in [7, 9, 11, 13, 14, 17, 18, 19, 38, 52, 70, 71, 80, 90]:
         acceptable_d[c] = None
 
     acceptable_n_s = set()
@@ -337,7 +337,7 @@ def odds2(prop, tolerance=0.01):
     for a in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
         for b in [1, 2, 5, 10]:
             acceptable_d[a * b] = None
-    for c in [7, 9, 11, 13, 14, 17, 18, 19, 70, 80, 90]:
+    for c in [7, 9, 11, 13, 14, 17, 18, 19, 36, 37, 51, 70, 80, 90]:
         acceptable_d[c] = None
     
     acceptable_n_s = set()
