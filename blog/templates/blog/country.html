@@ -11,10 +11,12 @@
             <div>
                 <h1>Numbers and Ratios about {{ country }} </a></h1>
                 <h4><a href="../facts/?search={{ country}}">Base facts about {{ country }} </a></h4>
-                <p>(Source:2018 CIA World Factbook, mostly relating to 2017. 
+                <p>(Source:2020 CIA World Factbook, mostly relating to 2017 raw data. 
                 <br/> Disclaimer: work in progress. Intended Use: cross-checking the scale and reasonability of big numbers.
-                <br/> Original numbers in USD. Exchange Rates as at end 2017. If no input amount supplied, displays USD, otherwise displays input amount currency.
-                <br/> Spark graphs: Large/red dot shows rank among all countries ordered from min to max. 
+                <br/> Original numbers in USD. Exchange Rates as at mid 2022. If no input amount supplied, displays USD, otherwise displays input amount currency.
+                <h4>Spark graphs:</h4>
+                <br/> Large/red dot shows rank among all countries ordered from min to max. 
+                <br/> Small dots shows data for countries ranked at quartile points. 
                 <br/> Blue dots are comparison points for USA, Russia and China.)</p>
 	        <form method="GET" class="query-form freeform" action="/country" >
                     <!--{{ freeForm.as_p }}-->
