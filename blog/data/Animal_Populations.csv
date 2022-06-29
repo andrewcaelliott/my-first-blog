@@ -1,85 +1,102 @@
-1,Number of insects in the world,10,quadrillion,15,insects,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+1,Number of insects in the world,10,quintillion,18,insects,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
 2,Number of trees in the world,3,trillion,12,trees,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-3,Estimated world population of Cattle,1,billion,9,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-4,Estimated world population of domestic Pigs,1,billion,9,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-5,Estimated world population of domestic Sheep,1,billion,9,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-6,Estimated world population of domestic Goats,850,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-7,Estimated world population of domestic Cats,600,million,6,individuals,count.pop,http://www.ask.com/pets-animals/many-cats-world-4d3ed6a78c600697
-8,Estimated world population of Dogs,525,million,6,individuals,count.pop,http://www.ask.com/science/many-dogs-world-36b6e95b9c70b5db
-9,Estimated world population of Water Buffalo,172,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+3,Estimated world population of Cattle,1.5,billion,9,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+4,Estimated world population of domestic Pigs,1,billion,9,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+5,Estimated world population of domestic Sheep,1,billion,9,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+6,Estimated world population of Dogs,900,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+7,Estimated world population of domestic Goats,850,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+8,Estimated world population of domestic Cats,600,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+9,Estimated world population of Water Buffalo,172,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
 10,Estimated world population of Horses,58,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
 11,Estimated world population of Donkeys,40,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-12,Estimated population of Red Kangaroo (2011),11.5,million,6,individuals,count.pop,http://www.environment.gov.au/biodiversity/wildlife-trade/natives/wild-harvest/kangaroo-wallaby-statistics/kangaroo-population
-,Estimated population of Eastern Grey Kangaroo (2011),16.06,million,6,individuals,count.pop,http://www.environment.gov.au/biodiversity/wildlife-trade/natives/wild-harvest/kangaroo-wallaby-statistics/kangaroo-population
-13,Estimated world population of Crabeater Seal,11,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-14,Estimated world population of Mules,10,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-15,Estimated world population of Harp Seal,8,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+12,Estimated population of Eastern Grey Kangaroo (2011),16.06,million,6,individuals,count.pop,http://www.environment.gov.au/biodiversity/wildlife-trade/natives/wild-harvest/kangaroo-wallaby-statistics/kangaroo-population
+13,Estimated population of Red Kangaroo (2011),11.5,million,6,individuals,count.pop,http://www.environment.gov.au/biodiversity/wildlife-trade/natives/wild-harvest/kangaroo-wallaby-statistics/kangaroo-population
+14,Estimated world population of Crabeater Seal,11,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+15,Estimated world population of Mules,10,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
 16,Estimated world population of Blue Duiker,7,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
-17,Estimated world population of Springbok,2.5,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
-18,Estimated world population of Brown Fur Seal,2.092,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-19,Estimated world population of Impala,2,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+17,Estimated world population of Harp Seal,4.5,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+18,Estimated world population of Springbok,2.5,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+19,Estimated world population of Impala,2,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
 20,Estimated world population of Blue Wildebeest,1.55,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
 21,Estimated world population of Moose / Elk,1.5,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
 22,Estimated world population of Northern Fur Seal,1.1,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-23,Estimated world population of Siberian Roe Deer,1,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-24,High estimate of number of American Black Bears,950,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-25,Estimated world population of African Buffalo,890,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-26,Estimated population of Plains Zebra,750,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Plains_zebra#Conservation
-27,Estimated population of African Elephant (2016),415,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/African_elephant
-28,Estimated world population of Hooded Seal,662,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-29,Estimated world population of Thomson's Gazelle,550,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-30,Estimated world population of Grey Seal,400,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-31,Estimated world population of Mongolian Gazelle,400,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-32,Estimated world population of Gemsbok,373,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-33,Estimated world population of Suni antelope,365,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-34,Estimated world population of California Sea Lion,355,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-35,Estimated world population of Vicuna,347,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-36,Estimated world population of Mullers Bornean Gibbon,300,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-37,High estimate of number of common Chimpanzees,300,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
-38,Estimated world population of Brown Bear,200,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-39,Estimated world population of Gelada,200,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-40,Estimated world population of Waterbuck,200,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-41,Estimated world population of Sitatunga,170,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-42,High estimate of world population of Hippopotamus,148,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
-43,Estimated world population of Dall Sheep,115,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-44,Estimated world population of Bush Dog,110,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-45,Estimated world population of Japanese Serow,100,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-46,High estimate of number of Western Gorillas,95,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
-47,Estimated world population of Giraffe,80,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-48,High estimate of world population of Leopards,75,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-49,Estimated world population of Kiang (wild ass),70,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-50,High estimate of number of Bornean Orangutans,69,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
-51,Estimated world population of Spanish Ibex,50,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-52,High estimate of number of Bonobo Chimpanzees,50,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
-53,High estimate of world population of Lions,47.4,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-54,High estimate of world population of Spotted Hyena,47,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-55,High estimate of population of Asian Elephant (2003),41.4,thousand,3,individuals,count.pop,http://www.iucnredlist.org/details/7140/0
-56,Estimated world population of Mountain Zebra,26.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-57,High estimate of world population of Polar Bears,25,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-58,Estimated world population of African Rhinos (white and black),25,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-59,Estimated world population of Black Wildebeest,18,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-60,Estimated world population of Wild Yak,15,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-61,Estimated world population of Striped Hyena,14,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-62,Estimated world population of Sunda Clouded Leopard,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-63,Estimated world population of Red Panda,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-64,Estimated world population of Nubian Ibex,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-65,High estimate of world population of Cheetah,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-66,Estimated population of Mountain Zebra,9,thousand,3,individuals,count.pop,http://www.iucnredlist.org/details/7960/0
-67,Estimated world population of Brown Hyena,8,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-68,Estimated world population of Sumatran Orangutan,7.3,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-69,Estimated world population of Snow Leopard,7,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-70,Estimated world population of Arabian Oryx,7,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-71,Estimated population of African Wild Dogs,6.6,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/African_wild_dog
-72,High estimate of number of Eastern Gorillas,5.88,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
-73,Estimated world population of Baird's Tapir,5.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-74,Estimated world population of Arabian Tahr,5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-75,High estimate of world population of Tigers,3.9,thousand,3,individuals,count.pop,https://www.newscientist.com/article/2083825-tiger-numbers-in-the-wild-rise-for-the-first-time-in-100-years/?utm_source=NSNS&utm_medium=SOC&utm_campaign=hoot&cmpid=SOC%7CNSNS%7C2016-GLOBAL-twitter
-76,Estimated world population of Indian Rhinoceros,3.56,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-77,Estimated world population of Wild Water Buffalo,3.4,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-78,High estimate of world population of Giant Panda,2.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-79,Estimated world population of Malayan Tapir,2,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-80,Estimated world population of Wild Bactrian Camel,950,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-81,Estimated world population of African Wild Ass,600,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
-82,Estimated population of Ethiopian Wolf,500,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/Sumatran_rhinoceros#Conservation
-83,Estimated world population of Pygmy Hog,250,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
-84,Estimated population of Sumatran Rhino,100,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/Sumatran_rhinoceros#Conservation
+23,Estimated world population of Brown Fur Seal,1.06,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+24,Estimated world population of Siberian Roe Deer,1,million,6,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+25,High estimate of number of American Black Bears,950,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+26,Estimated world population of African Buffalo,890,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+27,Estimated world population of Hooded Seal,662,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+28,Estimated world population of Thomson's Gazelle,550,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+29,Estimated world population of American Bison,530,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+30,Estimated population of Plains Zebra,500,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+31,Estimated population of African Elephant (2016),472,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_elephant_species_by_population
+32,Estimated world population of Grey Seal,400,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+33,Estimated world population of Mongolian Gazelle,400,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+34,Estimated world population of Gemsbok,373,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+35,Estimated world population of Suni antelope,365,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+36,Estimated world population of California Sea Lion,355,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+37,Estimated world population of Vicuna,347,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+38,Estimated world population of Mullers Bornean Gibbon,300,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+39,High estimate of number of common Chimpanzees,300,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
+40,Estimated world population of Brown Bear,200,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+41,Estimated world population of Gelada,200,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+42,Estimated world population of Waterbuck,200,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+43,Estimated world population of Sitatunga,170,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+44,High estimate of world population of Hippopotamus,148,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+45,Estimated world population of Muskox,135,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+46,Estimated world population of Hippopotamus,125,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+47,Estimated world population of Dall Sheep,115,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+48,Estimated world population of Bush Dog,110,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+49,Estimated world population of Japanese Serow,100,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+50,High estimate of number of Western Gorillas,95,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
+51,Estimated world population of Giraffe,80,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+52,High estimate of world population of Leopards,75,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+53,Estimated world population of Kiang (wild ass),70,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+54,High estimate of number of Bornean Orangutans,69,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
+55,Estimated world population of Spanish Ibex,50,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+56,High estimate of number of Bonobo Chimpanzees,50,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
+57,High estimate of population of Asian Elephant (2003),50,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_elephant_species_by_population
+58,High estimate of world population of Spotted Hyena,47,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+59,Estimated world population of Alpine Ibex,30,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+60,Estimate of population of Indian Elephant,27,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_elephant_species_by_population
+61,Estimated world population of Mountain Zebra,26.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+62,Estimated population of Mountain Zebra,26.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+63,High estimate of world population of Polar Bears,25,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+64,Estimated world population of African Rhinos (white and black),25,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+65,High estimate of world population of Lions,20,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+66,Estimated world population of Black Wildebeest,18,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+67,Estimated world population of Wild Yak,15,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+68,Estimated world population of Striped Hyena,14,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+69,Estimated world population of Red Panda,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+70,Estimated world population of Nubian Ibex,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+71,High estimate of world population of Cheetah,10,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+72,Estimated world population of Brown Hyena,8,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+73,Estimated world population of Sumatran Orangutan,7.3,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+74,Estimated world population of Arabian Oryx,7,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+75,Estimate of population of Sri Lankan Elephant,7,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_elephant_species_by_population
+76,Estimated population of African Wild Dogs,6.6,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/African_wild_dog
+77,High estimate of number of Eastern Gorillas,5.88,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_primates_by_population
+78,Estimated world population of Baird's Tapir,5.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+79,Estimated world population of Arabian Tahr,5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+80,Estimated world population of Sunda Clouded Leopard,4.5,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+81,High estimate of world population of Tigers,4,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+82,Estimated world population of Indian Rhinoceros,3.56,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+83,Estimated world population of Wild Water Buffalo,3.4,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+84,Estimated world population of European Bison,3.2,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_even-toed_ungulates_by_population
+85,Estimated world population of Snow Leopard,3,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+86,Estimated population of Bengal Tigers,3,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+87,Estimate of population of Sumatran Elephant,2.6,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_elephant_species_by_population
+88,Estimated world population of Malayan Tapir,2,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+89,High estimate of world population of Giant Panda,1.8,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+90,Estimate of population of Borneo Elephant,1.3,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_elephant_species_by_population
+91,Estimated population of Marine Otter (South America),1,thousand,3,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+92,Estimated world population of Wild Bactrian Camel,950,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+93,Estimated population of Asiatic Lion,674,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+94,Estimated world population of African Wild Ass,600,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+95,Estimated population of Siberian Tiger,560,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+96,Estimated population of Ethiopian Wolf,500,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+97,Estimated population of Red Wolf (USA),300,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+98,Estimated world population of Pygmy Hog,250,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/Lists_of_organisms_by_population
+99,Estimated population of Sumatran Rhino,250,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+100,Estimated population of Amur Leopard (Russia and China),103,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
+101,Estimated population of Sumatran Rhino,80,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
+102,Estimated population of Javan Rhino,74,unit,0,individuals,count.pop,https://en.wikipedia.org/wiki/List_of_odd-toed_ungulates_by_population
