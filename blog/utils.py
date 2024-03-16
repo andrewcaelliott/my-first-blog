@@ -247,6 +247,9 @@ def normalise(parsed):
         unit="i"
     if unit.lower() in std_units.keys():
         unit = std_units[unit.lower()]
+    if unit.lower().strip() == 'pi':
+        unit = "co"
+        magnitude = str(num(magnitude) * 3.14159265)
     measure = getMeasure(unit)   
     if measure == "co":
         unit = "things"
@@ -302,6 +305,8 @@ def getMeasure(unit):
             return "am"
         else:
             return "co"
+    except AttributeError:
+        return "co"
 
 def errorParsed():
     magnitude = "0"
@@ -434,8 +439,8 @@ def tests():
 #tests()
 
 def measure_filter_upper(klass, magnitude_adj, scale_adj, measure):
-    if (scale_adj<0):
-        magnitude_adj = magnitude_adj * 10** scale_adj
+    if (scale_adj < 0):
+        magnitude_adj = magnitude_adj * 10 ** scale_adj
         scale_adj = 0
     truncate_measure = measure[:measure.find(".")]
     matches = []
@@ -445,7 +450,7 @@ def measure_filter_upper(klass, magnitude_adj, scale_adj, measure):
     match2 = klass.objects.filter(value__gt=magnitude_adj, scale=scale_adj, measure=truncate_measure)
     for fact in match2:
         matches.append(fact)
-    return sorted(matches, key = lambda k: k.value)
+    return sorted(matches, key=lambda k: k.value)
 
 
 def measure_filter_lower(klass, magnitude_adj, scale_adj, measure):
@@ -460,7 +465,7 @@ def measure_filter_lower(klass, magnitude_adj, scale_adj, measure):
     match2 = klass.objects.filter(value__lt=magnitude_adj, scale=scale_adj, measure=truncate_measure)
     for fact in match2:
         matches.append(fact)
-    return sorted(matches, key = lambda k: k.value)
+    return sorted(matches, key=lambda k: k.value)
 
 
 
@@ -617,7 +622,7 @@ def randomFact(klass, measure, rseed=None):
     else:
         candidates = klass.objects.filter(measure__startswith=measure)    
     count = candidates.count()
-    rf = candidates[randint(0,count-1)]
+    rf = candidates[randint(0, count)]
     return rf
 
 def randomFactAny(klass, rseed=None):
