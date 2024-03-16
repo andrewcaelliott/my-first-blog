@@ -39,7 +39,7 @@
                 </div>
                 {% for match in answer.closeMatches %}
                     <div class="comparison">
-                        <li> Close to/Same as: {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></li>
+                        <li> Also close to: {{ match.text }}  <a title="Where does this number come from?" href="{{ match.link }}">...</a></li>
                     </div>
                 {% endfor %}
                 <h2>And equivalent to  ...</h2>
