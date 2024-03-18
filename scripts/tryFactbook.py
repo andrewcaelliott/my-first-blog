@@ -1,6 +1,10 @@
+import re
 import requests
 import json
 from bs4 import BeautifulSoup
+from blog.models import NumberFact
+from blog.config import MEASURE_CHOICES, MULTIPLE_CHOICES,MULTIPLE_INVERSE
+from blog.utils import parseBigNumber
 
 continents = [
 	"africa",
@@ -237,6 +241,83 @@ countries = [
 		{"code": "zi", "iso": "ZW", "continent": "africa", "name": "Zimbabwe"}
 ]
 
+def extract_dated_metric(raw_text, regex):
+	gd = re.match(regex, raw_text).groupdict()
+	return {
+		"number": parseBigNumber(gd["NUMBER"]),
+		"year": int(gd["YEAR"])
+	}
+
+def get_population(country):
+	pop_text = country["People and Society"]["Population"]["text"]
+	rx = r"(?P<NUMBER>[0-9,]+)\s\((?P<YEAR>[0-9]+).*\).*"
+	return extract_dated_metric(pop_text, rx)
+
+def get_gdp(country):
+	text = country["Economy"]["GDP (official exchange rate)"]["text"]
+	rx = r"(?P<NUMBER>\$[0-9.,]+\s?[a-z]*)\s\((?P<YEAR>[0-9]+).*\).*"
+	return extract_dated_metric(text, rx)
+
+def get_govexp(country):
+	text = country["Economy"]["Budget"]["expenditures"]["text"]
+	rx = r"(?P<NUMBER>\$[0-9.,]+\s?[a-z]*)\s\((?P<YEAR>[0-9]+).*\).*"
+	return extract_dated_metric(text, rx)
+
+def get_govrev(country):
+	text = country["Economy"]["Budget"]["revenues"]["text"]
+	rx = r"(?P<NUMBER>\$[0-9.,]+\s?[a-z]*)\s\((?P<YEAR>[0-9]+).*\).*"
+	return extract_dated_metric(text, rx)
+
+def get_debt(country, gdp):
+	entries = country["Economy"]["Public debt"]
+	text = entries[list(entries.keys())[0]]["text"]
+	rx = r"(?P<NUMBER>[0-9.,]+)% of GDP\s\((?P<YEAR>[0-9]+).*\).*"
+	perc = extract_dated_metric(text, rx)
+	debt = gdp
+	debt["number"] = (str(round(float(gdp["number"][0]) * float(perc["number"][0]) / 100, 5)), gdp["number"][1], gdp["number"][2], gdp["number"][3])
+	return debt
+
+def get_import_line(cc, metric, title, force_unit, force_measure):
+	country_access = get_country_access(cc)
+	country_detail = get_country_detail(cc)
+	if metric == 'population':
+		country_item = get_population(country_detail)
+	if metric == 'gdp':
+		country_item = get_gdp(country_detail)
+	if metric == 'govexp':
+		country_item = get_govexp(country_detail)
+	if metric == 'govrev':
+		country_item = get_govrev(country_detail)
+	name = country_access["name"]
+	iso = country_access["iso"]
+	year = country_item["year"]
+	magnitude, mult, unit, measure = country_item["number"]
+	multiple = [pair[1] for pair in MULTIPLE_CHOICES if pair[0] == mult][0]
+	scale = [s for (s, m) in MULTIPLE_INVERSE.items() if m == mult][0]
+	nf = NumberFact(magnitude=magnitude, multiple=multiple, scale=scale, unit=unit, measure=measure, title=title.format(name=name))
+	nf.normalise(round_to=3)	
+	#measure = 'count'
+	return f',{name},{year},{iso},{nf.magnitude},{nf.get_multiple_display()},{nf.scale},{force_unit},{force_measure},{country_access["url"]}'
+
+def get_dependent_import_line(cc, metric, title, force_unit, force_measure):
+	country_access = get_country_access(cc)
+	country_detail = get_country_detail(cc)
+	name = country_access["name"]
+	iso = country_access["iso"]
+	if metric == 'debt':
+		gdp_item = get_gdp(country_detail)
+		country_item = get_debt(country_detail, gdp_item)
+		year = country_item["year"]
+	magnitude, mult, unit, measure = country_item["number"]
+	multiple = [pair[1] for pair in MULTIPLE_CHOICES if pair[0] == mult][0]
+	scale = [s for (s, m) in MULTIPLE_INVERSE.items() if m == mult][0]
+	nf = NumberFact(magnitude=magnitude, multiple=multiple, scale=scale, unit=unit, measure=measure, title=title.format(name=name))
+	nf.normalise(round_to=3)	
+	#measure = 'count'
+	return f',{name},{year},{iso},{nf.magnitude},{nf.get_multiple_display()},{nf.scale},{force_unit},{force_measure},{country_access["url"]}'
+
+
+
 def get_country(cc):
 	for continent in continents:
 		try:
@@ -273,4 +354,23 @@ def list_countries():
 		print(country["name"])
 
 
-list_countries()
+def get_country_access(cc):
+	country_access = next(country for country in countries if country["code"] == cc)
+	if country_access:
+		country_access["url"] = f'https://github.com/factbook/factbook.json/raw/master/{country_access["continent"]}/{cc}.json'
+		return country_access
+
+
+def get_country_detail(cc):
+	country_access = next(get_country_access(cc) for country in countries if country["code"] == cc)
+	if country_access:
+		return get_country_for_continent(country_access["continent"], cc)
+
+
+def run():
+	for country in countries[:10]:
+		#print(get_import_line(country["code"], "population", "Population of {name}", "people"))
+		#print(get_import_line(country["code"], "gdp", "GDP of {name}", "USD", "amount.gdp"))
+		#print(get_import_line(country["code"], "govexp", "Government Expenditure of {name}", "USD", "amount.~finance"))
+		#print(get_import_line(country["code"], "govrev", "Government Revenues of {name}", "USD", "amount.~finance"))
+		print(get_dependent_import_line(country["code"], "debt", "Public Debt of {name}", "USD", "amount.~use"))

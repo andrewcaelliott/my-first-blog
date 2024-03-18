@@ -36,6 +36,11 @@ def deleteFacts(title=None):
     for fact in facts:
         fact.delete()
 
+def deleteUnitFacts(unit=None):
+    facts = NumberFact.objects.all().filter(unit=unit)
+    for fact in facts:
+        fact.delete()
+
 def deleteAllFacts():
     facts = NumberFact.objects.all()
     facts.delete()
@@ -78,7 +83,7 @@ def run():
     print("ok")
     deleteAllFacts()
     print("deleted")
-    loadNumberFacts("./blog/data2/Population.csv","Population of ","people", encoding="latin1")
+    loadNumberFacts("./blog/data/Population.csv","Population of ","people", encoding="latin1")
     loadNumberFacts("./blog/data2/GDP.csv","GDP in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data2/GovExp.csv","Govt spending in ","USD p/a", encoding="latin1")
     loadNumberFacts("./blog/data2/GovRev.csv","Total taxation in ","USD p/a", encoding="latin1")

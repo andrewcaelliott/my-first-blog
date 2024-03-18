@@ -1284,7 +1284,7 @@ def make_country_stats(klass):
         try:
                 sum = summarise_country(klass, code, None, currency="USD")
                 for key in sum.keys():
-                    if key!="country":
+                    if key != "country":
                         try:
                             stats[key]
                         except KeyError:
