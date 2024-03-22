@@ -18,3 +18,4 @@ images
 country
 rankorder
 Django-1.8.dist-info
+*.xlsx

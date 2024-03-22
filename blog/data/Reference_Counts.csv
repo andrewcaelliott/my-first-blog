@@ -18,32 +18,38 @@
 18,neurons in the human brain,86,billion,9,neurons,count,https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons
 19,stars in the Triangulum galaxy,40,billion,9,galaxies,count,https://en.wikipedia.org/wiki/Triangulum_Galaxy
 20,chickens in the world,19,billion,9,chickens,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000000&sort=cnt&p=1
-21,mobile/cellular telephone subscribers in the world,7.8,billion,9,subscribers,count,https://www.cia.gov/library/publications/the-world-factbook/fields/197.html
+21,mobile/cellular telephone subscribers in the world (2024),7.41,billion,9,subscribers,count,https://www.statista.com/statistics/218984/number-of-global-mobile-users-since-2010/
 22,base pairs in the human genome,3,billion,9,pairs,count,Thanks to Google
-23,active users of Facebook (2022),2.91,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+23,active users of Facebook (2024),3.049,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
 24,cars in the world,1.2,billion,9,cars,count,Thanks to Google
-25,fixed-line telephone subscribers in the world,0.984,billion,9,subscribers,count,https://www.cia.gov/library/publications/the-world-factbook/fields/196.html
-26,monthly active users of WhatsApp (2022),2,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
-27,monthly active users of Instagram (2022),1.478,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
-28,monthly active users of WeChat (2022),1.263,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
-29,monthly active users of Tiktok (2022),1000,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
-30,monthly active users of Twitter (2022),436,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+25,fixed-line telephone subscribers in the world (2023),861,million,6,subscribers,count,https://www.cia.gov/library/publications/the-world-factbook/fields/196.html
+26,monthly active users of YouTube (2024),2.491,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+30,monthly active users of Facebook Messenger (2024),979,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+30,monthly active users of Telegram (2024),800,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+30,monthly active users of Douyin (2024),752,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+30,monthly active users of Snapchat (2024),750,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+30,monthly active users of Kuaishou (2024),619,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+26,monthly active users of WhatsApp (2024),2,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+27,monthly active users of Instagram (2024),2,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+28,monthly active users of WeChat (2024),1.336,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+29,monthly active users of Tiktok (2024),1.562,billion,9,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
+30,monthly active users of X/Twitter (2024),619,million,6,users,count,https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/
 31,items in the British Library,150,million,6,items,count,https://simple.wikipedia.org/wiki/British_Library
 32,babies born every year,134,million,6,babies,count,http://www.answers.com/Q/How_many_babies_are_born_every_day_in_the_world
 33,copies of Michael Jackson's Thriller album sold,65,million,6,albums,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000000&sort=cnt&p=1
 34,books in the British Library,25,million,6,books,count,https://simple.wikipedia.org/wiki/British_Library
 35,shipping containers in the world,17,million,6,containers,count,https://www.billiebox.co.uk/facts-about-shipping-containers/
-36,articles in English Wikipedia (Jun 2022),6.524,million,6,articles,count,https://en.wikipedia.org/wiki/Wikipedia:Size_comparisons
+36,articles in English Wikipedia (Jun 2022),6.8,million,6,articles,count,https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia
 37,concert-goers at Rod Stewart New Year's Eve concert (Rio 1994),4.2,million,6,people,count,https://en.wikipedia.org/wiki/List_of_largest_concerts
-38,Automatic Teller Machines (ATM's) in the world,3,million,6,ATM's,count,https://en.wikipedia.org/wiki/Automated_teller_machine
+38,Automatic Teller Machines (ATM's) in the world,3.5,million,6,ATM's,count,https://en.wikipedia.org/wiki/Automated_teller_machine
 39,rivets in the Eiffel Tower,2.5,million,6,rivets,count,http://www.statisticbrain.com/fun-facts/
 40,active personnel in the Chinese Armed Forces,2.185,million,6,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
 41,active personnel in the Indian Armed Forces,1.45555,million,6,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
-42,active personnel in the US Armed Forces,1.3881,million,6,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
+42,active personnel in the US Armed Forces,1.328,million,6,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
 43,active personnel in the North Korean Armed Forces,1.28,million,6,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
 44,words in all the Harry Potter books taken together,1.084,million,6,words,count,https://wordcounter.net/blog/2015/11/23/10922_how-many-words-harry-potter.html
 45,words in the King James Bible,783.137,thousand,3,words,count,http://www.billingsfirst.org/clientimages/19106/worship-page/bible-facts/bible-facts.pdf
-46,active personnel in the Russian Armed Forces,1014,thousand,3,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
+46,active personnel in the Russian Armed Forces,1154,thousand,3,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
 47,active personnel in the South Korean Armed Forces,599,thousand,3,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
 48,active personnel in the Pakistan Armed Forces,654,thousand,3,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
 49,active personnel in the Iranian Armed Forces,610,thousand,3,personnel,count,https://worldpopulationreview.com/country-rankings/military-size-by-country
@@ -84,7 +90,7 @@
 84,passengers on the Allure of the Seas (and Oasis of the Seas) cruise liners,6.78,thousand,3,passengers,count,https://en.wikipedia.org/wiki/List_of_the_world%27s_largest_cruise_ships
 85,seats in the Royal Albert Hall,5.272,thousand,3,seats,count,https://en.wikipedia.org/wiki/Royal_Albert_Hall
 86,container ships in the world,5534,thousand,3,ships,count,https://www.statista.com/statistics/198227/forecast-for-global-number-of-containerships-from-2011
-87,satellites orbiting the Earth (2022),8261,thousand,3,satellites,count,https://www.pixalytics.com/satellites-in-2022/
+87,satellites orbiting the Earth (2023),26.7,thousand,3,satellites,count,https://www.statista.com/statistics/1422809/number-of-satellites-cataloged-decayed-orbit/
 88,grains of sugar in a teaspoon,4,thousand,3,grains,count,http://www.vendian.org/envelope/dir0/grain_feel.html
 89,seats in New York City's Metropolitan Opera,3.8,thousand,3,seats,count,https://en.wikipedia.org/wiki/Metropolitan_Opera_House_(Lincoln_Center)
 90,seats in Hammersmith Apollo music venue (London),3.632,thousand,3,seats,count,http://www.eventimapollo.com/venueinfo/venue-history
@@ -96,8 +102,8 @@
 96,letters on a typed page of text,2.5,thousand,3,letters,count,Thanks to Google
 97,seats in La Scala opera house; Milan,2.03,thousand,3,seats,count,https://en.wikipedia.org/wiki/La_Scala
 98,paintings that Picasso painted,1.885,thousand,3,paintings,count,https://en.wikipedia.org/wiki/Pablo_Picasso
-99,billionaires in the world (2022),2577,thousand,3,billionaires,count,https://worldpopulationreview.com/country-rankings/billionaires-by-country
-100,Boeing 747's built (2022),1.571,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
+99,billionaires in the world (2023),2640,thousand,3,billionaires,count,https://worldpopulationreview.com/country-rankings/billionaires-by-country
+100,Boeing 747's built (2022),1.574,thousand,3,planes,count,https://en.wikipedia.org/wiki/Boeing_747
 101,possible starting hands in Hold'em poker,1.326,thousand,3,hands,count,https://en.wikipedia.org/wiki/Texas_hold_%27em_starting_hands
 102,passengers on an Underground train on London's Central Line,1.047,thousand,3,passengers,count,https://www.ianvisits.co.uk/blog/2016/08/05/london-tube-train-capacities/
 103,patents held by Thomas Edison,1.093,thousand,3,patents,count,https://en.wikipedia.org/wiki/List_of_Edison_patents
@@ -119,28 +125,31 @@
 119,members of US House of Representatives,434,unit,0,members,count,https://en.wikipedia.org/wiki/United_States_House_of_Representatives
 120,passengers on a Boeing 747-400 airliner (typical configuration),416,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 121,passengers on a Airbus A340-600 airliner (maximum capacity),380,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
-122,skyscrapers in Hong Kong (>150m tall),518,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+122,skyscrapers in Hong Kong (>150m tall),554,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+122,skyscrapers in Shenzhen (>150m tall),410,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 123,passengers on a Boeing 777-300 airliner (typical configuration),368,unit,0,passengers,count,https://www.aerospace-technology.com/features/feature-biggest-passenger-airplanes-in-the-world/
 124,ways a travelling salesman can visit six towns (and return home),360,unit,0,words,count,https://en.wikipedia.org/wiki/Travelling_salesman_problem#Exact_algorithms
 125,digits used in writing a googol in binary,333,unit,0,digits,count,https://googillion.wordpress.com/2007/12/01/googol-vs-googillion/
 126,songs recorded by the Beatles,309,unit,0,songs,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=2
-127,skyscrapers in New York City (>150m tall),300,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+127,skyscrapers in New York City (>150m tall),317,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 128,bones in the human body,206,unit,0,bones,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=3
 129,games played in longest-ever tennis match between Isner and Mahut (2010),183,unit,0,games,count,https://en.wikipedia.org/wiki/Isner?Mahut_match_at_the_2010_Wimbledon_Championships
-130,skyscrapers in Dubai (>150m tall),236,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+130,skyscrapers in Dubai (>150m tall),263,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 131,aircraft carriers in the world,167,unit,0,carriers,count,https://en.wikipedia.org/wiki/List_of_aircraft_carriers_by_country
 132,floors in the Burj Khalifa skyscraper,163,unit,0,floors,count,https://www.google.co.uk/search?client=opera&q=how+many+stories+in+the+burj+khalifa&sourceid=opera&ie=UTF-8&oe=UTF-8
-133,skyscrapers in Shanghai (>150m tall; 2021),180,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+133,skyscrapers in Shanghai (>150m tall; 2021),186,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 134,airports in Cuba,133,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 135,airports in New Zealand,123,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 136,passengers in a carriage of an Underground train on London's Bakerloo line,121,unit,0,passengers,count,https://www.ianvisits.co.uk/blog/2016/08/05/london-tube-train-capacities/
 137,ways of seating six people around a table,120,unit,0,ways,count,https://www.mytutor.co.uk/answers/8482/GCSE/Further-Maths/How-many-different-ways-are-there-to-seat-6-people-at-a-round-table
-138,skyscrapers in Chicago (>150m tall),118,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
+138,skyscrapers in Chicago (>150m tall),137,unit,0,buildings,count,https://en.wikipedia.org/wiki/List_of_cities_with_the_most_skyscrapers
 139,members of US Senate,100,unit,0,members,count,http://www.senate.gov/reference/reference_index_subjects/Senators_vrd.htm
 140,keys on a piano,88,unit,0,keys,count,http://www.bluebulbprojects.com/CountOfThings/results.php?&coeff=x&c=1000&sort=pr&p=4
-141,submarines in the US Navy (2022),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-142,submarines in the North Korean Navy (2022),35,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
-143,submarines in the Russian Navy (2022),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+141,submarines in the Chinese Navy (2023),78,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+141,submarines in the Russian Navy (2023),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+141,submarines in the US Navy (2023),68,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+142,submarines in the North Korean Navy (2023),35,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
+143,submarines in the Russian Navy (2023),70,unit,0,subs,count,http://www.globalfirepower.com/navy-submarines.asp
 144,airports in Israel,42,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 145,airports in Ireland,40,unit,0,airports,count,https://www.cia.gov/library/publications/the-world-factbook/fields/2053.html
 146,plays that Shakespeare wrote,37,unit,0,plays,count,http://www.shakespeare-online.com/plays/numberofplays.html

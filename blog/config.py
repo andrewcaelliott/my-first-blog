@@ -52,16 +52,16 @@ amount_references = [
     ('Total value of all gold ever mined','{times:,.2f} times the value of all the gold ever mined','{percent:,.2f} percent of the value of all the gold ever mined','1 /{fraction:,.0f} of the value of all the gold ever mined'),
     ('GDP in United Kingdom','{times:,.2f} times the UK GDP','{percent:,.2f} percent of the UK GDP','1 /{fraction:,.0f} of the UK GDP'),
     ('GDP in Luxembourg','{times:,.2f} times the Luxembourg GDP','{percent:,.2f} percent of the Luxembourg GDP','1 /{fraction:,.0f} of the Luxembourg GDP'),
-    ('Wealth of the wealthiest person in the world (Elon Musk 2022)','{times:,.2f} times the wealth of the wealthiest person','{percent:,.2f} percent of the wealth of the wealthiest person','1 /{fraction:,.0f} of the wealth of the wealthiest person'),
+    ('Wealth of the wealthiest person in the world (Jeff Bezos March 2024)','{times:,.2f} times the wealth of the wealthiest person','{percent:,.2f} percent of the wealth of the wealthiest person','1 /{fraction:,.0f} of the wealth of the wealthiest person'),
     ('Largest Win on a Lottery Ticket','{times:,.2f} times the largest-ever lottery win','{percent:,.2f} percent of the largest-ever lottery win (per ticket)','1 /{fraction:,.0f} of the largest-ever lottery win (per ticket)'),
     ('Highest price for a painting sold at auction','{times:,.2f} times the highest price paid for a painting','{percent:,.2f} percent of the highest price ever paid for a painting','1 /{fraction:,.0f} of the highest price ever paid for a painting'),
     ('Cost of making Avengers: Age of Ultron movie','{times:,.2f} times the cost of making Avengers: Age of Ultron movie','{percent:,.2f} percent of the cost of making Avengers: Age of Ultron movie','1 /{fraction:,.0f} of the cost of making Avengers: Age of Ultron movie'),
-    ('Cost of Lamborghini Huracan Convertible car (2021)','{times:,.2f} times the cost of a Lamborghini Huracan Convertible car','{percent:,.2f} percent of the cost of a Lamborghini Huracan Convertible car','1 /{fraction:,.0f} of the the cost of a Lamborghini Huracan Convertible car'),
-    ('Cost of Porsche Carrera 4S Cabriolet (2021)','{times:,.2f} times the cost of a Porsche Carrera 4S','{percent:,.2f} percent of the cost of a Porsche Carrera 4S','1 /{fraction:,.0f} of the the cost of a Porsche Carrera 4S'),
-    ('Price of Boston Red Sox grandstand season ticket (2022)','{times:,.2f} times the cost of a Red Sox season ticket','{percent:,.2f} percent of the cost of a Red Sox season ticket','1 /{fraction:,.0f} of the the cost of a Red Sox season ticket'),
-    ('Cost of iPhone 13 Pro Max - 256GB (2022)','{times:,.2f} times the cost of an iPhone 13 Pro Max','{percent:,.2f} percent of the cost of an iPhone 13 Pro Max','1 /{fraction:,.0f} of the the cost of an Cost of iPhone 13 Pro Max'),
-    ('Price of a Big Mac hamburger in the United States (2022)','{times:,.2f} times the cost of a Big Mac in USA','{percent:,.2f} percent of the cost of a Big Mac in USA','1 /{fraction:,.0f} of the the cost of a Big Mac in USA'),
-    ('Price of a Big Mac hamburger in Russia (2022)','{times:,.2f} times the cost of a Big Mac in Russia','{percent:,.2f} percent of the cost of a Big Mac in Russia','1 /{fraction:,.0f} of the the cost of a Big Mac in Russia'),
+    ('Cost of used Lamborghini Huracan Convertible car (2021)','{times:,.2f} times the cost of a Lamborghini Huracan Convertible car','{percent:,.2f} percent of the cost of a Lamborghini Huracan Convertible car','1 /{fraction:,.0f} of the the cost of a Lamborghini Huracan Convertible car'),
+    ('Cost of Porsche Carrera 4S Cabriolet (2024)','{times:,.2f} times the cost of a Porsche Carrera 4S','{percent:,.2f} percent of the cost of a Porsche Carrera 4S','1 /{fraction:,.0f} of the the cost of a Porsche Carrera 4S'),
+    ('Price of Boston Red Sox grandstand season ticket (2024)','{times:,.2f} times the cost of a Red Sox season ticket','{percent:,.2f} percent of the cost of a Red Sox season ticket','1 /{fraction:,.0f} of the the cost of a Red Sox season ticket'),
+    ('Cost of iPhone 15 Pro Max (2023)','{times:,.2f} times the cost of an iPhone 15 Pro Max','{percent:,.2f} percent of the cost of an iPhone 13 Pro Max','1 /{fraction:,.0f} of the the cost of an Cost of iPhone 15 Pro Max'),
+    ('Price of a Big Mac hamburger in the United States (2024)','{times:,.2f} times the cost of a Big Mac in USA','{percent:,.2f} percent of the cost of a Big Mac in USA','1 /{fraction:,.0f} of the the cost of a Big Mac in USA'),
+    ('Price of a Big Mac hamburger in India (2024)','{times:,.2f} times the cost of a Big Mac in Russia','{percent:,.2f} percent of the cost of a Big Mac in Russia','1 /{fraction:,.0f} of the the cost of a Big Mac in Russia'),
 ]
 
 duration_references = [

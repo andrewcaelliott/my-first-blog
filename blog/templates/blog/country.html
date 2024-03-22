@@ -11,12 +11,12 @@
             <div>
                 <h1>Numbers and Ratios about {{ country }} </a></h1>
                 <h4><a href="../facts/?search={{ country}}">Base facts about {{ country }} </a></h4>
-                <p>(Source:2020 CIA World Factbook, mostly relating to 2017 raw data. 
+                <p>(Source: CIA World Factbook, via the factbook.json github project (https://github.com/factbook/factbook.json). 
                 <br/> Disclaimer: work in progress. Intended Use: cross-checking the scale and reasonability of big numbers.
-                <br/> Original numbers in USD. Exchange Rates as at mid 2022. If no input amount supplied, displays USD, otherwise displays input amount currency.
+                <br/> Original numbers in USD. If no input amount supplied, displays USD, otherwise displays input amount currency (as at end-2023).
                 <h4>Spark graphs:</h4>
                 <br/> Large/red dot shows rank among all countries ordered from min to max. 
-                <br/> Small dots shows data for countries ranked at quartile points. 
+                <br/> Small dots shows data for countries ranked at decile points. 
                 <br/> Blue dots are comparison points for USA, Russia and China.)</p>
 	        <form method="GET" class="query-form freeform" action="/country" >
                     <!--{{ freeForm.as_p }}-->
@@ -57,10 +57,19 @@
                                     <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries - click to see full list</title></line>
                                 </a>
                                 <circle class="tick" cx="2%", cy="50%", r="3"><title>{{ fact.base.context.0.0}}</title></circle>
-                                <circle class="tick" cx="26%", cy="50%", r="3"><title>{{ fact.base.context.0.1}}</title></circle>
-                                <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ fact.base.context.0.2}}</title></circle>
-                                <circle class="tick" cx="74%", cy="50%", r="3"><title>{{ fact.base.context.0.3}}</title></circle>
-                                <circle class="tick" cx="98%", cy="50%", r="3"><title>{{ fact.base.context.0.4}}</title></circle>
+                                <circle class="tick" cx="11%", cy="50%", r="3"><title>{{ fact.base.context.0.1}}</title></circle>
+                                <circle class="tick" cx="21%", cy="50%", r="3"><title>{{ fact.base.context.0.2}}</title></circle>
+                                <circle class="tick" cx="30%", cy="50%", r="3"><title>{{ fact.base.context.0.3}}</title></circle>
+                                <circle class="tick" cx="40%", cy="50%", r="3"><title>{{ fact.base.context.0.4}}</title></circle>
+                                <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ fact.base.context.0.5}}</title></circle>
+                                <circle class="tick" cx="60%", cy="50%", r="3"><title>{{ fact.base.context.0.6}}</title></circle>
+                                <circle class="tick" cx="70%", cy="50%", r="3"><title>{{ fact.base.context.0.7}}</title></circle>
+                                <circle class="tick" cx="79%", cy="50%", r="3"><title>{{ fact.base.context.0.8}}</title></circle>
+                                <circle class="tick" cx="89%", cy="50%", r="3"><title>{{ fact.base.context.0.9}}</title></circle>
+                                <circle class="tick" cx="98%", cy="50%", r="3"><title>{{ fact.base.context.0.10}}</title></circle>
+                                <!--circle class="refdatapoint" cx="{{ fact.context.2.0}}%", cy="50%", r="3"><title>US at percentile {{   fact.context.2.0}}</title></circle>
+                                <circle class="refdatapoint" cx="{{ fact.context.2.1}}%", cy="50%", r="3"><title>RU at percentile {{ fact.context.2.1}}</title></circle>
+                                <circle class="refdatapoint" cx="{{ fact.context.2.2}}%", cy="50%", r="3"><title>CN at percentile {{ fact.context.2.2}}</title></circle-->
                                 <circle class="datapoint" cx="{{ fact.base.context.1}}%", cy="50%", r="4"><title>Ranks at percentile {{ fact.base.context.1}}</title></circle>
                             </svg>
                             {% else %}
@@ -74,10 +83,16 @@
                                         <line x1="0%" y1="50%" x2="100%" y2="50%"><title>Rank among other countries - click to see full list</title></line>
                                     </a>
                                     <circle class="tick" cx="2%", cy="50%", r="3"><title>{{ dfact.context.0.0}}</title></circle>
-                                    <circle class="tick" cx="26%", cy="50%", r="3"><title>{{ dfact.context.0.1}}</title></circle>
-                                    <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ dfact.context.0.2}}</title></circle>
-                                    <circle class="tick" cx="74%", cy="50%", r="3"><title>{{ dfact.context.0.3}}</title></circle>
-                                    <circle class="tick" cx="98%", cy="50%", r="3"><title>{{ dfact.context.0.4}}</title></circle>
+                                    <circle class="tick" cx="11%", cy="50%", r="3"><title>{{ dfact.context.0.1}}</title></circle>
+                                    <circle class="tick" cx="21%", cy="50%", r="3"><title>{{ dfact.context.0.2}}</title></circle>
+                                    <circle class="tick" cx="30%", cy="50%", r="3"><title>{{ dfact.context.0.3}}</title></circle>
+                                    <circle class="tick" cx="40%", cy="50%", r="3"><title>{{ dfact.context.0.4}}</title></circle>
+                                    <circle class="tick" cx="50%", cy="50%", r="3"><title>{{ dfact.context.0.5}}</title></circle>
+                                    <circle class="tick" cx="60%", cy="50%", r="3"><title>{{ dfact.context.0.6}}</title></circle>
+                                    <circle class="tick" cx="70%", cy="50%", r="3"><title>{{ dfact.context.0.7}}</title></circle>
+                                    <circle class="tick" cx="79%", cy="50%", r="3"><title>{{ dfact.context.0.8}}</title></circle>
+                                    <circle class="tick" cx="89%", cy="50%", r="3"><title>{{ dfact.context.0.9}}</title></circle>
+                                    <circle class="tick" cx="98%", cy="50%", r="3"><title>{{ dfact.context.0.10}}</title></circle>
                                     <circle class="refdatapoint" cx="{{ dfact.context.2.0}}%", cy="50%", r="3"><title>US at percentile {{   dfact.context.2.0}}</title></circle>
                                     <circle class="refdatapoint" cx="{{ dfact.context.2.1}}%", cy="50%", r="3"><title>RU at percentile {{ dfact.context.2.1}}</title></circle>
                                     <circle class="refdatapoint" cx="{{ dfact.context.2.2}}%", cy="50%", r="3"><title>CN at percentile {{ dfact.context.2.2}}</title></circle>

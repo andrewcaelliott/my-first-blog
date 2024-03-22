@@ -944,7 +944,7 @@ def summarise_country(klass, code, qamount, currency="USD"):
     pop = klass.objects.filter(location__icontains = location, title__icontains = "Population of").order_by('-date')[0]  
     land = klass.objects.filter(location__icontains = location, title__icontains = "Land Area of").order_by('-date')[0]  
     try:
-        debt = klass.objects.filter(location__icontains = location, title__icontains = "National Debt").order_by('-date')[0]  
+        debt = klass.objects.filter(location__icontains = location, title__icontains = "Public Debt").order_by('-date')[0]  
         debt = debt.getConversions([currency])[0]
     except:
         debt = None
@@ -1138,7 +1138,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             fact = cdict["basics"]["GDP"]
             factpacks.append((fact, '{times:,.2f}  '+unit+' for every $ of '+fact.title,'{percent:,.2f} percent of the '+fact.title,'1 '+unit+' for every {fraction:,.0f} '+currency+' in the '+fact.title))
 
-        comparisons = compnq.getDynamicComparisons(factpacks, year="2017")
+        comparisons = compnq.getDynamicComparisons(factpacks, year="2023")
 
         #print(compnf.render_folk, compnf.scale)
         #comparator.title = "You asked about"
@@ -1146,7 +1146,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             ask = ["Is That A Big Number?", compnq, None, comparisons]
         else:
             if compnq.unit.upper() in AMOUNT_UNITS:
-                conversions = compnq.getConversions( ["USD"], year="2017")
+                conversions = compnq.getConversions( ["USD"], year="2023")
                 ask = ["Is That A Big Number?", compnq, conversions[0], comparisons]
             else:
                 ask = ["Is That A Big Number?", compnq, None, comparisons]
@@ -1183,7 +1183,7 @@ def summarise_country_list(klass1, klass, code, qamount):
         },
     ]
     try:
-        debt = ["National Debt",
+        debt = ["Public Debt",
             { 
                 "base": {"stat":("nat_debt","nat_debt"),"datum":cdict["nat_debt"]["nat_debt"], "context":context["nat_debt"]["nat_debt"]},
                 "derived":[{"stat":("nat_debt","debt/capita"),"datum":cdict["nat_debt"]["debt/capita"], "context":context["nat_debt"]["debt/capita"]},
@@ -1191,7 +1191,7 @@ def summarise_country_list(klass1, klass, code, qamount):
             }
         ]
     except:
-        debt = ["National Debt", "No information available"]
+        debt = ["Public Debt", "No information available"]
     uses = ["Where GDP goes"]
     try:
         uses += [{ 
@@ -1284,7 +1284,7 @@ def make_country_stats(klass):
         try:
                 sum = summarise_country(klass, code, None, currency="USD")
                 for key in sum.keys():
-                    if key!="country":
+                    if key != "country":
                         try:
                             stats[key]
                         except KeyError:
@@ -1319,16 +1319,28 @@ def make_country_stats(klass):
             statset["inverse"]=inverse
             statset["percentile"]=percentile
             n = len(statset["items"])
-            q0 = round(n*0)
-            q25 = round(n*0.25)
+            q0 = 0
+            q10 = round(n*0.1)
+            q20 = round(n*0.2)
+            q30 = round(n*0.3)
+            q40 = round(n*0.4)
             q50 = round(n*0.5)
-            q75 = round(n*0.75)
+            q60 = round(n*0.6)
+            q70 = round(n*0.7)
+            q80 = round(n*0.8)
+            q90 = round(n*0.9)
             q100 = n-1
             quantiles=[
                 (sortedstats[q0],statset["items"][sortedstats[q0]]),
-                (sortedstats[q25],statset["items"][sortedstats[q25]]),
+                (sortedstats[q10],statset["items"][sortedstats[q10]]),
+                (sortedstats[q20],statset["items"][sortedstats[q20]]),
+                (sortedstats[q30],statset["items"][sortedstats[q30]]),
+                (sortedstats[q40],statset["items"][sortedstats[q40]]),
                 (sortedstats[q50],statset["items"][sortedstats[q50]]),
-                (sortedstats[q75],statset["items"][sortedstats[q75]]),
+                (sortedstats[q60],statset["items"][sortedstats[q60]]),
+                (sortedstats[q70],statset["items"][sortedstats[q70]]),
+                (sortedstats[q80],statset["items"][sortedstats[q80]]),
+                (sortedstats[q90],statset["items"][sortedstats[q90]]),
                 (sortedstats[q100],statset["items"][sortedstats[q100]])]
             statset["quantiles"]= quantiles
 

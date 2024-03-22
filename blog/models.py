@@ -337,7 +337,7 @@ class NumberFact(models.Model):
                 response = " ".join([mag, mult, unit])
         return response.replace("unit", "").replace(" unknown", "").replace(" - ", " ").replace("  "," ")
 
-    def normalise(self):
+    def normalise(self, round_to=None):
         value = num(self.magnitude)
         while abs(value) > 1000:
             value = value / 1000
@@ -345,6 +345,8 @@ class NumberFact(models.Model):
         while abs(value) < 1 and self.scale>=0:
             value = value * 1000
             self.scale = self.scale - 3
+        if round_to:
+            value = round(value, round_to)
         self.multiple = MULTIPLE_INVERSE[self.scale]
         self.magnitude = str(value) 
 
@@ -396,7 +398,6 @@ class NumberFact(models.Model):
             ")" ]).replace("Population", "Pop.").replace("thousand ", "th ")
 
     def _display_number(self):
-        print("render", self.unit)
         return "".join([
             self.display_folk_number(self.magnitude, self.get_multiple_display(), self.unit, self.measure)]).replace("thousand ", "th ").replace("iter", "itre")
 
