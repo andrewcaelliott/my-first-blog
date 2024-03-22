@@ -1,60 +1,63 @@
-1,Total value of all gold ever mined,11.2,trillion,12,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-2,Cost to USA of the Iraq war (revalued to 2022),930,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
-3,Cost to USA of the Vietnam war (revalued to 2022),813,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
-4,Value of USA's gold reserves,478,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-5,Cost to USA of the Korean war (revalued to 2022),430,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
-6,Wealth of the wealthiest person in the world (Elon Musk 2022),219,billion,9,USD,amount,https://en.wikipedia.org/wiki/The_World%27s_Billionaires
-7,Cost of Apollo moon programme (adjusted to 2019 dollars),175,billion,9,USD,amount,https://christopherrcooper.com/blog/was-the-apollo-program-a-prudent-investment-worth-retrying/
-8,Value of Italy's gold reserves,142,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-9,Value of Russia's gold reserves,135,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
-10,Cost to USA of the First Gulf war (revalued to 2022),128.6,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
-11,Cost (estimated) of Hinkley Point C nuclear power plant (UK; 2022),31,billion,9,USD,amount,https://www.world-nuclear-news.org/Articles/EDF-revises-Hinkley-Point-C-schedule-and-costs
+1,Total value of all gold ever mined,11.3,trillion,12,USD,amount,https://www.goldeneaglecoin.com/Guide/value-of-all-the-gold-in-the-world
+2,Cost to USA of the Iraq war (revalued to 2024),975,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+3,Cost to USA of the Vietnam war (revalued to 2024),854,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+4,Value of USA's gold reserves (2024),569,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+5,Cost to USA of the Korean war (revalued to 2024),450,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+6,Wealth of the wealthiest person in the world (Jeff Bezos March 2024),201,billion,9,USD,amount,https://www.bloomberg.com/billionaires/
+6,Wealth of the 2nd wealthiest person in the world (Bernard Arnault March 2024),201,billion,9,USD,amount,https://www.bloomberg.com/billionaires/
+6,Wealth of the 3rd wealthiest person in the world (Elon Musk March 2024),201,billion,9,USD,amount,https://www.bloomberg.com/billionaires/
+4,Value of Germany's gold reserves (2024),234,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+7,Cost of Apollo moon programme (adjusted to 2019 dollars),215,billion,9,USD,amount,https://christopherrcooper.com/blog/was-the-apollo-program-a-prudent-investment-worth-retrying/
+8,Value of France's gold reserves (2024),170.6,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+8,Value of Italy's gold reserves (2024),171,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+9,Value of Russia's gold reserves (2024),163,billion,9,USD,amount,https://en.wikipedia.org/wiki/Gold_reserve
+10,Cost to USA of the First Gulf war (revalued to 2024),135,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
+11,Cost (estimated) of Hinkley Point C nuclear power plant (UK; 2024),57,billion,9,USD,amount,https://www.reuters.com/business/energy/edfs-nuclear-project-britain-pushed-back-2029-may-cost-up-34-bln-2024-01-23
 12,Cost of Trident Nuclear submarine replacement program,28,billion,9,USD,amount,http://www.bbc.co.uk/news/election-2015-scotland-32236184
 13,Cost of the Gerald R. Ford Aircraft Carrier,10.4,billion,9,USD,amount,https://www.fas.org/sgp/crs/natsec/RS22926.pdf
 14,Cost of building the `Cosmopolitan` hotel and casino in Las Vegas (2010),3.9,billion,9,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_buildings_in_the_world
 15,Cost of building the `One World Trade Center` in New York City (2013),3.8,billion,9,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_buildings_in_the_world
-16,Cost of a Virginia class nuclear submarine (2021),3.45,billion,9,USD,amount,https://en.wikipedia.org/wiki/Virginia-class_submarine
+16,Cost of a Virginia class nuclear submarine (2023),4.3,billion,9,USD,amount,https://en.wikipedia.org/wiki/Virginia-class_submarine
 17,Cost of building the `Burj Khalifa` skyscraper in Dubai (2010),1.5,billion,9,USD,amount,https://en.wikipedia.org/wiki/Burj_Khalifa
 18,Construction cost of Wembley Stadium (London; UK) (2007),1.5,billion,9,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_stadiums
 19,Construction cost of Yankee Stadium (NYC; USA) (2009),1.5,billion,9,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_stadiums
 20,Largest Win on a Lottery Ticket,983.5,million,6,USD,amount,https://en.wikipedia.org/wiki/Lottery_jackpot_records
 21,Cost of building the `Shard` skyscraper in London (2012),642,million,6,USD,amount,https://en.wikipedia.org/wiki/The_Shard
 22,Highest price for a painting sold at auction,450.3,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
-23,Highest price for a da Vinci painting sold at auction,450.3,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings#List_of_highest_prices_paid
-24,Cost of most expensive movie ever made,378.5,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
+23,Highest price for a da Vinci painting sold at auction,450.3,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+24,Cost of most expensive movie ever made (Star Wars: The Force Awakens; 2015),447,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
 25,Cost of making Avengers: Age of Ultron movie,365,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
 26,Cost of making Star Wars: The Rise of Skywalker,275,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
 27,Cost of making No Time to Die (James Bond Movie),250,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_films
-28,Highest price for a Rembrandt painting sold at auction,198,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+28,Highest price for a Rembrandt painting sold at auction,180,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
 29,Highest price for a Picasso painting sold at auction,179.4,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
 30,Highest price for a sculpture sold at auction,141.3,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_sculptures
-31,Price of a Boeing 737-900ER airliner (2022),112.6,million,6,USD,amount,https://www.skytough.com/post/how-much-does-a-commercial-plane-cost
-32,Price of an Airbus A320 airliner (2022),98,million,6,USD,amount,https://www.skytough.com/post/how-much-does-a-commercial-plane-cost
-33,Price of an Gulfstream G700 private jet,78,million,6,USD,amount,https://www.businessinsider.com/what-its-like-onboard-78-million-gulfstream-g700-tour-photos-2021-10?r=US&IR=T
-34,Cost of a SpaceX Falcon 9 rocket launch,67,million,6,USD,amount,https://www.nbcnews.com/science/space/space-launch-costs-growing-business-industry-rcna23488
+31,Price of a Boeing 737-900ER airliner (2023),112.6,million,6,USD,amount,https://www.skytough.com/post/how-much-does-a-commercial-plane-cost
+32,Price of an Airbus A321 airliner (2023),106.1,million,6,USD,amount,https://www.skytough.com/post/how-much-does-a-commercial-plane-cost
+33,Price of an Gulfstream G700 private jet (2024),75,million,6,USD,amount,https://www.businessinsider.com/what-its-like-onboard-78-million-gulfstream-g700-tour-photos-2021-10?r=US&IR=T
+34,Cost of a SpaceX Falcon 9 rocket launch,110,million,6,USD,amount,https://finance.yahoo.com/news/jaw-dropping-news-boeing-lockheed-120700324.html
 35,"Sale price in 2015 of the 12.03 carat ""Blue Moon"" diamond",48.4,million,6,USD,amount,http://edition.cnn.com/2015/11/12/luxury/most-expensive-diamond/
 36,Price at 2001 auction of Shakespeare's First Folio,6.1,million,6,USD,amount,https://en.wikipedia.org/wiki/List_of_most_expensive_books
-37,Cost of Lamborghini Huracan Convertible car (2021),230,thousand,3,USD,amount,https://www.edmunds.com/lamborghini/huracan/2021/convertible/
-38,Cost of Porsche Carrera 4S Cabriolet (2021),112,thousand,3,USD,amount,https://cars.usnews.com/cars-trucks/porsche/911/2021
-39,Cost of Porsche 718 Boxter car,62.6,thousand,3,USD,amount,https://cars.usnews.com/cars-trucks/porsche/boxster
-40,Minimum price of a Tesla Model 3 Standard Range Plus (2022),45,thousand,3,USD,amount,https://www.motor1.com/features/313677/how-much-is-a-tesla/
-41,Average salary for a junior software engineer in the UK (2022),37,thousand,3,USD,amount,https://www.glassdoor.co.uk/Salaries/junior-software-engineer-salary-SRCH_KO0;24.htm
-42,Starting salary for a fully qualified nurse in the UK (2022),30,thousand,3,USD,amount,https://www.prospects.ac.uk/job-profiles/adult-nurse
-43,Typical price of a Ford Fiesta in the USA (2022),22,thousand,3,USD,amount,https://www.topspeed.com/cars/ford/2022-ford-fiesta-ar192901.html
-44,Base price of a Ford Fiesta in the UK (2022),20.4,thousand,3,USD,amount,https://www.carwow.co.uk/ford/fiesta/news/5144/new-ford-fiesta-price-specs-release-date#gref
-45,Price of Boston Red Sox grandstand season ticket (2022),2.83,thousand,3,USD,amount,https://www.mlb.com/redsox/tickets/season-tickets/new/a-plan
-46,Cost of iPhone 13 Pro Max - 256GB (2022),1410,unit,0,USD,amount,https://www.johnlewis.com/browse/electricals/mobile-phones-accessories/view-all-mobile-phones/apple/_/N-a8vZ1z13zz4
-47,Price of cheapest Manchester United Season ticket (2022/2023),1166,unit,0,USD,amount,https://www.statista.com/statistics/328654/premier-league-teams-ranked-by-most-expensive-season-ticket-price/
-48,Price of a midrange washing machine (UK; 2022),500,unit,0,USD,amount,https://www.currys.co.uk/appliances/laundry/washing-machines/bosch?srcid=198&cmpid=ppc~gg~0100%20(Text%20Ads)%20MDA%20-%20Laundry%20-%20Washing%20Machines%20-%20Brand%20Bosch%20Exact~Bosch%20Washing%20Machines%20Price%20(E)~Exact~71700000016746307~&mctag=gg_goog_7904&kwid=GOOGLE&device=c&ds_kids=43700014400053900&tgtid=0100%20(Text%20Ads)%20MDA%20-%20Laundry%20-%20Washing%20Machines%20-%20Brand%20Bosch%20Exact&gclid=CjwKCAjwwdWVBhA4EiwAjcYJEGA12XdL9Z5-jgyRLDiMrL8jUFUDAQ9OFrEeYFIjVbB2lnXzSMyHkBoChvAQAvD_BwE&gclsrc=aw.ds
-49,Price per head of a meal at The Fat Duck Restaurant (Bray; UK; 2022),430,unit,0,USD,amount,https://www.exploretock.com/thefatduck/
-50,Price per head of a meal at Celler de Can Roca Restaurant (Girona; 2022),385,unit,0,USD,amount,https://then24.com/2022/01/02/el-celler-de-can-roca-raises-its-prices-in-2022-mirror-mirror-is-diverxo-still-the-most-expensive/
-51,Price of ticket for Glastonbury music festival (2022),344,unit,0,USD,amount,https://www.glastonburyfestivals.co.uk/information/tickets/
-52,Price per head of the tasting menu at Eleven Madison Park Restaurant (NYC 2022),335,unit,0,USD,amount,https://www.exploretock.com/elevenmadisonpark/
-53,Price of a pair of Nike Air Force 1 trainers in UK (2022),135,unit,0,USD,amount,https://www.nike.com/gb/t/air-force-1-07-lv8-shoes-TqxL1x/DM0118-100?nikegos=true&cp=euns_AD_PI_F3D_CMP_UK_BAU_XCT_SHOP_REV_M_DM0118-100&cp=47658763634_search_%7c%7c10628703748%7c110516031008%7c%7cc%7cEN%7ccssproducts%7c453317343113_GEOZ&ds_rl=1252249&gclid=CjwKCAjwwdWVBhA4EiwAjcYJEBjiRL85T1YOG0fu9tuZhoAJeBW4Sq5B_NjEte2AgqRLVTzGbUE1BBoC6acQAvD_BwE&gclsrc=aw.ds
-54,Price of a pair of Nike Air Force 1 trainers in USA (2022),100,unit,0,USD,amount,https://www.inputmag.com/style/nike-air-force-1-new-price-100-90
-55,Price of a Big Mac hamburger in Switzerland (2022),6.8,unit,0,USD,amount,https://www.economist.com/big-mac-index
-56,Price of a Big Mac hamburger in the United States (2022),5.81,unit,0,USD,amount,https://www.economist.com/big-mac-index
-57,Price of a Starbucks Caffe Latte Tall (UK 2022),2.95,unit,0,USD,amount,https://realmenuprices.com/starbucks-menu-prices/
-58,Price of a Starbucks Caffe Latte Tall (UK 2022),2.76,unit,0,USD,amount,https://www.fastfoodmenuprices.com/uk/starbucks-menu-prices-uk/
-59,Price of a Big Mac hamburger in Russia (2022),2.51,unit,0,USD,amount,https://www.economist.com/big-mac-index
-60,Price of a Big Mac hamburger in Egypt (2022),2.26,unit,0,USD,amount,https://www.economist.com/big-mac-index
+37,Cost of used Lamborghini Huracan Convertible car (2021),200,thousand,3,USD,amount,https://www.edmunds.com/lamborghini/huracan/2021/convertible/
+38,Cost of Porsche Carrera 4S Cabriolet (2024),114,thousand,3,USD,amount,https://www.kbb.com/porsche/911/
+39,Cost of Porsche 718 Boxter car (2024),72.05,thousand,3,USD,amount,https://www.caranddriver.com/porsche/718-boxster
+40,Minimum price of a Tesla Model 3 Standard Range (2023),40,thousand,3,USD,amount,https://www.solarreviews.com/blog/how-much-do-teslas-electric-vehicles-cost
+41,Average salary for a junior software engineer in the UK Southeast (2024),44,thousand,3,USD,amount,https://www.glassdoor.co.uk/Salaries/software-engineer-salary-SRCH_IC3294630_KO0;17.htm
+42,Starting salary for a fully qualified nurse in the UK (2024),28,thousand,3,USD,amount,https://www.prospects.ac.uk/job-profiles/adult-nurse
+43,Typical price of a Ford Fiesta in the USA (2024),29.8,thousand,3,USD,amount,https://www.carsguide.com.au/ford/fiesta/price/2024
+45,Price of Boston Red Sox grandstand season ticket (2022),3.907,thousand,3,USD,amount,https://www.mlb.com/redsox/tickets/season-tickets/full-season-plan
+46,Cost of iPhone 15 Pro Max (2023),1199,unit,0,USD,amount,https://www.aljazeera.com/news/2023/9/13/infographic-how-the-iphone-15-price-compares-with-all-previous-iphones
+47,Price of Manchester United Season ticket (2023/2024),1030,unit,0,USD,amount,https://www.statista.com/statistics/328654/premier-league-teams-ranked-by-most-expensive-season-ticket-price/
+48,Price of a midrange Hoover washing machine (UK; 2024),600,unit,0,USD,amount,https://www.currys.co.uk/appliances/laundry/washing-machines
+49,Price per head of a meal at The Fat Duck Restaurant (Bray; UK; 2024),295,unit,0,USD,amount,https://thefatduck.co.uk/
+50,Price per head of a meal at Celler de Can Roca Restaurant (Girona; 2024),270,unit,0,USD,amount,https://eatingoutorin.com/girona/el-celler-de-can-roca-menu/
+51,Price of ticket for Glastonbury music festival (2024),453,unit,0,USD,amount,https://www.glastonburyfestivals.co.uk/information/tickets/
+52,Price per head of the tasting menu at Eleven Madison Park Restaurant (NYC 2024),365,unit,0,USD,amount,https://www.exploretock.com/elevenmadisonpark/
+53,Price of a pair of Nike Air Force 1 trainers in UK (2024),138,unit,0,USD,amount,https://www.nike.com/gb/w/air-force-1-shoes-5sj3yzy7ok
+54,Price of a pair of Nike Air Force 1 trainers in USA (2024),115,unit,0,USD,amount,https://www.nike.com/air-force-1
+55,Price of a Big Mac hamburger in Switzerland (2024),9.17,unit,0,USD,amount,https://www.economist.com/big-mac-index
+56,Price of a Big Mac hamburger in the United States (2024),5.69,unit,0,USD,amount,https://www.economist.com/big-mac-index
+57,Price of a Starbucks Caffe Latte Tall (USA 2024),2.95,unit,0,USD,amount,https://realmenuprices.com/starbucks-menu-prices/
+58,Price of a Starbucks Caffe Latte Tall (UK 2024),2.83,unit,0,USD,amount,https://www.fastfoodmenuprices.com/uk/starbucks-menu-prices-uk/
+59,Price of a Big Mac hamburger in South Africa (2024),2.7,unit,0,USD,amount,https://www.economist.com/big-mac-index
+60,Price of a Big Mac hamburger in India (2024),2.59,unit,0,USD,amount,https://www.economist.com/big-mac-index

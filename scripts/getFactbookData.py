@@ -1,3 +1,4 @@
+#from functools import cache
 import re
 import requests
 import json
@@ -458,6 +459,7 @@ def get_import_line(cc, metric, title, force_unit, force_measure):
         scale = [s for (s, m) in MULTIPLE_INVERSE.items() if m == mult][0]
         nf = NumberFact(magnitude=magnitude, multiple=multiple, scale=scale, unit=unit, measure=measure, title=title.format(name=name))
         nf.normalise(round_to=3)    
+        print(nf)
         #measure = 'count'
         return f',{name},{year},{iso},{nf.magnitude},{nf.get_multiple_display()},{nf.scale},{force_unit},{force_measure},{country_access["url"]}'
     except KeyError as ex:
@@ -542,10 +544,11 @@ def get_dependent_import_line(cc, metric, title, force_unit, force_measure):
         scale = [s for (s, m) in MULTIPLE_INVERSE.items() if m == mult][0]
         nf = NumberFact(magnitude=magnitude, multiple=multiple, scale=scale, unit=unit, measure=measure, title=title.format(name=name))
         nf.normalise(round_to=3)    
+        print(nf)
         #measure = 'count'
         return f',{name},{year},{iso},{nf.magnitude},{nf.get_multiple_display()},{nf.scale},{force_unit},{force_measure},{country_access["url"]}'
     except KeyError as ex:
-        # print(ex)
+        print(ex)
         return None
     except AttributeError as ex:
         print(ex)
@@ -559,7 +562,7 @@ def get_country(cc):
         except Exception as ex:
             pass
 
-
+#@cache
 def get_country_for_continent(continent, cc):
     url = f'https://github.com/factbook/factbook.json/raw/master/{continent}/{cc}.json'
     response = requests.get(url=url)
@@ -612,28 +615,189 @@ def writefile_population():
     f = open(file_name, "w")
     for country in countries:
         write_if(f, get_import_line(country["code"], "population", "Population of {name}", "people", "count"))
-        #write_if(f, get_import_line(country["code"], "gdp", "GDP of {name}", "USD", "amount.gdp"))
-        #write_if(f, get_import_line(country["code"], "govexp", "Government Expenditure of {name}", "USD", "amount.~finance"))
-        #write_if(f, get_import_line(country["code"], "govrev", "Government Revenues of {name}", "USD", "amount.~finance"))
-        #write_if(f, get_dependent_import_line(country["code"], "debt", "Public Debt of {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "households", "Household consumption for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "govtconsumption", "Government consumption for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "invcapital", "Investment in capital for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "invinv", "Investment in capital for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "exports", "Exports for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "imports", "Imports for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "agriculture", "Agricultural Production for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "industry", "Industrial Production for {name}", "USD", "amount.~use"))
-        #write_if(f, get_dependent_import_line(country["code"], "services", "Service Production for {name}", "USD", "amount.~use"))
-        #write_if(f, get_import_line(country["code"], "landarea", "Land area of {name}", "km^2", "area"))
-        #write_if(f, get_dependent_import_line(country["code"], "landagri", "Area used for agriculture in {name}", "km^2", "area"))
-        #write_if(f, get_dependent_import_line(country["code"], "landagriarable", "Area used for arable agriculture in {name}", "km^2", "area"))
-        #write_if(f, get_dependent_import_line(country["code"], "landagripermcrops", "Area used for permanent crops in {name}", "km^2", "area"))
-        #write_if(f, get_dependent_import_line(country["code"], "landagripermpasture", "Area used for permanent pasture in {name}", "km^2", "area"))
-        #write_if(f, get_dependent_import_line(country["code"], "landforest", "Area used for forest in {name}", "km^2", "area"))
-        #write_if(f, get_dependent_import_line(country["code"], "landother", "Area used for other purposes in {name}", "km^2", "area"))
     f.close()
 
+
+def writefile_gdp():
+    file_name = "./blog/data3/GDP.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_import_line(country["code"], "gdp", "GDP of {name}", "USD", "amount.gdp"))
+    f.close()
+
+
+def writefile_govexp():
+    file_name = "./blog/data3/GovExp.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_import_line(country["code"], "govexp", "Government Expenditure of {name}", "USD", "amount.~finance"))
+    f.close()
+
+
+def writefile_govrev():
+    file_name = "./blog/data3/GovRev.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_import_line(country["code"], "govrev", "Government Revenues of {name}", "USD", "amount.~finance"))
+    f.close()
+
+
+def writefile_debt():
+    file_name = "./blog/data3/Debt.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "debt", "Public Debt of {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_households():
+    file_name = "./blog/data3/Households.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "households", "Household consumption for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_govtconsumption():
+    file_name = "./blog/data3/GovtConsumption.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "govtconsumption", "Government consumption for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_invcapital():
+    file_name = "./blog/data3/InvCapital.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "invcapital", "Investment in capital for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_invinventories():
+    file_name = "./blog/data3/InvInventories.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "invinv", "Investment in Inventories for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_exports():
+    file_name = "./blog/data3/Exports.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "exports", "Exports for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_imports():
+    file_name = "./blog/data3/Imports.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "imports", "Imports for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_agriculture():
+    file_name = "./blog/data3/Agriculture.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "agriculture", "Agricultural Production for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_industry():
+    file_name = "./blog/data3/Industry.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "industry", "Industrial Production for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_services():
+    file_name = "./blog/data3/Services.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "services", "Service Production for {name}", "USD", "amount.~use"))
+    f.close()
+
+
+def writefile_landarea():
+    file_name = "./blog/data3/LandArea.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_import_line(country["code"], "landarea", "Land area of {name}", "km^2", "area"))
+    f.close()
+
+
+def writefile_landagri():
+    file_name = "./blog/data3/LandUseAgri.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "landagri", "Area used for agriculture in {name}", "km^2", "area"))
+    f.close()
+
+
+def writefile_landagriarable():
+    file_name = "./blog/data3/LandUseAgriArable.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "landagriarable", "Area used for arable agriculture in {name}", "km^2", "area"))
+    f.close()
+
+
+def writefile_landagripermcrops():
+    file_name = "./blog/data3/LandUseAgriPermCrops.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "landagripermcrops", "Area used for permanent crops in {name}", "km^2", "area"))
+    f.close()
+
+
+def writefile_landagripermpasture():
+    file_name = "./blog/data3/LandUseAgriPermPasture.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "landagripermpasture", "Area used for permanent pasture in {name}", "km^2", "area"))
+    f.close()
+
+
+def writefile_landforest():
+    file_name = "./blog/data3/LandUseForest.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "landforest", "Area used for forest in {name}", "km^2", "area"))
+    f.close()
+
+
+def writefile_landother():
+    file_name = "./blog/data3/LandUseOther.csv"
+    f = open(file_name, "w")
+    for country in countries:
+        write_if(f, get_dependent_import_line(country["code"], "landother", "Area used for other purposes in {name}", "km^2", "area"))
+    f.close()
+
+
 def run():
-    writefile_population()
+    #writefile_population()
+    #writefile_gdp()
+    #writefile_govexp()
+    #writefile_govrev()
+    #writefile_debt()
+    #writefile_households()
+    #writefile_govtconsumption()
+    #writefile_invcapital()
+    #writefile_invinventories()
+    #writefile_exports()
+    #writefile_imports()
+    #writefile_agriculture()
+    #writefile_industry()
+    #writefile_services()
+    #writefile_landarea()
+    #writefile_landagri()
+    #writefile_landagriarable()
+    #writefile_landagripermcrops()
+    writefile_landagripermpasture()
+    writefile_landforest()
+    writefile_landother()
 

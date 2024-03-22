@@ -22,7 +22,7 @@ def convertToUSD(amount, currency, year = None):
         return round(amount / factor,2)
 
 def getCurrencyConversionFactor(currency1, currency2, year = None):
-    if  year==None:
+    if year==None:
         version = "latest"
     else:
         version = year+"-12-31"
