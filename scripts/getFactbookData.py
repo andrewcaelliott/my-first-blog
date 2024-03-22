@@ -779,7 +779,7 @@ def writefile_landother():
 
 
 def run():
-    #writefile_population()
+    writefile_population()
     #writefile_gdp()
     #writefile_govexp()
     #writefile_govrev()
@@ -797,7 +797,7 @@ def run():
     #writefile_landagri()
     #writefile_landagriarable()
     #writefile_landagripermcrops()
-    writefile_landagripermpasture()
-    writefile_landforest()
-    writefile_landother()
+    #writefile_landagripermpasture()
+    #writefile_landforest()
+    #writefile_landother()
 

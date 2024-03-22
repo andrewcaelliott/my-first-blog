@@ -1,2 +1,196 @@
 ,Afghanistan,2023,AF,39.232,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/af.json
 ,Albania,2023,AL,3.102,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/al.json
+,Algeria,2023,DZ,44.758,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ag.json
+,Andorra,2023,AD,85.468,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/an.json
+,Angola,2023,AO,35.981,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ao.json
+,Antigua and Barbuda,2023,AG,101.489,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/ac.json
+,Argentina,2023,AR,46.622,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/ar.json
+,Armenia,2023,AM,2.989,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/am.json
+,Australia,2023,AU,26.461,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/as.json
+,Austria,2023,AT,8.941,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/au.json
+,Azerbaijan,2023,AZ,10.421,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/aj.json
+,The Bahamas,2023,BS,358.51,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/bf.json
+,Bahrain,2023,BH,1.554,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/ba.json
+,Bangladesh,2023,BD,167.184,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/bg.json
+,Barbados,2023,BB,303.431,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/bb.json
+,Belarus,2023,BY,9.384,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/bo.json
+,Belgium,2023,BE,11.914,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/be.json
+,Belize,2023,BZ,419.14,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/bh.json
+,Benin,2023,BJ,14.22,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/bn.json
+,Bhutan,2023,BT,876.18,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/bt.json
+,Bolivia,2023,BO,12.186,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/bl.json
+,Bosnia and Herzegovina,2023,BA,3.808,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/bk.json
+,Botswana,2023,BW,2.418,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/bc.json
+,Brazil,2023,BR,218.69,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/br.json
+,Brunei,2023,BN,484.99,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/bx.json
+,Bulgaria,2023,BG,6.828,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/bu.json
+,Burkina Faso,2023,BF,22.489,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/uv.json
+,Burma,2023,MM,57.97,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/bm.json
+,Burundi,2023,BI,13.163,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/by.json
+,Cambodia,2023,KH,16.891,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/cb.json
+,Cameroon,2023,CM,30.136,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/cm.json
+,Canada,2023,CA,38.517,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/north-america/ca.json
+,Cabo Verde,2023,CV,603.9,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/africa/cv.json
+,Central African Republic,2023,CF,5.552,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ct.json
+,Chad,2023,TD,18.523,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/cd.json
+,Chile,2023,CL,18.549,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/ci.json
+,China,2023,CN,1.413,billion,9,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/ch.json
+,Colombia,2023,CO,49.336,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/co.json
+,Comoros,2023,KM,888.38,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/africa/cn.json
+,Democratic Republic of the Congo,2023,CD,111.86,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/cg.json
+,The Congo,2023,CG,5.678,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/cf.json
+,Costa Rica,2023,CR,5.257,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/cs.json
+,Cote d'Ivoire,2023,CI,29.345,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/iv.json
+,Croatia,2023,HR,4.169,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/hr.json
+,Cuba,2023,CU,10.986,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/cu.json
+,Cyprus,2023,CY,1.308,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/cy.json
+,Czechia,2023,CZ,10.706,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/ez.json
+,Denmark,2023,DK,5.947,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/da.json
+,Djibouti,2023,DJ,976.14,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/africa/dj.json
+,Dominica,2023,DM,74.656,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/do.json
+,The Dominican Republic,2023,DO,10.791,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/dr.json
+,Ecuador,2023,EC,17.483,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/ec.json
+,Egypt,2023,EG,109.547,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/eg.json
+,El Salvador,2023,SV,6.602,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/es.json
+,Equatorial Guinea,2023,GQ,1.738,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ek.json
+,Eritrea,2023,ER,6.275,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/er.json
+,Estonia,2023,EE,1.203,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/en.json
+,Eswatini,2023,SZ,1.13,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/wz.json
+,Ethiopia,2023,ET,116.463,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/et.json
+,Fiji,2023,FJ,947.76,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/fj.json
+,Finland,2023,FI,5.615,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/fi.json
+,France,2023,FR,68.522,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/fr.json
+,Gabon,2023,GA,2.397,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/gb.json
+,The Gambia,2023,GM,2.469,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ga.json
+,Georgia,2023,GE,4.927,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/gg.json
+,Germany,2023,DE,84.22,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/gm.json
+,Ghana,2023,GH,33.846,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/gh.json
+,Greece,2023,GR,10.498,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/gr.json
+,Grenada,2023,GD,114.299,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/gj.json
+,Guatemala,2023,GT,17.981,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/gt.json
+,Guinea,2023,GN,13.607,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/gv.json
+,Guinea-Bissau,2023,GW,2.079,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/pu.json
+,Guyana,2023,GY,791.74,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/gy.json
+,Haiti,2023,HT,11.47,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/ha.json
+,Honduras,2023,HN,9.571,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/ho.json
+,Hungary,2023,HU,9.67,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/hu.json
+,Iceland,2023,IS,360.87,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/ic.json
+,India,2023,IN,1.399,billion,9,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/in.json
+,Indonesia,2023,ID,279.476,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/id.json
+,Iran,2023,IR,87.591,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/ir.json
+,Iraq,2023,IQ,41.266,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/iz.json
+,Ireland,2023,IE,5.324,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/ei.json
+,Israel,2023,IL,9.043,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/is.json
+,Italy,2023,IT,61.022,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/it.json
+,Jamaica,2023,JM,2.821,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/jm.json
+,Japan,2023,JP,123.719,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/ja.json
+,Jordan,2023,JO,11.087,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/jo.json
+,Kazakhstan,2023,KZ,19.544,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-asia/kz.json
+,Kenya,2023,KE,57.052,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ke.json
+,Kiribati,2023,KI,115.372,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/kr.json
+,North Korea,2023,KP,26.072,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/kn.json
+,South Korea,2023,KR,51.967,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/ks.json
+,Kosovo,2023,XK,1.964,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/kv.json
+,Kuwait,2023,KW,3.104,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/ku.json
+,Kyrgyzstan,2023,KG,6.123,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-asia/kg.json
+,Laos,2023,LA,7.852,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/la.json
+,Latvia,2023,LV,1.822,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/lg.json
+,Lebanon,2023,LB,5.331,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/le.json
+,Lesotho,2023,LS,2.211,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/lt.json
+,Liberia,2023,LR,5.506,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/li.json
+,Libya,2023,LY,7.253,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ly.json
+,Liechtenstein,2023,LI,39.993,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/ls.json
+,Lithuania,2023,LT,2.656,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/lh.json
+,Luxembourg,2023,LU,660.92,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/lu.json
+,Madagascar,2023,MG,28.812,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ma.json
+,Malawi,2023,MW,21.28,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/mi.json
+,Malaysia,2023,MY,34.22,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/my.json
+,Maldives,2023,MV,521.02,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/mv.json
+,Mali,2023,ML,21.36,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ml.json
+,Malta,2023,MT,467.14,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/mt.json
+,Marshall Islands,2023,MH,80.966,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/rm.json
+,Mauritania,2023,MR,4.245,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/mr.json
+,Mauritius,2023,MU,1.309,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/mp.json
+,Mexico,2023,MX,129.876,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/north-america/mx.json
+,Micronesia,2023,FM,100.319,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/fm.json
+,Moldova,2023,MD,3.251,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/md.json
+,Monaco,2023,MC,31.597,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/mn.json
+,Mongolia,2023,MN,3.256,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/mg.json
+,Montenegro,2023,ME,602.45,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/mj.json
+,Morocco,2023,MA,37.067,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/mo.json
+,Mozambique,2023,MZ,32.514,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/mz.json
+,Burma,2023,MM,57.97,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/bm.json
+,Namibia,2023,NA,2.777,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/wa.json
+,Nauru,2023,NR,9.852,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/nr.json
+,Nepal,2023,NP,30.899,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/np.json
+,Netherlands,2023,NL,17.464,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/nl.json
+,New Zealand,2023,NZ,5.11,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/nz.json
+,Nicaragua,2023,NI,6.36,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/nu.json
+,Niger,2023,NE,25.397,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ng.json
+,Nigeria,2023,NG,230.843,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ni.json
+,Norway,2023,NO,5.598,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/no.json
+,North Macedonia,2023,MK,2.133,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/mk.json
+,Oman,2023,OM,3.833,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/mu.json
+,Pakistan,2023,PK,247.654,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/pk.json
+,Palau,2023,PW,21.779,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/ps.json
+,Panama,2023,PA,4.404,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/pm.json
+,Papua New Guinea,2023,PG,9.819,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/pp.json
+,Paraguay,2023,PY,7.44,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/pa.json
+,Peru,2023,PE,32.44,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/pe.json
+,Philippines,2023,PH,116.434,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/rp.json
+,Poland,2023,PL,37.992,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/pl.json
+,Portugal,2023,PT,10.223,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/po.json
+,Qatar,2023,QA,2.532,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/qa.json
+,Romania,2023,RO,18.326,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/ro.json
+,Russia,2023,RU,141.699,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-asia/rs.json
+,Rwanda,2023,RW,13.4,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/rw.json
+,Saint Kitts and Nevis,2023,KN,54.817,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/sc.json
+,Saint Lucia,2023,LC,167.591,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/st.json
+,Saint Vincent and the Grenadines,2023,VC,100.804,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/vc.json
+,Samoa,2023,WS,207.501,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/ws.json
+,San Marino,2023,SM,34.892,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/europe/sm.json
+,Sao Tome and Principe,2023,ST,220.372,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/africa/tp.json
+,Saudi Arabia,2023,SA,35.94,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/sa.json
+,Senegal,2023,SN,18.385,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/sg.json
+,Serbia,2023,RS,6.693,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/ri.json
+,Seychelles,2023,SC,97.617,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/africa/se.json
+,Sierra Leone,2023,SL,8.908,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/sl.json
+,Singapore,2023,SG,5.975,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/sn.json
+,Slovakia,2023,SK,5.425,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/lo.json
+,Slovenia,2023,SI,2.1,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/si.json
+,Solomon Islands,2023,SB,714.77,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/bp.json
+,Somalia,2023,SO,12.694,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/so.json
+,South Africa,2023,ZA,58.048,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/sf.json
+,South Sudan,2023,SS,12.118,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/od.json
+,Spain,2023,ES,47.223,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/sp.json
+,Sri Lanka,2023,LK,23.326,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-asia/ce.json
+,Sudan,2023,SD,49.198,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/su.json
+,Suriname,2023,SR,639.76,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/ns.json
+,Sweden,2023,SE,10.536,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/sw.json
+,Switzerland,2023,CH,8.564,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/sz.json
+,Syria,2023,SY,22.933,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/sy.json
+,Tajikistan,2023,TJ,9.246,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-asia/ti.json
+,Tanzania,2023,TZ,65.643,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/tz.json
+,Thailand,2023,TH,69.795,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/th.json
+,Timor-Leste,2023,TL,1.476,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/tt.json
+,Togo,2023,TG,8.704,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/to.json
+,Tonga,2023,TO,105.221,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/tn.json
+,Trinidad and Tobago,2023,TT,1.407,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-america-n-caribbean/td.json
+,Tunisia,2023,TN,11.976,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ts.json
+,Turkey,2023,TR,83.593,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/tu.json
+,Turkmenistan,2023,TM,5.691,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-asia/tx.json
+,Tuvalu,2023,TV,11.639,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/tv.json
+,Uganda,2023,UG,47.73,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/ug.json
+,Ukraine,2023,UA,43.306,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/up.json
+,United Arab Emirates,2023,AE,9.973,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/ae.json
+,United Kingdom,2023,GB,68.138,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/europe/uk.json
+,United States,2023,US,339.67,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/north-america/us.json
+,Uruguay,2023,UY,3.416,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/uy.json
+,Uzbekistan,2023,UZ,31.361,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/central-asia/uz.json
+,Vanuatu,2023,VU,313.046,thousand,3,people,count,https://github.com/factbook/factbook.json/raw/master/australia-oceania/nh.json
+,Holy See (Vatican City),2022,VA,1000.0,-,0,people,count,https://github.com/factbook/factbook.json/raw/master/europe/vt.json
+,Venezuela,2023,VE,30.518,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/south-america/ve.json
+,Vietnam,2023,VN,104.799,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/east-n-southeast-asia/vm.json
+,Yemen,2023,YE,31.566,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/middle-east/ym.json
+,Zambia,2023,ZM,20.216,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/za.json
+,Zimbabwe,2023,ZW,15.419,million,6,people,count,https://github.com/factbook/factbook.json/raw/master/africa/zi.json
